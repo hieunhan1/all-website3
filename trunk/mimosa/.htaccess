@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule index.html index.php
+RewriteRule (.*)/(.*)/$  index.php?lang=$1&danhmuc=$2
+RewriteRule (.*)/(.*)/(.*).html$ index.php?lang=$1&danhmuc=$2&detail=$3
+RewriteRule vi/$ index.php?lang=vi
+RewriteRule en/$ index.php?lang=en

@@ -1,0 +1,161 @@
+/* CSS Document */
+/*
+Vang:	FFF200
+Do:		ED1E24
+*/
+*{margin:0; padding:0}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background-color:#999}
+img{border:0}
+a:link,a:visited,a:active{color:#0B77DD; text-decoration:none}
+a:hover{color:#ED1E28; text-decoration:underline}
+hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
+
+#top{width:1000px; margin:auto; padding:10px 8px 0 8px; background-color:#FFF}
+#top #logo{width:auto; float:left}
+#top #company_search{width:515px; float:left; margin-left:60px}
+#top #company_search #company{height:45px; background:url(images/menu-search-support.gif) no-repeat; background-position:0px -145px}
+#top #company_search #search{width:315px; height:30px; float:right; margin-top:19px; background:url(images/menu-search-support.gif) no-repeat; background-position:0px -35px}
+#top #company_search #search .txtSearch{width:255px; color:#828282; height:28px; line-height:28px; padding-left:10px; background:none; border:none}
+#top #company_search #search .btnSearch{width:40px; height:28px; cursor:pointer; background:none; border:none}
+#top #lang{width:auto; float:right; line-height:16px; margin-bottom:20px}
+#top #lang p{width:auto; float:left; margin:0 3px 0 15px}
+#top #lang img{float:left; margin-right:5px}
+#top #lang a{color:#666}
+#top #support{width:178px; height:38px; float:right; padding:10px; background:url(images/menu-search-support.gif) no-repeat; background-position:0px -70px}
+
+#wrapper{width:1000px; margin:0 auto; padding:1px 8px 0 8px; background-color:#FFF}
+
+#home_about{margin-top:20px; line-height:25px; font-size:14px}
+#home_about .home_img{width:190px; height:170px; overflow:hidden; float:left; margin-right:30px}
+#home_about .home_img img{width:190px}
+#home_about h1{color:#ED1E24; font-size:100%; padding-top:5px}
+
+.home_title{clear:both; padding-top:30px}
+
+.list_product{clear:both; margin-top:5px}
+
+.item_product{width:193px; height:240px; float:left; line-height:20px; text-align:center; border:solid 1px #CDCDCD}
+.item_product .item_product_img{height:175px; overflow:hidden; text-align:center}
+.item_product .item_product_img img{height:175px}
+.item_product h3{font-size:100%}
+.item_product .item_product_price_km{color:#666; text-decoration:line-through}
+.item_product .item_product_price{color:#ED1E24}
+
+#footer{clear:both; color:#666; background:url(images/bg-footer.gif) repeat-x bottom #FFF; width:1016px; margin:auto}
+#footer #footer_menu{height:33px; line-height:33px; padding:0 10px; border-top:solid 2px #E3908D; border-bottom:solid 2px #E3908D}
+#footer #footer_menu a{float:left; color:#666; padding:0 10px}
+#footer #social{clear:both}
+#footer #social .item_social{width:125px; float:left; line-height:32px; margin-top:10px}
+#footer #social .item_social img{float:left; margin-right:10px}
+
+#left{width:220px; float:left}
+#left .box_left{clear:both; margin-bottom:30px; padding:5px 0 15px 0}
+#left .box_left .item_left{margin:0 5px; border-bottom:solid 1px #CCC}
+#left .box_left .item_left a{display:block; color:#666; line-height:40px; font-weight:bold; padding-left:28px; background:url(images/left-icon.gif) no-repeat; background-position:0px 10px}
+#left .box_left .item_left a:hover{color:#ED1E24; background:url(images/left-icon.gif) no-repeat; background-position:0px -50px}
+#left .box_left .item_left2{margin:0 5px}
+#left .box_left .item_left2 a{display:block; color:#666; line-height:20px; padding:8px 0 8px 20px; background:url(images/sao.png) no-repeat; background-position:0px 13px}
+#left .box_left .item_left2 a:hover{color:#ED1E24}
+
+#right{width:755px; float:right}
+#right h1{font-size:150%; color:#ce0b7f; margin-top:20px}
+#right h2{font-size:100%; font-weight:100; color:#666; line-height:22px; margin-bottom:10px}
+
+.buy{width:170px; height:30px; float:left; line-height:30px; color:#FFF; font-weight:bold; font-size:110%; text-align:center; margin-top:5px; background-color:#ED1E24; cursor:pointer}
+.txtsoluong{width:100px; height:20px; line-height:20px; background:none; border:solid 1px #999}
+
+.dathang{width:auto; float:right; padding-top:5px; cursor:pointer}
+.lienhe{display:none; width:auto; float:right; font-size:80%; margin:7px; padding:2px 10px; cursor:pointer; background-color:#828282}
+.trash{font-weight:bold; color:#ED1E24; font-size:120%; padding:10px; cursor:pointer}
+.muahang{width:200px; padding:5px 0; color:#FFF; text-align:center; margin:auto; background-color:#ED1E24; cursor:pointer}
+
+.viewpost{line-height:22px}
+.viewpost p, .viewpost div {margin:10px 0}
+.viewpost li{margin-left:35px}
+.viewpost h1{font-size:160%; line-height:30px; color:#ED1E28; margin-bottom:10px}
+.viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
+.viewpost  .date{color:#888; font-style:italic; text-align:right}
+
+#run_top{width:auto; float:right; cursor:pointer}
+
+#other{clear:both}
+#other .title2{font-size:150%; color:#017B80; font-weight:bold; margin-bottom:10px}
+#other li{clear:both; margin:0 20px; padding:10px 0 10px 30px; list-style:none; font-weight:bold; background:url(images/sao.png) left no-repeat}
+#other a{color:#666}
+
+#list_detail{clear:both; color:#333; line-height:20px}
+#list_detail h1{font-size:180%; color:#ED1E28}
+#list_detail h2{font-size:100%; font-weight:100; color:#666; margin:10px 0 20px 0}
+#list_detail .item_detail{height:140px; overflow:hidden; margin-bottom:10px}
+#list_detail .item_detail .img{width:190px; height:115px; float:left; overflow:hidden; margin-right:25px}
+#list_detail .item_detail .img img{width:190px}
+#list_detail .item_detail h3{font-size:110%}
+#list_detail .item_detail a{color:#017B80}
+#list_detail .item_detail .date{font-style:italic; padding:6px 0; color:#999; font-size:90%}
+#list_detail .item_detail .content{height:80px; overflow:hidden}
+
+/*thong tn bai viet*/
+#baiviet{clear:both}
+#baiviet h1{color:#ce0b7f; font-size:180%; margin-bottom:10px}
+#baiviet h2{font-size:100%; font-weight:100; line-height:22px; margin-bottom:30px}
+#baiviet .item_baiviet{width:460px; height:430px; float:left; line-height:22px; margin:0 20px}
+#baiviet .item_baiviet h3{font-size:135%; font-weight:100}
+#baiviet .item_baiviet .date_baiviet{color:#999; font-style:italic; margin-bottom:5px}
+#baiviet .item_baiviet .img_baiviet{width:460px; height:250px; overflow:hidden; margin-bottom:5px}
+#baiviet .item_baiviet .img_baiviet img{width:460px}
+#baiviet #left_baiviet{width:700px; float:left}
+#baiviet #left_baiviet .date_baiviet{color:#999; font-style:italic; margin-bottom:10px}
+#baiviet #right_baiviet{width:270px; float:right; margin-top:30px}
+#baiviet #right_baiviet a{color:#666}
+#baiviet #right_baiviet .box_baiviet{border:solid 1px #DC8B3C; margin-bottom:50px}
+#baiviet #right_baiviet .title_baiviet{color:#FFF; font-size:110%; font-weight:bold; text-transform:uppercase; padding:8px 20px; background-color:#DC8B3C}
+#baiviet #right_baiviet .item_baiviet_2{margin:0 5px; padding:6px 10px; line-height:20px; border-bottom:dashed 1px #CCC}
+
+#contact{padding:25px}
+#contact #info{line-height:22px}
+#contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
+#contact #info p, #contact #info div {margin:10px 0}
+#contact .txt{width:250px; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .textarea{width:672px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
+
+#navigator{clear:both}
+#navigator a{padding-right:15px; font-size:12px; color:#7e7e7e}
+#navigator a:hover{color:#000}
+#navigator span{font-size:9px; color:#999; padding-right:5px}
+
+#phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
+#phantrang a:hover{background-color:#ED1E28}
+
+/*menu*/
+#menu{height:30px; background:url(images/menu-search-support.gif); background-position:0px 0px}
+
+#nav, #nav ul {list-style:none; position:relative; z-index:1000}
+#nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
+#nav li a {line-height:30px; color:#FFF; font-weight:bold; padding:0 30px} /* letter-spacing:1px; word-spacing:2px */
+#nav a:hover {text-decoration:none; color:#FFF200}
+#nav li {float:left; position:relative}
+#nav ul {width:160px; position:absolute; top:30px; display:none}
+#nav li ul a {width:170px; line-height:30px; float:left; font-weight:100; color:#FFF; padding:0 25px; background-color:#A41612; border-bottom:solid 1px #C41A15}
+#nav li ul a:hover {background-color:#F04D51; color:#FFF}
+#nav ul ul {top:auto}
+#nav li ul ul {left:220px; border-left:solid 1px #FFF}
+#nav li ul ul a{font-weight:100}
+#nav li:hover ul ul,
+#nav li:hover ul ul ul,
+#nav li:hover ul ul ul ul {display:none}
+#nav li:hover ul,
+#nav li li:hover ul,
+#nav li li li:hover ul,
+#nav li li li li:hover ul {display:block}
+
+/* popup */
+#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
+#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
+.popupContactClose{font-weight: bold; cursor:pointer}
+#content_popup{width:890px; height:auto; padding:35px 25px; background-color:#3A3A3A}
+#content_popup h1{font-size:200%; color:#fd6d13; margin-bottom:10px}
+#content_popup .img{width:500px; float:left; overflow:hidden}
+#content_popup .img img{width:492px; border:solid 4px #1A1A1A}
+#content_popup #content_pp{width:370px; float:right; line-height:20px; margin-bottom:30px}
+#content_popup #content_pp p, #content_popup #content div {margin:10px 0}

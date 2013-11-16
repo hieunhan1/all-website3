@@ -1,0 +1,14 @@
+.magnifyarea {
+	box-shadow: 5px 5px 7px #818181;
+	-webkit-box-shadow: 5px 5px 7px #818181;
+	-moz-box-shadow: 5px 5px 7px #818181;
+	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#818181, offX=5, offY=5, positive=true);
+	background: white;
+}
+.targetarea {width: 325px; height: 338px; margin-top:3px;}
+#two {height: 243px;}
+.targetarea img {margin: auto; display: block; position: relative; border-width: 0;}
+.thumbs {padding-top: 25px; width: 325px; text-align: center;}
+.thumbs a {text-decoration: none;}
+.thumbs img {border-width: 0;}
+#description, #description2 {position:absolute; width:325px; text-align:center; font:bold 95% sans-serif; margin-top:3px; color:#222; background-color: #FFF;}

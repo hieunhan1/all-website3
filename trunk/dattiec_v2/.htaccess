@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^thienphatglass.com.vn
+RewriteRule ^(.*)$ http://thienphatglass.com.vn/$1 [R=permanent,L]
+RewriteRule index.html index.php
+RewriteRule (.*)/$ index.php?danhmuc=$1
+RewriteRule (.*)/(.*).html$ index.php?danhmuc=$1&detail=$2
+ErrorDocument 404 http://www.thienphatglass.com.vn/
