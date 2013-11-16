@@ -1,0 +1,136 @@
+@charset "utf-8";
+*{margin:0px}
+body{color:#333; font-size:13px; font-family:Arial, Helvetica, sans-serif; background-color:#F1F1F1}
+img{border:0px;}
+a{color:#000; text-decoration:none}
+a:hover{color:#ed1c24; text-decoration:underline}
+
+.content{width:940px; margin:auto; padding:0 5px; background:url(images/bg-content.png) repeat-y}
+
+#header{width:100%; height:78px; padding-bottom:4px; position:absolute; top:0; z-index:3; background:url(images/bg-header.png) top repeat-x}
+#header #logo{width:159px; height:127px; position:absolute; z-index:5}
+#header #menu{width:auto; float:right}
+
+#slider{width:100%; height:450px; overflow:hidden; position:absolute; top:78px; z-index:1}
+#slider #info_sli{line-height:65px; color:#FFF; font-size:130%; text-transform:uppercase; margin-top:385px; padding-left:30px; border-left:solid 8px #1BB16A; background-color:#3E4095}
+#slider #info_sli h2{font-size:100%}
+
+#content{width:100%; clear:both; position:relative; z-index:1}
+
+#home_sp{height:265px; margin:0 -20px}
+
+#home_thienphat{margin:0 40px}
+#home_thienphat h2{font-size:200%; color:#1bb16b; margin-bottom:30px}
+#home_thienphat .item_tp{width:200px; height:290px; overflow:hidden; float:left; margin:0 7px; background-color:#ECECEC}
+#home_thienphat .item_tp h3{width:120px; height:92px; line-height:22px; margin:20px 0 10px 30px; padding:48px 10px 0; text-align:center; font-size:110%}
+#home_thienphat .item_tp a{color:#FFF}
+#home_thienphat .item_tp p{text-align:center; height:100px; line-height:20px; overflow:hidden; padding:0 10px}
+
+#home_news{margin:0 40px}
+#home_news h2{font-size:200%; color:#1bb16b; margin-bottom:30px}
+#home_news .item_news{width:420px; height:115px; line-height:19px; overflow:hidden; float:left; margin-bottom:30px}
+#home_news .item_news img{width:165px; height:115px; float:left; margin-right:10px}
+#home_news .item_news h4{font-size:100%}
+#home_news .item_news a:hover{color:#1bb16b}
+
+#home_maps{margin:0 40px}
+#home_maps h2{font-size:200%; color:#1bb16b; margin:10px 0 30px}
+
+#footer{background-color:#2B2D7A; padding:20px 0; color:#FFF}
+
+#navigator{width:auto; float:left; border-left:solid 10px #ed3237; padding-left:30px; color:#999}
+#navigator a{color:#666}
+
+#support{color:#666; width:auto; float:right}
+
+.item_info{clear:both; padding:30px; border-bottom:dashed 2px #CCC}
+.item_info img{width:250px; height:157px; float:left; margin-right:20px}
+.item_info h3{font-size:130%; line-height:25px; height:22px; overflow:hidden; margin-bottom:10px}
+.item_info p{line-height:22px; height:110px; overflow:hidden; color:#666}
+.item_info a{color:#18b069; font-weight:bold}
+
+.item_product{width:269px; height:250px; float:left; margin-left:30px; background:url(images/bg-home-sp.gif) no-repeat}
+.item_product img{width:250px; height:160px; padding:9px; margin-bottom:10px}
+.item_product h3{font-size:120%; text-align:center}
+.item_product a{color:#0bac60}
+.item_product a:hover{color:#ED3237}
+
+.item_product2{width:206px; height:190px; float:left; margin:0 3px; background:url(images/bg-home-sp-2.jpg) no-repeat}
+.item_product2 img{width:192px; height:123px; padding:7px; margin-bottom:10px}
+.item_product2 h4{font-size:100%; text-align:center; line-height:20px}
+.item_product2 a{color:#0bac60}
+.item_product2 a:hover{color:#ED3237}
+
+#phantrang{padding:30px 30px 50px}
+#phantrang .item_page{width:36px; height:32px; line-height:32px; text-align:center; float:left; margin-right:5px}
+#phantrang .item_page a{display:block; font-weight:bold; color:#FFF; background:url(images/phantrang.png)}
+#phantrang .item_page a:hover{background:url(images/phantrang-ac.png)}
+
+#view_info{padding:30px; line-height:22px; list-style:none}
+#view_info h1{color:#18AF68; font-size:200%; margin-bottom:20px}
+#view_info h2, #view_info h3, #view_info h4, #view_info h5{font-size:100%}
+#view_info #date{width:auto; float:left; color:#666; font-style:italic}
+#view_info #social{width:auto; float:right}
+#view_info p, #view_info div{margin:10px 0}
+#view_info li{padding:0; margin:0}
+
+#view_left{width:250px; float:left}
+#view_left .item_l h3{font-size:100%}
+#view_left .item_l a{display:block; width:200px; color:#FFF; padding:10px 10px 10px 30px; background:url(images/left-2.png) no-repeat left #39BB7F; background-position:0 13px}
+#view_left .item_l a:hover{width:200px; padding-right:18px; text-decoration:none; background:url(images/left.jpg) no-repeat right #3E4095}
+
+#view_product{width:640px; float:right; padding-right:30px; line-height:22px; list-style:none}
+#view_product h1{color:#3e4095; font-size:200%; margin-bottom:20px}
+#view_product h2, #view_info h3, #view_info h4, #view_info h5{font-size:100%}
+#view_product p, #view_info div{margin:10px 0}
+#view_product li{padding:0; margin:0}
+
+#title_other{font-size:120%; font-weight:bold; color:#EE1C25; padding:0 30px 5px}
+.news_other{line-height:30px; margin-left:30px; padding:0 30px 0px 20px; background:url(images/icon-2.png) no-repeat left}
+
+#other_product{font-size:140%; font-weight:bold; margin-bottom:20px; padding:10px 0; border-bottom:solid 1px #D8D8D8; border-top:solid 1px #D8D8D8}
+
+.dathang{width:auto; float:left; background-color:#39BB7F; font-size:160%; font-weight:bold; color:#FFF; margin-right:10px; padding:10px 40px; cursor:pointer}
+
+#contact_form{padding:30px; line-height:22px}
+#contact_form h1{font-size:220%; color:#1bb16b; margin-bottom:20px}
+#contact_form h2{font-size:160%; margin-bottom:5px}
+
+.txt{width:310px; margin:5px 0; padding:5px 5px; background-color:#F1F1F1; border:solid 1px #DDDDDD}
+.textarea{width:750px; height:110px; line-height:22px; overflow:auto; resize:none; margin:5px 0; padding:5px 5px; background-color:#F1F1F1; border:solid 1px #DDDDDD}
+.btn{background-color:#1BB16A; border:none; font-size:160%; color:#FFF; font-weight:bold; padding:8px 30px; margin-top:10px; cursor:pointer}
+
+/*menu*/
+#nav, #nav ul {list-style:none; position:relative; line-height:78px; z-index:10; margin:0; padding:0}
+#nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none; text-decoration:none; color:#333}
+#nav li a {font-weight:bold; padding:0 15px; text-transform:uppercase; font-weight:bold}
+#nav a:hover {color:#FFF !important; background-color:#ED3338}
+#nav li {float:left; position:relative}
+#nav ul {position:absolute; width:200px; top:78px; display:none}
+#nav li ul a {width:200px; line-height:35px; float:left; font-weight:normal; text-transform:none; color:#FFF !important; padding:0 15px; background-color:#ED3338; border-bottom:solid 1px #DD2429}
+#nav li ul a:hover {color:#FF0 !important}
+#nav ul ul {top:auto}
+#nav li ul ul {left:230px}
+#nav li:hover ul ul,
+#nav li:hover ul ul ul,
+#nav li:hover ul ul ul ul {display:none}
+#nav li:hover ul,
+#nav li li:hover ul,
+#nav li li li:hover ul,
+#nav li li li li:hover ul {display:block}
+
+/* popup */
+#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
+#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
+.popupContactClose{font-weight: bold; cursor:pointer}
+#content_popup{width:880px; height:auto; padding:10px 30px 30px; background-color:#FFF}
+#content_popup #title_pp{font-size:220%; font-weight:bold; color:#F00; margin-bottom:10px}
+
+/*partner*/
+.simply-scroll-container {position:relative;}
+.simply-scroll-clip {position:relative; overflow:hidden;}
+.simply-scroll {width:900px; height:250px; margin:auto} 
+.simply-scroll .simply-scroll-clip {width:900px;height: 250px;}
+.simply-scroll .simply-scroll-list li {float:left; width:269px; height:189px; margin:20px 15px 0px 15px; background:url(images/bg-home-sp.gif) no-repeat}
+.simply-scroll .simply-scroll-list li img{width:250px; height:155px; margin-bottom:15px; padding:10px}
+.simply-scroll .simply-scroll-list li  h3{color:#1BB16B; font-size:110%; text-align:center; text-transform:uppercase}

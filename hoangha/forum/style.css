@@ -1,0 +1,88 @@
+/* CSS Document */
+/*
+Xanh la:	017B80
+Xanh duong:	00AEED
+Do:			ED1E28
+*/
+*{margin:0; padding:0}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333}
+img{border:0}
+a:link,a:visited,a:active{color:#0055A5; text-decoration:none}
+a:hover{color:#ED1E28; text-decoration:underline}
+hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
+h1{color:#ED1E28; font-size:150%; margin-bottom:10px}
+h2{color:#666; font-weight:100; font-size:100%; line-height:20px}
+
+#top{width:100%; height:35px; background-color:#017B80}
+
+#top #menu_top{width:1000px; line-height:35px; margin:auto; text-align:right}
+#top #menu_top a{color:#DDD; font-size:12px; padding:0 10px}
+#top #menu_top a:hover{color:#FFF}
+
+#wrapper{width:1000px; margin:auto}
+
+#header{height:95px}
+#header #logo{width:auto; float:left; margin-top:19px}
+#header #search{width:auto; float:right; margin-top:35px}
+#header #search #txtsearch{width:230px; float:left}
+#header #search #txtsearch input{background-color:#CCC; border:none; line-height:25px; width:220px; height:25px; padding:0 5px; color:#666}
+#header #search #btnsearch{width:27px; height:25px; float:left; margin-left:5px; background:url(images/btnSearch.jpg)}
+#header #search #btnsearch input{background:none; border:none; line-height:25px; width:27px; height:25px; cursor:pointer}
+
+#home_menu{margin-bottom:7px}
+#home_menu .item_home_menu{width:240px; height:62px; float:left; text-align:right; margin:0 13px 13px 0}
+#home_menu .item_home_menu a{display:block; font-size:14px; font-weight:bold; color:#FFF; text-transform:uppercase; padding:35px 20px 0 0}
+
+.title{color:#017B80; font-weight:bold; font-size:18px; text-transform:uppercase; padding-bottom:3px; border-bottom:solid 3px #017B80}
+.create, .traloi{color:#FFF; font-size:13px; text-transform:none; padding:3px 15px 3px 25px; background:url(images/create.gif) left no-repeat #ED1E28; cursor:pointer}
+.table{color:#666; line-height:22px; margin-top:10px; border:solid 1px #CFCFCF}
+.table th{padding:6px}
+.table td{padding:15px 5px}
+.table a{color:#0055be}
+.table a:hover{color:#ED1E28}
+
+.detail{margin:6px 0 15px 0; border:solid 1px #CFCFCF}
+.detail .detail_left{padding:30px 10px}
+.detail .detail_right{padding:10px 20px}
+.detail .date{width:auto; float:right; padding-left:20px; background:url(images/lich.jpg) no-repeat left}
+.detail h3{font-size:20px; color:#ED1E28; line-height:30px; margin-bottom:20px}
+.detail .img{width:107px; height:107px; overflow:hidden; clear:both; margin:0 auto 10px; border:solid 1px #9C9C9C}
+.detail .img img{width:107px}
+.detail .info{line-height:25px; color:#666}
+
+#footer{clear:both; margin:0; padding:0}
+#footer #footer_m_t{height:35px; line-height:35px; border-top:solid 1px #CCC; border-bottom:solid 1px #CCC}
+#footer #footer_m_t #menu_bot{width:auto; float:left}
+#footer #footer_m_t #menu_bot a{color:#666; padding:0 8px}
+#footer #footer_m_t #menu_bot a:hover{color:#333}
+#footer #copyright{color:#666; text-align:center; padding:20px; line-height:25px}
+
+.viewpost{line-height:22px}
+.viewpost p, .viewpost div {line-height:20px; margin:10px 0}
+.viewpost li{margin-left:35px}
+.viewpost h1, .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
+
+.txt_login{width:250px; height:25px; line-height:25px; padding:0 5px; color:#666; border:solid 1px #999}
+.btn_login{width:263px; height:30px; line-height:30px; padding:0 5px; color:#FFF; font-weight:bold; background-color:#999; border:none; cursor:pointer}
+
+.phantrang{margin-top:5px; text-align:right}
+.phantrang a{margin-right:2px; padding:4px 8px; text-align:center; background-color:#666; color:#FFF}
+.phantrang a:hover{background-color:#ED1E28}
+
+#loading{font-weight:bold; color:#666; margin:30px 0 10px 0; text-align:center}
+#error{font-weight:bold; color:#F00; margin:30px 0 10px 0; text-align:center}
+#message{font-weight:bold; color:#00F; margin:30px 0 10px 0; text-align:center}
+
+#contact{padding:25px}
+#contact #info{line-height:22px}
+#contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
+#contact #info p, #contact #info div {margin:10px 0}
+#contact .txt{width:250px; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .textarea{width:672px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
+
+/* popup */
+#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
+#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
+.popupContactClose{font-weight: bold; cursor:pointer}
+#content_popup{width:750px; height:auto; padding:35px 25px; background-color:#FFF}

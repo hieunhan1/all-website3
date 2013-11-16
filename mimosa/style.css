@@ -1,0 +1,154 @@
+/* CSS Document */
+*{margin:0; padding:0}
+body{font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#FFF; background:url(images/header.gif) repeat-x #363431}
+img{border:0}
+a:link,a:visited,a:active{color:#ff8400; text-decoration:none}
+a:hover{text-decoration:underline}
+hr{height:1px; background-color:#E8E8E8; border:none; margin:0 25px 35px 25px}
+
+#wrapper{width:960px; margin:auto}
+
+#header{height:54px; margin:0 10px}
+#header #search{width:auto; float:right; margin-right:50px; margin-top:10px}
+#header #search #txtsearch{width:218px; height:28px; float:left; background:url(images/txtSearch.gif)}
+#header #search #txtsearch input{background:none; border:none; line-height:28px; width:210px; height:28px; padding:0 4px; color:#FFF}
+#header #search #btnsearch{width:28px; height:28px; float:left; margin-left:5px; background:url(images/btnSearch.gif)}
+#header #search #btnsearch input{background:none; border:none; line-height:28px; width:28px; height:28px; cursor:pointer}
+
+#header #lang{width:auto; float:right; margin-top:12px; line-height:20px}
+#header #lang p{width:auto; float:left; margin-left:20px}
+#header #lang img{float:left; margin-right:5px}
+#header #lang a{color:#FFF; font-size:11px}
+
+#top{height:77px; background:url(images/top.jpg) no-repeat right; margin:0 10px}
+
+#slider{height:455px; padding:11px 15px; margin-bottom:30px; background:url(images/bg-slider.png)}
+
+#menu{height:47px; margin:0 10px; padding:0 10px; background:url(images/bg-menu.gif)}
+
+#content{margin:0 10px; padding-top:20px; background-color:#302f2c}
+
+.home_title{clear:both; font-size:200%; margin:0 0 10px 20px}
+
+.home_cauchuyen{height:200px; width:900px; margin:0 20px 30px 20px; padding:10px 0; border:solid 2px #858477}
+.home_cauchuyen .item_cauchuyen{width:265px; height:180px; float:left; margin-left:10px; padding:10px; line-height:18px}
+.home_cauchuyen .item_cauchuyen img{width:80px; float:left; margin-right:6px}
+.home_cauchuyen .item_cauchuyen h2{font-size:110%; margin-bottom:5px}
+.home_cauchuyen .item_cauchuyen a{color:#ff8400}
+.home_cauchuyen .item_cauchuyen p{height:144px; overflow:hidden; font-size:100%; text-align:justify}
+
+.home_cauchuyen .item_tintuc{width:425px; height:180px; float:left; margin-left:10px; padding:5px; line-height:18px}
+.home_cauchuyen .item_tintuc .img_home{width:190px; height:190px; float:left; overflow:hidden; margin-right:10px}
+.home_cauchuyen .item_tintuc .img_home img{width:190px}
+.home_cauchuyen .item_tintuc h3{font-size:110%; color:#ff8400; margin-bottom:5px}
+.home_cauchuyen .item_tintuc a{color:#ff8400}
+.home_cauchuyen .item_tintuc p{height:144px; overflow:hidden; font-size:100%; text-align:justify}
+
+#home_map{width:430px; height:240px; overflow:hidden; float:right; line-height:20px; text-align:justify; padding:10px; border:solid 2px #a3a2a2}
+
+#menu_foo{clear:both; padding:10px 20px; text-align:right}
+#menu_foo a{font-size:150%; color:#FFF; padding:0 15px}
+#menu_foo a:hover{color:#ff8400}
+
+#footer{clear:both; margin:0 30px}
+#footer #foo_info{width:auto; float:left; font-size:120%; padding-left:25px; background:url(images/icon_foo.png) no-repeat left}
+#footer #foo_social{width:auto; float:right; margin-top:8px}
+#footer #foo_social img{width:39px; height:39px; float:left; margin-left:20px}
+
+#left{width:190px; float:left; margin-left:20px; background:url(images/support.png) no-repeat bottom #282B28}
+#left .left_title{padding:15px 0 15px 20px; font-weight:bold; background-color:#1F1F1E}
+#left .left_item{border-bottom:solid 1px #1F211F}
+#left .left_item a{display:block; padding:15px 0 15px 35px; color:#FFF}
+#left .left_item a:hover{background-color:#8D8D8D; text-decoration:none}
+#left #support{height:115px; margin-top:40px; padding-top:10px; text-align:center}
+#left #support p{font-size:120%; font-weight:bold; color:#ff8400; line-height:28px}
+#left #support a{color:#FFF}
+#left #support span{display:block; padding-right:22px; text-align:right; font-size:120%; font-weight:bold; color:#ff8400}
+
+#right{width:725px; float:right}
+#right h1, #right h4{font-size:180%; color:#ff8400; margin:0 20px 5px}
+#right h2, #right h5{font-size:100%; font-weight:100; line-height:20px; color:#999; margin:0 20px}
+
+
+
+
+
+
+#view_post{clear:both; padding:15px 35px; list-style:inside; margin-bottom:20px; font-size:110%}
+#view_post h1{font-size:200%; line-height:25px; margin-bottom:10px}
+#view_post h2, #view_post h3, #view_post h4, #view_post h5, #view_post h6 {font-size:100%; line-height:20px}
+#view_post div, #view_post p {line-height:20px; margin:10px 0}
+#view_post li{padding:0 0 3px 25px}
+
+#other{clear:both; padding:0 35px}
+#other .title2{font-size:150%; color:#ff8400; font-weight:bold; margin-bottom:10px}
+#other li{clear:both; margin:0 20px; padding:10px 0 10px 30px; list-style:none; font-weight:bold; background:url(images/sao.png) left no-repeat}
+#other a{color:#999}
+
+#list_detail{clear:both; padding:25px; color:#CCC; font-size:120%}
+#list_detail .item_detail{height:140px; overflow:hidden; margin-bottom:30px}
+#list_detail .item_detail .img{width:225px; height:138px; float:left; overflow:hidden; margin-right:15px; border:solid 1px #CCC}
+#list_detail .item_detail .img img{width:225px}
+#list_detail .item_detail h2{font-size:120%; line-height:20px}
+#list_detail .item_detail a{color:#fd6404}
+#list_detail .item_detail .date{font-style:italic; padding:6px 0; color:#999}
+#list_detail .item_detail .content{line-height:19px; height:76px; overflow:hidden}
+
+#list_product{clear:both; padding:25px 0}
+#list_product .item_product{width:206px; height:260px; float:left; margin:0 0 23px 23px; background-color:#1F1F1E; border:solid 3px #3F413F}
+#list_product .item_product .img{width:190px; height:190px; overflow:hidden; text-align:center; margin:8px}
+#list_product .item_product .img img{height:190px}
+#list_product .item_product a{color:#FFF}
+#list_product .item_product a:hover{color:#ff8400}
+#list_product .item_product h3{width:auto; float:left; font-size:95%; font-weight:100; line-height:30px; padding:0 8px}
+#list_product .item_product p{line-height:18px; height:54px; overflow:hidden}
+#list_product .item_product .product_title{height:30px; border-bottom:solid 1px #3F413F; border-top:solid 1px #3F413F}
+.dathang{width:auto; float:right; padding-top:5px; cursor:pointer}
+.lienhe{display:none; width:auto; float:right; font-size:80%; margin:7px; padding:2px 10px; cursor:pointer; background-color:#828282}
+.trash{font-weight:bold; color:#ff8400; font-size:120%; padding:10px; cursor:pointer}
+.muahang{width:200px; padding:5px 0; text-align:center; margin:auto; background-color:#676767; cursor:pointer}
+
+#contact{padding:25px; font-size:120%}
+#contact #info{line-height:22px}
+#contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
+#contact #info p, #contact #info div {margin:10px 0}
+#contact .txt{width:300px; padding:5px; background-color:#f2f2f2; border:solid 1px #CCC}
+#contact .textarea{width:300px; height:100px; resize:none; overflow:hidden; padding:5px; background-color:#f2f2f2; border:solid 1px #CCC}
+#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#fd6d13; border:none; cursor:pointer}
+
+#phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
+#phantrang a:hover{background-color:#fd6d13}
+
+#navigator{clear:both; color:#8C8C8C; margin:0 10px; padding:10px 30px; background-color:#1a1a1a}
+#navigator a{color:#8C8C8C}
+#navigator a:hover{color:#ff8400}
+
+/*menu*/
+#nav, #nav ul {list-style:none; position:relative; z-index:1000}
+#nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
+#nav li a {line-height:47px; color:#FFF; font-size:14px; text-transform:uppercase; padding:0 15px; background:url(images/bg-menu-line.gif) no-repeat left; letter-spacing:1px; word-spacing:2px}
+#nav a:hover {background:url(images/bg-menu-ac.gif) !important}
+#nav li {float:left; position:relative}
+#nav ul {position:absolute; width:160px; top:47px; display:none}
+#nav li ul a {width:160px; line-height:30px; float:left; color:#CCC; text-transform:none; font-size:100%; font-weight:normal; padding:0 25px; background-color:#333; border-bottom:solid 1px #404040}
+#nav li ul a:hover {background-color:#080808; color:#FFF}
+#nav ul ul {top:auto}
+#nav li ul ul {left:211px}
+#nav li:hover ul ul,
+#nav li:hover ul ul ul,
+#nav li:hover ul ul ul ul {display:none}
+#nav li:hover ul,
+#nav li li:hover ul,
+#nav li li li:hover ul,
+#nav li li li li:hover ul {display:block}
+
+/* popup */
+#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
+#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
+.popupContactClose{font-weight: bold; cursor:pointer}
+#content_popup{width:890px; height:auto; padding:35px 25px; background-color:#3A3A3A}
+#content_popup h1{font-size:200%; color:#fd6d13; margin-bottom:10px}
+#content_popup .img{width:500px; float:left; overflow:hidden}
+#content_popup .img img{width:492px; border:solid 4px #1A1A1A}
+#content_popup #content_pp{width:370px; float:right; line-height:20px; margin-bottom:30px}
+#content_popup #content_pp p, #content_popup #content div {margin:10px 0}
