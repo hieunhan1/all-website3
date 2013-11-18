@@ -12,7 +12,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 
 #wrapper{width:1000px; margin:0 auto; padding:1px 8px 0 8px}
 
-#top{height:110px}
+#top{height:110px; overflow:hidden}
 #top #logo{width:auto; float:left; margin-top:23px}
 #top #company_search{width:500px; float:left; margin-left:40px}
 #top #company_search #company{word-spacing:12px; color:#555; font-size:21px; margin-top:15px}
@@ -28,7 +28,9 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #top #support{width:178px; height:38px; float:right; padding:10px; background:url(images/images_top.gif) no-repeat; background-position:0px -109px}
 
 #home_about{margin-top:20px; line-height:25px; font-size:14px}
-#home_about #home_video{width:280px; float:right}
+#home_about #home_about_info{width:690px; float:left; overflow:hidden}
+#home_about #home_about_info p{width:100%; text-align:justify; clear:both}
+#home_about #home_video{width:280px; float:right; overflow:hidden}
 #home_about #home_video iframe{width:100%; height:230px}
 #home_about h1{color:#DA251E; font-size:100%; padding-top:5px}
 #home_about h3{color:#DA251E; font-size:100%; padding-top:5px}

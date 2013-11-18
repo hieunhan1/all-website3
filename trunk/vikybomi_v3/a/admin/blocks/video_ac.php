@@ -60,7 +60,7 @@ if(!empty($_POST)){
 // form
 echo "
 <form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
+<table width='900' border='0' cellspacing='0' cellpadding='5'>
 ";
 //date create
 echo $date_create;
@@ -136,27 +136,26 @@ $orther = "
 <script>
 CKEDITOR.replace( 'content', {
 	uiColor: '#b5d8ef',
-	filebrowserBrowseUrl: 'ckeditor/ckfinder/ckfinder.html',
-	filebrowserImageBrowseUrl: 'ckeditor/ckfinder/ckfinder.html?Type=Images',
-	filebrowserFlashBrowseUrl: 'ckeditor/ckfinder/ckfinder.html?Type=Flash',
+	filebrowserBrowseUrl: 'ckeditor/ckfinder/ckfinder.php',
+	filebrowserImageBrowseUrl: 'ckeditor/ckfinder/ckfinder.php?Type=Images',
+	filebrowserFlashBrowseUrl: 'ckeditor/ckfinder/ckfinder.php?Type=Flash',
 	filebrowserUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
 	filebrowserImageUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
 	filebrowserFlashUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-	filebrowserWindowWidth: '640',
-	filebrowserWindowHeight: '480',
+	filebrowserWindowWidth: '900',
+	filebrowserWindowHeight: '600',
 	toolbar:
 	[
 	['Source','-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
 	['Undo','Redo','-','Find','Replace','-','RemoveFormat'],
 	['Link','Unlink','Iframe'],
 	['Maximize', 'ShowBlocks'],
-	'/',
-	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
 	['Image','Flash', 'Video', 'Table'],
+	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
 	'/',
 	['Styles','Format','Font','FontSize'],
+	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 	['TextColor','BGColor','-','HorizontalRule','Smiley','SpecialChar','PageBreak']
 	]
 	});
