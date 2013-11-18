@@ -121,9 +121,9 @@ echo $form->DisplayProperties();
 $form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();*/
 //tel
-/*if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
+if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
 $form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 100);
-echo $form->DisplayProperties();*/
+echo $form->DisplayProperties();
 //facebook
 /*if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];
 $form->getProperties('Hotline', 'facebook', 1, 'input_medium', $value, 30);
