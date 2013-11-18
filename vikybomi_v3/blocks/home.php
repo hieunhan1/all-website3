@@ -2,7 +2,7 @@
 $qr = $tc->home_about($idMenu);
 $row = mysql_fetch_array($qr);
 $str_home = '<div id="home_about">
-	<div style="width:690px; float:left"><h1>'.$row['name'].'</h1><p align="justify">'.$row['metaDescription'].'</p><p align="right" style="font-weight:bold"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">Xem thêm..</a></p></div>';
+	<div id="home_about_info"><h1>'.$row['name'].'</h1>'.$row['metaDescription'].'<div style="clear:both; font-weight:bold; text-align:right"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">Xem thêm..</a></div></div>';
 	
 $qr = $tc->home_video($idMenu);
 $row = mysql_fetch_array($qr);
@@ -10,7 +10,7 @@ $str_home .= '<div id="home_video"><iframe src="'.$row['link'].'?origin=www.viky
 	<div style="clear:both; height:1px"></div>
 </div>';
 echo $str_home;
-echo $qr	= "SELECT id,name,url,url_hinh,type_id FROM menu WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY `order`";
+
 $qr_list = $tc->home_danhmuc($lang); 
 while($row_list = mysql_fetch_array($qr_list)){
 	if($row_list['type_id']==3){
