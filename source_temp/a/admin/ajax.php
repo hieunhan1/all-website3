@@ -1,6 +1,6 @@
 <?php session_start();
-if(@$_SESSION["username_admin"]) {
-	$user = $_SESSION["username_admin"];
+if(@$_SESSION["id_admin"]) {
+	$user = $_SESSION["Username"];
 	
 	require_once 'config.php';
 	require_once DIR.'class.quantri.php';
@@ -47,12 +47,6 @@ if(@$_SESSION["username_admin"]) {
 		$qr = mysql_query("SELECT name FROM info WHERE id=".$_POST['info_id']);
 		$row = mysql_fetch_array($qr);
 		echo $row['name'];
-	}
-	
-	/* popup */
-	if(@$_POST['item_status']){
-		if($_POST['status']==0) $status=1; else $status=0;
-		mysql_query("UPDATE answers SET status={$status} WHERE id=".$_POST['id']);
 	}
 }
 ?>
