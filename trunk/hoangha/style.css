@@ -25,7 +25,9 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
 #header{height:95px}
 #header #logo{width:auto; float:left; margin-top:19px}
-#header #search{width:auto; float:right; margin-top:35px}
+#header #search{width:auto; float:right; margin-top:15px}
+#header #search #hotline{width:auto; clear:both; color:#666; font-size:110%; text-align:right; margin:0 33px 15px 0}
+#header #search #hotline b{color:#ED1E28; font-size:130%}
 #header #search #txtsearch{width:230px; float:left}
 #header #search #txtsearch input{background-color:#CCC; border:none; line-height:25px; width:220px; height:25px; padding:0 5px; color:#666}
 #header #search #btnsearch{width:27px; height:25px; float:left; margin-left:5px; background:url(images/btnSearch.jpg)}
