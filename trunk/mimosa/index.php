@@ -41,7 +41,7 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : $detail = $tc->detail_info($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/articles.php'); break;
-			case 3 : $detail = $tc->detail_product($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/product_list.php'); break;
+			case 3 : $deny_click = 'oncontextmenu="return false"'; $detail = $tc->detail_product($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/product_list.php'); break;
 			default: echo '<div id="left"><p><font color="#FF0000"><b>Could not be found</b></font></p></div>';
 		}
 		$include = ob_get_clean();
@@ -76,7 +76,7 @@ if(@$_GET['danhmuc']){
 <script type="text/javascript" src="website.js"></script>
 </head>
 
-<body oncontextmenu="return false">
+<body <?php echo $deny_click;?> >
 
 <div id="wrapper">
 
