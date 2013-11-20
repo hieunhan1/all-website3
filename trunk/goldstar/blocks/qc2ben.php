@@ -70,5 +70,5 @@ echo '</div> ';
     }  
 </script> 
 <script> 
-document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 100;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>"); 
+document.write("<script type='text/javascript' language='javascript'>MainContentW = 1016;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 100;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>"); 
 </script>

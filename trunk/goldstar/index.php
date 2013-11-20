@@ -100,7 +100,7 @@ $row = mysql_fetch_array($qr);
         	<div id="company"></div>
             <div id="icon_giohang" style="float:right; margin:19px 20px 0 40px"><a href="<?php echo $row['url'];?>"><img src="images/gio-hang.jpg" alt="Giỏ hàng" /></a></div>
             <div id="search">
-            	<input type="text" name="txtSearch" value="<?php echo const_txt_search;?>" onclick="if(value=='<?php echo const_txt_search;?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search;?>'" class="txtSearch" />
+            	<input type="text" name="txtSearch" value="<?php echo const_txt_search;?>" onclick="if(value=='<?php echo const_txt_search;?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search;?>'" id="txtSearch" class="txtSearch" />
                 <input type="button" name="btnSearch" value="&nbsp;" class="btnSearch" />
             </div>
         </div>
@@ -158,22 +158,6 @@ $row = mysql_fetch_array($qr);
 <?php include_once('blocks/qc2ben.php');?>
 <script type="text/javascript" src="library/jquery.corner.js"></script>
 <script type="text/javascript" src="website.js"></script>
-
-<script type="text/javascript">
-function SearchGoogle(){
-	var key = document.getElementById("key_search").value;
-	var site = document.domain;
-	var qs = key + "+site:" + site;
-	var url = "http://www.google.com.vn/#sclient=psy-ab&hl=vi&site=&source=hp&q=" + qs + "&pbx=1&oq=" + qs + "&aq=f&aqi=&aql=1&gs_sm=e";
-	window.open(url, "_blank");
-	return false;
-}
-$(document).ready(function() {
-	$("#key_search").keydown(function(e){
-		if(e.keyCode==13) SearchGoogle();
-	});
-});
-</script>
 <?php mysql_close();?>
 </body>
 </html>
