@@ -75,6 +75,15 @@ function facebook_share(link_share){
 	return false;
 }
 
+function SearchGoogle(id_txt_search){
+	var key = document.getElementById(id_txt_search).value;
+	var site = document.domain;
+	var qs = key + "+site:" + site;
+	var url = "http://www.google.com.vn/#sclient=psy-ab&hl=vi&site=&source=hp&q=" + qs + "&pbx=1&oq=" + qs + "&aq=f&aqi=&aql=1&gs_sm=e";
+	window.open(url, "_blank");
+	return false;
+}
+
 function sroll_top(){
 	$("html, body").animate({ scrollTop: 0 }, 500);
 	return false;
@@ -85,6 +94,13 @@ $(document).ready(function($){
 		$(this).find('ul:first').css({visibility: 'visible', display: 'none'}).show(200);
 	}, function(){
 		$(this).find('ul:first').css({visibility: 'hidden'});
+	});
+	
+	$("#txtSearch").keydown(function(e){
+		if(e.keyCode==13) SearchGoogle("txtSearch");
+	});
+	$("input[name=btnSearch]").click(function(){
+		SearchGoogle("txtSearch");
 	});
 	
 	$('#run_top').click(function(){
