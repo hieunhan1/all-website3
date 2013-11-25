@@ -77,7 +77,7 @@ if($_POST['form_thanhtoan']=='form_thanhtoan'){
 	$diachi = trim($_POST['diachi']);
 	$message = trim($_POST['message']);
 	
-	if($name!='' && $email!='' && $phone!=''){
+	if($name!='' && $phone!='' && $diachi!=''){
 		$id_order = date('ymdis');
 		$sosp = count($_SESSION['list_soluong']);
 		if ($sosp > 0){
