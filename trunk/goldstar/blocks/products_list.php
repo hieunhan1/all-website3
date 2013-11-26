@@ -7,11 +7,17 @@
     </div>
     
     <?php
+	$from = (($page - 1) * max_limit_2);
+	$select = 'name,name_rewrite,price,price_km,url_hinh,menu_id';
+	$table = 'products';
+	$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
+	$limit = "LIMIT {$from},".max_limit_2;
+	$list = $tc->list_item($select,$table,$where,$limit);
+	
     echo "<h1>{$row_menu_one['title']}</h1> <h2>{$row_menu_one['metaDescription']}</h2>";
 	
 	echo '<div class="list_product">';
-	$qr2 = $tc->home_list_product($idMenu);
-	while($row2 = mysql_fetch_array($qr2)){
+	while($row2 = mysql_fetch_array($list)){
 		$i++;
 		$style = 'style="width:180px; margin:3px"';
 		
@@ -24,6 +30,8 @@
 			<h3>'.$row2['name'].'</h3></a>'.$price.'
 		</div>';
 	}
+	$phantrang = $tc->phantrang($danhmuc,$page,max_limit_2,'id',$table,$where);
+	echo "<div style='clear:both; height:20px'></div><div id=\"phantrang\">{$phantrang}</div>";
 	echo '</div>';
 	?>
 </div>

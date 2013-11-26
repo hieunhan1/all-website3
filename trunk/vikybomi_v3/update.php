@@ -9,14 +9,14 @@ define(does_not_exist,'Mục này không tồn tại.');
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
-$from = 'video';
+/*$from = 'video';
 $qr = mysql_query("SELECT * FROM {$from}");
 while($row = mysql_fetch_array($qr)){
 	$id = $row['id'];
 	$name_rewrite = $row['name_rewrite'].'-d'.$id;
 	echo $name_rewrite.'<br>';
 	mysql_query("UPDATE {$from} SET name_rewrite='{$name_rewrite}' WHERE id='{$id}'");
-}
+}*/
 
 /*$from = 'menu';
 $qr = mysql_query("SELECT * FROM {$from} WHERE type_id=4");
@@ -27,3 +27,5 @@ while($row = mysql_fetch_array($qr)){
 	echo $name_rewrite.'<br>';
 	mysql_query("UPDATE {$from} SET name_rewrite='{$name_rewrite}',url='{$link}' WHERE id='{$id}'");
 }*/
+?>
+<img src="http://www.vikybomi.com.vn/upload/images/products/bot-banh-bao-trang-vang-xanh.jpg" />

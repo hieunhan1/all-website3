@@ -35,6 +35,7 @@ if(@$_GET['danhmuc']){
 		if($type==2) include_once('blocks/articles_list.php');
 		elseif($type==3) include_once('blocks/products_list.php');
 		elseif($type==4) include_once('blocks/giohang.php');
+		elseif($type==5) include_once('blocks/video_list.php');
 		elseif($type==8) include_once('blocks/contact.php');
 		else $view_post = '<font color="#FF0000"><b>Could not be found</b></font>';
 		$include = ob_get_clean();
@@ -51,6 +52,11 @@ if(@$_GET['danhmuc']){
 			$row_detail = mysql_fetch_array($detail);
 			($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.url_product_image_thumb.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image;
 			include_once('blocks/products.php');
+		}elseif($type==5){
+			$detail = $tc->info_video($dt);
+			$row_detail = mysql_fetch_array($detail);
+			($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.url_video_image_thumb.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image;
+			include_once('blocks/video.php');
 		}else{
 			echo '<div id="left"><p><font color="#FF0000"><b>Could not be found</b></font></p></div>';
 		}
