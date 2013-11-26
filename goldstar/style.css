@@ -111,6 +111,13 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #baiviet #right_baiviet .title_baiviet{color:#FFF; font-size:110%; font-weight:bold; text-transform:uppercase; padding:8px 20px; background-color:#DC8B3C}
 #baiviet #right_baiviet .item_baiviet_2{margin:0 5px; padding:6px 10px; line-height:20px; border-bottom:dashed 1px #CCC}
 
+.item_video{width:460px; height:410px; float:left; line-height:22px; margin:0 20px}
+.item_video h3{font-size:135%; font-weight:100}
+.item_video .date_video{color:#999; font-style:italic; margin-bottom:5px}
+.item_video .img_video{width:460px; height:235px; margin-bottom:5px; background-color:#000}
+.item_video .img_video div{height:230px; overflow:hidden}
+.item_video .img_video img{width:450px; margin:5px}
+
 #contact{padding:25px}
 #contact #info{line-height:22px}
 #contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
@@ -132,7 +139,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:30px; color:#FFF; font-weight:bold; padding:0 30px} /* letter-spacing:1px; word-spacing:2px */
+#nav li a {line-height:30px; color:#FFF; font-weight:bold; padding:0 25px} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; color:#FFF200}
 #nav li {float:left; position:relative}
 #nav ul {width:160px; position:absolute; top:30px; display:none}

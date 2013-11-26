@@ -96,9 +96,9 @@ class trangchu extends db {
 		if($total_pages > 1){
 			for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
 				} elseif($i>0) {
-					$str .= "<a href='{$link}{$i}/'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
 				}
 			}
 		}
@@ -142,6 +142,10 @@ class trangchu extends db {
 		$qr = "SELECT id,name,name_rewrite,price,price_km,url_hinh,metaDescription,content,metaKeyword FROM products WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
+	function info_video($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,link,metaDescription,content,metaKeyword FROM video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
 	function insert_donhang($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
 		$qr = "INSERT INTO `donhang` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
@@ -151,6 +155,12 @@ class trangchu extends db {
 	function insert_donhang_chitiet($donhang_id,$products_id,$soluong){
 		$qr = "INSERT INTO `donhang_chitiet` VALUES ('','{$donhang_id}','{$products_id}','{$soluong}')";
 		mysql_query($qr);
+	}
+	
+	/*video*/
+	function video_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
+		return mysql_query($qr);
 	}
 }// end trangchu
 ?>
