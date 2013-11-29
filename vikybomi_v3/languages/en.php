@@ -12,4 +12,4 @@ define(const_contact_diachi, 'Address');
 define(const_contact_message, 'Message');
 define(const_contact_sent, 'SEND');
 
-define(const_contact_product, 'Contact: 08 3855 0213');
+define(const_contact_product, 'Contact: 08 3854 7777');

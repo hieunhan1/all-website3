@@ -12,4 +12,4 @@ define(const_contact_diachi, 'Địa chỉ');
 define(const_contact_message, 'Nội dung');
 define(const_contact_sent, 'GỬI ĐI');
 
-define(const_contact_product, 'Liên hệ: 08 3855 0213');
+define(const_contact_product, 'Liên hệ: 08 3854 7777');
