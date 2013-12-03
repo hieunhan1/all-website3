@@ -4,7 +4,7 @@ Do:		DA251E
 Xanh:	0048FF
 */
 *{margin:0; padding:0}
-body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333} /* cursor: url("http://bangvu.net/2trochuot/clovel.cur"), progress */
 img{border:0}
 a:link,a:visited,a:active{color:#0048FF; text-decoration:none}
 a:hover{color:#DA251E; text-decoration:underline}

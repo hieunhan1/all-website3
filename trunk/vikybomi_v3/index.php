@@ -165,6 +165,7 @@ if(@$_GET['danhmuc']){
 </div>
 <?php
 include_once('blocks/buy.php');
+include_once('blocks/qc2ben.php');
 mysql_close();
 ?>
 <script type="text/javascript">
