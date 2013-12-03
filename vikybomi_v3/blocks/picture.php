@@ -35,7 +35,7 @@ echo '
 	<div class="viewpost">
 		<h1>'.$row_detail['name'].'</h1>
 		<div class="date">Ngày đăng '.date('d-m-Y H:i', strtotime($row_detail['date_create'])).'</div>
-		<h2>'.$row_menu_one['metaDescription'].'</h2>
+		<h2>'.$row_detail['metaDescription'].'</h2>
 		'.$str_image.'
 	</div>
 </div>

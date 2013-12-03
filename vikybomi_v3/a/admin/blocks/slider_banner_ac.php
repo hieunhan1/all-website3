@@ -115,12 +115,12 @@ $form->getProperties('Danh mục', NULL, 41, 'list_check', $values, $checks, 'ch
 echo $form->DisplayProperties();
 
 //vị trí
-$level = '0';
-$style1 = '';
-$style2 = '';
-$str_query = array("SELECT id, name FROM slider_banner_position ", " WHERE `delete`=");
-$form->getProperties($level, $style1, 9, $style2, $str_query);
-$values = $form->DisplayProperties();
+$values = array();
+$str = mysql_query("SELECT id, name FROM slider_banner_position WHERE `delete`=0");
+while($row = mysql_fetch_array($str)){
+	$values[] = array('id'=>$row['id'], 'name'=>$row['name']);
+}
+
 if(@$_POST['position_id']) $check = $_POST['position_id']; else $check = $detail['position_id'];
 $form->getProperties('Vị trí', 'position_id', 6, 'input_large', $values, $check);
 echo $form->DisplayProperties();
