@@ -4,7 +4,7 @@ Do:		DA251E
 Xanh:	0048FF
 */
 *{margin:0; padding:0}
-body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333} /* cursor: url("http://bangvu.net/2trochuot/clovel.cur"), progress */
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333}
 img{border:0}
 a:link,a:visited,a:active{color:#0048FF; text-decoration:none}
 a:hover{color:#DA251E; text-decoration:underline}
@@ -13,7 +13,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #wrapper{width:1000px; margin:0 auto; padding:1px 8px 0 8px}
 
 #top{height:110px; overflow:hidden}
-#top #logo{width:auto; float:left; margin-top:23px}
+#top #logo{width:auto; float:left; margin-top:10px} /* margin-top:23px */
 #top #company_search{width:500px; float:left; margin-left:40px}
 #top #company_search #company{word-spacing:12px; color:#555; font-size:21px; margin-top:15px}
 #top #company_search #search{width:315px; height:30px; float:left; margin-top:19px; background:url(images/images_top.gif) no-repeat; background-position:0px -39px}
@@ -38,7 +38,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .home_list_sp{clear:both}
 .home_sp_title{clear:both; padding:20px 0 5px}
 
-.home_sp_item{width:184px; height:235px; float:left; color:#666; margin-bottom:5px; padding:5px; border:solid 1px #CFCFCF}
+.home_sp_item{width:184px; height:235px; float:left; color:#666; margin-bottom:5px; padding:5px; border:solid 1px #CFCFCF; background-color:#FFF}
 .home_sp_item .home_sp_img{height:140px; overflow:hidden; text-align:center; margin-bottom:10px}
 .home_sp_item .home_sp_img img{height:140px}
 .home_sp_item h3{font-size:100%; line-height:20px; margin-bottom:8px}
