@@ -1,11 +1,11 @@
 <?php
 $slider = $tc->slider_banner(4);
-echo '<div id="divAdRight" style="DISPLAY: none; POSITION: absolute; TOP: 0px">';
+echo '<div id="divAdRight" style="display:none; position:absolute; top:0px; z-index:1">';
 while($row_slider = mysql_fetch_array($slider)){
 	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" style="display:block; margin-bottom:5px"><img src="'.url_catalog_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
 }
 
-echo '</div><div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px">';
+echo '</div><div id="divAdLeft" style="display:none; position:absolute; top:0px; z-index:1">';
 $slider = $tc->slider_banner(3);
 while($row_slider = mysql_fetch_array($slider)){
 	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" style="display:block; margin-bottom:5px"><img src="'.url_catalog_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
@@ -45,7 +45,7 @@ echo '</div> ';
             ftlObj.sP(ftlObj.x, ftlObj.y); 
             ftlObj2.y += (pY+startLY-ftlObj2.y)/16; 
             ftlObj2.sP(ftlObj2.x, ftlObj2.y); 
-            setTimeout("stayTopLeft()", 1); 
+            setTimeout("stayTopLeft()", 10);
         } 
         ftlObj = ml("divAdRight"); 
         //stayTopLeft(); 
@@ -70,5 +70,5 @@ echo '</div> ';
     }  
 </script> 
 <script> 
-document.write("<script type='text/javascript' language='javascript'>MainContentW = 1002;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 100;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>"); 
+document.write("<script type='text/javascript' language='javascript'>MainContentW = 1002;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 10;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>"); 
 </script>
