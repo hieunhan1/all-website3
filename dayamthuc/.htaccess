@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^dayamthuc.vn
+RewriteRule ^(.*)$ http://www.dayamthuc.vn/$1 [R=permanent,L]
+RewriteRule index.html index.php
+RewriteRule (.*)/$ index.php?danhmuc=$1
+RewriteRule (.*)/(.*).html$ index.php?danhmuc=$1&detail=$2
+RewriteRule dang-ky-truc-tuyen.html index.php?p=dangky
+RewriteRule dang-ky-truc-tuyen-([0-9]+).html$ index.php?p=dangky&id=$1
+ErrorDocument 404 http://www.dayamthuc.vn
