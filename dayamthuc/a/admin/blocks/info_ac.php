@@ -60,7 +60,7 @@ if(!empty($_POST)){
 // form
 echo "
 <form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
+<table width='900' border='0' cellspacing='0' cellpadding='5'>
 ";
 //date create
 echo $date_create;
