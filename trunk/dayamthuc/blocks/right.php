@@ -1,19 +1,11 @@
 <div class='boxright'><div class='title'><span style="background:url(images/icon-right.jpg) left no-repeat"><a href='hoat-dong-cua-truong-netspace/'><font color="#DA251D">&nbsp; &nbsp; &nbsp; Video hoạt động</font></a></span></div>
 	<?php
-    $qr = mysql_query("SELECT name,link_video FROM video WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 3");
+    $qr = mysql_query("SELECT name,name_rewrite,url_hinh,link_video,menu_id FROM video WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 3");
 	$data="";
-	while($row = mysql_fetch_assoc($qr))
+	while($row = mysql_fetch_array($qr))
 	{
-		$data[]=$row;
+		echo '<div class="item"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'"><div class="img_video"><img src="'.url_video_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div></a></div>';
 	}
-	if(is_array($data))
-	{ 
-		foreach($data as $dt)
-			echo '<div class="item"><iframe  width="260px" height="200px" src="'.$dt['link_video'].'?origin=http://'.$domain.'&rel=0" frameborder="0"></iframe></div>';
-	}
-	else
-		echo '<div class="item"></div>';
-	
 	?>
 </div>
 
@@ -55,17 +47,18 @@ while($row_banner = mysql_fetch_array($banner)){
 </div>
 
 <div class='boxright'>
-	<a href="danh-muc/Thong-Tin-Hoc-Nau-An-6-1.html" title="Thông tin học nấu ăn">
+	<!--<a href="danh-muc/Thong-Tin-Hoc-Nau-An-6-1.html" title="Thông tin học nấu ăn">
 		<img alt="Thông tin học nấu ăn" src="upload/images/slider_banner/Untitled-1-01.gif" style="margin:5px 0" />
-	</a>
-	<!--<div class='title'><a href="danh-muc/Thong-Tin-Hoc-Nau-An-6-1.html" title="Thông tin học nấu ăn"><span style="background:url(images/newsEventsIcon.jpg) left no-repeat; color:#ED1C24">&nbsp; &nbsp; &nbsp;Thông tin học nấu ăn</span></a></div>-->
+	</a>-->
+	<div class="title"><a href="danh-muc/Thong-Tin-Hoc-Nau-An-6-1.html" title="Thông tin học nấu ăn"><span style="background:url(images/newsEventsIcon.jpg) left no-repeat; color:#ED1C24">&nbsp; &nbsp; &nbsp;Thông tin học nấu ăn</span></a></div>
     <?php
-    /*$newsevent = $tc->NewsEvent(6,4);
+    $newsevent = $tc->NewsEvent(6,8);
 	while($row_newsevent = mysql_fetch_array($newsevent)) {
 		echo "<div class='boxevent'><a href='{$linkpost}{$row_newsevent[name_rewrite]}-{$row_newsevent[id]}.html'><img src='".url_articles_thumb_image."{$row_newsevent[url_hinh]}' alt='{$row_newsevent[name]}' /><h4>{$row_newsevent[name]}</h4></a><div style='clear:both'></div></div>";
-	}*/
+	}
 	?>
 </div>
+
 <div class='boxright'>
 	<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftruong.day.am.thuc.netspace&amp;width=265&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:265px; height:290px;" allowTransparency="true"></iframe>
 	

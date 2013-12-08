@@ -54,63 +54,35 @@
 				<select name="KhoaHoc" style="width:333px;">
 				<option value='Chưa chọn khóa học'>--- Chọn khóa học ---</option>
 				<?php
-					if(@$page) $id_choose = $page; else $id_choose = 0;
-					$chuongtrinh = $tc->chuongtrinhdaotao(3);
-					while($row_ct = mysql_fetch_assoc($chuongtrinh))
-					{
-						$list[]=$row_ct;
-					}
-					foreach($list as $list_cm)
-					{
-						echo "<optgroup label='".$list_cm['name']."'>";
-						if($list_cm['id']==22)
-						{
-							$cmchuongtrinh=$tc->chuongtrinhdaotao($list_cm['id'],NULL);
-							$list_cmct="";
-							while($row_ctcm=mysql_fetch_assoc($cmchuongtrinh))
-							{
-								$list_cmct[]=$row_ctcm;
-							}
-							foreach($list_cmct as $list2)
-							{
-								echo "<optgroup label='&nbsp;&nbsp;+".$list2['name']."'>";
-								$cmchuongtrinh2=$tc->BaiVietTrangChu($list2['id'],NULL);
-								$list_cmct2="";
-								while($row_ctcm2=mysql_fetch_assoc($cmchuongtrinh2))
-								{
-									$list_cmct2[]=$row_ctcm2;
-								}
-								foreach($list_cmct2 as $list3)
-								{
-									echo "<option value='".$list3['name']."'>".$list3['name']."</option>";
-								}
-								echo "</optgroup>";
-							}
+				$i = 0;
+				$chuongtrinh = $tc->chuongtrinhdaotao(3);
+				while($row = mysql_fetch_array($chuongtrinh)){
+					$i++;
+					if($i!=1){
+						$view_ct .= '<optgroup label="'.$row['name'].'">';
+						$chuongtrinh2 = $tc->chuongtrinhdaotao($row['id']);
+						$ct_info = $tc->BaiVietTrangChu($row['id'],NULL);
+						while($row_ct_info = mysql_fetch_assoc($ct_info)) {
+							if($page!=$row_ct_info['id']) $selected = ''; else $selected = 'selected="selected"';
+							$view_ct .= '<option value="'.$row_ct_info['name'].'" '.$selected.'>'.$row_ct_info['name'].'</option>';
 						}
-						else
-						{
-							$cmchuongtrinh=$tc->chuongtrinhdaotao($list_cm['id'],NULL);
-							$list_cmct="";
-							while($row_ctcm=mysql_fetch_assoc($cmchuongtrinh))
-							{
-								$list_cmct[]=$row_ctcm;
+						$view_ct .= "</optgroup>";
+					}else{
+						$view_ct .= '<optgroup label="'.$row['name'].'">';
+						$chuongtrinh2 = $tc->chuongtrinhdaotao($row['id']);
+						while($row2 = mysql_fetch_array($chuongtrinh2)){
+							$view_ct .= '<optgroup label=" &nbsp; - '.$row2['name'].'">';
+							$ct_info = $tc->BaiVietTrangChu($row2['id'],NULL);
+							while($row_ct_info = mysql_fetch_assoc($ct_info)) {
+								if($page!=$row_ct_info['id']) $selected = ''; else $selected = 'selected="selected"';
+								$view_ct .= '<option value="'.$row_ct_info['name'].'" '.$selected.'> &nbsp; + '.$row_ct_info['name'].'</option>';
 							}
-							foreach($list_cmct as $list2)
-							{
-								$cmchuongtrinh2=$tc->BaiVietTrangChu($list2['id'],NULL);
-								$list_cmct2="";
-								while($row_ctcm2=mysql_fetch_assoc($cmchuongtrinh2))
-								{
-									$list_cmct2[]=$row_ctcm2;
-								}
-								foreach($list_cmct2 as $list3)
-								{
-									echo "<option value='".$list3['name']."'>".$list3['name']."</option>";
-								}
-							}
+							$view_ct .= "</optgroup>";
 						}
-						echo "</optgroup>";
+						$view_ct .= "</optgroup>";
 					}
+				}
+				echo $view_ct;
 				?>
 				</select>
 			</td>
@@ -127,11 +99,12 @@
 		  </tr>
           <tr>
             <td colspan="2"><em>Là thành viên Hội đầu bếp chuyên nghiệp Sài Gòn:</em>
-              <input type="radio" name="ThanhVienHoi" value="Có" />Có &nbsp; 
-              <input type="radio" name="ThanhVienHoi" value="Không" checked="checked" />Không
+              <input type="radio" name="ThanhVienHoi" value="Có" /> Có &nbsp; &nbsp; 
+              <input type="radio" name="ThanhVienHoi" value="Không" checked="checked" /> Không
             </td>
           </tr>
-          <tr><td>&nbsp;</td>
+          <tr>
+            <td>&nbsp;</td>
             <td><input name="btnSend" type="submit" value="ĐĂNG KÝ" style="padding:5px 25px" /></td>
           </tr>
         </table>

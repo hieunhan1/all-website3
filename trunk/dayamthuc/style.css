@@ -287,15 +287,24 @@ h2 {
     padding: 3px 0 3px 10px;
 }
 #wrapper #right .boxright .item {
+	width:260px;
+	height:180px;
     line-height: 22px;
     margin-bottom: 20px;
-    text-align: center;
+	background:url(images/video2.gif);
 }
 #wrapper #right .boxright .item h5 {
     font-size: 13px;
 }
-#wrapper #right .boxright .item img {
-    height: 200px;
+#wrapper #right .boxright .item .img_video {
+    width:248px;
+	height:159px;
+	overflow:hidden;
+	margin:6px;
+}
+#wrapper #right .boxright .item .img_video img {
+    width:248px;
+	margin-top:6px;
 }
 #toppage {
     float: right;
