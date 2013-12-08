@@ -5,7 +5,7 @@ class trangchu extends db {
 	function XemChiTiet($idMenu, $idTin) {
 		switch(' '){
 			case ($idMenu!='') : $qr = "SELECT id,name,name_rewrite,url,url_hinh,title,metaDescription,metaKeyword,type_id FROM menu WHERE id='{$idMenu}' AND status=1 AND `delete`=0"; break;
-			case ($idTin!='') : $qr = "SELECT id,name,name_rewrite,url_hinh,description,content,metaKeyword FROM info WHERE id='{$idTin}' AND status=1 AND `delete`=0"; break;
+			case ($idTin!='') : $qr = "SELECT id,name,name_rewrite,url_hinh,description,content,metaKeyword,other2 FROM info WHERE id='{$idTin}' AND status=1 AND `delete`=0"; break;
 		}
 		return mysql_query($qr);
 	}
