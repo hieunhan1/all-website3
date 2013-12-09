@@ -127,7 +127,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin:0 25px 35px 25px}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
 #nav li a {line-height:47px; color:#FFF; font-size:14px; text-transform:uppercase; padding:0 15px; background:url(images/bg-menu-line.gif) no-repeat left; letter-spacing:1px; word-spacing:2px}
-#nav a:hover {background:url(images/bg-menu-ac.gif) !important}
+#nav a:hover {background:url(images/bg-menu-ac.gif) !important; text-decoration:none}
 #nav li {float:left; position:relative}
 #nav ul {position:absolute; width:160px; top:47px; display:none}
 #nav li ul a {width:160px; line-height:30px; float:left; color:#CCC; text-transform:none; font-size:100%; font-weight:normal; padding:0 25px; background-color:#333; border-bottom:solid 1px #404040}
