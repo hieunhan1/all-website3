@@ -128,6 +128,10 @@ echo $form->DisplayProperties();
 if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
 $form->getProperties('Hotline', 'tel', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
+//hotline
+if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
+$form->getProperties('Contact sản phẩm', 'hotline', 1, 'input_medium', $value, 100);
+echo $form->DisplayProperties();
 //facebook
 if(@$_POST['contact']) $value = $_POST['contact']; else $value = $detail['contact'];
 $form->getProperties('Liên hệ footer', 'contact', 1, 'input_medium', $value, 255);
@@ -138,7 +142,7 @@ $orther = "
 CKEDITOR.replace( 'contact_form', {
 	uiColor: '#b5d8ef',
 	toolbar: [
-		['Paste','PasteText','PasteFromWord','Bold', 'Italic', '-', 'Link', 'Unlink','Table','Format','TextColor','BGColor'],
+		['Paste','PasteText','PasteFromWord','RemoveFormat','Bold', 'Italic', '-', 'Link', 'Unlink','Table','FontSize','Format','TextColor','BGColor'],
 	]
 });
 </script>

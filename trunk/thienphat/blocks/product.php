@@ -27,7 +27,7 @@ $view_post .= '
 	<h1>'.$row_detail['name'].'</h1>'.$row_detail['content'].'
 	<div style="clear:both; height:20px"></div>
 	<div id="dathang" class="dathang">Đặt hàng nhanh</div>'.$download.'
-	<div style="clear:both; padding:30px 0; font-weight:bold">Hoặc liên hệ tổng đài <span style="color:#ED3237; font-size:120%">0937 501 457</span> để được hỗ trợ tốt nhất từ Thiên Phát!</div>
+	<div style="clear:both; padding:30px 0; font-weight:bold">Hoặc liên hệ <span style="color:#ED3237; font-size:120%">'.$row_config['hotline'].'</span> để được hỗ trợ tốt nhất từ Thiên Phát!</div>
 	<div id="other_product">Sản phẩm khác</div>
 	'.$product_other.'
 	<div style="clear:both; height:1px"></div>

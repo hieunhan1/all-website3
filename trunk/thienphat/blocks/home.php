@@ -53,7 +53,9 @@
         <?php
 		$qr = $tc->home_info(5);
 		while($row = mysql_fetch_array($qr)){
-			echo '<div class="item_news"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><img src="'.url_articles_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /><h4>'.$row['name'].'</h4></a>'.$row['description'].'</div>';
+			if($row['url_hinh']!='') $image = '<img src="'.url_articles_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" />';
+			else $image = '<img src="'.url_no_image.'" alt="'.$row['name'].'" />';
+			echo '<div class="item_news"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$image.'<h4>'.$row['name'].'</h4></a>'.$row['description'].'</div>';
 		}
 		?>
         <div style="clear:both; height:20px"></div>
