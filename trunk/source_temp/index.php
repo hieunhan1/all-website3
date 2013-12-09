@@ -1,19 +1,31 @@
 <?php
-if(!@$_GET['lang']) $lang = 'en';
-else $lang = $_GET['lang'];
+session_start();
+$lang = 'vi';
 
-include_once("languages/{$lang}.php");
-include_once('config.php');
+$error_sql = "Lỗi kết nối";
+define(does_not_exist,'Mục này không tồn tại.');
+
+include_once('class/class.trangchu.php');
+$tc = new trangchu();
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
 	$dm = explode('_page_',$dm);
 	$danhmuc = $dm[0];
-	if($dm[1]==''){ $page = 1; $page_name = ''; }else{ $page = $dm[1]; $page_name = ' - Trang '.$page; }
+	if($dm[1]==''){
+		$page = 1; $page_name = '';
+	}else{
+		$page = $dm[1]; $page_name = ' - Page '.$page;
+	}
+	
 	$menu_one = $tc->menu_one($danhmuc);
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $row_menu_one['id'];
 	$type = $row_menu_one['type_id'];
+	$lang = $row_menu_one['lang'];
+	
+	include("languages/{$lang}.php");
+	include_once('config.php');
 	
 	$menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	
@@ -26,44 +38,45 @@ if(@$_GET['danhmuc']){
 		$seo = $tc->seo($domain,$title.$page_name,$description.$page_name,$keyword,$image,$url);
 		
 		$include = ob_start();
-		/*switch($type){
+		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
-			default: $view_post = '<font color="#FF0000"><b>Could not be found</b></font>';
-		}*/
-		if($type==2){
-			include_once('blocks/articles_list.php');
-		}else{
-			$view_post = '<font color="#FF0000"><b>Could not be found</b></font>';
+			case 3 : include_once('blocks/products_list.php'); break;
+			case 4 : include_once('blocks/picture_list.php'); break;
+			case 5 : include_once('blocks/video_list.php'); break;
+			case 6 : include_once('blocks/contact.php'); break;
+			case 7 : include_once('blocks/giohang.php'); break;
+			
+			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
 		$include = ob_get_clean();
 	}else{
 		$dt = $_GET['detail'];
 		$include = ob_start();
-		/*switch($type){
-			case 2 : $detail = $tc->info_detail($dt); $row_detail = mysql_fetch_array($detail); ($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.url_detail_image_thumb.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image; include_once('blocks/articles.php'); break;
-			case 3 : $detail = $tc->product_detail($dt); $row_detail = mysql_fetch_array($detail); ($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.url_product_image_thumb.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image; include_once('blocks/products.php'); break;
-			default: echo '<div id="left"><p><font color="#FF0000"><b>Could not be found</b></font></p></div>';
-		}*/
-		if($type==2){
-			$detail = $tc->info_detail($dt);
-			$row_detail = mysql_fetch_array($detail);
-			($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.url_detail_image_thumb.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image;
-			include_once('blocks/articles.php');
-		}else{
-			echo '<div id="left"><p><font color="#FF0000"><b>Could not be found</b></font></p></div>';
+		switch($type){
+			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
+			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
+			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
+			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;
+			
+			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
 		$include = ob_get_clean();
 		
+		($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.$image_link.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image;
 		$url = 'http://'.$domain.'/'.$row_menu_one['url'].$row_detail['name_rewrite'].'.html';
-		$title = strip_tags($row_detail['title'], ''); $title = str_replace('"',' ',$title);
+		$title = strip_tags($row_detail['name'], ''); $title = str_replace('"',' ',$title);
 		$description = strip_tags($row_detail['metaDescription'],''); $description = str_replace('"',' ',$description);
 		$keyword = strip_tags($row_detail['metaKeyword']); $keyword = str_replace('"',' ',$keyword);
 		$seo = $tc->seo($domain,$title,$description,$keyword,$image,$url);
 	}
 }else{
-	$menu_one = $tc->menu_type(1,0);
+	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $row_menu_one['id'];
+	$lang = $row_menu_one['lang'];
+	
+	include("languages/{$lang}.php");
+	include_once('config.php');
 	
 	($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
 	$url = 'http://'.$domain;
@@ -87,22 +100,6 @@ if(@$_GET['danhmuc']){
 </head>
 
 <body>
-<div id="top">
-	<div style="width:1000px; margin:auto">
-        <div id="lang">
-            <a href="vi/"><img src="images/vi.gif" alt="vi" /></a>
-            <a href="en/"><img src="images/en.gif" alt="en" /></a>
-        </div>
-        <div id="menu_top">
-        <?php $qr = $tc->menu(0,1,$lang);
-		while($row = mysql_fetch_array($qr)){
-			echo '<a href="'.$lang.'/'.$row['url'].'" title="'.$row['title'].'">'.$row['name'].'</a>';
-		}?>
-        <a href="forum/" title="Forum Hoang Ha">Forum</a>
-        </div>
-    </div>
-</div>
-
 <div id="wrapper">
 	<div id="header">
     	<div id="logo"><a href="http://<?php echo $domain.'/'.$lang.'/'?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
