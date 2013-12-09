@@ -1,5 +1,6 @@
 <div class="content">
     <div style="clear:both; height:15px"></div>
+    <h1 style="font-size: 200%; color: #1bb16b; margin-left:40px"><?php echo $row_menu_one['title'];?></h1>
     <div id="home_sp">
     	<div class="simply-scroll simply-scroll-container">
             <div class="simply-scroll-clip">
