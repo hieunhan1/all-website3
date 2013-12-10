@@ -133,6 +133,11 @@ if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_
 $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value, 150, $orther);
 echo $form->DisplayProperties();
 
+//price
+if(@$_POST['price']) $value = $_POST['price']; else $value = $detail['price'];
+$form->getProperties('Giá', 'price', 1, 'input_medium', $value, 30);
+echo $form->DisplayProperties();
+
 //description
 $orther = "
 <script>
