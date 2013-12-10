@@ -23,7 +23,7 @@ $mail->Subject = 'Liên hệ trường dạy nghề ẩm thực NETSPACE';
 $mail->HoTen = $name;
 $mail->Email = $email;
 $mail->LoiNhan = $content;
-$mail->Body = "<h3>Chào ban quản trị website.</h3></br>Bạn &nbsp;<strong>{$name}</strong>&nbsp;để lại lời nhắn sau:<br /><br />
+$mail->Body = "<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>{$name}</strong>&nbsp;để lại lời nhắn sau:<br /><br />
 {$message}<br /><br />
 <br />Email: {$email}
 <br />Phone: {$phone}
