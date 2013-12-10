@@ -3,10 +3,8 @@ require_once('class.db.php');
 require_once('functions.php');
 class trangchu extends db {
 	function XemChiTiet($idMenu, $idTin) {
-		switch(' '){
-			case ($idMenu!='') : $qr = "SELECT id,name,name_rewrite,url,url_hinh,title,metaDescription,metaKeyword,type_id FROM menu WHERE id='{$idMenu}' AND status=1 AND `delete`=0"; break;
-			case ($idTin!='') : $qr = "SELECT id,name,name_rewrite,url_hinh,description,content,metaKeyword,other2 FROM info WHERE id='{$idTin}' AND status=1 AND `delete`=0"; break;
-		}
+		if($idMenu!='') $qr = "SELECT id,name,name_rewrite,url,url_hinh,title,metaDescription,metaKeyword,type_id FROM menu WHERE id='{$idMenu}' AND status=1 AND `delete`=0";
+		else $qr = "SELECT id,name,name_rewrite,url_hinh,description,content,metaKeyword,other2 FROM info WHERE id='{$idTin}' AND status=1 AND `delete`=0";
 		return mysql_query($qr);
 	}
 	function MenuChinh() {
@@ -212,6 +210,13 @@ class trangchu extends db {
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
 		$qr = "INSERT INTO `contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
+		return mysql_query($qr);
+	}
+	
+	/*dang ky truc tuyen*/
+	function dangky_tructuyen($name,$ngaysinh,$email,$phone,$diachi,$totnghiep,$khoahoc,$noihoc,$other,$hoivien){
+		$date = date('Y-m-d H:i:s');
+		$qr = "INSERT INTO `dangky_tructuyen` VALUES ('','{$name}','{$ngaysinh}','{$email}','{$phone}','{$diachi}','{$totnghiep}','{$khoahoc}','{$noihoc}','{$other}','{$hoivien}','','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	

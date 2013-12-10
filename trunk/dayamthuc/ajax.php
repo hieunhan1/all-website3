@@ -52,8 +52,10 @@ if($_POST['dangky']=='dangky'){
 	$email = trim($_POST['Email']);
 	$phone = trim($_POST['DienThoai']);
 	$diachi = trim($_POST['DiaChi']);
+	$ngaysinh = trim($_POST['NgaySinh']);
 	
 	if($name!='' && $email!='' && $phone!='' && $diachi!=''){
+		$tc->dangky_tructuyen($name,$ngaysinh,$email,$phone,$diachi,$_POST['TotNghiep'],$_POST['KhoaHoc'],$_POST['NoiHoc'],$_POST['thongtin_khac'],$_POST['ThanhVienHoi']);
 		echo '1';
 		include_once('sendmail/sendmailDK.php');
 		return true;

@@ -97,6 +97,18 @@
                 </select>
 			</td>
 		  </tr>
+		  <tr>
+			<td align="right" valign="top">Thông tin thêm:</td>
+            <td>
+				<select name="thongtin_khac" style="width:333px;">
+				<option value='Không'>Bạn biết khóa học này qua đâu?</option>
+				<option value='Tìm kiếm trên Google'>Tìm kiếm trên Google</option>
+				<option value='Facebook'>Facebook</option>
+				<option value='Báo chí'>Báo chí</option>
+				<option value='Đã biết website trường NETSPACE'>Đã biết website trường NETSPACE</option>
+                </select>
+			</td>
+		  </tr>
           <tr>
             <td colspan="2"><em>Là thành viên Hội đầu bếp chuyên nghiệp Sài Gòn:</em>
               <input type="radio" name="ThanhVienHoi" value="Có" /> Có &nbsp; &nbsp; 
@@ -124,6 +136,7 @@ $(document).ready(function(e) {
 		var KhoaHoc = $("select[name=KhoaHoc]").val();
 		var NoiHoc = $("select[name=NoiHoc]").val();
 		var ThanhVienHoi = $("input[name=ThanhVienHoi]:checked").val();
+		var thongtin_khac = $("select[name=thongtin_khac]").val();
 		if(HoTen.length<3){
 			alert("Nhập họ tên");
 			$("input[name=HoTen]").focus();
@@ -146,9 +159,9 @@ $(document).ready(function(e) {
 			return false;
 		}else{
 			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
-			$.post("ajax.php",{dangky:"dangky",HoTen:HoTen,NgaySinh:NgaySinh,Email:Email,DiaChi:DiaChi,DienThoai:DienThoai,TotNghiep:TotNghiep,KhoaHoc:KhoaHoc,NoiHoc:NoiHoc,ThanhVienHoi:ThanhVienHoi},function(data){
-				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Đăng ký thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất</p>'); },200);
-				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px 30px;">Có sự cố. Vui lòng ấn F5 thử lại.</p>');
+			$.post("ajax.php",{dangky:"dangky",HoTen:HoTen,NgaySinh:NgaySinh,Email:Email,DiaChi:DiaChi,DienThoai:DienThoai,TotNghiep:TotNghiep,KhoaHoc:KhoaHoc,NoiHoc:NoiHoc,ThanhVienHoi:ThanhVienHoi,thongtin_khac:thongtin_khac},function(data){
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Đăng ký thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất để thông báo lịch học.</p>'); },200);
+				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 10px 60px 10px;">Có sự cố. Vui lòng ấn F5 thử lại.</p>');
 			});
 			return true;
 		}
