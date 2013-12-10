@@ -10,14 +10,13 @@ $tc = new trangchu();
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
-	$dm = explode('_page_',$dm);
+	$dm = explode('/',$dm);
 	$danhmuc = $dm[0];
 	if($dm[1]==''){
 		$page = 1; $page_name = '';
 	}else{
 		$page = $dm[1]; $page_name = ' - Page '.$page;
 	}
-	
 	$menu_one = $tc->menu_one($danhmuc);
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $row_menu_one['id'];
@@ -27,7 +26,18 @@ if(@$_GET['danhmuc']){
 	//include("languages/{$lang}.php");
 	include_once('config.php');
 	
+	$slogan = '<h2><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">'.$row_config['slogan'].'</font></h2>';
 	$menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
+	
+	$slider = $tc->slider_banner(1,$idMenu);
+	if(mysql_num_rows($slider) > 0){
+		$height_slider = 'style="height:160px"';
+		$row_slider = mysql_fetch_array($slider);
+		$view_slider = '<div id="slider">
+			<img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" style="position:absolute; z-index:2" />
+			<h3>'.$row_menu_one['title'].'</h3>
+		</div>';
+	}
 	
 	if(!@$_GET['detail']){
 		($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
@@ -43,8 +53,7 @@ if(@$_GET['danhmuc']){
 			case 3 : include_once('blocks/products_list.php'); break;
 			case 4 : include_once('blocks/picture_list.php'); break;
 			case 5 : include_once('blocks/video_list.php'); break;
-			case 6 : include_once('blocks/contact.php'); break;
-			case 7 : include_once('blocks/giohang.php'); break;
+			case 8 : include_once('blocks/contact.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -84,7 +93,12 @@ if(@$_GET['danhmuc']){
 	$description = strip_tags($row_menu_one['metaDescription'],''); $description = str_replace('"',' ',$description);
 	$keyword = strip_tags($row_menu_one['metaKeyword'],''); $keyword = str_replace('"',' ',$keyword);
 	$seo = $tc->seo($domain,$title.$page_name,$description.$page_name,$keyword,$image,$url);
-
+	
+	$slogan = '<h1><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">'.$row_config['slogan'].'</font></h1>';
+	
+	include_once('blocks/slider.php');
+	$height_slider = 'style="height:400px"';
+	
 	$include = ob_start();
 	include_once('blocks/home.php');
 	$include = ob_get_clean();
@@ -105,60 +119,31 @@ if(@$_GET['danhmuc']){
 	<div id="menu"><?php include_once('blocks/menu.php');?></div>
 	<div id="header">
     	<div id="logo"><a href="http://<?php echo $domain; ?>"><img src="images/logo.png" alt="Nhận tiệc Hoa Mai" /></a></div>
-        <h1><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">- Nhận đặt tiệc tại nhà, với giá ưu đãi!</font></h1>
+        <?php echo $slogan;?>
         <div id="support">
         	<p style="background-color:#333">Hỗ trợ đặt tiệc nhanh</p>
-            <p style="background-color:#FF7C38; font-size:130%">0937 501 457</p>
+            <p style="background-color:#FF7C38; font-size:130%"><?php echo $row_config['hotline'];?></p>
         </div>
     </div>
-    <div id="box_slider">
-    	<div id="line_slider"></div>
-        <?php include_once('blocks/slider.php');?>
-    </div>
-    
-    <div id="home_dv">
-    	<div class="home_dv_box">
-        	<div class="home_dv_img"><img src="public/_thumbs/Images/articles/image-1.jpg" alt="" /></div>
-            <div class="home_dv_info" style="background-color:#49A21E">
-            	<h2>Danh sách MENU TIỆC</h2>
-                <p>Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentes. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.</p>
-            </div>
-        </div>
-    	<div class="home_dv_box" style="margin:0 15px 15px">
-        	<div class="home_dv_img"><img src="public/_thumbs/Images/articles/image-1.jpg" alt="" /></div>
-            <div class="home_dv_info" style="background-color:#49A21E">
-            	<h2>Danh sách MENU TIỆC</h2>
-                <p>Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentes. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.</p>
-            </div>
-        </div>
-    	<div class="home_dv_box">
-        	<div class="home_dv_img"><img src="public/_thumbs/Images/articles/image-1.jpg" alt="" /></div>
-            <div class="home_dv_info" style="background-color:#49A21E">
-            	<h2>Danh sách MENU TIỆC</h2>
-                <p>Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentes. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.</p>
-            </div>
-        </div>
-        <div style="clear:both; height:1px"></div>
-    </div>
-    
-    <div class="home_item">
-    	<h3>NHẬN XÉT CỦA THỰC KHÁCH</h3>
-        <div class="home_item_line"></div>
-        <div class="home_item_info viewpost">
-        	<p>Maecenas sed ante. In hacei haasse platea dictumst. Cum sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque.</p>
-            <div class="img_botron"><img src="public/_thumbs/Images/articles/image-7.jpg" alt="" /></div>
-            <div style="clear:both; height:1px"></div>
-        </div>
-        <div class="home_item_line"></div>
-    </div>
-    <div style="clear:both; height:20px"></div>
-     <div class="home_item">
-    	<h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
-        
-    </div>
-    
-    <div id="footer">Địa chỉ: 21 DCT 15, Khu phố 1, P.Tân Hưng Thuận, Q.12, TP.HCM            Phone: +84 8 937 501 457            Email: support@nhantiec.vn</div>
+    <?php
+    echo '<div id="box_slider" '.$height_slider.'><div id="line_slider"></div>'.$view_slider.'</div>';
+    echo $include;
+	?>
+    <div id="footer"><?php echo $row_config['contact_foo'];?><div style="clear:both; height:1px"></div></div>
 </div>
+<div id="menu_copy">
+	<div id="copyright"><?php echo $row_config['copyright'];?></div>
+	<div id="menu_foo">
+    	<?php
+        $menu = $tc->menu(0,3,$lang);
+		while($row = mysql_fetch_array($menu)){
+			echo '<a href="'.$row['url'].'">'.$row['name'].'</a>';
+		}
+		?>
+    </div>
+    <div style="clear:both; height:5px"></div>
+</div>
+
 <?php mysql_close();?>
 </body>
 </html>

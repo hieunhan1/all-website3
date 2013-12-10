@@ -30,4 +30,4 @@ if(mysql_num_rows($slider)>0){
 	</div>
 	</div>';
 }
-echo $view_slider .= '<div style="clear:both; height:20px"></div>';
+$view_slider .= '<div style="clear:both; height:20px"></div>';

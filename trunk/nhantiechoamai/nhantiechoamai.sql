@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 09, 2013 at 05:15 PM
+-- Generation Time: Dec 10, 2013 at 05:16 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -50,7 +50,7 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 -- 
 
-INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/nhantiechoamai', 0, 10, 2, 10, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Địa chỉ: 87 Thăng Long, Phường 4, Quận Tân Bình, Tp.Hồ Chí Minh, Việt Nam.<br />\r\nĐiện thoại: (84.8) 3 948 4696 - Fax: ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0988388003', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 16:18:17', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '- Nhận đặt tiệc tại nhà, với giá ưu đãi!', 'localhost/all/nhantiechoamai', 10, 10, 2, 10, '© 2013 - Bản quyền nhantiec.vn', '<p>Địa chỉ: 21 DCT 15, Khu phố 1, P.Tân Hưng Thuận, Q.12, TP.HCM</p>\r\n\r\n<p>Phone: +84 8 937 501 457</p>\r\n\r\n<p>Email: support@nhantiec.vn</p>\r\n', '<p><strong>Địa chỉ:</strong> 265 Hoàng Văn Thụ, P.2, Q. Tân Bình, HCM</p>\r\n\r\n<p><strong>Hotline:</strong> 0928 088 088</p>\r\n\r\n<p><strong>Email:</strong> contact@nhantiec.vn</p>\r\n\r\n<p><strong>Website:</strong> www.nhantiec.vn</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0937 501 457', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 15:28:43', 'admin', 'admin', 0);
 INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/source_temp', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 0, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
@@ -74,13 +74,12 @@ CREATE TABLE `contact` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- 
 -- Dumping data for table `contact`
 -- 
 
-INSERT INTO `contact` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', '<p>Contact Information</p>\r\n', 'vi', 1, '2013-09-25 12:32:52', '2013-09-26 17:24:27', 'khachhang', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -107,12 +106,16 @@ CREATE TABLE `info` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `info`
 -- 
 
+INSERT INTO `info` VALUES (1, 'Dịch vụ cưới trọn gói', 'dich-vu-cuoi-tron-goi', 'dich-vu-1.jpg', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.</p>\r\n\r\n<p>&nbsp;</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'Dịch vụ cưới trọn gói', 0, 'vi', ',7,', 1, '2013-12-10 11:37:35', '2013-12-10 11:37:35', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (2, 'Tiệc sinh nhật trọn gói', 'tiec-sinh-nhat-tron-goi', 'dich-vu-2.jpg', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.</p>\r\n\r\n<p>&nbsp;</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'Tiệc sinh nhật trọn gói', 0, 'vi', ',7,', 1, '2013-12-10 11:37:49', '2013-12-10 11:37:49', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (3, 'Dịch vụ trọn gói khác', 'dich-vu-tron-goi-khac', 'dich-vu-3.jpg', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.</p>\r\n\r\n<p>&nbsp;</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'Dịch vụ trọn gói khác', 0, 'vi', ',7,', 1, '2013-12-10 11:38:04', '2013-12-10 14:28:05', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (4, 'Giới thiệu nhận tiệc Hoa Mai', 'gioi-thieu-nhan-tiec-hoa-mai', '', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. Cum sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst. Cum sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque.</p>\r\n', 'Giới thiệu nhận tiệc Hoa Mai', 0, 'vi', ',5,', 1, '2013-12-10 11:39:07', '2013-12-10 11:39:07', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -214,17 +217,17 @@ CREATE TABLE `menu` (
 -- Dumping data for table `menu`
 -- 
 
-INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trang-chu', '', '', 'Nhận tiệc Hoa Mai', 'Nhận tiệc Hoa Mai', 'Nhận tiệc Hoa Mai', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 16:05:57', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trang-chu', '', '', 'Nhận tiệc Hoa Mai', 'Nhận tiệc Hoa Mai', 'Nhận tiệc Hoa Mai', 0, 1, ',1,3,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 10:56:03', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2013-10-09 16:06:56', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2013-10-09 16:26:49', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 16:10:38', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (6, 'Menu tiệc', 'menu-tiec', 'menu-tiec/', '', 'Menu tiệc', 'Menu tiệc', 'Menu tiệc', 0, 3, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:10:58', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (7, 'Dịch vụ trọn gói', 'dich-vu-tron-goi', 'dich-vu-tron-goi/', '', 'Dịch vụ trọn gói', 'Dịch vụ trọn gói', 'Dịch vụ trọn gói', 0, 2, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 16:11:22', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (8, 'Khuyến mãi', 'khuyen-mai', 'khuyen-mai/', '', 'Khuyến mãi', 'Khuyến mãi', 'Khuyến mãi', 0, 2, ',1,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 16:11:41', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (10, 'Hình ảnh', 'hinh-anh', 'hinh-anh/', '', 'Hình ảnh', 'Hình ảnh', 'Hình ảnh', 0, 4, ',1,', 'vi', 0, 6, 1, '2013-12-09 16:12:20', '2013-12-09 16:12:57', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 8, 1, '2013-10-09 15:40:52', '2013-10-09 16:11:57', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (11, 'Thư viện video', 'thu-vien-video', 'thu-vien-video/', '', 'Thư viện video', 'Thư viện video', 'Thư viện video', 0, 5, ',1,', 'vi', 0, 7, 1, '2013-12-09 16:13:16', '2013-12-09 16:13:16', 'admin', '', 0);
+INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,3,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 10:56:20', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (6, 'Menu tiệc', 'menu-tiec', 'menu-tiec/', '', 'Menu tiệc', 'Maecenas sed ante. In hacei haasse platea dictumst. Cum sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede.', 'Menu tiệc', 0, 3, ',1,3,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:28:55', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (7, 'Dịch vụ trọn gói', 'dich-vu-tron-goi', 'dich-vu-tron-goi/', '', 'Dịch vụ trọn gói', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst.', 'Dịch vụ trọn gói', 0, 2, ',1,3,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 14:18:58', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (8, 'Khuyến mãi', 'khuyen-mai', 'khuyen-mai/', '', 'Khuyến mãi', 'Khuyến mãi', 'Khuyến mãi', 0, 2, ',1,3,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 10:56:34', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (10, 'Hình ảnh', 'hinh-anh', 'hinh-anh/', '', 'Hình ảnh', 'Hình ảnh', 'Hình ảnh', 0, 4, ',1,3,', 'vi', 0, 6, 1, '2013-12-09 16:12:20', '2013-12-09 10:56:37', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Dịch vụ nấu tiệc Hoa Mai', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentesque. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.', 'Liên hệ', 0, 8, ',1,3,', 'vi', 0, 8, 1, '2013-10-09 15:40:52', '2013-10-09 15:27:28', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (11, 'Thư viện video', 'thu-vien-video', 'thu-vien-video/', '', 'Thư viện video', 'Thư viện video', 'Thư viện video', 0, 5, ',1,3,', 'vi', 0, 7, 1, '2013-12-09 16:13:16', '2013-12-09 10:56:40', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -454,6 +457,7 @@ CREATE TABLE `products` (
   `name` varchar(250) NOT NULL,
   `name_rewrite` varchar(250) NOT NULL,
   `url_hinh` varchar(150) default NULL,
+  `price` varchar(30) default NULL,
   `metaDescription` text,
   `content` text,
   `metaKeyword` varchar(250) default NULL,
@@ -468,12 +472,18 @@ CREATE TABLE `products` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 -- 
 -- Dumping data for table `products`
 -- 
 
+INSERT INTO `products` VALUES (1, 'Menu tiệc cưới trọn gói 06', 'menu-tiec-cuoi-tron-goi-06', 'menu-tiec-6.jpg', '6 triệu', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', 'Menu tiệc cưới trọn gói 06', 0, 'vi', ',6,', 1, '2013-12-10 16:37:26', '2013-12-10 16:37:26', 'admin', NULL, 0);
+INSERT INTO `products` VALUES (2, 'Menu tiệc cưới trọn gói 05', 'menu-tiec-cuoi-tron-goi-05', 'menu-tiec-5.jpg', '5 triệu', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', 'Menu tiệc cưới trọn gói 05', 0, 'vi', ',6,', 1, '2013-12-10 16:37:41', '2013-12-10 16:37:41', 'admin', NULL, 0);
+INSERT INTO `products` VALUES (3, 'Menu tiệc cưới trọn gói 04', 'menu-tiec-cuoi-tron-goi-04', 'menu-tiec-4.jpg', '4 triệu', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', 'Menu tiệc cưới trọn gói 04', 0, 'vi', ',6,', 1, '2013-12-10 16:37:52', '2013-12-10 16:37:52', 'admin', NULL, 0);
+INSERT INTO `products` VALUES (4, 'Menu tiệc cưới trọn gói 03', 'menu-tiec-cuoi-tron-goi-03', 'menu-tiec-3.jpg', '3 triệu', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', 'Menu tiệc cưới trọn gói 03', 0, 'vi', ',6,', 1, '2013-12-10 16:38:05', '2013-12-10 16:38:05', 'admin', NULL, 0);
+INSERT INTO `products` VALUES (5, 'Menu tiệc cưới trọn gói 02', 'menu-tiec-cuoi-tron-goi-02', 'menu-tiec-2.jpg', '2 triệu', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', 'Menu tiệc cưới trọn gói 02', 0, 'vi', ',6,', 1, '2013-12-10 16:38:15', '2013-12-10 16:38:15', 'admin', NULL, 0);
+INSERT INTO `products` VALUES (6, 'Menu tiệc cưới trọn gói 01', 'menu-tiec-cuoi-tron-goi-01', 'menu-tiec-1.jpg', '1 triệu', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectet adipiscing elit. Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellent. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante. In hacei haasse platea dictumst.</p>\r\n', 'Menu tiệc cưới trọn gói 01', 0, 'vi', ',6,', 1, '2013-12-10 16:38:24', '2013-12-10 16:38:24', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -497,13 +507,16 @@ CREATE TABLE `slider_banner` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `slider_banner`
 -- 
 
-INSERT INTO `slider_banner` VALUES (1, 'Slider Home', 'slider-1.jpg', 'javascript:;', '', 'vi', 1, ',1,', 1, '2013-10-09 16:34:33', '2013-10-09 16:16:01', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (1, 'Slider Home', 'slider-1.jpg', 'javascript:;', '', 'vi', 1, ',1,', 1, '2013-10-09 16:34:33', '2013-10-09 16:14:12', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (3, 'Giới thiệu', 'gioi-thieu.jpg', 'javascript:;', '', 'vi', 1, ',5,', 1, '2013-12-10 16:14:26', '2013-12-10 16:14:26', 'admin', NULL, 0);
+INSERT INTO `slider_banner` VALUES (2, 'Dịch vụ trọn gói', 'dich-vu-tron-goi.jpg', 'javascript:;', '', 'vi', 1, ',7,', 1, '2013-12-10 14:28:47', '2013-12-10 14:32:57', 'admin', '', 0);
+INSERT INTO `slider_banner` VALUES (4, 'Menu tiệc ', 'menu-tiec.jpg', 'javascript:;', '', 'vi', 1, ',6,', 1, '2013-12-10 16:16:28', '2013-12-10 16:16:28', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 

@@ -106,11 +106,58 @@ class trangchu extends db {
 	
 	/*home*/
 	
+	/*detail*/
+	function info_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_create FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function product_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,price,price_km,url_hinh,metaDescription,content,metaKeyword,dactinh FROM products WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function picture_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,date_create FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function video_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,link,metaDescription,content,metaKeyword,date_create FROM video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	
+	/*info*/
+	function info_other($idMenu,$id){
+		$qr = "SELECT name,name_rewrite FROM info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 8";
+		return mysql_query($qr);
+	}
+	function info_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
+		return mysql_query($qr);
+	}
+	
+	/*image*/
+	function image_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite FROM menu WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND parent_id='{$idMenu}' ORDER BY date_update DESC LIMIT 12";
+		return mysql_query($qr);
+	}
+	function image_all($id){
+		$qr = "SELECT name,url_hinh FROM photo_gallery WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC";
+		return mysql_query($qr);
+	}
+	
+	/*video*/
+	function video_other($idMenu,$id){
+		$qr = "SELECT name,name_rewrite FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 8";
+		return mysql_query($qr);
+	}
+	function video_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
+		return mysql_query($qr);
+	}
 	
 	/*contact*/
-	function insert_contact($name,$email,$phone,$diachi,$message){
+	function insert_contact($name,$email,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `contact` VALUES ('','{$name}','{$email}','','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 }// end trangchu

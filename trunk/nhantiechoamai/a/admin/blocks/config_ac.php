@@ -102,10 +102,6 @@ if(mysql_num_rows($qr) > 1){
 }
 
 /*
-//slogan
-if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
-$form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
 //domain
 if(@$_POST['domain']) $value = $_POST['domain']; else $value = $detail['domain'];
 $form->getProperties('Domain', 'domain', 1, 'input_medium', $value, 30);
@@ -129,6 +125,10 @@ if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail
 $form->getProperties('Max limit 4', 'max_limit_4', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 
+//slogan
+if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
+$form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
+echo $form->DisplayProperties();
 //copyright
 if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
 $form->getProperties('Copyright', 'copyright', 1, 'input_medium', $value, 200);
@@ -137,7 +137,10 @@ echo $form->DisplayProperties();
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties('Email liên hệ', 'email', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
-
+//hotline
+if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
+$form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
+echo $form->DisplayProperties();
 /*
 //yahoo
 if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
@@ -146,10 +149,6 @@ echo $form->DisplayProperties();
 //tel
 if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
 $form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 50);
-echo $form->DisplayProperties();
-//hotline
-if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
-$form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 //facebook
 if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];
