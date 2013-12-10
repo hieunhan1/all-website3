@@ -112,7 +112,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function product_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,price,price_km,url_hinh,metaDescription,content,metaKeyword,dactinh FROM products WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,name_rewrite,price,url_hinh,metaDescription,list_mon,content,metaKeyword FROM products WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	function picture_detail($alias){

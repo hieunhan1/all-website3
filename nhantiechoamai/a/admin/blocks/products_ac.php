@@ -139,9 +139,14 @@ $form->getProperties('Giá', 'price', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();
 
 //description
+if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
+echo $form->DisplayProperties();
+
+//list_mon
 $orther = "
 <script>
-CKEDITOR.replace( 'metaDescription', {
+CKEDITOR.replace( 'list_mon', {
 	uiColor: '#b5d8ef',
 	toolbar: [
 		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-','RemoveFormat','TextColor','BGColor','NumberedList','BulletedList'],
@@ -149,8 +154,8 @@ CKEDITOR.replace( 'metaDescription', {
 });
 </script>
 ";
-if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
-$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1, $orther);
+if(@$_POST['list_mon']) $value = $_POST['list_mon']; else $value = $detail['list_mon'];
+$form->getProperties('Ds món ăn', 'list_mon', 3, 'textarea', $value, 1, $orther);
 echo $form->DisplayProperties();
 
 //Nội dung content
