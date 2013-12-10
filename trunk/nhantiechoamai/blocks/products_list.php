@@ -28,3 +28,35 @@ echo '<div id="content">
 	'.$menu_tiec.'
 	<div style="clear:both; height:10px"></div>
 </div>';
+
+
+if(@$dt){
+	echo '<div id="popupContact">
+		<div style="width:835px;height:30px; float:right; text-align:right; position:absolute; z-index:1300;">
+			<a href="javascript:window.history.go(-1)"><img src="images/close.png" alt="sản phẩm" /></a>
+		</div>
+		<div style="clear:both; height:15px"></div>
+		<div style="clear:both; height:5px; background-color:#3A3A3A"></div>
+		
+		<div id="content_popup">
+			<div class="img"><img src="'.url_product_image.$row_detail['url_hinh'].'" alt="'.$row_detail['name'].'" /></div>
+			<div id="content_pp">
+				<h1>'.$row_detail['name'].'</h1>
+				<div style="clear:both; height:1px"></div>
+				<div style="margin:0 0 30px 30px">'.$row_detail['list_mon'].'</div>
+				<div id="price_pp">Trọn gói: '.$row_detail['price'].' / bàn tiệc</div>
+			</div>
+			<div style="clear:both; height:1px"></div>
+			<div class="viewpost"><p style="font-size:130%; font-weight:bold">Thông tin thêm</p>'.$row_detail['content'].'</div>
+		</div>
+	</div>
+	<div id="backgroundPopup"></div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var height = $("#popupContact").height();
+		$("#popupContact").height(height);
+		centerPopup("absolute");
+		loadPopup();
+		$(window).bind("resize", function(){ centerPopup("absolute"); });
+	});</script>';
+}
