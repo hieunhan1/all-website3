@@ -19,7 +19,7 @@
         </p><br />
         <p><strong style="color:#C00">Chi nhánh Đà Nẵng:</strong><br />
         <strong>Địa chỉ: Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng.</strong><br />
-        Điện thoại: 05113.634.879 - 05113.634.877 &nbsp; | &nbsp; Hotline: 0905.362.809</p><br />
+        Điện thoại: 05113.634.879 - 05113.634.877 &nbsp; | &nbsp; Hotline: 0932.743.799</p><br />
         
         <p><strong style="color:#C00">Chi nhánh Cần Thơ:</strong><br />
         <strong>Địa chỉ: 118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</strong><br />
