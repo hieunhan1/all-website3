@@ -15,18 +15,17 @@ $to = $row_config['email']; // Recipients email ID
 //$name="Thien Phat"; // Recipient's name 
 $mail->From = $from; 
 $mail->FromName = $_POST['name']; // Name to indicate where the email came from when the recepient received 
-$mail->AddAddress($to,'Lien he Keo Han Quoc'); 
+$mail->AddAddress($to,'Lien he nhan tiec'); 
 $mail->AddReplyTo($from,"admin"); 
 $mail->WordWrap = 50; // set word wrap 
 $mail->IsHTML(true); // send as HTML 
-$mail->Subject = 'Khách hàng liên hệ từ Website Keo Han Quoc'; 
+$mail->Subject = 'Khách hàng liên hệ nhận tiệc Hoa Mai'; 
 $mail->HoTen = $name;
 $mail->Email = $email;
 $mail->LoiNhan = $content;
-$mail->Body = "<h3>Chào ban quản trị website.</h3></br>Bạn &nbsp;<strong>{$name}</strong>&nbsp;để lại lời nhắn sau:<br /><br />
+$mail->Body = "<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>{$name}</strong>&nbsp;để lại lời nhắn sau:<br /><br />
 {$message}<br /><br />
 <br />Email: {$email}
-<br />Phone: {$phone}
 <br />Địa chỉ: {$diachi}"; //HTML Body 
 $mail->AltBody =''; //Text Body 
 //$mail->SMTPDebug = 2; 

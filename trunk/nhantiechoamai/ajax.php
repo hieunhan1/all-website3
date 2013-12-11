@@ -1,4 +1,5 @@
 <?php
+$lang = 'vi';
 include_once('config.php');
 
 if($_POST['contact']=='contact'){
