@@ -1,0 +1,44 @@
+@charset "utf-8";
+*{margin: 0}
+img{border:0}
+body {width:1000px; background-color:#b5d8ef; color:#1E1E1E; font-family:"Times New Roman", Times, serif; font-size:14px; text-decoration: none;}
+a {color: #0000FF;text-decoration: none;}
+a:hover {color: #FF9900;text-decoration: underline;}
+#header {width:100%; height:79px; background:url(bg_header.jpg) repeat-x; border-bottom:solid 1px #6593cf; margin-bottom:5px;}
+#header #logo{width:auto; float:left; font-size:28px; font-weight:bold; color:#06F; line-height:79px; padding:0 20px}
+#header #thongtin{width:auto; float:right; line-height:79px; font-size:18px; padding:0 20px}
+#container {float:left; width:100%; clear:both;}
+#left {width:180px; float:left; padding:3px 10px; background:url(bg_tieude.jpg) top repeat-x #FFF; margin-right:5px; border:solid 1px #6593CF}
+#catalog a {display:block; padding:8px 0}
+
+#right {width:770px; float:left; padding:3px 10px; background:url(bg_tieude.jpg) top repeat-x #FFF; border:solid 1px #6593CF}
+#action {float:right; margin-right:20px}
+#action a {padding:0 10px}
+#content {width:100%;}
+.row {width:100%; height:18px; line-height:26px clear:both; padding:4px; border-bottom:solid 1px #88C4FF}
+.row .col_full {float:left; overflow:hidden; width:auto; height:16px; overflow:hidden}
+.row .col_action {width:100px; float:right; text-align:center; padding:0 3px; overflow:hidden}
+.row .col_order {width:100px; float:right; text-align:center; padding:0 3px; font-weight:bold; overflow:hidden}
+.row .col_create {width:100px; float:right; text-align:center; padding:0 3px; overflow:hidden}
+.row .col_update {width:100px; float:right; text-align:center; padding:0 3px; overflow:hidden}
+.row .col_fix {width:160px; float:left; overflow:hidden}
+.title {font-weight:bold; color:#0037A0; margin-bottom:15px;}
+
+.input_large {width:150px; padding:2px 3px; border:solid 1px #999}
+.input_medium {width:350px; padding:2px 3px; border:solid 1px #999}
+.input_small {width:450px; padding:2px 3px; border:solid 1px #999}
+.textarea {width:350px; padding:2px 3px; height:80px; border:solid 1px #999}
+.button {padding:3px 20px; margin:0px 5px}
+.list_check {width:300px; height:200px; overflow:scroll; background-color:#FFFFCC; padding:3px; border:solid 1px #999}
+.list_check2 {width:100%; height:350px; overflow:scroll; background-color:#FFFFCC; padding:3px; border:solid 1px #999}
+
+.message {color:#00F; padding:10px 0px; font-weight:bold}
+.error {color:#F00; padding:10px 0px; font-weight:bold}
+
+#phantrang {margin:20px 0}
+#phantrang a {padding:3px 8px; background:#E6E6E6; border:solid 1px #999999; color:#000; margin:0 2px}
+
+#search{background-color:#999; padding:3px; margin-bottom:5px}
+#search .txt{width:150px}
+#search .select{width:150px}
+#search .btn{padding:2px 10px}
