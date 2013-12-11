@@ -1,25 +1,19 @@
 <div id="home_dv">
-    <div class="home_dv_box">
-        <div class="home_dv_img"><img src="public/_thumbs/Images/articles/image-1.jpg" alt="" /></div>
-        <div class="home_dv_info" style="background-color:#49A21E">
-            <h2>Danh sách MENU TIỆC</h2>
-            <p>Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentes. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.</p>
-        </div>
-    </div>
-    <div class="home_dv_box" style="margin:0 15px 15px">
-        <div class="home_dv_img"><img src="public/_thumbs/Images/articles/image-1.jpg" alt="" /></div>
-        <div class="home_dv_info" style="background-color:#49A21E">
-            <h2>Danh sách MENU TIỆC</h2>
-            <p>Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentes. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.</p>
-        </div>
-    </div>
-    <div class="home_dv_box">
-        <div class="home_dv_img"><img src="public/_thumbs/Images/articles/image-1.jpg" alt="" /></div>
-        <div class="home_dv_info" style="background-color:#49A21E">
-            <h2>Danh sách MENU TIỆC</h2>
-            <p>Vivamus convis dapibus magna. Proin eu justo ut massa molestie pellentes. In hastel habitasse platea dictumst. Ut arcu. Maecenas sed ante.</p>
-        </div>
-    </div>
+	<?php
+	$i = 0;
+    $banner = $tc->slider_banner(2);
+	while($row = mysql_fetch_array($banner)){
+		$i++;
+		if($i!=2 && $i!=5 && $i!=8) $style = ''; else $style = 'style="margin:0 15px 15px"';
+		echo '<div class="home_dv_box" '.$style.'>
+			<div class="home_dv_img"><a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
+			<div class="home_dv_info" style="background-color:#49A21E">
+				<a href="'.$row['link'].'"><h2>'.$row['name'].'</h2></a>
+				<p>'.strip_tags($row['content']).'</p>
+			</div>
+		</div>';
+	}
+	?>
     <div style="clear:both; height:1px"></div>
 </div>
 
@@ -27,9 +21,12 @@
     <h3>NHẬN XÉT CỦA THỰC KHÁCH</h3>
     <div class="home_item_line"></div>
     <div class="home_item_info viewpost">
-        <p>Maecenas sed ante. In hacei haasse platea dictumst. Cum sociis natoque penatibus et magnis dis enarturient montes, nascetur ridiculus mus. Proin semper nisi puinar nunc commodo imperdiet. Integer pede. Morbi eu nisl. Praesent purus. Aliquam nequate. Aenean urna. Quisque placerat erat quis neque.</p>
-        <div class="img_botron"><img src="public/_thumbs/Images/articles/image-7.jpg" alt="" /></div>
-        <div style="clear:both; height:1px"></div>
+    	<?php
+        $banner = $tc->slider_banner(3);
+		while($row = mysql_fetch_array($banner)){
+			echo '<div>'.$row['content'].'</div><div class="img_botron"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['content'].'" /></div><div style="clear:both; height:1px"></div>';
+		}
+		?>
     </div>
     <div class="home_item_line"></div>
 </div>

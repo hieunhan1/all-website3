@@ -123,6 +123,6 @@ $(document).ready(function($){
 		$("#support p:even").corner("left 4px");
 		$("#support p:odd").corner("right 4px");
 		$(".img_botron").corner("140px");
-		//$(".title_info").corner("top","8px");
+		$(".txt, .textarea, .btn").corner("4px");
 	}
 });

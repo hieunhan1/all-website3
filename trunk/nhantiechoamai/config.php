@@ -23,8 +23,17 @@ define(url_no_image,'images/no-image.jpg');
 define(url_default_image,'images/logo.jpg');
 
 define(url_catalog_image,'public/images/catalog/');
+
 define(url_detail_image,'public/images/articles/');
 define(url_detail_image_thumb,'public/_thumbs/Images/articles/');
+
 define(url_product_image,'public/images/products/');
 define(url_product_image_thumb,'public/_thumbs/Images/products/');
+
 define(url_slider_image,'public/images/slider/');
+
+define(url_library_image,'public/images/thuvien_images/');
+define(url_library_image_thumb,'public/_thumbs/Images/thuvien_images/');
+
+define(url_library_video,'public/images/thuvien_video/');
+define(url_library_video_thumb,'public/_thumbs/Images/thuvien_video/');
