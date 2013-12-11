@@ -1,13 +1,13 @@
 <?php
 session_start();
-$lang = 'vi';
+if(!@$_GET['lang']) $lang = 'vi';
+else $lang = $_GET['lang'];
 
 $error_sql = "Lỗi kết nối";
 define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
-include_once('config.php');
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
@@ -23,6 +23,10 @@ if(@$_GET['danhmuc']){
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $row_menu_one['id'];
 	$type = $row_menu_one['type_id'];
+	$lang = $row_menu_one['lang'];
+	
+	include("languages/{$lang}.php");
+	include_once('config.php');
 	
 	$menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	
@@ -70,6 +74,10 @@ if(@$_GET['danhmuc']){
 	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $row_menu_one['id'];
+	$lang = $row_menu_one['lang'];
+	
+	include("languages/{$lang}.php");
+	include_once('config.php');
 	
 	($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
 	$url = 'http://'.$domain;
@@ -95,7 +103,7 @@ if(@$_GET['danhmuc']){
 <body>
 <div id="wrapper">
 	<div id="header">
-    	<div id="logo"><a href="http://<?php echo $domain;?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
+    	<div id="logo"><a href="http://<?php echo $domain.'/'.$lang.'/'?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
     	<div id="search">
         	<div id="txtsearch"><input type="text" name="txtsearch" value="<?php echo const_txt_search;?>" id="key_search" onclick="if(value=='<?php echo const_txt_search;?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search;?>'" /></div>
         	<div id="btnsearch"><input type="button" name="btnsearch" value="&nbsp;" onclick="return SearchGoogle();" /></div>
@@ -129,7 +137,7 @@ if(@$_GET['danhmuc']){
             <?php
             $qr3 = $tc->menu(0,5,$lang);
 			while($row = mysql_fetch_array($qr3)){
-				echo '<a href="'.$row['url'].'">'.$row['name'].'</a>';
+				echo '<a href="'.$lang.'/'.$row['url'].'">'.$row['name'].'</a>';
 			}
 			?>
             </div>
