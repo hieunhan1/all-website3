@@ -45,7 +45,7 @@ $(document).ready(function(e) {
 			return false;
 		}else{
 			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
-			$.post("ajax.php",{contact:"contact",name:name,email:email,diachi:diachi,message:message,lang:"<?php echo $lang; ?>"},function(data){
+			$.post("ajax.php",{contact:"contact",name:name,email:email,diachi:diachi,message:message},function(data){
 				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#ff8400; font-weight:bold; padding:30px 0 60px;">Gửi thành công.</p>'); },200);
 				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại và điền đầy đủ thông tin.</p>');
 			});

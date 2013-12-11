@@ -26,7 +26,7 @@ if(@$_GET['danhmuc']){
 	//include("languages/{$lang}.php");
 	include_once('config.php');
 	
-	$slogan = '<h2><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">'.$row_config['slogan'].'</font></h2>';
+	$slogan = '<div style="width:400px; float:left; margin-left:25px"><h2><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">'.$row_config['slogan'].'</font></h2></div>';
 	$menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	
 	$slider = $tc->slider_banner(1,$idMenu);
@@ -94,7 +94,7 @@ if(@$_GET['danhmuc']){
 	$keyword = strip_tags($row_menu_one['metaKeyword'],''); $keyword = str_replace('"',' ',$keyword);
 	$seo = $tc->seo($domain,$title.$page_name,$description.$page_name,$keyword,$image,$url);
 	
-	$slogan = '<h1><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">'.$row_config['slogan'].'</font></h1>';
+	$slogan = '<div style="width:400px; float:left; margin-left:25px"><h1><font color="#00A651">www.nhantiec.vn</font> <font color="#FF7C38">'.$row_config['slogan'].'</font></h1></div>';
 	
 	include_once('blocks/slider.php');
 	$height_slider = 'style="height:400px"';
