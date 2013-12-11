@@ -29,6 +29,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #home_dv .home_dv_box .home_dv_img{width:290px; height:175px; overflow:hidden; border-bottom:solid 1px #FFF}
 #home_dv .home_dv_box .home_dv_img img{width:290px}
 #home_dv .home_dv_box .home_dv_info{color:#FFF; padding:20px}
+#home_dv .home_dv_box .home_dv_info a{color:#FFF}
 #home_dv .home_dv_box .home_dv_info h2{font-size:145%; margin-bottom:5px}
 #home_dv .home_dv_box .home_dv_info p{height:80px; line-height:20px; overflow:hidden}
 
@@ -36,7 +37,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 .home_item h3{text-align:center; text-transform:uppercase; font-size:220%; font-weight:100; margin:20px 0}
 .home_item .home_item_line{clear:both; height:2px; border-bottom:dotted 1px #DAD7CC; border-top:dotted 1px #DAD7CC}
 .home_item .home_item_info{width:675px; margin:25px auto}
-.home_item .home_item_info p{width:500px; float:left}
+.home_item .home_item_info div{width:500px; float:left}
+.home_item .home_item_info div a{color:#00A651}
 .home_item .home_item_info .img_botron{width:130px; height:130px; overflow:hidden; float:right; border:solid 3px #E1E1E1}
 .home_item .home_item_info .img_botron img{width:130px}
 
@@ -78,6 +80,15 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 .box_tiec .box_tiec_info p{height:88px; overflow:hidden}
 .box_tiec .box_tiec_info .box_tiec_price{width:56px; height:53px; margin:-67px 0 0 290px; padding:23px 20px; color:#FFF; font-weight:bold; font-size:100%; text-align:center; background:url(images/bg-price.png); position:absolute}
 
+.box_video{width:400px; height:320px}
+.box_video li{list-style:none}
+.box_video h3{font-size:130%; margin-bottom:8px}
+.box_video .box_video_img{height:200px; overflow:hidden; background:url(images/bg-thuvien-video.gif)}
+.box_video .box_video_img a{display:block; width:384px; height:154px; overflow:hidden; padding:8px 8px 12px 8px}
+.box_video .box_video_img img{width:384px}
+.box_video .box_video_info{line-height:20px; height:60px; overflow:hidden}
+
+
 #baiviet_khac{clear:both; margin-bottom:30px}
 #baiviet_khac h4{font-size:140%; color:#999; margin-bottom:10px; padding:20px 0 0 20px; border-top:dotted 1px #CCC}
 #baiviet_khac p{display:block; color:#999; line-height:30px; margin-left:50px}
@@ -93,6 +104,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #contact .textarea{width:350px; height:100px; line-height:20px; font-family:Arial, Helvetica, sans-serif; color:#333; resize:none; overflow:auto; padding:8px 10px; border:solid 1px #999}
 #contact .btn{width:auto; padding:10px 40px; font-size:110%; font-weight:bold; color:#FFF; background-color:#00A651; border:none; cursor:pointer}
 
+#phantrang{clear:both; height:30px}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#ED1E28}
 
@@ -126,3 +138,9 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #content_popup .img img{width:385px; float:left}
 #content_popup #content_pp{width:360px; float:right; line-height:20px; margin-bottom:30px}
 #content_popup #content_pp #price_pp{color:#FF7C38; font-size:150%; font-weight:bold; padding:10px 30px; border-top:solid 1px #CCC; border-bottom:solid 1px #CCC}
+
+/*photos*/
+#photos{clear:both}
+#photos .box_photos{width:225px; height:158px; float:left; overflow:hidden; margin-bottom:25px; padding:15px 12px; background:url(images/bg-thuvien-images.gif)}
+#photos .box_photos a{display:block; width:225px; height:158px; overflow:hidden}
+#photos .box_photos img{width:225px}

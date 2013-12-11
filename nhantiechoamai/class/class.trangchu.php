@@ -24,7 +24,7 @@ class trangchu extends db {
 	}
 	function slider_banner($id,$menu_id=NULL){
 		if($menu_id!=NULL) $menu_id = "AND menu_id LIKE '%,{$menu_id},%'"; else $menu_id = '';
-		$qr = "SELECT name,url_hinh,link FROM slider_banner WHERE `delete`=0 AND status=1 AND position_id='{$id}' {$menu_id} ORDER BY date_update DESC";
+		$qr = "SELECT name,url_hinh,link,content FROM slider_banner WHERE `delete`=0 AND status=1 AND position_id='{$id}' {$menu_id} ORDER BY date_update DESC";
 		return mysql_query($qr);
 	}
 	function menu_one($alias){
@@ -95,9 +95,9 @@ class trangchu extends db {
 		if($total_pages > 1){
 			for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}_page_{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
 				} elseif($i>0) {
-					$str .= "<a href='{$link}_page_{$i}/'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
 				}
 			}
 		}

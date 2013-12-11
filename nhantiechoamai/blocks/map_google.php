@@ -27,7 +27,7 @@ map = new google.maps.Map(document.getElementById("map_google"), myOptions);
 	var marker = new google.maps.Marker({
 		position: myLatlng, 
 		map: map,
-		title:"Trường ĐH GTVT TP.HCM!"
+		title:"Dịch vụ nấu tiệc Hoa Mai"
 	});
 }
 initialize();
