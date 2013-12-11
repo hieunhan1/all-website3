@@ -1,0 +1,38 @@
+ExpiresActive on
+ExpiresDefault "access plus 1 months"
+ExpiresByType image/jpg "access plus 1 months"
+ExpiresByType image/gif "access plus 1 months"
+ExpiresByType image/jpeg "access plus 1 months"
+ExpiresByType image/png "access plus 1 months"
+ExpiresByType text/css "access plus 1 months"
+ExpiresByType text/javascript "access plus 1 months"
+ExpiresByType application/javascript "access plus 1 months"
+ExpiresByType application/x-shockwave-flash "access plus 1 months"
+
+# Enable gzip (deflate) compression
+AddOutputFilterByType DEFLATE text/html text/css application/x-javascript
+
+RewriteEngine On
+####Charset
+AddDefaultCharset Off 
+####Gzip
+<IfModule mod_rewrite.c>
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)(js|css)$ redir.php?file=$1$2&type=$2 [L]
+RewriteCond %{HTTP_HOST} ^muabannhadathcm.com
+RewriteRule ^(.*)$ http://www.muabannhadathcm.com/$1 [R=permanent,L]
+RewriteRule index.htm index.php
+RewriteRule (.*)/$  index.php?danhmuc=$1
+RewriteRule (.*)/(.*).html$ index.php?danhmuc=$1&detail=$2
+</IfModule>
+####ETags
+FileETag None
+####Expires
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/gif A2592000
+ExpiresByType image/jpeg A2592000
+ExpiresByType image/png A2592000
+ExpiresByType application/x-shockwave-flash A2592000
+ExpiresByType text/css A2592000
+ExpiresByType application/x-javascript A2592000
