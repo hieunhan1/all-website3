@@ -1,18 +1,19 @@
-<?php
-//session_start();
-ob_start();
-/*$idUser = $_SESSION["idUser"];
-$idGroup = $_SESSION["idGroup"];
-$user = $_SESSION["Username"];
+<?php session_start(); ob_start();
+if(isset($_GET['language'])) {
+	$_SESSION['language'] = $_GET['language'];
+} else {
+	if(!isset($_SESSION['language'])) {
+		$_SESSION['language'] = 'vi';
+	}
+}
+
+$lang = $_SESSION['language'];
+
+$idUser = $_SESSION["id_admin"];
+$idGroup = $_SESSION["group_admin"];
+$user = $_SESSION["user_admin"];
 $quyen_xem = $_SESSION['quyen_xem'];
-$quyen_action = $_SESSION['quyen_action'];*/
-
-$idUser = $_COOKIE["idUser"];
-$idGroup = $_COOKIE["idGroup"];
-$user = $_COOKIE["Username"];
-$quyen_xem = $_COOKIE['quyen_xem'];
-$quyen_action = $_COOKIE['quyen_action'];
-
+$quyen_action = $_SESSION['quyen_action'];
 if(@$user) {
 	require_once 'config.php';
 	require_once 'layout.php';
@@ -28,7 +29,7 @@ if(@$user) {
 	
 	$p = $_GET["p"];
 	if($p=='thoat') {
-		$qt->logout();
+		session_destroy();
 		header("location:index.php");
 	}
 ?>
@@ -37,6 +38,7 @@ if(@$user) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Trang quản trị</title>
+<meta name="robots" content="nofollow" />
 <link href="img/css.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../library/jquery.js"></script>
 <script type="text/javascript" src="website.js"></script>
@@ -75,9 +77,8 @@ function SetFileField(fileUrl, data){
         	<?php
             $menuadmin = $qt->MenuAdmin();
 			while($row_menuadmin = mysql_fetch_array($menuadmin)){
-				echo "<a href='administrator.php?p={$row_menuadmin[url]}'>{$row_menuadmin[name]} </a>";
+				echo '<a href="administrator.php?p='.$row_menuadmin[url].'">'.$row_menuadmin[name].'</a>';
 			}
-			mysql_free_result($menuadmin);
 			?>
         </div>
     </div>
@@ -90,9 +91,27 @@ function SetFileField(fileUrl, data){
 		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
 		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
 		
+		if($page==$p){
+			$url = 'administrator.php?p='.$page;
+			$qr = $qt->language();
+			if(mysql_num_rows($qr) > 1){
+				$name_lang = array();
+				$ma_lang = array();
+				while($row = mysql_fetch_array($qr)){
+					$name_lang[] = $row['name'];
+					$ma_lang[] = $row['ma'];
+				}
+				for($i=0; $i<count($name_lang); $i++){
+					if($_SESSION['language']!=$ma_lang[$i]) $view_lang .= '<a href="'.$url.'&language='.$ma_lang[$i].'">'.$name_lang[$i].'</a> &nbsp; | &nbsp; ';
+					else $view_lang .= '<a href="'.$url.'&language='.$ma_lang[$i].'" style="background-color:#FF0; border:solid 1px #999; padding:2px 5px">'.$name_lang[$i].'</a> &nbsp; | &nbsp; ';
+				}
+			}
+		}
+		
 		if((count($m)==1 && sizeof($for_view[0])==1) ||(count($m)==2 && sizeof($for_action[0])==1) || (!@$p) || $p=='thongtin'){
-			echo "<div class='title'>{$row_navigator[name]} ".column_general($p)."&nbsp;</div>";
-			if(count($m)==1 && $page!='menu' && $page!='home' && $page!='thongtin' && $page!='users' && $page!='config') require_once('search.php');
+			echo "<div class='title'>{$row_navigator[name]} ".column_general($p)."&nbsp;</div>
+			<div style='margin-bottom:10px'>{$view_lang}</div>";
+			if(count($m)==1 && ($page=='info' || $page=='products' || $page=='order' || $page=='photo_gallery' || $page=='video')) require_once('search.php');
 			
 			if(@$p){
 				if (file_exists('blocks/'.$p.'.php')) include_once('blocks/'.$p.'.php');

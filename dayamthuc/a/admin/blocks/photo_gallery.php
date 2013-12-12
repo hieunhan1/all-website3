@@ -10,7 +10,7 @@
 	$order .= ' ORDER BY date_create DESC ';
 	if(!@$_GET['page_number']) $page_number = 1; else $page_number = $_GET['page_number'];
 	$from = (($page_number * $max_results) - $max_results);
-	$type = 6; //loại sql select $type = 6;
+	$type = 8; //loại sql select $type = 6;
 	$table = $page;
 	$field = array('id','name', 'status','user_create','date_create','user_update','date_update');
 	$limit = array($from, $max_results);

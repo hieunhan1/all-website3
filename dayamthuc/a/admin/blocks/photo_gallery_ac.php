@@ -96,7 +96,8 @@ if(@$_POST['menu_id']) $checks = $_POST['menu_id']; else $checks = $detail['menu
 $form->getProperties(NULL, 'menu_id', 2, NULL, $checks, 20);
 echo $form->DisplayProperties();
 //Danh mục checkbox_group
-$form->getProperties('Danh mục', NULL, 41, 'list_check2', $values, $checks, 'checkbox');
+//EX: getProperties(Display_Name, NULL, 41, CSS_Class, Value=array, list_check=$this->_length, '&nbsp; ')
+$form->getProperties('Danh mục', NULL, 41, 'list_check2', $values, $checks, 'checkbox');//$values danh sách, $value checked
 echo $form->DisplayProperties();
 
 //Mô tả name

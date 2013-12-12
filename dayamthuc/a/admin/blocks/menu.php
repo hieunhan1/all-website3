@@ -8,7 +8,7 @@
 	$level = 0;
 	$style1 = '&nbsp;';
 	$style2 = '&nbsp;-- ';
-	$str_query = array("SELECT id, name, date_create, date_update, `order`, status, user_create, user_update FROM menu ", " WHERE `delete`=0 AND parent_id= ", " ORDER BY `order` ");
+	$str_query = array("SELECT id, name, date_create, date_update, `order`, status, user_create, user_update FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND parent_id= ", " ORDER BY `order` ");
 	$form->getProperties($level, $style1, 9, $style2, $str_query);
 	$values = $form->DisplayProperties();
 	foreach($values as $row){
