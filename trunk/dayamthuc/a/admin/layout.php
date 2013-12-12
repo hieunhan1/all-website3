@@ -16,10 +16,7 @@ function column_general($p) {
 	if(count($m) == 1){
 		$display =  
 		"<span id='action'>
-			<a href='administrator.php?p={$m[0]}_ac&id=0'><img src='img/add.gif' alt='' /> Thêm mới</a>
-			<a href='javascript:;' id='dalete_all'><img src='img/delete.gif' alt='' /> Xóa</a>
-			<a href='javascript:;' id='hien_all'><img src='img/anhien_1.gif' alt='' /> Hiện</a>
-			<a href='javascript:;' id='an_all'><img src='img/anhien_0.gif' alt='' /> Ẩn</a> | 
+			<a href='administrator.php?p={$m[0]}_ac&id=0'><img src='img/add.gif' alt='' /> Thêm mới</a> | 
 			<a href='javascript:;' id='update'>See the change</a>
 			<a href='javascript:;' id='create'>See the not change</a>
 		</span>";
@@ -57,7 +54,7 @@ function list_column2($page, $id, $mota, $status, $user_create, $date_create, $u
 	<div class='row'>
 		<div class='col_full'>{$mota} &nbsp;</div>
 		<div class='col_action'>
-			<a href='administrator.php?p={$page}_ac&id={$id}' class='edit'><img src='img/edit.gif' alt='' /></a>
+			<a href='administrator.php?p={$page}_ac&id={$id}' class='edit'><img src='img/edit.gif' alt='' /></a> &nbsp;
 		</div>
 		<div class='col_create'>{$user_create} &nbsp;</div>
 		<div class='col_create'>{$date_c} &nbsp;</div>
@@ -66,47 +63,11 @@ function list_column2($page, $id, $mota, $status, $user_create, $date_create, $u
 		{$od}
 	</div>";
 }
-
-function cauhoi($page, $id, $mota, $status, $user_create, $date_create, $user_update, $date_update, $order = NULL){
-	$date_c = date('d/m/Y', strtotime($date_create));
-	if(!@$date_update) $date_u = '&nbsp;'; else $date_u = date('d/m/Y', strtotime($date_update));
-	if(!@$user_update) $user_update = '&nbsp;';
-	if($order != '') $od = "<div class='col_order'>{$order} &nbsp;</div>"; else $od = '';
-	$qr = mysql_query("SELECT id FROM answers WHERE `delete`=0 AND status=0 AND question_id='{$id}'");
-	if(mysql_num_rows($qr)==0) return "
-	<div class='row'>
-		<div class='col_full'>{$mota} &nbsp;</div>
-		<div class='col_action'>
-			<a href='javascript:;' class='status' id='{$id}' page='{$page}' name='{$mota}' set='{$status}'><img src='img/anhien_{$status}.gif' alt='' /></a> &nbsp;
-			<a href='administrator.php?p={$page}_ac&id={$id}' class='edit'><img src='img/edit.gif' alt='' /></a> &nbsp;
-			<a href='javascript:;' class='delete_one' id='{$id}' page='{$page}' name='{$mota}'><img src='img/delete.gif' alt='' /></a>
-		</div>
-		<div class='col_create'>{$user_create} &nbsp;</div>
-		<div class='col_create'>{$date_c} &nbsp;</div>
-		<div class='col_update'>{$user_update} &nbsp;</div>
-		<div class='col_update'>{$date_u} &nbsp;</div>
-		{$od}
-	</div>";
-	else return "
-	<div class='row' style='background-color:#CCC'>
-		<div class='col_full'>{$mota} &nbsp;</div>
-		<div class='col_action'>
-			<a href='javascript:;' class='status' id='{$id}' page='{$page}' name='{$mota}' set='{$status}'><img src='img/anhien_{$status}.gif' alt='' /></a> &nbsp;
-			<a href='administrator.php?p={$page}_ac&id={$id}' class='edit'><img src='img/edit.gif' alt='' /></a> &nbsp;
-			<a href='javascript:;' class='delete_one' id='{$id}' page='{$page}' name='{$mota}'><img src='img/delete.gif' alt='' /></a>
-		</div>
-		<div class='col_create'>{$user_create} &nbsp;</div>
-		<div class='col_create'>{$date_c} &nbsp;</div>
-		<div class='col_update'>{$user_update} &nbsp;</div>
-		<div class='col_update'>{$date_u} &nbsp;</div>
-		{$od}
-	</div>";
-}
-function phantrang($page,$max_results,$page_number,$search){
+function phantrang($page,$max_results,$page_number,$search,$type=6){
 	global $sql;
 	$from = (($page_number * $max_results) - $max_results);
 	$link = "administrator.php?p={$page}&page_number=";
-	$type = 6; //loại sql select $type = 6;
+	//$type = 6; //loại sql select $type = 6;
 	$table = $page;
 	$field = array('id');
 	$sql->get_sql($type,$table,$field,$search);

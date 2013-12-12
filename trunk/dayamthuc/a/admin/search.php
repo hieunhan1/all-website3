@@ -12,24 +12,24 @@ if(@$_POST['btnSearch']){
 	default : $type_id=0;
 }*/
 
-function danhmuctim($parent_id=0,$style='',$arr=NULL){
+function danhmuctim($parent_id=0,$style='',$lang,$arr=NULL){
 	if(!$arr) $arr = array();
-	$qr = "SELECT id,name FROM menu WHERE `delete`=0 AND type_id<>6 AND type_id<>7 AND parent_id=";
+	$qr = "SELECT id,name FROM menu WHERE `delete`=0 AND lang='{$lang}' AND parent_id=";
 	$qr .= $parent_id;
 	$qr .= ' ORDER BY `order`';
 	$sql = mysql_query($qr);
 	while($row = mysql_fetch_array($sql)){
 		$arr[] = array('id'=>$row['id'],'name'=>$style.$row['name']);
-		$arr = danhmuctim($row['id'],$style.'--- ',$arr);
+		$arr = danhmuctim($row['id'],$style.'--- ',$lang,$arr);
 	}
 	return $arr;
 }
-$danhmuc = danhmuctim(0);
+$danhmuc = danhmuctim(0,'',$lang);
 ?>
 <div id="search">
 <form action="" method="post" name="search">
 	<input type="text" name="txtname" class="txt" value="<?php if(@$_POST['txtname']) echo $_POST['txtname']?>" />
-    <select name="danhmuc" class="select">
+    	<select name="danhmuc" class="select">
     	<option value="0">-- Chọn danh mục --</option>
     	<?php
         foreach($danhmuc as $dm){

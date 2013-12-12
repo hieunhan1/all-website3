@@ -19,6 +19,12 @@ if($id == '0'){ //create
 	$detail = mysql_fetch_array($qr_detail);
 	mysql_free_result($qr_detail);
 	
+	//hidden field
+	$form->getProperties(NULL, 'user_update', 2, NULL, $user, 20);
+	$user_login = $form->DisplayProperties();
+	$form->getProperties(NULL, 'date_update', 2, NULL, date('Y-m-d H:i:s'), 20);
+	$date_create = $form->DisplayProperties();
+	
 	$type = 2; //loại sql update $type = 2;
 }
 
@@ -66,11 +72,11 @@ if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
 $form->getProperties('Họ tên', 'name', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 //Password
-if(!@$detail['Password']) $value = 'e10adc3949ba59abbe56e057f20f883e'; else $value = $detail['Password'];
+if(!@$detail['Password']) $value = md5('123456'); else $value = $detail['Password'];
 $form->getProperties('', 'Password', 2, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 //idGroup
-$form->getProperties('', 'idGroup', 2, 'input_medium', 1, 50);
+$form->getProperties('', 'group_id', 2, 'input_medium', 1, 50);
 echo $form->DisplayProperties();
 
 //phan quyen
@@ -82,7 +88,7 @@ $checks_xem = explode(',', $detail['quyen_xem']);
 $checks_action = explode(',', $detail['quyen_action']);
 
 $str = "<tr><th align='right' valign='top'>{$displayname}</th><td><div style='background-color:#FFFFCC; padding:3px; border:solid 1px #999; width:150px; float:left'><b>Xem</b><br />";
-$str_query = mysql_query("SELECT id, name FROM menu_admin WHERE `delete`=0 ORDER BY `order` ASC ");
+$str_query = mysql_query("SELECT id,name FROM menu_admin WHERE `delete`=0 AND status=1 ORDER BY `order` ASC ");
 while($row_str_query = mysql_fetch_array($str_query)){
 	$str .= "<input type='checkbox' class='checkbox_xem' ";
 	for($i=1; $i<=count($checks_xem); $i++){
@@ -93,7 +99,7 @@ while($row_str_query = mysql_fetch_array($str_query)){
 $str .= '</div>';
 
 $str .= "<div style='background-color:#FFFFCC; padding:3px; border:solid 1px #999; width:150px; float:left'><b>Thêm, sửa</b><br />";
-$str_query2 = mysql_query("SELECT id, name FROM menu_admin WHERE `delete`=0 ORDER BY `order` ASC ");
+$str_query2 = mysql_query("SELECT id,name FROM menu_admin WHERE `delete`=0 AND status=1 ORDER BY `order` ASC ");
 while($row_str_query = mysql_fetch_array($str_query2)){
 	$str .= "<input type='checkbox' class='checkbox_action' ";
 	for($i=1; $i<=count($checks_action); $i++){

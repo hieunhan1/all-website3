@@ -1,11 +1,12 @@
-<?php //session_start(); //ob_start();
-if(@$_COOKIE["Username"]) header('location: administrator.php');
+<?php
+session_start();
+if(@$_SESSION["Username"]) header('location: administrator.php');
 require 'config.php';
-	if(isset($_POST["btnLogin"])) {
-		$un = $_POST["un"]; $pa = $_POST["pa"];
-		$kiemtra = $qt->KiemTraLogin($un, $pa);
-		if($kiemtra==true) header("location:administrator.php"); else $error = "Tên đăng nhập hoặc mật khẩu sai.<br />";
-	}
+
+if(isset($_POST["btnLogin"])) {
+	$kiemtra = $qt->KiemTraLogin(1); //group_id = 1
+	if($kiemtra==true) header("location:administrator.php"); else $error = "Tên đăng nhập hoặc mật khẩu sai.<br />";
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

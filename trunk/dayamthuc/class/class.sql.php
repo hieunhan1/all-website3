@@ -34,6 +34,7 @@ class sql {
 			case 5 : $action = $this->delete(); 			break;
 			case 6 : return $action = $this->select(); 		break;
 			case 7 : $action = $this->status(); 			break;
+			case 8 : return $action = $this->select2(); 	break;
 			
 			default : $this->_error = $this->_list_error[0];
 		}
@@ -49,28 +50,22 @@ class sql {
 		$value = $this->_var4;
 		$qr = "INSERT INTO `{$table}` (";
 		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)) $dau = '`,';
-			else $dau = '`';
-			if($field[$i] != 'user_update'){
-				$qr .= "`{$field[$i]}{$dau}";
-			}
+			$qr .= "`{$field[$i]}`,";
 		}
+		$qr = trim($qr,',');
 		$qr .= ') VALUES (';
 		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)){
-				$dau = "'";
-				$cuoi = "',";
-			}
-			else $cuoi = "')";
 			if($field[$i] != 'date_create' and $field[$i] != 'date_update'){
-				if($field[$i] != 'user_update') $qr .= "{$dau}{$value[$i]}{$cuoi}";
+				if($field[$i] != 'user_update') $qr .= "'{$value[$i]}',";
 			} else if($field[$i] == 'date_create'){
-				$qr .= $dau.date('Y-m-d H:i:s').$cuoi;
+				$qr .= "'".date('Y-m-d H:i:s')."',";
 			} else {
 				$m = explode('/', $value[$i]); $date = date('H:i:s');
-				$qr .= "{$dau}{$m[2]}-{$m[1]}-{$m[0]} {$date}{$cuoi}";
+				$qr .= "'{$m[2]}-{$m[1]}-{$m[0]} {$date}',";
 			}
 		}
+		$qr = trim($qr,',');
+		$qr = $qr.')';
 		mysql_query($qr) or ($this->_error = $this->_list_error[1]);
 	}
 	function update() { //2
@@ -129,7 +124,7 @@ class sql {
 			else $dau = '';
 			$qr .= $field[$i].$dau;
 		}
-		$qr .= " FROM `{$table}` WHERE `delete`=0 {$order} {$limit}";
+		$qr .= " FROM `{$table}` WHERE `delete`=0 AND lang='".$_SESSION['language']."' {$order} {$limit}";
 		return mysql_query($qr);
 	}
 	function status() { //7
@@ -139,5 +134,24 @@ class sql {
 		$id = $this->_var5;
 		$qr = "UPDATE `{$table}` SET `status`='{$set}', `user_update`='{$user}' WHERE `id`='{$id}'";
 		mysql_query($qr) or ($this->_error = $this->_list_error[7]);
+	}
+	function select2() { //8
+		$table = $this->_var2;
+		$field = $this->_var3; //array
+		$order = $this->_var4;
+		$limit = $this->_var5;//array chỉ 2 phần tử
+		if(count($limit) > 0){
+			$form = $limit[0];
+			$max_results = $limit[1];
+			$limit = " LIMIT {$form}, {$max_results}";
+		} else $limit = '';
+		$qr = "SELECT ";
+		for($i = 0; $i < count($field); $i++){
+			if($i != (count($field)-1)) $dau = ",";
+			else $dau = '';
+			$qr .= $field[$i].$dau;
+		}
+		$qr .= " FROM `{$table}` WHERE `delete`=0 {$order} {$limit}";
+		return mysql_query($qr);
 	}
 }
