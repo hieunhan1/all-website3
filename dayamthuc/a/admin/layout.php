@@ -47,6 +47,26 @@ function list_column($page, $id, $mota, $status, $user_create, $date_create, $us
 		{$od}
 	</div>";
 }
+function list_column2($page, $id, $mota, $status, $user_create, $date_create, $user_update, $date_update, $order = NULL){
+	//echo $date_create;
+	$date_c = date('d/m/Y', strtotime($date_create));
+	if(!@$date_update) $date_u = '&nbsp;'; else $date_u = date('d/m/Y', strtotime($date_update));
+	if(!@$user_update) $user_update = '&nbsp;';
+	if($order != '') $od = "<div class='col_order'>{$order} &nbsp;</div>"; else $od = '';
+	return "
+	<div class='row'>
+		<div class='col_full'>{$mota} &nbsp;</div>
+		<div class='col_action'>
+			<a href='administrator.php?p={$page}_ac&id={$id}' class='edit'><img src='img/edit.gif' alt='' /></a>
+		</div>
+		<div class='col_create'>{$user_create} &nbsp;</div>
+		<div class='col_create'>{$date_c} &nbsp;</div>
+		<div class='col_update'>{$user_update} &nbsp;</div>
+		<div class='col_update'>{$date_u} &nbsp;</div>
+		{$od}
+	</div>";
+}
+
 function cauhoi($page, $id, $mota, $status, $user_create, $date_create, $user_update, $date_update, $order = NULL){
 	$date_c = date('d/m/Y', strtotime($date_create));
 	if(!@$date_update) $date_u = '&nbsp;'; else $date_u = date('d/m/Y', strtotime($date_update));
