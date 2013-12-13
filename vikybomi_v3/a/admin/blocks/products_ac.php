@@ -142,10 +142,15 @@ if(@$_POST['price_km']) $value = $_POST['price_km']; else $value = $detail['pric
 $form->getProperties('Giá KM', 'price_km', 1, 'input_medium', $value, 8);
 echo $form->DisplayProperties();
 
-//description
+//metaDescription
+if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
+echo $form->DisplayProperties();
+
+//dactinh
 $orther = "
 <script>
-CKEDITOR.replace( 'metaDescription', {
+CKEDITOR.replace( 'dactinh', {
 	uiColor: '#b5d8ef',
 	toolbar: [
 		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-','RemoveFormat','TextColor','BGColor','NumberedList','BulletedList'],
@@ -153,8 +158,8 @@ CKEDITOR.replace( 'metaDescription', {
 });
 </script>
 ";
-if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
-$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1, $orther);
+if(@$_POST['dactinh']) $value = $_POST['dactinh']; else $value = $detail['dactinh'];
+$form->getProperties('Đặc tính', 'dactinh', 3, 'textarea', $value, 1, $orther);
 echo $form->DisplayProperties();
 
 //Nội dung content
