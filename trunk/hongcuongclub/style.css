@@ -44,22 +44,23 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #baiviet_khac span{font-size:70%; padding:0 5px 0 25px}
 #baiviet_khac a{color:#ffef9a}
 
+.box_photos{width:226px; height:150px; float:left; margin-bottom:30px; padding:16px 11px 16px 11px; background:url(images/bg-images.png)}
+.box_photos a{width:226px; height:150px; display:block; overflow:hidden; border:solid 1px #121212}
+.box_photos img{width:226px}
+
 #footer{color:#787878; word-spacing:2px; line-height:28px; padding:20px 0 30px 0}
 
-.viewpost{line-height:23px}
-.viewpost p, .viewpost div {margin:15px 0}
+.viewpost{width:100%; line-height:23px}
+.viewpost p, .viewpost div {width:100%; margin:15px 0}
 .viewpost li{margin-left:35px}
 .viewpost h1{font-size:160%; line-height:30px; color:#FEE356; margin-bottom:10px}
 .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%; color:#FFF}
 .viewpost  .date{color:#888; font-style:italic; text-align:right}
 
-#contact{padding:25px}
-#contact #info{line-height:22px}
-#contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
-#contact #info p, #contact #info div {margin:10px 0}
+#contact td{padding:10px 5px 10px 0}
 #contact .txt{width:250px; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
-#contact .textarea{width:672px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
-#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
+#contact .textarea{width:658px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#A36E12; border:none; cursor:pointer}
 
 #navigator{clear:both}
 #navigator a{padding-right:15px; font-size:12px; color:#666}

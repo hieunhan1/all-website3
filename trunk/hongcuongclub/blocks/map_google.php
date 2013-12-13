@@ -1,8 +1,9 @@
+<div style="height:300px" id="map_google"></div>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
 <script type="text/javascript">
 var map;
 function initialize() {
-	  var myLatlng = new google.maps.LatLng(10.791811200109255, 106.69101119041443);
+	  var myLatlng = new google.maps.LatLng(10.83459, 106.71380);
 	  var myOptions = {
 	zoom: 16,
 	center: myLatlng,
@@ -27,7 +28,7 @@ map = new google.maps.Map(document.getElementById("map_google"), myOptions);
 	var marker = new google.maps.Marker({
 		position: myLatlng, 
 		map: map,
-		title:"Dịch vụ nấu tiệc Hoa Mai"
+		title:"Hồng Cường Club"
 	});
 }
 initialize();
