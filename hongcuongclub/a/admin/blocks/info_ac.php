@@ -134,18 +134,8 @@ $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value
 echo $form->DisplayProperties();
 
 //description
-$orther = "
-<script>
-CKEDITOR.replace( 'metaDescription', {
-	uiColor: '#b5d8ef',
-	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-','RemoveFormat','TextColor','BGColor','NumberedList','BulletedList'],
-	]
-});
-</script>
-";
 if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
-$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1, $orther);
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 //Nội dung content

@@ -144,18 +144,8 @@ $form->getProperties("Link  {$required}", 'link', 1, 'input_medium', $value, 150
 echo $form->DisplayProperties();
 
 //content
-$orther = "
-<script>
-CKEDITOR.replace( 'content', {
-	uiColor: '#b5d8ef',
-	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','RemoveFormat','Bold', 'Italic', '-', 'Link', 'Unlink','FontSize','TextColor','BGColor'],
-	]
-});
-</script>
-";
 if(@$_POST['content']) $value = $_POST['content']; else $value = $detail['content'];
-$form->getProperties('Thông tin', 'content', 3, 'textarea', $value, 1, $orther);
+$form->getProperties('Thông tin', 'content', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 echo "

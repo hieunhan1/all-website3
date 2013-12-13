@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/all/nhantiechoamai/public/';
+$baseUrl = '/all/hongcuongclub/public/';
 
 $baseDir = resolveUrl($baseUrl);
 

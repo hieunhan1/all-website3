@@ -4,51 +4,54 @@ Vang:	FEE356
 Do:		E68688
 */
 *{margin:0; padding:0}
-body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background:url(images/bg.jpg) fixed #422E22}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#DADADA; background:url(images/bg.jpg) fixed #422E22}
 img{border:0}
-a:link,a:visited,a:active{color:#0055A5; text-decoration:none}
+a:link,a:visited,a:active{color:#FEE356; text-decoration:none}
 a:hover{color:#ED1E28; text-decoration:underline}
 hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
-#wrapper{width:970px; margin:auto}
+#wrapper{width:1000px; margin:auto}
 
-#menu_top{clear:both; width:auto; float:right; padding-top:12px}
+#menu_top{clear:both; width:auto; height:15px; line-height:15px; float:right; color:#b1b1b1; padding-top:12px}
 #menu_top a{color:#b1b1b1; margin-left:30px}
+#menu_top p{width:auto; float:left; padding-left:30px}
+#menu_top p a{margin:0}
+#menu_top span{font-size:130%; color:#fff000; font-weight:bold; padding-right:10px}
 
 #header{clear:both; height:165px}
 #header #logo{width:auto; float:left}
-#header #slogan{width:auto; float:right}
+#header #slogan{width:auto; float:right; margin-top:40px}
 
-.box_home{width:300px; height:580px; float:left; border:solid 1px #000; background:url(images/bg-home.jpg)}
+.box_home{width:300px; height:580px; float:left; overflow:hidden; border:solid 1px #000; background:url(images/bg-home.jpg)}
 .box_home .box_home_img{height:355px; overflow:hidden}
 .box_home .box_home_img img{height:355px}
-.box_home h2{font-size:135%; text-transform:uppercase; margin:30px 10px 5px 10px}
+.box_home h2{font-size:130%; text-transform:uppercase; margin:30px 10px 5px 10px}
 .box_home p{color:#999; line-height:22px; height:88px; overflow:hidden; margin:0 10px}
 .box_home .view_more{width:120px; height:30px; line-height:30px; font-weight:bold; text-align:center; margin:20px auto}
-.box_home a{color:#333}
+.box_home a{color:#212121}
 
-.viewpost{line-height:22px}
-.viewpost p, .viewpost div {line-height:20px; margin:10px 0}
+.box_baiviet{width:400px; height:330px}
+.box_baiviet h3{font-size:120%; margin-bottom:8px}
+.box_baiviet a{color:#d29c35}
+.box_baiviet a:hover{color:#daab50}
+.box_baiviet .box_baiviet_img{height:200px; overflow:hidden; border:solid 1px #1F1F1F}
+.box_baiviet .box_baiviet_img img{width:400px}
+.box_baiviet .box_baiviet_info{line-height:22px; color:#b8b8b8; height:66px; overflow:hidden}
+
+#baiviet_khac{clear:both; padding:20px 0 0 30px}
+#baiviet_khac h4{font-size:150%; margin-bottom:10px}
+#baiviet_khac p{padding:5px 0}
+#baiviet_khac span{font-size:70%; padding:0 5px 0 25px}
+#baiviet_khac a{color:#ffef9a}
+
+#footer{color:#787878; word-spacing:2px; line-height:28px; padding:20px 0 30px 0}
+
+.viewpost{line-height:23px}
+.viewpost p, .viewpost div {margin:15px 0}
 .viewpost li{margin-left:35px}
-.viewpost h1{font-size:160%; line-height:30px; color:#ED1E28; margin-bottom:10px}
-.viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
+.viewpost h1{font-size:160%; line-height:30px; color:#FEE356; margin-bottom:10px}
+.viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%; color:#FFF}
 .viewpost  .date{color:#888; font-style:italic; text-align:right}
-
-#other{clear:both}
-#other .title2{font-size:150%; color:#017B80; font-weight:bold; margin-bottom:10px}
-#other li{clear:both; margin:0 20px; padding:10px 0 10px 30px; list-style:none; font-weight:bold; background:url(images/sao.png) left no-repeat}
-#other a{color:#666}
-
-#list_detail{clear:both; color:#333; line-height:20px}
-#list_detail h1{font-size:180%; color:#ED1E28}
-#list_detail h2{font-size:100%; font-weight:100; color:#666; margin:10px 0 20px 0}
-#list_detail .item_detail{height:140px; overflow:hidden; margin-bottom:10px}
-#list_detail .item_detail .img{width:190px; height:115px; float:left; overflow:hidden; margin-right:25px}
-#list_detail .item_detail .img img{width:190px}
-#list_detail .item_detail h3{font-size:110%}
-#list_detail .item_detail a{color:#017B80}
-#list_detail .item_detail .date{font-style:italic; padding:6px 0; color:#999; font-size:90%}
-#list_detail .item_detail .content{height:80px; overflow:hidden}
 
 #contact{padding:25px}
 #contact #info{line-height:22px}
@@ -64,18 +67,21 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #navigator span{font-size:9px; color:#999; padding-right:5px}
 
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
-#phantrang a:hover{background-color:#ED1E28}
+#phantrang a:hover{background-color:#FEE356; color:#333}
+
+#run_top{clear:both; height:20px; text-align:right; font-weight:bold; padding-top:50px; color:#BB8B4A; cursor:pointer}
 
 /*menu*/
-#menu{height:33px; background-color:#00AEED}
+#menu{height:26px; margin:10px 0 55px 0}
+#menu_active{background-color:#7a1315}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:33px; color:#FFF; font-weight:bold; padding:0 25px} /* letter-spacing:1px; word-spacing:2px */
-#nav a:hover {text-decoration:none; background-color:#017B80}
+#nav li a {line-height:26px; color:#FFF; font-weight:bold; margin:0 5px; padding:0 15px} /* letter-spacing:1px; word-spacing:2px */
+#nav a:hover {text-decoration:none; background-color:#7a1315}
 #nav li {float:left; position:relative}
-#nav ul {width:160px; position:absolute; top:33px; display:none}
-#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 25px; background-color:#888; border-bottom:solid 1px #999}
-#nav li ul a:hover {background-color:#666; color:#FFF}
+#nav ul {width:160px; position:absolute; top:26px; display:none}
+#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 15px; background-color:#4A3426; border-bottom:solid 1px #5C4230}
+#nav li ul a:hover {color:#FFF000; background-color:#4A3426}
 #nav ul ul {top:auto}
 #nav li ul ul {left:220px; border-left:solid 1px #FFF}
 #nav li ul ul a{font-weight:100}

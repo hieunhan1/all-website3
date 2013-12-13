@@ -28,25 +28,26 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one($alias){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id,position_id FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	function menu_one_id($id){
 		$qr = "SELECT id,name,url,parent_id FROM menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
 		return mysql_query($qr);
 	}
-	function menu($level,$position,$lang=NULL){
+	function menu($level,$position=NULL,$lang=NULL){
+		if($position!=NULL) $position = "AND position_id LIKE '%,{$position},%'"; else $position = '';
 		if($lang!=NULL) $lang = "AND lang='{$lang}'"; else $lang = '';
-		$qr = "SELECT id,name,url,url_hinh,title FROM menu WHERE `delete`=0 AND status=1 {$lang} AND position_id LIKE '%,{$position},%' AND parent_id ='{$level}' ORDER BY `order`";
+		$qr = "SELECT id,name,url,url_hinh,title,metaDescription FROM menu WHERE `delete`=0 AND status=1 {$lang} {$position} AND parent_id ='{$level}' ORDER BY `order`";
 		return mysql_query($qr);
 	}
-	function getSubmenu($level,$position,$lang){
-		$sql = $this->menu($level,$position);
+	function getSubmenu($level){
+		$sql = $this->menu($level);
 		if(mysql_num_rows($sql) > 0){
 			$view = '<ul>';
 			while($row = mysql_fetch_array($sql)){
 				$view .= '<li><a href="'.$row['url'].'">'.$row['name'].'</a>';
-				$view .= $this->getSubmenu($row['id'],$position,$lang);
+				$view .= $this->getSubmenu($row['id']);
 				$view .= '</li>';
 			}
 			mysql_free_result($sql);
@@ -95,7 +96,7 @@ class trangchu extends db {
 		if($total_pages > 1){
 			for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#FEE356; color:#333'>{$i}</a>";
 				} elseif($i>0) {
 					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
 				}
@@ -126,7 +127,7 @@ class trangchu extends db {
 	
 	/*info*/
 	function info_other($idMenu,$id){
-		$qr = "SELECT name,name_rewrite FROM info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 8";
+		$qr = "SELECT name,name_rewrite FROM info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 5";
 		return mysql_query($qr);
 	}
 	function info_news($idMenu,$id){
@@ -141,16 +142,6 @@ class trangchu extends db {
 	}
 	function image_all($id){
 		$qr = "SELECT name,url_hinh FROM photo_gallery WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC";
-		return mysql_query($qr);
-	}
-	
-	/*video*/
-	function video_other($idMenu,$id){
-		$qr = "SELECT name,name_rewrite FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 8";
-		return mysql_query($qr);
-	}
-	function video_news($idMenu,$id){
-		$qr = "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
 		return mysql_query($qr);
 	}
 	

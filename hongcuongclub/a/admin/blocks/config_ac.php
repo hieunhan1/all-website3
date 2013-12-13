@@ -114,19 +114,19 @@ echo $form->DisplayProperties();
 
 //max_limit_1
 if(@$_POST['max_limit_1']) $value = $_POST['max_limit_1']; else $value = $detail['max_limit_1'];
-$form->getProperties('Số tin 1 page', 'max_limit_1', 1, 'input_medium', $value, 2);
+$form->getProperties('Số tin', 'max_limit_1', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_2
 if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
-$form->getProperties('Sản phẩm 1 page', 'max_limit_2', 1, 'input_medium', $value, 2);
+$form->getProperties('Số sản phẩm', 'max_limit_2', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_3
 if(@$_POST['max_limit_3']) $value = $_POST['max_limit_3']; else $value = $detail['max_limit_3'];
-$form->getProperties('Hình ảnh 1 page', 'max_limit_3', 1, 'input_medium', $value, 2);
+$form->getProperties('Số hình ảnh', 'max_limit_3', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_4
 if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
-$form->getProperties('Video 1 page', 'max_limit_4', 1, 'input_medium', $value, 2);
+$form->getProperties('Số video', 'max_limit_4', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 
 //copyright
@@ -138,19 +138,26 @@ if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties('Email liên hệ', 'email', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 
-/*
-//yahoo
-if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
-$form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
-echo $form->DisplayProperties();
-//tel
-if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
-$form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 50);
-echo $form->DisplayProperties();
 //hotline
 if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
 $form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
+//yahoo
+if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
+$form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
+echo $form->DisplayProperties();
+//skype
+if(@$_POST['skype']) $value = $_POST['skype']; else $value = $detail['skype'];
+$form->getProperties('Skype', 'skype', 1, 'input_medium', $value, 30);
+echo $form->DisplayProperties();
+
+
+/*
+//tel
+if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
+$form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 50);
+echo $form->DisplayProperties();
+
 //facebook
 if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];
 $form->getProperties('Facebook', 'facebook', 1, 'input_medium', $value, 30);

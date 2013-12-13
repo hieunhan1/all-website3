@@ -7,14 +7,4 @@ if(mysql_num_rows($qr) > 0){
 	$info_other = '<div id="baiviet_khac"><h4>Bài viết khác</h4>'.$info_other.'</div>';
 }
 
-echo '<div id="content">
-	<div id="navigator">
-		<a href="http://'.$domain.'">Trang chủ</a>
-		'.$tc->navigator($idMenu).'
-	</div>
-	<div class="viewpost">
-		<h1>'.$row_detail['name'].'</h1>
-		'.$row_detail['content'].'
-	</div>
-	'.$info_other.'
-</div>';
+echo '<div class="viewpost"><h1>'.$row_detail['name'].'</h1>'.$row_detail['content'].'</div>'.$info_other;
