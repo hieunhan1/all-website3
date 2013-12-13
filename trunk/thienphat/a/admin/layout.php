@@ -26,7 +26,7 @@ function column_general($p) {
 	} else {$display = "<span id='action'><a href='administrator.php?p={$m[0]}'><img src='img/back.png' alt='' /> Trở lại</a></span>";}
 	return $display;
 }
-function list_column($page, $id, $mota, $status, $user_create, $date_create, $user_update, $date_update, $order = NULL){
+function list_column($stt, $page, $id, $mota, $status, $user_create, $date_create, $user_update, $date_update, $order = NULL){
 	//echo $date_create;
 	$date_c = date('d/m/Y', strtotime($date_create));
 	if(!@$date_update) $date_u = '&nbsp;'; else $date_u = date('d/m/Y', strtotime($date_update));
@@ -34,7 +34,7 @@ function list_column($page, $id, $mota, $status, $user_create, $date_create, $us
 	if($order != '') $od = "<div class='col_order'>{$order} &nbsp;</div>"; else $od = '';
 	return "
 	<div class='row'>
-		<div class='col_full'>{$mota} &nbsp;</div>
+		<div class='col_full'>{$stt}. {$mota} &nbsp;</div>
 		<div class='col_action'>
 			<a href='javascript:;' class='status' id='{$id}' page='{$page}' name='{$mota}' set='{$status}'><img src='img/anhien_{$status}.gif' alt='' /></a> &nbsp;
 			<a href='administrator.php?p={$page}_ac&id={$id}' class='edit'><img src='img/edit.gif' alt='' /></a> &nbsp;

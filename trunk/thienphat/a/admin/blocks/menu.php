@@ -11,8 +11,10 @@
 	$str_query = array("SELECT id, name, date_create, date_update, `order`, status, user_create, user_update FROM menu ", " WHERE `delete`=0 AND parent_id= ", " ORDER BY `order` ");
 	$form->getProperties($level, $style1, 9, $style2, $str_query);
 	$values = $form->DisplayProperties();
+	$i = 0;
 	foreach($values as $row){
-		echo list_column($page, $row[$field[0]], $row[$field[1]], $row[$field[2]], $row[$field[3]], $row[$field[4]], $row[$field[5]], $row[$field[6]], $row[$field[7]]);
+		$i++;
+		echo list_column($i, $page, $row[$field[0]], $row[$field[1]], $row[$field[2]], $row[$field[3]], $row[$field[4]], $row[$field[5]], $row[$field[6]], $row[$field[7]]);
 	}
 	?>
     

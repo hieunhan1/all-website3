@@ -16,8 +16,10 @@
 	$limit = array($from, $max_results);
 	$sql->get_sql($type,$table,$field,$order,$limit);
 	$qr = $sql->executable() or die ($error_sql);
+	$i = ($page_number-1) * 15;
     while($row = mysql_fetch_array($qr)){
-		echo list_column($page, $row[$field[0]], $row[$field[1]], $row[$field[2]], $row[$field[3]], $row[$field[4]], $row[$field[5]], $row[$field[6]]);
+		$i++;
+		echo list_column($i, $page, $row[$field[0]], $row[$field[1]], $row[$field[2]], $row[$field[3]], $row[$field[4]], $row[$field[5]], $row[$field[6]]);
     }
 	mysql_free_result($qr);
 	/*
