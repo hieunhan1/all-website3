@@ -38,10 +38,11 @@ a:hover{color:#ed1c24; text-decoration:underline}
 
 #footer{background-color:#2B2D7A; padding:20px 0; color:#FFF}
 
-#navigator{width:auto; float:left; border-left:solid 10px #ed3237; padding-left:30px; color:#999}
+#navigator{width:auto; float:left; height:35px; line-height:35px; color:#666; padding-left:25px; border-left:solid 10px #ED3237}
+#navigator span{font-size:70%; padding:0 8px 0 15px}
 #navigator a{color:#666}
 
-#support{color:#666; width:auto; float:right}
+#support{color:#666; width:auto; height:35px; line-height:35px; float:right; padding-right:30px}
 
 .item_info{clear:both; padding:30px; border-bottom:dashed 2px #CCC}
 .item_info img{width:250px; height:157px; float:left; margin-right:20px}
