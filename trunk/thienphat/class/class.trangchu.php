@@ -27,7 +27,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one($alias){
-		$qr = "SELECT id,name,name_rewrite,url,url_hinh,title,metaDescription,metaKeyword,type_id FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,name_rewrite,url,url_hinh,title,metaDescription,metaKeyword,type_id,parent_id FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	function menu($level,$position){
@@ -48,9 +48,21 @@ class trangchu extends db {
 		}
 		return $view;
 	}
-	function navigator($url,$name,$title){
-		return '<div id="navigator"><a href="/">Trang chủ</a>  <span style="font-size:90%; padding:0 10px">&gt;&gt;</span>  <a href="'.$url.'" title="'.$title.'">'.$title.'</a></div>';	
+	function menu_one_id($id){
+		$qr = "SELECT id,name,url,parent_id FROM menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
+		return mysql_query($qr);
 	}
+	function navigator($level){
+		if($level == 0) return false;
+		$qr = $this->menu_one_id($level);
+		$row = mysql_fetch_array($qr);
+		$view = '<span>&gt;&gt;</span><a href="'.$row['url'].'">'.$row['name'].'</a>'.$view;
+		$view = $this->navigator($row['parent_id']).$view;
+		return $view;
+	}
+	/*function navigator($url,$name,$title){
+		return '<div id="navigator"><a href="/">Trang chủ</a>  <span style="font-size:90%; padding:0 10px">&gt;&gt;</span>  <a href="'.$url.'" title="'.$title.'">'.$title.'</a></div>';	
+	}*/
 	function detail_info($alias){
 		$qr = "SELECT id,name,name_rewrite,url_hinh,description,content,date_update,metaKeyword FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
@@ -103,7 +115,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function home_info($id){
-		$qr = "SELECT name,name_rewrite,url_hinh,description,menu_id FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 4";
+		$qr = "SELECT name,name_rewrite,url_hinh,description,menu_id FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 8";
 		return mysql_query($qr);
 	}
 	
