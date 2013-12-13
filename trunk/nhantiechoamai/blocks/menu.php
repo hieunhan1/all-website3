@@ -12,4 +12,9 @@ while($row = mysql_fetch_array($menu)){
 		$view_menu .= '</li>';
 	}
 }
-echo $view_menu .= '</ul></div>';
+
+$menu = $tc->menu(0,4,$lang);
+while($row = mysql_fetch_array($menu)){
+	$social .= '<a href="'.$row['url'].'" title="'.$row['title'].'"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
+}
+echo $view_menu .= '</ul> <div id="social">'.$social.'</div> </div>';
