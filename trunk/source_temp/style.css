@@ -1,17 +1,33 @@
 /* CSS Document */
 /*
-Xanh la:	00A651
-Xanh la:	0B7103
-Do:			FF7C38
+Vang:	FEE356
+Do:		E68688
 */
 *{margin:0; padding:0}
-body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background:url(images/bg.jpg) fixed #422E22}
 img{border:0}
 a:link,a:visited,a:active{color:#0055A5; text-decoration:none}
 a:hover{color:#ED1E28; text-decoration:underline}
 hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
-#wrapper{width:1000px; margin:auto}
+#wrapper{width:970px; margin:auto}
+
+#menu_top{clear:both; width:auto; float:right; padding-top:12px}
+#menu_top a{color:#b1b1b1; margin-left:30px}
+
+#header{clear:both; height:165px}
+#header #logo{width:auto; float:left}
+#header #slogan{width:auto; float:right}
+
+.box_home{width:300px; height:580px; float:left; border:solid 1px #000; background:url(images/bg-home.jpg)}
+.box_home .box_home_img{height:355px; overflow:hidden}
+.box_home .box_home_img img{height:355px}
+.box_home h2{font-size:135%; text-transform:uppercase; margin:30px 10px 5px 10px}
+.box_home p{color:#999; line-height:22px; height:88px; overflow:hidden; margin:0 10px}
+.box_home .view_more{width:120px; height:30px; line-height:30px; font-weight:bold; text-align:center; margin:20px auto}
+.box_home a{color:#333}
+
+#footer{}
 
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
@@ -19,22 +35,6 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 .viewpost h1{font-size:160%; line-height:30px; color:#ED1E28; margin-bottom:10px}
 .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
 .viewpost  .date{color:#888; font-style:italic; text-align:right}
-
-#other{clear:both}
-#other .title2{font-size:150%; color:#017B80; font-weight:bold; margin-bottom:10px}
-#other li{clear:both; margin:0 20px; padding:10px 0 10px 30px; list-style:none; font-weight:bold; background:url(images/sao.png) left no-repeat}
-#other a{color:#666}
-
-#list_detail{clear:both; color:#333; line-height:20px}
-#list_detail h1{font-size:180%; color:#ED1E28}
-#list_detail h2{font-size:100%; font-weight:100; color:#666; margin:10px 0 20px 0}
-#list_detail .item_detail{height:140px; overflow:hidden; margin-bottom:10px}
-#list_detail .item_detail .img{width:190px; height:115px; float:left; overflow:hidden; margin-right:25px}
-#list_detail .item_detail .img img{width:190px}
-#list_detail .item_detail h3{font-size:110%}
-#list_detail .item_detail a{color:#017B80}
-#list_detail .item_detail .date{font-style:italic; padding:6px 0; color:#999; font-size:90%}
-#list_detail .item_detail .content{height:80px; overflow:hidden}
 
 #contact{padding:25px}
 #contact #info{line-height:22px}
