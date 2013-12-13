@@ -12,7 +12,7 @@ mysql_free_result($config);
 $domain = $row_config['domain'];
 $lang = $row_config['lang'];
 
-$array_color = array('#49A21E','#6E2432','#E32429','#3F2317','#000000','#003A58');
+$array_color = array('#F0D754','#d76668','#999');
 
 define(max_limit_1,$row_config['max_limit_1']);
 define(max_limit_2,$row_config['max_limit_2']);

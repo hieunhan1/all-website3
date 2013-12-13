@@ -120,9 +120,10 @@ $(document).ready(function($){
 	});
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$("#support p:even").corner("left 4px");
-		$("#support p:odd").corner("right 4px");
-		$(".img_botron").corner("140px");
-		$(".txt, .textarea, .btn").corner("4px");
+		//Use top, bottom, left, right, tl, tr, bl, br 
+		$(".box_home:even").corner("br tl 50px");
+		$(".box_home:odd").corner("bl tr 50px");
+		$(".view_more").corner("5px");
+		$("#menu_active").corner("5px");
 	}
 });

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 11, 2013 at 05:09 PM
+-- Generation Time: Dec 12, 2013 at 08:56 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -34,7 +34,7 @@ CREATE TABLE `config` (
   `contact_form` text NOT NULL,
   `email` varchar(100) default NULL,
   `yahoo` varchar(100) default NULL,
-  `tel` varchar(50) default NULL,
+  `skype` varchar(50) default NULL,
   `hotline` varchar(50) NOT NULL,
   `facebook` varchar(255) default NULL,
   `status` tinyint(1) default '1',
@@ -50,7 +50,7 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 -- 
 
-INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/hongcuongclub', 10, 10, 10, 10, 'Copyright © 2013.', '<p><strong>CÂU LẠC BỘ HỒNG CƯỜNG - HONG CUONG CLUB</strong></p>\r\n\r\n<p>Địa chỉ: 195, Quốc lộ 13, P. Hiệp Bình Chánh, Thủ Đức, TP.HCM</p>\r\n\r\n<p>Điện thoại: (84.8) 37267477 - Hotline: 0906941112</p>\r\n\r\n<p>Email: clb.hongcuong2010@gmail.com</p>\r\n', '', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0988388003', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 16:12:55', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/hongcuongclub', 10, 10, 10, 10, 'Copyright © 2013.', '<p><strong>CÂU LẠC BỘ HỒNG CƯỜNG - HONG CUONG CLUB</strong></p>\r\n\r\n<p>Địa chỉ: 195, Quốc lộ 13, P. Hiệp Bình Chánh, Thủ Đức, TP.HCM</p>\r\n\r\n<p>Điện thoại: (84.8) 37267477 - Hotline: 0906941112</p>\r\n\r\n<p>Email: clb.hongcuong2010@gmail.com</p>\r\n', '', 'hieunhan112@gmail.com', 'hieu_nhan1', 'hieu_nhan1', '0988 388 003', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 20:52:00', 'admin', 'admin', 0);
 INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/source_temp', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 0, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', '', 1);
 
 -- --------------------------------------------------------
@@ -107,12 +107,17 @@ CREATE TABLE `info` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- 
 -- Dumping data for table `info`
 -- 
 
+INSERT INTO `info` VALUES (1, 'Giới thiệu nhà hàng ẩm thực Hồng Cường', 'gioi-thieu-nha-hang-am-thuc-hong-cuong', '', 'Với thiết kế sang trọng, nhà hàng Hồng Cường ra đời nhằm đáp ứng nhu cầu sành ăn của thực khách Sài Thành.', '<p>Bao phủ toàn bộ không gian Hồng Cường là 4 gam màu chủ đạo: trắng, đen, đỏ, vàng mang đến cảm giác thư thái, ấm cúng, giúp kích thích giác quan thưởng thức ẩm thực cho mọi thực khách. Không gian rộng mở của Hồng Cường được tạo điểm nhấn từ bức tranh kính nghệ thuật cỡ lớn độc đáo với những đóa mai đỏ rực rỡ khoe sắc tại khu đồ tráng miệng. Dù là ngồi tại những dãy bàn dài thẳng tắp trong những bữa tiệc lớn hay những góc bàn riêng nhỏ xinh, thực khách vẫn có thể ngắm được những xe cổ có một không hai trên thị trường hiện nay.</p>\r\n\r\n<p style="text-align: center;"><img alt="Giới thiệu nhà hàng ẩm thực Hồng Cường" src="/all/hongcuongclub/public/images/articles/baiviet-1.jpg" style="width: 705px; height: 150px;" /></p>\r\n\r\n<p>Với thiết kế sang trọng, nhà hàng Hồng Cường ra đời nhằm đáp ứng nhu cầu sành ăn của thực khách Sài Thành. Bởi không sang trọng cầu kỳ như lẩu 5 sao, không bình dân như Lẩu hàng quán, Hồng Cường ra đời là sự tích hợp giữa chất lượng món ăn của nhà hàng 4 sao nhưng giá cả cực kỳ hợp lý. &nbsp;</p>\r\n\r\n<p style="text-align: center;"><img alt="Những dãy bàn dài thẳng tắp" src="/all/hongcuongclub/public/images/articles/baiviet-2.jpg" style="width: 705px; height: 245px;" /></p>\r\n\r\n<p style="text-align: center;"><em>Những dãy bàn dài thẳng tắp</em></p>\r\n\r\n<p style="text-align: center;"><em><img alt="Món ăn được trang trí thật bắt mắt" src="/all/hongcuongclub/public/images/articles/baiviet-3.jpg" style="width: 705px; height: 469px;" /><br />\r\nMón ăn được trang trí thật bắt mắt</em></p>\r\n\r\n<p><strong><em>“Trăm nghe không bằng một thấy” </em></strong>Quý khách hãy một lần đến với Hồng Cường để cùng chúng tôi khám phá thêm những điều quyến rũ tiềm ẩn đó.</p>\r\n\r\n<p style="text-align: right;"><strong>Hong Cuong Club</strong></p>\r\n', 'Giới thiệu nhà hàng ẩm thực Hồng Cường', 0, 'vi', ',2,', 1, '2013-12-12 16:52:20', '2013-12-12 16:52:20', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (2, 'Khuyến mãi giảm 10% trên tổng hóa đơn', 'khuyen-mai-giam-10-tren-tong-hoa-don', 'baiviet-5.jpg', 'Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor.</h2>\r\n\r\n<p><span style="line-height: 1.6em;">Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci.</span></p>\r\n\r\n<p style="text-align: center;"><span style="line-height: 1.6em;"><img alt="Khuyến mãi giảm 10% trên tổng hóa đơn" src="/all/hongcuongclub/public/images/articles/baiviet-5.jpg" style="width: 600px; height: 400px;" /></span></p>\r\n\r\n<p>Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.</p>\r\n', 'Khuyến mãi giảm 10% trên tổng hóa đơn', 0, 'vi', ',14,', 1, '2013-12-12 20:21:53', '2013-12-12 20:42:57', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (3, 'Nhân dịp năm mới nhà hàng tổ chức sự kiện.', 'nhan-dip-nam-moi-nha-hang-to-chuc-su-kien', 'baiviet-4.jpg', 'In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.</h2>\r\n\r\n<p>Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim.</p>\r\n\r\n<p>Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula.</p>\r\n\r\n<p style="text-align: center;"><img alt="Nhân dịp năm mới nhà hàng tổ chức sự kiện." src="/all/hongcuongclub/public/images/articles/baiviet-4.jpg" style="width: 600px; height: 400px;" /></p>\r\n\r\n<p>Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.</p>\r\n', 'Nhân dịp năm mới nhà hàng tổ chức sự kiện.', 0, 'vi', ',14,', 1, '2013-12-12 20:22:54', '2013-12-12 20:43:07', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (4, 'Kỷ niệm 20 năm thành lập Hồng Cường', 'ky-niem-20-nam-thanh-lap-hong-cuong', 'baiviet-3.jpg', 'Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus.</h2>\r\n\r\n<p>Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim.</p>\r\n\r\n<p>Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor.</p>\r\n\r\n<p>Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis.</p>\r\n\r\n<p style="text-align: center;"><img alt="Kỷ niệm 20 năm thành lập Hồng Cường" src="/all/hongcuongclub/public/images/articles/baiviet-3.jpg" style="width: 705px; height: 469px;" /></p>\r\n\r\n<p>Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.</p>\r\n', 'Kỷ niệm 20 năm thành lập Hồng Cường', 0, 'vi', ',14,', 1, '2013-12-12 20:23:45', '2013-12-12 20:43:16', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (5, 'Tổ chức cuộc thi đầu bếp tài năm 2013', 'to-chuc-cuoc-thi-dau-bep-tai-nam-2013', 'baiviet-5.jpg', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus.', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.</p>\r\n', 'Tổ chức cuộc thi đầu bếp tài năm 2013', 0, 'vi', ',14,', 1, '2013-12-12 20:55:33', '2013-12-12 20:55:33', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -208,21 +213,40 @@ CREATE TABLE `menu` (
   `delete` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `url` (`url`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 -- 
 -- Dumping data for table `menu`
 -- 
 
-INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Nhà hàng tiệc cưới HỒNG CƯỜNG - HONG CUONG CLUB', 'Nhà hàng tiệc cưới HỒNG CƯỜNG - HONG CUONG CLUB', 'Nhà hàng tiệc cưới HỒNG CƯỜNG,nha hang tiec cuoi', 0, 1, ',6,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 16:51:22', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2013-10-09 16:26:35', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2013-10-09 16:26:49', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 15:39:02', 'admin', '', 0);
-INSERT INTO `menu` VALUES (6, 'Diễn đàn', 'dien-dan', 'dien-dan/', '', 'Diễn đàn', 'Diễn đàn', 'Diễn đàn', 0, 9, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:51:59', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (7, 'Làng ẩm thực', 'lang-am-thuc', 'lang-am-thuc/', '', 'Làng ẩm thực', 'Làng ẩm thực', 'Làng ẩm thực', 0, 2, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 16:52:17', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (8, 'Cafe sân vườn', 'cafe-san-vuon', 'cafe-san-vuon/', '', 'Cafe sân vườn', 'Cafe sân vườn', 'Cafe sân vườn', 0, 2, ',1,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 16:52:44', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 15:48:07', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Nhà hàng tiệc cưới HỒNG CƯỜNG - HONG CUONG CLUB', 'Nhà hàng tiệc cưới HỒNG CƯỜNG - HONG CUONG CLUB', 'Nhà hàng tiệc cưới HỒNG CƯỜNG,nha hang tiec cuoi', 0, 1, ',7,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 14:32:14', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (2, 'Giới thiệu nhà hàng', 'gioi-thieu-nha-hang-hong-cuong', 'gioi-thieu-nha-hang-hong-cuong/', '', 'Giới thiệu nhà hàng Hồng Cường', 'Giới thiệu nhà hàng ẩm thực Hồng Cường', 'Giới thiệu nhà hàng Hồng Cường', 4, 2, ',3,', 'vi', 0, 11, 1, '2013-10-09 15:38:02', '2013-10-09 14:13:24', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (3, 'Không gian', 'khong-gian-nha-hang-hong-cuong', 'khong-gian-nha-hang-hong-cuong/', '', 'Không gian nhà hàng Hồng Cường', 'Bao phủ toàn bộ không gian Hồng Cường là 4 gam màu chủ đạo: trắng, đen, đỏ, vàng mang đến cảm giác thư thái, ấm cúng, giúp kích thích giác quan thưởng thức ẩm thực cho mọi thực khách.', 'Không gian nhà hàng Hồng Cường', 4, 2, ',3,', 'vi', 0, 12, 1, '2013-10-09 15:38:25', '2013-10-09 17:07:46', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (4, 'Ẩm thực Hồng Cường', 'am-thuc-hong-cuong', 'gioi-thieu-nha-hang-hong-cuong/gioi-thieu-nha-hang-am-thuc-hong-cuong.html', 'nha-hang-hong-cuong.png', 'Ẩm thực Hồng Cường', 'Nhà hàng chuyên Buffet hải sản cao cấp, tổ chức tiệc cưới, tiệc hội nghị, tiệc lưu động và tổ chức sự kiện. Với bãi đỗ xe có sức chứa lên đến hàng nghìn xe.', 'Ẩm thực Hồng Cường', 0, 2, ',1,3,', 'vi', 0, 10, 1, '2013-10-09 15:38:38', '2013-10-09 20:14:21', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',2,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 14:32:19', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (6, 'Diễn đàn', 'dien-dan', 'dien-dan/', '', 'Diễn đàn', 'Diễn đàn', 'Diễn đàn', 0, 9, ',2,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 14:32:25', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (7, 'Làng ẩm thực', 'lang-am-thuc', 'lang-am-thuc/', '', 'Làng ẩm thực', 'Làng ẩm thực', 'Làng ẩm thực', 0, 2, ',2,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 14:32:29', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (8, 'Cafe sân vườn', 'cafe-san-vuon', 'cafe-san-vuon/', '', 'Cafe sân vườn', 'Cafe sân vườn', 'Cafe sân vườn', 0, 2, ',2,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 14:32:35', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',2,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 14:32:42', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (10, 'Facebook', 'facebook', 'javascript:;', 'facebook.gif', 'Facebook', 'Facebook', 'Facebook', 0, 9, ',6,', 'vi', 0, 101, 1, '2013-12-12 10:41:04', '2013-12-12 14:33:02', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (11, 'Youtube', 'youtube', 'javascript:;#2', 'youtube.gif', 'Youtube', 'Youtube', 'Youtube', 0, 9, ',6,', 'vi', 0, 102, 1, '2013-12-12 10:42:27', '2013-12-12 14:33:12', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (12, 'Google+', 'google', 'javascript:;#3', 'google.gif', 'Google+', 'Google+', 'Google+', 0, 9, ',6,', 'vi', 0, 103, 1, '2013-12-12 10:42:52', '2013-12-12 14:33:19', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (13, 'Twitter', 'twitter', 'javascript:;#4', 'twitter.gif', 'Twitter', 'Twitter', 'Twitter', 0, 9, ',6,', 'vi', 0, 104, 1, '2013-12-12 10:43:12', '2013-12-12 14:33:23', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (14, 'Sự kiện - Nhà hàng', 'su-kien-nha-hang-hong-cuong', 'su-kien-nha-hang-hong-cuong/', '', 'Sự kiện - Nhà hàng Hồng Cường', 'Với thiết kế sang trọng, nhà hàng Hồng Cường ra đời nhằm đáp ứng nhu cầu sành ăn của thực khách Sài Thành.', 'Sự kiện - Nhà hàng Hồng Cường', 4, 2, ',3,', 'vi', 0, 13, 1, '2013-12-12 14:11:00', '2013-12-12 20:15:04', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (15, 'Hình ảnh nhà hàng', 'hinh-anh-nha-hang-hong-cuong', 'hinh-anh-nha-hang-hong-cuong/', '', 'Hình ảnh nhà hàng Hồng Cường', 'Hình ảnh nhà hàng Hồng Cường', 'Hình ảnh nhà hàng Hồng Cường', 4, 4, ',3,', 'vi', 0, 14, 1, '2013-12-12 14:11:43', '2013-12-12 14:21:14', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (16, 'Liên hệ', 'lien-he-dat-ban-nha-hang-hong-cuong', 'lien-he-dat-ban-nha-hang-hong-cuong/', '', 'Liên hệ đặt bàn nhà hàng Hồng Cường', 'Liên hệ đặt bàn nhà hàng Hồng Cường', 'Liên hệ đặt bàn nhà hàng Hồng Cường', 4, 8, ',3,', 'vi', 0, 15, 1, '2013-12-12 14:12:19', '2013-12-12 14:17:33', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (17, 'Tiệc cưới Hồng Cường', 'tiec-cuoi-hong-cuong', 'tiec-cuoi-hong-cuong/', 'tiec-cuoi-hong-cuong.png', 'Tiệc cưới Hồng Cường', 'Nhà hàng tổ chức tiệc cưới Hồng Cường luôn chuyên nghiệp trong phục vụ và tổ chức tiệc cưới rất sang trọng và ấm cúng với trang thiết bị hiện đại, phòng ốc sang trọng.', 'Tiệc cưới Hồng Cường', 0, 2, ',1,4,', 'vi', 0, 30, 1, '2013-12-12 14:13:52', '2013-12-12 14:39:38', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (18, 'Giới thiệu tiệc cưới', 'gioi-thieu-tiec-cuoi-hong-cuong', 'gioi-thieu-tiec-cuoi-hong-cuong/', '', 'Giới thiệu tiệc cưới Hồng Cường', 'Giới thiệu tiệc cưới Hồng Cường', 'Giới thiệu tiệc cưới Hồng Cường', 17, 2, ',4,', 'vi', 0, 31, 1, '2013-12-12 14:14:30', '2013-12-12 14:14:40', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (19, 'Bàn tiệc', 'ban-tiec-tiec-cuoi-hong-cuong', 'ban-tiec-tiec-cuoi-hong-cuong/', '', 'Bàn tiệc tiệc cưới Hồng Cường', 'Bàn tiệc tiệc cưới Hồng Cường', 'Bàn tiệc tiệc cưới Hồng Cường', 17, 2, ',4,', 'vi', 0, 32, 1, '2013-12-12 14:15:36', '2013-12-12 14:15:36', 'admin', '', 0);
+INSERT INTO `menu` VALUES (20, 'Sự kiện - Khuyến mãi', 'su-kien-khuyen-mai-tiec-cuoi-hong-cuong', 'su-kien-khuyen-mai-tiec-cuoi-hong-cuong/', '', 'Sự kiện - Khuyến mãi tiệc cưới Hồng Cường', 'Sự kiện - Khuyến mãi tiệc cưới Hồng Cường', 'Sự kiện - Khuyến mãi tiệc cưới Hồng Cường', 17, 2, ',4,', 'vi', 0, 33, 1, '2013-12-12 14:16:08', '2013-12-12 16:26:05', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (21, 'Hình ảnh tiệc cưới', 'hinh-anh-tiec-cuoi-hong-cuong', 'hinh-anh-tiec-cuoi-hong-cuong/', '', 'Hình ảnh tiệc cưới Hồng Cường', 'Hình ảnh tiệc cưới Hồng Cường', 'Hình ảnh tiệc cưới Hồng Cường', 17, 4, ',4,', 'vi', 0, 34, 1, '2013-12-12 14:16:33', '2013-12-12 14:21:19', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (22, 'Liên hệ', 'lien-he-dat-tiec-cuoi', 'lien-he-dat-tiec-cuoi/', '', 'Liên hệ đặt tiệc cưới', 'Liên hệ đặt tiệc cưới', 'Liên hệ đặt tiệc cưới', 17, 8, ',4,', 'vi', 0, 35, 1, '2013-12-12 14:17:06', '2013-12-12 16:26:11', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (23, 'Xe cổ Hồng Cường', 'xe-co-hong-cuong', 'xe-co-hong-cuong/', 'xe-co-hong-cuong.png', 'Xe cổ Hồng Cường', 'Nhà hàng tổ chức tiệc cưới Hồng Cường luôn chuyên nghiệp trong phục vụ và tổ chức tiệc cưới rất sang trọng và ấm cúng với trang thiết bị hiện đại, phòng ốc sang trọng.', 'Xe cổ Hồng Cường', 0, 2, ',1,5,', 'vi', 0, 50, 1, '2013-12-12 14:17:59', '2013-12-12 14:39:49', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (24, 'Giới thiệu xe cổ', 'gioi-thieu-xe-co-hong-cuong', 'gioi-thieu-xe-co-hong-cuong/', '', 'Giới thiệu xe cổ Hồng Cường', 'Giới thiệu xe cổ Hồng Cường', 'Giới thiệu xe cổ Hồng Cường', 23, 2, ',5,', 'vi', 0, 51, 1, '2013-12-12 14:18:24', '2013-12-12 16:22:00', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (25, 'Thảo luận xe cổ', 'thao-luan-xe-co-hong-cuong', 'thao-luan-xe-co-hong-cuong/', '', 'Thảo luận xe cổ Hồng Cường', 'Thảo luận xe cổ Hồng Cường', 'Thảo luận xe cổ Hồng Cường', 23, 2, ',5,', 'vi', 0, 52, 1, '2013-12-12 14:19:18', '2013-12-12 14:19:18', 'admin', '', 0);
+INSERT INTO `menu` VALUES (26, 'Sự kiện xe cổ', 'su-kien-xe-co-hong-cuong', 'su-kien-xe-co-hong-cuong/', '', 'Sự kiện xe cổ Hồng Cường', 'Sự kiện xe cổ Hồng Cường', 'Sự kiện xe cổ Hồng Cường', 23, 2, ',5,', 'vi', 0, 53, 1, '2013-12-12 14:19:49', '2013-12-12 14:19:49', 'admin', '', 0);
+INSERT INTO `menu` VALUES (27, 'Hình ảnh xe cổ', 'hinh-anh-xe-co-hong-cuong', 'hinh-anh-xe-co-hong-cuong/', '', 'Hình ảnh xe cổ Hồng Cường', 'Hình ảnh xe cổ Hồng Cường', 'Hình ảnh xe cổ Hồng Cường', 23, 4, ',5,', 'vi', 0, 54, 1, '2013-12-12 14:20:07', '2013-12-12 14:21:25', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (28, 'Liên hệ', 'lien-he-xe-co-hong-cuong', 'lien-he-xe-co-hong-cuong/', '', 'Liên hệ xe cổ Hồng Cường', 'Liên hệ xe cổ Hồng Cường', 'Liên hệ xe cổ Hồng Cường', 23, 8, ',5,', 'vi', 0, 55, 1, '2013-12-12 14:20:33', '2013-12-12 16:21:45', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -272,18 +296,19 @@ CREATE TABLE `menu_position` (
   `name` varchar(100) NOT NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- 
 -- Dumping data for table `menu_position`
 -- 
 
-INSERT INTO `menu_position` VALUES (1, 'Main', 0);
+INSERT INTO `menu_position` VALUES (1, 'Home', 0);
 INSERT INTO `menu_position` VALUES (2, 'Top', 0);
-INSERT INTO `menu_position` VALUES (3, 'Bottom', 0);
-INSERT INTO `menu_position` VALUES (4, 'Left', 1);
-INSERT INTO `menu_position` VALUES (5, 'Right', 0);
-INSERT INTO `menu_position` VALUES (6, 'Không', 0);
+INSERT INTO `menu_position` VALUES (3, 'Nhà hàng', 0);
+INSERT INTO `menu_position` VALUES (4, 'Tiệc cưới', 0);
+INSERT INTO `menu_position` VALUES (5, 'Xe cổ', 0);
+INSERT INTO `menu_position` VALUES (6, 'Social', 0);
+INSERT INTO `menu_position` VALUES (7, 'Không', 0);
 
 -- --------------------------------------------------------
 
@@ -304,8 +329,8 @@ CREATE TABLE `menu_type` (
 
 INSERT INTO `menu_type` VALUES (1, 'Trang chủ', 0);
 INSERT INTO `menu_type` VALUES (2, 'Thông tin, bài viết', 0);
-INSERT INTO `menu_type` VALUES (3, 'Sản phẩm', 0);
-INSERT INTO `menu_type` VALUES (4, 'Loại temp 1', 1);
+INSERT INTO `menu_type` VALUES (3, 'Sản phẩm', 1);
+INSERT INTO `menu_type` VALUES (4, 'Thư viện ảnh', 0);
 INSERT INTO `menu_type` VALUES (5, 'Loại temp 2', 1);
 INSERT INTO `menu_type` VALUES (6, 'Loại temp 3', 1);
 INSERT INTO `menu_type` VALUES (7, 'Loại temp 4', 1);
@@ -495,13 +520,15 @@ CREATE TABLE `slider_banner` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- 
 -- Dumping data for table `slider_banner`
 -- 
 
-INSERT INTO `slider_banner` VALUES (1, 'San pham', 'Sanpham', 'javascript:;', '', 'vi', 1, ',6,', 1, '2013-10-09 16:34:33', '2013-10-09 17:24:23', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (1, 'Ẩm thực Hồng Cường', 'nha-hang-hong-cuong.png', 'javascript:;', 'Nhà hàng chuyên Buffet hải sản cao cấp, tổ chức tiệc cưới, tiệc hội nghị, tiệc lưu động và tổ chức sự kiện. Với bãi đỗ xe có sức chứa lên đến hàng nghìn xe.', 'vi', 2, ',1,', 1, '2013-10-09 16:34:33', '2013-12-12 13:57:30', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (2, 'Tiệc cưới Hồng Cường', 'tiec-cuoi-hong-cuong.png', 'javascript:;', 'Nhà hàng tổ chức tiệc cưới Hồng Cường luôn chuyên nghiệp trong phục vụ và tổ chức tiệc cưới rất sang trọng và ấm cúng với trang thiết bị hiện đại, phòng ốc sang trọng.', 'vi', 2, ',1,', 1, '2013-12-12 13:49:05', '2013-12-11 14:25:42', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (3, 'Xe cổ Hồng Cường', 'xe-co-hong-cuong.png', 'javascript:;', 'Nhà hàng tổ chức tiệc cưới Hồng Cường luôn chuyên nghiệp trong phục vụ và tổ chức tiệc cưới rất sang trọng và ấm cúng với trang thiết bị hiện đại, phòng ốc sang trọng.', 'vi', 2, ',1,', 1, '2013-12-12 13:50:42', '2013-12-10 13:57:39', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -514,14 +541,16 @@ CREATE TABLE `slider_banner_position` (
   `name` varchar(250) NOT NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `slider_banner_position`
 -- 
 
-INSERT INTO `slider_banner_position` VALUES (1, 'Slider 1000x200 px', 0);
-INSERT INTO `slider_banner_position` VALUES (2, 'Event home 490x280 px', 0);
+INSERT INTO `slider_banner_position` VALUES (1, 'Slider 1000x200 px', 1);
+INSERT INTO `slider_banner_position` VALUES (2, 'Event home 300x355 px', 0);
+INSERT INTO `slider_banner_position` VALUES (3, 'Banner left', 0);
+INSERT INTO `slider_banner_position` VALUES (4, 'Banner right', 0);
 
 -- --------------------------------------------------------
 
