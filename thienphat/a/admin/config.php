@@ -1,5 +1,5 @@
 <?php
-$max_results = 30;
+$max_results = 15;
 define(DIR, '../../class/');
 require_once DIR.'class.quantri.php';
 $qt = new quantri();
