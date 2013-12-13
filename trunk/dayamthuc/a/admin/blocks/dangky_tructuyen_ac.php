@@ -102,6 +102,10 @@ echo $form->DisplayProperties();
 if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
 $form->getProperties("Địa chỉ", 'diachi', 1, 'input_medium', $value, 150);
 echo $form->DisplayProperties();
+//totnghiep
+if(@$_POST['totnghiep']) $value = $_POST['totnghiep']; else $value = $detail['totnghiep'];
+$form->getProperties("Tốt nghiệp", 'totnghiep', 1, 'input_medium', $value, 150);
+echo $form->DisplayProperties();
 
 //khoahoc
 if(@$_POST['khoahoc']) $value = $_POST['khoahoc']; else $value = $detail['khoahoc'];
