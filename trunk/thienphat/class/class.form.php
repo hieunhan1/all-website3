@@ -49,7 +49,7 @@ class form {
 		$value = $this->_value;
 		if($this->_orther == NULL) $orther = '';
 		else $orther = $this->_orther;
-		$str .= "<tr><th align='right'>{$displayname}</th><td>";
+		$str .= "<tr><th align='right' valign='top'>{$displayname}</th><td>";
 		$str .= "<input type='text' name='{$name}' id='{$name}' class='{$cssclass}' maxlength='{$this->_length}' value='{$value}' />";
 		$str .= $orther;
 		$str .= '</td></tr>';
@@ -155,6 +155,7 @@ class form {
 		$str .= "<input type='button' name='{$name}' id='{$name}' value='{$displayname}' class='{$cssclass}' ";
 		$str .= $orther;
 		$str .= '/>';
+		$str = $str."<div class='ajax_image'></div>";
 		
 		return $str;
 	}
