@@ -88,8 +88,7 @@ $('.status').click(function(){
 	}
 });
 //bien doi alias
-function change_alias(alias)
-{
+function change_alias(alias){
     var str = alias;
     str= str.toLowerCase();
     str= str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
@@ -107,13 +106,15 @@ function change_alias(alias)
     return str;
 }
 ////////rewrite///////////
-$('#name_rewrite').click(function(){
-	var name = $('#name').val();
+$('#name_rewrite').dblclick(function(){
+	var name = $("#title").val();
+	if(!name) name = $('#name').val();
+	
 	$(this).val(change_alias(name));
 });
 
 /////////////PICKER DATE//////////////
-$("#date_update").datepicker({
+$(".select_date").datepicker({
 	numberOfMonths: 1,  dateFormat: 'dd/mm/yy',
 	monthNames: ['Một','Hai','Ba','Tư','Năm','Sáu','Bảy','Tám','Chín','Mười','Mười một','Mười hai'] ,
 	monthNamesShort: ['Tháng1','Tháng2','Tháng3','Tháng4','Tháng5','Tháng6','Tháng7','Tháng8','Tháng9','Tháng10','Tháng11','Tháng12'] ,
@@ -151,9 +152,14 @@ check_data(['name','name_rewrite'],'btnSubmit');
 /*
 * url
 */
-$("#url").click(function(){
-	var url = $("#name_rewrite").val()+'/';
-	$("#url").val(url);
+$("#url").dblclick(function(){
+	var url = $("#name_rewrite").val();
+	if(!url){
+		var name = $('#title').val();
+		url = change_alias(name);
+	}
+	
+	$("#url").val(url + '/');
 });
 //tags keyword
 $('#metaKeyword').dblclick(function(){
