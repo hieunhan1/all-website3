@@ -190,6 +190,12 @@ echo "
 </tr>
 </table>
 </form>
-<br />
-";
+<br />";
+
+if($detail['url_hinh']!='') echo '<script type="text/javascript">
+$(document).ready(function(){
+	var url_image = $("input[name=url_hinh]").val();
+	$(".ajax_image:first").html(\'<img height="60" src="../../../public/_thumbs/Images/products/\' + url_image + \'" />\');
+});
+</script>';
 ?>

@@ -104,9 +104,8 @@ $form->getProperties('Mô tả', 'name', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
 
 //Mô tả viết lại name_rewrite
-if($detail['url_hinh']!='') $orther = '<p><img src="../../../public/_thumbs/Images/articles/'.$detail['url_hinh'].'" alt="" /></p>';
 if(@$_POST['name_rewrite']) $value = $_POST['name_rewrite']; else $value = $detail['name_rewrite'];
-$form->getProperties('Mô tả viết lại', 'name_rewrite', 1, 'input_medium', $value, 250,$orther);
+$form->getProperties('Mô tả viết lại', 'name_rewrite', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
 
 //Chọn file ảnh
@@ -178,6 +177,12 @@ echo "
 </tr>
 </table>
 </form>
-<br />
-";
+<br />";
+
+if($detail['url_hinh']!='') echo '<script type="text/javascript">
+$(document).ready(function(){
+	var url_image = $("input[name=url_hinh]").val();
+	$(".ajax_image:first").html(\'<img height="60" src="../../../public/_thumbs/Images/articles/\' + url_image + \'" />\');
+});
+</script>';
 ?>
