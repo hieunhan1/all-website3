@@ -39,7 +39,7 @@ if(mysql_num_rows($qr)==1 && $row['status']!=1){
 	//echo $id.'<br />'.$sdt.'<br />'.$email;
 ?>
 <table width="500" border="0" cellpadding="10" cellspacing="0" align="center">
-	<tr><td colspan="2" align="center"><span style="color:#333; font-size:30px; font-weight:bold">Thông tin đăng ký học nấu ăn<br />Trường NETSPACE</span> <br /><em>Ngày đăng ký: <b>17/12/2013</b></em></td></tr>
+	<tr><td colspan="2" align="center"><span style="color:#333; font-size:30px; font-weight:bold">Thông tin đăng ký học nấu ăn<br />Trường NETSPACE</span> <br /><em>Ngày đăng ký: <b><?php echo date('d/m/Y', strtotime($row['date_create'])); ?></b></em></td></tr>
     <tr class="thongtin">
     	<td width="140">Họ tên</td>
         <td><?php echo $row['name']; ?></td>
