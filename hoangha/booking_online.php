@@ -12,7 +12,7 @@ $row = mysql_fetch_array($qr);
 $ditu  = mysql_fetch_array(mysql_query("SELECT name FROM booking_form WHERE ma='{$form}' "));
 $diden = mysql_fetch_array(mysql_query("SELECT name FROM booking_to WHERE ma='{$to}' "));
 
-if($row['status']!=1){
+if(mysql_num_rows($qr)==1 && $row['status']!=1){
 	mysql_query("UPDATE booking SET status=1,date_update='".date('Y-m-d H:i:s')."',user_update='NV_{$form}' WHERE id='{$id}' AND `form`='{$form}' AND `to`='{$to}' ");
 }
 
