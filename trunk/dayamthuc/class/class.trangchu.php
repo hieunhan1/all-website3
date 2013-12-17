@@ -216,7 +216,7 @@ class trangchu extends db {
 	/*dang ky truc tuyen*/
 	function dangky_tructuyen($name,$ngaysinh,$email,$phone,$diachi,$totnghiep,$khoahoc,$noihoc,$other,$hoivien){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `dangky_tructuyen` VALUES ('','{$name}','{$ngaysinh}','{$email}','{$phone}','{$diachi}','{$totnghiep}','{$khoahoc}','{$noihoc}','{$other}','{$hoivien}','','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `dangky_tructuyen` VALUES ('','{$name}','{$ngaysinh}','{$email}','{$phone}','{$diachi}','{$totnghiep}','{$khoahoc}','{$noihoc}','{$other}','{$hoivien}','','','0','{$date}','{$date}','khachhang','','0')";
 		mysql_query($qr);
 		return mysql_insert_id();
 	}

@@ -124,12 +124,28 @@ if(@$_POST['hoivien']) $value = $_POST['hoivien']; else $value = $detail['hoivie
 $form->getProperties("Hội viên vietnamchefs", 'hoivien', 1, 'input_medium', $value, 150);
 echo $form->DisplayProperties();
 
-if($idUser==25) $btn_ac = "<input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />";
+if($idUser==25){
+	$btn_ac = "<input type='button' name='gui_thongtin' value='Gửi thông tin' class='button' />
+	<input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />";
+	
+	//nhanvien_lienhe
+	$qr = mysql_query("SELECT id,name,email FROM dangky_nhanvien WHERE `delete`=0 AND status=1 ORDER BY date_update");
+	$values = array();
+	while($row = mysql_fetch_array($qr)){
+		$values[] = array('id'=>$row['id'],'name'=>$row['name'].' - '.$row['email']);
+	}
+	
+	if(@$_POST['nhanvien_lienhe']) $check = $_POST['nhanvien_lienhe']; else $check = $detail['nhanvien_lienhe'];
+	$form->getProperties('Nhân viên liên hệ', 'nhanvien_lienhe', 6, 'input_large', $values, $check);
+	echo $form->DisplayProperties();
+}
 echo "
+<tr><td colspan='2'><p id='ajax_gui_thongtin'></p></td></tr>
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
     <td>{$btn_ac}
-	<input type='button' name='btnCancel' value='Cancel' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"'>
+	<input type='button' name='btnCancel' value='Cancel' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"' />
+	<input type='hidden' name='id_dk' value='{$id}' />
 	</td>
 </tr>
 </table>
