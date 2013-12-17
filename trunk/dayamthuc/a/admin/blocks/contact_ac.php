@@ -130,14 +130,13 @@ if(@$_POST['message']) $value = $_POST['message']; else $value = $detail['messag
 $form->getProperties('Nội dung', 'message', 3, 'textarea', $value, 1, $orther);
 echo $form->DisplayProperties();
 
-echo "
-<tr style='background:#b0b0b0'>
+if($idUser==25) $btn_ac = "<input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />";
+echo "<tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
-    <td><input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />
+    <td>".$btn_ac."
 	<input type='button' name='btnCancel' value='Cancel' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"'>
 	</td>
 </tr>
 </table>
 </form>
-<br /><br /><br /><br /><br />
-";
+<br /><br /><br /><br /><br />";

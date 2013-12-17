@@ -125,20 +125,20 @@ $form->getProperties("Hội viên vietnamchefs", 'hoivien', 1, 'input_medium', $
 echo $form->DisplayProperties();
 
 if($idUser==25){
-	$btn_ac = "<input type='button' name='gui_thongtin' value='Gửi thông tin' class='button' />
-	<input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />";
-	
-	//nhanvien_lienhe
-	$qr = mysql_query("SELECT id,name,email FROM dangky_nhanvien WHERE `delete`=0 AND status=1 ORDER BY date_update");
-	$values = array();
-	while($row = mysql_fetch_array($qr)){
-		$values[] = array('id'=>$row['id'],'name'=>$row['name'].' - '.$row['email']);
-	}
-	
-	if(@$_POST['nhanvien_lienhe']) $check = $_POST['nhanvien_lienhe']; else $check = $detail['nhanvien_lienhe'];
-	$form->getProperties('Nhân viên liên hệ', 'nhanvien_lienhe', 6, 'input_large', $values, $check);
-	echo $form->DisplayProperties();
+	$btn_ac = "<input type='button' name='gui_thongtin' value='Gửi thông tin' class='button' />";
+	//<input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />
 }
+//nhanvien_lienhe
+$qr = mysql_query("SELECT id,name,email FROM dangky_nhanvien WHERE `delete`=0 AND status=1 ORDER BY date_update");
+$values = array();
+while($row = mysql_fetch_array($qr)){
+	$values[] = array('id'=>$row['id'],'name'=>$row['name'].' - '.$row['email']);
+}
+
+if(@$_POST['nhanvien_lienhe']) $check = $_POST['nhanvien_lienhe']; else $check = $detail['nhanvien_lienhe'];
+$form->getProperties('Nhân viên liên hệ', 'nhanvien_lienhe', 6, 'input_large', $values, $check);
+echo $form->DisplayProperties();
+
 echo "
 <tr><td colspan='2'><p id='ajax_gui_thongtin'></p></td></tr>
 <tr style='background:#b0b0b0'>
