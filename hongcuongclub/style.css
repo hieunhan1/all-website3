@@ -44,9 +44,10 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #baiviet_khac span{font-size:70%; padding:0 5px 0 25px}
 #baiviet_khac a{color:#ffef9a}
 
-.box_photos{width:226px; height:150px; float:left; margin-bottom:30px; padding:16px 11px 16px 11px; background:url(images/bg-images.png)}
+.box_photos{width:226px; height:170px; overflow:hidden; float:left; margin-bottom:30px; padding:16px 11px 16px 11px; background:url(images/bg-images.png) top no-repeat}
 .box_photos a{width:226px; height:150px; display:block; overflow:hidden; border:solid 1px #121212}
 .box_photos img{width:226px}
+.box_photos .box_photos_title{text-align:center; margin-top:15px}
 
 #footer{color:#787878; word-spacing:2px; line-height:28px; padding:20px 0 30px 0}
 
