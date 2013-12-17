@@ -37,6 +37,7 @@ $mail->SetFrom($email_gui,'No-reply | '.$title);
 
 //Thiết lập thông tin người nhận
 $mail->AddAddress($email_nhan,$name);
+$mail->AddCC('ceo@netspace.edu.vn','CEO');
 
 //Thiết lập email nhận email hồi đáp
 //nếu người nhận nhấn nút Reply
