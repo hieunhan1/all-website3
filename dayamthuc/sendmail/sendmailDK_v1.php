@@ -3,10 +3,9 @@ include "class.phpmailer.php";
 include "class.smtp.php";  
 
 $to='info@dayamthuc.vn';
-
-if($_POST['NoiHoc']=='DaNang')
+if($_POST['NoiHoc']=='Đà Nẵng')
 	$to='danang@dayamthuc.vn';
-else if($_POST['NoiHoc']=='CanTho')
+else if($_POST['NoiHoc']=='Cần Thơ')
 	$to='cantho@dayamthuc.vn';
 
 $mail = new PHPMailer(); 
@@ -30,7 +29,7 @@ $mail->Subject = 'Đăng ký học '.$_POST['KhoaHoc'];
 $mail->HoTen = $name;
 $mail->Email = $email;
 $mail->LoiNhan = $content;
-$mail->Body = "<h3>Chào ban quản trị website.</h3><br />Bạn <strong>".$_POST['HoTen']."</strong> đăng ký học. <br />Tên khóa học: ".$_POST['KhoaHoc']."<br />Tại cơ sở: ".$_POST['NoiHoc']."<br /><br /><strong>Thông tin cá nhân: </strong> <a href='http://www.dayamthuc.vn/thongtin_hocvien.php?chinhanh=".$_POST['NoiHoc']."&id=".$id."&phone=".$phone."&email=".$email."'>Click vào đây để xem thông tin học viên</a>"; //HTML Body
+$mail->Body = "<h3>Chào ban quản trị website.</h3><br />Bạn <strong>".$_POST['HoTen']."</strong> đăng ký học. <br />Tên khóa học: ".$_POST['KhoaHoc']."<br />Tại cơ sở: ".$_POST['NoiHoc']."<br /><br /><strong>Thông tin cá nhân</strong><br />Ngày sinh: ".$_POST['NgaySinh']."<br />Điện thoại: ".$_POST['DienThoai']."<br />Email: ".$_POST['Email']."<br />Địa chỉ: ".$_POST['DiaChi']."<br />Đã tốt nghiệp: ".$_POST['TotNghiep']."<br /><em>Là thành viên Hội đầu bếp chuyên nghiệp Sài Gòn</em>: ".$_POST['ThanhVienHoi'].'<br />Bạn biết khóa học này qua: '.$_POST['thongtin_khac']; //HTML Body 
 $mail->AltBody =''; //Text Body 
 //$mail->SMTPDebug = 2; 
 $mail->SetFrom($tmp, 'Test Mail'); 

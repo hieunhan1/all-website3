@@ -109,7 +109,7 @@ $form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 1
 echo $form->DisplayProperties();
 //phone
 if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
-$form->getProperties("Phone", 'phone', 1, 'input_medium', $value, 20);
+$form->getProperties("Phone", 'phone', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();
 //diachi
 if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];

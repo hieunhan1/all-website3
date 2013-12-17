@@ -92,8 +92,8 @@
             <td>
 				<select name="NoiHoc" style="width:333px;">
 				<option value='Tp.HCM'>Tp.HCM</option>
-				<option value='Đà Nẵng'>Đà Nẵng</option>
-				<option value='Cần Thơ'>Cần Thơ</option>
+				<option value='DaNang'>Đà Nẵng</option>
+				<option value='CanTho'>Cần Thơ</option>
                 </select>
 			</td>
 		  </tr>
