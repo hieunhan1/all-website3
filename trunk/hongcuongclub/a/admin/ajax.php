@@ -1,6 +1,6 @@
 <?php session_start();
 if(@$_SESSION["id_admin"]) {
-	$user = $_SESSION["Username"];
+	$user = $_SESSION["user_admin"];
 	
 	require_once 'config.php';
 	require_once DIR.'class.quantri.php';
