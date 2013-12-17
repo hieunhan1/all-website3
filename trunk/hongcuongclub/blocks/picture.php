@@ -11,7 +11,7 @@ $i = 0;
 while($row = mysql_fetch_array($list)){
 	$i++;
 	if($i%3 == 1) $style = ''; else $style = 'style="margin-left:35px"';
-	$str_image .= '<p class="box_photos" '.$style.'><a class="fancybox" href="'.url_library_image.$row['url_hinh'].'" data-fancybox-group="gallery" title="'.$row['name'].'"><img src="'.url_library_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></p>';
+	$str_image .= '<div class="box_photos" '.$style.'><a class="fancybox" href="'.url_library_image.$row['url_hinh'].'" data-fancybox-group="gallery" title="'.$row['name'].'"><img src="'.url_library_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a><div class="box_photos_title">'.$row['name'].'</div></div>';
 }
 $str_image = '<script type="text/javascript" src="library/extension/source/jquery.fancybox.js?v=2.1.5"></script>
 <link rel="stylesheet" type="text/css" href="library/extension/source/jquery.fancybox.css?v=2.1.5" media="screen" />
