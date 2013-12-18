@@ -1,8 +1,8 @@
-<div style="width:710px; height:150px; background:url(upload/bg-chuong-trinh-dac-biet.gif)">
+<!--<div style="width:710px; height:150px; background:url(upload/bg-chuong-trinh-dac-biet.gif)">
 	<div style="width:220px; float:left; line-height:30px; text-align:center; margin-top:28px; font-size:22px; font-weight:bold; color:#FF0"><em style="font-size:20px">Chương trình<br />đào tạo<br /></em>ĐẶC BIỆT</div>
     <div style="width:210px; float:left; line-height:22px; text-align:center; margin:52px 0 0 30px; font-size:16px; font-weight:bold; color:#F00"><a style="display:block" title="Đào tạo đầu bếp chuyên nghiệp Quốc tế" href="xem-tin/Dau-Bep-Chuyen-Nghiep-Quoc-Te-210.html">Đào tạo đầu bếp<br />chuyên nghiệp Quốc tế</a></div>
     <div style="width:210px; float:left; line-height:22px; text-align:center; margin:52px 0 0 20px; font-size:16px; font-weight:bold; color:#F00"><a style="display:block" title="Kỹ năng bếp gia đình" href="xem-tin/chuyen-vien-pha-che-barista-146.html">Pha chế chuyên nghiệp<br /><span style="font-size:14px">BARISTA</span></a></div>
-</div>
+</div>-->
 <?php
 $view_ct = "<div class='boxleft'><div class='titleleft'></div><div class='titlecenter'><a href='danh-muc/Chuong-Trinh-Dao-Tao-3-1.html'>Chương trình đào tạo</a></div><div class='titleright'></div><div class='titleicon'><img src='".url_danhmuc_image."icon-cooking-class.png' alt='Chương trình đào tạo' /></div><div id='chuongtrinh'>";
 $i = 0;
