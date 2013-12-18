@@ -98,6 +98,9 @@ $seo = $tc->seo($domain,$title,$description,$keywords,$image,$url);
     
 	<div style="clear:both; height:10px;"></div>
     <div id="left">
+    	<div style="width:710px; height:150px; background:url(upload/bg-chuong-trinh-dac-biet-v2.gif)">
+			<div style="width:220px; float:left; line-height:38px; text-align:center; margin-top:33px; font-size:28px; font-weight:bold; color:#FF0"><em style="font-size:20px">Khuyến mãi</em><br />ĐẶC BIỆT</div>
+		</div>
 	<?php
     switch($type_menu){
 		case 1 : require_once 'blocks/dangky.php'; break;
