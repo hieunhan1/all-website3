@@ -47,6 +47,12 @@
 				}
 			}
 		}
+		function Users_ResetPass($id,$user){
+			$date = date('Y-m-d H:i:s');
+			$pass = md5('Hoangha#123*');
+			$qr = "UPDATE forum_users SET Password='{$pass}',date_update='{$date}',user_update='".$_SESSION["username_forum"]."' WHERE id='{$id}' AND Username='{$user}'";
+			return mysql_query($qr);
+		}
 		///////////////END TAI KHOAN///////////////
 		function select($select,$from,$where=NULL,$limit=NULL){
 			$qr = "SELECT {$select} FROM {$from} {$where} ORDER BY date_create DESC {$limit}";
