@@ -251,4 +251,22 @@ $('input[name=btnCancel]').live('click',function(){
 	disablePopup();
 });
 
+$("#resetpass").click(function(){
+	var id = $(this).attr("name");
+	var user = $("input[name=Username]").val();
+	if(confirm('Bạn có muốn reset password cho user "' + user +'"?')) {
+		$.post('ajax.php',{ResetPass:"ResetPass",id:id,user:user}, function(data){
+			//$("#resetpass").html(data);
+			if(data!='0'){
+				alert("Reset password thành công");
+				return true;
+			}
+			else{
+				alert("Không reset password được. Vui lòng kiểm tra lại.");
+				return false;
+			}
+		});
+	}
+});
+//ResetPass
 });

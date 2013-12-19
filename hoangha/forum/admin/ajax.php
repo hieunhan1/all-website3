@@ -36,12 +36,19 @@ if(@$_SESSION["username_forum"]) {
 		
 		$pattern = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)+$';
 		
-		if (eregi($pattern, $email) & $total==0) echo '<font color="#00CC00">Email hợp lệ</font>';
+		if (eregi($pattern, $email) && $total==0) echo '<font color="#00CC00">Email hợp lệ</font>';
 		else echo '<font color="#FF0000">Email đã tồn tại hoặc chưa đúng định dạng</font>';
 	}
-	if(isset($_POST['ResetPass']) & $_SESSION["idUser1"]==25) {
-		$user = $_POST['ResetPass'];
-		$qt->Users_ResetPass($user);
+	if($_POST['ResetPass']=='ResetPass' && $user!='') {
+		$id = $_POST['id'];
+		$user = $_POST['user'];
+		if($qt->Users_ResetPass($id,$user)){
+			echo '1';
+			return true;
+		}else{
+			echo '0';
+			return false;
+		}
 	}
 	if(@$_POST['info_id']){
 		$qr = mysql_query("SELECT name FROM info WHERE id=".$_POST['info_id']);

@@ -11,6 +11,11 @@ if($id == '0'){ //create
 	$form->getProperties(NULL, 'date_create', 2, NULL, date('Y-m-d H:i:s'), 20);
 	$date_create = $form->DisplayProperties();
 	
+	//Password
+	$value = md5('Hoangha#123*');
+	$form->getProperties('', 'Password', 2, 'input_medium', $value, 50);
+	$Password = $form->DisplayProperties();
+	
 	$type = 1; //loại sql create $type = 1;
 } else {  //update
 	$name = 'btnSubmit';
@@ -67,10 +72,9 @@ echo $form->DisplayProperties();
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
 $form->getProperties('Họ tên', 'name', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
-//Password
-if(!@$detail['Password']) $value = md5('Hoangha#123*'); else $value = $detail['Password'];
-$form->getProperties('', 'Password', 2, 'input_medium', $value, 50);
-echo $form->DisplayProperties();
+
+echo $Password;
+
 //chinhanh
 $values = array();
 $qr = mysql_query("SELECT id,name FROM booking_form WHERE `delete`=0");
@@ -158,7 +162,7 @@ echo "
 	</td>
 </tr>
 </table>
-</form>
-<br />
-";
+</form><br />
+<a href='javascript:;' id='resetpass' name='".$id."'>Reset password về mặc định</a>
+<br /><br /><br />";
 ?>
