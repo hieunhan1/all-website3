@@ -110,6 +110,7 @@ $seo = $tc->seo($domain,$title,$description,$keywords,$image,$url);
 		case 5 : require_once 'blocks/dmhinhanh.php'; break;
 		case 6 : require_once 'blocks/dmvideo.php'; break;
 		case 7 : require_once 'blocks/contact.php'; break;
+		case 8 : require_once 'blocks/lichkhaigiang.php'; break;
 		default : require_once 'blocks/home.php';
 	}
 	?></div>

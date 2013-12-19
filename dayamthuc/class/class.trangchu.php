@@ -144,8 +144,9 @@ class trangchu extends db {
 		$qr = "SELECT id,name,name_rewrite,url,url_hinh,title,metaDescription,metaKeyword,type_id FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
-	function menu($level,$position){
-		$qr = "SELECT id,name,url FROM menu WHERE `delete`=0 AND status=1 AND position_id LIKE '%,{$position},%' AND parent_id ='{$level}' ORDER BY `order`";
+	function menu($level,$position=NULL){
+		if($position!=NULL) $position = "position_id LIKE '%,{$position},%' AND"; else $position = '';
+		$qr = "SELECT id,name,url FROM menu WHERE `delete`=0 AND status=1 AND {$position} parent_id ='{$level}' ORDER BY `order`";
 		return mysql_query($qr);
 	}
 	function getSubmenu($level,$position){
