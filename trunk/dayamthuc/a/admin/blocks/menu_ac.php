@@ -133,7 +133,7 @@ while($row_temp = mysql_fetch_array($qr)){
 }
 if($_POST['type_id'] != '') $check = $_POST['type_id'];
 else if($detail['type_id'] != '') $check = $detail['type_id'];
-else $check = 8; //giá trị mặc định
+else $check = 10; //giá trị mặc định
 $form->getProperties('Loại menu', 'type_id', 5, $check, $value, '<br />');
 echo $form->DisplayProperties();
 
