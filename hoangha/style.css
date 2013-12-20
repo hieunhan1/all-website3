@@ -21,17 +21,21 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #top #menu_top a{color:#DDD; font-size:12px; padding:0 10px}
 #top #menu_top a:hover{color:#FFF}
 
+#search{width:auto; float:left; margin-top:6px}
+#search #txtsearch{width:160px; float:left}
+#search #txtsearch input{background-color:#E9E9E9; border:none; line-height:22px; width:150px; height:22px; padding:0 5px; color:#7b7b7b}
+#search #btnsearch{width:27px; height:22px; float:left; margin-left:5px; background:url(images/btnSearch.gif)}
+#search #btnsearch input{background:none; border:none; line-height:22px; width:27px; height:22px; cursor:pointer}
+
 #wrapper{width:1000px; margin:auto}
 
-#header{height:95px}
+#header{height:95px; clear:both}
 #header #logo{width:auto; float:left; margin-top:19px}
-#header #search{width:auto; float:right; margin-top:15px}
-#header #search #hotline{width:auto; clear:both; color:#666; font-size:110%; text-align:right; margin:0 33px 15px 0}
-#header #search #hotline b{color:#ED1E28; font-size:130%}
-#header #search #txtsearch{width:230px; float:left}
-#header #search #txtsearch input{background-color:#CCC; border:none; line-height:25px; width:220px; height:25px; padding:0 5px; color:#666}
-#header #search #btnsearch{width:27px; height:25px; float:left; margin-left:5px; background:url(images/btnSearch.jpg)}
-#header #search #btnsearch input{background:none; border:none; line-height:25px; width:27px; height:25px; cursor:pointer}
+
+#header #hotline{width:auto; float:right; line-height:35px; color:#666; text-align:right; margin-top:10px}
+#header #hotline b{color:#ED1E28; font-size:130%}
+#header #hotline .input_txt{width:100px; padding:3px; color:#999; border:solid 1px #CCC}
+#header #hotline .input_btn{padding:4px 10px; color:#FFF; font-size:12px; font-weight:bold; border:none; background-color:#F00}
 
 #home_menu{height:150px; margin-bottom:7px}
 #home_menu .item_home_menu{width:240px; height:62px; float:left; text-align:right; margin:0 13px 13px 0}

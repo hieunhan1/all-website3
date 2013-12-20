@@ -108,5 +108,18 @@
 			$qr = "SELECT name,url,url_hinh FROM menu_admin WHERE status=1 AND id<>1 ORDER BY `order2`";
 			return mysql_query($qr);
 		}
+		
+		function select_tracing_express_detail($id){
+			$qr = "SELECT * FROM tracing_express_detail WHERE `delete`=0 AND status=1 AND id_tracing_express='{$id}' ORDER BY date_update, id";
+			return mysql_query($qr);
+		}
+		function insert_tracing_express_detail($id,$name,$vitri,$trangthai,$notes,$date_update){
+			$date_update = explode('/',$date_update);
+			$date_update = $date_update[2].'-'.$date_update[1].'-'.$date_update[0];
+			$user = $_SESSION['username_admin'];
+			$date = date('Y-m-d H:i:s');
+			$qr = "INSERT INTO tracing_express_detail VALUES ('','{$name}','{$vitri}','{$trangthai}','{$notes}','vi','1','{$id}','{$date}','{$date_update}','{$user}','{$user}','0')";
+			mysql_query($qr);
+		}
 	}
 ?>
