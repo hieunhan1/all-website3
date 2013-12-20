@@ -113,7 +113,7 @@ $('#name_rewrite').click(function(){
 });
 
 /////////////PICKER DATE//////////////
-$("#date_update").datepicker({
+$("#date_update,#ngay_gui,#ngay_detail").datepicker({
 	numberOfMonths: 1,  dateFormat: 'dd/mm/yy',
 	monthNames: ['Một','Hai','Ba','Tư','Năm','Sáu','Bảy','Tám','Chín','Mười','Mười một','Mười hai'] ,
 	monthNamesShort: ['Tháng1','Tháng2','Tháng3','Tháng4','Tháng5','Tháng6','Tháng7','Tháng8','Tháng9','Tháng10','Tháng11','Tháng12'] ,
@@ -249,5 +249,41 @@ $('.item_status').click(function(){
 $('input[name=btnCancel]').live('click',function(){
 	disablePopup();
 });
+
+$("input[name=them_detail]").click(function(){
+	var id = $("input[name=id_tracing_express]").val();
+	var date_update = $("#ngay_detail").val();
+	var name = $("input[name=hanhtrinh]").val();
+	var vitri = $("input[name=vitri]").val();
+	var trangthai = $("input[name=trangthai]").val();
+	var notes = $("input[name=notes]").val();
+	$.post("ajax.php",{tracing_express_detail:"tracing_express_detail",id:id,name:name,vitri:vitri,trangthai:trangthai,notes:notes,date_update:date_update},function(data){
+		if(data != '0'){
+			$("#ajax_detail").append(data);
+			$("#ngay_detail").val('');
+			$("input[name=hanhtrinh]").val('');
+			$("input[name=vitri]").val('');
+			$("input[name=trangthai]").val('');
+			$("input[name=notes]").val('');
+			return true;
+		}else{
+			alert('Lỗi, vui lòng kiểm tra lại.');
+			return false;
+		}
+	});
+});
+$(".delete_tracing_express_detail").click(function(){
+	var id = ($(this).attr('class')).split("delete_tracing_express_detail ");
+	if(confirm('Bạn có muốn xóa?')) {
+		$.post('ajax.php',{delete_tracing_express_detail:'delete_tracing_express_detail', id:id[1]}, function(data){
+			if(data!='0') $("#tracing_express_detail_" + id[1]).hide();
+			else{
+				alert('Lỗi, vui lòng kiểm tra lại.');
+				return false;
+			}
+		});
+	}
+});
+
 
 });

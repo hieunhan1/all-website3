@@ -33,8 +33,9 @@ if(@$_GET['danhmuc']){
 			case 5 : include_once('blocks/sale_online.php'); break;
 			case 6 : include_once('blocks/network.php'); break;
 			case 8 : include_once('blocks/booking.php'); break;
-			case 9 : include_once('blocks/tracktrace.php'); break;
 			case 7 : include_once('blocks/contact.php'); break;
+			case 9 : include_once('blocks/tracktrace.php'); break;
+			case 10 : include_once('blocks/tracing_express.php'); break;
 			default: $view_post = '<font color="#FF0000"><b>Could not be found</b></font>';
 		}
 		$include = ob_get_clean();
@@ -82,6 +83,7 @@ if(@$_GET['danhmuc']){
             <a href="vi/"><img src="images/vi.gif" alt="vi" /></a>
             <a href="en/"><img src="images/en.gif" alt="en" /></a>
         </div>
+        
         <div id="menu_top">
         <?php $qr = $tc->menu(0,1,$lang);
 		while($row = mysql_fetch_array($qr)){
@@ -89,14 +91,8 @@ if(@$_GET['danhmuc']){
 		}?>
         <a href="forum/" title="Forum Hoang Ha">Forum</a>
         </div>
-    </div>
-</div>
-
-<div id="wrapper">
-	<div id="header">
-    	<div id="logo"><a href="http://<?php echo $domain.'/'.$lang.'/'?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
-    	<div id="search">
-        	<div id="hotline">Hotline Express: <b><?php echo $row_config['tel'];?></b></div>
+        
+        <div id="search">
         	<div id="txtsearch"><input type="text" name="txtsearch" value="<?php echo const_txt_search;?>" id="key_search" onclick="if(value=='<?php echo const_txt_search;?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search;?>'" /></div>
         	<div id="btnsearch"><input type="button" name="btnsearch" value="&nbsp;" onclick="return SearchGoogle();" /></div>
         </div>
@@ -115,6 +111,16 @@ if(@$_GET['danhmuc']){
 			});
 		});
 		</script>
+    </div>
+</div>
+
+<div id="wrapper">
+	<div id="header">
+    	<div id="logo"><a href="http://<?php echo $domain.'/'.$lang.'/'?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
+    	<div id="hotline">
+        	<p style="font-size:110%">Hotline Express: <b><?php echo $row_config['tel'];?></b></p>
+            <p>Định vị bưu phẩm <input type="text" name="ma_buupham" value="Số vận đơn" onfocus="if(value=='Số vận đơn') value=''" onblur="if(value=='') value='Số vận đơn'" class="input_txt" /> <a href="javascript:;" class="input_btn">Tracking</a><!--<input type="button" name="btn" value="TRACKING" class="input_btn" />--></p>
+        </div>
     </div>
     <?php
     echo $view_menu;

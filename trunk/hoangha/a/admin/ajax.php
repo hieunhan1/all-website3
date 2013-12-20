@@ -49,10 +49,40 @@ if(@$_SESSION["username_admin"]) {
 		echo $row['name'];
 	}
 	
-	/* popup */
-	if(@$_POST['item_status']){
-		if($_POST['status']==0) $status=1; else $status=0;
-		mysql_query("UPDATE answers SET status={$status} WHERE id=".$_POST['id']);
+	/////////////////
+	if($_POST['tracing_express_detail']=='tracing_express_detail'){
+		$id = trim($_POST['id']);
+		$name = trim($_POST['name']);
+		$vitri = trim($_POST['vitri']);
+		$trangthai = trim($_POST['trangthai']);
+		$notes = trim($_POST['notes']);
+		$date_update = trim($_POST['date_update']);
+		
+		if($id!='0' && $id!='' && $name!='' && $date_update!=''){
+			$qt->insert_tracing_express_detail($id,$name,$vitri,$trangthai,$notes,$date_update);
+			echo "<tr>
+				<td style='border-bottom:solid 1px #CCC'>{$date_update}</td>
+				<td style='border-bottom:solid 1px #CCC'>{$name}</td>
+				<td style='border-bottom:solid 1px #CCC'>{$vitri}</td>
+				<td style='border-bottom:solid 1px #CCC'>{$trangthai}</td>
+				<td style='border-bottom:solid 1px #CCC'>{$notes}</td>
+				<td style='border-bottom:solid 1px #CCC'>Xóa</td>
+			</tr>";
+			return true;
+		}else{
+			echo 0; return false;
+		}
+		
+	}
+	if($_POST['delete_tracing_express_detail']=='delete_tracing_express_detail'){
+		$id = trim($_POST['id']);
+		if($id!=''){
+			$qr = mysql_query("UPDATE tracing_express_detail SET `delete`=1 WHERE id='{$id}'");
+			return true;
+		}else{
+			echo '0';
+			return false;
+		}
 	}
 }
 ?>
