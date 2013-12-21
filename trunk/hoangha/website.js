@@ -52,8 +52,6 @@ $(document).ready(function($){
 	$('#run_top').click(function(){
 		sroll_top();
 	});
-	
-
 
 
 });

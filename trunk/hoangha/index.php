@@ -46,6 +46,7 @@ if(@$_GET['danhmuc']){
 			case 2 : $detail = $tc->info_detail($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/articles.php'); break;
 			case 3 : $detail = $tc->info_detail($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/info_data.php'); break;
 			case 4 : $detail = $tc->info_detail($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/location.php'); break;
+			case 10 : include_once('blocks/tracing_express.php'); break;
 			default: echo '<div id="left"><p><font color="#FF0000"><b>Could not be found</b></font></p></div>';
 		}
 		$include = ob_get_clean();
@@ -119,7 +120,23 @@ if(@$_GET['danhmuc']){
     	<div id="logo"><a href="http://<?php echo $domain.'/'.$lang.'/'?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
     	<div id="hotline">
         	<p style="font-size:110%">Hotline Express: <b><?php echo $row_config['tel'];?></b></p>
-            <p>Định vị bưu phẩm <input type="text" name="ma_buupham" value="Số vận đơn" onfocus="if(value=='Số vận đơn') value=''" onblur="if(value=='') value='Số vận đơn'" class="input_txt" /> <a href="javascript:;" class="input_btn">Tracking</a><!--<input type="button" name="btn" value="TRACKING" class="input_btn" />--></p>
+            <p><?php echo const_contact_dinhvi_buupham; ?> <input type="text" name="ma_buupham" value="Số vận đơn" onfocus="if(value=='Số vận đơn') value=''" onblur="if(value=='') value='Số vận đơn'" class="input_txt" /> <a href="javascript:;" class="input_btn" name="<?php $qr = $tc->menu_type(10,$lang); $row = mysql_fetch_array($qr); echo $lang.'/'.trim($row['url'],'/').'_page_'; ?>">Tracking</a></p>
+            <script type="text/javascript">
+			$(document).ready(function() {
+                $('.input_btn').click(function(){
+					var ma_buupham = $.trim($('input[name=ma_buupham]').val());
+					if(ma_buupham!='Số vận đơn' && ma_buupham!=''){
+						var url = $(this).attr('name');
+						$(this).attr('href',url + ma_buupham + '/');
+						return true;
+					}else{
+						alert('Vui lòng nhập mã số vận chuyển.');
+						$('input[name=ma_buupham]').focus();
+						return false;
+					}
+				});
+            });
+			</script>
         </div>
     </div>
     <?php

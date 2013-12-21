@@ -20,4 +20,9 @@ define(const_contact_to, 'To');
 define(const_contact_soluong, 'The number of');
 define(const_contact_nhietdo, 'Temperature');
 define(const_contact_yeucau, 'Request');
+
+//tracking & tracktrace
+define(const_contact_ma, 'Code');
+define(const_contact_dinhvi_buupham, 'Parcels located');
+
 ?>

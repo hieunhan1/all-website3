@@ -71,7 +71,7 @@ UPDATE  `menu_admin` SET  `name` =  'Tracing Express',
 mysql_query("DROP TABLE `tracing_express_detail`");*/
 
 mysql_query("
-INSERT INTO  `hoangha`.`menu_type` (
+INSERT INTO  `menu_type` (
 `id` ,
 `name` ,
 `delete`
