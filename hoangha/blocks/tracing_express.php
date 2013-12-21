@@ -1,32 +1,87 @@
 <?php
 $navigator = '<div id="navigator"><a href="http://'.$domain.'/'.$lang.'/"><img src="images/home.jpg" alt="Hoang Ha Logistics" /></a> <span>&gt;&gt;</span> <a href="'.$lang.'/'.$row_menu_one['url'].'">'.$row_menu_one['name'].'</a></div>';
-
 echo $navigator;
+
+$qr = $tc->select_tracking_express($page);
+$row_tracking = mysql_fetch_array($qr);
 ?>
-<div style="clear:both; height:20px"></div>
+<div style="clear:both; height:10px"></div>
 <div class="viewpost">
     <h1 style="font-size:24px"><?php echo $row_menu_one['name'];?></h1>
     <h2><?php echo $row_menu_one['metaDescription'];?></h2><br /><br />
     <table width="500" border="0" cellpadding="0" cellspacing="10" style="margin:auto">
     	<tr>
-        	<td width="80">Mã BILL:</td>
-        	<td><input type="text" name="ma_bill" style="width:250px; height:25px; line-height:25px; padding:0 5px; border:solid 1px #999" /></td>
-        	<td><input type="button" name="btn_ma_bill" style="height:28px; line-height:28px; padding:0 25px; font-size:120%; font-weight:bold; color:#FFF; border:none; background-color:#017B80; cursor:pointer" value="Track!" /></td>
+        	<td width="80"><?php echo const_contact_ma; ?> BP/BK:</td>
+        	<td><input type="text" name="ma_buupham_form" value="<?php echo $page; ?>" style="width:250px; height:25px; line-height:25px; padding:0 5px; border:solid 1px #999" /></td>
+        	<td><a href="javascript:;" class="input_btn_form" name="<?php echo $lang.'/'.$danhmuc.'_page_'; ?>" style="padding:4px 25px; font-size:120%; font-weight:bold; color:#FFF; border:none; background-color:#F00; cursor:pointer">Tracking</a>
+            <script type="text/javascript">
+			$(document).ready(function() {
+                $('.input_btn_form').click(function(){
+					var ma_buupham = $.trim($('input[name=ma_buupham_form]').val());
+					if(ma_buupham!=''){
+						var url = $(this).attr('name');
+						$(this).attr('href',url + ma_buupham + '/');
+						return true;
+					}else{
+						alert('Vui lòng nhập mã số vận chuyển.');
+						$('input[name=ma_buupham_form]').focus();
+						return false;
+					}
+				});
+            });
+			</script>
+            </td>
         </tr>
     </table>
-    <div id="form_bill" style="margin-top:50px"></div>
+    <div id="form_bill" style="margin-top:50px">
+    <?php if(mysql_num_rows($qr)==1){ ?>
+    	<table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:35px; margin:auto; font-weight:bold">
+            <tr>
+                <td colspan="4" style="color:#F00; font-size:16px">KẾT QUẢ PHÁT:</td>
+            </tr>
+            <tr bgcolor="#FFFF99">
+                <td width="90" style="padding-left:5px">Số vận đơn:</td>
+                <td width="150" style="color:#00F"><?php echo $row_tracking['name']; ?></td>
+                <td width="90">Ngày gửi</td>
+                <td style="color:#00F"><?php echo date('d/m/Y', strtotime($row_tracking['date_update'])); ?></td>
+            </tr>
+            <tr bgcolor="#FFFF99">
+                <td style="padding-left:5px">Trạng thái:</td>
+                <td style="color:#00F"><?php if($row_tracking['status']==1) echo 'Phát thành công'; else echo 'Đang phát'; ?></td>
+                <td>Người nhận:</td>
+                <td style="color:#00F"><?php echo $row_tracking['nguoi_nhan']; ?></td>
+            </tr>
+        </table>
+        <table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:25px; margin:auto">
+            <!--<tr>
+                <td colspan="4" style="color:#00F; font-size:14px; font-weight:bold">CHI TIẾT PHÁT:</td>
+            </tr>-->
+            <tr style="background-color:#666; color:#FFF; font-weight:bold">
+                <td width="120" style="padding-left:5px">Ngày</td>
+                <td width="180">Hành trình</td>
+                <td width="200">Vị trí</td>
+                <td width="200">Trạng thái</td>
+                <td>Ghi chú</td>
+            </tr>
+            <?php
+            $qr = $tc->select_tracking_express_detail($row_tracking['id']);
+			while($row = mysql_fetch_array($qr)){
+				echo '<tr>
+					<td style="border-bottom:dotted 1px #CCC; padding-left:5px">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
+					<td style="border-bottom:dotted 1px #CCC">'.$row['name'].'</td>
+					<td style="border-bottom:dotted 1px #CCC">'.$row['vitri'].'</td>
+					<td style="border-bottom:dotted 1px #CCC">'.$row['trangthai'].'</td>
+					<td style="border-bottom:dotted 1px #CCC">'.$row['notes'].'&nbsp;</td>
+				</tr>';
+			}
+			?>
+        </table>
+    <?php } ?>
+    </div>
     <div style="clear:both; height:30px"></div>
 </div>
 <script type="text/javascript">
 $(document).ready(function(e) {
-    $("input[name=btn_ma_bill]").click(function(){
-		var ma_bill = $("input[name=ma_bill]").val();
-		if($.trim(ma_bill) != ''){
-			$("#form_bill").html('<p style="color:blue; font-weight:bold">Đang xử lý..</p>');
-			$.post("ajax.php",{tracktrace:"tracktrace",ma_bill:ma_bill},function(data){
-				setTimeout(function(){ $("#form_bill").html(data); },500);
-			});
-		}else return false;
-	});
+    
 });
 </script>

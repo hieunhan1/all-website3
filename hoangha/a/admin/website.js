@@ -253,11 +253,12 @@ $('input[name=btnCancel]').live('click',function(){
 $("input[name=them_detail]").click(function(){
 	var id = $("input[name=id_tracing_express]").val();
 	var date_update = $("#ngay_detail").val();
+	var time_update = $("input[name=time_update]").val();
 	var name = $("input[name=hanhtrinh]").val();
 	var vitri = $("input[name=vitri]").val();
 	var trangthai = $("input[name=trangthai]").val();
 	var notes = $("input[name=notes]").val();
-	$.post("ajax.php",{tracing_express_detail:"tracing_express_detail",id:id,name:name,vitri:vitri,trangthai:trangthai,notes:notes,date_update:date_update},function(data){
+	$.post("ajax.php",{tracing_express_detail:"tracing_express_detail",id:id,name:name,vitri:vitri,trangthai:trangthai,notes:notes,date_update:date_update,time_update:time_update},function(data){
 		if(data != '0'){
 			$("#ajax_detail").append(data);
 			$("#ngay_detail").val('');

@@ -193,6 +193,16 @@ class trangchu extends db {
 		return array($str1,$str2);
 	}
 	
+	/*tracing_express*/
+	function select_tracking_express($ma){
+		$qr = "SELECT id,name,nguoi_nhan,status,date_update FROM tracing_express WHERE `delete`=0 AND name='{$ma}'";
+		return mysql_query($qr);
+	}
+	function select_tracking_express_detail($id){
+		$qr = "SELECT name,vitri,trangthai,notes,date_update FROM tracing_express_detail WHERE `delete`=0 AND id_tracing_express='{$id}' ORDER BY date_update, id";
+		return mysql_query($qr);
+	}
+	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');

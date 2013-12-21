@@ -9,7 +9,7 @@ echo $navigator;
     <h2><?php echo $row_menu_one['metaDescription'];?></h2><br /><br />
     <table width="500" border="0" cellpadding="0" cellspacing="10" style="margin:auto">
     	<tr>
-        	<td width="80">Mã BILL:</td>
+        	<td width="80"><?php echo const_contact_ma;?> BILL:</td>
         	<td><input type="text" name="ma_bill" style="width:250px; height:25px; line-height:25px; padding:0 5px; border:solid 1px #999" /></td>
         	<td><input type="button" name="btn_ma_bill" style="height:28px; line-height:28px; padding:0 25px; font-size:120%; font-weight:bold; color:#FFF; border:none; background-color:#017B80; cursor:pointer" value="Track!" /></td>
         </tr>

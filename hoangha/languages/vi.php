@@ -20,4 +20,8 @@ define(const_contact_to, 'Đến');
 define(const_contact_soluong, 'Số lượng');
 define(const_contact_nhietdo, 'Nhiệt độ');
 define(const_contact_yeucau, 'Yêu cầu');
+
+//tracking & tracktrace
+define(const_contact_ma, 'Mã');
+define(const_contact_dinhvi_buupham, 'Định vị bưu phẩm');
 ?>

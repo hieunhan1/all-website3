@@ -13,8 +13,17 @@ if(@$_SESSION["username_admin"]) {
 		$type = 3;
 		$table = $_POST['page'];
 		$id = $_POST['id'];
-		$sql->get_sql($type,$table,$user,$id);
-		$sql->executable();
+		if($user=='admin'){
+			$sql->get_sql($type,$table,$user,$id);
+			$sql->executable();
+		}else{
+			$qr = mysql_query("SELECT user_create FROM {$table} WHERE id='{$id}'");
+			$row = mysql_fetch_array($qr);
+			if($row['user_create']==$user){
+				$sql->get_sql($type,$table,$user,$id);
+				$sql->executable();
+			}
+		}
 	}
 	if(@$_POST['status']){
 		$type = 7;
@@ -57,11 +66,12 @@ if(@$_SESSION["username_admin"]) {
 		$trangthai = trim($_POST['trangthai']);
 		$notes = trim($_POST['notes']);
 		$date_update = trim($_POST['date_update']);
+		$time_update = trim($_POST['time_update']);
 		
 		if($id!='0' && $id!='' && $name!='' && $date_update!=''){
-			$qt->insert_tracing_express_detail($id,$name,$vitri,$trangthai,$notes,$date_update);
+			$qt->insert_tracing_express_detail($id,$name,$vitri,$trangthai,$notes,$date_update,$time_update);
 			echo "<tr>
-				<td style='border-bottom:solid 1px #CCC'>{$date_update}</td>
+				<td style='border-bottom:solid 1px #CCC'>{$date_update} {$time_update}</td>
 				<td style='border-bottom:solid 1px #CCC'>{$name}</td>
 				<td style='border-bottom:solid 1px #CCC'>{$vitri}</td>
 				<td style='border-bottom:solid 1px #CCC'>{$trangthai}</td>
@@ -77,8 +87,20 @@ if(@$_SESSION["username_admin"]) {
 	if($_POST['delete_tracing_express_detail']=='delete_tracing_express_detail'){
 		$id = trim($_POST['id']);
 		if($id!=''){
-			$qr = mysql_query("UPDATE tracing_express_detail SET `delete`=1 WHERE id='{$id}'");
-			return true;
+			if($user=='admin'){
+				$qr = mysql_query("UPDATE tracing_express_detail SET `delete`=1 WHERE id='{$id}'");
+				return true;
+			}else{
+				$qr = mysql_query("SELECT user_create FROM tracing_express_detail WHERE id='{$id}'");
+				$row = mysql_fetch_array($qr);
+				if($row['user_create']==$user){
+					$qr = mysql_query("UPDATE tracing_express_detail SET `delete`=1 WHERE id='{$id}'");
+					return true;
+				}else{
+					echo '0';
+					return false;
+				}
+			}
 		}else{
 			echo '0';
 			return false;

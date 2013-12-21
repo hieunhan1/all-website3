@@ -30,7 +30,7 @@ if($id == 0){ //create
 	$qr = $qt->select_tracing_express_detail($id);
 	while($row_te = mysql_fetch_array($qr)){
 		$str_te .= "<tr id='tracing_express_detail_{$row_te['id']}'>
-			<td style='border-bottom:solid 1px #CCC'>".date('d/m/Y',strtotime($row_te['date_update']))."</td>
+			<td style='border-bottom:solid 1px #CCC'>".date('d/m/Y H:i',strtotime($row_te['date_update']))."</td>
 			<td style='border-bottom:solid 1px #CCC'>{$row_te['name']}</td>
 			<td style='border-bottom:solid 1px #CCC'>{$row_te['vitri']}</td>
 			<td style='border-bottom:solid 1px #CCC'>{$row_te['trangthai']}</td>
@@ -50,7 +50,8 @@ if($id == 0){ //create
 		</tr>
 		<tbody id='ajax_detail'>".$str_te."</tbody>
 		<tr>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='date_update' id='ngay_detail' maxlength='100' size='8' /></td>
+			<td style='border-bottom:solid 1px #CCC'><input type='text' name='date_update' id='ngay_detail' maxlength='10' size='8' />
+				<input type='text' name='time_update' maxlength='5' size='1' /></td>
 			<td style='border-bottom:solid 1px #CCC'><input type='text' name='hanhtrinh' maxlength='100' size='20' /></td>
 			<td style='border-bottom:solid 1px #CCC'><input type='text' name='vitri' maxlength='100' size='20' /></td>
 			<td style='border-bottom:solid 1px #CCC'><input type='text' name='trangthai' maxlength='100' size='20' /></td>
@@ -99,7 +100,7 @@ echo "<form action='' method='post' name='form1'>
 ";
 
 //Trạng thái status
-$value = array(1 => 'Phát thành công', 0 => 'Chưa phát');
+$value = array(1 => 'Phát thành công', 0 => 'Đang phát');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 0; //giá trị mặc định
@@ -108,7 +109,7 @@ echo $form->DisplayProperties();
 
 //name
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
-$form->getProperties("Số vận đơn:", 'name', 1, 'input_medium', $value, 50);
+$form->getProperties("Số vận đơn:", 'name', 1, "input_medium'  disabled='disabled", $value, 50);
 echo $form->DisplayProperties();
 
 //Ngày date_update
