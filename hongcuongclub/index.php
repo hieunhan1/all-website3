@@ -95,6 +95,9 @@ if(@$_GET['danhmuc']){
 <div id="wrapper">
 	<?php echo $include;?>
 </div>
-<?php mysql_close();?>
+<?php
+include_once('blocks/qc2ben.php');
+mysql_close();
+?>
 </body>
 </html>
