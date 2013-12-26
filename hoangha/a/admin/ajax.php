@@ -62,21 +62,16 @@ if(@$_SESSION["username_admin"]) {
 	if($_POST['tracing_express_detail']=='tracing_express_detail'){
 		$id = trim($_POST['id']);
 		$name = trim($_POST['name']);
-		$vitri = trim($_POST['vitri']);
-		$trangthai = trim($_POST['trangthai']);
 		$notes = trim($_POST['notes']);
 		$date_update = trim($_POST['date_update']);
-		$time_update = trim($_POST['time_update']);
 		
 		if($id!='0' && $id!='' && $name!='' && $date_update!=''){
-			$qt->insert_tracing_express_detail($id,$name,$vitri,$trangthai,$notes,$date_update,$time_update);
-			echo "<tr>
-				<td style='border-bottom:solid 1px #CCC'>{$date_update} {$time_update}</td>
+			$id_insert = $qt->insert_tracing_express_detail($id,$name,$notes,$date_update);
+			echo "<tr id='tracing_express_detail_{$id_insert}'>
+				<td style='border-bottom:solid 1px #CCC'>".date('d/m/Y H:i',strtotime($date_update))."</td>
 				<td style='border-bottom:solid 1px #CCC'>{$name}</td>
-				<td style='border-bottom:solid 1px #CCC'>{$vitri}</td>
-				<td style='border-bottom:solid 1px #CCC'>{$trangthai}</td>
 				<td style='border-bottom:solid 1px #CCC'>{$notes}</td>
-				<td style='border-bottom:solid 1px #CCC'>Xóa</td>
+				<td style='border-bottom:solid 1px #CCC'><p class='delete_tracing_express_detail {$id_insert}'><a href='javascript:;'>Xóa</a></p></td>
 			</tr>";
 			return true;
 		}else{

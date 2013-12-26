@@ -37,30 +37,50 @@ $row_tracking = mysql_fetch_array($qr);
     <?php if(mysql_num_rows($qr)==1){ ?>
     	<table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:35px; margin:auto; font-weight:bold">
             <tr>
-                <td colspan="4" style="color:#F00; font-size:16px">KẾT QUẢ PHÁT:</td>
+                <td colspan="4" style="color:#F00; font-size:16px">THÔNG TIN HÓA ĐƠN: <?php echo $page; ?></td>
+            </tr>
+            <tr bgcolor="#666" style="color:#FFF">
+                <th colspan="2" align="left" style="padding-left:45px">THÔNG TIN NHẬN HÀNG</th>
+                <th colspan="2" align="left" style="padding-left:45px">THÔNG TIN PHÁT HÀNG</th>
             </tr>
             <tr bgcolor="#FFFF99">
-                <td width="90" style="padding-left:5px">Số vận đơn:</td>
-                <td width="150" style="color:#00F"><?php echo $row_tracking['name']; ?></td>
-                <td width="90">Ngày gửi</td>
-                <td style="color:#00F"><?php echo date('d/m/Y', strtotime($row_tracking['date_update'])); ?></td>
+                <td width="130" align="right" style="padding-right:5px">Mã Bill:</td>
+                <td width="300" style="color:#00F"><?php echo $row_tracking['name']; ?></td>
+                <td width="130" align="right" style="padding-right:5px">Trạng thái:</td>
+                <td width="300" style="color:#00F"><?php if($row_tracking['status']==1) echo 'Đã đến nơi '; else echo 'Đang phát'; ?><?php //echo date('d/m/Y', strtotime($row_tracking['date_update'])); ?></td>
             </tr>
             <tr bgcolor="#FFFF99">
-                <td style="padding-left:5px">Trạng thái:</td>
-                <td style="color:#00F"><?php if($row_tracking['status']==1) echo 'Phát thành công'; else echo 'Đang phát'; ?></td>
-                <td>Người nhận:</td>
+                <td align="right" style="padding-right:5px">Nơi gởi:</td>
+                <td style="color:#00F"><?php echo $row_tracking['noi_gui']; ?></td>
+                <td align="right" style="padding-right:5px">Người nhận:</td>
                 <td style="color:#00F"><?php echo $row_tracking['nguoi_nhan']; ?></td>
             </tr>
-        </table>
+            <tr bgcolor="#FFFF99">
+                <td align="right" style="padding-right:5px">Bưu cục gởi:</td>
+                <td style="color:#00F"><?php echo $row_tracking['buucuc_gui']; ?></td>
+                <td align="right" style="padding-right:5px">Bưu cục phát:</td>
+                <td style="color:#00F"><?php echo $row_tracking['buucuc_nhan']; ?></td>
+            </tr>
+            <tr bgcolor="#FFFF99">
+                <td align="right" style="padding-right:5px">Thời gian gởi:</td>
+                <td style="color:#00F"><?php echo $row_tracking['ngay_gui']; ?></td>
+                <td align="right" style="padding-right:5px">Thời gian nhận:</td>
+                <td style="color:#00F"><?php echo $row_tracking['date_update']; ?></td>
+            </tr>
+            <tr bgcolor="#FFFF99">
+                <td align="right" style="padding-right:5px">Loại hàng:</td>
+                <td style="color:#00F"><?php echo $row_tracking['loaihang']; ?></td>
+                <td align="right" style="padding-right:5px">Trọng lượng (g):</td>
+                <td style="color:#00F"><?php echo $row_tracking['trongluong']; ?></td>
+            </tr>
+        </table><br />
         <table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:25px; margin:auto">
-            <!--<tr>
-                <td colspan="4" style="color:#00F; font-size:14px; font-weight:bold">CHI TIẾT PHÁT:</td>
-            </tr>-->
+            <tr>
+                <td colspan="4" style="color:#00F; font-size:14px; font-weight:bold">HÀNH TRÌNH PHÁT:</td>
+            </tr>
             <tr style="background-color:#666; color:#FFF; font-weight:bold">
-                <td width="120" style="padding-left:5px">Ngày</td>
-                <td width="180">Hành trình</td>
-                <td width="200">Vị trí</td>
-                <td width="200">Trạng thái</td>
+                <td width="130" style="padding-left:5px">Ngày</td>
+                <td width="250">Bưu cục</td>
                 <td>Ghi chú</td>
             </tr>
             <?php
@@ -69,8 +89,6 @@ $row_tracking = mysql_fetch_array($qr);
 				echo '<tr>
 					<td style="border-bottom:dotted 1px #CCC; padding-left:5px">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
 					<td style="border-bottom:dotted 1px #CCC">'.$row['name'].'</td>
-					<td style="border-bottom:dotted 1px #CCC">'.$row['vitri'].'</td>
-					<td style="border-bottom:dotted 1px #CCC">'.$row['trangthai'].'</td>
 					<td style="border-bottom:dotted 1px #CCC">'.$row['notes'].'&nbsp;</td>
 				</tr>';
 			}

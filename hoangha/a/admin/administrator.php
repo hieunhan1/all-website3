@@ -40,15 +40,21 @@ if(@$user) {
 <title>Trang quản trị</title>
 <meta name="robots" content="nofollow" />
 <link href="img/css.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../../library/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="website.js"></script>
 
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="ckeditor/ckfinder/ckfinder.js"></script>
 
-<link href="../../library/datepicker/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../../library/datepicker/jquery.ui.core.js"></script>
-<script type="text/javascript" src="../../library/datepicker/jquery.ui.datepicker.js"></script>
+<link type="text/css" href="../../library/datetimepick/jquery.simple-dtpicker.css" rel="stylesheet" />
+<script type="text/javascript" src="../../library/datetimepick/jquery.simple-dtpicker.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input[name=date_update], .datetimepick").appendDtpicker({
+			//"dateFormat": "DD/MM/YYYY h:m",
+		});
+	});
+</script>
 
 <script type="text/javascript">
 function BrowseServer( startupPath, functionData ){

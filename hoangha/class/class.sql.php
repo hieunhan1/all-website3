@@ -68,8 +68,8 @@ class sql {
 			} else if($field[$i] == 'date_create'){
 				$qr .= $dau.date('Y-m-d H:i:s').$cuoi;
 			} else {
-				$m = explode('/', $value[$i]); $date = date('H:i:s');
-				$qr .= "{$dau}{$m[2]}-{$m[1]}-{$m[0]} {$date}{$cuoi}";
+				$datetime = $value[$i];
+				$qr .= "{$dau}{$datetime}{$cuoi}";
 			}
 		}
 		mysql_query($qr) or ($this->_error = $this->_list_error[1]);
@@ -87,8 +87,8 @@ class sql {
 				if($field[$i] != 'date_update'){
 					$qr .= "`{$field[$i]}`='{$value[$i]}{$dau}";
 				} else {
-					$m = explode('/', $value[$i]); $date = date('H:i:s');
-					$qr .= "`{$field[$i]}`='{$m[2]}-{$m[1]}-{$m[0]} {$date}{$dau}";
+					$datetime = $value[$i];
+					$qr .= "`{$field[$i]}`='{$datetime}{$dau}";
 				}
 			}
 		}

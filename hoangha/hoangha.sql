@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 20, 2013 at 05:29 PM
+-- Generation Time: Dec 26, 2013 at 03:14 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -664,7 +664,7 @@ INSERT INTO `info` VALUES (358, 'Chuyển phát nhanh', 'chuyen-phat-nhanh', '',
 INSERT INTO `info` VALUES (359, 'Chuỗi cung ứng', 'chuoi-cung-ung', 'supply-chain.jpg', '<p>Tại HIL, các chuyên gia chuỗi cung ứng giúp khách hàng đạt được tiết kiệm tổng thể chuỗi cung ứng, trong khi giành quyền kiểm soát tốt hơn các lô hàng của họ.</p>\r\n', '<h2>Tại HIL, các chuyên gia chuỗi cung ứng giúp khách hàng đạt được tiết kiệm tổng thể chuỗi cung ứng, trong khi giành quyền kiểm soát tốt hơn các lô hàng của họ.</h2>\r\n\r\n<p>Đội ngũ của chúng tôi có thể phối hợp và tối ưu hóa các yếu tố hậu cần, tài chính và pháp lý của chuỗi cung ứng toàn cầu của bạn.</p>\r\n', '2013-09-30 15:16:19', '2013-09-30 15:16:19', 1, 'Chuỗi cung ứng', 1, 'vi', ',20,', 'admin', NULL, 0);
 INSERT INTO `info` VALUES (360, 'Môi giới hải quan', 'moi-gioi-hai-quan', 'customs-broker.jpg', '<p>Với kinh nghiệm, và giấy phép môi giới hải quan Hoàng Hà cung cấp cho khách hàng các dịch vụ hải quan phức tạp và các giải pháp chuyên nghiệp phù hợp với yêu cầu logistics cụ thể của họ.</p>\r\n', '<h2>Với kinh nghiệm, và giấy phép môi giới hải quan Hoàng Hà cung cấp cho khách hàng các dịch vụ hải quan phức tạp và các giải pháp chuyên nghiệp phù hợp với yêu cầu logistics cụ thể của họ.</h2>\r\n\r\n<p>Chúng tôi cung cấp dịch vụ môi giới hải quan nhanh chóng, đáng tin cậy và chính xác cho các lô hàng nhập khẩu và xuất khẩu</p>\r\n', '2013-09-30 15:18:14', '2013-09-30 15:18:14', 1, 'Môi giới hải quan', 1, 'vi', ',20,', 'admin', NULL, 0);
 INSERT INTO `info` VALUES (361, 'Chuyển phát nhanh quốc tế', 'chuyen-phat-nhanh-quoc-te', 'door-services.jpg', '<p>HIL cung cấp một giải pháp toàn cầu cho việc chuyển phát nhanh tài liệu và bưu kiện tới tận nhà trên toàn thế giới và trong một loạt các tùy chọn thời gian vận chuyển sẽ đáp ứng mọi nhu cầu của bạn.</p>\r\n', '<h2>HIL cung cấp một giải pháp toàn cầu cho việc chuyển phát nhanh tài liệu và bưu kiện tới tận nhà trên toàn thế giới và trong một loạt các tùy chọn thời gian vận chuyển sẽ đáp ứng mọi nhu cầu của bạn.</h2>\r\n\r\n<p>Dịch vụ chuyển phát nhanh quốc tế của chúng tôi cung cấp cho bạn thông tin thời gian theo dõi, Bằng chứng giao hàng của lô hàng của bạn, và khả năng để yêu cầu thông báo giao hàng qua email hoặc tin nhắn SMS.</p>\r\n', '2013-09-30 15:19:50', '2013-09-30 15:19:50', 1, 'Chuyển phát nhanh quốc tế', 1, 'vi', ',20,', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (362, 'Đóng gói thủy sản', 'dong-goi-thuy-san', 'packing-services.jpg', '<p>HIL cung cấp đầy đủ các loại bao bì đặc biệt cho việc đóng gói mặt hàng thủy sản như cá ngừ tươi, cua sống, cá tươi, v.v..</p>\r\n', '<h2>HIL cung cấp đầy đủ các loại bao bì đặc biệt cho việc đóng gói mặt hàng thủy sản như cá ngừ tươi, cua sống, cá tươi, v.v..</h2>\r\n\r\n<p>Với đội ngũ công nhận chuyên nghiệp và được đào tạo, chúng tôi có thể giúp bạn nhiều hoặc ít đối với nhu cầu đóng gói của bạn cũng như trong các dịch vụ giá trị gia tăng. Chúng tôi cũng bán thùng và nhận đóng gói.</p>\r\n', '2013-09-30 15:21:50', '2013-09-30 15:22:23', 1, 'Đóng gói thủy sản', 1, 'vi', ',20,', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (362, 'Đóng gói thủy sản', 'dong-goi-thuy-san', 'packing-services.jpg', '<p>HIL cung cấp đầy đủ các loại bao bì đặc biệt cho việc đóng gói mặt hàng thủy sản như cá ngừ tươi, cua sống, cá tươi, v.v..</p>\r\n', '<h2>HIL cung cấp đầy đủ các loại bao bì đặc biệt cho việc đóng gói mặt hàng thủy sản như cá ngừ tươi, cua sống, cá tươi, v.v..</h2>\r\n\r\n<p>Với đội ngũ công nhận chuyên nghiệp và được đào tạo, chúng tôi có thể giúp bạn nhiều hoặc ít đối với nhu cầu đóng gói của bạn cũng như trong các dịch vụ giá trị gia tăng. Chúng tôi cũng bán thùng và nhận đóng gói.</p>\r\n', '2013-09-30 15:21:50', '2013-09-30 17:00:00', 1, 'Đóng gói thủy sản', 1, 'vi', ',20,', 'admin', 'admin', 0);
 INSERT INTO `info` VALUES (363, 'About HIL', 'about-hil', '', '<p>About HIL</p>\r\n', '<p>is update...</p>\r\n', '2013-09-30 15:24:44', '2013-09-30 15:24:44', 1, 'About HIL', 0, 'en', ',2,', 'admin', NULL, 0);
 INSERT INTO `info` VALUES (364, 'Value & Vision', 'value-vision', '', '<p>Value &amp; Vision</p>\r\n', '<p>is update...</p>\r\n', '2013-09-30 15:25:08', '2013-09-29 15:25:14', 1, 'Value & Vision', 0, 'en', ',2,', 'admin', 'admin', 0);
 INSERT INTO `info` VALUES (365, 'Competitive Edge', 'competitive-edge', '', '<p>Competitive Edge</p>\r\n', '<p>is update..</p>\r\n', '2013-09-30 15:25:40', '2013-09-28 15:25:40', 1, 'Competitive Edge', 0, 'en', ',2,', 'admin', NULL, 0);
@@ -765,7 +765,7 @@ CREATE TABLE `menu` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`),
   UNIQUE KEY `url` (`url`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
 
 -- 
 -- Dumping data for table `menu`
@@ -810,7 +810,7 @@ INSERT INTO `menu` VALUES (36, 'ULD', 'uld', 'uld/', '', '2013-09-18 17:16:06', 
 INSERT INTO `menu` VALUES (37, 'Airport', 'airport', 'airport/', '', '2013-09-18 17:17:10', '2013-09-18 09:20:32', 11, 0, 1, 'Airport', 'Airport', 'Airport', 0, 'en', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (54, 'Seaport', 'seaport', 'seaport/', '', '2013-09-30 09:20:50', '2013-09-30 09:20:50', 11, 0, 1, 'Seaport', 'Seaport', 'Seaport', 0, 'en', 2, ',2,', 'admin', NULL, 0);
 INSERT INTO `menu` VALUES (38, 'Telephone Area Code', 'telephone-area-code', 'telephone-area-code/', '', '2013-09-18 17:17:38', '2013-09-18 11:34:13', 11, 1, 1, 'Telephone Area Code', 'Telephone Area Code', 'Telephone Area Code', 0, 'en', 2, ',2,', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (39, 'Trang chủ', 'trang-chu', '/', '', '2013-09-19 12:35:46', '2013-09-19 12:36:13', 0, 1, 1, 'Hoàng Hà Logistics', 'Hoàng Hà Logistics', 'Trang chủ', 0, 'vi', 1, ',1,5,', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (39, 'Trang chủ', 'trang-chu', '/', '', '2013-09-19 12:35:46', '2013-10-25 02:00:00', 0, 1, 1, 'Hoàng Hà Logistics', 'Hoàng Hà Logistics', 'Trang chủ', 0, 'vi', 1, ',1,5,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (40, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', '2013-09-23 11:09:03', '2013-09-23 11:09:03', 0, 2, 1, 'Công ty TNHH Thương mại Hoàng Hà', 'Thành lập Công ty TNHH Thương mại Hoàng Hà Giấy phép số 711/GP-UB TP. Thành lập kho bảo quản và sơ chế hàng hóa xuất nhập khẩu.', 'Công ty TNHH Thương mại Hoàng Hà', 0, 'vi', 2, ',1,5,', 'admin', NULL, 0);
 INSERT INTO `menu` VALUES (41, 'Văn phòng', 'van-phong', 'van-phong/', '', '2013-09-23 11:10:24', '2013-09-23 11:12:57', 0, 3, 1, 'Văn phòng công ty Hoàng Hà', 'Với hệ thống đại lý khắp thế giới của Công ty Hoàng Hà cho phép chúng tôi cung cấp dịch vụ từ các cảng của Việt Nam đến các cảng biển nổi tiếng trên thế giới, Công ty Hoàng Hà phục vụ quý khách hàng với chất lượng tốt nhất nhằm thỏa mãn nhu cầu của khách hàng. ', 'Văn phòng công ty Hoàng Hà', 0, 'vi', 4, ',1,5,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (42, 'Văn phòng chính', 'van-phong-chinh', 'van-phong-chinh/', '', '2013-09-23 11:11:48', '2013-09-23 14:21:28', 41, 0, 1, 'Văn phòng chính', 'Với hệ thống đại lý khắp thế giới của Công ty Hoàng Hà cho phép chúng tôi cung cấp dịch vụ từ các cảng của Việt Nam đến các cảng biển nổi tiếng trên thế giới, Công ty Hoàng Hà phục vụ quý khách hàng với chất lượng tốt nhất nhằm thỏa mãn nhu cầu của khách hàng.', 'Văn phòng chính', 0, 'vi', 4, ',6,', 'admin', 'admin', 0);
@@ -1243,7 +1243,7 @@ INSERT INTO `support` VALUES (1, ',13,48,', 'Ms.Nguyễn Thị Tú Uyên - Cathe
 INSERT INTO `support` VALUES (2, ',13,48,49,50,51,', 'Mr.Nguyễn Văn Minh - Mike', '', 'minhsale_hh', 'hieu_nhan1', '0903 832513', 'mike@hoangha.com', 'en', 1, '2013-09-24 09:34:21', '2013-09-24 10:28:29', 'admin', 'admin', 0);
 INSERT INTO `support` VALUES (3, ',13,48,49,50,51,', 'Ms.Nguyễn Thị Minh Thy - Tina', '', 'minhthy160', '', '0903 924442', 'tina@hoangha.com', 'en', 1, '2013-09-24 09:35:11', '2013-09-24 10:23:49', 'admin', 'admin', 0);
 INSERT INTO `support` VALUES (4, ',13,48,49,50,51,', 'Mr.Trần Thanh Trí - Tony', '', 'tonytran_hh', '', '0907 639909', 'tony@hoangha.com', 'en', 1, '2013-09-24 09:36:05', '2013-09-24 10:23:44', 'admin', 'admin', 0);
-INSERT INTO `support` VALUES (5, ',13,48,49,50,51,', 'Ms.Lê Thị Ngọc Đào - Dancy', 'SALE - AIR', 'hoangduy2005', 'hieu_nhan1', '0908 456678', 'dancy@hoangha.com', 'en', 1, '2013-09-24 09:36:49', '2013-09-24 09:03:43', 'admin', 'admin', 0);
+INSERT INTO `support` VALUES (5, ',13,48,49,50,51,', 'Ms.Lê Thị Ngọc Đào - Dancy', 'SALE - AIR', 'hoangduy2005', 'hieu_nhan1', '0908 456678', 'dancy@hoangha.com', 'en', 1, '2013-09-24 09:36:49', '2013-09-25 09:03:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -1253,9 +1253,14 @@ INSERT INTO `support` VALUES (5, ',13,48,49,50,51,', 'Ms.Lê Thị Ngọc Đào 
 
 CREATE TABLE `tracing_express` (
   `id` int(11) NOT NULL auto_increment,
-  `name` varchar(50) NOT NULL,
-  `ngay_gui` datetime NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `noi_gui` varchar(50) NOT NULL,
+  `buucuc_gui` varchar(50) NOT NULL,
+  `ngay_gui` varchar(20) NOT NULL,
+  `loaihang` varchar(50) NOT NULL,
   `nguoi_nhan` varchar(100) NOT NULL,
+  `buucuc_nhan` varchar(50) NOT NULL,
+  `trongluong` varchar(10) NOT NULL,
   `lang` varchar(2) default 'vi',
   `status` tinyint(1) default '1',
   `date_create` datetime NOT NULL,
@@ -1271,8 +1276,8 @@ CREATE TABLE `tracing_express` (
 -- Dumping data for table `tracing_express`
 -- 
 
-INSERT INTO `tracing_express` VALUES (1, 'SBY1313337', '0000-00-00 00:00:00', 'LÊ THỊ KIM NHỜ,15:00 20/11/2013', 'vi', 0, '2013-12-20 11:23:22', '2013-12-20 14:49:59', 'admin', 'admin', 0);
-INSERT INTO `tracing_express` VALUES (2, 'SBY1313856', '0000-00-00 00:00:00', 'EF861703910,08:25 23/11/2013', 'vi', 0, '2013-12-20 11:33:55', NULL, 'admin', NULL, 0);
+INSERT INTO `tracing_express` VALUES (1, '8930102035 ', 'HỒ CHÍ MINH ', 'TÂN SƠN NHẤT ', '2013-12-24 02:00', 'Chứng từ ', 'Anh Văn B', 'CN HỒ CHÍ MINH ', '796.0 ', 'vi', 1, '2013-12-26 14:07:43', '2013-12-27 08:00:00', 'admin', 'admin', 0);
+INSERT INTO `tracing_express` VALUES (2, '8930102036', 'HỒ CHÍ MINH ', 'TÂN SƠN NHẤT ', '2013-12-31 14:52', 'Chứng từ 2', 'Trần Văn A', 'CN HỒ CHÍ MINH ', '1000', 'vi', 0, '2013-12-26 14:52:37', '2014-01-04 14:52:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1283,8 +1288,6 @@ INSERT INTO `tracing_express` VALUES (2, 'SBY1313856', '0000-00-00 00:00:00', 'E
 CREATE TABLE `tracing_express_detail` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(100) NOT NULL,
-  `vitri` varchar(100) NOT NULL,
-  `trangthai` varchar(100) NOT NULL,
   `notes` text NOT NULL,
   `lang` varchar(2) default 'vi',
   `status` tinyint(1) default '1',
@@ -1295,15 +1298,19 @@ CREATE TABLE `tracing_express_detail` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- 
 -- Dumping data for table `tracing_express_detail`
 -- 
 
-INSERT INTO `tracing_express_detail` VALUES (2, 'TIỀN GIANG:08:03', 'Tuyến Phát Mỹ Tho', 'Đến bưu cục', '', 'vi', 1, 1, '2013-12-20 14:15:17', '2013-12-20 00:00:00', 'admin', 'admin', 1);
-INSERT INTO `tracing_express_detail` VALUES (3, 'TIỀN GIANG:08:03', 'Tuyến Phát Mỹ Tho', 'Đi phát', '', 'vi', 1, 1, '2013-12-20 14:21:21', '2013-12-20 00:00:00', 'admin', 'admin', 1);
-INSERT INTO `tracing_express_detail` VALUES (4, 'TIỀN GIANG:08:03', 'Tuyến Phát Mỹ Tho', 'Giao bưu tá phát', '', 'vi', 1, 1, '2013-12-20 14:22:08', '2013-12-20 00:00:00', 'admin', 'admin', 1);
+INSERT INTO `tracing_express_detail` VALUES (1, 'TRUNG TÂM KHAI THÁC I', 'TSN đóng bảng kê (mã: BK_3100_TSN) tới TTKT1', 'vi', 1, 1, '2013-12-26 14:23:47', '2013-12-25 01:30:00', 'admin', NULL, 0);
+INSERT INTO `tracing_express_detail` VALUES (2, 'TRUNG TÂM KHAI THÁC II', 'Nhận tại TTKT1 bởi Lê Thái Bình', 'vi', 1, 1, '2013-12-26 14:26:11', '2013-12-26 13:00:00', 'admin', NULL, 0);
+INSERT INTO `tracing_express_detail` VALUES (3, 'TRUNG TÂM KHAI THÁC II', 'Nguyễn Lam Quỳnh Như phân công phát cho Bùi Nam Hà', 'vi', 1, 1, '2013-12-26 14:26:37', '2013-12-26 22:30:00', 'admin', NULL, 1);
+INSERT INTO `tracing_express_detail` VALUES (4, 'TRUNG TÂM KHAI THÁC III', 'Thành công', 'vi', 1, 1, '2013-12-26 14:28:25', '2013-12-27 14:28:00', 'admin', NULL, 1);
+INSERT INTO `tracing_express_detail` VALUES (5, 'TRUNG TÂM KHAI THÁC V', 'OK', 'vi', 1, 1, '2013-12-26 14:29:06', '2013-12-27 22:00:00', 'admin', NULL, 1);
+INSERT INTO `tracing_express_detail` VALUES (6, 'HCM', 'Bắt đầu đi', 'vi', 1, 2, '2013-12-26 14:54:27', '2013-12-31 01:00:00', 'admin', NULL, 0);
+INSERT INTO `tracing_express_detail` VALUES (7, 'HN', 'Nhận phát', 'vi', 1, 2, '2013-12-26 14:54:52', '2014-01-02 03:00:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1389,7 +1396,7 @@ CREATE TABLE `users` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `Username` (`Username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 -- 
 -- Dumping data for table `users`
@@ -1397,6 +1404,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'f245784fda78b68a0f7eeadca6563ebe', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', NULL, 'admin', NULL, 0);
 INSERT INTO `users` VALUES (26, 'test', 'test', 'f245784fda78b68a0f7eeadca6563ebe', '', '', 1, 1, NULL, 0, NULL, NULL, 1, '2013-10-30 17:03:28', NULL, 'admin', NULL, 0);
+INSERT INTO `users` VALUES (27, 'Nhan', 'Nhan', 'f245784fda78b68a0f7eeadca6563ebe', ',1,5,', ',1,5,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-12-21 11:40:35', NULL, 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
