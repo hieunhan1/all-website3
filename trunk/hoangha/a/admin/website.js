@@ -112,18 +112,6 @@ $('#name_rewrite').click(function(){
 	$(this).val(change_alias(name));
 });
 
-/////////////PICKER DATE//////////////
-$("#date_update,#ngay_gui,#ngay_detail").datepicker({
-	numberOfMonths: 1,  dateFormat: 'dd/mm/yy',
-	monthNames: ['Một','Hai','Ba','Tư','Năm','Sáu','Bảy','Tám','Chín','Mười','Mười một','Mười hai'] ,
-	monthNamesShort: ['Tháng1','Tháng2','Tháng3','Tháng4','Tháng5','Tháng6','Tháng7','Tháng8','Tháng9','Tháng10','Tháng11','Tháng12'] ,
-	dayNames: ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'],
-	dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'] ,
-	showWeek: true , showOn: 'both',
-	changeMonth: true , changeYear: true,
-	currentText: 'Hôm nay', weekHeader: 'Tuần'
-});
-
 ////////////disable and enable  input//////////////
 function input_disable(input_id){
 	$('#'+input_id).attr("disabled", true); 
@@ -253,18 +241,13 @@ $('input[name=btnCancel]').live('click',function(){
 $("input[name=them_detail]").click(function(){
 	var id = $("input[name=id_tracing_express]").val();
 	var date_update = $("#ngay_detail").val();
-	var time_update = $("input[name=time_update]").val();
-	var name = $("input[name=hanhtrinh]").val();
-	var vitri = $("input[name=vitri]").val();
-	var trangthai = $("input[name=trangthai]").val();
+	var name = $("input[name=buucuc]").val();
 	var notes = $("input[name=notes]").val();
-	$.post("ajax.php",{tracing_express_detail:"tracing_express_detail",id:id,name:name,vitri:vitri,trangthai:trangthai,notes:notes,date_update:date_update,time_update:time_update},function(data){
+	$.post("ajax.php",{tracing_express_detail:"tracing_express_detail",id:id,name:name,notes:notes,date_update:date_update},function(data){
 		if(data != '0'){
 			$("#ajax_detail").append(data);
 			$("#ngay_detail").val('');
-			$("input[name=hanhtrinh]").val('');
-			$("input[name=vitri]").val('');
-			$("input[name=trangthai]").val('');
+			$("input[name=buucuc]").val('');
 			$("input[name=notes]").val('');
 			return true;
 		}else{
@@ -273,7 +256,7 @@ $("input[name=them_detail]").click(function(){
 		}
 	});
 });
-$(".delete_tracing_express_detail").click(function(){
+$(".delete_tracing_express_detail").live("click", function(){
 	var id = ($(this).attr('class')).split("delete_tracing_express_detail ");
 	if(confirm('Bạn có muốn xóa?')) {
 		$.post('ajax.php',{delete_tracing_express_detail:'delete_tracing_express_detail', id:id[1]}, function(data){

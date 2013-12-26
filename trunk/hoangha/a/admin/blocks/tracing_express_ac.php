@@ -32,8 +32,6 @@ if($id == 0){ //create
 		$str_te .= "<tr id='tracing_express_detail_{$row_te['id']}'>
 			<td style='border-bottom:solid 1px #CCC'>".date('d/m/Y H:i',strtotime($row_te['date_update']))."</td>
 			<td style='border-bottom:solid 1px #CCC'>{$row_te['name']}</td>
-			<td style='border-bottom:solid 1px #CCC'>{$row_te['vitri']}</td>
-			<td style='border-bottom:solid 1px #CCC'>{$row_te['trangthai']}</td>
 			<td style='border-bottom:solid 1px #CCC'>{$row_te['notes']}</td>
 			<td style='border-bottom:solid 1px #CCC'><p class='delete_tracing_express_detail {$row_te['id']}'><a href='javascript:;'>Xóa</a></p></td>
 		</tr>";
@@ -41,25 +39,22 @@ if($id == 0){ //create
 	$str_te = "<br /><div id='add_tracing_express_detail' style='color:blue; font-weight:bold'>Chi tiết Tracing Express</div><br />
 	<table width='900' border='0' cellspacing='0' cellpadding='5'>
 		<tr style='background:#AEC7FF'>
-			<th align='left'>Ngày</th>
-			<th align='left'>Hành trình</th>
-			<th align='left'>Vị trí</td>
-			<th align='left'>Trạng thái</th>
+			<th align='left' width='140'>Ngày</th>
+			<th align='left' width='200'>Bưu cục</th>
 			<th align='left'>Ghi chú</th>
-			<th align='left'>&nbsp; <input type='hidden' name='id_tracing_express' value='{$id}' /></th>
+			<th align='left' width='60'>&nbsp; <input type='hidden' name='id_tracing_express' value='{$id}' /></th>
 		</tr>
 		<tbody id='ajax_detail'>".$str_te."</tbody>
 		<tr>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='date_update' id='ngay_detail' maxlength='10' size='8' />
-				<input type='text' name='time_update' maxlength='5' size='1' /></td>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='hanhtrinh' maxlength='100' size='20' /></td>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='vitri' maxlength='100' size='20' /></td>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='trangthai' maxlength='100' size='20' /></td>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='notes' size='20' /></td>
+			<td style='border-bottom:solid 1px #CCC'><input type='text' name='date_update' id='ngay_detail' maxlength='10' size='15' /></td>
+			<td style='border-bottom:solid 1px #CCC'><input type='text' name='buucuc' maxlength='100' size='25' /></td>
+			<td style='border-bottom:solid 1px #CCC'><input type='text' name='notes' size='65' /></td>
 			<td style='border-bottom:solid 1px #CCC'><input type='button' name='them_detail' value='Thêm' /></td>
 		</tr>
 	</table>
 	<br /><br /><br />";
+	
+	$ma_bill = "'  disabled='disabled";
 }
 
 if(!empty($_POST)){
@@ -99,29 +94,59 @@ echo "<form action='' method='post' name='form1'>
 <table width='620' border='0' cellspacing='0' cellpadding='5'>
 ";
 
-//Trạng thái status
-$value = array(1 => 'Phát thành công', 0 => 'Đang phát');
+//name
+if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
+$form->getProperties("Mã Bill:", 'name', 1, "input_medium".$ma_bill, $value, 20);
+echo $form->DisplayProperties();
+
+//noi_gui
+if(@$_POST['noi_gui']) $value = $_POST['noi_gui']; else $value = $detail['noi_gui'];
+$form->getProperties("Nơi gửi:", 'noi_gui', 1, "input_medium", $value, 50);
+echo $form->DisplayProperties();
+
+//buucuc_gui
+if(@$_POST['buucuc_gui']) $value = $_POST['buucuc_gui']; else $value = $detail['buucuc_gui'];
+$form->getProperties("Bưu cục gửi:", 'buucuc_gui', 1, "input_medium", $value, 50);
+echo $form->DisplayProperties();
+
+//ngay_gui
+if(@$_POST['ngay_gui']) $value = $_POST['ngay_gui'];
+else if($detail['ngay_gui'] != '') $value = $detail['ngay_gui'];
+$form->getProperties('Thời gian gửi', 'ngay_gui', 1, 'input_large datetimepick', $value, 20);
+echo $form->DisplayProperties();
+
+//loaihang
+if(@$_POST['loaihang']) $value = $_POST['loaihang']; else $value = $detail['loaihang'];
+$form->getProperties("Loại hàng:", 'loaihang', 1, "input_medium", $value, 50);
+echo $form->DisplayProperties();
+
+//status
+$value = array(1 => 'Đã đến nơi', 0 => 'Đang phát');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trạng thái', 'status', 5, $check, $value, ' &nbsp; ');
 echo $form->DisplayProperties();
 
-//name
-if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
-$form->getProperties("Số vận đơn:", 'name', 1, "input_medium'  disabled='disabled", $value, 50);
-echo $form->DisplayProperties();
-
-//Ngày date_update
-if(@$_POST['date_update']) $value = $_POST['date_update'];
-else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
-else $value = date('d/m/Y');
-$form->getProperties('Ngày gửi', 'date_update', 1, 'input_large', $value, 20);
-echo $form->DisplayProperties();
-
 //nguoi_nhan
 if(@$_POST['nguoi_nhan']) $value = $_POST['nguoi_nhan']; else $value = $detail['nguoi_nhan'];
-$form->getProperties("Người nhận", 'nguoi_nhan', 1, 'input_medium', $value, 100);
+$form->getProperties("Người nhận:", 'nguoi_nhan', 1, "input_medium", $value, 50);
+echo $form->DisplayProperties();
+
+//buucuc_nhan
+if(@$_POST['buucuc_nhan']) $value = $_POST['buucuc_nhan']; else $value = $detail['buucuc_nhan'];
+$form->getProperties("Bưu cục phát:", 'buucuc_nhan', 1, "input_medium", $value, 50);
+echo $form->DisplayProperties();
+
+//date_update
+if(@$_POST['date_update']) $value = $_POST['date_update'];
+else if($detail['date_update'] != '') $value = $detail['date_update'];
+$form->getProperties('Thời gian nhận:', 'date_update', 1, 'input_large', $value, 20);
+echo $form->DisplayProperties();
+
+//trongluong
+if(@$_POST['trongluong']) $value = $_POST['trongluong']; else $value = $detail['trongluong'];
+$form->getProperties("Trọng lượng:", 'trongluong', 1, "input_medium", $value, 10);
 echo $form->DisplayProperties();
 
 //date create
