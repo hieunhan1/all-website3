@@ -11,7 +11,7 @@ include_once('blocks/navigator.php');
 $view_post .= '<div class="content">';
 if($total > 1){
 	$view_post .= $navigator;
-	$view_post .= '<h1 style="color:#0bac60; font-size:220%; padding:0 30px 10px">'.$row_menu_one['title'].'</h1>
+	$view_post .= '<h1 style="color:#0bac60; font-size:220%; padding:0 30px 10px">'.$row_menu_one['name'].'</h1>
 	<h2 style="font-size:100%; font-weight:100; line-height:22px; padding:0 30px 30px">'.$row_menu_one['metaDescription'].'</h2>
 	<div style="clear:both">';
 	while($row = mysql_fetch_array($list)){

@@ -19,9 +19,6 @@
                 </ul>
             </div>
         </div>
-        <script type="text/javascript" src="library/partner/common.js"></script>
-		<script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
-        <script type="text/javascript">(function($){$(function(){$("#scroller").simplyScroll();});})(jQuery);</script>
     </div>
     <div style="clear:both; height:3px; background-color:#DADADA; margin:0 40px 40px"></div>
     
