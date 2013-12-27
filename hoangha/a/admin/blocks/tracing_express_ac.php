@@ -121,7 +121,7 @@ $form->getProperties("Loại hàng:", 'loaihang', 1, "input_medium", $value, 50)
 echo $form->DisplayProperties();
 
 //status
-$value = array(1 => 'Đã đến nơi', 0 => 'Đang phát');
+$value = array(1 => 'Đã đến nơi', 0 => 'Đang phát', 2 => 'Đang vận chuyển');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 0; //giá trị mặc định

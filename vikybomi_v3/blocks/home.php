@@ -2,7 +2,7 @@
 $qr = $tc->home_about($idMenu);
 $row = mysql_fetch_array($qr);
 $str_home = '<div id="home_about">
-	<div id="home_about_info"><h1>'.$row['name'].'</h1>'.$row['metaDescription'].'<div style="clear:both; font-weight:bold; text-align:right"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">Xem thêm..</a></div></div>';
+	<div id="home_about_info"><h1>'.$row['name'].'</h1>'.$row['metaDescription'].'<div style="clear:both; font-weight:bold; text-align:right"><a href="'.$tc->link_detail($row['menu_id']).'">Xem thêm..</a></div></div>';
 	
 $qr = $tc->home_video($idMenu);
 $row = mysql_fetch_array($qr);
