@@ -11,7 +11,7 @@ include_once('config.php');
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
-	$dm = explode('_page_',$dm);
+	$dm = explode('/',$dm);
 	$danhmuc = $dm[0];
 	if($dm[1]==''){
 		$page = 1; $page_name = '';
