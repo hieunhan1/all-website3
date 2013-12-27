@@ -94,52 +94,13 @@ if(@$_GET['danhmuc']){
 
 <body>
 <div id="wrapper">
-	<div id="header">
-    	<div id="logo"><a href="http://<?php echo $domain;?>"><img src="images/logo.jpg" alt="Hoang Ha International Logistics" /></a></div>
-    	<div id="search">
-        	<div id="txtsearch"><input type="text" name="txtsearch" value="<?php echo const_txt_search;?>" id="key_search" onclick="if(value=='<?php echo const_txt_search;?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search;?>'" /></div>
-        	<div id="btnsearch"><input type="button" name="btnsearch" value="&nbsp;" onclick="return SearchGoogle();" /></div>
-        </div>
-        <script type="text/javascript">
-		function SearchGoogle(){
-			var key = document.getElementById("key_search").value;
-			var site = document.domain;
-			var qs = key + "+site:" + site;
-			var url = "http://www.google.com.vn/#sclient=psy-ab&hl=vi&site=&source=hp&q=" + qs + "&pbx=1&oq=" + qs + "&aq=f&aqi=&aql=1&gs_sm=e";
-			window.open(url, "_blank");
-			return false;
-		}
-		$(document).ready(function() {
-			$("#key_search").keydown(function(e){
-				if(e.keyCode==13) SearchGoogle();
-			});
-		});
-		</script>
-    </div>
+	<div id="header"></div>
     <?php
     echo $view_menu;
 	echo $view_slider;
 	echo $include;
 	?>
     
-    <div style="clear:both; height:50px"></div>
-    <div id="footer">
-    	<div id="footer_m_t">
-    		<div id="menu_bot">
-            <?php
-            $qr3 = $tc->menu(0,5,$lang);
-			while($row = mysql_fetch_array($qr3)){
-				echo '<a href="'.$row['url'].'">'.$row['name'].'</a>';
-			}
-			?>
-            </div>
-    		<div id="run_top" style="width:auto; float:right; cursor:pointer"><img src="images/top.jpg" alt="top hoang ha" /></div>
-        </div>
-        <div id="copyright">
-        	<p>Copyright © 2012. <strong><?php echo $row_config['footer']?></strong></p>
-            <?php echo $row_config['contact']?>
-        </div>
-    </div>
 </div>
 <?php mysql_close();?>
 </body>
