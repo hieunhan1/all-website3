@@ -47,7 +47,7 @@ $row_tracking = mysql_fetch_array($qr);
                 <td width="130" align="right" style="padding-right:5px">Mã Bill:</td>
                 <td width="300" style="color:#00F"><?php echo $row_tracking['name']; ?></td>
                 <td width="130" align="right" style="padding-right:5px">Trạng thái:</td>
-                <td width="300" style="color:#00F"><?php if($row_tracking['status']==1) echo 'Đã đến nơi '; else echo 'Đang phát'; ?><?php //echo date('d/m/Y', strtotime($row_tracking['date_update'])); ?></td>
+                <td width="300" style="color:#00F"><?php if($row_tracking['status']==1) echo 'Đã đến nơi '; elseif($row_tracking['status']==0) echo 'Đang phát'; else echo 'Đang vận chuyển'; ?></td>
             </tr>
             <tr bgcolor="#FFFF99">
                 <td align="right" style="padding-right:5px">Nơi gởi:</td>
@@ -63,9 +63,9 @@ $row_tracking = mysql_fetch_array($qr);
             </tr>
             <tr bgcolor="#FFFF99">
                 <td align="right" style="padding-right:5px">Thời gian gởi:</td>
-                <td style="color:#00F"><?php echo $row_tracking['ngay_gui']; ?></td>
+                <td style="color:#00F"><?php echo date('H:i d/m/Y',strtotime($row_tracking['ngay_gui'])); ?></td>
                 <td align="right" style="padding-right:5px">Thời gian nhận:</td>
-                <td style="color:#00F"><?php echo $row_tracking['date_update']; ?></td>
+                <td style="color:#00F"><?php echo date('H:i d/m/Y',strtotime($row_tracking['date_update'])); ?></td>
             </tr>
             <tr bgcolor="#FFFF99">
                 <td align="right" style="padding-right:5px">Loại hàng:</td>
