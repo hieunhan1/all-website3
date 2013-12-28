@@ -7,7 +7,7 @@ while($row = mysql_fetch_array($menu)){
 		$view_menu .= $tc->getSubmenu($row['id'],1,$lang);
 		$view_menu .= '</li>';
 	}else{
-		$view_menu .= '<li><a href="'.$row['url'].'"  title="'.$row['title'].'" style="background:#017B80">'.$row['name'].'</a>';
+		$view_menu .= '<li><a href="'.$row['url'].'"  title="'.$row['title'].'" style="font-weight:bold; color:#FFF">'.$row['name'].'</a>';
 		$view_menu .= $tc->getSubmenu($row['id'],1,$lang);
 		$view_menu .= '</li>';
 	}
