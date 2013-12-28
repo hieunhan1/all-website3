@@ -3,14 +3,14 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Oct 09, 2013 at 06:10 PM
+-- Generation Time: Dec 28, 2013 at 11:39 AM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 -- 
--- Database: `source_temp`
+-- Database: `daotaonama`
 -- 
 
 -- --------------------------------------------------------
@@ -50,8 +50,8 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 -- 
 
-INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/source_temp', 0, 10, 2, 10, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Địa chỉ: 87 Thăng Long, Phường 4, Quận Tân Bình, Tp.Hồ Chí Minh, Việt Nam.<br />\r\nĐiện thoại: (84.8) 3 948 4696 - Fax: ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0988388003', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 16:18:17', 'admin', 'admin', 0);
-INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/source_temp', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 1, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/daotaonama', 0, 10, 2, 10, '', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0903 876 567 - 0919 39 2343', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 09:36:47', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/daotaonama', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 0, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -107,12 +107,19 @@ CREATE TABLE `info` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- 
 -- Dumping data for table `info`
 -- 
 
+INSERT INTO `info` VALUES (1, 'Luyện thi chứng chỉ B1, B2, C1 (theo khung tham chiếu Châu Âu)', 'luyen-thi-chung-chi-b1-b2-c1-theo-khung-tham-chieu-chau-au', '', '<p>Luyện thi chứng chỉ B1, B2, C1&nbsp;(theo khung tham chiếu Châu Âu)</p>\r\n', '<p>Luyện thi chứng chỉ B1, B2, C1&nbsp;(theo khung tham chiếu Châu Âu)</p>\r\n', 'Luyện thi chứng chỉ B1, B2, C1 (theo khung tham chiếu Châu Âu)', 0, 'vi', ',5,', 1, '2013-12-28 11:35:21', '2013-12-28 11:35:21', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (2, 'Luyện thi chứng chỉ A,B,C quốc gia', 'luyen-thi-chung-chi-a-b-c-quoc-gia', '', '<p>Luyện thi chứng chỉ A,B,C quốc gia</p>\r\n', '<p>Luyện thi chứng chỉ A,B,C quốc gia</p>\r\n', 'Luyện thi chứng chỉ A,B,C quốc gia', 0, 'vi', ',5,', 1, '2013-12-28 11:37:51', '2013-12-28 11:37:51', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (3, 'Anh ngữ giao tiếp', 'anh-ngu-giao-tiep', '', '<p>Anh ngữ giao tiếp</p>\r\n', '<p>Anh ngữ giao tiếp</p>\r\n', 'Anh ngữ giao tiếp', 0, 'vi', ',5,', 1, '2013-12-28 11:38:11', '2013-12-28 11:38:11', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (4, 'TOEIC', 'toeic', '', '<p>TOEIC</p>\r\n', '<p>TOEIC</p>\r\n', 'TOEIC', 0, 'vi', ',5,', 1, '2013-12-28 11:38:29', '2013-12-28 11:38:29', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (5, 'IELTS', 'ielts', '', '<p>IELTS</p>\r\n', '<p>IELTS</p>\r\n', 'IELTS', 0, 'vi', ',5,', 1, '2013-12-28 11:38:40', '2013-12-28 11:38:40', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (6, 'Anh văn thiếu niên', 'anh-van-thieu-nien', '', '<p>Anh văn thiếu niên</p>\r\n', '<p>Anh văn thiếu niên</p>\r\n', 'Anh văn thiếu niên', 0, 'vi', ',5,', 1, '2013-12-28 11:38:54', '2013-12-28 11:38:54', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (7, 'Anh văn thiếu nhi', 'anh-van-thieu-nhi', '', '<p>Anh văn thiếu nhi</p>\r\n', '<p>Anh văn thiếu nhi</p>\r\n', 'Anh văn thiếu nhi', 0, 'vi', ',5,', 1, '2013-12-28 11:39:07', '2013-12-28 11:39:07', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -177,7 +184,7 @@ CREATE TABLE `language` (
 -- 
 
 INSERT INTO `language` VALUES (1, 'Việt Nam', 'vi', 1, 1);
-INSERT INTO `language` VALUES (2, 'English', 'en', 2, 1);
+INSERT INTO `language` VALUES (2, 'English', 'en', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -214,15 +221,15 @@ CREATE TABLE `menu` (
 -- Dumping data for table `menu`
 -- 
 
-INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Trang chủ "abc" <b>abc1</b> ', 'Trang chủ "abc" <b>abc2</b>', 'Trang chủ "abc" <b>abc3</b>', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 17:58:07', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trung-tam-dao-tao-nam-a', 'trung-tam-dao-tao-nam-a/', '', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 08:58:59', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2013-10-09 16:26:35', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2013-10-09 16:26:49', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 15:39:02', 'admin', '', 0);
-INSERT INTO `menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:14:52', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 15:39:46', 'admin', '', 0);
-INSERT INTO `menu` VALUES (8, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 15:40:21', 'admin', '', 0);
-INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 15:48:07', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (5, 'Khóa học', 'khoa-hoc', 'khoa-hoc/', '', 'Khóa học', 'Khóa học', 'Khóa học', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 10:55:18', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 0, '2013-10-09 15:39:24', '2013-10-09 16:14:52', 'admin', 'admin', 1);
+INSERT INTO `menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 0, '2013-10-09 15:39:46', '2013-10-09 15:39:46', 'admin', 'admin', 1);
+INSERT INTO `menu` VALUES (8, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:40:21', '2013-10-09 10:55:42', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:40:52', '2013-10-09 10:55:46', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -279,10 +286,10 @@ CREATE TABLE `menu_position` (
 -- 
 
 INSERT INTO `menu_position` VALUES (1, 'Main', 0);
-INSERT INTO `menu_position` VALUES (2, 'Top', 0);
-INSERT INTO `menu_position` VALUES (3, 'Bottom', 0);
+INSERT INTO `menu_position` VALUES (2, 'Home', 0);
+INSERT INTO `menu_position` VALUES (3, 'Bottom', 1);
 INSERT INTO `menu_position` VALUES (4, 'Left', 1);
-INSERT INTO `menu_position` VALUES (5, 'Right', 0);
+INSERT INTO `menu_position` VALUES (5, 'Right', 1);
 INSERT INTO `menu_position` VALUES (6, 'Không', 0);
 
 -- --------------------------------------------------------
