@@ -102,10 +102,6 @@ if(mysql_num_rows($qr) > 1){
 }
 
 /*
-//slogan
-if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
-$form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
 //domain
 if(@$_POST['domain']) $value = $_POST['domain']; else $value = $detail['domain'];
 $form->getProperties('Domain', 'domain', 1, 'input_medium', $value, 30);
@@ -114,21 +110,25 @@ echo $form->DisplayProperties();
 
 //max_limit_1
 if(@$_POST['max_limit_1']) $value = $_POST['max_limit_1']; else $value = $detail['max_limit_1'];
-$form->getProperties('Số tin 1 page', 'max_limit_1', 1, 'input_medium', $value, 2);
+$form->getProperties('Số tin dịch vụ', 'max_limit_1', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_2
-if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
-$form->getProperties('Sản phẩm 1 page', 'max_limit_2', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
+/*if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
+$form->getProperties('Số tin menu tiệc', 'max_limit_2', 1, 'input_medium', $value, 2);
+echo $form->DisplayProperties();*/
 //max_limit_3
-if(@$_POST['max_limit_3']) $value = $_POST['max_limit_3']; else $value = $detail['max_limit_3'];
-$form->getProperties('Hình ảnh 1 page', 'max_limit_3', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
+/*if(@$_POST['max_limit_3']) $value = $_POST['max_limit_3']; else $value = $detail['max_limit_3'];
+$form->getProperties('Số hình ảnh', 'max_limit_3', 1, 'input_medium', $value, 2);
+echo $form->DisplayProperties();*/
 //max_limit_4
 if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
-$form->getProperties('Video 1 page', 'max_limit_4', 1, 'input_medium', $value, 2);
+$form->getProperties('Video 1 trang', 'max_limit_4', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 
+//slogan
+if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
+$form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
+echo $form->DisplayProperties();
 //copyright
 if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
 $form->getProperties('Copyright', 'copyright', 1, 'input_medium', $value, 200);
@@ -137,7 +137,10 @@ echo $form->DisplayProperties();
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties('Email liên hệ', 'email', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
-
+//hotline
+if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
+$form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
+echo $form->DisplayProperties();
 /*
 //yahoo
 if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
@@ -146,10 +149,6 @@ echo $form->DisplayProperties();
 //tel
 if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
 $form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 50);
-echo $form->DisplayProperties();
-//hotline
-if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
-$form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 //facebook
 if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];
@@ -163,7 +162,7 @@ $orther = "
 CKEDITOR.replace( 'contact_foo', {
 	uiColor: '#b5d8ef',
 	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic','RemoveFormat','-', 'Link', 'Unlink','Format','TextColor','BGColor'],
+		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
 	]
 });
 </script>
@@ -177,7 +176,7 @@ $orther = "
 CKEDITOR.replace( 'contact_form', {
 	uiColor: '#b5d8ef',
 	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic','RemoveFormat','Table', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
+		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic','Table', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
 	]
 });
 </script>

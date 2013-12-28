@@ -100,7 +100,7 @@ if(@$_GET['danhmuc']){
     </div>
     <div id="slider"><img src="public/images/slider/slider.jpg" alt="" width="1200" /></div>
     <div id="hot_login">
-    	<div id="hotline">HOTLINE: 0903 876 567 - 0919 39 2343</div>
+    	<div id="hotline">HOTLINE: <?php echo $row_config['hotline']; ?></div>
     	<div id="login">ID <input type="text" name="username" class="txt_bo" /> Pass <input type="text" name="password" class="txt_bo" /></div>
     </div>
     <?php
