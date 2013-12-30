@@ -102,7 +102,7 @@ echo $form->DisplayProperties();
 $level = 0;
 $style1 = '&nbsp;';
 $style2 = '&nbsp;---';
-$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND (type_id=1 OR type_id=2) AND parent_id= ", " ORDER BY `order` ASC ");
+$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND (type_id=1 OR type_id=2 OR type_id=3) AND parent_id= ", " ORDER BY `order` ASC ");
 $form->getProperties($level, $style1, 9, $style2, $str_query);
 $values = $form->DisplayProperties();
 //Menu_id hidden field 
@@ -192,7 +192,7 @@ $value = array(1 => 'Có', 0 => 'Không');
 if($_POST['other'] != '') $check = $_POST['other'];
 else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
-$form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
+$form->getProperties('Tin nổi bật', 'other', 5, $check, $value, ' &nbsp; ');
 echo $form->DisplayProperties();
 echo "
 <tr style='background:#b0b0b0'>

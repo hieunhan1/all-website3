@@ -32,7 +32,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one_id($id){
-		$qr = "SELECT id,name,url,parent_id FROM menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
+		$qr = "SELECT id,name,title,url,parent_id FROM menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
 		return mysql_query($qr);
 	}
 	function menu($level,$position,$lang=NULL){
@@ -66,13 +66,10 @@ class trangchu extends db {
 			return $this->menu_root($row['parent_id'],$row['id']);
 		}
 	}
-	function navigator($level){
-		if($level == 0) return false;
-		$qr = $this->menu_one_id($level);
+	function navigator($id){
+		$qr = $this->menu_one_id($id);
 		$row = mysql_fetch_array($qr);
-		$view = '<span>&gt;&gt;</span><a href="'.$row['url'].'">'.$row['name'].'</a>'.$view;
-		$view = $this->navigator($row['parent_id']).$view;
-		return $view;
+		return $row['title'];
 	}
 	function list_item($select,$table,$where,$limit=NULL){
 		$qr = "SELECT {$select} FROM {$table} WHERE {$where} ORDER BY date_update DESC {$limit}";
@@ -105,12 +102,30 @@ class trangchu extends db {
 	}
 	
 	/*home*/
+	function home_chuongtrinh($id){
+		$qr = "SELECT id,name,name_rewrite,content FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC ";
+		return mysql_query($qr);
+	}
 	
+	function tinnoibat(){
+		$qr = "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 4";
+		return mysql_query($qr);
+	}
+	
+	function info_detail($alias){
+		$qr = "SELECT name,url_hinh,metaDescription,content,metaKeyword,menu_id FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	
+	function other($id){
+		$qr = "SELECT id,name,name_rewrite,content FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 5";
+		return mysql_query($qr);
+	}
 	
 	/*contact*/
-	function insert_contact($name,$email,$phone,$diachi,$message){
+	function insert_contact($name,$email,$message){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `contact` VALUES ('','{$name}','{$email}','','','{$message}','','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 }// end trangchu

@@ -37,11 +37,8 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
-			case 3 : include_once('blocks/products_list.php'); break;
-			case 4 : include_once('blocks/picture_list.php'); break;
-			case 5 : include_once('blocks/video_list.php'); break;
-			case 6 : include_once('blocks/contact.php'); break;
-			case 7 : include_once('blocks/giohang.php'); break;
+			case 3 : include_once('blocks/articles_list.php'); break;
+			case 8 : include_once('blocks/contact.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -51,9 +48,7 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
-			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
-			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
-			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;
+			case 3 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/articles.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -108,47 +103,41 @@ if(@$_GET['danhmuc']){
     </div>
     <div id="left">
     	<div id="home_chuongtrinh">
-        	<h1>Các chương trình tiếng anh</h1>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
-            <li><a href="">Anh văn thiếu nhi</a></li>
+        	<?php
+            $qr = $tc->menu_type(3,0,'vi');
+			$row = mysql_fetch_array($qr);
+			echo '<h2>'.$row['title'].'</h2>';
+			
+			$id_chuongtrinh = $row['id'];
+			
+			$i = 0;
+			$qr = $tc->home_chuongtrinh($id_chuongtrinh);
+			while($row_ct = mysql_fetch_array($qr)){
+				$i++;
+				if($i%2 == 1){
+					$str_l .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html">'.$row_ct['name'].'</a></li>';
+				}else{
+					$str_r .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html">'.$row_ct['name'].'</a></li>';
+				} 
+			}
+			echo '<div style="width:310px; float:left">'.$str_l.'</div>
+			<div style="width:380px; float:right">'.$str_r.'</div>';
+			?>
             <div style="clear:both; height:1px"></div>
         </div>
         
-        <link rel="stylesheet" href="library/example/css/website.css" type="text/css" media="screen"/>
-		<script type="text/javascript" src="library/example/js/jquery.tinyscrollbar.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('#scrollbar1').tinyscrollbar();
-            });
-        </script>
-        <div id="home_about">Giới thiệu</div>
-        <div id="scrollbar1">
-            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-            <div class="viewport">
-                 <div class="viewpost overview" style="text-align:justify">
-                 	<p>Để tiếp sức cho thế hệ trẻ Việt Nam trên bước đường hội nhập, Anh Văn Hội Việt Mỹ cam kết mang đến những chương trình đào tạo Anh ngữ chất lượng hàng đầu Việt Nam thông qua việc thường xuyên cập nhật những xu hướng và phương pháp giảng dạy hiện đại nhất của thế giới bằng việc hợp tác với đối tác chiến lược là Đại học CUNY Hoa Kỳ (The City University of New York), Đại học công lập quy mô hàng đầu hợp chủng quốc Hoa Kỳ với 450.000 sinh viên đang theo học.</p>
-                   <p>Điều kiện học tập thuận lợi, các trang thiết bị tiên tiến cùng với đội ngũ giảng viên ưu tú, các nhà quản lý chuyên nghiệp, Anh Văn Hội Việt Mỹ chắc chắn sẽ mang đến cho các bạn học viên thành công trong bước đường học tập Anh ngữ của mình.</p>
-                   <p>Chúc các bạn gặt hái được những thành tích vượt bậc trong quá trình học tập và tạo được những thay đổi, những kỳ tích đột phá trên bước đường tương lai!</p>
-                 	<p>Để tiếp sức cho thế hệ trẻ Việt Nam trên bước đường hội nhập, Anh Văn Hội Việt Mỹ cam kết mang đến những chương trình đào tạo Anh ngữ chất lượng hàng đầu Việt Nam thông qua việc thường xuyên cập nhật những xu hướng và phương pháp giảng dạy hiện đại nhất của thế giới bằng việc hợp tác với đối tác chiến lược là Đại học CUNY Hoa Kỳ (The City University of New York), Đại học công lập quy mô hàng đầu hợp chủng quốc Hoa Kỳ với 450.000 sinh viên đang theo học.</p>
-                   <p>Điều kiện học tập thuận lợi, các trang thiết bị tiên tiến cùng với đội ngũ giảng viên ưu tú, các nhà quản lý chuyên nghiệp, Anh Văn Hội Việt Mỹ chắc chắn sẽ mang đến cho các bạn học viên thành công trong bước đường học tập Anh ngữ của mình.</p>
-                   <p>Chúc các bạn gặt hái được những thành tích vượt bậc trong quá trình học tập và tạo được những thay đổi, những kỳ tích đột phá trên bước đường tương lai!</p>
-                </div>
-            </div>
-        </div>
+        <?php echo $include; ?>
         
     </div>
     <div id="right">
     	<div id="tin_noibat">
         	<div id="title_noibat">Tin nổi bật</div>
-            <li><a href="">Họat động chào mừng ngày nhà giáo VIệt Nam</a></li>
-            <li><a href="">Tặng 200 phần quà cho Tết Nguyên Đán 2014</a></li>
-            <li><a href="">Tặng 200 phần quà cho Tết Nguyên Đán 2014</a></li>
+            <?php
+            $qr = $tc->tinnoibat();
+			while($row = mysql_fetch_array($qr)){
+				echo '<li><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
+			}
+			?>
         </div>
         <div id="register">
         	<div id="title_register">Đăng ký online</div>
@@ -168,9 +157,12 @@ if(@$_GET['danhmuc']){
             	<tr>
                 	<td>Nhu cầu học</td>
                 	<td><select name="nhucauhoc" class="sel_register">
-                    	<option value="">Anh văn giao tiếp</option>
-                    	<option value="">Anh văn giao tiếp</option>
-                    	<option value="">Anh văn giao tiếp</option>
+                    <?php
+                    $qr = $tc->home_chuongtrinh($id_chuongtrinh);
+					while($row = mysql_fetch_array($qr)){
+						echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+					}
+					?>
                     </select></td>
                 </tr>
             	<tr>
@@ -179,6 +171,22 @@ if(@$_GET['danhmuc']){
                 </tr>
             </table>
         </div>
+        <?php
+        if(@$dt && $type==2){
+			$qr = $tc->other($idMenu);
+			while($row = mysql_fetch_array($qr)){
+				$str_other .= '<li class="li_1"><a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
+			}
+			echo '<div id="other"><div id="title_other">Các tin khác</div>
+			'.$str_other.'</div>';
+		}elseif(@$dt && $type==3){
+			$qr = $tc->other($idMenu);
+			while($row = mysql_fetch_array($qr)){
+				$str_other .= '<li class="li_2"><a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
+			}
+			echo '<div id="other">'.$str_other.'</div>';
+		}
+		?>
     </div>
     <div style="clear:both; height:20px"></div>
     <div id="footer"><?php echo $row_config['contact_foo']; ?></div>
