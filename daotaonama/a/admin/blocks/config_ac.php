@@ -110,7 +110,7 @@ echo $form->DisplayProperties();
 
 //max_limit_1
 if(@$_POST['max_limit_1']) $value = $_POST['max_limit_1']; else $value = $detail['max_limit_1'];
-$form->getProperties('Số tin dịch vụ', 'max_limit_1', 1, 'input_medium', $value, 2);
+$form->getProperties('Số tin 1 page', 'max_limit_1', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_2
 /*if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
@@ -121,9 +121,9 @@ echo $form->DisplayProperties();*/
 $form->getProperties('Số hình ảnh', 'max_limit_3', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();*/
 //max_limit_4
-if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
+/*if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
 $form->getProperties('Video 1 trang', 'max_limit_4', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 
 //slogan
 if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 28, 2013 at 11:39 AM
+-- Generation Time: Dec 30, 2013 at 04:52 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -50,7 +50,7 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 -- 
 
-INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/daotaonama', 0, 10, 2, 10, '', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0903 876 567 - 0919 39 2343', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 09:36:47', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/daotaonama', 10, 10, 2, 10, '', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<h3><span style="color:#FF0000;">TRUNG TÂM ĐÀO TẠO NAM Á</span></h3>\r\n\r\n<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0903 876 567 - 0919 39 2343', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 16:40:29', 'admin', 'admin', 0);
 INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/daotaonama', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 0, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
@@ -74,13 +74,12 @@ CREATE TABLE `contact` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- 
 -- Dumping data for table `contact`
 -- 
 
-INSERT INTO `contact` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', '<p>Contact Information</p>\r\n', 'vi', 1, '2013-09-25 12:32:52', '2013-09-26 17:24:27', 'khachhang', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -107,19 +106,24 @@ CREATE TABLE `info` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 -- 
 -- Dumping data for table `info`
 -- 
 
-INSERT INTO `info` VALUES (1, 'Luyện thi chứng chỉ B1, B2, C1 (theo khung tham chiếu Châu Âu)', 'luyen-thi-chung-chi-b1-b2-c1-theo-khung-tham-chieu-chau-au', '', '<p>Luyện thi chứng chỉ B1, B2, C1&nbsp;(theo khung tham chiếu Châu Âu)</p>\r\n', '<p>Luyện thi chứng chỉ B1, B2, C1&nbsp;(theo khung tham chiếu Châu Âu)</p>\r\n', 'Luyện thi chứng chỉ B1, B2, C1 (theo khung tham chiếu Châu Âu)', 0, 'vi', ',5,', 1, '2013-12-28 11:35:21', '2013-12-28 11:35:21', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (2, 'Luyện thi chứng chỉ A,B,C quốc gia', 'luyen-thi-chung-chi-a-b-c-quoc-gia', '', '<p>Luyện thi chứng chỉ A,B,C quốc gia</p>\r\n', '<p>Luyện thi chứng chỉ A,B,C quốc gia</p>\r\n', 'Luyện thi chứng chỉ A,B,C quốc gia', 0, 'vi', ',5,', 1, '2013-12-28 11:37:51', '2013-12-28 11:37:51', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (3, 'Anh ngữ giao tiếp', 'anh-ngu-giao-tiep', '', '<p>Anh ngữ giao tiếp</p>\r\n', '<p>Anh ngữ giao tiếp</p>\r\n', 'Anh ngữ giao tiếp', 0, 'vi', ',5,', 1, '2013-12-28 11:38:11', '2013-12-28 11:38:11', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (4, 'TOEIC', 'toeic', '', '<p>TOEIC</p>\r\n', '<p>TOEIC</p>\r\n', 'TOEIC', 0, 'vi', ',5,', 1, '2013-12-28 11:38:29', '2013-12-28 11:38:29', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (5, 'IELTS', 'ielts', '', '<p>IELTS</p>\r\n', '<p>IELTS</p>\r\n', 'IELTS', 0, 'vi', ',5,', 1, '2013-12-28 11:38:40', '2013-12-28 11:38:40', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (6, 'Anh văn thiếu niên', 'anh-van-thieu-nien', '', '<p>Anh văn thiếu niên</p>\r\n', '<p>Anh văn thiếu niên</p>\r\n', 'Anh văn thiếu niên', 0, 'vi', ',5,', 1, '2013-12-28 11:38:54', '2013-12-28 11:38:54', 'admin', NULL, 0);
-INSERT INTO `info` VALUES (7, 'Anh văn thiếu nhi', 'anh-van-thieu-nhi', '', '<p>Anh văn thiếu nhi</p>\r\n', '<p>Anh văn thiếu nhi</p>\r\n', 'Anh văn thiếu nhi', 0, 'vi', ',5,', 1, '2013-12-28 11:39:07', '2013-12-28 11:39:07', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (1, 'Luyện thi chứng chỉ B1, B2, C1 (theo khung tham chiếu Châu Âu)', 'luyen-thi-chung-chi-b1-b2-c1-theo-khung-tham-chieu-chau-au', '', '<p>Luyện thi chứng chỉ B1, B2, C1&nbsp;(theo khung tham chiếu Châu Âu)</p>\r\n', '<p>Luyện thi chứng chỉ B1, B2, C1&nbsp;(theo khung tham chiếu Châu Âu)</p>\r\n', 'Luyện thi chứng chỉ B1, B2, C1 (theo khung tham chiếu Châu Âu)', 0, 'vi', ',5,', 1, '2013-12-28 11:35:21', '2013-12-23 13:56:26', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (2, 'Luyện thi chứng chỉ A,B,C quốc gia', 'luyen-thi-chung-chi-a-b-c-quoc-gia', '', '<p>Luyện thi chứng chỉ A,B,C quốc gia</p>\r\n', '<p>Luyện thi chứng chỉ A,B,C quốc gia</p>\r\n', 'Luyện thi chứng chỉ A,B,C quốc gia', 0, 'vi', ',5,', 1, '2013-12-28 11:37:51', '2013-12-25 13:55:57', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (3, 'Anh ngữ giao tiếp', 'anh-ngu-giao-tiep', '', '<p>Anh ngữ giao tiếp</p>\r\n', '<p>Anh ngữ giao tiếp</p>\r\n', 'Anh ngữ giao tiếp', 0, 'vi', ',5,', 1, '2013-12-28 11:38:11', '2013-12-27 13:54:50', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (4, 'TOEIC', 'toeic', '', '<p>TOEIC</p>\r\n', '<p>TOEIC</p>\r\n', 'TOEIC', 0, 'vi', ',5,', 1, '2013-12-28 11:38:29', '2013-12-22 13:56:36', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (5, 'IELTS', 'ielts', '', '<p>IELTS</p>\r\n', '<p>IELTS</p>\r\n', 'IELTS', 0, 'vi', ',5,', 1, '2013-12-28 11:38:40', '2013-12-24 13:56:09', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (6, 'Anh văn thiếu niên', 'anh-van-thieu-nien', '', '<p>Anh văn thiếu niên</p>\r\n', '<p>Anh văn thiếu niên</p>\r\n', 'Anh văn thiếu niên', 0, 'vi', ',5,', 1, '2013-12-28 11:38:54', '2013-12-26 13:55:44', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (7, 'Anh văn thiếu nhi', 'anh-van-thieu-nhi', '', '<p>Chương trình Anh ngữ Superkids dành cho các em từ 6 -11 tuổi được thiết kế nhằm giúp các em nâng cao kỹ năng nghe nói; học tốt chương trình tiếng Anh ở trường phổ thông và tự tin đạt được kết quả cao trong kỳ thi lấy chứng chỉ Anh ngữ quốc tế Cambridge Starters, Movers và Flyers.</p>\r\n', '<h2>Chương trình Anh ngữ Superkids dành cho các em từ 6 -11 tuổi được thiết kế nhằm giúp các em nâng cao kỹ năng nghe nói; học tốt chương trình tiếng Anh ở trường phổ thông và tự tin đạt được kết quả cao trong kỳ thi lấy chứng chỉ Anh ngữ quốc tế Cambridge Starters, Movers và Flyers.</h2>\r\n\r\n<p>Vì sao quý phụ huynh an tâm chọn Superkids cho bé?</p>\r\n\r\n<p>Anh Văn Hội Việt Mỹ là đối tác chiến lược duy nhất tại Việt Nam liên kết với trường Đại học công lập lớn nhất của Hoa Kỳ (The City University of New York – CUNY)</p>\r\n\r\n<p>Giáo trình mới nhất cho năm 2012 của nhà xuất bản Oxford phù hợp với các em thiếu nhi, được giảng dạy bởi các giáo viên bản ngữ am hiểu tâm lý lứa tuổi và có phương pháp dạy phù hợp.</p>\r\n\r\n<p>Tính tương tác rất cao nhờ phần mềm chuyên dụng iTool chú trọng phát âm chuẩn như người bản xứ, kết hợp với hoạt động sôi nổi như trò chơi, bài hát, video…</p>\r\n\r\n<p><strong>Lịch học</strong></p>\r\n\r\n<p>Thứ Bảy và Chủ Nhật: 07:45 – 09:45 / 10:00 – 12:00 / 14:45 – 16:45</p>\r\n\r\n<p><strong>Học phí</strong></p>\r\n\r\n<p>SUPERKIDS&nbsp;&nbsp; &nbsp;A 1-2-3-4&nbsp;&nbsp; &nbsp;3.800.000đ/ lớp/ 13 tuần</p>\r\n\r\n<p>B 1-2-3-4&nbsp;&nbsp; &nbsp;3.900.000đ/ lớp/ 13 tuần</p>\r\n\r\n<p>C 1-2-3-4&nbsp;&nbsp; &nbsp;4.000.000đ/ lớp/ 13 tuần</p>\r\n\r\n<p><em>*Các học viên chưa đáp ứng yêu cầu cho cấp độ Superkids sẽ được xếp vào lớp Pre-Superkids 1,2: 3.800.000đ/lớp/13 tuần</em></p>\r\n\r\n<p><strong>Xếp lớp</strong></p>\r\n\r\n<p>Sau khi kiểm tra kỹ năng vè ngôn ngữ, các em sẽ được xếp vào lớp phù hợp.</p>\r\n\r\n<p><strong>Chứng chỉ</strong></p>\r\n\r\n<p>Sau mỗi cấp độ, học viên sẽ nhận được chứng chỉ do Anh Văn Hội Việt Mỹ cấp.</p>\r\n\r\n<p>Học viên sẽ tham dự kỳ thi lấy chứng chỉ Anh ngữ quốc tế do Đại học Cambridge cấp.</p>\r\n', 'Anh văn thiếu nhi', 0, 'vi', ',5,', 1, '2013-12-28 11:39:07', '2013-12-28 14:31:52', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (8, 'Giới thiệu', 'gioi-thieu', '', '<p>Để tiếp sức cho thế hệ trẻ Việt Nam trên bước đường hội nhập, Anh Văn Hội Việt Mỹ cam kết mang đến những chương trình đào tạo Anh ngữ chất lượng hàng đầu Việt Nam</p>\r\n', '<p>Để tiếp sức cho thế hệ trẻ Việt Nam trên bước đường hội nhập, Anh Văn Hội Việt Mỹ cam kết mang đến những chương trình đào tạo Anh ngữ chất lượng hàng đầu Việt Nam thông qua việc thường xuyên cập nhật những xu hướng và phương pháp giảng dạy hiện đại nhất của thế giới bằng việc hợp tác với đối tác chiến lược là Đại học CUNY Hoa Kỳ (The City University of New York), Đại học công lập quy mô hàng đầu hợp chủng quốc Hoa Kỳ với 450.000 sinh viên đang theo học.</p>\r\n\r\n<p>Điều kiện học tập thuận lợi, các trang thiết bị tiên tiến cùng với đội ngũ giảng viên ưu tú, các nhà quản lý chuyên nghiệp, Anh Văn Hội Việt Mỹ chắc chắn sẽ mang đến cho các bạn học viên thành công trong bước đường học tập Anh ngữ của mình.</p>\r\n\r\n<p>Chúc các bạn gặt hái được những thành tích vượt bậc trong quá trình học tập và tạo được những thay đổi, những kỳ tích đột phá trên bước đường tương lai!</p>\r\n\r\n<p>Để tiếp sức cho thế hệ trẻ Việt Nam trên bước đường hội nhập, Anh Văn Hội Việt Mỹ cam kết mang đến những chương trình đào tạo Anh ngữ chất lượng hàng đầu Việt Nam thông qua việc thường xuyên cập nhật những xu hướng và phương pháp giảng dạy hiện đại nhất của thế giới bằng việc hợp tác với đối tác chiến lược là Đại học CUNY Hoa Kỳ (The City University of New York), Đại học công lập quy mô hàng đầu hợp chủng quốc Hoa Kỳ với 450.000 sinh viên đang theo học.</p>\r\n\r\n<p>Điều kiện học tập thuận lợi, các trang thiết bị tiên tiến cùng với đội ngũ giảng viên ưu tú, các nhà quản lý chuyên nghiệp, Anh Văn Hội Việt Mỹ chắc chắn sẽ mang đến cho các bạn học viên thành công trong bước đường học tập Anh ngữ của mình.</p>\r\n\r\n<p>Chúc các bạn gặt hái được những thành tích vượt bậc trong quá trình học tập và tạo được những thay đổi, những kỳ tích đột phá trên bước đường tương lai!</p>\r\n', 'Giới thiệu', 0, 'vi', ',1,', 1, '2013-12-30 14:04:16', '2013-12-27 14:12:36', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (12, 'Họat động chào mừng ngày nhà giáo Việt Nam  ', 'hoat-dong-chao-mung-ngay-nha-giao-viet-nam', '', '<p>Họat động chào mừng ngày nhà giáo Việt Nam &nbsp;<span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; line-height: normal;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus</span></p>\r\n', '<p>Họat động chào mừng ngày nhà giáo Việt Nam &nbsp;</p>\r\n', 'Họat động chào mừng ngày nhà giáo Việt Nam  ', 1, 'vi', ',8,', 1, '2013-12-30 14:11:12', '2013-12-30 16:48:15', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (9, 'Tặng 200 phần quà cho Tết Nguyên Đán 2014', 'tang-200-phan-qua-cho-tet-nguyen-dan-2014', '', '<p>Tặng 200 phần quà cho Tết Nguyên Đán 2014&nbsp;<span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; line-height: normal;">Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.</span></p>\r\n', '<p>Tặng 200 phần quà cho Tết Nguyên Đán 2014</p>\r\n', 'Tặng 200 phần quà cho Tết Nguyên Đán 2014', 1, 'vi', ',8,', 1, '2013-12-30 14:04:32', '2013-12-30 16:48:44', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (10, 'Thư chúc mừng năm mới giáp ngọ 2014', 'thu-chuc-mung-nam-moi-giap-ngo-2014', '', '<p>Thư chúc mừng năm mới giáp ngọ 2014&nbsp;<span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 13px; line-height: normal;">sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim.&nbsp;</span></p>\r\n', '<p>Thư chúc mừng năm mới giáp ngọ 2014</p>\r\n', 'Thư chúc mừng năm mới giáp ngọ 2014', 1, 'vi', ',8,', 1, '2013-12-30 14:05:09', '2013-12-30 16:48:31', 'admin', 'admin', 0);
+INSERT INTO `info` VALUES (11, 'Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á', 'su-kien-chao-mung-nam-giap-ngo-cua-trung-tam-dao-tao-nam-a', '', '<p>Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á&nbsp;<span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 13px; line-height: normal;">, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, </span></p>\r\n', '<p>Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á</p>\r\n', 'Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á', 1, 'vi', ',8,', 1, '2013-12-30 14:09:30', '2013-12-30 16:48:24', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -221,11 +225,11 @@ CREATE TABLE `menu` (
 -- Dumping data for table `menu`
 -- 
 
-INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trung-tam-dao-tao-nam-a', 'trung-tam-dao-tao-nam-a/', '', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 08:58:59', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (1, 'Trang chủ', 'trung-tam-dao-tao-nam-a', '', '', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 13:41:59', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2013-10-09 16:26:35', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2013-10-09 16:26:49', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (5, 'Khóa học', 'khoa-hoc', 'khoa-hoc/', '', 'Khóa học', 'Khóa học', 'Khóa học', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 10:55:18', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (5, 'Khóa học', 'cac-chuong-trinh-tieng-anh', 'cac-chuong-trinh-tieng-anh/', '', 'Các chương trình tiếng anh', 'Các chương trình tiếng anh', 'Các chương trình tiếng anh', 0, 3, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 13:46:13', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 0, '2013-10-09 15:39:24', '2013-10-09 16:14:52', 'admin', 'admin', 1);
 INSERT INTO `menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 0, '2013-10-09 15:39:46', '2013-10-09 15:39:46', 'admin', 'admin', 1);
 INSERT INTO `menu` VALUES (8, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:40:21', '2013-10-09 10:55:42', 'admin', 'admin', 0);
@@ -311,7 +315,7 @@ CREATE TABLE `menu_type` (
 
 INSERT INTO `menu_type` VALUES (1, 'Trang chủ', 0);
 INSERT INTO `menu_type` VALUES (2, 'Thông tin, bài viết', 0);
-INSERT INTO `menu_type` VALUES (3, 'Sản phẩm', 0);
+INSERT INTO `menu_type` VALUES (3, 'Chương trình (khóa học)', 0);
 INSERT INTO `menu_type` VALUES (4, 'Loại temp 1', 1);
 INSERT INTO `menu_type` VALUES (5, 'Loại temp 2', 1);
 INSERT INTO `menu_type` VALUES (6, 'Loại temp 3', 1);
@@ -477,6 +481,34 @@ CREATE TABLE `products` (
 
 -- 
 -- Dumping data for table `products`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `register`
+-- 
+
+CREATE TABLE `register` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `diachi` varchar(200) NOT NULL,
+  `khoahoc` int(3) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `register`
 -- 
 
 
