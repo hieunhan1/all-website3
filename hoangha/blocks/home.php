@@ -30,7 +30,7 @@ if($total==2){
 $qr = $tc->slider_banner(1,$idMenu);
 if(mysql_num_rows($qr)>0){
 	$row = mysql_fetch_array($qr);
-	echo '<div style="margin-bottom:10px"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>';
+	echo '<div style="margin-bottom:10px"><a href="'.$row['link'].'" title="'.$row['name'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>';
 }
 
 /*about*/
