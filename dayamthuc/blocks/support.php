@@ -22,7 +22,8 @@
     <div style="float:left">Tư vấn trực tuyến: &nbsp; </div>
 	
     <div style="float:left"><a href="ymsgr:sendIM?consultant_netspace"><img align='left' src='http://opi.yahoo.com/online?u=consultant_netspace&m=g&t=0' border=0> &nbsp;<b>Tư vấn 1</b></a>&nbsp;-&nbsp;</div>
-    <div style="float:left"><a href="ymsgr:sendIM?consultant_netspace2"><img align='left' src='http://opi.yahoo.com/online?u=consultant_netspace2&m=g&t=0' border=0> &nbsp;<b>Tư vấn 2</b></a></div>
+    <div style="float:left"><a href="ymsgr:sendIM?consultant_netspace2"><img align='left' src='http://opi.yahoo.com/online?u=consultant_netspace2&m=g&t=0' border=0> &nbsp;<b>Tư vấn 2</b></a>&nbsp;-&nbsp;</div>
+    <div style="float:left"><a href="ymsgr:sendIM?consultant_netspace3"><img align='left' src='http://opi.yahoo.com/online?u=consultant_netspace3&m=g&t=0' border=0> &nbsp;<b>Tư vấn 3</b></a></div>
 <?php }else{?>
     <div style="float:left">Cơ sở:&nbsp;</div>
     <div id="change_tinhthanh" title="Thay đổi cơ sở">Tp.HCM</div>
