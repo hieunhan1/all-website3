@@ -1,6 +1,6 @@
 <div class='boxleft'>
     <div class='titleleft'></div>
-    <div class='titlecenter'><a href='booking.htm'>Đăng ký trực tuyến</a></div>
+    <div class='titlecenter'><a href='Dang-Ky-Truc-Tuyen/'>Đăng ký trực tuyến</a></div>
     <div class='titleright'></div>
     <div style='clear:both'></div>
     <div id="frmComment">
@@ -8,14 +8,22 @@
 		.style1 {color: #FF0000}
 		</style>
 
-        <p style="text-align: left;"><img src="http://www.dayamthuc.vn/upload/tin-tuc//truong-day-nghe-am-thuc.jpg" alt="Chương trình lớp Bếp Trưởng chuyên nghiệp" align="left" border="0px" /></p>
+        <p style="text-align: left;"><img src="http://www.dayamthuc.vn/upload/tin-tuc/truong-day-nghe-am-thuc.jpg" alt="Chương trình lớp Bếp Trưởng chuyên nghiệp" align="left" border="0px" /></p>
 
-        <p style="text-align: right;"><img src="http://www.dayamthuc.vn/upload/tin-tuc//hoi-dau-bep-chuyen-nghiep-sg.jpg" alt="Chương trình lớp Bếp Trưởng chuyên nghiệp" align="" border="0px" /></p>
+        <p style="text-align:right; margin-right:80px"><img src="http://www.dayamthuc.vn/upload/tin-tuc/hoi-dau-bep-chuyen-nghiep-sg.jpg" alt="Chương trình lớp Bếp Trưởng chuyên nghiệp" align="" border="0px" /></p>
 		
         <div id="form">
         <table width="700" border="0" align="center" cellpadding="5" cellspacing="10" class="lienhe" id="form_dangky">
           <tr>
-            <td colspan="2" style="color:#FF0000; font-size:20px; font-weight:bold;"><input type="hidden" name="KhoaHoc" class="textLH" value="<?php echo $dangkyhoc;?>" size="50" /><?php echo $dangkyhoc;?></td>
+            <td colspan="2" style="color:#FF0000; font-size:20px; font-weight:bold;">
+            <?php
+			if($page != 1){
+				$qr = mysql_query("SELECT name FROM info WHERE `delete`=0 AND status=1 AND id='{$page}' ");
+				$row = mysql_fetch_array($qr);
+				echo '<h1 style="font-size:18px">Đăng ký học: '.$row['name'].'</h1>';
+			}else echo '<h1 style="font-size:18px">Đăng ký học nấu ăn trực tuyến</h1>';
+			?>
+            </td>
           </tr>
           <tr>
             <td align="right" valign="top"><span class="style1">*</span> Họ và tên:</td>

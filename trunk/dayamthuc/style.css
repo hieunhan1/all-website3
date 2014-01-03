@@ -288,19 +288,21 @@ h2 {
 }
 #wrapper #right .boxright .item {
 	width:260px;
-	height:180px;
+	height:150px;
     line-height: 22px;
-    margin-bottom: 20px;
-	background:url(images/video2.gif);
+    margin-bottom:3px;
+	background:url(images/video2.gif) bottom;
 }
 #wrapper #right .boxright .item h5 {
     font-size: 13px;
 }
+
+#wrapper #right .boxright .h3{clear:both; font-size:100%; font-weight:100; margin-bottom:10px}
 #wrapper #right .boxright .item .img_video {
     width:248px;
-	height:159px;
+	height:129px;
 	overflow:hidden;
-	margin:6px;
+	margin:6px 6px 20px 6px;
 }
 #wrapper #right .boxright .item .img_video img {
     width:248px;
