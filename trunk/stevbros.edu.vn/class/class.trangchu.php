@@ -150,7 +150,7 @@ class trangchu extends db {
 	}
 	function insert_nhanxet($name,$email,$content,$alias){
 		$datetime = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO info_comment VALUES ('','{$datetime}','{$datetime}','{$content}','{$email}','{$name}','1','{$alias}','khachhang','','0')";
+		$qr = "INSERT INTO info_comment VALUES ('','{$datetime}','{$datetime}','{$content}','{$email}','{$name}','0','{$alias}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	function insert_contact($name,$email,$content){

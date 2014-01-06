@@ -10,7 +10,7 @@ if($_POST['post_nhanxet']=='post_nhanxet'){
 		$tc->insert_nhanxet($name,$email,$content,$alias);
 		$view_post = '<div class="item_nx">
 			<div style="color:#999; text-align:center; width:40px; margin-right:20px; float:left">'.$tc->datetime_nx(date('Y-m-d H:i:s')).'</div>
-			<span style="font-weight:bold; color:#338DB7">'.$name.' </span>'.$content.'
+			<span style="font-weight:bold; color:#338DB7">'.$name.' đăng thành công.</span>
 			<div style="clear:both; height:1px"></div>
 		</div>';
 		echo $view_post;
