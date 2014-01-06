@@ -4,11 +4,11 @@ $view_post = '<div id="left">
 	<div class="item1">
 		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros – đơn vị chuyên đào tạo Quản Lý Dự Án mã số 3807 của Viện Quản Lý Dự Án Hoa Kỳ (PMI)</h3></div>
 		<iframe src="http://www.youtube.com/embed/iSkm2Prr2WE?origin=http://'.$domain.'&rel=0" frameborder="0" allowfullscreen></iframe>
-		<p>Stevbros chuyên thiết kế, tuỳ chỉnh và cung cấp các khoá học Quản Lý Dự Án cho doanh nghiệp tại Châu Á trong nhiều lĩnh vực như: công nghệ thông tin, phần mềm, xây dựng, dầu khí, dịch vụ, sản xuất, các dự án công, các dự án ADB/ WorldBank/ ODA.</p>
+		<p>Stevbros chuyên thiết kế và cung cấp các khóa học quản lý dự án cho doanh nghiệp và cá nhân ở nhiều lĩnh vực khác nhau trong khu vực Châu Á và các khóa học quản lý dự án online toàn cầu.</p>
 	</div>';
 
 $view_post .= '<div class="item2"><div class="title_home" style="background:url(images/icon_2.gif) no-repeat top left"><h3>Các khoá học cho doanh nghiệp phổ biến</h3></div><div class="item">';
-$home_info = $tc->home_info(16,4);
+$home_info = $tc->home_info(16,3);
 while($row_home = mysql_fetch_array($home_info)){
 	$view_post .= '<div>
 	<p class="img"><img src="'.url_detail_thumb_image.$row_home['url_hinh'].'" alt="'.$row_home['name'].'" /></p>
