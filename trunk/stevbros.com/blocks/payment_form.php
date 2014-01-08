@@ -30,6 +30,12 @@ if(@$_POST['nlpayment']) {
 	 $buyer_address ='';
 
 	if($payment_method !='' && $buyer_email !="" && $buyer_mobile !="" && $buyer_fullname !="" && filter_var( $buyer_email, FILTER_VALIDATE_EMAIL )  ){
+		/*insert database*/
+		$expire_date = time() + 60*1*1*1;
+		setcookie('error_thanhtoan',$result[1],$expire_date,"/","");
+		
+		$tc->insert_khachhang($order_code,$buyer_fullname,$_POST['country'],'U',$buyer_email,$buyer_mobile,$_SERVER['REMOTE_ADDR'],'','00','TTQT',$row_detail['id']);
+		
 		if($payment_method =="VISA"){
 		
 			$nl_result= $nlcheckout->VisaCheckout($order_code,$total_amount,$payment_type,$order_description,$tax_amount,
@@ -47,11 +53,6 @@ if(@$_POST['nlpayment']) {
 												  $buyer_address,$array_items) ;
 		}	
 		if ($nl_result->error_code =='00'){
-			/*insert database*/
-			$expire_date = time() + 60*1*1*1;
-			setcookie('error_thanhtoan',$result[1],$expire_date,"/","");
-			
-			$tc->insert_khachhang($order_code,$buyer_fullname,$_POST['country'],'U',$buyer_email,$buyer_mobile,$_SERVER['REMOTE_ADDR'],'','00','TTQT',$row_detail['id']);
 			
 		//Cập nhât order với token  $nl_result->token để sử dụng check hoàn thành sau này
 		

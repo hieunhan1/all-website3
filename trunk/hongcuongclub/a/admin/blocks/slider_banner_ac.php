@@ -99,7 +99,7 @@ $form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $valu
 echo $form->DisplayProperties();
 
 //Đệ qui lấy danh sách menu
-$level = 0;
+/*$level = 0;
 $style1 = '&nbsp;';
 $style2 = '&nbsp;---';
 $str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND parent_id= ", " ORDER BY `order` ASC ");
@@ -112,7 +112,7 @@ echo $form->DisplayProperties();
 //Danh mục checkbox_group
 //EX: getProperties(Display_Name, NULL, 41, CSS_Class, Value=array, list_check=$this->_length, '&nbsp; ')
 $form->getProperties('Danh mục', NULL, 41, 'list_check', $values, $checks, 'checkbox');//$values danh sách, $value checked
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 
 //vị trí
 $level = '0';

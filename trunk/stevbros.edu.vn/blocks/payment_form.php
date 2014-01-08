@@ -151,6 +151,12 @@ if(@$_POST['nlpayment']) {
 	 $buyer_address ='';
 
 	if($payment_method !='' && $buyer_email !="" && $buyer_mobile !="" && $buyer_fullname !="" && filter_var( $buyer_email, FILTER_VALIDATE_EMAIL )  ){
+		/*insert database*/
+		$expire_date = time() + 60*1*1*1;
+		setcookie('error_thanhtoan',$result[1],$expire_date,"/","");
+		
+		$tc->insert_khachhang($order_code,$buyer_fullname,'U',$buyer_email,$buyer_mobile,$_SERVER['REMOTE_ADDR'],'','00','TTQT',$row_detail['id']);
+			
 		if($payment_method =="VISA"){
 		
 			$nl_result= $nlcheckout->VisaCheckout($order_code,$total_amount,$payment_type,$order_description,$tax_amount,
@@ -168,12 +174,7 @@ if(@$_POST['nlpayment']) {
 												  $buyer_address,$array_items) ;
 		}	
 		if ($nl_result->error_code =='00'){
-			/*insert database*/
-			$expire_date = time() + 60*1*1*1;
-			setcookie('error_thanhtoan',$result[1],$expire_date,"/","");
-			
-			$tc->insert_khachhang($order_code,$buyer_fullname,'U',$buyer_email,$buyer_mobile,$_SERVER['REMOTE_ADDR'],'','00','TTQT',$row_detail['id']);
-			
+
 		//Cập nhât order với token  $nl_result->token để sử dụng check hoàn thành sau này
 		
 	//https://www.nganluong.vn/checkout.api.nganluong.post.php?cur_code=usd&function=SetExpressCheckout&version=3.1&merchant_id=24338&receiver_email=hoannet@gmail.com&merchant_password=f1bfd514f667cebd7595218b5a40d5b1&order_code=228&total_amount=0.1&payment_method=VISA&payment_type=&order_description=&tax_amount=0&fee_shipping=0&discount_amount=0&return_url=http://smiletouristvietnam.com/book/successpayment&cancel_url=http://smiletouristvietnam.com/book/successpayment&buyer_fullname=&buyer_email=&buyer_mobile=&buyer_address=&total_item=1&item_name1=228&item_quantity1=1&item_amount1=0.1&item_url1=http://nganluong.vn/

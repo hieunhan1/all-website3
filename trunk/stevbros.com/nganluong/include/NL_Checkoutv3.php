@@ -371,7 +371,7 @@
 	function GetErrorMessage($error_code) {
 				$arrCode = array(
 				'00'=>  'Không có lỗi',
-				'99'=>  'Lỗi không được định nghĩa hoặc không rõ nguyên nhân',
+				'99'=>  'Very sorry! The payment gateway got problem. We will contact you soon.',
 				'01'=>  'Lỗi tại NgânLượng.vn nên không sinh được phiếu thu hoặc giao dịch',
 				'02'=>  'Địa chỉ IP của merchant gọi tới NganLuong.vn không được chấp nhận',
 				'03'=>  'Sai tham số gửi tới NganLuong.vn (có tham số sai tên hoặc kiểu dữ liệu)',
@@ -380,7 +380,7 @@
 				'06'=>  'Mã merchant không tồn tại hoặc chưa được kích hoạt',
 				'07'=>  'Sai mật khẩu của merchant',
 				'08'=>  'Tài khoản người bán hàng không tồn tại',
-				'09'=>  'Tài khoản người nhận tiền đang bị phong tỏa',
+				'09'=>  'Very sorry! The payment gateway got problem. We will contact you soon.',//'Tài khoản người nhận tiền đang bị phong tỏa',
 				'10'=>  'Hóa đơn thanh toán không hợp lệ',
 				'11'=>  'Số tiền thanh toán không hợp lệ',
 				'12'=>  'Đơn vị tiền tệ không hợp lệ',
