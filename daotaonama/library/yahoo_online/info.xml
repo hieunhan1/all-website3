@@ -1,0 +1,27 @@
+﻿<edit-main>
+<numid sid="2"></numid>
+<exportflashw efw="400"></exportflashw>
+<exportflashh efh="400"></exportflashh>
+</edit-main>
+
+<ID1>
+<idname id="hieu_nhan1"></idname>
+<online onl="on.png"></online>
+<offline off="off.png"></offline>
+<idx dx="0"></idx>
+<idy dy="0"></idy>
+<refresh r="6"></refresh>
+<link src="ymsgr:sendim?hieu_nhan1&m=chào"></link>
+<info alt="chủ clan" cor="000000" siz="12" bol="false" bg="FFFFE1"></info>
+</ID1>
+
+<ID2>
+<idname id="hieu_nhan1"></idname>
+<online onl="on.png"></online>
+<offline off="off.png"></offline>
+<idx dx="0"></idx>
+<idy dy="105"></idy>
+<refresh r="6"></refresh>
+<link src="ymsgr:sendim?hieu_nhan1&m=chào"></link>
+<info alt="công" cor="000000" siz="12" bol="false" bg="FFFFE1"></info>
+</ID2>
