@@ -160,7 +160,7 @@ echo '<div id="support">';
 require 'blocks/support.php';
 echo '</div>';
 
-require 'blocks/popup.php';
+//require 'blocks/popup.php';
 ?>
 <script type="text/javascript">
   var _gaq = _gaq || [];

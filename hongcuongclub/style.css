@@ -25,9 +25,9 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 .box_home{width:300px; height:580px; float:left; overflow:hidden; border:solid 1px #000; background:url(images/bg-home.jpg)}
 .box_home .box_home_img{height:355px; overflow:hidden}
 .box_home .box_home_img img{height:355px}
-.box_home h2{font-size:130%; text-transform:uppercase; margin:30px 10px 5px 10px}
-.box_home p{color:#999; line-height:22px; height:88px; overflow:hidden; margin:0 10px}
-.box_home .view_more{width:120px; height:30px; line-height:30px; font-weight:bold; text-align:center; margin:20px auto}
+.box_home h2{font-size:130%; text-transform:uppercase; margin:15px 10px 5px 10px}
+.box_home p{color:#999; line-height:20px; height:120px; overflow:hidden; margin:0 10px}
+.box_home .view_more{width:120px; height:30px; line-height:30px; font-weight:bold; text-align:center; margin:20px auto 0}
 .box_home a{color:#212121}
 
 .box_baiviet{width:400px; height:330px}
@@ -78,7 +78,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #menu_active{background-color:#7a1315}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:26px; color:#FFF; font-weight:bold; margin:0 5px; padding:0 15px} /* letter-spacing:1px; word-spacing:2px */
+#nav li a {line-height:26px; color:#FFF; font-weight:bold; margin:0 5px; padding:0 10px} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; background-color:#7a1315}
 #nav li {float:left; position:relative}
 #nav ul {width:160px; position:absolute; top:26px; display:none}
