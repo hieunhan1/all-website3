@@ -96,7 +96,7 @@ if(@$_GET['danhmuc']){
 	    include_once('blocks/menu.php');
 		?>
     </div>
-    <div id="slider"><img src="public/images/slider/slider.jpg" alt="" width="1200" /></div>
+    <?php include_once('blocks/slider.php'); ?>
     <div id="hot_login">
     	<div id="hotline"><font color="#DA0000">HOTLINE:</font> <?php echo $row_config['hotline']; ?></div>
     	<div id="login">ID <input type="text" name="username" class="txt_bo" /> Pass <input type="text" name="password" class="txt_bo" /></div>
