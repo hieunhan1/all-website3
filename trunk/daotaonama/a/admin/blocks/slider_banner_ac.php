@@ -115,7 +115,7 @@ $form->getProperties('Danh mục', NULL, 41, 'list_check', $values, $checks, 'ch
 echo $form->DisplayProperties();
 
 //vị trí
-$level = '0';
+/*$level = '0';
 $style1 = '';
 $style2 = '';
 $str_query = array("SELECT id, name FROM slider_banner_position ", " WHERE `delete`=");
@@ -123,7 +123,7 @@ $form->getProperties($level, $style1, 9, $style2, $str_query);
 $values = $form->DisplayProperties();
 if(@$_POST['position_id']) $check = $_POST['position_id']; else $check = $detail['position_id'];
 $form->getProperties('Vị trí', 'position_id', 6, 'input_large', $values, $check);
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 
 //Mô tả name
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
