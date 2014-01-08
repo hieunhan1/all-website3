@@ -191,7 +191,7 @@ if(@$_GET['danhmuc']){
     <div style="clear:both; height:20px"></div>
     <div id="footer"><?php echo $row_config['contact_foo']; ?></div>
     
-    
+    <?php //include_once('blocks/support_online.php'); ?>
 </div>
 <?php mysql_close();?>
 </body>
