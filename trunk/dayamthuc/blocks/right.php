@@ -4,9 +4,7 @@
 	$data="";
 	while($row = mysql_fetch_array($qr))
 	{
-		$link = $tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
-		echo '<div class="item"><a href="'.$link.'" title="'.$row['name'].'"><div class="img_video"><img src="'.url_video_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div></a></div>
-		<a href="'.$link.'" title="'.$row['name'].'"><h3 class="h3">'.$row['name'].'</h3></a>';
+		echo '<div class="item"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'"><div class="img_video"><img src="'.url_video_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div></a></div>';
 	}
 	?>
 </div>
