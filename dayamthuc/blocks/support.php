@@ -10,7 +10,7 @@
     <div style="float:left">Cơ sở:&nbsp;</div>
     <div id="change_tinhthanh" title="Thay đổi cơ sở"><?php echo $_COOKIE['tinhthanh'];?></div>
     <div style="float:left">Điện thoại: <b>0710 373 4371</b> &nbsp; | &nbsp; </div>
-    <div style="float:left">Hotline: <b>0907.955.666 - 0932.930.993</b> &nbsp; | &nbsp; </div>
+    <div style="float:left">Hotline: <b>0912.187.489 - 0912.287.489</b> &nbsp; | &nbsp; </div>
     <div style="float:left">Tư vấn trực tuyến: &nbsp; </div>
 	<div style="float:left"><a href="ymsgr:sendIM?consultant_netspace6"><img align='left' src='http://opi.yahoo.com/online?u=consultant_netspace6&m=g&t=0' border=0> &nbsp;<b>Tư vấn 1</b></a>&nbsp;-&nbsp;</div>
     <div style="float:left"><a href="ymsgr:sendIM?consultant_netspace7"><img align='left' src='http://opi.yahoo.com/online?u=consultant_netspace7&m=g&t=0' border=0> &nbsp;<b>Tư vấn 2</b></a></div>

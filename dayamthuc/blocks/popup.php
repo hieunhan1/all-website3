@@ -1,7 +1,7 @@
 
 	
     <?php
-	if($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']=="www.dayamthuc.vn/")
+	/*if($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']=="www.dayamthuc.vn/")
 	{
 		echo '
 		<div id="popup">
@@ -9,7 +9,9 @@
 		    <div id="close_popup">&nbsp;</div>
 		</div>	
 		';
-	}
+	}*/
+	
+	
 	/*$popup = $tc->thongthinpopup();
 	$total = mysql_num_rows($popup);
 	$i = 0;

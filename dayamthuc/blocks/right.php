@@ -25,7 +25,7 @@
         <?php
         if($_COOKIE['tinhthanh']=='Đà Nẵng'){
             echo '0932 743 799';
-        }		else if($_COOKIE['tinhthanh']=='Cần Thơ')		{			echo '0907.955.666 - 0932.930.993';		}		else echo $row_config['tel'];
+        }		else if($_COOKIE['tinhthanh']=='Cần Thơ')		{			echo '0912.187.489 - 0912.287.489';		}		else echo $row_config['tel'];
         ?>
     </b></div>
 </div>

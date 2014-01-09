@@ -23,7 +23,7 @@
         
         <p><strong style="color:#C00">Chi nhánh Cần Thơ:</strong><br />
         <strong>Địa chỉ: 118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</strong><br />
-        Hotline: 0907.955.666 - 0932.930.993<br />
+        Hotline: 0912.187.489 - 0912.287.489<br />
         Điện thoại: 0710 373 4371<br />
         Fax: 0710 373 4375
         </p><br />
