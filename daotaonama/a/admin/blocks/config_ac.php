@@ -126,13 +126,13 @@ $form->getProperties('Video 1 trang', 'max_limit_4', 1, 'input_medium', $value, 
 echo $form->DisplayProperties();*/
 
 //slogan
-if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
+/*if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
 $form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 //copyright
-if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
+/*if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
 $form->getProperties('Copyright', 'copyright', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 //email
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties('Email liên hệ', 'email', 1, 'input_medium', $value, 50);
@@ -141,20 +141,19 @@ echo $form->DisplayProperties();
 if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
 $form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
-/*
-//yahoo
-if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
-$form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
+
+//yahoo_nick
+if(@$_POST['yahoo_nick']) $value = $_POST['yahoo_nick']; else $value = $detail['yahoo_nick'];
+$form->getProperties('Yahoo nick', 'yahoo_nick', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
-//tel
-if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
-$form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 50);
+//yahoo_name
+if(@$_POST['yahoo_name']) $value = $_POST['yahoo_name']; else $value = $detail['yahoo_name'];
+$form->getProperties('Yahoo name', 'yahoo_name', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
-//facebook
-if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];
-$form->getProperties('Facebook', 'facebook', 1, 'input_medium', $value, 30);
+//yahoo_phone
+if(@$_POST['yahoo_phone']) $value = $_POST['yahoo_phone']; else $value = $detail['yahoo_phone'];
+$form->getProperties('Yahoo phone', 'yahoo_phone', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
-*/
 
 //contact
 $orther = "

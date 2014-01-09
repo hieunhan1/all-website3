@@ -88,7 +88,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
 #support_online{width:400px; margin-left:800px; position:fixed; bottom:0; z-index:1}
 #support_online #img_support{cursor:pointer}
-#support_online #info_support{clear:both; height:340px; overflow:hidden; padding:10px 20px; border:solid 2px #666; background-color:#FFF}
+#support_online #info_support{clear:both; overflow:hidden; font-size:90%; font-weight:bold; padding:10px; border:solid 2px #666; background-color:#FFF}
+#support_online #info_support td{padding:10px 0}
 
 #phantrang{margin:0 40px}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
