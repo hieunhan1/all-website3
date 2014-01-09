@@ -10,6 +10,9 @@
     </div>
     <div id="register">
         <div id="title_register">Đăng ký online</div>
+        <?php if($_SESSION['checks_register']==0){ ?>
+        <div id="ajax_register" style="display:none; padding:30px 20px">Đang xử lý...</div>
+        <div id="form_register">
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td>Họ tên</td>
@@ -39,6 +42,8 @@
                 <td><input type="button" name="btnRegister" value="Đăng ký" class="btn_register" /></td>
             </tr>
         </table>
+        </div>
+        <?php } else echo '<div style="padding:30px 20px">Bạn đã đăng ký học, vui lòng đợi chúng tôi liên hệ.</div>'; ?>
     </div>
     <?php
     if(@$dt && $type==2){

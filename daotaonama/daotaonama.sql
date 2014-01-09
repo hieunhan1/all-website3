@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 09, 2014 at 10:31 AM
+-- Generation Time: Jan 09, 2014 at 05:31 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -506,13 +506,84 @@ CREATE TABLE `register` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 -- 
 -- Dumping data for table `register`
 -- 
 
 INSERT INTO `register` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:19:43', '2014-01-09 10:19:43', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (2, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:38:38', '2014-01-09 10:38:38', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (3, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:39:58', '2014-01-09 10:39:58', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (4, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:42:02', '2014-01-09 10:42:02', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (5, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:42:37', '2014-01-09 10:42:37', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (6, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:43:09', '2014-01-09 10:43:09', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (7, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:43:52', '2014-01-09 10:43:52', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (8, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:44:15', '2014-01-09 10:44:15', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (9, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:45:44', '2014-01-09 10:45:44', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (10, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:45:55', '2014-01-09 10:45:55', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (11, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:46:28', '2014-01-09 10:46:28', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (12, 'Trần Hiếu Nhân 2', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:46:40', '2014-01-09 10:46:40', 'khachhang', '', 0);
+INSERT INTO `register` VALUES (13, 'Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 5, 'vi', 0, '2014-01-09 10:51:32', '2014-01-09 16:39:56', 'khachhang', 'admin', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `register_hocvien`
+-- 
+
+CREATE TABLE `register_hocvien` (
+  `id` int(5) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `notes` varchar(200) default NULL,
+  `id_register` int(5) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `id_register` (`id_register`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `register_hocvien`
+-- 
+
+INSERT INTO `register_hocvien` VALUES (1, 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'notes', 13, 'vi', 1, '2014-01-09 17:16:57', '2014-01-09 17:16:57', 'admin', '', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `register_khoahoc`
+-- 
+
+CREATE TABLE `register_khoahoc` (
+  `id` int(5) NOT NULL auto_increment,
+  `id_khoahoc` int(2) NOT NULL,
+  `id_hocvien` int(5) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `register_khoahoc`
+-- 
+
+INSERT INTO `register_khoahoc` VALUES (1, 7, 1, 'vi', 1, '2014-01-09 17:29:01', '2014-01-09 17:29:01', 'admin', '', 0);
+INSERT INTO `register_khoahoc` VALUES (2, 3, 1, 'vi', 1, '2014-01-09 17:29:03', '2014-01-09 17:29:03', 'admin', '', 0);
+INSERT INTO `register_khoahoc` VALUES (3, 6, 1, 'vi', 1, '2014-01-09 17:29:06', '2014-01-09 17:29:06', 'admin', '', 0);
+INSERT INTO `register_khoahoc` VALUES (4, 2, 1, 'vi', 1, '2014-01-09 17:29:09', '2014-01-09 17:29:09', 'admin', '', 0);
 
 -- --------------------------------------------------------
 

@@ -96,18 +96,31 @@ $(document).ready(function($){
 		if(phone.length < 10){ alert('Nhập số điện thoại'); $("input[name=phone]").focus(); return false; }
 		if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){ alert('Email chưa đúng'); $("input[name=email]").focus(); return false; }
 		
+		$("#form_register").hide();
+		$("#ajax_register").show();
+		
 		$.post("ajax.php",{register:"register",name:name,phone:phone,email:email,nhucauhoc:nhucauhoc},function(data){
-			alert(data);
+			if(data == '1'){
+				setTimeout(function(){
+					$("#ajax_register").html('<p style="font-weight:bold; font-size:120%; color:blue">Đăng ký thành công.</p>');
+				},1000);
+				return true;
+			}else{
+				setTimeout(function(){
+					$("#ajax_register").html('<p style="font-weight:bold; color:#F00">Đăng ký không thành công. Vui lòng ấn F5 thử lại.</p>');
+				},1000);
+				return false;
+			}
 		});
 	});
 	
 	$("#info_support").hide();
+	$.post("ajax.php",{checks_support:"checks_support"},function(data){
+		$("#info_support").css('background','#FFF');
+		$("#info_support").html(data);
+	});
 	$("#img_support").click(function(){
-		$("#info_support").show();
-		$("#info_support").css('background','url(images/loading1.gif) no-repeat center #FFF'); //loading.gif
-		$.post("ajax.php",{checks_support:"checks_support"},function(data){
-			$("#info_support").css('background','#FFF');
-			$("#info_support").html(data);
-		});
+		$("#info_support").toggle(200);
+		//$("#info_support").css('background','url(images/loading1.gif) no-repeat center #FFF');
 	});
 });

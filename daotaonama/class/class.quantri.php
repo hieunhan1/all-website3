@@ -57,4 +57,23 @@ class quantri extends db {
 		$qr = "SELECT id,name FROM menu_admin WHERE status=1 AND url='{$m[0]}' ORDER BY `order`";
 		return mysql_query($qr);	
 	}
+	
+	/*register*/
+	function checks_register($id){
+		$qr = "SELECT id,name,notes FROM register_hocvien WHERE id_register='{$id}' AND status=1 AND `delete`=0";
+		return mysql_query($qr);
+	}
+	
+	function danhsach_khoahoc($id){
+		$str = '<select name="id_khoahoc" style="width:160px"> <option value="0">-- CHỌN KHÓA HỌC --</option>'; 
+		$qr = mysql_query("SELECT id,name FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC ");
+		while($row = mysql_fetch_array($qr)){
+			$str .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+		}
+        $str .= '</select>';
+		return $str;
+	}
+	
+	
+	
 }
