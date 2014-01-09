@@ -27,6 +27,38 @@ if($id == 0){ //create
 	$user_login = $form->DisplayProperties();
 	
 	$type = 2; //loại sql update $type = 2;
+	
+	$qr = $qt->checks_register($id);
+	if(mysql_num_rows($qr) == 0){
+		$check_create_user = "<tr id='create_user'>
+			<td style='border-bottom:solid 1px #CCC'><input type='text' name='username' maxlength='20' size='10' /></td>
+			<td style='border-bottom:solid 1px #CCC'>&nbsp;</td>
+			<td style='border-bottom:solid 1px #CCC'><input type='text' name='notes' size='25' /></td>
+			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_user' value='Tạo user' /> <input type='hidden' name='id_register' value='{$id}' /></td>
+		</tr>";
+	}else{
+		$row_hv = mysql_fetch_array($qr);
+		
+		//$qr = $qt->hocvien_khoahoc();
+		
+		$check_create_user = "<tr>
+			<td style='border-bottom:solid 1px #CCC'>{$row_hv['name']}</td>
+			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'></div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
+			<td style='border-bottom:solid 1px #CCC'>{$row_hv['notes']}</td>
+			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$row_hv['id']}' /></td>
+		</tr>";
+	}
+	
+	$create_acc = "<table width='700' border='0' cellspacing='0' cellpadding='5'>
+		<tr style='background:#AEC7FF'>
+			<th align='left' width='100'>Username</th>
+			<th align='left' width='300'>Khóa học</th>
+			<th align='left'>Ghi chú</th>
+			<th align='left' width='60'>&nbsp; <input type='hidden' name='id_tracing_express' value='{$id}' /></th>
+		</tr>
+		<tbody id='ajax_user'>".$check_create_user."</tbody>
+		<tr><td colspan='4'>&nbsp;</td></tr>
+	</table>";
 }
 
 if(!empty($_POST)){
@@ -59,10 +91,8 @@ if(!empty($_POST)){
 * other, lang, delete
 */
 // form
-echo "
-<form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
-";
+echo $create_acc."<form action='' method='post' name='form1'>
+<table width='620' border='0' cellspacing='0' cellpadding='5'>";
 //date create
 echo $date_create;
 //user login

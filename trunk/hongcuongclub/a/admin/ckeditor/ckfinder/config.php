@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/all/hongcuongclub/public/';
+$baseUrl = '/public/';
 
 $baseDir = resolveUrl($baseUrl);
 
@@ -16,9 +16,9 @@ $config['Thumbnails'] = Array(
 		'enabled' => true,
 		'directAccess' => false,
 		'maxWidth' => 250,
-		'maxHeight' => 150,
+		'maxHeight' => 200,
 		'bmpSupported' => false,
-		'quality' => 80);
+		'quality' => 100);
 
 $config['Images'] = Array(
 		'maxWidth' => 1600,

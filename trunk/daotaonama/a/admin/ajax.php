@@ -48,5 +48,43 @@ if(@$_SESSION["id_admin"]) {
 		$row = mysql_fetch_array($qr);
 		echo $row['name'];
 	}
+	
+	if($_POST['create_user']=='create_user'){
+		$username = trim($_POST['username']);
+		$password = md5($username.'123');
+		$notes = trim($_POST['notes']);
+		$id_register = trim($_POST['id_register']);
+		$date = date('Y-m-d H:i:s');
+		
+		if($username != ''){
+			$qr = mysql_query("INSERT INTO register_hocvien VALUES ('','{$username}','{$password}','{$notes}','{$id_register}','vi','1','{$date}','{$date}','{$user}','','0')");
+			if($qr){
+				$id_hocvien = mysql_insert_id();
+				echo "<tr>
+					<td style='border-bottom:solid 1px #CCC'>{$username}</td>
+					<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'></div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
+					<td style='border-bottom:solid 1px #CCC'>{$notes}</td>
+					<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$id_hocvien}' /></td>
+				</tr>";
+			}else echo '2';
+			return true;
+		}else{
+			echo '0'; return false;
+		}
+	}
+	
+	if($_POST['create_khoahoc'] == 'create_khoahoc'){
+		$id_khoahoc = $_POST['id_khoahoc'];
+		$id_hocvien = $_POST['id_hocvien'];
+		
+		$qr = mysql_query("SELECT id FROM register_khoahoc WHERE id_khoahoc='{$id_khoahoc}' AND id_hocvien='{$id_hocvien}' ");
+		if(mysql_num_rows($qr)==0 && $id_khoahoc!=0 && $id_hocvien!=''){
+			$date = date('Y-m-d H:i:s');
+			mysql_query("INSERT INTO register_khoahoc VALUES ('','{$id_khoahoc}','{$id_hocvien}','vi','1','{$date}','{$date}','{$user}','','0')");
+			echo '1'; return true;
+		}else{
+			echo '0'; return false;
+		}
+	}
 }
 ?>

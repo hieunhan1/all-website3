@@ -256,4 +256,47 @@ $('input[name=btnCancel]').live('click',function(){
 	disablePopup();
 });
 
+$("input[name=create_user]").click(function(){
+	var id_register = $.trim($("input[name=id_register]").val());
+	var username = $.trim($("input[name=username]").val());
+	var notes = $.trim($("input[name=notes]").val());
+	
+	if(username.length < 6){ alert('Username phải hơn 6 ký tự'); $("input[name=username]").focus(); return false; };
+	
+	$("input[name=create_user]").hide();
+	
+	$.post("ajax.php",{create_user:'create_user',id_register:id_register,username:username,notes:notes},function(data){
+		if(data=='2'){
+			$("input[name=create_user]").show();
+			alert('User này đã tồn tại. Vui lòng nhập user khác.');
+			$("input[name=username]").focus();
+			return false;
+		}else if(data=='0'){
+			alert('Lỗi. Vui lòng ấn F5 thử lại.');
+			return false;
+		}else{
+			$("#ajax_user").html(data);
+		}
+	});
+});
+
+$("input[name=create_khoahoc]").live("click",function(){
+	var id_khoahoc = $("select[name=id_khoahoc]").val();
+	var id_hocvien = $("input[name=id_hocvien]").val();
+	var name_khoahoc = $("select[name=id_khoahoc] option:selected").html();
+	
+	if(id_khoahoc != '0'){
+		$.post("ajax.php",{create_khoahoc:'create_khoahoc',id_khoahoc:id_khoahoc,id_hocvien:id_hocvien},function(data){
+			if(data!='0'){
+				$("#ajax_khoahoc").append('<p style="color:blue">' + name_khoahoc + '</p>');
+			}else{
+				alert('Học viên đã đăng ký khóc học này rồi. Vui lòng kiểm tra lại');
+			}
+		});
+	}else{
+		alert('Chọn khóa học!');
+	}
+});
+
+
 });

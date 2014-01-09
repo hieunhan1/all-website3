@@ -1,4 +1,5 @@
 <?php
+session_start();
 $lang = 'vi';
 include_once('config.php');
 
@@ -31,6 +32,7 @@ if($_POST['register']=='register'){
 	if($name!='' && $email!='' && $phone!='' && $khoahoc!=''){
 		if($tc->insert_register($name,$phone,$email,$khoahoc)){
 			echo '1';
+			$_SESSION['checks_register'] = 1;
 			return true;
 		}else{
 			echo '0';
