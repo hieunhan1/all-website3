@@ -71,9 +71,11 @@ $(document).ready(function($){
 		$(this).find('ul:first').css({visibility: 'hidden'});
 	});
 	
+	/*
 	$('#run_top').click(function(){
 		sroll_top();
 	});
+	*/
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
 		$(".txt_bo").corner("10px");
@@ -83,4 +85,29 @@ $(document).ready(function($){
 			$(this).corner("10px");
 		});
 	}
+	
+	$("input[name=btnRegister]").click(function(){
+		var name = $.trim($("input[name=hoten]").val());
+		var phone = $.trim($("input[name=phone]").val());
+		var email = $.trim($("input[name=email]").val());
+		var nhucauhoc = $("select[name=nhucauhoc]").val();
+		
+		if(name.length < 2){ alert('Nhập họ tên'); $("input[name=hoten]").focus(); return false; }
+		if(phone.length < 10){ alert('Nhập số điện thoại'); $("input[name=phone]").focus(); return false; }
+		if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){ alert('Email chưa đúng'); $("input[name=email]").focus(); return false; }
+		
+		$.post("ajax.php",{register:"register",name:name,phone:phone,email:email,nhucauhoc:nhucauhoc},function(data){
+			alert(data);
+		});
+	});
+	
+	$("#info_support").hide();
+	$("#img_support").click(function(){
+		$("#info_support").show();
+		$("#info_support").css('background','url(images/loading1.gif) no-repeat center #FFF'); //loading.gif
+		$.post("ajax.php",{checks_support:"checks_support"},function(data){
+			$("#info_support").css('background','#FFF');
+			$("#info_support").html(data);
+		});
+	});
 });

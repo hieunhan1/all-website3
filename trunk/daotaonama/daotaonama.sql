@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 30, 2013 at 04:52 PM
+-- Generation Time: Jan 09, 2014 at 10:31 AM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -33,8 +33,9 @@ CREATE TABLE `config` (
   `contact_foo` text,
   `contact_form` text NOT NULL,
   `email` varchar(100) default NULL,
-  `yahoo` varchar(100) default NULL,
-  `tel` varchar(50) default NULL,
+  `yahoo_nick` varchar(100) default NULL,
+  `yahoo_name` varchar(100) default NULL,
+  `yahoo_phone` varchar(100) NOT NULL,
   `hotline` varchar(50) NOT NULL,
   `facebook` varchar(255) default NULL,
   `status` tinyint(1) default '1',
@@ -50,8 +51,8 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 -- 
 
-INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/daotaonama', 10, 10, 2, 10, '', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<h3><span style="color:#FF0000;">TRUNG TÂM ĐÀO TẠO NAM Á</span></h3>\r\n\r\n<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0903 876 567 - 0919 39 2343', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 16:40:29', 'admin', 'admin', 0);
-INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/daotaonama', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 0, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 1);
+INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/daotaonama', 10, 10, 2, 10, '', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<h3><span style="color:#FF0000;">TRUNG TÂM ĐÀO TẠO NAM Á</span></h3>\r\n\r\n<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1,hieu_nhan111', 'Trần Ngọc Phú,Nguyễn Trọng Thắng', '090 387 65 67,091 939 23 43', '0903 876 567 - 0919 39 2343', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 09:52:08', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/daotaonama', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', '', 0, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -267,7 +268,7 @@ INSERT INTO `menu_admin` VALUES (8, 'Booking online', 'booking', NULL, 8, 0, 0);
 INSERT INTO `menu_admin` VALUES (9, 'Danh sách bảng giá', 'booking_banggia', NULL, 9, 0, 0);
 INSERT INTO `menu_admin` VALUES (10, 'Danh sách đi từ', 'booking_form', NULL, 10, 0, 0);
 INSERT INTO `menu_admin` VALUES (11, 'Danh sách đến', 'booking_to', NULL, 11, 0, 0);
-INSERT INTO `menu_admin` VALUES (12, 'Track & trace', 'tracktrace', NULL, 12, 0, 0);
+INSERT INTO `menu_admin` VALUES (12, 'Đăng ký học', 'register', NULL, 12, 1, 0);
 INSERT INTO `menu_admin` VALUES (13, 'Slider & banner', 'slider_banner', NULL, 13, 1, 0);
 INSERT INTO `menu_admin` VALUES (14, 'Liên hệ', 'contact', NULL, 14, 1, 0);
 INSERT INTO `menu_admin` VALUES (15, 'Tài khoản', 'users', NULL, 100, 1, 0);
@@ -505,12 +506,13 @@ CREATE TABLE `register` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
 -- Dumping data for table `register`
 -- 
 
+INSERT INTO `register` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:19:43', '2014-01-09 10:19:43', 'khachhang', '', 0);
 
 -- --------------------------------------------------------
 
@@ -525,7 +527,7 @@ CREATE TABLE `slider_banner` (
   `link` varchar(250) default NULL,
   `content` text NOT NULL,
   `lang` varchar(3) default NULL,
-  `position_id` int(1) default NULL,
+  `position_id` int(1) default '1',
   `menu_id` varchar(100) NOT NULL,
   `status` tinyint(1) default '1',
   `date_create` datetime NOT NULL,
@@ -534,13 +536,13 @@ CREATE TABLE `slider_banner` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `slider_banner`
 -- 
 
-INSERT INTO `slider_banner` VALUES (1, 'San pham', 'Sanpham', 'javascript:;', '', 'vi', 1, ',6,', 1, '2013-10-09 16:34:33', '2013-10-09 17:24:23', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (2, 'Slider', 'slider.jpg', 'javascript:;', '', 'vi', 1, ',1,5,8,', 1, '2014-01-08 17:27:40', '2014-01-08 17:57:27', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -595,7 +597,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 -- 
 
-INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,6,13,14,15,', ',1,2,3,4,6,13,14,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
+INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,6,12,13,14,15,', ',1,2,3,4,6,12,13,14,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
