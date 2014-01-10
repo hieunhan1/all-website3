@@ -15,10 +15,10 @@ $config['Thumbnails'] = Array(
 		'directory' => $baseDir . '_thumbs',
 		'enabled' => true,
 		'directAccess' => false,
-		'maxWidth' => 240,
-		'maxHeight' => 160,
+		'maxWidth' => 250,
+		'maxHeight' => 200,
 		'bmpSupported' => false,
-		'quality' => 80);
+		'quality' => 90);
 
 $config['Images'] = Array(
 		'maxWidth' => 1600,

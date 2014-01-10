@@ -13,7 +13,7 @@ if($total > 1){
 	$str_image .= '<div class="item_image">
 		<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
 		<div class="date_image">Ngày đăng '.date('d-m-Y H:i', strtotime($row['date_create'])).'</div>
-		<div class="img_image"><div><a href="'.$link.'"><img src="'.url_catalog_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div></div>
+		<div class="img_image"><div><a href="'.$link.'"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div></div>
 		<div style="text-align:right"><span class="social"><a href="javascript:void();" style="color:#DA251E" onclick="facebook_share(\''.$link.'\')">Share facebook</a></span>
 		<a href="'.$link.'" style="padding-left:30px; font-weight:bold; color:#DA251E">Xem chi tiết</a></div>
 	</div>';

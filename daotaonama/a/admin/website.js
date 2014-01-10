@@ -288,7 +288,7 @@ $("input[name=create_khoahoc]").live("click",function(){
 	if(id_khoahoc != '0'){
 		$.post("ajax.php",{create_khoahoc:'create_khoahoc',id_khoahoc:id_khoahoc,id_hocvien:id_hocvien},function(data){
 			if(data!='0'){
-				$("#ajax_khoahoc").append('<p style="color:blue">' + name_khoahoc + '</p>');
+				$("#ajax_khoahoc").append('<p style="color:blue">- ' + name_khoahoc + '</p>');
 			}else{
 				alert('Học viên đã đăng ký khóc học này rồi. Vui lòng kiểm tra lại');
 			}
