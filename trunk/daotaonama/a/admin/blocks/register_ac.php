@@ -39,11 +39,14 @@ if($id == 0){ //create
 	}else{
 		$row_hv = mysql_fetch_array($qr);
 		
-		//$qr = $qt->hocvien_khoahoc();
+		$qr = $qt->hocvien_khoahoc($row_hv['id']);
+		while($row_ds_kh = mysql_fetch_array($qr)){
+			$str_ds_kh .= '<p style="color:blue">- '.$row_ds_kh['name'].'</p>';
+		}
 		
 		$check_create_user = "<tr>
 			<td style='border-bottom:solid 1px #CCC'>{$row_hv['name']}</td>
-			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'></div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
+			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'>{$str_ds_kh}</div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
 			<td style='border-bottom:solid 1px #CCC'>{$row_hv['notes']}</td>
 			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$row_hv['id']}' /></td>
 		</tr>";

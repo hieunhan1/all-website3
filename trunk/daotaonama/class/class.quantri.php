@@ -74,6 +74,9 @@ class quantri extends db {
 		return $str;
 	}
 	
-	
+	function hocvien_khoahoc($id_hocvien){
+		$qr = "SELECT info.name FROM info,register_khoahoc WHERE id_hocvien='{$id_hocvien}' AND register_khoahoc.status=1 AND id_khoahoc=info.id ORDER BY register_khoahoc.date_update";
+		return mysql_query($qr);
+	}
 	
 }
