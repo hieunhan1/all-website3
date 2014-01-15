@@ -83,7 +83,7 @@ class trangchu extends db {
 	}
 	function insert_khachhang($id,$name,$country,$gender,$email,$dienthoai,$ip,$checksum,$thanhtoan_error,$ma_nganhang,$ma_sanpham){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO thanhtoan_khachhang VALUES ('{$id}','{$name}','{$country}','{$gender}','{$email}','{$dienthoai}','{$ip}','{$checksum}','{$thanhtoan_error}','{$ma_nganhang}','{$ma_sanpham}','0','{$date}',NULL ,'khachhang',NULL ,'0')";
+		$qr = "INSERT INTO thanhtoan_khachhang VALUES ('{$id}','{$name}','{$country}','{$gender}','{$email}','{$dienthoai}','{$ip}','{$checksum}','{$thanhtoan_error}','{$ma_nganhang}','{$ma_sanpham}','','','0','{$date}',NULL ,'khachhang',NULL ,'0')";
 		return mysql_query($qr);
 	}
 	function view_thanhtoan_trave($id){
@@ -94,12 +94,15 @@ class trangchu extends db {
 		$qr = "SELECT name FROM thanhtoan_error WHERE status=1 AND `delete`=0 AND ma='{$id}'";
 		return mysql_query($qr);
 	}
-	function update_khachhang($id,$stt){
+	function update_khachhang_guidi($id,$token){
+		mysql_query("UPDATE thanhtoan_khachhang SET token_guidi='{$token}' WHERE `delete`=0 AND id='{$id}'");
+	}
+	function update_khachhang($id,$stt,$token){
 		$qr = mysql_query("SELECT thanhtoan_error FROM thanhtoan_khachhang WHERE `delete`=0 AND id='{$id}'");
 		if(mysql_num_rows($qr)==1){
 			$row = mysql_fetch_array($qr);
 			$error = $row['thanhtoan_error'].",{$stt}";
-			mysql_query("UPDATE thanhtoan_khachhang SET status=1,thanhtoan_error='{$error}' WHERE `delete`=0 AND id='{$id}'");
+			mysql_query("UPDATE thanhtoan_khachhang SET status=1,thanhtoan_error='{$error}',token_trave='{$token}' WHERE `delete`=0 AND id='{$id}'");
 		}
 	}
 	function list_khoahoc(){
