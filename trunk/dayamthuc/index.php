@@ -158,7 +158,9 @@ $seo = $tc->seo($domain,$title,$description,$keywords,$image,$url);
 <?php
 echo '<div id="support">';
 require 'blocks/support.php';
-echo '</div>';
+echo '<div style="width:1px; height:1px; overflow:hidden"><a href="http://www.alexa.com/siteinfo/www.dayamthuc.vn"><script type="text/javascript" src="http://xslt.alexa.com/site_stats/js/s/a?url=www.dayamthuc.vn"></script></a></div>
+
+</div>';
 
 require 'blocks/popup.php';
 ?>
