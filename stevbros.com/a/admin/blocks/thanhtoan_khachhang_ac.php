@@ -136,6 +136,14 @@ echo $form->DisplayProperties();
 
 
 echo "
+<tr><th align='right'>Redirect</th><td>
+	{$detail['token_guidi']}
+</td></tr>
+
+<tr><th align='right'>Token</th><td>
+	http://www.stevbros.com{$detail['token_trave']}
+</td></tr>
+
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
     <td><input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />
