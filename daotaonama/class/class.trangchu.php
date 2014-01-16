@@ -108,7 +108,7 @@ class trangchu extends db {
 	}
 	
 	function tinnoibat(){
-		$qr = "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 4";
+		$qr = "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 3";
 		return mysql_query($qr);
 	}
 	
