@@ -26,3 +26,4 @@ define(url_detail_image_thumb,'public/_thumbs/Images/articles/');
 define(url_product_image,'public/images/products/');
 define(url_product_image_thumb,'public/_thumbs/Images/products/');
 define(url_slider_image,'public/images/slider/');
+?>
