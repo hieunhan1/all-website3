@@ -97,3 +97,4 @@
     </div>
     <div style="clear:both; height:30px"></div>
 </div>
+<?php include_once('blocks/popup.php'); ?>

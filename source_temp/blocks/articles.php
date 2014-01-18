@@ -1,5 +1,5 @@
 <?php
-$navigator = '<div id="navigator"><a href="http://'.$domain.'/'.$lang.'/"><img src="images/home.jpg" alt="Hoang Ha Logistics" /></a>'.$tc->navigator($idMenu,$lang).'</div>';
+$navigator = '<div id="navigator"><a href="http://'.$domain.'/?lang='.$lang.'"><img src="images/home.jpg" alt="Hoang Ha Logistics" /></a>'.$tc->navigator($idMenu,$lang).'</div>';
 
 if($total > 1){
 	echo $view_left;
