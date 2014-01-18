@@ -7,7 +7,7 @@ $limit = "LIMIT {$from},".max_limit_1;
 $list = $tc->list_item($select,$table,$where,$limit);
 $total = mysql_num_rows($list);
 
-$navigator = '<div id="navigator"><a href="http://'.$domain.'/'.$lang.'/">Trang chủ</a>'.$tc->navigator($idMenu,$lang).'</div>';
+$navigator = '<div id="navigator"><a href="http://'.$domain.'/?lang='.$lang.'">Trang chủ</a>'.$tc->navigator($idMenu,$lang).'</div>';
 
 echo '<div id="right">'.$navigator.'<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2>';
 if($total > 1){
