@@ -28,7 +28,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one($alias){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id,lang FROM menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	function menu_one_id($id){
@@ -111,6 +111,12 @@ class trangchu extends db {
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
 		$qr = "INSERT INTO `contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
+		return mysql_query($qr);
+	}
+	
+	/*bai viet*/
+	function info_detail($alias){
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_update FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 }// end trangchu

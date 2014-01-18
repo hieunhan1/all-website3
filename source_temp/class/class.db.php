@@ -3,7 +3,7 @@
 		private $servername 	= 	"localhost";
 		private $username 		= 	"root";
 		private $password 		= 	"root";
-		private $dbname			=	"source_temp";
+		private $dbname			=	"hoahaudaiduong";
 		
 		function __construct(){
 			$ketnoi	= mysql_connect($this->servername,$this->username,$this->password);
