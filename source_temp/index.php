@@ -142,7 +142,7 @@ if(@$_GET['danhmuc']){
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/facebook.jpg" alt="" />Facebook</a></p>
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/youtube.gif" alt="" />Youtube</a></p>
                 </td>
-            	<td><?php echo $row_config['contact_foo']; ?></td>
+            	<td style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
             	<td align="right" style="width:250px"><?php echo $row_config['copyright']; ?></td>
             </tr>
         </table><br />
