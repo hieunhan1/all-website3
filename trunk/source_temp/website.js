@@ -120,7 +120,8 @@ $(document).ready(function($){
 	});
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$(".box_left, .box_info, .muahang").corner("8px");
-		$(".title_info").corner("top","8px");
+		$(".txtSearch, #menu").corner("5px");
+		$("#slider").corner("10px");
+		$("#formdangky").corner("top 10px");
 	}
 });
