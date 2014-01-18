@@ -36,10 +36,10 @@ if(@$_SESSION["id_admin"]) {
 		
 		$pattern = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)+$';
 		
-		if (eregi($pattern, $email) & $total==0) echo '<font color="#00CC00">Email hợp lệ</font>';
+		if (eregi($pattern, $email) && $total==0) echo '<font color="#00CC00">Email hợp lệ</font>';
 		else echo '<font color="#FF0000">Email đã tồn tại hoặc chưa đúng định dạng</font>';
 	}
-	if(isset($_POST['ResetPass']) & $_SESSION["idUser1"]==25) {
+	if(isset($_POST['ResetPass']) && $_SESSION["idUser1"]==25) {
 		$user = $_POST['ResetPass'];
 		$qt->Users_ResetPass($user);
 	}
