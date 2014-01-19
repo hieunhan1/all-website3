@@ -1,18 +1,11 @@
-<div style="clear:both; height:20px"></div>
-<div id="navigator" style="padding-left:20px">
-    <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
-    <?php
-    include("languages/{$lang}.php");
-	echo $tc->navigator($idMenu);
-	?>
-</div>
+<?php echo '<div id="navigator"><a href="http://'.$domain.'/?lang='.$lang.'"><img src="images/home.png" alt="" /></a>'.$tc->navigator($idMenu).'</div>'; ?>
 <div id="contact">
     <div id="info"><?php echo $row_config['contact_form'];?></div>
     <hr />
     <div id="form">
         <table width="90%" border="0" cellspacing="20" cellpadding="0" style="margin-left:30px; font-size:110%">
           <tr>
-            <td colspan="4"><p style="font-size:180%; color:#F00"><?php echo const_thong_tin;?></p></td>
+            <td colspan="4"><p style="font-size:180%; color:#FF0"><?php echo const_thong_tin;?></p></td>
           </tr>
           <tr>
             <td width="120"><?php echo const_contact_name;?>:</td>

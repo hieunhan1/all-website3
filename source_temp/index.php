@@ -43,10 +43,10 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
+			case 8 : include_once('blocks/contact.php'); break;
 			/*case 3 : include_once('blocks/products_list.php'); break;
 			case 4 : include_once('blocks/picture_list.php'); break;
 			case 5 : include_once('blocks/video_list.php'); break;
-			case 6 : include_once('blocks/contact.php'); break;
 			case 7 : include_once('blocks/giohang.php'); break;*/
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
