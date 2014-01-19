@@ -20,5 +20,5 @@ $(document).ready(function() {
 	$("#popupContact").click(function(){
 		disablePopup();
 	});
-	setTimeout(function(){ disablePopup(); }, 8000);
+	setTimeout(function(){ disablePopup(); }, 10000);
 });</script>

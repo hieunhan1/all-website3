@@ -119,5 +119,18 @@ class trangchu extends db {
 		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_update FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
+	function info_noibat(){
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 9";
+		return mysql_query($qr);
+	}
+	
+	function datetime($datetime){
+		$date = date("d F Y",strtotime($datetime));
+		$date = explode(' ',$date);
+		
+		return "<p style='font-size:250%; font-weight:bold; padding-bottom:5px'>{$date[0]}</p>
+		<p>{$date[1]}</p>
+		<p>{$date[2]}</p>";
+	}
 }// end trangchu
 ?>

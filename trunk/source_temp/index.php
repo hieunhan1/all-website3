@@ -118,7 +118,6 @@ if(@$_GET['danhmuc']){
 	<div id="logo_slider">
     	<div id="logo"><a href=""><img src="images/logo.png" alt="<?php echo $row_menu_one['title'];?>" /></a></div>
         <?php include_once('blocks/slider.php'); ?>
-        <!--<div id="slider"><img src="public/images/slider/slider.jpg" alt="" /></div>-->
     </div>
 	<?php
     include_once('blocks/menu.php');
@@ -142,8 +141,8 @@ if(@$_GET['danhmuc']){
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/facebook.jpg" alt="" />Facebook</a></p>
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/youtube.gif" alt="" />Youtube</a></p>
                 </td>
-            	<td style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
-            	<td align="right" style="width:250px"><?php echo $row_config['copyright']; ?></td>
+            	<td valign="top" style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
+            	<td valign="top" align="right" style="width:250px"><?php echo $row_config['copyright']; ?></td>
             </tr>
         </table><br />
     </div>
