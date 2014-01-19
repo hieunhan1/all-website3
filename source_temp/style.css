@@ -32,7 +32,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #home_new #box_new_nb .img img{width:400px}
 #home_new #box_new_nb a{color:#FFF}
 #home_new #box_new_nb h3{font-size:110%; margin-bottom:5px}
-#home_new #box_new_nb p{height:60px; color:#959595; line-height:20px; overflow:hidden}
+#home_new #box_new_nb p{height:60px; color:#A2A2A2; line-height:20px; overflow:hidden}
 
 #home_new #box_new_more{width:260px; float:left}
 #home_new #box_new_more p{color:#FF0; font-weight:bold; font-size:110%; margin:10px 0}
@@ -59,6 +59,29 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #home_thisinh .home_thisinh_item .img img{width:102px}
 #home_thisinh .home_thisinh_item h5{font-size:100%}
 #home_thisinh .home_thisinh_item a{color:#FFF}
+
+.item_detail{height:125px; border-bottom:dotted 1px #666; margin-bottom:15px}
+.item_detail h3{font-size:110%; margin-bottom:5px}
+.item_detail a{color:#FFF}
+/*.item_detail .date{font-style:italic; font-size:90%; color:#999; margin-bottom:5px}*/
+.item_detail .date{width:60px; height:120px; float:left; color:#FFF; font-size:90%; line-height:22px; text-align:center; margin-right:8px; padding-top:10px; background:url(images/date.jpg) no-repeat top}
+
+.item_detail .info{line-height:20px; color:#999; height:60px; overflow:hidden}
+.item_detail .img{width:160px; height:110px; overflow:hidden; float:left; margin-right:10px}
+.item_detail .img img{height:110px}
+
+#left{width:700px; float:left}
+
+#right{width:280px; float:right}
+#right .right_title{color:#FF3; font-weight:bold; text-transform:uppercase; padding:5px 0; border-top:solid 1px #9B9B00; border-bottom:solid 1px #9B9B00}
+#right .left_item_1{list-style:none; padding:15px 0 0 20px}
+#right .left_item_1 a{display:block; color:#CCC; font-weight:bold; line-height:18px; padding-left:10px; background:url(images/li_home.gif) no-repeat left; background-position:0px 8px}
+
+#right .left_item_2{list-style:none; margin-top:10px}
+#right .left_item_2 .img{width:80px; height:60px; float:left; margin-right:5px; overflow:hidden}
+#right .left_item_2 .img img{width:80px}
+#right .left_item_2 a{display:block; color:#CCC; font-weight:bold; line-height:18px}
+#right .left_item_2 p{line-height:18px; height:36px; overflow:hidden}
 
 #footer{clear:both}
 #footer #menu_foo{line-height:30px; margin-bottom:10px; border-bottom:solid 1px #CCC; border-top:solid 1px #CCC}
@@ -98,9 +121,9 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #nav li a {line-height:35px; color:#FFF; font-weight:bold; text-transform:uppercase; padding:0 25px} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; color:#FF0}
 #nav li {float:left; position:relative}
-#nav ul {width:160px; position:absolute; top:33px; display:none}
-#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 25px; background-color:#888; border-bottom:solid 1px #999}
-#nav li ul a:hover {background-color:#666; color:#FFF}
+#nav ul {width:160px; position:absolute; top:35px; display:none}
+#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 25px; font-weight:100; text-transform:none; background-color:#0B5B7D; border-top:solid 1px #0D6A93}
+#nav li ul a:hover {background-color:#094762; color:#FFF}
 #nav ul ul {top:auto}
 #nav li ul ul {left:220px; border-left:solid 1px #FFF}
 #nav li ul ul a{font-weight:100}
@@ -115,7 +138,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 /* popup */
 #backgroundPopup{display:none; position:fixed; _position:absolute; /*IE 6*/ height:100%; width:100%; top:0; left:0; background: #000; order:1px solid #CECECE; z-index:1000}
 #popupContact{display:none; position:fixed; _position:absolute; /*IE 6*/ z-index:1100}
-#popupContactClose{width:620px; height:30px; float:right; text-align:right; position:absolute; z-index:1300}
+#popupContactClose{width:620px; height:30px; float:right; text-align:right; position:absolute; z-index:1200}
 #content_popup{width:600px; height:auto}
 
 /*partner*/

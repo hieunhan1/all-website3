@@ -1,24 +1,24 @@
 <div id="home_new">
-    <div id="box_new_nb">
-        <a href="">
-            <div class="img"><img src="public/images/articles/le-ky-ket.jpg" alt="" /></div>
-            <h3>Lễ ký kết hợp tác xây dựng và triển khai “Blue Ocean World”</h3>
-        </a>
-        <p>Vũng Tàu đã diễn ra lễ ký kết Thỏa thuận hợp tác xây dựng và triển khai dự án “Blue Ocean World” giữa Quỹ Bảo vệ môi trường Việt Nam và Công ty TNHH MTV Võ Việt Chung.</p>
-    </div>
-    <div id="box_new_more">
-        <p>Thông tin mới</p>
-        <li><a href="">Năng động với áo len dài và quần jeans </a></li>
-        <li><a href="">Diện bốt lông ấm áp ngày đông</a></li>
-        <li><a href="">9 thói quen xấu gây ra nếp nhăn</a></li>
-        <li><a href="">Năng động với áo len dài và quần jeans</a></li>
-        <li><a href="">Diện bốt lông ấm áp ngày đông</a></li>
-        <li><a href="">9 thói quen xấu gây ra nếp nhăn</a></li>
-        <li><a href="">Diện bốt lông ấm áp ngày đông</a></li>
-        <li><a href="">9 thói quen xấu gây ra nếp nhăn</a></li>
-    </div>
+	<?php
+	$str_nb = '';
+	
+    $qr = $tc->info_noibat();
+	$i = 0;
+	while($row = mysql_fetch_array($qr)){
+		$i++;
+		if($i != 1){
+			$box_new_more .= '<li><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
+		}else{
+			$box_new_nb = '<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img"><img src="'.url_detail_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h3>'.$row['name'].'</h3></a><p>'.strip_tags($row['metaDescription']).'</p>';
+		}
+	}
+	
+	echo '<div id="box_new_nb">'.$box_new_nb.'</div>
+	<div id="box_new_more"><p>Thông tin mới</p>'.$box_new_more.'</div>';
+	?>
+    
     <div id="box_new_video">
-        <iframe width="310" height="220" src="//www.youtube.com/embed/txMAS8BUkxI?rel=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="310" height="220" src="//www.youtube.com/embed/txMAS8BUkxI?rel=0&wmode=transparent" frameborder="0" allowfullscreen></iframe>
         <a href="" style="color:#FFF"><h3>42 Người đẹp Việt tham dự VCK tự giới thiệu</h3></a>
         <li><a href="">Đêm chung kết HHTGNV 2010 - Phần I</a></li>
         <li><a href="">Đêm chung kết HHTGNV 2010 - Phần II</a></li>
@@ -97,4 +97,9 @@
     </div>
     <div style="clear:both; height:30px"></div>
 </div>
-<?php include_once('blocks/popup.php'); ?>
+<?php
+	if(!@$_SESSION['popup']){
+		$_SESSION['popup'] = 1;
+		include_once('blocks/popup.php');
+	}
+?>
