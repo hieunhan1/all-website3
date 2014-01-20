@@ -1,7 +1,7 @@
 <?php
 $view_slider = '<div id="slider"><div class="slider-wrapper theme-default"><div id="slider_run" class="nivoSlider">';
     
-$slider = $tc->slider_banner(1,$row_menu_one['id']);
+$slider = $tc->slider_banner(1);
 while($row_slider = mysql_fetch_array($slider)){
 	$view_slider .= '<a href="'.$row_slider['link'].'"><img src="public/images/slider/'.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" title="'.$row_slider['info'].'" data-transition="slideInLeft"/></a>';
 }

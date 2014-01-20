@@ -21,8 +21,8 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 #top #search .txtSearch{width:210px; height:23px; line-height:23px; padding:0 10px; color:#FFF; border:1px solid #FFF; background:none}
 #top #search .btnSearch{width:35px; height:25px; background:url(images/btn_search.png); border:none; cursor:pointer}
 
-#logo_slider{height:255px; margin-bottom:10px}
-#logo_slider #logo{width:auto; float:left}
+#logo_slider{height:255px; overflow:hidden; margin-bottom:10px}
+#logo_slider #logo{width:auto; float:left !important}
 #logo_slider #slider{width:740px; height:255px; float:right; overflow:hidden}
 
 #home_new{height:360px; overflow:hidden}
@@ -85,6 +85,11 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 .item_video .img_video div{height:230px; overflow:hidden}
 .item_video .img_video img{width:450px; margin:5px}
 
+.box_photos{width:206px; height:210px; overflow:hidden; float:left; padding:13px 11px; background:url(images/bg-images.png) top no-repeat}
+.box_photos a{width:206px; height:141px; display:block; overflow:hidden; border:solid 1px #054271}
+.box_photos img{width:206px}
+.box_photos .box_photos_title{text-align:center; margin-top:15px}
+
 #left{width:700px; float:left}
 
 #right{width:280px; float:right}
@@ -106,6 +111,10 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 #footer{clear:both}
 #footer #menu_foo{line-height:30px; margin-bottom:10px; border-bottom:solid 1px #CCC; border-top:solid 1px #CCC}
 #footer #menu_foo a{color:#FFF; font-weight:bold; padding:0 20px}
+
+#run_top{width:auto; float:right}
+#run_top a{padding:0px 10px !important}
+#run_top img{float:left; margin-top:2px}
 
 #formdangky{position:fixed; bottom:0; width:400px; height:33px; line-height:33px; font-size:110%; font-weight:bold; margin-left:600px; background-color:#009CFF}
 #formdangky a{color:#FF0}

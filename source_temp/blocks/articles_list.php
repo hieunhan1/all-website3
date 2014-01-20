@@ -30,5 +30,5 @@ if($total > 1){
 	header('location: http://'.$domain.'/'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html');
 }else $view_post .= '<div style="padding:20px">is updated...</div>';
 
-echo $navigator.'<div id="left">'.$view_post.'</div>'.$view_right;
+echo $navigator.'<div id="left">'.$view_post.'</div>'.$view_right.'<div style="clear:both; height:40px"></div>';
 

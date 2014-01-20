@@ -32,8 +32,13 @@ while($row = mysql_fetch_array($qr)){
 /*$qr = "TRUNCATE TABLE  `video`";
 mysql_query($qr);*/
 
+/*
 $qr = "ALTER TABLE  `video` CHANGE  `description`  `metaDescription` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL";
 mysql_query($qr);
 
 $qr = "ALTER TABLE  `video` CHANGE  `link_video`  `link` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL";
+mysql_query($qr);
+*/
+
+$qr = "UPDATE  `slider_banner_position` SET  `name` =  'Partner 160 x 95 px' WHERE  `slider_banner_position`.`id` =2 LIMIT 1 ";
 mysql_query($qr);
