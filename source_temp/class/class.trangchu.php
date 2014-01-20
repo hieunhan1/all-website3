@@ -95,7 +95,7 @@ class trangchu extends db {
 		if($total_pages > 1){
 			for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#FFFF66; color:#333'>{$i}</a>";
 				} elseif($i>0) {
 					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
 				}
@@ -124,6 +124,21 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	
+	/*video*/
+	function video_home(){
+		$qr = "SELECT name,name_rewrite,link,menu_id FROM video WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 5";
+		return mysql_query($qr);
+	}
+	function video_detail($alias){
+		$qr = "SELECT name,name_rewrite,url_hinh,link,metaDescription,content,metaKeyword,date_create FROM video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function video_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
+		return mysql_query($qr);
+	}
+	
+	/*other*/
 	function datetime($datetime){
 		$date = date("d F Y",strtotime($datetime));
 		$date = explode(' ',$date);

@@ -18,12 +18,19 @@
 	?>
     
     <div id="box_new_video">
-        <iframe width="310" height="220" src="//www.youtube.com/embed/txMAS8BUkxI?rel=0&wmode=transparent" frameborder="0" allowfullscreen></iframe>
-        <a href="" style="color:#FFF"><h3>42 Người đẹp Việt tham dự VCK tự giới thiệu</h3></a>
-        <li><a href="">Đêm chung kết HHTGNV 2010 - Phần I</a></li>
-        <li><a href="">Đêm chung kết HHTGNV 2010 - Phần II</a></li>
-        <li><a href="">Đêm chung kết HHTGNV 2010 - Phần III</a></li>
-        <li><a href="">Á hậu Kiều Khanh tham dự Miss World</a></li>
+    	<?php
+        $qr = $tc->video_home();
+		$i = 0;
+		while($row = mysql_fetch_array($qr)){
+			$i++;
+			if($i == 1){
+				echo '<iframe width="310" height="220" src="//www.youtube.com/embed/'.$row['link'].'?rel=0&wmode=transparent&origin=http://'.$domain.'" frameborder="0" allowfullscreen></iframe>
+        		<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" style="color:#FFF"><h3>'.$row['name'].'</h3></a>';
+			}else{
+				echo '<li><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
+			}
+		}
+		?>
     </div>
 </div>
 <div id="home_bst">
