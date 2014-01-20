@@ -13,7 +13,7 @@ $tc = new trangchu();
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
-	$dm = explode('_page_',$dm);
+	$dm = explode('/',$dm);
 	$danhmuc = $dm[0];
 	if($dm[1]==''){
 		$page = 1; $page_name = '';
@@ -43,10 +43,10 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
+			case 6 : include_once('blocks/video_list.php'); break;
 			case 8 : include_once('blocks/contact.php'); break;
 			/*case 3 : include_once('blocks/products_list.php'); break;
 			case 4 : include_once('blocks/picture_list.php'); break;
-			case 5 : include_once('blocks/video_list.php'); break;
 			case 7 : include_once('blocks/giohang.php'); break;*/
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
@@ -56,10 +56,12 @@ if(@$_GET['danhmuc']){
 		$dt = $_GET['detail'];
 		$include = ob_start();
 		switch($type){
-			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
-			/*case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
+			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
+			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
+			/*
+			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
 			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
-			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;*/
+			*/
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
