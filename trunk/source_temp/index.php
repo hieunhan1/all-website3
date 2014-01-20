@@ -172,6 +172,7 @@ if(@$_GET['danhmuc']){
     
     <div id="formdangky"><a href="public/Ban_DK_Du_Thi_Hoa_Hau_Dai_Duong_VN_2014.docx"><img src="images/download.png" alt="" />Tải form đăng ký Hoa Hậu Đại Dương</a></div>
 </div>
+
 <?php
 mysql_close();
 ?>
