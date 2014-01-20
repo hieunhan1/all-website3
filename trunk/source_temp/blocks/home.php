@@ -84,26 +84,7 @@
     </div>
     <div style="clear:both; height:30px"></div>
 </div>
-<div id="home_thisinh">
-    <div class="home_thisinh_title">Nhà tài trợ</div>
 
-    <script type="text/javascript" src="library/partner/common.js"></script>
-    <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
-    <script type="text/javascript">(function($){$(function(){$("#scroller").simplyScroll();});})(jQuery);</script>
-    <div class="simply-scroll simply-scroll-container" style="width:1000px; margin:auto">
-        <div class="simply-scroll-clip">
-            <ul id="scroller" class="simply-scroll-list" style="width: 2255px;">
-                <li style="list-style:none"><a href="" title="" target="_blank"><img src="public/images/slider/partner-1.jpg" alt=""></a></li>
-                <li style="list-style:none"><a href="" title="" target="_blank"><img src="public/images/slider/partner-2.jpg" alt=""></a></li>
-                <li style="list-style:none"><a href="" title="" target="_blank"><img src="public/images/slider/partner-3.jpg" alt=""></a></li>
-                <li style="list-style:none"><a href="" title="" target="_blank"><img src="public/images/slider/partner-4.jpg" alt=""></a></li>
-                <li style="list-style:none"><a href="" title="" target="_blank"><img src="public/images/slider/partner-5.jpg" alt=""></a></li>
-                <li style="list-style:none"><a href="" title="" target="_blank"><img src="public/images/slider/partner-6.jpg" alt=""></a></li>
-            </ul>
-        </div>
-    </div>
-    <div style="clear:both; height:30px"></div>
-</div>
 <?php
 	if(!@$_SESSION['popup']){
 		$_SESSION['popup'] = 1;

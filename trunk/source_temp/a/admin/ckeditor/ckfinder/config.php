@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/all/source_temp/public/';
+$baseUrl = '/public/';
 
 $baseDir = resolveUrl($baseUrl);
 
@@ -15,15 +15,15 @@ $config['Thumbnails'] = Array(
 		'directory' => $baseDir . '_thumbs',
 		'enabled' => true,
 		'directAccess' => false,
-		'maxWidth' => 250,
+		'maxWidth' => 200,
 		'maxHeight' => 150,
 		'bmpSupported' => false,
-		'quality' => 80);
+		'quality' => 90);
 
 $config['Images'] = Array(
 		'maxWidth' => 1600,
 		'maxHeight' => 1200,
-		'quality' => 80);
+		'quality' => 90);
 
 $config['RoleSessionVar'] = 'CKFinder_UserRole';
 

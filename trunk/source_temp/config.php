@@ -26,4 +26,6 @@ define('url_thisinh_image','public/images/thisinh/');
 define('url_thisinh_image_thumb','public/_thumbs/Images/thisinh/');
 define('url_video_image','public/images/video/');
 define('url_video_image_thumb','public/_thumbs/Images/video/');
+define('url_photo_image','public/images/photo/');
+define('url_photo_image_thumb','public/_thumbs/Images/photo/');
 define('url_slider_image','public/images/slider/');

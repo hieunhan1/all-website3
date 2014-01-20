@@ -43,6 +43,7 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
+			case 5 : include_once('blocks/picture.php'); break;
 			case 6 : include_once('blocks/video_list.php'); break;
 			case 8 : include_once('blocks/contact.php'); break;
 			/*case 3 : include_once('blocks/products_list.php'); break;
@@ -126,7 +127,26 @@ if(@$_GET['danhmuc']){
 	echo $include;
 	?>
 	
+    <div id="home_thisinh">
+        <div class="home_thisinh_title">Nhà tài trợ</div>
     
+        <script type="text/javascript" src="library/partner/common.js"></script>
+        <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
+        <script type="text/javascript">(function($){$(function(){$("#scroller").simplyScroll();});})(jQuery);</script>
+        <div class="simply-scroll simply-scroll-container" style="width:1000px; margin:auto">
+            <div class="simply-scroll-clip">
+                <ul id="scroller" class="simply-scroll-list" style="width: 2255px;">
+                <?php
+                $qr = $tc->slider_banner(2);
+				while($row = mysql_fetch_array($qr)){
+					echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
+				}
+				?>
+                </ul>
+            </div>
+        </div>
+        <div style="clear:both; height:30px"></div>
+    </div>
 	<div id="footer">
     	<div id="menu_foo">
         <?php
@@ -135,6 +155,7 @@ if(@$_GET['danhmuc']){
 			echo '<a href="'.$row['url'].'">'.$row['name'].'</a>';
 		}
 		?>
+        	<div id="run_top"><a href="javascript:;" title="Lên đầu trang"><img src="images/top.png" alt="run top" /> TOP</a></div>
         </div>
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
         	<tr>
