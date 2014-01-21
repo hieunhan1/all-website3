@@ -1,0 +1,121 @@
+/* CSS Document */
+/*
+Vang:	FEE356
+Do:		E68688
+*/
+*{margin:0; padding:0}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#000; background:url(images/bg-top.gif) repeat-x top #FF9934}
+img{border:0}
+a:link,a:visited,a:active{color:#D50805; text-decoration:none}
+a:hover{text-decoration:underline}
+hr{height:1px; background-color:#FFC184; border:none; margin-bottom:30px}
+
+#wrapper{width:940px; margin:auto}
+
+.social{width:auto; float:right}
+.social a{margin-left:8px}
+
+#top{height:107px}
+#top #lang{width:auto; font-size:12px; float:right; margin-top:30px}
+#top #lang a{color:#000; padding:0 5px}
+
+#slider{height:175px; overflow:hidden; margin-bottom:30px}
+
+.title{height:35px; line-height:35px; font-weight:bold; font-size:110%; padding-left:30px}
+
+.danhmuc_sp{width:220px; float:right; padding-bottom:30px; background:url(images/bg-dmsp.gif)}
+.danhmuc_sp li{list-style:none; margin-left:30px}
+.danhmuc_sp li a{display:block; color:#000; margin-top:15px; padding-left:12px; background:url(images/bg-dmsp-li.png) no-repeat left}
+.danhmuc_sp li a:hover{color:#F00}
+
+.item_sp{width:114px; height:160px; overflow:hidden; float:left}
+.item_sp a{color:#000}
+.item_sp .img{width:110px; height:110px; margin-bottom:5px; border:solid 2px #FEC993}
+.item_sp .img img{width:110px}
+.item_sp h3{font-size:100%; font-weight:100; text-align:center}
+
+#content{clear:both}
+
+#content #home_clo_1{width:300px; float:left; margin-right:20px; text-align:justify}
+#content #home_clo_1 .img{margin:15px 0 5px 0}
+
+#content #home_clo_2{width:380px; float:left}
+
+#content #home_clo_3{width:auto; float:right}
+
+#left{width:220px; float:left}
+
+#right{width:700px; float:right}
+
+#title_detail{line-height:35px; margin-bottom:20px; background:url(images/bg-title-detail.gif)}
+#title_detail h1{font-size:120%; color:#D50805; padding-left:10px}
+
+.item_detail{height:125px; margin-bottom:15px}
+.item_detail h3{font-size:110%; margin-bottom:5px}
+.item_detail a{color:#000}
+.item_detail .info{line-height:20px; height:60px; color:#333; overflow:hidden}
+.item_detail .img{width:160px; height:110px; overflow:hidden; float:left; margin-right:8px}
+.item_detail .img img{height:110px}
+
+#footer{clear:both; background:url(images/bg-footer.gif) repeat-x top}
+#footer #menu_foo{line-height:36px; height:36px; text-align:right}
+#footer #menu_foo a{color:#000; padding:0 5px}
+#footer #foo_col_1{width:500px; float:left; line-height:25px; margin:10px 0}
+#footer #foo_col_2{width:400px; float:right; margin-top:20px}
+
+.viewpost{line-height:22px}
+.viewpost p, .viewpost div {line-height:20px; margin:10px 0}
+.viewpost li{margin-left:35px}
+.viewpost h1{font-size:160%; line-height:30px; color:#FF0; margin-bottom:5px}
+.viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
+.viewpost  .date{color:#888; font-style:italic; text-align:right}
+
+#contact{clear:both}
+#contact #info{line-height:22px}
+#contact #info h2{font-size:150%; padding:10px 0; margin:0}
+#contact td {padding:5px 0}
+#contact .txt{width:340px; padding:8px 5px; background-color:#FFF; border:none}
+#contact .textarea{width:340px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#FFF; border:none}
+#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; font-size:120%; background-color:#000; border:none; cursor:pointer}
+
+#navigator{clear:both; padding:10px 0 20px}
+#navigator a{padding-right:15px; font-size:12px; color:#999}
+#navigator a:hover{color:#FFF}
+#navigator span{font-size:9px; color:#999; padding-right:5px}
+
+#phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#FE4800; color:#FFF}
+#phantrang a:hover{background-color:#000; color:#FFF}
+
+/*menu*/
+#menu{height:30px; padding:3px 0; margin-bottom:10px}
+#nav, #nav ul {list-style:none; position:relative; z-index:1000}
+#nav a:link, #nav a:active, #nav a:visited {display:block; float:left; background-color:none}
+#nav li a {line-height:30px; color:#000; font-weight:bold; padding:0 37px} /* letter-spacing:1px; word-spacing:2px */
+#nav a:hover {text-decoration:none; background:url(images/bg-hover-menu.gif) repeat-y center}
+#nav li {float:left; position:relative}
+#nav ul {width:160px; position:absolute; top:36px; display:none}
+#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 35px; font-weight:100; text-transform:none; background-color:#0B5B7D; border-top:solid 1px #0D6A93}
+#nav li ul a:hover {background-color:#094762; color:#FFF}
+#nav ul ul {top:auto}
+#nav li ul ul {left:220px; border-left:solid 1px #FFF}
+#nav li ul ul a{font-weight:100}
+#nav li:hover ul ul,
+#nav li:hover ul ul ul,
+#nav li:hover ul ul ul ul {display:none}
+#nav li:hover ul,
+#nav li li:hover ul,
+#nav li li li:hover ul,
+#nav li li li li:hover ul {display:block}
+
+/* popup */
+#backgroundPopup{display:none; position:fixed; _position:absolute; /*IE 6*/ height:100%; width:100%; top:0; left:0; background: #000; order:1px solid #CECECE; z-index:1000}
+#popupContact{display:none; position:fixed; _position:absolute; /*IE 6*/ z-index:1100}
+#popupContactClose{width:620px; height:30px; float:right; text-align:right; position:absolute; z-index:1200}
+#content_popup{width:600px; height:auto}
+
+/*partner*/
+.simply-scroll-container {position:relative}
+.simply-scroll-clip {overflow:hidden; position:relative}
+.simply-scroll {height:94px; width: 100%;}
+.simply-scroll .simply-scroll-clip {height:94px; width:100%}
+.simply-scroll .simply-scroll-list li {width:158px; height:94px; float:left; margin-right:10px; border:solid 1px #00344c}
