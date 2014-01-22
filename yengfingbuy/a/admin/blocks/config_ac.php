@@ -114,20 +114,20 @@ echo $form->DisplayProperties();
 
 //max_limit_1
 if(@$_POST['max_limit_1']) $value = $_POST['max_limit_1']; else $value = $detail['max_limit_1'];
-$form->getProperties('Số tin 1 page', 'max_limit_1', 1, 'input_medium', $value, 2);
+$form->getProperties('Tin tức', 'max_limit_1', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_2
-if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
+/*if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
 $form->getProperties('Sản phẩm 1 page', 'max_limit_2', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 //max_limit_3
 if(@$_POST['max_limit_3']) $value = $_POST['max_limit_3']; else $value = $detail['max_limit_3'];
-$form->getProperties('Hình ảnh 1 page', 'max_limit_3', 1, 'input_medium', $value, 2);
+$form->getProperties('Sản phẩm', 'max_limit_3', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_4
-if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
+/*if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
 $form->getProperties('Video 1 page', 'max_limit_4', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 
 //copyright
 if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];

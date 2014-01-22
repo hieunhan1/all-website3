@@ -115,7 +115,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function home_product($lang){
-		$qr = "SELECT name,url_hinh FROM photo_gallery WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 9";
+		$qr = "SELECT name,url_hinh FROM photo_gallery WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 9";
 		return mysql_query($qr);
 	}
 	

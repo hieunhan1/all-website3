@@ -107,9 +107,9 @@ if(@$_GET['danhmuc']){
     	<img src="images/logo.jpg" alt="Công ty TNHH MTV TM DV XNK vải sợi Doanh Phong" style="float:left" />
     	<div id="lang">
         	<div style="clear:both; text-align:right; height:25px">
-            	<a href="">Tiếng Việt</a> | 
-                <a href="">Tiếng Việt</a> | 
-                <a href="">Tiếng Việt</a>
+            	<a href="?lang=vi">Tiếng Việt</a> | 
+                <a href="?lang=en">English</a> | 
+                <a href="?lang=cn">Chinese</a>
             </div>
             <div class="social">
             <?php
