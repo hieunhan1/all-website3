@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 20, 2014 at 04:12 PM
+-- Generation Time: Jan 22, 2014 at 11:46 AM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -12,6 +12,75 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- 
 -- Database: `hoahaudaiduong`
 -- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `bosuutap`
+-- 
+
+CREATE TABLE `bosuutap` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `metaDescription` text,
+  `content` text,
+  `metaKeyword` varchar(250) default NULL,
+  `other` tinyint(1) default '0',
+  `lang` varchar(3) default 'vi',
+  `menu_id` varchar(30) NOT NULL,
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `bosuutap`
+-- 
+
+INSERT INTO `bosuutap` VALUES (1, 'Màu Ký Ức', 'mau-ky-uc', 'mau-ky-uc-13.jpg', 'Khi phố phường bừng lên sắc đỏ của đèn ông sao, đèn kéo quân và thấp thoáng những tấm bánh trung thu được bày bán trong cửa hàng... Như chợt nhớ trung thu xưa, như muốn giữ lại hồn Việt, NTK Võ Việt Chung đã tái hiện lại nét trung thu cổ truyền qua hình ảnh những cô gái Hà Nội e ấp trong tà áo dài chuẩn bị Tết.\r\n', '<p>Khi phố phường bừng lên sắc đỏ của đèn ông sao, đèn kéo quân và thấp thoáng những tấm bánh trung thu được bày bán trong cửa hàng... Như chợt nhớ trung thu xưa, như muốn giữ lại hồn Việt, NTK Võ Việt Chung đã tái hiện lại nét trung thu cổ truyền qua hình ảnh những cô gái Hà Nội e ấp trong tà áo dài chuẩn bị Tết. BST áo dài của NTK Võ Việt Chung lấy cảm hứng từ nghệ thuật sắp đặt trên vải, với hình dáng từng chiếc lá được cắt tỉa công phu trên từng chiếc áo gợi vẻ nhẹ nhàng, bay bổng, say trong nét thu quyến rũ</p>\r\n\r\n<p><strong>Concept &amp; Cretive: Minh Phượng</strong></p>\r\n\r\n<p><strong>Art Director: Long Lê</strong></p>\r\n\r\n<p><strong>Model:</strong></p>\r\n\r\n<p style="margin-left: 40px;">- Á hậu Việt Nam 2012 Hoàng Anh</p>\r\n\r\n<p style="margin-left: 40px;">- Dương Thị Dung</p>\r\n\r\n<p style="margin-left: 40px;">- Quỳnh Nga</p>\r\n\r\n<p><strong>Make up &amp; Hair: Quốc Hưng</strong></p>\r\n\r\n<p><strong>Photographer: Kim Won Yong</strong></p>\r\n\r\n<p><strong>Clothes: Võ Việt Chung</strong></p>\r\n', 'Màu Ký Ức', 0, 'vi', ',7,', 1, '2014-01-22 09:21:54', '2014-01-22 09:23:03', 'admin', 'admin', 0);
+INSERT INTO `bosuutap` VALUES (2, 'Quà Tặng Cuả Thượng Đế', 'qua-tang-cua-thuong-de', 'qua-tang-cua-thuong-de-10.jpg', 'Lấy cảm hứng sáng tạo từ bộ phim AVATAR của đạo diễn lừng danh thế giới James Cameron. NTK thời trang Việt Nam Võ Việt Chung đưa chúng ta đến 1 hành tinh huyền bí, đầy màu sắc trong 1 khu rừng hoang sơ cùng với các sinh vật và thực vật hoang dã', '<h2>Lấy cảm hứng sáng tạo từ bộ phim AVATAR của đạo diễn lừng danh thế giới James Cameron. NTK thời trang Việt Nam Võ Việt Chung đưa chúng ta đến 1 hành tinh huyền bí, đầy màu sắc trong 1 khu rừng hoang sơ cùng với các sinh vật và thực vật hoang dã.</h2>\r\n\r\n<p>Chính từ những cảnh đẹp lung linh và huyền ảo do Võ Việt Chung đã thiết kế những gì đẹp nhất từ cánh hoa dại hay vết chạy dài trên những đóm lông của thú rừng hoang dã. Các tiết tấu độc đáo trên từng mẫu thiết kế là 1 bản nhạc cuả núi rừng màu sắc đặc trưng như nâu, vàng, xám ,đen ... trên chất liệu voan, the, ren.&nbsp;</p>\r\n\r\n<p>Và hơn hết điều mà NTK mong muốn là gửi thông điệp đến mọi người hãy yêu thiên nhiên hơn nữa, hãy cùng bảo vệ mẹ trái đất thân thương của chúng ta. Tất cả hoà hợp lại với nhau đưa chúng ta liên tưởng đến bộ phim Avatar lừng danh mà NTK Võ Việt Chung muốn gửi đến cho tất cả quý vị</p>\r\n\r\n<p><strong>Designer &amp; Stylist : Vo Viet Chung</strong></p>\r\n\r\n<p><strong>Photographer : Long Thủy</strong></p>\r\n\r\n<p><strong>Make up : Nguyễn Hùng</strong></p>\r\n\r\n<p><strong>Hair : Hồ Hữu Hiền</strong></p>\r\n\r\n<p><strong>Model : Như Vân - Huyền Trang</strong></p>\r\n', 'Quà Tặng Cuả Thượng Đế', 0, 'vi', ',7,', 1, '2014-01-22 09:27:40', '2014-01-22 11:25:02', 'admin', 'admin', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `bosuutap_images`
+-- 
+
+CREATE TABLE `bosuutap_images` (
+  `id` int(11) NOT NULL auto_increment,
+  `id_bosuutap` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `url_hinh_bst` varchar(150) NOT NULL,
+  `lang` varchar(2) default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+-- 
+-- Dumping data for table `bosuutap_images`
+-- 
+
+INSERT INTO `bosuutap_images` VALUES (1, 1, 'Màu ký ức 1', 'mau-ky-uc-1.jpg', 'vi', 1, '2014-01-22 10:47:34', '2014-01-22 10:47:34', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (2, 1, 'Màu Ký Ức 2', 'mau-ky-uc-2.jpg', 'vi', 1, '2014-01-22 10:50:30', '2014-01-22 10:50:30', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (3, 1, 'Màu Ký Ức 3', 'mau-ky-uc-3.jpg', 'vi', 1, '2014-01-22 10:50:35', '2014-01-22 10:50:35', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (4, 1, 'Màu Ký Ức 4', 'mau-ky-uc-4.jpg', 'vi', 1, '2014-01-22 10:50:38', '2014-01-22 10:50:38', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (5, 1, 'Màu Ký Ức 5', 'mau-ky-uc-5.jpg', 'vi', 1, '2014-01-22 11:03:43', '2014-01-22 11:17:29', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (6, 1, 'Màu Ký Ức 6', 'mau-ky-uc-6.jpg', 'vi', 1, '2014-01-22 11:04:13', '2014-01-22 11:17:26', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (7, 1, 'Màu Ký Ức 7', 'mau-ky-uc-7.jpg', 'vi', 1, '2014-01-22 11:04:53', '2014-01-22 11:17:24', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (8, 1, 'Màu Ký Ức 8', 'mau-ky-uc-8.jpg', 'vi', 1, '2014-01-22 11:04:59', '2014-01-22 11:04:59', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (9, 1, 'Màu ký ức 9', 'mau-ky-uc-9.jpg', 'vi', 1, '2014-01-22 11:17:49', '2014-01-22 11:19:12', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -224,7 +293,7 @@ INSERT INTO `menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 
 INSERT INTO `menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,3,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 17:38:39', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (6, 'Thí sinh', 'thi-sinh', 'javascript:;#3', '', 'Thí sinh', 'Thí sinh', 'Thí sinh', 0, 3, ',1,3,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 02:13:04', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (7, 'Bộ sưu tập', 'bo-suu-tap', 'javascript:;#4', '', 'Bộ sưu tập', 'Bộ sưu tập', 'Bộ sưu tập', 0, 4, ',1,3,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 02:13:10', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (7, 'Bộ sưu tập', 'bo-suu-tap', 'bo-suu-tap/', '', 'Bộ sưu tập', 'Bộ sưu tập', 'Bộ sưu tập', 0, 4, ',1,3,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 09:23:43', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (8, 'Photo', 'photo', 'photo/', '', 'Photo', 'Photo', 'Photo', 0, 5, ',1,3,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 14:13:34', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (10, 'Thông tin - Sự kiện', 'thong-tin-su-kien', 'thong-tin-su-kien/', '', 'Thông tin - Sự kiện', 'Thông tin - Sự kiện', 'Thông tin - Sự kiện', 0, 2, ',1,3,', 'vi', 0, 7, 1, '2014-01-15 23:19:16', '2014-01-15 17:39:08', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (9, 'Video', 'video', 'video/', '', 'Video', 'Video', 'Video', 0, 6, ',1,3,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 10:36:42', 'admin', 'admin', 0);
