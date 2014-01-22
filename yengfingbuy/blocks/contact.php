@@ -1,6 +1,6 @@
 <div id="left"><?php include_once('blocks/danhmuc_sp.php'); ?></div>
 <div id="right">
-	<div id="title_detail"><h1><?php echo $row_menu_one['title']; ?></h1></div>';
+	<div id="title_detail"><h1><?php echo $row_menu_one['title']; ?></h1></div>
     <div id="contact">
         <div id="info"><?php echo $row_config['contact_form'];?></div>
         <hr />
