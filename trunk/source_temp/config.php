@@ -24,6 +24,8 @@ define('url_detail_image','public/images/articles/');
 define('url_detail_image_thumb','public/_thumbs/Images/articles/');
 define('url_thisinh_image','public/images/thisinh/');
 define('url_thisinh_image_thumb','public/_thumbs/Images/thisinh/');
+define('url_bosuutap_image','public/images/bosuutap/');
+define('url_bosuutap_image_thumb','public/_thumbs/Images/bosuutap/');
 define('url_video_image','public/images/video/');
 define('url_video_image_thumb','public/_thumbs/Images/video/');
 define('url_photo_image','public/images/photo/');

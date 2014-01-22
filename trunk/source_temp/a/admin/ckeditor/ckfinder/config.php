@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/public/';
+$baseUrl = '/all/source_temp/public/';
 
 $baseDir = resolveUrl($baseUrl);
 
@@ -16,7 +16,7 @@ $config['Thumbnails'] = Array(
 		'enabled' => true,
 		'directAccess' => false,
 		'maxWidth' => 200,
-		'maxHeight' => 150,
+		'maxHeight' => 200,
 		'bmpSupported' => false,
 		'quality' => 90);
 
