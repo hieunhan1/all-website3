@@ -45,9 +45,10 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 #home_new #box_new_video li{list-style:none; margin:5px 0}
 #home_new #box_new_video li a{display:block; color:#CCC; padding-left:8px; background:url(images/li_home.gif) no-repeat left; background-position:0px -33px}
 
-#home_bst{height:235px; margin-bottom:30px; padding:10px; background-color:#FFF}
-#home_bst .home_bts_title{line-height:45px; color:#F00; font-weight:bold; font-size:130%; margin-bottom:10px; padding-left:55px; background:url(images/logo_icon.gif) left no-repeat}
+#home_bst{height:235px; margin-bottom:30px; padding:10px; background-color:#e6e6e6}
+#home_bst .home_bts_title{line-height:45px; color:#F00; font-weight:bold; font-size:130%; margin-bottom:10px; padding-left:55px; background:url(images/logo_icon.png) left no-repeat}
 #home_bst .home_bts_item{width:238px; float:left}
+#home_bst .home_bts_item a{color:#000}
 #home_bst .home_bts_item .img{width:236px; height:148px; overflow:hidden; margin-bottom:5px; border:solid 1px #CCC}
 #home_bst .home_bts_item .img img{width:240px}
 #home_bst .home_bts_item h4{font-size:100%}
