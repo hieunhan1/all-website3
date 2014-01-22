@@ -17,7 +17,7 @@ define('max_limit_3',$row_config['max_limit_3']);
 define('max_limit_4',$row_config['max_limit_4']);
 
 define('url_no_image','images/no-image.jpg');
-define('url_default_image','images/logo.png');
+define('url_default_image','images/logo.jpg');
 
 define('url_catalog_image','public/images/catalog/');
 define('url_detail_image','public/images/articles/');

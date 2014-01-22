@@ -31,7 +31,7 @@ hr{height:1px; background-color:#FFC184; border:none; margin-bottom:30px}
 .item_sp{width:114px; height:160px; overflow:hidden; float:left}
 .item_sp a{color:#000}
 .item_sp .img{width:110px; height:110px; margin-bottom:5px; border:solid 2px #FEC993}
-.item_sp .img img{width:110px}
+.item_sp .img img{height:110px}
 .item_sp h3{font-size:100%; font-weight:100; text-align:center}
 
 #content{clear:both}
