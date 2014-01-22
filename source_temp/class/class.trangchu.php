@@ -139,8 +139,12 @@ class trangchu extends db {
 	}
 	
 	/*bosuutap*/
+	function home_bosuutap(){
+		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM bosuutap WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 4";
+		return mysql_query($qr);
+	}
 	function bosuutap_detail($alias){
-		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_update FROM bosuutap WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_update FROM bosuutap WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	

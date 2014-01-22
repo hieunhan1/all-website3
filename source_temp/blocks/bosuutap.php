@@ -1,6 +1,6 @@
 <?php
 $i = 0;
-$qr = mysql_query("SELECT name,url_hinh_bst FROM bosuutap_images WHERE `delete`=0 AND status=1 ORDER BY date_update DESC");
+$qr = mysql_query("SELECT name,url_hinh_bst FROM bosuutap_images WHERE `delete`=0 AND status=1 AND id_bosuutap='".$row_detail['id']."' ORDER BY date_update DESC");
 while($row = mysql_fetch_array($qr)){
 	$i++;
 	if($i%3 == 1) $style = ''; else $style = 'style="margin-left:8px"';

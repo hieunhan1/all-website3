@@ -201,6 +201,14 @@ echo "
     	<th width="280" align="left">Tên hình</th>
         <td width="90"><input type="hidden" name="id_bst" value="<?php echo $id; ?>" /></td>
     </tr>
+    <tr>
+    	<td style="border-bottom:solid 1px #CCC"><input type="text" name="name_bst" class="input_large" /></td>
+    	<td style="border-bottom:solid 1px #CCC">
+            <input type='text' name='url_hinh_bst' id='url_hinh_bst' class='input_large' maxlength='150' value='' />
+            <input type='button' name='btnBrowse' id='btnBrowse' value='Chọn ảnh' class='button' onclick="BrowseServer('Images:/','url_hinh_bst')"/>
+        </td>
+        <td style="border-bottom:solid 1px #CCC"><input type="button" name="btnImageCreate" value="Create" class="button" /></td>
+    </tr>
     <tbody id="ajax_image"></tbody>
     <?php
     $qr = mysql_query("SELECT id,name,url_hinh_bst FROM bosuutap_images WHERE `delete`=0 AND status=1 AND id_bosuutap='{$id}' ORDER BY date_update DESC");
@@ -212,14 +220,6 @@ echo "
 		</tr>';
 	}
 	?>
-    <tr>
-    	<td style="border-bottom:solid 1px #CCC"><input type="text" name="name_bst" class="input_large" /></td>
-    	<td style="border-bottom:solid 1px #CCC">
-            <input type='text' name='url_hinh_bst' id='url_hinh_bst' class='input_large' maxlength='150' value='' />
-            <input type='button' name='btnBrowse' id='btnBrowse' value='Chọn ảnh' class='button' onclick="BrowseServer('Images:/','url_hinh_bst')"/>
-        </td>
-        <td style="border-bottom:solid 1px #CCC"><input type="button" name="btnImageCreate" value="Create" class="button" /></td>
-    </tr>
 </table>
 
 <br /><br /><br /><br /><br />
