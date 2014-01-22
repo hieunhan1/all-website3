@@ -35,10 +35,15 @@
 </div>
 <div id="home_bst">
     <div class="home_bts_title">Bộ sưu tập</div>
-    <div class="home_bts_item"><a href=""><div class="img"><img src="public/_thumbs/Images/bosuutap/bosuutap-1.jpg" alt="" /></div><h4>Bộ sưu tập xuân hè 2014</h4></a></div>
-    <div class="home_bts_item" style="margin-left:8px"><a href=""><div class="img"><img src="public/_thumbs/Images/bosuutap/bosuutap-2.jpg" alt="" /></div><h4>Bộ sưu tập cưới năm 2014</h4></a></div>
-    <div class="home_bts_item" style="margin-left:8px"><a href=""><div class="img"><img src="public/_thumbs/Images/bosuutap/bosuutap-3.jpg" alt="" /></div><h4>Bộ sưu tập thời trang 2014</h4></a></div>
-    <div class="home_bts_item" style="margin-left:8px"><a href=""><div class="img"><img src="public/_thumbs/Images/bosuutap/bosuutap-4.jpg" alt="" /></div><h4>Bộ sưu tập thời trang biển 2014</h4></a></div>
+    <?php
+	$i = 0;
+    $qr = $tc->home_bosuutap();
+	while($row = mysql_fetch_array($qr)){
+		$i++;
+		if($i!=1) $style = 'style="margin-left:8px"'; else $style = '';
+		echo '<div class="home_bts_item" '.$style.'><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img"><img src="'.url_bosuutap_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h4>'.$row['name'].'</h4></a></div>';
+	}
+	?>
 </div>
 <div id="home_thisinh">
     <div class="home_thisinh_title">Thí sinh dự thi được bình chọn nhiều nhất</div>
