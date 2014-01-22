@@ -1,7 +1,7 @@
 <?
-define('const_tin_khac', 'Other post');
+define('const_home_product', 'Sản phẩm tiêu biểu');
+define('const_home_danhmuc_sp', 'Catalog');
 
-define('const_thong_tin', 'Contact Information');
 define('const_date_update', 'Update ');
 define('const_txt_search', 'enter keywords..');
 

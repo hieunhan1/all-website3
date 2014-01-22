@@ -88,7 +88,7 @@ echo $form->DisplayProperties();
 $level = 0;
 $style1 = '';
 $style2 = '---';
-$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND type_id=3 AND parent_id= ", " ORDER BY `order` ASC, date_update DESC ");
+$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND type_id=3 AND parent_id= ", " ORDER BY `order` ASC, date_update DESC ");
 $form->getProperties($level, $style1, 9, $style2, $str_query);
 $values = $form->DisplayProperties();
 //Menu_id hidden field 
