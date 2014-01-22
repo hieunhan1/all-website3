@@ -4,11 +4,11 @@ $view_post = '<div id="left">
 	<div class="item1">
 		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros – Registered Education Provider ID 3807 of Project Management Institute (PMI)</h3></div>
 		<iframe src="http://www.youtube.com/embed/iSkm2Prr2WE?origin=http://'.$domain.'&rel=0" frameborder="0" allowfullscreen></iframe>
-		<p>Stevbros designs, customizes and delivers project management in-house training courses for enterprises in Asia in various industries: IT, software, constructions, oil and gas, services, manufacturing, government projects, ADB/ WorldBank/ ODA projects.</p>
+		<p>'.$row_config['tel'].'</p>
 	</div>';
 
 $view_post .= '<div class="item2"><div class="title_home" style="background:url(images/icon_2.gif) no-repeat top left"><h3>Popular In-house Courses</h3></div><div class="item">';
-$home_info = $tc->home_info(16,4);
+$home_info = $tc->home_info(16,3);
 while($row_home = mysql_fetch_array($home_info)){
 	$view_post .= '<div>
 	<p class="img"><img src="'.url_detail_thumb_image.$row_home['url_hinh'].'" alt="'.$row_home['name'].'" /></p>

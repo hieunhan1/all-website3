@@ -3,7 +3,6 @@ session_start();
 include_once('config.php');
 
 $url = $_SERVER['REQUEST_URI'];
-$url = str_replace('all/stevbros.com/','',$url); /*link test*/
 $url = explode('/',$url);
 $danhmuc = $url[1];
 $dt = $url[2];
