@@ -57,7 +57,8 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
-			case 4 : $qr = $tc->bosuutap_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/bosuutap.php'); break;
+			case 3 : $qr = $tc->thisinh_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_thisinh_image; include_once('blocks/thisinh.php'); break;
+			case 4 : $qr = $tc->bosuutap_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_bosuutap_image; include_once('blocks/bosuutap.php'); break;
 			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
@@ -106,8 +107,8 @@ if(@$_GET['danhmuc']){
 <div id="wrapper">
 	<div id="top">
     	<div id="lang">
-        	<li><a href="javascript:;"><img src="images/vi.gif" alt="Tiếng Việt" /> Tiếng Việt</a></li>
-            <li><a href="javascript:;"><img src="images/en.gif" alt="English" /> English</a></li>
+        	<li><a href="?lang=vi"><img src="images/vi.gif" alt="Tiếng Việt" /> Tiếng Việt</a></li>
+            <li><a href="?lang=en"><img src="images/en.gif" alt="English" /> English</a></li>
         </div>
         <div id="search">
         	<input type="text" name="txtSearch" class="txtSearch" value="Nhập từ khóa.." onfocus="if(value=='Nhập từ khóa..') value=''" onblur="if(value=='') value='Nhập từ khóa..'" />

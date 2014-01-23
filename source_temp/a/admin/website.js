@@ -108,7 +108,9 @@ function change_alias(alias){
 ////////rewrite///////////
 $('#name_rewrite').dblclick(function(){
 	var name = $("#title").val();
-	if(!name) name = $('#name').val();
+	var sbd = $("#sbd").val();
+	if(!name && sbd) name = $('#name').val() + ' ' + sbd;
+	else if(!name) name = $('#name').val();
 	
 	$(this).val(change_alias(name));
 });
@@ -258,10 +260,11 @@ $('input[name=btnCancel]').live('click',function(){
 
 $("input[name=btnImageCreate]").click(function(){
 	var id_bst = $.trim($("input[name=id_bst]").val());
+	var form_name = $.trim($("input[name=form_name]").val());
 	var name_bst = $.trim($("input[name=name_bst]").val());
 	var url_hinh_bst = $.trim($("input[name=url_hinh_bst]").val());
-	if(id_bst!='' && name_bst!='' && url_hinh_bst!=''){
-		$.post("ajax.php",{upload_image_bst:"upload_image_bst",name_bst:name_bst,url_hinh_bst:url_hinh_bst,id_bst:id_bst},function(data){
+	if(id_bst!='' && name_bst!='' && url_hinh_bst!='' && form_name!=''){
+		$.post("ajax.php",{upload_image_bst:form_name,name_bst:name_bst,url_hinh_bst:url_hinh_bst,id_bst:id_bst},function(data){
 			if(data != '0'){
 				$("#ajax_image").prepend('<tr><td style="border-bottom:solid 1px #CCC">'+ name_bst +'</td><td style="border-bottom:solid 1px #CCC">'+ url_hinh_bst +'</td><td style="border-bottom:solid 1px #CCC">&nbsp;</td></tr>');
 			}else{
@@ -277,10 +280,11 @@ $("input[name=btnImageCreate]").click(function(){
 
 $(".delete").click(function(){
 	var id = ($(this).attr('class')).split("delete delete_");
+	var form_name = $.trim($("input[name=form_name]").val());
 	var name = $(this).attr('title');
 	
 	if(confirm("Bạn có muốn xóa: " + name)){
-		$.post("ajax.php",{delete_image:'delete_image',id:id[1]},function(data){
+		$.post("ajax.php",{delete_image:form_name,id:id[1]},function(data){
 			if(data != '0'){
 				$("#ajax_id_" + id[1]).hide();
 				return true;
