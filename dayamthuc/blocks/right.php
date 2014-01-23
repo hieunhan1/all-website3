@@ -22,7 +22,7 @@
         <em>Ngoài giờ làm việc, vui lòng liên hệ hotline:</em> <b>
         <?php
         if($_COOKIE['tinhthanh']=='Đà Nẵng'){
-            echo '0932 743 799';
+            echo '0905 295 402 - 0932 743 799';
         }		else if($_COOKIE['tinhthanh']=='Cần Thơ')		{			echo '0912.187.489 - 0912.287.489';		}		else echo $row_config['tel'];
         ?>
     </b></div>

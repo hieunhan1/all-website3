@@ -14,17 +14,17 @@
         <p align="center"><img src="images/map-lien-he.jpg" align="ban do, dia chi, truong day nghe am thuc" /></p><br />
         <p><strong style="color:#C00">Chi nhánh Đặng Tất</strong><br />
         <strong>Địa chỉ: Số 19 Đường Đặng Tất, Phường Tân Định, Quận 1, Tp.HCM</strong><br />
-        Điện thoại: 08.3526.8716
+        Điện thoại: <!--08.3526.8716-->098 333 8333
         
         </p><br />
         <p><strong style="color:#C00">Chi nhánh Đà Nẵng:</strong><br />
         <strong>Địa chỉ: Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng.</strong><br />
-        Điện thoại: 05113.634.879 - 05113.634.877 &nbsp; | &nbsp; Hotline: 0932.743.799</p><br />
+        <!--Điện thoại: 05113.634.879 - 05113.634.877 &nbsp; | &nbsp; -->Hotline: 0905 295 402 - 0932 743 799</p><br />
         
         <p><strong style="color:#C00">Chi nhánh Cần Thơ:</strong><br />
         <strong>Địa chỉ: 118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</strong><br />
         Hotline: 0912.187.489 - 0912.287.489<br />
-        Điện thoại: 0710 373 4371<br />
+        <!--Điện thoại: 0710 373 4371<br />-->
         Fax: 0710 373 4375
         </p><br />
     </div>
@@ -81,8 +81,9 @@ $(document).ready(function(e) {
 		}else{
 			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
 			$.post("ajax.php",{contact:"contact",name:name,email:email,phone:phone,diachi:diachi,message:message,lang:"<?php echo $lang; ?>"},function(data){
-				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Gửi thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Liên hệ thành công. Trường NETSPACE sẽ trả lời liên hệ của bạn vào ngày 10/02/2014. Chúc năm mới Vạn Sự Như Ý.</p>'); },200);
 				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px 30px;">Có sự cố. Vui lòng ấn F5 thử lại.</p>');
+				//Gửi thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất
 			});
 			return true;
 		}

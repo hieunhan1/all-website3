@@ -144,9 +144,9 @@ $seo = $tc->seo($domain,$title,$description,$keywords,$image,$url);
             <div style="clear:both; text-align:center">
 			<?php
             if($_COOKIE['tinhthanh']=='Đà Nẵng'){
-				echo '<p><strong>Địa chỉ: Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng</strong> <br />Điện thoại: 05113.634.879   |   Hotline: 0932.743.799</p>';
+				echo '<p><strong>Địa chỉ: Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng</strong> <br /><!--Điện thoại: 05113.634.879   |   -->Hotline: 0905 295 402 - 0932 743 799</p>';
 			}elseif($_COOKIE['tinhthanh']=='Cần Thơ'){
-				echo '<p><strong>Địa chỉ: 118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</strong> <br />Điện thoại: 0710 373 4371 - Fax: 0710 373 4375</p>';
+				echo '<p><strong>Địa chỉ: 118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</strong> <br />Điện thoại: 0912 187 489 - 0912 287 489<!--0710 373 4371 - Fax: 0710 373 4375--></p>';
 			}else echo $row_config['contact'];
 			?></div>
         </div>
