@@ -91,18 +91,11 @@ if(mysql_num_rows($qr) > 1){
 	echo $form->DisplayProperties();
 }
 
-//Ngày date_update
-if(@$_POST['date_update']) $value = $_POST['date_update'];
-else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
-else $value = date('d/m/Y');
-$form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $value, 20);
-echo $form->DisplayProperties();
-
 //Đệ qui lấy danh sách menu
 $level = 0;
 $style1 = '&nbsp;';
 $style2 = '&nbsp;---';
-$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND type_id=4 AND parent_id= ", " ORDER BY `order` ASC ");
+$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND type_id=3 AND parent_id= ", " ORDER BY `order` ASC ");
 $form->getProperties($level, $style1, 9, $style2, $str_query);
 $values = $form->DisplayProperties();
 //Menu_id hidden field 
@@ -114,14 +107,19 @@ echo $form->DisplayProperties();
 $form->getProperties('Danh mục', NULL, 41, 'list_check', $values, $checks, 'checkbox');//$values danh sách, $value checked
 echo $form->DisplayProperties();
 
+//sbd
+if(@$_POST['sbd']) $value = $_POST['sbd']; else $value = $detail['sbd'];
+$form->getProperties('Số báo danh', 'sbd', 1, 'input_medium', $value, 6);
+echo $form->DisplayProperties();
+
 //Mô tả name
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
-$form->getProperties('Mô tả', 'name', 1, 'input_medium', $value, 250);
+$form->getProperties('Tên TS', 'name', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
 
 //Mô tả viết lại name_rewrite
 if(@$_POST['name_rewrite']) $value = $_POST['name_rewrite']; else $value = $detail['name_rewrite'];
-$form->getProperties('Mô tả viết lại', 'name_rewrite', 1, 'input_medium', $value, 250);
+$form->getProperties('Tên TS không dấu', 'name_rewrite', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
 
 //Chọn file ảnh
@@ -133,57 +131,83 @@ if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_
 $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value, 150, $orther);
 echo $form->DisplayProperties();
 
-//description
-if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
-$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
+if($detail['url_hinh']!='') $image = '<p><img height="60" src="../../public/_thumbs/Images/thisinh/'.$detail['url_hinh'].'" alt="" /></p>';
+echo '<tr><td>&nbsp;</td><td>'.$image.'</td></tr>';
+
+//ngaysinh - date_update
+if(@$_POST['date_update']) $value = $_POST['date_update'];
+else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
+else $value = date('d/m/Y');
+$form->getProperties('Ngày sinh', 'date_update', 1, 'input_large select_date', $value, 20);
+echo $form->DisplayProperties();
+//diachi
+if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
+$form->getProperties('Địa chỉ', 'diachi', 1, 'input_medium', $value, 200);
 echo $form->DisplayProperties();
 
-//Nội dung content
-//$length = 2 <=> trộn 2 cột thành 1 cột (colspan='2')
-$orther = "
-<script>
-CKEDITOR.replace( 'content', {
-	uiColor: '#b5d8ef',
-	filebrowserBrowseUrl: 'ckeditor/ckfinder/ckfinder.php',
-	filebrowserImageBrowseUrl: 'ckeditor/ckfinder/ckfinder.php?Type=Images',
-	filebrowserFlashBrowseUrl: 'ckeditor/ckfinder/ckfinder.php?Type=Flash',
-	filebrowserUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-	filebrowserImageUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-	filebrowserFlashUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-	filebrowserWindowWidth: '900',
-	filebrowserWindowHeight: '600',
-	toolbar:
-	[
-	['Source','-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
-	['Undo','Redo','-','Find','Replace','-','RemoveFormat'],
-	['Link','Unlink','Iframe'],
-	['Maximize', 'ShowBlocks'],
-	['Image','Flash', 'Video', 'Table'],
-	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-	'/',
-	['Styles','Format','Font','FontSize'],
-	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-	['TextColor','BGColor','-','HorizontalRule','Smiley','SpecialChar','PageBreak']
-	]
-	});
-</script>
-";
-if(@$_POST['content']) $value = $_POST['content']; else $value = $detail['content'];
-$form->getProperties('Nội dung', 'content', 3, 'textarea', $value, 3, $orther);
+//chieucao
+if(@$_POST['chieucao']) $value = $_POST['chieucao']; else $value = $detail['chieucao'];
+$form->getProperties('Chiều cao', 'chieucao', 1, 'input_medium', $value, 4);
 echo $form->DisplayProperties();
+//cannang
+if(@$_POST['cannang']) $value = $_POST['cannang']; else $value = $detail['cannang'];
+$form->getProperties('Cân nặng', 'cannang', 1, 'input_medium', $value, 4);
+echo $form->DisplayProperties();
+//sodo
+if(@$_POST['sodo']) $value = $_POST['sodo']; else $value = $detail['sodo'];
+$form->getProperties('Số đo 3 vòng', 'sodo', 1, 'input_medium', $value, 10);
+echo $form->DisplayProperties();
+
+//trinhdo
+/*'<select name="trinhdo" class="input_large">
+	<option value="Chưa tốt nghiệp phổ thông">Chưa tốt nghiệp phổ thông</option>
+	<option value="Tốt nghiệp phổ thông">Tốt nghiệp phổ thông</option>
+	<option value="Trung cấp">Trung cấp</option>
+	<option value="Cao đẳng">Cao đẳng</option>
+	<option value="Đại học">Đại học</option>
+	<option value="Sau đại học">Sau đại học</option>
+</select>';*/
+
+//trinhdo
+$values = array();
+$values[] = array('id'=>1, 'name'=>'Chưa tốt nghiệp phổ thông');
+$values[] = array('id'=>2, 'name'=>'Tốt nghiệp phổ thông');
+$values[] = array('id'=>3, 'name'=>'Trung cấp');
+$values[] = array('id'=>4, 'name'=>'Cao đẳng');
+$values[] = array('id'=>5, 'name'=>'Đại học');
+$values[] = array('id'=>6, 'name'=>'Sau đại học');
+
+if(@$_POST['trinhdo']) $check = $_POST['trinhdo']; else $check = $detail['trinhdo'];
+$form->getProperties('Trình độ', 'trinhdo', 6, 'input_large', $values, $check);
+echo $form->DisplayProperties();
+
+
+//sothich
+if(@$_POST['sothich']) $value = $_POST['sothich']; else $value = $detail['sothich'];
+$form->getProperties('Sở thích', 'sothich', 1, 'input_medium', $value, 200);
+echo $form->DisplayProperties();
+
+//link_video
+if(@$_POST['link_video']) $value = $_POST['link_video']; else $value = $detail['link_video'];
+$form->getProperties('Mã link youtube', 'link_video', 1, 'input_medium', $value, 30);
+echo $form->DisplayProperties();
+
+//description
+/*if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
+echo $form->DisplayProperties();*/
 
 //Tags (keyword)    tags
 if(@$_POST['metaKeyword']) $value = $_POST['metaKeyword']; else $value = $detail['metaKeyword'];
 $form->getProperties('Tags (keyword)', 'metaKeyword', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
 //other
-$value = array(1 => 'Có', 0 => 'Không');
+/*$value = array(1 => 'Có', 0 => 'Không');
 if($_POST['other'] != '') $check = $_POST['other'];
 else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
@@ -191,10 +215,10 @@ echo "
 	<input type='button' name='btnCancel' value='Cancel' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"'>
 	</td>
 </tr>
-</table></form><br />";?>
+</table></form><br /><br />";
 
-<br /><br />
-<h2 style='color:blue'>Upload hình ảnh Bộ Sưu Tập</h2><br />
+if($id != 0){ ?>
+<h2 style='color:blue'>Upload hình ảnh Thí Sinh</h2><br />
 <table width="600" border="0" cellpadding="5" cellspacing="0">
 	<tr bgcolor="#0099FF">
     	<th align="left">Mô tả</th>
@@ -211,7 +235,7 @@ echo "
     </tr>
     <tbody id="ajax_image"></tbody>
     <?php
-    $qr = mysql_query("SELECT id,name,url_hinh_bst FROM bosuutap_images WHERE `delete`=0 AND status=1 AND id_bosuutap='{$id}' ORDER BY date_update DESC");
+    $qr = mysql_query("SELECT id,name,url_hinh_bst FROM thisinh_images WHERE `delete`=0 AND status=1 AND id_thisinh='{$id}' ORDER BY date_update DESC");
 	while($row = mysql_fetch_array($qr)){
 		echo '<tr id="ajax_id_'.$row['id'].'">
 			<td style="border-bottom:solid 1px #CCC">'.$row['name'].'</td>
@@ -223,3 +247,4 @@ echo "
 </table>
 
 <br /><br /><br /><br /><br />
+<?php }?>

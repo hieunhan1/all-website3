@@ -17,8 +17,6 @@ if($total > 0){
 		<div class="date_video">Ngày đăng '.date('d-m-Y H:i', strtotime($row['date_create'])).'</div>
 		<div class="img_video"><div><a href="'.$link.'"><img src="'.url_video_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div></div>
 		<div class="detail_video">'.$row['metaDescription'].'</div>
-		<div style="text-align:right"><span class="social"><a href="javascript:void();" style="color:#FF0" onclick="facebook_share(\''.$link.'\')">Share facebook</a></span>
-		<a href="'.$link.'" style="padding-left:30px; font-weight:bold; color:#FF0">Xem chi tiết</a></div>
 	</div>';
 	}
 	$phantrang = $tc->phantrang($danhmuc,$page,max_limit_4,'id',$table,$where);

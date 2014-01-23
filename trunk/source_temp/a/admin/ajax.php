@@ -51,12 +51,14 @@ if(@$_SESSION["id_admin"]) {
 	
 	if(@$_POST['upload_image_bst']){
 		$id_bst = trim($_POST['id_bst']);
+		$form_name = trim($_POST['upload_image_bst']);
 		$name = trim($_POST['name_bst']);
 		$url_hinh_bst = trim($_POST['url_hinh_bst']);
 		$date = date('Y-m-d H:i:s');
 		
-		if($id_bst!='' && $name!='' && $url_hinh_bst!=''){
-			$qr = "INSERT INTO  `bosuutap_images` VALUES (NULL,'{$id_bst}','{$name}','{$url_hinh_bst}','vi','1','{$date}','{$date}','".$_SESSION['user_admin']."',NULL,'0')";
+		if($id_bst!='' && $name!='' && $url_hinh_bst!='' && $form_name!=''){
+			if($form_name=='thisinh') $qr = "INSERT INTO  `thisinh_images` VALUES (NULL,'{$id_bst}','{$name}','{$url_hinh_bst}','vi','1','{$date}','{$date}','".$_SESSION['user_admin']."',NULL,'0')";
+			elseif($form_name=='bosuutap') $qr = "INSERT INTO  `bosuutap_images` VALUES (NULL,'{$id_bst}','{$name}','{$url_hinh_bst}','vi','1','{$date}','{$date}','".$_SESSION['user_admin']."',NULL,'0')";
 			mysql_query($qr);
 			echo '1';
 			return true;
@@ -65,10 +67,12 @@ if(@$_SESSION["id_admin"]) {
 	}
 	if(@$_POST['delete_image']){
 		$id = trim($_POST['id']);
+		$form_name = trim($_POST['delete_image']);
 		$date = date('Y-m-d H:i:s');
 		
-		if($id!=''){
-			$qr = "UPDATE `bosuutap_images` SET `delete`=1,date_update='{$date}',user_update='".$_SESSION['user_admin']."' WHERE `delete`=0 AND status=1 AND id='{$id}'";
+		if($id!='' && $form_name!=''){
+			if($form_name=='thisinh') $qr = "UPDATE `thisinh_images` SET `delete`=1,date_update='{$date}',user_update='".$_SESSION['user_admin']."' WHERE `delete`=0 AND status=1 AND id='{$id}'";
+			elseif($form_name=='bosuutap') $qr = "UPDATE `bosuutap_images` SET `delete`=1,date_update='{$date}',user_update='".$_SESSION['user_admin']."' WHERE `delete`=0 AND status=1 AND id='{$id}'";
 			mysql_query($qr);
 			echo '1';
 			return true;

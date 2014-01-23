@@ -29,8 +29,8 @@ while($row = mysql_fetch_array($qr)){
 	echo $row['name'];
 }*/
 
-$qr = "TRUNCATE TABLE  `bosuutap_images`";
-mysql_query($qr);
+/*$qr = "TRUNCATE TABLE  `bosuutap_images`";
+mysql_query($qr);*/
 
 /*
 $qr = "ALTER TABLE  `video` CHANGE  `description`  `metaDescription` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL";
@@ -86,3 +86,49 @@ $qr = "CREATE TABLE `bosuutap_images` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10";
 mysql_query($qr);*/
+
+$qr = "CREATE TABLE `thisinh` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `diachi` varchar(200) NOT NULL,
+  `metaDescription` text,
+  `metaKeyword` varchar(250) default NULL,
+  `sbd` int(5) NOT NULL,
+  `chieucao` varchar(4) NOT NULL,
+  `cannang` varchar(4) NOT NULL,
+  `sodo` varchar(10) NOT NULL,
+  `trinhdo` varchar(50) NOT NULL,
+  `sothich` varchar(200) NOT NULL,
+  `link_video` varchar(30) NOT NULL,
+  `other` tinyint(1) default '0',
+  `lang` varchar(3) default 'vi',
+  `menu_id` varchar(30) NOT NULL,
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`),
+  UNIQUE KEY `sbd` (`sbd`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5";
+mysql_query($qr);
+
+$qr = "CREATE TABLE `thisinh_images` (
+  `id` int(11) NOT NULL auto_increment,
+  `id_thisinh` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `url_hinh_bst` varchar(150) NOT NULL,
+  `lang` varchar(2) default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8";
+mysql_query($qr);

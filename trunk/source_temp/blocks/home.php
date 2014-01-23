@@ -2,7 +2,7 @@
 	<?php
 	$str_nb = '';
 	
-    $qr = $tc->info_noibat();
+    $qr = $tc->info_noibat($lang);
 	$i = 0;
 	while($row = mysql_fetch_array($qr)){
 		$i++;
@@ -19,7 +19,7 @@
     
     <div id="box_new_video">
     	<?php
-        $qr = $tc->video_home();
+        $qr = $tc->video_home($lang);
 		$i = 0;
 		while($row = mysql_fetch_array($qr)){
 			$i++;
@@ -37,7 +37,7 @@
     <div class="home_bts_title">Bộ sưu tập</div>
     <?php
 	$i = 0;
-    $qr = $tc->home_bosuutap();
+    $qr = $tc->home_bosuutap($lang);
 	while($row = mysql_fetch_array($qr)){
 		$i++;
 		if($i!=1) $style = 'style="margin-left:8px"'; else $style = '';
@@ -47,46 +47,14 @@
 </div>
 <div id="home_thisinh">
     <div class="home_thisinh_title">Thí sinh dự thi được bình chọn nhiều nhất</div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
-    <div class="home_thisinh_item">
-        <a href=""><div class="img"><img src="public/_thumbs/Images/thisinh/thisinh-1.jpg" alt="" /></div><h5>Phan Thị Lý</h5></a>
-        SBD: 679<br />
-        41524 bình chọn
-    </div>
+    <?php
+    $qr = $tc->home_thisinh($lang);
+	while($row = mysql_fetch_array($qr)){
+		echo '<div class="home_thisinh_item">
+			<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img"><img src="'.url_thisinh_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h5>'.$row['name'].'</h5></a>
+			SBD: 679<br />123 bình chọn</div>';
+	}
+	?>
     <div style="clear:both; height:30px"></div>
 </div>
 
