@@ -162,7 +162,7 @@ if(@$_GET['danhmuc']){
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/youtube.gif" alt="" />Youtube</a></p>
                 </td>
             	<td valign="top" style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
-            	<td valign="top" align="right" style="width:250px"><?php echo $row_config['copyright']; ?></td>
+            	<td valign="top" align="right" style="width:250px"><?php echo $row_config['copyright']; ?><embed src="public/musics.mp3" autostart="true" loop="true" hidden="true" volume="60"></embed></td>
             </tr>
         </table><br />
     </div>
