@@ -16,8 +16,7 @@ if($total > 1){
             <div class="info">'.strip_tags($row['metaDescription']).'</div>
         </div>';
 	}
-	$url_page = $danhmuc.'/';
-	$phantrang = $tc->phantrang($url_page,$page,max_limit_1,'id',$table,$where);
+	$phantrang = $tc->phantrang($danhmuc,$page,max_limit_1,'id',$table,$where);
 	$view_post .= '<div id="phantrang">'.$phantrang.'</div>';
 }elseif($total==1){
 	$row = mysql_fetch_array($list);

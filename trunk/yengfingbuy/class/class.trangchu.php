@@ -150,6 +150,12 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	
+	/*tuyendung*/
+	function tuyendung_detail($alias){
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,soluong_tuyen,noilamviec,date_update FROM tuyendung WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	
 	/*other*/
 	function datetime($datetime){
 		$date = date("d F Y",strtotime($datetime));

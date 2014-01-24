@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 22, 2014 at 02:00 PM
+-- Generation Time: Jan 24, 2014 at 05:05 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -225,7 +225,7 @@ INSERT INTO `menu` VALUES (4, 'Văn hóa doanh nghiệp', 'van-hoa-doanh-nghiep'
 INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,3,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 17:38:39', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,3,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 09:39:41', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (7, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,3,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 09:41:12', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (8, 'Tuyển dụng', 'tuyen-dung', 'tuyen-dung/', '', 'Tuyển dụng', 'Tuyển dụng', 'Tuyển dụng', 0, 4, ',1,3,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 09:41:49', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (8, 'Tuyển dụng', 'tuyen-dung', 'tuyen-dung/', '', 'Tuyển dụng', 'Tuyển dụng', 'Tuyển dụng', 0, 4, ',1,3,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 16:25:07', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (10, 'Nhung đế vải không dệt', 'nhung-de-vai-khong-det', 'nhung-de-vai-khong-det/', '', 'Nhung đế vải không dệt', 'Nhung đế vải không dệt', 'Nhung đế vải không dệt', 6, 3, ',6,', 'vi', 0, 3, 1, '2014-01-15 23:19:16', '2014-01-15 09:46:08', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (9, 'Nhung đế bông vải', 'nhung-de-bong-vai', 'nhung-de-bong-vai/', '', 'Nhung đế bông vải', 'Nhung đế bông vải', 'Nhung đế bông vải', 6, 3, ',6,', 'vi', 0, 2, 1, '2013-10-09 15:40:52', '2013-10-09 09:45:22', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (11, 'Thông tin liên hệ', 'thong-tin-lien-he', 'thong-tin-lien-he/', '', 'Thông tin liên hệ', 'Thông tin liên hệ', 'Thông tin liên hệ', 0, 8, ',1,3,', 'vi', 0, 8, 1, '2014-01-15 23:19:34', '2014-01-15 09:42:43', 'admin', 'admin', 0);
@@ -456,6 +456,43 @@ CREATE TABLE `slider_banner_position` (
 
 INSERT INTO `slider_banner_position` VALUES (1, 'Slider 740x255 px', 0);
 INSERT INTO `slider_banner_position` VALUES (2, 'Partner 160 x 95 px', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tuyendung`
+-- 
+
+CREATE TABLE `tuyendung` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `metaDescription` text,
+  `content` text,
+  `metaKeyword` varchar(250) default NULL,
+  `soluong_tuyen` int(3) NOT NULL,
+  `noilamviec` varchar(50) NOT NULL,
+  `other` tinyint(1) default '0',
+  `lang` varchar(3) default NULL,
+  `menu_id` varchar(30) NOT NULL,
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Dumping data for table `tuyendung`
+-- 
+
+INSERT INTO `tuyendung` VALUES (1, 'Giám đốc nhân sự', 'giam-doc-nhan-su', '', 'Tuyển Giám đốc nhân sự', '<p>Tuyển Giám đốc nhân sự</p>\r\n', 'Giám đốc nhân sự', 1, 'Hồ Chí Minh', 0, 'vi', ',8,', 1, '2014-01-24 16:23:05', '2014-02-20 16:23:05', 'admin', NULL, 0);
+INSERT INTO `tuyendung` VALUES (2, 'Nhân sự văn phòng', 'nhan-su-van-phong', '', 'Tuyển Nhân sự văn phòng', '<p>Nhân sự văn phòng</p>\r\n', 'Nhân sự văn phòng', 4, 'Hồ Chí Minh', 0, 'vi', ',8,', 1, '2014-01-24 16:23:28', '2014-02-20 16:23:28', 'admin', NULL, 0);
+INSERT INTO `tuyendung` VALUES (3, 'Kế toán trưởng', 'ke-toan-truong', '', 'Kế toán trưởng', '<p>Kế toán trưởng</p>\r\n', 'Kế toán trưởng', 1, 'Hồ Chí Minh', 0, 'vi', ',8,', 1, '2014-01-24 16:23:50', '2014-02-20 16:23:50', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
