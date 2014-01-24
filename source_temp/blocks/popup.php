@@ -21,4 +21,7 @@ $(document).ready(function() {
 		disablePopup();
 	});
 	setTimeout(function(){ disablePopup(); }, 10000);
+	$("#backgroundPopup").click(function() { 
+        disablePopup(); 
+    });
 });</script>
