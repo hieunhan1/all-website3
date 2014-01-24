@@ -1,6 +1,7 @@
 <?php
 $view_menu = '<div id="menu"><ul id="nav"><li><a href="http://'.$domain.'">Trang chủ</a></li>';
 $menu = $tc->menu($menu_root);
+if(mysql_num_rows($menu) == 0) $menu = $tc->menu(0,1);
 while($row = mysql_fetch_array($menu)){
 	if($row_menu_one['id'] != $row['id']){
 		$view_menu .= '<li><a href="'.$row['url'].'"  title="'.$row['title'].'">'.$row['name'].'</a>';
