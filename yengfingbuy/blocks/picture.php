@@ -10,7 +10,7 @@ $total = mysql_num_rows($list);
 $i = 0;
 while($row = mysql_fetch_array($list)){
 	$i++;
-	if($i%5 != 1) $style = 'style="margin-left:32px"'; else $style = '';
+	if($i%5 != 1) $style = 'style="margin-left:32px; height:180px"'; else $style = 'style="height:180px"';
 	$str_image .= '<div class="item_sp" '.$style.'>
 		<a class="fancybox" href="'.url_products_image.$row['url_hinh'].'" data-fancybox-group="gallery" title="'.$row['name'].'">
 			<div class="img"><img src="'.url_products_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h3>'.$row['name'].'</h3>
