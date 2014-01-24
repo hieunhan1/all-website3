@@ -91,18 +91,11 @@ if(mysql_num_rows($qr) > 1){
 	echo $form->DisplayProperties();
 }
 
-//Ngày date_update
-if(@$_POST['date_update']) $value = $_POST['date_update'];
-else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
-else $value = date('d/m/Y');
-$form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $value, 20);
-echo $form->DisplayProperties();
-
 //Đệ qui lấy danh sách menu
 $level = 0;
 $style1 = '&nbsp;';
 $style2 = '&nbsp;---';
-$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND (type_id=1 OR type_id=2) AND parent_id= ", " ORDER BY `order` ASC ");
+$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='".$_SESSION['language']."' AND type_id=4 AND parent_id= ", " ORDER BY `order` ASC ");
 $form->getProperties($level, $style1, 9, $style2, $str_query);
 $values = $form->DisplayProperties();
 //Menu_id hidden field 
@@ -131,6 +124,23 @@ $orther = $form->DisplayProperties();
 //Ảnh đại diện url_hinh
 if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_hinh'];
 $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value, 150, $orther);
+echo $form->DisplayProperties();
+
+//date_update
+if(@$_POST['date_update']) $value = $_POST['date_update'];
+else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
+else $value = date('d/m/Y');
+$form->getProperties('Hạn nộp hồ sơ', 'date_update', 1, 'input_large select_date', $value, 20);
+echo $form->DisplayProperties();
+
+//soluong_tuyen
+if(@$_POST['soluong_tuyen']) $value = $_POST['soluong_tuyen']; else $value = $detail['soluong_tuyen'];
+$form->getProperties('Số lượng tuyển', 'soluong_tuyen', 1, 'input_medium', $value, 3);
+echo $form->DisplayProperties();
+
+//noilamviec
+if(@$_POST['noilamviec']) $value = $_POST['noilamviec']; else $value = $detail['noilamviec'];
+$form->getProperties('Nơi làm việc', 'noilamviec', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 
 //description
@@ -177,13 +187,7 @@ echo $form->DisplayProperties();
 if(@$_POST['metaKeyword']) $value = $_POST['metaKeyword']; else $value = $detail['metaKeyword'];
 $form->getProperties('Tags (keyword)', 'metaKeyword', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
-//other
-$value = array(1 => 'Có', 0 => 'Không');
-if($_POST['other'] != '') $check = $_POST['other'];
-else if($detail['other'] != '') $check = $detail['other'];
-else $check = 0; //giá trị mặc định
-$form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
-echo $form->DisplayProperties();
+
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 

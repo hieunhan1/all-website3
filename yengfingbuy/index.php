@@ -43,7 +43,7 @@ if(@$_GET['danhmuc']){
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
 			case 3 : include_once('blocks/picture.php'); break;
-			case 6 : include_once('blocks/tuyendung.php'); break;
+			case 4 : include_once('blocks/tuyendung_list.php'); break;
 			case 8 : include_once('blocks/contact.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
@@ -54,6 +54,7 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
+			case 4 : $qr = $tc->tuyendung_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_tuyendung_image; include_once('blocks/tuyendung.php'); break;
 			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
 			/*
 			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;

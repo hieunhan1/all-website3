@@ -70,6 +70,9 @@ hr{height:1px; background-color:#FFC184; border:none; margin-bottom:30px}
 .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
 .viewpost  .date{color:#888; font-style:italic; text-align:right}
 
+#tuyendung{clear:both; border-top:solid 1px #FFF; border-right:solid 1px #FFF}
+#tuyendung td, #tuyendung th{padding:10px; border-bottom:solid 1px #FFF; border-left:solid 1px #FFF}
+
 #contact{clear:both}
 #contact #info{line-height:22px}
 #contact #info h2{font-size:150%; padding:10px 0; margin:0}
