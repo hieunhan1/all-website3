@@ -1,6 +1,6 @@
 <?
-define('const_home_product', 'Sản phẩm tiêu biểu');
-define('const_home_danhmuc_sp', 'Catalog');
+define('const_home_product', 'Special exhibitions');
+define('const_home_danhmuc_sp', 'Products');
 
 define('const_date_update', 'Update ');
 define('const_txt_search', 'enter keywords..');
