@@ -145,7 +145,7 @@ if(@$_GET['danhmuc']){
     </div>
 	<?php
 		echo '<div id="foo_col_1">'.$row_config['contact_foo'].'</div>';
-		echo '<div id="foo_col_2"><div class="social">Kết nối với chúng tôi: ';
+		echo '<div id="foo_col_2"><div class="social">';
 		$qr = $tc->menu(0,5);
 		while($row = mysql_fetch_array($qr)){
 			echo '<a href="'.$row['url'].'" target="_blank"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';

@@ -60,8 +60,8 @@ hr{height:1px; background-color:#FFC184; border:none; margin-bottom:30px}
 #footer{clear:both; background:url(images/bg-footer.gif) repeat-x top}
 #footer #menu_foo{line-height:36px; height:36px; text-align:right}
 #footer #menu_foo a{color:#000; padding:0 5px}
-#footer #foo_col_1{width:500px; float:left; line-height:25px; margin:10px 0}
-#footer #foo_col_2{width:400px; float:right; margin-top:20px}
+#footer #foo_col_1{width:600px; float:left; line-height:25px; margin:10px 0}
+#footer #foo_col_2{width:320px; float:right; margin-top:20px}
 
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
