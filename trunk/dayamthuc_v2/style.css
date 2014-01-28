@@ -4,28 +4,13 @@ Vang:	FEE356
 Do:		E68688
 */
 *{margin:0; padding:0}
-body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background:url(images/bg.jpg) fixed #422E22}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333}
 img{border:0}
 a:link,a:visited,a:active{color:#0055A5; text-decoration:none}
 a:hover{color:#ED1E28; text-decoration:underline}
 hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
 #wrapper{width:970px; margin:auto}
-
-#menu_top{clear:both; width:auto; float:right; padding-top:12px}
-#menu_top a{color:#b1b1b1; margin-left:30px}
-
-#header{clear:both; height:165px}
-#header #logo{width:auto; float:left}
-#header #slogan{width:auto; float:right}
-
-.box_home{width:300px; height:580px; float:left; border:solid 1px #000; background:url(images/bg-home.jpg)}
-.box_home .box_home_img{height:355px; overflow:hidden}
-.box_home .box_home_img img{height:355px}
-.box_home h2{font-size:135%; text-transform:uppercase; margin:30px 10px 5px 10px}
-.box_home p{color:#999; line-height:22px; height:88px; overflow:hidden; margin:0 10px}
-.box_home .view_more{width:120px; height:30px; line-height:30px; font-weight:bold; text-align:center; margin:20px auto}
-.box_home a{color:#333}
 
 #footer{}
 
