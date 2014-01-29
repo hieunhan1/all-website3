@@ -1,16 +1,19 @@
 <?php
-$slider = $tc->slider_banner(4);
-echo '<div id="divAdRight" style="display:none; position:absolute; top:0px; z-index:1">';
-while($row_slider = mysql_fetch_array($slider)){
-	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" style="display:block; margin-bottom:5px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
-}
+$slider1 = $tc->slider_banner(4);
+$slider2 = $tc->slider_banner(3);
 
-echo '</div><div id="divAdLeft" style="display:none; position:absolute; top:0px; z-index:1">';
-$slider = $tc->slider_banner(3);
-while($row_slider = mysql_fetch_array($slider)){
-	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" style="display:block; margin-bottom:5px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
-}
-echo '</div> ';
+if(mysql_num_rows($slider1)!=0 && mysql_num_rows($slider2)!=0){
+	echo '<div id="divAdRight" style="display:none; position:absolute; top:0px; z-index:1">';
+	while($row_slider = mysql_fetch_array($slider1)){
+		echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" style="display:block; margin-bottom:5px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
+	}
+	
+	echo '</div><div id="divAdLeft" style="display:none; position:absolute; top:0px; z-index:1">';
+	
+	while($row_slider = mysql_fetch_array($slider2)){
+		echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" style="display:block; margin-bottom:5px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
+	}
+	echo '</div> ';
 ?>
 <script> 
     function FloatTopDiv() 
@@ -72,3 +75,4 @@ echo '</div> ';
 <script> 
 document.write("<script type='text/javascript' language='javascript'>MainContentW = 1002;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 30;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>"); 
 </script>
+<?php } ?>
