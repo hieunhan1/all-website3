@@ -170,8 +170,16 @@ if(@$_GET['danhmuc']){
     <div id="formdangky"><a href="public/Ban_DK_Du_Thi_Hoa_Hau_Dai_Duong_VN_2014.docx"><img src="images/download.png" alt="" />Tải form đăng ký Hoa Hậu Đại Dương</a></div>
 </div>
 
-<?php
-mysql_close();
-?>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47572922-1', 'hoahaudaiduongvietnam.com');
+  ga('send', 'pageview');
+</script>
+
+<?php mysql_close();?>
 </body>
 </html>
