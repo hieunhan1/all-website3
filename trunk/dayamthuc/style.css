@@ -288,26 +288,30 @@ h2 {
 }
 #wrapper #right .boxright .item {
 	width:260px;
-	height:150px;
-    line-height: 22px;
+    line-height: 20px;
     margin-bottom:3px;
-	background:url(images/video2.gif) bottom;
 }
 #wrapper #right .boxright .item h5 {
     font-size: 13px;
 }
-
+#wrapper #right .boxright .item a{
+	display:block;
+	width:260px;
+	height:150px;
+	overflow:hidden;
+	background:url(images/video2.gif) bottom no-repeat;
+}
 #wrapper #right .boxright .h3{clear:both; font-size:100%; font-weight:100; margin-bottom:10px}
 #wrapper #right .boxright .item .img_video {
-    width:248px;
-	height:129px;
+    width:260px;
+	height:135px;
 	overflow:hidden;
+}
+#wrapper #right .boxright .item .img_video img{
+    width:248px;
 	margin:6px 6px 20px 6px;
 }
-#wrapper #right .boxright .item .img_video img {
-    width:248px;
-	margin-top:6px;
-}
+
 #toppage {
     float: right;
     margin-top: 19px;
