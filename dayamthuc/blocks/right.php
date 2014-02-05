@@ -4,7 +4,12 @@
 	$data="";
 	while($row = mysql_fetch_array($qr))
 	{
-		echo '<div class="item"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'"><div class="img_video"><img src="'.url_video_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div></a></div>';
+		echo '<div class="item">
+			<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'">
+				<div class="img_video"><img src="'.url_video_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+			</a>
+			<h5>'.$row['name'].'</h5>
+		</div>';
 	}
 	?>
 </div>
@@ -31,7 +36,7 @@
 <?php
 $banner = $tc->slider_banner(2);
 while($row_banner = mysql_fetch_array($banner)){
-	echo '<div class="boxright"><a href="'.$row_banner['link'].'" title="'.$row_banner['name'].'"><img style="margin:5px 0" src="'.url_slider_image.$row_banner['url_hinh'].'" alt="'.$row_banner['name'].'" /></a></div>';
+	echo '<div class="boxright"><a href="'.$row_banner['link'].'" title="'.$row_banner['name'].'"><img style="margin:5px 0" src="'.url_slider_image.$row_banner['url_hinh'].'" alt="'.$row_banner['name'].'" /></</div>';
 }
 ?>
 
