@@ -88,14 +88,49 @@ if(@$_GET['danhmuc']){
 <head>
 <?php echo $seo; ?>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="library/jquery.min.js"></script>
-<script type="text/javascript" src="website.js"></script>
 </head>
 
 <body>
 <div id="wrapper">
-	
+    <div id="logo">
+        <div class="aleoflash-swf" style="display:block;"><embed src="images/logo.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="320" height="80" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed></div>
+        <script language="JavaScript">var hasFlash=false;if(window.ActiveXObject){ try { if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) hasFlash=true;} catch(e){}} else { if(navigator.plugins["Shockwave Flash"]){hasFlash=true;}}var elems=document.getElementsByTagName("div"); for(var i in elems){if(!hasFlash && elems[i].className=="aleoflash-gif") elems[i].style.display="block"; else if ((!hasFlash && elems[i].className=="aleoflash-swf") || elems[i].className=="aleoflash") elems[i].style.display="none";}</script>
+    </div>
+    <?php include_once('blocks/menu.php'); ?>
+	<div id="slider"><img src="upload/images/slider_banner/slider.jpg" alt=""  /></div>
+
+	<script type="text/javascript" src="library/realshadow.js"></script>
+    <div class="linkwebsite">
+        <div class="link_item" style="background:url('images/day.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0)">	
+            <h2 class="realshadow block round cr" rel="r" >DẠY ẨM THỰC</h2>
+            <p class="realshadow block round cr" rel="r">Đào Tạo Nấu Ăn Và Pha Chế Chuyên Nghiệp</p>
+            <a href="http://www.dayamthuc.vn" target="_blank" style="color:#000">www.dayamthuc.vn</a>
+        </div>
+        <div class="link_item" style="background:url('images/cook.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0)">	
+            <h2 class="realshadow block round cr" rel="r">COOKING CLASS</h2>
+            <p class="realshadow block round cr" rel="r">Mang Ẩm Thực Việt Nam Ra Thế Giới</p>
+            <a href="http://www.cookingclass.com.vn" target="_blank" style="color:#000">www.cookingclass.com.vn</a>
+        </div>
+        <div class="link_item" style="background:url('images/tu van.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0)">	
+            <h2 class="realshadow block round cr" rel="r">TƯ VẤN, SETUP</h2>
+            <p class="realshadow block round cr" rel="r">Chuyên Nghiệp - Đẳng Cấp</p>
+        </div>
+         <script type="text/javascript">
+            (function(){
+                realshadow(document.getElementsByClassName('realshadow'));				
+            })();
+        </script>
+    </div>
+    
+    <div id=""></div>
+
+	<?php echo $include; ?>
 </div>
 <?php mysql_close();?>
+
+
+<script type="text/javascript" src="library/jquery.min.js"></script>
+<script type="text/javascript" src="website.js"></script>
+<script type="text/javascript" src="library/jquery.corner.js"></script>
 </body>
 </html>
