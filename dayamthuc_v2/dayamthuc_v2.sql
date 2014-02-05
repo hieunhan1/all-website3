@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 28, 2014 at 10:57 AM
+-- Generation Time: Feb 05, 2014 at 05:02 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -907,8 +907,8 @@ CREATE TABLE `menu` (
 -- Dumping data for table `menu`
 -- 
 
-INSERT INTO `menu` VALUES (1, 'Trang chủ', 'truong-day-nau-an-mo-quan-an-hoc-nau-an-hoc-pha-che-day-pha-che-day-am-thuc', '/', '', '2012-12-01 00:00:00', '2012-12-01 10:21:53', 0, 1, 1, 'Trường dạy nấu ăn - mở quán ăn - học nấu ăn - Học pha chế - Dạy pha chế - Dạy ẩm thực', 'Trường dạy ẩm thực - Trường dạy nấu ăn - Trường học nấu ăn - đào tạo mở quán ăn hàng đầu - Học pha chế - Dạy pha chế', 'Trường dạy nấu ăn,học nấu ăn,dạy ẩm thực,đào tạo mở quán ăn,học bếp chính,bếp trưởng,học pha chế,dạy pha chế', 0, 'vi', 1, ',2,', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (2, 'Giới thiệu', 'Gioi-Thieu', 'danh-muc/Gioi-Thieu-2-1.html', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 31, 2, 0, 'Giới thiệu', '', 'Gioi Thieu', 0, 'vi', 2, ',1,', 'admin', '', 0);
+INSERT INTO `menu` VALUES (1, 'Trang chủ', 'truong-day-nau-an-mo-quan-an-hoc-nau-an-hoc-pha-che-day-pha-che-day-am-thuc', '', '', '2012-12-01 00:00:00', '2012-12-01 15:38:52', 0, 1, 1, 'Trường dạy nấu ăn - mở quán ăn - học nấu ăn - Học pha chế - Dạy pha chế - Dạy ẩm thực', 'Trường dạy ẩm thực - Trường dạy nấu ăn - Trường học nấu ăn - đào tạo mở quán ăn hàng đầu - Học pha chế - Dạy pha chế', 'Trường dạy nấu ăn,học nấu ăn,dạy ẩm thực,đào tạo mở quán ăn,học bếp chính,bếp trưởng,học pha chế,dạy pha chế', 0, 'vi', 1, ',2,', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (2, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', '0000-00-00 00:00:00', '1970-01-01 15:10:19', 0, 2, 1, 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 'vi', 2, ',2,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (7, 'Liên hệ', 'Lien-He', 'Lien-He/', '', '0000-00-00 00:00:00', '1970-01-01 10:20:38', 0, 8, 1, 'Liên hệ trường dạy học nấu ăn NETSPACE', 'Liên hệ', 'Liên hệ trường dạy học nấu ăn NETSPACE,day hoc nau an', 0, 'vi', 7, ',2,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (3, 'Chương trình đào tạo', 'Chuong-Trinh-Dao-Tao', 'danh-muc/Chuong-Trinh-Dao-Tao-3-1.html', 'icon-cooking-class.png', '0000-00-00 00:00:00', '1970-01-01 10:18:28', 0, 3, 1, 'Chương trình đào tạo dạy học nấu ăn', 'Chương trình đào tạo dạy nấu ăn của trường dạy nghề ẩm thực NETSPACE, chương trình nấu ăn hàng đầu hiện nay.', 'Chương trình đào tạo dạy học nấu ăn,day hoc nau an', 0, 'vi', 3, ',2,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (5, 'Thư viện hình ảnh', 'thu-vien-hinh-anh', 'Thu-Vien-Hinh-Anh/', '', '0000-00-00 00:00:00', '1970-01-01 00:22:36', 45, 1, 1, 'Thư viện hình ảnh', 'Thư viện hình ảnh', 'Thư viện hình ảnh', 0, 'vi', 4, ',', 'admin', '', 0);
@@ -931,8 +931,8 @@ INSERT INTO `menu` VALUES (24, 'Các khóa đào tạo món ăn truyền thống
 INSERT INTO `menu` VALUES (25, 'Hội đầu bếp CN Sài Gòn', 'hoi-dau-bep-cn-sai-gon', 'hoi-dau-bep-cn-sai-gon/', 'hoi-dau-bep-cn-sai-gon.jpg', '2012-12-20 20:55:00', '2012-12-20 09:47:30', 5, 6, 1, 'Hội đầu bếp chuyên nghiệp Sài Gòn', 'Hội đầu bếp chuyên nghiệp Sài Gòn (SPC) trực thuộc HIỆP HỘI DU LỊCH TP.HCM. Là 1 tổ chức đoàn thể xã hội của giới đầu bếp chuyên nghiệp.', 'Hội đầu bếp chuyên nghiệp Sài Gòn', 0, 'vi', 5, ',1,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (26, 'Dạy cắt tỉa', 'Day-Cat-Tia', 'danh-muc/Day-Cat-Tia-26-1.html', '', '2012-12-20 20:55:00', '2012-12-20 08:51:41', 31, 16, 0, 'Dạy cắt tỉa', '', 'Day Cat Tia,Dạy cắt tỉa', 0, 'vi', 2, ',1,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (28, 'Đội ngũ giảng viên', 'Doi-Ngu-Giang-Vien', 'danh-muc/Doi-Ngu-Giang-Vien-28-1.html', '', '2012-12-20 20:56:00', '2012-12-20 20:56:00', 2, 0, 0, 'Đội ngũ giảng viên', '', 'Doi Ngu Giang Vien', 0, 'vi', 2, ',1,', 'admin', '', 0);
-INSERT INTO `menu` VALUES (29, 'Giảng viên', 'giang-vien', 'giang-vien/', '', '2012-12-20 20:57:00', '2012-12-20 10:21:14', 0, 2, 1, 'Giảng viên trường dạy nghề ẩm thực NETSPACE', 'Giảng viên trường dạy nghề ẩm thực NETSPACE có nhiều kinh nghiệm và đang hoạt động tại các khách sạn, nhà hàng lớn', 'Giảng viên trường dạy nghề ẩm thực NETSPACE', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (30, 'Dịch vụ', 'Dich-Vu', 'danh-muc/Dich-Vu-30-1.html', '', '2012-12-20 20:57:00', '2012-12-20 10:19:17', 0, 4, 1, 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng', 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng của trường dạy nghề ẩm thực NETSPACE', 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (29, 'Giảng viên', 'giang-vien', 'giang-vien/', '', '2012-12-20 20:57:00', '2012-12-20 15:39:45', 2, 2, 1, 'Giảng viên trường dạy nghề ẩm thực NETSPACE', 'Giảng viên trường dạy nghề ẩm thực NETSPACE có nhiều kinh nghiệm và đang hoạt động tại các khách sạn, nhà hàng lớn', 'Giảng viên trường dạy nghề ẩm thực NETSPACE', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (30, 'Dịch vụ', 'Dich-Vu', 'danh-muc/Dich-Vu-30-1.html', '', '2012-12-20 20:57:00', '2012-12-20 10:19:17', 0, 4, 0, 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng', 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng của trường dạy nghề ẩm thực NETSPACE', 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng', 0, 'vi', 2, ',2,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (31, 'Temp', 'Temp', 'danh-muc/Temp-31-1.html', '', '2012-12-20 20:57:00', '2012-12-20 20:57:00', 0, 102, 0, 'Temp', '', 'Temp', 0, 'vi', 2, ',1,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (32, 'Các khóa đào tạo làm Chủ', 'Cac-Khoa-Dao-Tao-Lam-Chu', 'danh-muc/Cac-Khoa-Dao-Tao-Lam-Chu-32-1.html', '', '2012-12-20 20:58:00', '2012-12-20 20:58:00', 3, -2, 1, 'Các khóa đào tạo làm Chủ', 'Các khóa đào tạo làm Chủ của trường dạy nấu ăn NETSPACE như mở quán ăn, mở quán nước, mở nhà hàng', 'Các khóa đào tạo làm Chủ,Cac Khoa Dao Tao Lam Chu', 0, 'vi', 2, ',5,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (33, 'Dạy nấu ăn online', 'day-nau-an-online', 'http://www.cungnauan.vn/', 'day-nau-an-online_small.jpg', '2012-12-20 20:58:00', '2012-12-20 00:10:30', 46, 3, 1, 'Dạy nấu ăn online', 'Dạy nấu ăn online', 'Dạy nấu ăn online', 0, 'vi', 6, ',1,', 'admin', 'admin', 0);
@@ -946,7 +946,7 @@ INSERT INTO `menu` VALUES (40, 'Các khóa đào tạo Quốc tế', 'Cac-Khoa-D
 INSERT INTO `menu` VALUES (41, 'Tiếng Anh dành cho Đầu Bếp', 'Tieng-Anh-Danh-Cho-Dau-Bep', 'danh-muc/Tieng-Anh-Danh-Cho-Dau-Bep-41-1.html', '', '2012-12-20 21:00:00', '2012-12-20 08:51:08', 31, 8, 0, 'Tiếng Anh dành cho Đầu Bếp', '', 'Tieng Anh, Danh Cho, Dau Bep', 0, 'vi', 2, ',1,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (42, 'Chuyên viên pha chế chuyên nghiệp', 'Chuyen-Vien-Pha-Che-Chuyen-Nghiep', 'danh-muc/Chuyen-Vien-Pha-Che-Chuyen-Nghiep-42-1.html', '', '2012-12-20 21:00:00', '2012-12-20 08:51:03', 31, 7, 0, 'Chuyên viên pha chế chuyên nghiệp', '', 'Chuyen Vien Pha Che Chuyen Nghiep', 0, 'vi', 2, ',1,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (43, 'Bếp chính bếp Âu Nhà hàng', 'Bep-Chinh-Bep-Au-Nha-Hang', 'danh-muc/Bep-Chinh-Bep-Au-Nha-Hang-43-1.html', '', '2012-12-20 21:00:00', '2012-12-20 08:42:14', 31, 2, 0, 'Bếp chính bếp Âu Nhà hàng', '', 'Bep Chinh Bep Au Nha Hang', 0, 'vi', 2, ',1,', 'admin', '', 0);
-INSERT INTO `menu` VALUES (44, 'Đối tác', 'Doi-Tac', 'danh-muc/Doi-Tac-44-1.html', '', '2012-12-24 16:41:00', '2012-12-24 10:17:30', 0, 1, 1, 'Đối tác trường dạy nghề ẩm thực NETSPACE', 'Đối tác trường dạy nghề ẩm thực NETSPACE: Hội đầu bếp chuyên nghiệp Sài Gòn, và Evolution Hospitality Institute.', 'Đối tác trường dạy nghề ẩm thực NETSPACE', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (44, 'Đối tác', 'Doi-Tac', 'danh-muc/Doi-Tac-44-1.html', '', '2012-12-24 16:41:00', '2012-12-24 15:39:38', 2, 1, 1, 'Đối tác trường dạy nghề ẩm thực NETSPACE', 'Đối tác trường dạy nghề ẩm thực NETSPACE: Hội đầu bếp chuyên nghiệp Sài Gòn, và Evolution Hospitality Institute.', 'Đối tác trường dạy nghề ẩm thực NETSPACE', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (45, 'Thư viện', 'thu-vien', 'thu-vien/', '', '2012-12-25 09:39:00', '2012-12-25 10:20:07', 0, 5, 1, 'Thư viện trường dạy học nấu ăn NETSPACE', 'Thư viện', 'Thư viện trường dạy học nấu ăn NETSPACE,day hoc nau an', 0, 'vi', 4, ',2,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (46, 'Thư viện phim', 'thu-vien-phim', 'thu-vien-phim/', '', '2012-12-25 09:52:00', '2012-12-25 00:06:45', 45, 2, 1, 'Thư viện phim', 'Thư viện phim', 'Thư viện phim', 0, 'vi', 4, ',', 'admin', '', 0);
 INSERT INTO `menu` VALUES (47, 'Món Hoa', 'mon-hoa', 'mon-hoa/', 'cac-mon-an-phan-1.jpg', '2012-12-25 10:34:00', '2012-12-25 09:02:16', 61, 1, 1, 'Món Hoa', 'Món Hoa', 'Món Hoa', 0, 'vi', 5, ',1,', 'admin', '', 0);
@@ -1212,9 +1212,9 @@ CREATE TABLE `menu_position` (
 
 INSERT INTO `menu_position` VALUES (1, 'Top', 1);
 INSERT INTO `menu_position` VALUES (2, 'Main', 0);
-INSERT INTO `menu_position` VALUES (3, 'Left', 0);
-INSERT INTO `menu_position` VALUES (4, 'Right', 1);
-INSERT INTO `menu_position` VALUES (5, 'Bottom', 1);
+INSERT INTO `menu_position` VALUES (3, 'Right', 1);
+INSERT INTO `menu_position` VALUES (4, 'Left', 0);
+INSERT INTO `menu_position` VALUES (5, 'Bottom', 0);
 INSERT INTO `menu_position` VALUES (6, 'Không', 0);
 
 -- --------------------------------------------------------
