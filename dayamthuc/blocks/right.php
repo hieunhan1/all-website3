@@ -36,7 +36,10 @@
 <?php
 $banner = $tc->slider_banner(2);
 while($row_banner = mysql_fetch_array($banner)){
-	echo '<div class="boxright"><a href="'.$row_banner['link'].'" title="'.$row_banner['name'].'"><img style="margin:5px 0" src="'.url_slider_image.$row_banner['url_hinh'].'" alt="'.$row_banner['name'].'" /></</div>';
+	echo '<div class="boxright">
+		<a href="'.$row_banner['link'].'" title="'.$row_banner['name'].'">
+			<img style="margin:5px 0" src="'.url_slider_image.$row_banner['url_hinh'].'" alt="'.$row_banner['name'].'" />
+		</a></div>';
 }
 ?>
 
