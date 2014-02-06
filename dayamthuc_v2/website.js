@@ -120,7 +120,12 @@ $(document).ready(function($){
 	});
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$("#nav li a").corner("5px");
-		$("#slider").corner("15px");
+		$("#nav li a, .select_chinhanh").corner("5px");
+		$("#slider, .home_info").corner("15px");
 	}
+	
+	$(".select_chinhanh").click(function(){
+		$(".select_chinhanh").css({"background-color":"#FF9","color":"#333"});
+		$(this).css({"background-color":"#F00","color":"#FFF"});
+	});
 });
