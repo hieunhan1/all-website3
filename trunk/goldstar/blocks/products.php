@@ -6,18 +6,22 @@
         <?php echo $tc->navigator($idMenu); ?>
     </div>
     <?php
-	if($row_detail['price_km']==0){
+	if($row_detail['price']!=0 && $row_detail['price_km']==0){
 		$price = '<p style="color:#ED1E24; font-size:150%; font-weight:bold">'.number_format($row_detail['price'],0,',','.').' VNĐ</p><br />';
 		$giathanhtoan = $row_detail['price'];
-	}else{
+	}elseif($row_detail['price']!=0 && $row_detail['price_km']!=0){
 		$price = '<p style="color:#666; font-size:110%; font-weight:bold; text-decoration:line-through">'.number_format($row_detail['price'],0,',','.').' VNĐ</p><br /><p>Giá khuyến mãi: <span style="color:#ED1E24; font-size:150%; font-weight:bold">'.number_format($row_detail['price_km'],0,',','.').' VNĐ</span></p><br />';
 		$giathanhtoan = $row_detail['price_km'];
+	}else{
+		$price = '<p style="color:#666; font-size:130%; font-weight:bold">Liên hệ để biết giá</p><br />';
+		$giathanhtoan = 0;
 	}
     echo '<h1>'.$row_detail['name'].'</h1><br />
 	<img src="'.url_product_image.$row_detail['url_hinh'].'" alt="'.$row_detail['name'].'" title="'.$row_detail['name'].'" style="float:left; margin-right:30px" /><br /><br />
 	'.$price.'
 	<p>Số lượng: <input type="text" name="txtsoluong" class="txtsoluong" value="1" /></p><br />
-	<p class="buy" name="'.$row_detail['id'].' -|- '.$row_detail['name'].' -|- '.$giathanhtoan.'">Bỏ vào giỏ hàng</p><div style="clear:both; height:10px"></div>
+	<p class="buy" name="'.$row_detail['id'].' -|- '.$row_detail['name'].' -|- '.$giathanhtoan.'">Bỏ vào giỏ hàng</p>
+	<div style="clear:both; height:10px"></div>
 	<div class="viewpost">'.$row_detail['content'].'</div>';
 	
 	
@@ -31,9 +35,10 @@
 		$i++;
 		$style = 'style="width:180px; margin:3px"';
 		
-		if($row2['price_km']==0) $price = '<div class="item_product_price">'.number_format($row2['price'],0,',','.').' VNĐ</div>';
-		else $price = '<div class="item_product_price_km">'.number_format($row2['price'],0,',','.').' VNĐ</div>
+		if($row2['price']!=0 && $row2['price_km']==0) $price = '<div class="item_product_price">'.number_format($row2['price'],0,',','.').' VNĐ</div>';
+		elseif($row2['price']!=0 && $row2['price_km']!=0) $price = '<div class="item_product_price_km">'.number_format($row2['price'],0,',','.').' VNĐ</div>
 		<div class="item_product_price">'.number_format($row2['price_km'],0,',','.').' VNĐ</div>';
+		else $price = '<div class="item_product_price" style="color:#666">Liên hệ để biết giá</div>';
 		
 		echo '<div class="item_product" '.$style.'>
 			<a href="'.$row_menu_one['url'].$row2['name_rewrite'].'.html"><div class="item_product_img"><img src="'.url_product_image_thumb.$row2['url_hinh'].'" alt="'.$row2['name'].'" /></div>
