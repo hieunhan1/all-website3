@@ -21,9 +21,10 @@
 		$i++;
 		$style = 'style="width:180px; margin:3px"';
 		
-		if($row2['price_km']==0) $price = '<div class="item_product_price">'.number_format($row2['price'],0,',','.').' VNĐ</div>';
-		else $price = '<div class="item_product_price_km">'.number_format($row2['price'],0,',','.').' VNĐ</div>
+		if($row2['price']!=0 && $row2['price_km']==0) $price = '<div class="item_product_price">'.number_format($row2['price'],0,',','.').' VNĐ</div>';
+		elseif($row2['price']!=0 && $row2['price_km']!=0) $price = '<div class="item_product_price_km">'.number_format($row2['price'],0,',','.').' VNĐ</div>
 		<div class="item_product_price">'.number_format($row2['price_km'],0,',','.').' VNĐ</div>';
+		else $price = '<div class="item_product_price" style="color:#666">Liên hệ để biết giá</div>';
 		
 		echo '<div class="item_product" '.$style.'>
 			<a href="'.$tc->link_detail($row2['menu_id']).$row2['name_rewrite'].'.html"><div class="item_product_img"><img src="'.url_product_image_thumb.$row2['url_hinh'].'" alt="'.$row2['name'].'" /></div>
