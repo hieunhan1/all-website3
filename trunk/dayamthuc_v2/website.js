@@ -137,4 +137,33 @@ $(document).ready(function($){
 		$(".chinhanh").hide();
 		$("#" + id[1]).show();
 	});
+	
+	/*lien he*/
+	$("input[name=btnSend]").click(function(){
+		var name = $("input[name=name]").val();
+		var email = $("input[name=email]").val();
+		var phone = $("input[name=phone]").val();
+		var diachi = $("input[name=diachi]").val();
+		var message = $("textarea[name=message]").val();
+		if(name.length<2){
+			alert("Nhập họ tên");
+			$("input[name=name]").focus();
+			return false;
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+			alert("Email chưa đúng");
+			$("input[name=email]").focus();
+			return false;
+		}else if(message.length<10){
+			alert("Nội dung phải hơn 10 ký tự");
+			$("textarea[name=message]").focus();
+			return false;
+		}else{
+			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
+			$.post("ajax.php",{contact:"contact",name:name,email:email,phone:phone,diachi:diachi,message:message,lang:"<?php echo $lang; ?>"},function(data){
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#ff8400; font-weight:bold; padding:30px 0 60px;">Liên hệ thành công.</p>'); },200);
+				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
+			});
+			return true;
+		}
+	});
 });
