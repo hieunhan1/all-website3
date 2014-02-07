@@ -1,72 +1,59 @@
-<div style="clear:both; height:20px"></div>
-<div id="navigator" style="padding-left:20px">
-    <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
-    <?php
-    include("languages/{$lang}.php");
-	echo $tc->navigator($idMenu);
-	?>
-</div>
-<div id="contact">
-    <div id="info"><?php echo $row_config['contact_form'];?></div>
-    <hr />
-    <div id="form">
-        <table width="90%" border="0" cellspacing="20" cellpadding="0" style="margin-left:30px; font-size:110%">
-          <tr>
-            <td colspan="4"><p style="font-size:180%; color:#F00"><?php echo const_thong_tin;?></p></td>
-          </tr>
-          <tr>
-            <td width="120"><?php echo const_contact_name;?>:</td>
-            <td><input type="text" name="name" class="txt" /></td>
-            <td width="120" align="center">Email:</td>
-            <td><input type="text" name="email" class="txt" /></td>
-          </tr>
-          <tr>
-            <td><?php echo const_contact_phone;?>:</td>
-            <td><input type="text" name="phone" class="txt" /></td>
-            <td align="center"><?php echo const_contact_diachi;?>:</td>
-            <td><input type="text" name="diachi" class="txt" /></td>
-          </tr>
-          <tr>
-            <td valign="top"><?php echo const_contact_message;?>:</td>
-            <td colspan="3"><textarea name="message" class="textarea"></textarea></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td><input type="button" name="btnSend" class="btn" value="<?php echo const_contact_sent;?>" /></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-        </table>
+<div id="content">
+    <div id="navigator" style="padding-left:20px">
+        <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
+        <?php
+        include("languages/{$lang}.php");
+        echo $tc->navigator($idMenu);
+        ?>
     </div>
+    <hr />
+    <div id="contact">
+        <div id="info"><?php echo $row_config['contact_form'];?></div>
+        <div id="form">
+            <table width="90%" border="0" cellspacing="20" cellpadding="0" style="margin-left:30px; font-size:110%">
+              <tr>
+                <td colspan="4"><p style="font-size:180%; color:#F00"><?php echo const_thong_tin;?></p></td>
+              </tr>
+              <tr>
+                <td width="120"><?php echo const_contact_name;?>:</td>
+                <td><input type="text" name="name" class="txt" /></td>
+                <td width="120" align="center">Email:</td>
+                <td><input type="text" name="email" class="txt" /></td>
+              </tr>
+              <tr>
+                <td><?php echo const_contact_phone;?>:</td>
+                <td><input type="text" name="phone" class="txt" /></td>
+                <td align="center"><?php echo const_contact_diachi;?>:</td>
+                <td><input type="text" name="diachi" class="txt" /></td>
+              </tr>
+              <tr>
+                <td valign="top"><?php echo const_contact_message;?>:</td>
+                <td colspan="3"><textarea name="message" class="textarea"></textarea></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input type="button" name="btnSend" class="btn" value="<?php echo const_contact_sent;?>" /></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+        </div>
+    </div>
+    
+    <?php
+	$i = 0;
+	$qr = $tc->chinhanh_ds();
+	while($row = mysql_fetch_array($qr)){
+		$i++;
+		if($i!=1) $str = 'Chi nhánh: '.$row['name']; else $str = $row['name'].': <span style="font-size:15px">TRƯỜNG DẠY NGHỀ ẨM THỰC NETSPACE</span>';
+		echo '<div class="viewpost" style="margin-left:25px; width:440px; height:200px; float:left">
+			<p style="color:#C00; font-weight:bold">'.$str.'</p>
+			<p>Địa chỉ: <b>'.$row['diachi'].'</b></p>
+			<p>Điện thoại: <b>'.$row['phone'].'</b></p>
+			<p>Hotline: <b>'.$row['hotline'].'</b></p>
+			<p>Email: <b>'.$row['email'].'</b></p>
+		</div>';
+	}
+	?>
+    <div style="clear:both; height:30px"></div>
 </div>
-<script type="text/javascript">
-$(document).ready(function(e) {
-    $("input[name=btnSend]").click(function(){
-		var name = $("input[name=name]").val();
-		var email = $("input[name=email]").val();
-		var phone = $("input[name=phone]").val();
-		var diachi = $("input[name=diachi]").val();
-		var message = $("textarea[name=message]").val();
-		if(name.length<3){
-			alert("Input name");
-			$("input[name=name]").focus();
-			return false;
-		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
-			alert("Wrong email address");
-			$("input[name=email]").focus();
-			return false;
-		}else if(message.length<10){
-			alert("Input Message");
-			$("textarea[name=message]").focus();
-			return false;
-		}else{
-			$("#form").html('<p style="font-weight:bold; padding:30px">Processing...</p>');
-			$.post("ajax.php",{contact:"contact",name:name,email:email,phone:phone,diachi:diachi,message:message,lang:"<?php echo $lang; ?>"},function(data){
-				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#ff8400; font-weight:bold; padding:30px 0 60px;">Send success.</p>'); },200);
-				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Undeliverable. Please press F5 to try again.</p>');
-			});
-			return true;
-		}
-	});
-});
-</script>
