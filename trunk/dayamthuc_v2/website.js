@@ -124,8 +124,17 @@ $(document).ready(function($){
 		$("#slider, .home_info").corner("15px");
 	}
 	
+	/*chi nhanh*/
+	$(".chinhanh").hide();
+	$("#chinhanh1").show();
+	
 	$(".select_chinhanh").click(function(){
+		var id = ($(this).attr('class')).split(" ");
+		
 		$(".select_chinhanh").css({"background-color":"#FF9","color":"#333"});
 		$(this).css({"background-color":"#F00","color":"#FFF"});
+		
+		$(".chinhanh").hide();
+		$("#" + id[1]).show();
 	});
 });

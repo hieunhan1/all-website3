@@ -3,7 +3,7 @@ $id = $_GET['id']; settype($id, int);
 if(@$_POST['btnCancel']) btnCancel($page);
 if($id == 0){ //create
 	$name = 'btnSubmit';
-	$display = 'Create';
+	$display = 'Thêm mới';
 	
 	//hidden field user_create
 	$form->getProperties(NULL, 'user_create', 2, NULL, $user, 20);
@@ -15,7 +15,7 @@ if($id == 0){ //create
 	$type = 1; //loại sql create $type = 1;
 } else {  //update
 	$name = 'btnSubmit';
-	$display = 'Update';
+	$display = 'Cập nhật';
 	
 	$qr_detail = mysql_query("SELECT * FROM {$page} WHERE id='{$id}'");
 	$detail = mysql_fetch_array($qr_detail);
@@ -60,13 +60,15 @@ if(!empty($_POST)){
 // form
 echo "
 <form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
+<table width='900' border='0' cellspacing='0' cellpadding='5'>
 ";
 //date create
 echo $date_create;
 //user login
 echo $user_login;
-
+//lang
+$form->getProperties('', 'lang', 2, 'input_medium', $lang, 2);
+echo $form->DisplayProperties();
 //Trạng thái status
 $value = array(1 => 'Hiện', 0 => 'Ẩn');
 if($_POST['status'] != '') $check = $_POST['status'];
@@ -84,9 +86,9 @@ echo $form->DisplayProperties();
 
 //Đệ qui lấy danh sách menu
 $level = 0;
-$style1 = '';
-$style2 = '---';
-$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND (type_id=4 OR type_id=6) AND parent_id= ", " ORDER BY `order` ASC, date_update DESC ");
+$style1 = '&nbsp;';
+$style2 = '&nbsp;---';
+$str_query = array("SELECT id, name FROM menu ", " WHERE `delete`=0 AND lang='{$lang}' AND (type_id=1 OR type_id=6 OR type_id=9) AND parent_id= ", " ORDER BY `order` ASC ");
 $form->getProperties($level, $style1, 9, $style2, $str_query);
 $values = $form->DisplayProperties();
 //Menu_id hidden field 
@@ -94,7 +96,8 @@ if(@$_POST['menu_id']) $checks = $_POST['menu_id']; else $checks = $detail['menu
 $form->getProperties(NULL, 'menu_id', 2, NULL, $checks, 20);
 echo $form->DisplayProperties();
 //Danh mục checkbox_group
-$form->getProperties('Danh mục', NULL, 41, 'list_check2', $values, $checks, 'checkbox');
+//EX: getProperties(Display_Name, NULL, 41, CSS_Class, Value=array, list_check=$this->_length, '&nbsp; ')
+$form->getProperties('Danh mục', NULL, 41, 'list_check', $values, $checks, 'checkbox');//$values danh sách, $value checked
 echo $form->DisplayProperties();
 
 //Mô tả name
@@ -116,15 +119,15 @@ if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_
 $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value, 150, $orther);
 echo $form->DisplayProperties();
 
-//link video
-if(@$_POST['link_video']) $value = $_POST['link_video']; else $value = $detail['link_video'];
-$form->getProperties('Link video', 'link_video', 1, 'input_medium', $value, 250);
+//link
+if(@$_POST['link']) $value = $_POST['link']; else $value = $detail['link'];
+$form->getProperties('Mã code youtube', 'link', 1, 'input_medium', $value, 250,'<p style="color:blue">VD: FgTXEGvPSDc</p>');
 echo $form->DisplayProperties();
 
-//Tóm tắt description
+//metaDescription
 //$length = 0 <=> không trộn cột
-if(@$_POST['description']) $value = $_POST['description']; else $value = $detail['description'];
-$form->getProperties('Tóm tắt', 'description', 3, 'textarea', $value, 1);
+if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 //Nội dung content
@@ -139,21 +142,20 @@ CKEDITOR.replace( 'content', {
 	filebrowserUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
 	filebrowserImageUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
 	filebrowserFlashUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-	filebrowserWindowWidth: '640',
-	filebrowserWindowHeight: '480',
+	filebrowserWindowWidth: '900',
+	filebrowserWindowHeight: '600',
 	toolbar:
 	[
 	['Source','-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
 	['Undo','Redo','-','Find','Replace','-','RemoveFormat'],
 	['Link','Unlink','Iframe'],
 	['Maximize', 'ShowBlocks'],
-	'/',
-	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
 	['Image','Flash', 'Video', 'Table'],
+	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
 	'/',
 	['Styles','Format','Font','FontSize'],
+	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
 	['TextColor','BGColor','-','HorizontalRule','Smiley','SpecialChar','PageBreak']
 	]
 	});
@@ -175,12 +177,15 @@ else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
 echo $form->DisplayProperties();
+//lang
+$form->getProperties('', 'lang', 2, 'input_medium', $lang, 2);
+echo $form->DisplayProperties();
 
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
     <td><input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />
-	<input type='button' name='btnCancel' value='Cancel' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"'>
+	<input type='button' name='btnCancel' value='Hủy' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"'>
 	</td>
 </tr>
 </table>

@@ -7,11 +7,12 @@ define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
+
 include_once('config.php');
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
-	$dm = explode('_page_',$dm);
+	$dm = explode('/',$dm);
 	$danhmuc = $dm[0];
 	if($dm[1]==''){
 		$page = 1; $page_name = '';
@@ -24,7 +25,8 @@ if(@$_GET['danhmuc']){
 	$idMenu = $row_menu_one['id'];
 	$type = $row_menu_one['type_id'];
 	
-	$menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
+	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
+	else $menu_root = '0';
 	
 	if(!@$_GET['detail']){
 		($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
@@ -37,11 +39,13 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
-			case 3 : include_once('blocks/products_list.php'); break;
-			case 4 : include_once('blocks/picture_list.php'); break;
-			case 5 : include_once('blocks/video_list.php'); break;
-			case 6 : include_once('blocks/contact.php'); break;
-			case 7 : include_once('blocks/giohang.php'); break;
+			case 3 : include_once('blocks/chuongtrinh_list.php'); break;
+			case 4 : include_once('blocks/lichkhaigiang.php'); break;
+			case 5 : include_once('blocks/photo_list.php'); break;
+			case 6 : include_once('blocks/video_list.php'); break;
+			case 7 : include_once('blocks/contact.php'); break;
+			case 8 : include_once('blocks/dangky.php'); break;
+			case 9 : include_once('blocks/thuvien.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -50,10 +54,10 @@ if(@$_GET['danhmuc']){
 		$dt = $_GET['detail'];
 		$include = ob_start();
 		switch($type){
-			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
-			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
-			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
-			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;
+			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
+			case 3 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
+			case 5 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_picture_image; include_once('blocks/photo.php'); break;
+			case 6 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -96,8 +100,15 @@ if(@$_GET['danhmuc']){
         <div class="aleoflash-swf" style="display:block;"><embed src="images/logo.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="320" height="80" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed></div>
         <script language="JavaScript">var hasFlash=false;if(window.ActiveXObject){ try { if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) hasFlash=true;} catch(e){}} else { if(navigator.plugins["Shockwave Flash"]){hasFlash=true;}}var elems=document.getElementsByTagName("div"); for(var i in elems){if(!hasFlash && elems[i].className=="aleoflash-gif") elems[i].style.display="block"; else if ((!hasFlash && elems[i].className=="aleoflash-swf") || elems[i].className=="aleoflash") elems[i].style.display="none";}</script>
     </div>
-    <?php include_once('blocks/menu.php'); ?>
-	<div id="slider"><img src="upload/images/slider_banner/slider.jpg" alt=""  /></div>
+    <?php
+    include_once('blocks/menu.php');
+	
+	$qr = $tc->slider_banner(1,$idMenu);
+	if(mysql_num_rows($qr)>0){
+		$row = mysql_fetch_array($qr);
+		echo '<div id="slider"><a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"  /></a></div>';
+	}
+	?>
 
 	<script type="text/javascript" src="library/realshadow.js"></script>
     <div class="linkwebsite">
@@ -121,176 +132,67 @@ if(@$_GET['danhmuc']){
             })();
         </script>
     </div>
-    
-    <div id="nauan_other">
-    	<div class="nauan_other_item">
-        	<a href=""><img src="upload/images/danhmuc/cong-thuc-nau-an.png" alt="" />
-            <h3>Công Thức Nấu Ăn</h3></a>
-        </div>
-    	<div class="nauan_other_item">
-        	<a href=""><img src="upload/images/danhmuc/nghien-cuu-phat-trien.png" alt="" />
-            <h3>Dạy Nấu Ăn Online</h3></a>
-        </div>
-    	<div class="nauan_other_item">
-        	<a href=""><img src="upload/images/danhmuc/day-nau-an-online.png" alt="" />
-            <h3>Nghiên Cứu &amp; Phát Triển Ẩm Thực</h3></a>
-        </div>
-    </div>
-    
-    <div id="about" class="viewpost">
-    	<h1>Giới Thiệu NETSPACE</h1>
-        <div id="about_info">
-            <p>Được thành lập từ năm 2010, Netspace institute với khẩu hiệu "<b>Human resource power</b>", mong muốn tập hợp tất cả sức mạnh nguồn nhân lực có năng lực và có tâm huyết
-    với ngành giáo dục trên cơ sở sự kết hợp hài hòa về sự đóng góp và lợi ích vào sự nghiệp giáo dục chung của đất nước. Cùng với một định hướng về giáo dục là dạy nghề theo chuẩn đào tạo quốc tế dựa trên tiêu chí hoạt động đó là kết nối trường học với xã hội, doanh nghiệp:</p>
-            <p style="margin-left:35px">- Netspace School là trường học, cung ứng  cho xã hội, các doanh nghiệp những con người có khả năng làm việc tốt giúp xã hội, doanh nghiệp phát triển.</p>
-            <p style="margin-left:35px">- Netspace School định hướng phát triển nhằm thiết lập nhiều mối quan hệ cùng với các đối tác, kết hợp những điểm mạnh của mỗi đối tác, tạo sức mạnh 
-    tổng hợp phát triển sự nghiệp giáo dục tại Việt Nam.</p>
-		</div>
-        <div id="about_video"><iframe src="http://www.youtube.com/embed/CZHlP-NJE44?origin=http://www.dayamthuc.vn&rel=0" frameborder="0"></iframe></div>
-        <div style="clear:both; height:1px"></div>
-    </div>
-    
-    <div class="home_info">
-        <div class="title">
-            <div class="title_1"></div>
-            <div class="title_2"><p>T</p><p>h</p><p>ô</p><p>n</p><p>g</p><p>&nbsp;</p><p>T</p><p>i</p><p>n</p></div>
-            <div class="title_3"></div>
-        </div>
-        
-        <div id="home_info_noibat">
-        	<div class="home_info_noibat_item">
-                <div class="home_info_noibat_img"><a href=""><img src="upload/images/danhmuc/1(5).jpg" alt="" /></a></div>
-                <a href=""><h3>Học nấu ăn ở đâu tốt nhất? Học nấu ăn ở đâu tốt nhất?</h3></a>
-                <div class="info">Netspace School là trường học, cung ứng  cho xã hội, các doanh nghiệp những con người có khả năng làm việc tốt giúp xã hội, doanh nghiệp phát triển.</div>
-                <a href="" class="viewmore">Xem thêm..</a>
-            </div>
-        	<div class="home_info_noibat_item">
-                <div class="home_info_noibat_img"><a href=""><img src="upload/images/danhmuc/1(5).jpg" alt="" /></a></div>
-                <a href=""><h3>Học nấu ăn ở đâu tốt nhất? Học nấu ăn ở đâu tốt nhất?</h3></a>
-                <div class="info">Netspace School là trường học, cung ứng  cho xã hội, các doanh nghiệp những con người có khả năng làm việc tốt giúp xã hội, doanh nghiệp phát triển.</div>
-            </div>
-        </div>
-        
-        <div id="home_info_new">
-        	<li><a href="">Mẹo chọn và luộc gà ngon ngày Tết</a></li>
-            <li><a href="">Nghề đầu bếp - nghề nổi tiếng không cần bằng cấp</a></li>
-            <li><a href="">Nem công, chả phượng - Món ăn cung đình </a></li>
-            <li><a href="">Học làm bánh Pizza</a></li>
-            <li><a href="">Học rang xay cà phê</a></li>
-            <li><a href="">Cách làm cơm tấm</a></li>
-            <li><a href="">Cơm sâu - Món ăn lạ của Nhật Bản - Trường dạy học nấu ăn giới thiệu</a></li>
-            <li><a href="">Học nấu ăn chay</a></li>
-        </div>
-        
-        <div style="clear:both; height:1px"></div>
-    </div>
-    
-    <div class="home_info">
-        <div class="title">
-            <div class="title_1"></div>
-            <div class="title_2"><p>H</p><p>ì</p><p>n</p><p>h</p><p>&nbsp;</p><p>Ả</p><p>n</p><p>h</p></div>
-            <div class="title_3"></div>
-        </div>
-        
-        <div class="home_photo_item">
-        	<a href=""><div class="home_photo_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <h4>Hoạt động của trường</h4></a>
-        </div>
-        
-        <div class="home_photo_item">
-        	<a href=""><div class="home_photo_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <h4>Hoạt động của trường</h4></a>
-        </div>
-        
-        <div class="home_photo_item">
-        	<a href=""><div class="home_photo_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <h4>Hoạt động của trường</h4></a>
-        </div>
-        
-        <div class="home_photo_item">
-        	<a href=""><div class="home_photo_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <h4>Hoạt động của trường</h4></a>
-        </div>
-        
-        <div style="clear:both; height:10px"></div>
-    </div>
-    
-    <div class="home_info">
-        <div class="title">
-            <div class="title_1"></div>
-            <div class="title_2"><p>V</p><p>i</p><p>d</p><p>e</p><p>o</p></div>
-            <div class="title_3"></div>
-        </div>
-        
-		<div class="home_video_item">
-        	<a href=""><div class="home_video_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <div class="play_video"></div>
-            <img src="images/video.gif" alt="" style="margin-bottom:5px" />
-            <h4>Tổng kết năm 2013 - Trường dạy học nấu ăn NETSPACE</h4></a>
-        </div>
-        
-		<div class="home_video_item">
-        	<a href=""><div class="home_video_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <div class="play_video"></div>
-            <img src="images/video.gif" alt="" style="margin-bottom:5px" />
-            <h4>Học viên trường học nấu ăn NETSPACE dã ngoại KDL Văn Thánh 10- 12 - 2013</h4></a>
-        </div>
-        
-		<div class="home_video_item">
-        	<a href=""><div class="home_video_item_img"><img src="upload/images/danhmuc/album-anh-cac-lop.jpg" alt="" /></div>
-            <div class="play_video"></div>
-            <img src="images/video.gif" alt="" style="margin-bottom:5px" />
-            <h4>Diễn Viên- Trương Minh Cường học nấu ăn tại Trường NetSpace.</h4></a>
-        </div>
-        
-        <div style="clear:both; height:20px"></div>
-    </div>
 
 	<?php echo $include; ?>
     
+    <!--Contact Social-->
     <div id="contact_social">
     	<div id="contact_foo">
-        	<div id="select_chinhanh">CHỌN CHI NHÁNH:
-            	<span class="select_chinhanh select_chinhanh_active">Tp.HCM</span>
-            	<span class="select_chinhanh">Đà Lạt</span>
-            	<span class="select_chinhanh">Đà Nẵng</span>
-            	<span class="select_chinhanh">Cần Thơ</span>
-            </div>
-        	Địa chỉ: 30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM<br />
-            (Đối diện Chợ Đakao) <br />
-            Điện thoại:(08) 6291 2698 - (08) 6291 0908 <br />
-            Email: info@dayamthuc.vn<br />
+        	<?php
+            $i = 0;
+			$qr = $tc->chinhanh_ds();
+			$name_chinhanh = '';
+			$info_chinhanh = '';
+			while($row = mysql_fetch_array($qr)){
+				$i++;
+				if($i!=1){
+					$name_chinhanh .= '<span class="select_chinhanh chinhanh'.$i.'">'.$row['name'].'</span>';
+					$info_chinhanh .= '<div class="chinhanh" id="chinhanh'.$i.'">
+					<p>Địa chỉ: <b>'.$row['diachi'].'</b></p>
+					<p>Điện thoại: <b>'.$row['phone'].'</b></p>
+					<p>Hotline: <b>'.$row['hotline'].'</b></p>
+					<p>Email: <b>'.$row['email'].'</b></p></div>';
+				}else{
+					$name_chinhanh .= '<span class="select_chinhanh chinhanh1 select_chinhanh_active">'.$row['name'].'</span>';
+					$info_chinhanh .= '<div class="chinhanh" id="chinhanh1">
+					<p>Địa chỉ: <b>'.$row['diachi'].'</b></p> <p style="color:#F00; margin-left:50px; font-size:90%">(Đối diện Chợ Đakao)</p>
+					<p>Điện thoại: <b>'.$row['phone'].'</b></p>
+					<p>Hotline: <b>'.$row['hotline'].'</b></p>
+					<p>Email: <b>'.$row['email'].'</b></p></div>';
+				}
+			}
+			echo '<div id="select_chinhanh"><span style="font-size:110%">CHỌN CHI NHÁNH:</span> '.$name_chinhanh.'</div>'.$info_chinhanh;
+			?>
         </div>
     	<div id="social">
-        	<a href=""><img src="upload/images/danhmuc/youtube_2.png" alt="" /></a>
-        	<a href=""><img src="upload/images/danhmuc/facebook.png" alt="" /></a>
+        	<?php
+            $qr = $tc->menu(0,3);
+			while($row = mysql_fetch_array($qr)){
+				echo '<a href="'.$row['url'].'" target="_blank"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
+			}
+			?>
         </div>
-        
         <div style="clear:both; height:20px"></div>
     </div>
     
+    <!--partner-->
     <div style="clear:both; height:130px; margin:0 7px 10px 10px; padding-top:5px; background-color:#FFF">
         <div class="simply-scroll simply-scroll-container">
             <div class="simply-scroll-clip">
                 <ul id="scroller" class="simply-scroll-list" style="width:2255px">
-                	<li style="list-style:none"><a href="http://www.vietnamchefs.com/" title="Hội đầu bếp chuyên nghiệp Sài Gòn" target="_blank"><img src="upload/images/slider_banner/hoi-dau-bep-01.jpg" alt="Hội đầu bếp chuyên nghiệp Sài Gòn"></a></li>
-                    <li style="list-style:none"><a href="http://www.vedan.com.vn/" title="Vedan" target="_blank"><img src="upload/images/slider_banner/vedan.jpg" alt="Vedan"></a></li>
-                    <li style="list-style:none"><a href="http://fannyicecream.wordpress.com/" title="Fanny Ice Cream" target="_blank"><img src="upload/images/slider_banner/fanny.jpg" alt="Fanny Ice Cream"></a></li>
-                    <li style="list-style:none"><a href="http://www.simplex.com.sg/" title="Simplex Pte Ltd" target="_blank"><img src="upload/images/slider_banner/simplex.jpg" alt="Simplex Pte Ltd"></a></li>
-                	<li style="list-style:none"><a href="http://www.vietnamchefs.com/" title="Hội đầu bếp chuyên nghiệp Sài Gòn" target="_blank"><img src="upload/images/slider_banner/hoi-dau-bep-01.jpg" alt="Hội đầu bếp chuyên nghiệp Sài Gòn"></a></li>
-                    <li style="list-style:none"><a href="http://www.vedan.com.vn/" title="Vedan" target="_blank"><img src="upload/images/slider_banner/vedan.jpg" alt="Vedan"></a></li>
-                    <li style="list-style:none"><a href="http://fannyicecream.wordpress.com/" title="Fanny Ice Cream" target="_blank"><img src="upload/images/slider_banner/fanny.jpg" alt="Fanny Ice Cream"></a></li>
-                    <li style="list-style:none"><a href="http://www.simplex.com.sg/" title="Simplex Pte Ltd" target="_blank"><img src="upload/images/slider_banner/simplex.jpg" alt="Simplex Pte Ltd"></a></li>
+                    <?php
+                    $qr = $tc->slider_banner(3);
+					while($row = mysql_fetch_array($qr)){
+						echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
+					}
+					?>
                 </ul>
             </div>
         </div>
     </div>
 
-    
-    
     <div id="footer">
-    	<h5><strong>Trường dạy nghề ẩm thực NETSPACE</strong></h5>
-    	<p style="width:auto; float:right">Copyright © 2014 by NETSPACE</p>
+    	<?php echo '<h5><strong>'.$row_config['contact_foo'].'</strong></h5> <p style="width:auto; float:right">'.$row_config['copyright'].'</p>'; ?>
     </div>
 </div>
 <?php mysql_close();?>

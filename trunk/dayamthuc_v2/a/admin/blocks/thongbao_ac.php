@@ -60,7 +60,7 @@ if(!empty($_POST)){
 // form
 echo "
 <form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
+<table width='900' border='0' cellspacing='0' cellpadding='5'>
 ";
 //date create
 echo $date_create;
@@ -105,9 +105,9 @@ if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_
 $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value, 150, $orther);
 echo $form->DisplayProperties();
 
-//description
-if(@$_POST['description']) $value = $_POST['description']; else $value = $detail['description'];
-$form->getProperties('Meta description', 'description', 3, 'textarea', $value, 1);
+//metaDescription
+if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 //Nội dung content

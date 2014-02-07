@@ -134,18 +134,8 @@ $form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value
 echo $form->DisplayProperties();
 
 //description
-$orther = "
-<script>
-CKEDITOR.replace( 'metaDescription', {
-	uiColor: '#b5d8ef',
-	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-','RemoveFormat','TextColor','BGColor','NumberedList','BulletedList'],
-	]
-});
-</script>
-";
 if(@$_POST['metaDescription']) $value = $_POST['metaDescription']; else $value = $detail['metaDescription'];
-$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1, $orther);
+$form->getProperties('Tóm tắt', 'metaDescription', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 //Nội dung content
@@ -194,6 +184,14 @@ else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
 echo $form->DisplayProperties();
+//other2
+$value = array(1 => 'Có', 0 => 'Không');
+if($_POST['other2'] != '') $check = $_POST['other2'];
+else if($detail['other2'] != '') $check = $detail['other2'];
+else $check = 0; //giá trị mặc định
+$form->getProperties('Đăng ký', 'other2', 5, $check, $value, ' &nbsp; ');
+echo $form->DisplayProperties();
+
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 

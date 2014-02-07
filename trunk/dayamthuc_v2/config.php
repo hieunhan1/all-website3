@@ -1,7 +1,4 @@
 <?php
-$error_sql = "Lỗi kết nối";
-define(does_not_exist,'Mục này không tồn tại.');
-
 $config = $tc->config($lang) or die ($error_sql);
 $row_config = mysql_fetch_array($config);
 
@@ -25,5 +22,5 @@ define(url_detail_image_thumb,'upload/_thumbs/Images/articles/');
 define(url_picture_image,'upload/images/photogallery/');
 define(url_picture_image_thumb,'upload/_thumbs/Images/photogallery/');
 
-define(url_video_image,'upload/images/photogallery/');
-define(url_video_image_thumb,'upload/_thumbs/Images/photogallery/');
+define(url_video_image,'upload/images/video/');
+define(url_video_image_thumb,'upload/_thumbs/Images/video/');

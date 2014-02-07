@@ -44,11 +44,11 @@ function list_column($page, $id, $mota, $status, $user_create, $date_create, $us
 		{$od}
 	</div>";
 }
-function phantrang($page,$max_results,$page_number,$search){
+function phantrang($page,$max_results,$page_number,$search,$type=6){
 	global $sql;
 	$from = (($page_number * $max_results) - $max_results);
 	$link = "administrator.php?p={$page}&page_number=";
-	$type = 6; //loại sql select $type = 6;
+	//$type = 6; //loại sql select $type = 6;
 	$table = $page;
 	$field = array('id');
 	$sql->get_sql($type,$table,$field,$search);
