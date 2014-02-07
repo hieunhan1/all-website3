@@ -101,7 +101,7 @@ if(mysql_num_rows($qr) > 1){
 	echo $form->DisplayProperties();
 }
 
-
+/*
 //slogan
 if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
 $form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
@@ -110,35 +110,30 @@ echo $form->DisplayProperties();
 if(@$_POST['domain']) $value = $_POST['domain']; else $value = $detail['domain'];
 $form->getProperties('Domain', 'domain', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();
-
+*/
 
 //max_limit_1
 if(@$_POST['max_limit_1']) $value = $_POST['max_limit_1']; else $value = $detail['max_limit_1'];
-$form->getProperties('Số tin 1 page', 'max_limit_1', 1, 'input_medium', $value, 2);
+$form->getProperties('News Number', 'max_limit_1', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_2
 if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
-$form->getProperties('Sản phẩm 1 page', 'max_limit_2', 1, 'input_medium', $value, 2);
+$form->getProperties('Product Number', 'max_limit_2', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_3
 if(@$_POST['max_limit_3']) $value = $_POST['max_limit_3']; else $value = $detail['max_limit_3'];
-$form->getProperties('Hình ảnh 1 page', 'max_limit_3', 1, 'input_medium', $value, 2);
+$form->getProperties('Photo Number', 'max_limit_3', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 //max_limit_4
 if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
-$form->getProperties('Video 1 page', 'max_limit_4', 1, 'input_medium', $value, 2);
+$form->getProperties('Video Number', 'max_limit_4', 1, 'input_medium', $value, 2);
 echo $form->DisplayProperties();
 
-//copyright
-if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
-$form->getProperties('Copyright', 'copyright', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
+/*
 //email
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties('Email liên hệ', 'email', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
-
-
 //yahoo
 if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
 $form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
@@ -151,20 +146,17 @@ echo $form->DisplayProperties();
 if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
 $form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
+*/
 
-//contact_foo
-$orther = "
-<script>
-CKEDITOR.replace( 'contact_foo', {
-	uiColor: '#b5d8ef',
-	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic','RemoveFormat','-', 'Link', 'Unlink','Format','TextColor','BGColor'],
-	]
-});
-</script>";
-if(@$_POST['contact_foo']) $value = $_POST['contact_foo']; else $value = $detail['contact_foo'];
-$form->getProperties('Contact footer', 'contact_foo', 3, 'textarea', $value, 1, $orther);
+//copyright
+if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
+$form->getProperties('Copyright', 'copyright', 1, 'input_medium', $value, 200);
 echo $form->DisplayProperties();
+//contact_foo
+if(@$_POST['contact_foo']) $value = $_POST['contact_foo']; else $value = $detail['contact_foo'];
+$form->getProperties('Footer', 'contact_foo', 1, 'input_medium', $value, 250);
+echo $form->DisplayProperties();
+
 //contact_form
 $orther = "
 <script>

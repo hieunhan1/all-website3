@@ -113,7 +113,7 @@ echo $form->DisplayProperties();
 
 //Vị trí menu
 $value = array();
-$qr = mysql_query("SELECT * FROM menu_position WHERE `delete`=0 ");
+$qr = mysql_query("SELECT * FROM menu_position WHERE `delete`=0 ORDER BY `order`");
 while($row_temp = mysql_fetch_array($qr)){
 	$value[] = array('id' => $row_temp['id'], 'name' => $row_temp['name']);
 }
@@ -185,12 +185,12 @@ $form->getProperties('Thứ tự', 'order', 1, 'input_large', $value, 150);
 echo $form->DisplayProperties();
 
 //other
-/*$value = array(1 => 'Hiện', 0 => 'Ẩn');
+$value = array(1 => 'Có', 0 => 'Không');
 if($_POST['other'] != '') $check = $_POST['other'];
 else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
-echo $form->DisplayProperties();*/
+echo $form->DisplayProperties();
 
 echo "
 <tr style='background:#b0b0b0'>

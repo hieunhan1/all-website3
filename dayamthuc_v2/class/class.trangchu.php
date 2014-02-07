@@ -105,7 +105,38 @@ class trangchu extends db {
 	}
 	
 	/*home*/
+	function chinhanh_ds(){
+		$qr = "SELECT name,email,phone,diachi,hotline,yahoo FROM chinhanh WHERE `delete`=0 AND status=1 ORDER BY date_update DESC";
+		return mysql_query($qr);
+	}
 	
+	/*info*/
+	function info_danhmuc($id,$limit=NULL){
+		if($limit==NULL) $limit = ''; else $limit = "LIMIT {$limit}";
+		$qr = "SELECT name,content FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
+		return mysql_query($qr);
+	}
+	function info_home(){
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM info WHERE `delete`=0 AND status=1 ORDER BY date_update DESC LIMIT 10";
+		return mysql_query($qr);
+	}
+	
+	/*photos*/
+	function photos_home(){
+		$qr = "SELECT name,url,url_hinh FROM menu WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY `order` LIMIT 4";
+		return mysql_query($qr);
+	}
+	
+	/*video*/
+	function video_danhmuc($id,$limit=NULL){
+		if($limit==NULL) $limit = ''; else $limit = "LIMIT {$limit}";
+		$qr = "SELECT name,link FROM video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
+		return mysql_query($qr);
+	}
+	function video_home(){
+		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM video WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 3";
+		return mysql_query($qr);
+	}
 	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){

@@ -1,6 +1,6 @@
 <?php session_start();
 if(@$_SESSION["id_admin"]) {
-	$user = $_SESSION["Username"];
+	$user = $_SESSION["user_admin"];
 	
 	require_once 'config.php';
 	require_once DIR.'class.quantri.php';
@@ -47,6 +47,26 @@ if(@$_SESSION["id_admin"]) {
 		$qr = mysql_query("SELECT name FROM info WHERE id=".$_POST['info_id']);
 		$row = mysql_fetch_array($qr);
 		echo $row['name'];
+	}
+	
+	if($_POST['gui_thongtin']=='gui_thongtin'){
+		$date = date('Y-m-d H:i:s');
+		$id = $_POST['id'];
+		$name_hv = $_POST['name'];
+		$phone = $_POST['phone'];
+		$email = $_POST['email'];
+		$noihoc = $_POST['noihoc'];
+		$nhanvien = $_POST['nhanvien'];
+		
+		$qr = mysql_query("SELECT name,email FROM dangky_nhanvien WHERE `delete`=0 AND id='{$nhanvien}'");
+		$row_nv = mysql_fetch_array($qr);
+		$email_nhan = $row_nv['email'];
+		$name = $row_nv['name'];
+		$subject = $_POST['khoahoc'];
+		
+		mysql_query("UPDATE dangky_nhanvien SET date_update='{$date}' WHERE `delete`=0 AND id='{$nhanvien}'");
+		mysql_query("UPDATE dangky_tructuyen SET nhanvien_lienhe='{$nhanvien}' WHERE `delete`=0 AND id='{$id}'");
+		include_once('../../sendmail_smtp/send.php');
 	}
 }
 ?>

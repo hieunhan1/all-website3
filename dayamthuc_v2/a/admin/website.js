@@ -225,35 +225,25 @@ $(document).keypress(function(e) {
 	if(e.keyCode==27) disablePopup(); //|| popupStatus==1
 });
 /*
-* hien popup
+* gui mail
 */
-$('.item_hoidap').click(function(){
-	var id = ($(this).attr('class')).split(" ");
-	$.post('ajax.php',{item_hoidap:258, id:id[1]}, function(data){
-		$('#popup').html(data);
-		centerPopup();
-		loadPopup();
-	});
-});
-$('input[name=btnTraLoi]').live('click', function(){
-	var name = $('input[name=namea]').val();
-	var email = $('input[name=emaila]').val();
-	var content = $('textarea[name=contenta]').val();
-	var id = $('input[name=id]').val();
-	
-	$.post('ajax.php',{capnhattraloi:258,name:name,email:email,content:content,id:id},function(){
-		alert('Gửi thành công');
-		window.location.reload();
-	});
-});
-$('.item_status').click(function(){
-	var id = ($(this).attr('class')).split(" ");
-	if(confirm('Bạn có muốn đổi trang thái?')) {
-		$.post('ajax.php',{item_status:258, id:id[1], status:id[2]}, function(){ window.location.reload(); });
+$('input[name=gui_thongtin]').click(function(){
+	var nhanvien = $('select[name=nhanvien_lienhe]').val();
+	if(nhanvien != 0){
+		var id = $('input[name=id_dk]').val();
+		var name = $('input[name=name]').val();
+		var phone = $('input[name=phone]').val();
+		var email = $('input[name=email]').val();
+		var khoahoc = $('input[name=khoahoc]').val();
+		var noihoc = $('input[name=noihoc]').val();
+		$.post("ajax.php",{gui_thongtin:'gui_thongtin',id:id,name:name,phone:phone,email:email,khoahoc:khoahoc,noihoc:noihoc,nhanvien:nhanvien},function(data){
+			if(data != '0') $("#ajax_gui_thongtin").html('<font color="blue">Gửi thông tin thành công</font>');
+			else $("#ajax_gui_thongtin").html('<font color="#F00">Lỗi: Vui lòng ấn F5 thử lại</font>');
+		});
+	}else{
+		$("#ajax_gui_thongtin").html('<font color="#F00">Chọn nhân viên để gửi thông tin</font>');
+		$('select[name=nhanvien_lienhe]').focus();
 	}
-});
-$('input[name=btnCancel]').live('click',function(){
-	disablePopup();
 });
 
 });
