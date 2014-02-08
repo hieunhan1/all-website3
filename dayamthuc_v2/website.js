@@ -120,7 +120,7 @@ $(document).ready(function($){
 	});
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$("#nav li a, .select_chinhanh").corner("5px");
+		$("#nav li a, .select_chinhanh, .box_right").corner("5px");
 		$("#slider, .home_info").corner("15px");
 	}
 	

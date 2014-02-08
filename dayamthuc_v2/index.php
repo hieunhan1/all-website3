@@ -20,15 +20,24 @@ if(@$_GET['danhmuc']){
 		$page = $dm[1]; $page_name = ' - Page '.$page;
 	}
 	
-	$menu_one = $tc->menu_one($danhmuc);
-	$row_menu_one = mysql_fetch_array($menu_one);
-	$idMenu = $row_menu_one['id'];
-	$type = $row_menu_one['type_id'];
+	if($danhmuc!='danh-muc'){
+		$menu_one = $tc->menu_one($danhmuc);
+		$row_menu_one = mysql_fetch_array($menu_one);
+		$idMenu = $row_menu_one['id'];
+		$type = $row_menu_one['type_id'];
+	}else{
+		$alias = substr($_GET['detail'],0,-5);
+		
+		$menu_one = $tc->menu_one_v2($alias);
+		$row_menu_one = mysql_fetch_array($menu_one);
+		$idMenu = $row_menu_one['id'];
+		$type = $row_menu_one['type_id'];
+	}
 	
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	else $menu_root = '0';
 	
-	if(!@$_GET['detail']){
+	if(!@$_GET['detail'] || $danhmuc=='danh-muc'){
 		($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
 		$url = 'http://'.$domain.'/'.$row_menu_one['url'];
 		$title = strip_tags($row_menu_one['title'], ''); $title = str_replace('"',' ',$title);
@@ -56,8 +65,7 @@ if(@$_GET['danhmuc']){
 		switch($type){
 			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
 			case 3 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
-			case 5 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_picture_image; include_once('blocks/photo.php'); break;
-			case 6 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
+			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -108,32 +116,26 @@ if(@$_GET['danhmuc']){
 		$row = mysql_fetch_array($qr);
 		echo '<div id="slider"><a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"  /></a></div>';
 	}
+	
+	/*linkwebsite*/
+	$qr = $tc->menu(1,5);
+	if(mysql_num_rows($qr) > 0){
+		echo '<script type="text/javascript" src="library/realshadow.js"></script>
+		<div class="linkwebsite">';
+		while($row = mysql_fetch_array($qr)){
+			echo '<div class="link_item" style="background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">	
+			<h2 class="realshadow block round cr" rel="r" >'.$row['name'].'</h2>
+			<p class="realshadow block round cr" rel="r">'.$row['title'].'</p>
+			<a href="'.$row['url'].'">'.$row['metaDescription'].'</a></div>';
+		}
+		echo '<script type="text/javascript"> (function(){ realshadow(document.getElementsByClassName("realshadow")); })(); </script>
+    	</div>';
+	}
+	
+	/*view content*/
+	echo $include;
+	
 	?>
-
-	<script type="text/javascript" src="library/realshadow.js"></script>
-    <div class="linkwebsite">
-        <div class="link_item" style="background:url('images/day.png') no-repeat">	
-            <h2 class="realshadow block round cr" rel="r" >DẠY ẨM THỰC</h2>
-            <p class="realshadow block round cr" rel="r">Đào Tạo Nấu Ăn Và Pha Chế Chuyên Nghiệp</p>
-            <a href="http://www.dayamthuc.vn" target="_blank">www.dayamthuc.vn</a>
-        </div>
-        <div class="link_item" style="background:url('images/cook.png') no-repeat">	
-            <h2 class="realshadow block round cr" rel="r">COOKING CLASS</h2>
-            <p class="realshadow block round cr" rel="r">Mang Ẩm Thực Việt Nam Ra Thế Giới</p>
-            <a href="http://www.cookingclass.com.vn" target="_blank">www.cookingclass.com.vn</a>
-        </div>
-        <div class="link_item" style="background:url('images/tu van.png') no-repeat">	
-            <h2 class="realshadow block round cr" rel="r">TƯ VẤN, SETUP</h2>
-            <p class="realshadow block round cr" rel="r">Chuyên Nghiệp - Đẳng Cấp</p>
-        </div>
-         <script type="text/javascript">
-            (function(){
-                realshadow(document.getElementsByClassName('realshadow'));				
-            })();
-        </script>
-    </div>
-
-	<?php echo $include; ?>
     
     <!--Contact Social-->
     <div id="contact_social">
@@ -166,7 +168,7 @@ if(@$_GET['danhmuc']){
         </div>
     	<div id="social">
         	<?php
-            $qr = $tc->menu(0,3);
+            $qr = $tc->menu(1,3);
 			while($row = mysql_fetch_array($qr)){
 				echo '<a href="'.$row['url'].'" target="_blank"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
 			}
@@ -195,7 +197,6 @@ if(@$_GET['danhmuc']){
     	<?php echo '<h5><strong>'.$row_config['contact_foo'].'</strong></h5> <p style="width:auto; float:right">'.$row_config['copyright'].'</p>'; ?>
     </div>
 </div>
-<?php mysql_close();?>
 
 <script type="text/javascript" src="library/jquery.min.js"></script>
 <script type="text/javascript" src="website.js"></script>
@@ -204,5 +205,9 @@ if(@$_GET['danhmuc']){
 <script type="text/javascript" src="library/partner/common.js"></script>
 <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
 <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
+<?php
+if(@$script_photo) echo $script_photo;
+mysql_close();
+?>
 </body>
 </html>

@@ -1,38 +1,34 @@
 <div id="content">
-    <div id="navigator" style="padding-left:20px">
+    <div id="navigator">
         <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
-        <?php
-        include("languages/{$lang}.php");
-        echo $tc->navigator($idMenu);
-        ?>
+        <?php echo $tc->navigator($idMenu); ?>
     </div>
     <hr />
     <div id="contact">
-        <div id="info"><?php echo $row_config['contact_form'];?></div>
         <div id="form">
-            <table width="90%" border="0" cellspacing="20" cellpadding="0" style="margin-left:30px; font-size:110%">
+            <table width="95%" border="0" cellspacing="20" cellpadding="0" style="margin-left:30px; font-size:110%">
               <tr>
-                <td colspan="4"><p style="font-size:180%; color:#F00"><?php echo const_thong_tin;?></p></td>
+                <td colspan="4"><p style="font-size:180%; color:#F00">Thông tin liên hệ</p></td>
               </tr>
               <tr>
-                <td width="120"><?php echo const_contact_name;?>:</td>
+                <td width="100">Họ &amp; tên:</td>
                 <td><input type="text" name="name" class="txt" /></td>
-                <td width="120" align="center">Email:</td>
+                <td width="100" align="right">Email:</td>
                 <td><input type="text" name="email" class="txt" /></td>
               </tr>
               <tr>
-                <td><?php echo const_contact_phone;?>:</td>
+                <td>Điện thoại:</td>
                 <td><input type="text" name="phone" class="txt" /></td>
-                <td align="center"><?php echo const_contact_diachi;?>:</td>
+                <td align="right">Địa chỉ:</td>
                 <td><input type="text" name="diachi" class="txt" /></td>
               </tr>
               <tr>
-                <td valign="top"><?php echo const_contact_message;?>:</td>
+                <td valign="top">Nội dung:</td>
                 <td colspan="3"><textarea name="message" class="textarea"></textarea></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
-                <td><input type="button" name="btnSend" class="btn" value="<?php echo const_contact_sent;?>" /></td>
+                <td><input type="button" name="btnSend" class="btn" value="GỬI LIÊN HỆ" /></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
               </tr>
