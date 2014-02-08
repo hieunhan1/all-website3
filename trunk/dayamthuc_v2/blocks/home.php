@@ -1,6 +1,6 @@
 <?php
 /*Home catalog*/
-$qr = $tc->menu(0,1);
+$qr = $tc->menu(1,1);
 if(mysql_num_rows($qr) > 0){
 	echo '<div id="nauan_other">';
 	while($row = mysql_fetch_array($qr)){
@@ -85,7 +85,7 @@ echo $str_about;
 		<div class="title_3"></div>
 	</div>
 	<?php
-	$qr = $tc->video_home();
+	$qr = $tc->video_home(3);
 	while($row = mysql_fetch_array($qr)){
 		echo '<div class="home_video_item">
 		<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="home_video_item_img"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
