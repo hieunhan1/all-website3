@@ -168,9 +168,8 @@ $(document).ready(function(e) {
 		}else{
 			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
 			$.post("ajax.php",{dangky:"dangky",HoTen:HoTen,NgaySinh:NgaySinh,Email:Email,DiaChi:DiaChi,DienThoai:DienThoai,TotNghiep:TotNghiep,KhoaHoc:KhoaHoc,NoiHoc:NoiHoc,ThanhVienHoi:ThanhVienHoi,thongtin_khac:thongtin_khac},function(data){
-				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Đăng ký thành công. Trường NETSPACE sẽ liên hệ Bạn vào ngày 10/02/2014. Chúc năm mới Vạn Sự Như Ý.</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Đăng ký thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất để thông báo lịch học.</p>'); },200);
 				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 10px 60px 10px;">Có sự cố. Vui lòng ấn F5 thử lại.</p>');
-				//Đăng ký thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất để thông báo lịch học
 			});
 			return true;
 		}
