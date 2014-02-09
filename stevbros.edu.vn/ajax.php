@@ -35,3 +35,22 @@ if($_POST['contact']=='contact'){
 		return false;
 	}
 }
+
+if($_POST['dangky']=='dangky'){
+	$name = trim($_POST['name']);
+	$email = trim($_POST['email']);
+	$phone = trim($_POST['phone']);
+	$diachi = trim($_POST['diachi']);
+	$message = trim($_POST['message']);
+	$khoahoc = trim($_POST['khoahoc']);
+	
+	if($name!='' && $email!='' && $phone!='' && $diachi!='' && $khoahoc!=''){
+		if($tc->insert_dangky($name,$email,$phone,$diachi,$message,$khoahoc)){
+			echo '1';
+			return true;
+		}
+	}else{
+		echo '0';
+		return false;
+	}
+}

@@ -82,28 +82,30 @@ else $value = date('d/m/Y');
 $form->getProperties('Ngày', 'date_update', 1, 'input_large', $value, 20);
 echo $form->DisplayProperties();
 
-//Mô tả name
+//name
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
-$form->getProperties("Mô tả {$required}", 'name', 1, 'input_medium', $value, 100);
+$form->getProperties("Họ tên", 'name', 1, 'input_medium', $value, 100);
+echo $form->DisplayProperties();
+//email
+if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
+$form->getProperties("Email", 'email', 1, 'input_medium', $value, 60);
+echo $form->DisplayProperties();
+//phone
+if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
+$form->getProperties("Điện thoại", 'phone', 1, 'input_medium', $value, 20);
+echo $form->DisplayProperties();
+//diachi
+if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
+$form->getProperties("Địa chỉ", 'diachi', 1, 'input_medium', $value, 250);
+echo $form->DisplayProperties();
+//khoahoc
+if(@$_POST['khoahoc']) $value = $_POST['khoahoc']; else $value = $detail['khoahoc'];
+$form->getProperties("Đăng ký KH", 'khoahoc', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
 
-//url Link
-if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
-$form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 150);
-echo $form->DisplayProperties();
-//content
-$orther = "
-<script>
-CKEDITOR.replace( 'content', {
-	uiColor: '#b5d8ef',
-	toolbar: [
-		['Paste','PasteText','PasteFromWord','Bold', 'Italic', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
-	]
-});
-</script>
-";
-if(@$_POST['content']) $value = $_POST['content']; else $value = $detail['content'];
-$form->getProperties('Nội dung', 'content', 3, 'textarea', $value, 1, $orther);
+//message
+if(@$_POST['message']) $value = $_POST['message']; else $value = $detail['message'];
+$form->getProperties('Yêu cầu', 'message', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 echo "
