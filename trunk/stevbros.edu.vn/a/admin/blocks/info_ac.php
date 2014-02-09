@@ -60,7 +60,7 @@ if(!empty($_POST)){
 // form
 echo "
 <form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
+<table width='900' border='0' cellspacing='0' cellpadding='5'>
 ";
 //date create
 echo $date_create;
@@ -168,6 +168,14 @@ else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
 echo $form->DisplayProperties();
+//other2
+$value = array(1 => 'Có', 0 => 'Không');
+if($_POST['other2'] != '') $check = $_POST['other2'];
+else if($detail['other2'] != '') $check = $detail['other2'];
+else $check = 0; //giá trị mặc định
+$form->getProperties('Form đăng ký', 'other2', 5, $check, $value, ' &nbsp; ');
+echo $form->DisplayProperties();
+
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 

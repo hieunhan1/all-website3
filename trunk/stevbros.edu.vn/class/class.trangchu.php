@@ -70,7 +70,7 @@ class trangchu extends db {
 	}
 	function detail($alias,$type=NULL){
 		if($type==NULL){
-			$qr = "SELECT id,name,name_rewrite,url_hinh,description,content,date_create,metaKeyword,menu_id FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+			$qr = "SELECT id,name,name_rewrite,url_hinh,description,content,date_create,metaKeyword,menu_id,other2 FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 			return mysql_query($qr);
 		}else{
 			$qr = "SELECT id,name,name_rewrite,url_hinh,price,link FROM thanhtoan_sanpham WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
@@ -156,6 +156,11 @@ class trangchu extends db {
 	function insert_contact($name,$email,$content){
 		$datetime = date('Y-m-d H:i:s');
 		$qr = "INSERT INTO contact VALUES ('','{$datetime}','{$datetime}','{$content}','{$email}','{$name}','0','khachhang','','0')";
+		return mysql_query($qr);
+	}
+	function insert_dangky($name,$email,$phone,$diachi,$message,$khoahoc){
+		$datetime = date('Y-m-d H:i:s');
+		$qr = "INSERT INTO dangky VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','{$khoahoc}','0','khachhang','','{$datetime}','{$datetime}','0')";
 		return mysql_query($qr);
 	}
 	function view_nhanxet($alias){

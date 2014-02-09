@@ -3,8 +3,15 @@ include_once('blocks/right.php');
 $view_post .= $tc->navigator($row_menu_one['url'],$row_menu_one['name'],$row_menu_one['title'],'h3');
 $view_post .= '<div id="left">';
 if(preg_match("/15/i",$row_detail['menu_id'])) $date = '<div id="datetime">'.date('d/m/Y H:i',strtotime($row_detail['date_create'])).'</div>'; else $date = '';
+
+if($row_detail['other2'] == 1){
+	$form_dangky = ob_start();
+	include_once('blocks/form_dangky.php');
+	$form_dangky = ob_get_clean();
+}
+
 $view_post .= '<div id="view_post">
-	<h1>'.$row_detail['name'].'</h1>'.$date.$row_detail['content'].'
+	<h1>'.$row_detail['name'].'</h1>'.$date.$row_detail['content'].$form_dangky.'
 </div><div style="clear:both; height:30px"></div>
 
 <div id="fb-root"></div>
