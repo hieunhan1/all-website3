@@ -34,8 +34,22 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #contact_social #social{width:225px; height:120px; float:right; padding:60px 0 0 10px; background:url(images/social.png) no-repeat}
 #contact_social #social img{width:64px}
 
-#footer{height:40px; margin:0 7px 0 10px; padding-top:10px; color:#FFF; font-weight:bold}
+#footer{height:65px; margin:0 7px 0 10px; padding-top:10px; color:#FFF; font-weight:bold}
 #footer h5{font-size:100%; width:auto; float:left}
+
+#support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:10px; background:#FFF; border:solid 1px #999; z-index:5}
+#support_online #btn_support{height:40px; cursor:pointer}
+#support_online #ajax_support{display:none; padding-top:10px; border-top:solid 1px #999}
+
+#support_online #ds_chinhanh{margin:0 5px}
+#support_online #ds_chinhanh .ds_chinhanh_item{width:100px; float:left; line-height:25px; height:25px; text-align:center; margin:0 10px 5px 10px; background-color:#FF9; border:solid 1px #999; cursor:pointer}
+#support_online #ds_chinhanh .ds_chinhanh_item_active{background-color:#F00; color:#FFF; font-weight:bold}
+
+#support_online #ds_support {clear:both; margin:0 15px 0 25px; padding-top:10px}
+#support_online #ds_support .ds_support_item{line-height:25px; height:25px; margin-bottom:8px}
+#support_online #ds_support .ds_support_item img{height:25px; float:left; margin-right:10px}
+
+#support_hotline{clear:both; line-height:22px; padding:10px 0; text-align:center; font-weight:bold}
 
 /*home*/
 #nauan_other{height:153px; padding:35px 30px 0 30px; background:url(images/bg_catlogy.png) no-repeat}

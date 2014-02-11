@@ -1,4 +1,12 @@
 <?php
+$lang = 'vi';
+
+$error_sql = "Lỗi kết nối";
+define(does_not_exist,'Mục này không tồn tại.');
+
+include_once('class/class.trangchu.php');
+$tc = new trangchu();
+
 include_once('config.php');
 
 if($_POST['contact']=='contact'){
@@ -23,168 +31,36 @@ if($_POST['contact']=='contact'){
 	}
 }
 
-if($_POST['form']=='form'){
-	$ma = $_POST['ma'];
-	echo '<option value="">-- Select --</option>';
-	$qr = $tc->booking_banggia_to($ma);
+if($_POST['support_online']=='support_online'){
+	$i = 0;
+	$qr = $tc->chinhanh_ds();
+	$name_chinhanh = '';
+	$info_chinhanh = '';
 	while($row = mysql_fetch_array($qr)){
-		echo '<option value="'.$row['ma'].'">'.$row['name'].'</option>';
-	}
-}
-
-if($_POST['banggia']=='banggia'){
-	$form = $_POST['form'];
-	$to = $_POST['to'];
-	
-	$qr = $tc->booking_banggia($form,$to);
-	$row = mysql_fetch_array($qr);
-	
-	$weight = str_replace(',','<br />',$row['weight']);
-	$rate = str_replace(',','<br />',$row['rate']);
-	$myc = str_replace(',','<br />',$row['myc']);
-	$msc = str_replace(',','<br />',$row['msc']);
-	$mcc = str_replace(',','<br />',$row['mcc']);
-	$tcs = str_replace(',','<br />',$row['tcs']);
-	$awb = str_replace(',','<br />',$row['awb']);
-	$service = str_replace(',','<br />',$row['service']);
-	
-	echo '<p style="font-weight:bold; margin-bottom:10px; color:#017B80">Bảng giá tham khảo</p>
-	<table width="100%" style="border-top:1px solid #CCC; border-left:1px solid #CCC; color:#666" cellpadding="0" cellspacing="0">
-		<tr>
-			<th class="banggia_cell">Routing<br />(Tuyến)</th>
-			<th class="banggia_cell">Weight<br />(Trọng lượng)</th>
-			<th class="banggia_cell">RATE<br />(USD/kg)</th>
-			<th class="banggia_cell">MYC<br />(Phí xăng dầu)</th>
-			<th class="banggia_cell">MSC<br />(Phí chiến tranh)</th>
-			<th class="banggia_cell">MCC<br />(Phí soi máy)</th>
-			<th class="banggia_cell">TCS</th>
-			<th class="banggia_cell">AWB</th>
-			<th class="banggia_cell">SERVICE</th>
-		</tr>
-		<tr style="line-height:35px">
-			<td class="banggia_cell" align="center" valign="top">'.$row['name'].'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$weight.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$rate.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$myc.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$msc.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$mcc.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$tcs.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$awb.'</td>
-			<td class="banggia_cell" align="center" valign="top">'.$service.'</td>
-		</tr>
-	</table>';
-}
-
-if($_POST['booking']=='booking'){
-	$ngaydi = str_replace('/','-',trim($_POST['ngaydi']));
-	$ngaydi = date('Y-m-d', strtotime($ngaydi));
-	$name = trim($_POST['name']);
-	$email = trim($_POST['email']);
-	$phone = trim($_POST['phone']);
-	$diachi = trim($_POST['diachi']);
-	$message = trim($_POST['message']);
-	$form = trim($_POST['form']);
-	$to = trim($_POST['to']);
-	$soluong = trim($_POST['soluong']);
-	$nhietdo = trim($_POST['nhietdo']);
-	
-	if($ngaydi!='' && $name!='' && $email!='' && $phone!='' && $diachi!='' && $form!='' && $to!='' && $soluong!=''){
-		if($tc->booking_insert($name,$email,$phone,$diachi,$message,$ngaydi,$form,$to,$soluong,$nhietdo)){
-			echo '1';
-			include_once('sendmail/sendmail.php');
-			return true;
-		}else echo '0';
-	}else echo '0';
-}
-
-if($_POST['tracktrace']=='tracktrace'){
-	$ma_bill = $tc->check_ma_3($_POST['ma_bill']); 
-	$qr = $tc->track_trace_select($ma_bill[0]);
-	//echo mysql_num_rows($qr); return true;
-	if(mysql_num_rows($qr)==1){
-		$row = mysql_fetch_array($qr);
-		if($ma_bill[0]=='738' || $ma_bill[0]=='079'){
-			$link = 'http://www.cargoserv.com/trace/trace.asp?Carrier='.$row['ma'].'&Shipment_text='.$ma_bill[0].'-'.$ma_bill[1].'&Header=no&Site=Cserv';
-			echo '<iframe class="frame" id="myFrame" width="100%" height="600" frameborder="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" src="'.$link.'">
-				&lt;/td&gt;
-				&lt;/tr&gt;
-				
-				&lt;/p&gt;
-				&lt;/td&gt;
-				&lt;/tr&gt;
-				
-				&lt;/table&gt;
-				&lt;/td&gt;
-				&lt;!-- END: Center column --&gt;
-				&lt;!-- START: Right column --&gt;
-				&lt;td valign="top" width=30%&gt;
-				&lt;table align="right"&gt;
-				&lt;tr&gt;
-				
-				&lt;td align="left"&gt;
-				&lt;script type="text/javascript"&gt;&lt;!--
-				google_ad_client = "pub-5276420894543522";
-				google_ad_width = 160;
-				google_ad_height = 600;
-				google_ad_format = "160x600_as";
-				google_ad_channel ="";
-				google_color_border = "FFFFFF";
-				google_color_bg = "FFFFFF";
-				google_color_link = "FF0000";
-				google_color_url = "336699";
-				google_color_text = "333333";
-				//--&gt;&lt;/script&gt;
-				&lt;script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
-				&lt;/script&gt;
-				&lt;/td&gt;
-				
-				&lt;/tr&gt;
-				&lt;/table&gt;
-				&lt;/tr&gt;
-				&lt;/table&gt;
-				
-				&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;tr&gt;
-				&lt;td&gt;
-				&lt;div style="text-align: center"&gt;&lt;font color="gray"&gt;&amp;copy; CHAMP Cargosystems 2013&lt;/font&gt;&lt;/div&gt;
-				&lt;div style="text-align: center" class="hidden"&gt;
-				CUWWW06
-				
-				&lt;/div&gt;	
-				&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;/table&gt;
-				&lt;/body&gt;
-				&lt;/html&gt;
-			</iframe>';
-			return true;
-		}elseif($ma_bill[0]=='160'){
-			$link = 'http://www.cathaypacificcargo.com/ManageYourShipment/TrackYourShipment/tabid/108/SingleAWBNo/'.$ma_bill[0].'-'.$ma_bill[1].'/language/en-US/Default.aspx';
-			echo '<iframe src="'.$link.'"  data-full-screen="'.$link.'"  data-form="217" class="track_res_frame" id="track-res-frame" name="resframe-194" onLoad="multiFrameLoaded();" width="100%" height="600"></iframe>';
-		}else{
-			echo '<script type="text/javascript"> window.open("track_trace/'.$ma_bill[0].'.php?ma='.$ma_bill[0].'&number='.$ma_bill[1].'","_blank"); </script>';
-			return true;
+		$i++;
+		if($i != 1) $style = ''; else $style = ' ds_chinhanh_item_active';
+		$name_chinhanh .= '<div class="ds_chinhanh_item ds_support_'.$i.$style.'">'.$row['name'].'</div>';
+		
+		$support_chinhanh .= '<div id="ds_support" class="ds_support ds_support_'.$i.'">';
+		$yahoo_nick = explode(',', $row['yahoo_nick']);
+		$yahoo_name = explode(',', $row['yahoo_name']);
+		for($j=0; $j<count($yahoo_nick); $j++){
+			$content = file_get_contents('http://opi.yahoo.com/online?u='.$yahoo_nick[$j].'&m=t');
+			if( preg_match('/NOT ONLINE$/', $content) ) $image_support = 'yahoo_off.png'; else $image_support = 'yahoo_on.png';
+			
+			$support_chinhanh .= '<div class="ds_support_item"><a href="ymsgr:sendIM?'.$yahoo_nick[$j].'">'.$yahoo_name[$j].'<img src="images/'.$image_support.'" alt="yahoo_on" /></a></div>';
 		}
+		$support_chinhanh .= '</div>';
+		
+		$hotline_chinhanh .= '<div id="support_hotline" class="ds_support ds_support_'.$i.'">Hotline: <span style="color:#F00">'.$row['hotline'].'</span></div>';
 	}
-	
-	$ma_bill = $tc->check_ma_2($_POST['ma_bill']); 
-	$qr = $tc->track_trace_select($ma_bill[0]);
-	if(mysql_num_rows($qr)==1){
-		$row = mysql_fetch_array($qr);
-		if($ma_bill[0]=='89'){
-			$link = 'http://www.dhl.com/content/g0/en/express/tracking.shtml?brand=DHL&AWB='.$_POST['ma_bill'].'&commit=Track%21';
-			echo '<iframe width="100%" height="600" frameborder="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" src="'.$link.'"></iframe>';
-			return true;
-		}elseif($ma_bill[0]=='1Z'){
-			$link = 'http://wwwapps.ups.com/etracking/tracking.cgi?TypeOfInquiryNumber=T&InquiryNumber1='.$_POST['ma_bill'].'&commit=Track%21';
-			echo '<script type="text/javascript"> window.open("'.$link.'","_blank"); </script>';
-			return true;
-		}
-	}
-	echo '<p style="color:#F00">Không tìm thấy dữ liệu</p>';
-	return false;
+	echo '<div id="ds_chinhanh">'.$name_chinhanh.'</div>'.$support_chinhanh.$hotline_chinhanh.'
+	<script>
+	$(document).ready(function($){
+		$(".ds_support").hide();
+		$(".ds_support_1").show();
+	});
+	</script>';
 }
 
 mysql_close();

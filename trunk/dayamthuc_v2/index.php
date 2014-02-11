@@ -205,6 +205,14 @@ if(@$_GET['danhmuc']){
 <script type="text/javascript" src="library/partner/common.js"></script>
 <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
 <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
+
+<div id="support_online">
+	<img src="images/support-online.gif" alt="support online" id="btn_support" />
+    <div id="ajax_support">
+    	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />
+        <div id="ajax_support_data"></div>
+    </div>
+</div>
 <?php
 if(@$script_photo) echo $script_photo;
 mysql_close();
