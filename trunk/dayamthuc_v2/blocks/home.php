@@ -22,7 +22,7 @@ $row = mysql_fetch_array($qr);
 $str_about .= '<div id="about_video"><iframe src="http://www.youtube.com/embed/'.$row['link'].'?origin=http://www.dayamthuc.vn&rel=0&wmode=transparent" frameborder="0"></iframe></div>
 	<div style="clear:both; height:1px"></div></div>';
 
-echo $str_about;
+//echo $str_about;
 ?>
 
 <!--Thông tin-->

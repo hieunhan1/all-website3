@@ -4,7 +4,7 @@ Vang:	FEE356
 Do:		E68688
 */
 *{margin:0; padding:0}
-body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background-color:#AB0209}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background:url(images/bg.gif)}
 img{border:0}
 a:link,a:visited,a:active{color:#0055A5; text-decoration:none}
 a:hover{color:#ED1E28; text-decoration:underline}
@@ -214,11 +214,11 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #menu{height:48px; margin-bottom:15px}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:33px; color:#FFF; font-weight:bold; text-transform:uppercase; margin-left:20px; padding:0 20px; background:url(images/bg-menu.gif); border:solid 1px #7B2424; box-shadow: 1px 1px 2px #333; text-shadow: 2px 2px #333}
+#nav li a {line-height:33px; color:#FFF; font-weight:bold; text-transform:uppercase; padding:0 25px; background:url(images/bg-menu.gif); border:solid 1px #7B2424; box-shadow: 1px 1px 2px #333; text-shadow: 2px 2px #333}
 #nav a:hover {text-decoration:none; color:#FF0}
 #nav li {float:left; position:relative}
 #nav ul {width:160px; position:absolute; top:33px; display:none}
-#nav li ul a {width:180px; line-height:28px; float:left; color:#CCC; text-transform:none; font-weight:100; border-bottom:solid 1px #8E0607}
+#nav li ul a {width:180px; line-height:28px; float:left; margin-left:23px; color:#CCC; text-transform:none; font-weight:100; border-bottom:solid 1px #8E0607}
 #nav li ul a:hover {background-color:#666; color:#FFF}
 #nav ul ul {top:auto}
 #nav li ul ul {left:220px}

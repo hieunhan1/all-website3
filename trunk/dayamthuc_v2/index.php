@@ -104,10 +104,14 @@ if(@$_GET['danhmuc']){
 
 <body>
 <div id="wrapper">
+	<img src="images/bg-header.png" width="960" style="margin:5px 0 10px 0" />
+    <!--
     <div id="logo">
         <div class="aleoflash-swf" style="display:block;"><embed src="images/logo.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="320" height="80" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed></div>
         <script language="JavaScript">var hasFlash=false;if(window.ActiveXObject){ try { if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) hasFlash=true;} catch(e){}} else { if(navigator.plugins["Shockwave Flash"]){hasFlash=true;}}var elems=document.getElementsByTagName("div"); for(var i in elems){if(!hasFlash && elems[i].className=="aleoflash-gif") elems[i].style.display="block"; else if ((!hasFlash && elems[i].className=="aleoflash-swf") || elems[i].className=="aleoflash") elems[i].style.display="none";}</script>
+        
     </div>
+    -->
     <?php
     include_once('blocks/menu.php');
 	
