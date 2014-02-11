@@ -35,7 +35,7 @@ if(@$_GET['danhmuc']){
 	}
 	
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
-	else $menu_root = '0';
+	else $menu_root = $idMenu;
 	
 	if(!@$_GET['detail'] || $danhmuc=='danh-muc'){
 		($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];

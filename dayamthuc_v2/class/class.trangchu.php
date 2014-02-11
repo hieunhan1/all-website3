@@ -78,6 +78,17 @@ class trangchu extends db {
 		$view = $this->navigator($row['parent_id']).$view;
 		return $view;
 	}
+	function navigator2($menu_id){
+		$str = explode(',',$menu_id);
+		$i = count($str)-2;
+		for($j=1; $j<=$i; $j++){
+			$qr = mysql_query("SELECT id,name,url FROM menu WHERE `delete`=0 AND status=1 AND id='{$str[$j]}' ");
+			$row = mysql_fetch_array($qr);
+			if($row['id']!=56 && $row['id']!=65 && $row['id']!=63) $view .= '<span>&gt;&gt;</span><a href="'.$row['url'].'">'.$row['name'].'</a>';
+		}
+		
+		return $view;
+	}
 	function list_item($select,$table,$where,$limit=NULL){
 		$qr = "SELECT {$select} FROM {$table} WHERE {$where} ORDER BY date_update DESC {$limit}";
 		return mysql_query($qr);
@@ -135,7 +146,7 @@ class trangchu extends db {
 	
 	/*chuong trinh dao tao*/
 	function chuongtrinhdaotao($id){
-		$qr = "SELECT id,name,url FROM menu WHERE status=1 AND `delete`=0 AND parent_id='{$id}' ORDER BY `order`";
+		$qr = "SELECT id,name,url FROM menu WHERE status=1 AND `delete`=0 AND id<>63 AND id<>65 AND parent_id='{$id}' ORDER BY `order`";
 		return mysql_query($qr);
 	}
 	function chuongtrinhdaotao_info($id){

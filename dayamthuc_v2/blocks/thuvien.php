@@ -17,9 +17,9 @@
 				while($row1 = mysql_fetch_array($qr1)){
 					$i++;
 					if($i%4 != 0) $style = 'margin:0 0 14px 14px'; else $style = 'margin:0 0 14px 0';
-					echo '<div class="home_photo_item" style="width:213px; '.$style.'">
-						<a href="'.$row1['url'].'" style="color:#FF4D4D"><div class="home_photo_item_img"><img src="'.url_catalog_image.$row1['url_hinh'].'" alt="'.$row1['name'].'" /></div>
-						<h3 style="display:block; width:100%; height:44px; line-height:22px; background-color:#FFF">'.$row1['name'].'</h3></a>
+					echo '<div class="thuvien_photo_item" style="width:213px; '.$style.'">
+						<a href="'.$row1['url'].'" style="color:#FF4D4D"><div class="thuvien_photo_item_img"><img src="'.url_catalog_image.$row1['url_hinh'].'" alt="'.$row1['name'].'" /></div>
+						<h3>'.$row1['name'].'</h3></a>
 					</div>';
 				}
 				echo '<div style="clear:both; height:20px"></div>';
@@ -28,12 +28,11 @@
 				$i = 0;
 				while($row1 = mysql_fetch_array($qr1)){
 					$i++;
-					if($i%3 != 0) $style = 'style="margin:0 15px 10px 0"'; else $style = 'style="margin:0 0 10px 0"';
+					if($i%3 != 0) $style = 'style="margin:0 13px 13px 0"'; else $style = 'style="margin:0 0 13px 0"';
 					
-					echo '<div class="home_video_item" '.$style.'>
-					<a href="'.$row1['url'].'"><div class="home_video_item_img"><img src="'.url_catalog_image.$row1['url_hinh'].'" alt="'.$row1['name'].'" /></div>
-					<div class="play_video"></div>
-					<img src="images/video.gif" alt="video" style="margin-bottom:5px" />
+					echo '<div class="thuvien_video_item" '.$style.'>
+					<a href="'.$row1['url'].'"><div class="thuvien_video_item_img"><img src="'.url_catalog_image.$row1['url_hinh'].'" alt="'.$row1['name'].'" /></div>
+					<div class="album_icon_video"></div>
 					<h3>'.$row1['name'].'</h3></a></div>';
 				}
 			}

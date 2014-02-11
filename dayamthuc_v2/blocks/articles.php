@@ -1,7 +1,13 @@
 <div id="content">
 	<div id="navigator">
         <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
-        <?php echo $tc->navigator($idMenu); ?>
+        <?php
+		$str = explode(',',$row_detail['menu_id']);
+		$i = count($str)-2;
+		if($str[$i]!=56 && $str[$i]!=65 && $str[$i]!=63) $idMenu = $str[$i]; else $idMenu = $str[$i-1];
+		
+		echo $tc->navigator($idMenu);
+		?>
     </div>
     <hr />
     
@@ -12,17 +18,16 @@
         echo '<h1>'.$row_detail['name'].'</h1>'.$dangky.$row_detail['content'].$dangky;
 		?>
         <div style="clear:both; height:30px"></div>
-        <hr />
-		<div id="other">
-        	<div>Bài viết khác</div>
-            <?php
-            $qr = $tc->info_other($idMenu,$row_detail['id']);
+        <?php
+        $qr = $tc->info_other($idMenu,$row_detail['id']);
+		if(mysql_num_rows($qr) > 0){
+			echo '<hr /> <div id="other"> <div>Bài viết khác</div>';
 			while($row = mysql_fetch_array($qr)){
 				echo '<li><a href="'.$danhmuc.'/'.$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
 			}
-			?>
-        </div>
-        
+			echo '</div>';
+		}
+		?>
     </div>
     
     <?php include_once('blocks/right.php'); ?>

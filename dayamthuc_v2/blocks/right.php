@@ -26,7 +26,7 @@
     </div>
     
     <div class="box_right">
-        <div class="box_right_title"><img src="images/newsEventsIcon.jpg" alt="Video nổi bật" /> Thông báo học viên</div>
+        <div class="box_right_title"><img src="images/newsEventsIcon.jpg" alt="Video nổi bật" /> Thông báo mới</div>
         <?php
         $qr = $tc->info_danhmuc(66,3);
         while($row = mysql_fetch_array($qr)){

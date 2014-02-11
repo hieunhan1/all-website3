@@ -53,7 +53,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 .home_info{background-color:#FFF; margin-bottom:30px; padding-top:10px}
 
-.title{clear:both; height:79px; color:#FF0; font-size:210%; font-weight:bold; text-transform:uppercase; font-family:"Times New Roman", Times, serif}
+.title{clear:both; height:89px; color:#FF0; font-size:210%; font-weight:bold; text-transform:uppercase; font-family:"Times New Roman", Times, serif}
 .title .title_1 {width:43px; height:69px; float:left; background:url(images/title-1.png) no-repeat}
 .title .title_2 {width:auto; height:44px; float:left; background:url(images/title-2.png) repeat-x; padding-top:28px; text-shadow:2px 2px 3px #000}
 .title .title_2 p{width:49px; overflow:hidden; float:left}
@@ -77,17 +77,41 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .home_photo_item a:hover{color:#FF0}
 .home_photo_item h4{display:block; line-height:30px; background-color:#EC1C24}
 
-.home_video_item{width:290px; height:270px; float:left; margin-left:22px}
+.home_video_item{width:290px; height:280px; float:left; margin-left:22px}
 .home_video_item .home_video_item_img{height:180px; overflow:hidden; text-align:center; background-color:#1B1B1B; position:absolute; z-index:1}
 .home_video_item .home_video_item_img img{width:274px; margin:8px}
 .home_video_item .play_video{width:290px; height:180px; background:url(images/play-video.png) no-repeat center; position:relative; z-index:3}
-.home_video_item h4, .home_video_item h3{font-size:100%; line-height:20px}
+.home_video_item h4{font-size:100%; line-height:20px}
 /*end home*/
+
+/*thu vien*/
+.thuvien_photo_item{width:220px; float:left; margin:0 0 14px 14px; border:solid 1px #CCC}
+.thuvien_photo_item .thuvien_photo_item_img{width:200px; height:160px; overflow:hidden; margin:auto}
+.thuvien_photo_item .thuvien_photo_item_img img{width:200px}
+.thuvien_photo_item a{color:#FFF; text-align:center}
+.thuvien_photo_item a:hover{color:#FF0}
+.thuvien_photo_item h3{display:block; font-size:100%; height:44px; line-height:22px; overflow:hidden; padding:0 5px}
+
+.photo_item{width:205px; float:left; border:solid 1px #CCC}
+.photo_item .photo_item_img{width:175px; height:110px; overflow:hidden; margin:15px; position:absolute; z-index:1}
+.photo_item .photo_item_img img{width:175px}
+.photo_item .album_icon{position:relative; z-index:2}
+.photo_item a{color:#F33}
+.photo_item a:hover{color:#C00}
+.photo_item h3{display:block; font-size:100%; text-align:center; line-height:22px; height:44px; overflow:hidden}
+
+.thuvien_video_item{width:290px; height:250px; float:left; margin-left:22px; background-color:#f2f2f2; border:1px solid #CCC;}
+.thuvien_video_item .thuvien_video_item_img{width:210px; height:200px; overflow:hidden; position:absolute; z-index:1}
+.thuvien_video_item .thuvien_video_item_img img{height:200px; margin:8px 0 0 8px}
+.thuvien_video_item .album_icon_video{width:290px; height:207px; background:url(images/video_icon.png) no-repeat center; position:relative; z-index:3}
+.thuvien_video_item h3{font-size:100%; line-height:20px; text-align:center; padding:0 10px}
+/*end thu vien*/
 
 #content{background-color:#FFF; margin:0 7px 30px 10px}
 
 #left{width:650px; float:left; margin-left:10px}
 
+/*right*/
 #right{width:250px; float:right; margin-right:10px}
 
 #right .box_right{clear:both; margin-bottom:30px; padding:10px 5px 5px 5px; border:solid 1px #999; box-shadow:2px 2px 3px #666}
@@ -110,14 +134,15 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #right .box_right_info .box_right_info_img img{width:78px; border:solid 1px #CCC}
 #right .box_right_info h3{font-size:100%}
 
-.photo_danhmuc_c1{font-weight:bold; line-height:25px; font-size:110%}
-.photo_danhmuc_c1 a{color:#F00}
+.photo_danhmuc_c1{font-weight:bold; line-height:25px; font-size:100%}
+.photo_danhmuc_c1 a{color:#F55}
 
-.photo_danhmuc_c2{line-height:16px; font-weight:bold; font-style:italic}
+.photo_danhmuc_c2{line-height:16px; font-weight:bold; font-style:italic; font-size:90%}
 .photo_danhmuc_c2 a{display:block; margin-left:5px; padding:0 0 8px 10px; background:url(images/arrow.gif) no-repeat left; background-position:0px -1px}
 
-.photo_danhmuc_c3{padding:0 0 5px 20px; line-height:16px}
+.photo_danhmuc_c3{padding:0 0 5px 20px; line-height:16px; font-size:90%}
 .photo_danhmuc_c3 a{display:block; color:#666; margin-left:0; padding:0 0 8px 10px; background:url(images/arrow.gif) no-repeat left; background-position:0px -1px}
+/*end right*/
 
 #other{clear:both}
 #other div{font-size:130%; color:#666; font-weight:bold; padding:10px 0 0 20px}
@@ -132,6 +157,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #chuongtrinh .chuongtrinh_item .chuongtrinh_item_img img{width:140px}
 #chuongtrinh .chuongtrinh_item .chuongtrinh_info{line-height:20px; height:60px; overflow:hidden}
 #chuongtrinh .chuongtrinh_item h3{font-size:100%; margin-bottom:3px}
+#chuongtrinh .h4 {color:#F00}
 #chuongtrinh h4{color:#F00; font-size:100%; font-style:italic; text-transform:uppercase; text-decoration:underline; margin-bottom:10px}
 
 .info_list{height:150px}
@@ -139,13 +165,6 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .info_list .info_list_img img{width:188px; border:solid 1px #CCC}
 .info_list .info_list_text{line-height:20px; height:60px; overflow:hidden}
 .info_list h3{font-size:110%; line-height:20px; margin-bottom:5px}
-
-.photo_item{width:205px; float:left; border:solid 1px #333; box-shadow:2px 2px 3px #333}
-.photo_item .photo_item_img{width:200px; height:145px; overflow:hidden; margin:auto}
-.photo_item .photo_item_img img{width:200px}
-.photo_item a{color:#FFF}
-.photo_item a:hover{color:#FF0}
-.photo_item h3{display:block; font-size:100%; text-align:center; line-height:22px; height:44px; overflow:hidden; background-color:#EC1C24}
 
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
@@ -164,6 +183,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 .text_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
 .select_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
+.btn_dangky{width:auto; padding:8px 50px; font-size:120%; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
 
 #navigator{clear:both; padding:10px 0 10px 10px}
 #navigator a{padding-right:15px; font-size:12px; color:#666}

@@ -19,7 +19,7 @@
 		
 		if($total > 1){
 			while($row = mysql_fetch_array($list)){
-				$str_info .= '<div class="info_list" '.$style.'>
+				$str_info .= '<div class="info_list">
 				<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">
 					<div class="info_list_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 					<h3>'.$row['name'].'</h3>
