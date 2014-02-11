@@ -118,9 +118,13 @@ echo $form->DisplayProperties();
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties("Email", 'email', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
-//yahoo
-if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
-$form->getProperties("Yahoo online", 'yahoo', 1, 'input_medium', $value, 100,'<p style="color:blue">VD: consultant1,consultant2,...</p>');
+//yahoo_nick
+if(@$_POST['yahoo_nick']) $value = $_POST['yahoo_nick']; else $value = $detail['yahoo_nick'];
+$form->getProperties("Yahoo nick", 'yahoo_nick', 1, 'input_medium', $value, 100,'<p style="color:blue">VD: consultant1,consultant2,...</p>');
+echo $form->DisplayProperties();
+//yahoo_name
+if(@$_POST['yahoo_name']) $value = $_POST['yahoo_name']; else $value = $detail['yahoo_name'];
+$form->getProperties("Yahoo name", 'yahoo_name', 1, 'input_medium', $value, 200,'<p style="color:blue">VD: Tư vấn 1, Tư vấn 2,...</p>');
 echo $form->DisplayProperties();
 
 

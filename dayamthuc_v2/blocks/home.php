@@ -19,7 +19,7 @@ $str_about = '<div id="about" class="viewpost"> <h1>'.$row['name'].'</h1> <div i
 
 $qr = $tc->video_danhmuc($idMenu);
 $row = mysql_fetch_array($qr);
-$str_about .= '<div id="about_video"><iframe src="http://www.youtube.com/embed/'.$row['link'].'?origin=http://www.dayamthuc.vn&rel=0" frameborder="0"></iframe></div>
+$str_about .= '<div id="about_video"><iframe src="http://www.youtube.com/embed/'.$row['link'].'?origin=http://www.dayamthuc.vn&rel=0&wmode=transparent" frameborder="0"></iframe></div>
 	<div style="clear:both; height:1px"></div></div>';
 
 echo $str_about;

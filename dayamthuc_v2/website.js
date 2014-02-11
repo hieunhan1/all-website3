@@ -120,14 +120,34 @@ $(document).ready(function($){
 	});
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$("#nav li a, .select_chinhanh, .box_right").corner("5px");
+		$("#support_online").corner("top 10px");
+		$("#nav li a, .ds_chinhanh_item, .select_chinhanh, .box_right").corner("5px");
 		$("#slider, .home_info").corner("15px");
 	}
 	
+	/*support*/
+	$.post("ajax.php",{support_online:"support_online"},function(data){
+		$("#ajax_support_data").html(data);
+		$("#loading_support").hide();
+	})
+	
 	/*chi nhanh*/
+	
+	$("#btn_support").click(function(){
+		$("#ajax_support").toggle(100);
+		
+	});
+	$(".ds_chinhanh_item").live("click", function(){
+		var id = ($(this).attr('class')).split(" ");
+		$(".ds_chinhanh_item").css({"background-color":"#FF9","color":"#333","font-weight":"100"});
+		$(this).css({"background-color":"#F00","color":"#FFF","font-weight":"bold"});
+		
+		$(".ds_support").hide();
+		$("." + id[1]).show();
+	});
+	
 	$(".chinhanh").hide();
 	$("#chinhanh1").show();
-	
 	$(".select_chinhanh").click(function(){
 		var id = ($(this).attr('class')).split(" ");
 		
