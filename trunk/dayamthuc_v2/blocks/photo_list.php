@@ -16,8 +16,11 @@
 				$i++;
 				if($i%3 != 0) $style = 'style="margin:0 14px 14px 0"'; else $style = 'style="margin:0 0 14px 0"';
 				echo '<div class="photo_item" '.$style.'>
-				<a href="'.$row['url'].'"><div class="photo_item_img"><img src="'.url_picture_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'"></div>
-				<h3>'.$row['name'].'</h3></a></div>';
+				<a href="'.$row['url'].'">
+					<div class="photo_item_img"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'"></div>
+					<div class="album_icon"><img src="images/album_icon.png" alt="album_icon" /></div>
+					<h3>'.$row['name'].'</h3>
+				</a></div>';
 			}
 		}else{
 			$qr = $tc->photo_detail($idMenu);

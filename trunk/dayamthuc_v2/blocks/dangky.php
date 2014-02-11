@@ -130,7 +130,7 @@
               </tr>
               <tr>
                 <td>&nbsp;</td>
-                <td><input name="btnSend" type="submit" value="ĐĂNG KÝ" style="padding:5px 25px" /></td>
+                <td><input name="btnSend" type="submit" value="ĐĂNG KÝ" class="btn_dangky" /></td>
               </tr>
             </table>
             </div>
