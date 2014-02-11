@@ -46,6 +46,8 @@ if($_POST['dangky']=='dangky'){
 	
 	if($name!='' && $email!='' && $phone!='' && $diachi!='' && $khoahoc!=''){
 		if($tc->insert_dangky($name,$email,$phone,$diachi,$message,$khoahoc)){
+			$id = mysql_insert_id();
+			include_once('sendmail/sendmail_dk.php');
 			echo '1';
 			return true;
 		}
