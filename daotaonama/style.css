@@ -21,6 +21,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #hot_login #hotline{width:auto; float:left; padding-left:20px}
 #hot_login #login{width:auto; float:right; padding-right:20px}
 #hot_login #login input{width:150px; padding:3px 5px; border:solid 1px #ACACAC; background:none}
+#hot_login #login #btn_login{width:40px; cursor:pointer}
 
 #left{width:800px; float:left}
 

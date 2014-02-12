@@ -44,6 +44,23 @@ if($_POST['register']=='register'){
 	}
 }
 
+if($_POST['login']=='login'){
+	$username = trim($_POST['username']);
+	$password = $_POST['password'];
+	if( strlen($username)>5 && strlen($password)>5 ){
+		$password = md5($password);
+		$qr = mysql_query("SELECT id FROM register_hocvien WHERE `delete`=0 AND status=1 AND name='{$username}' AND password='{$password}' ");
+		if(mysql_num_rows($qr) == 1){
+			echo 'http://'.$domain.'/thong-tin-hoc-vien/?user='.$username;
+			return true;
+		}else{
+			echo '2'; return false;
+		}
+	}else{
+		echo '0'; return false;
+	}
+}
+
 if($_POST['checks_support']=='checks_support'){
 	$array_yahoo	= explode(',',$row_config['yahoo_nick']); //array('hieu_nhan1','hieu_nhan111');
 	$array_name		= explode(',',$row_config['yahoo_name']); //array('Trần Ngọc Phú','Nguyễn Trọng Thắng');
@@ -78,7 +95,6 @@ if($_POST['checks_support']=='checks_support'){
 		</tr>
 	</table>';
 }
-
 
 mysql_close();
 return true;

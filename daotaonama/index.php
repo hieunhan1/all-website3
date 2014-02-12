@@ -99,7 +99,7 @@ if(@$_GET['danhmuc']){
     <?php include_once('blocks/slider.php'); ?>
     <div id="hot_login">
     	<div id="hotline"><font color="#DA0000">HOTLINE:</font> <?php echo $row_config['hotline']; ?></div>
-    	<div id="login">ID <input type="text" name="username" class="txt_bo" /> Pass <input type="text" name="password" class="txt_bo" /></div>
+    	<div id="login">ID <input type="text" name="username" class="txt_bo" /> Pass <input type="password" name="password" class="txt_bo" /> <input type="button" name="login" value="Go" class="txt_bo" id="btn_login" /></div>
     </div>
     <div id="left">
     	<div id="home_chuongtrinh">

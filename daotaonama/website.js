@@ -86,6 +86,36 @@ $(document).ready(function($){
 		});
 	}
 	
+	/*Login*/
+	$("#btn_login").click(function(){
+		var username = $.trim($("input[name=username]").val());
+		var password = $("input[name=password]").val();
+		
+		if(username.length < 6){
+			alert("Username chưa đúng");
+			$("input[name=username]").focus();
+			return false;
+		}else if(password.length < 6){
+			alert("Password chưa đúng");
+			$("input[name=password]").focus();
+			return false;
+		}else{
+			$.post("ajax.php",{login:"login",username:username,password:password},function(data){
+				if(data == '0'){
+					alert("Lỗi. Vui lòng ấn F5 thử lại.");
+					return false;
+				}else if(data == '2'){
+					alert("Username hoặc password chưa đúng.");
+					return false;
+				}else{
+					window.location = data;
+					return true;
+				}
+			});
+		}
+	});
+	
+	/*Register*/
 	$("input[name=btnRegister]").click(function(){
 		var name = $.trim($("input[name=hoten]").val());
 		var phone = $.trim($("input[name=phone]").val());
@@ -115,12 +145,13 @@ $(document).ready(function($){
 	});
 	
 	$("#info_support").hide();
-	$.post("ajax.php",{checks_support:"checks_support"},function(data){
-		$("#info_support").css('background','#FFF');
-		$("#info_support").html(data);
-	});
 	$("#img_support").click(function(){
 		$("#info_support").toggle(200);
-		//$("#info_support").css('background','url(images/loading1.gif) no-repeat center #FFF');
+		$("#info_support").css('background','url(images/loading1.gif) no-repeat center #FFF');
+		$.post("ajax.php",{checks_support:"checks_support"},function(data){
+			$("#info_support").css('background','#FFF');
+			$("#info_support").html(data);
+		});
+		
 	});
 });
