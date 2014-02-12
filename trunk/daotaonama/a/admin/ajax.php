@@ -56,7 +56,11 @@ if(@$_SESSION["id_admin"]) {
 		$id_register = trim($_POST['id_register']);
 		$date = date('Y-m-d H:i:s');
 		
+		//if($total == 0 & eregi("^[[:alnum:]]+$", $user)) echo '<font color="#00CC00">Username hợp lệ</font>'; else echo '<font color="#FF0000">Username không được chứa ký tự đặc biệt</font>';
+		
 		if($username != ''){
+			if(!eregi("^[[:alnum:]]+$", $username)){ echo '3'; return false; }
+			
 			$qr = mysql_query("INSERT INTO register_hocvien VALUES ('','{$username}','{$password}','{$notes}','{$id_register}','vi','1','{$date}','{$date}','{$user}','','0')");
 			if($qr){
 				$id_hocvien = mysql_insert_id();

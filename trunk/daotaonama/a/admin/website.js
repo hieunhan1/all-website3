@@ -271,6 +271,11 @@ $("input[name=create_user]").click(function(){
 			alert('User này đã tồn tại. Vui lòng nhập user khác.');
 			$("input[name=username]").focus();
 			return false;
+		}else if(data=='3'){
+			$("input[name=create_user]").show();
+			alert('Username không được chứa ký tự đặc biệt');
+			$("input[name=username]").focus();
+			return false;
 		}else if(data=='0'){
 			alert('Lỗi. Vui lòng ấn F5 thử lại.');
 			return false;
