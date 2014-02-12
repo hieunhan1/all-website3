@@ -121,7 +121,7 @@ $(document).ready(function($){
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
 		$("#support_online").corner("top 10px");
-		$("#nav li a, .ds_chinhanh_item, .select_chinhanh, .box_right").corner("5px");
+		$("#nav li a, #home_info_new, .ds_chinhanh_item, .select_chinhanh, .box_right").corner("5px");
 		$("#slider, .home_info").corner("15px");
 	}
 	

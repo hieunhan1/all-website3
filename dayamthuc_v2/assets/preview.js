@@ -2,8 +2,8 @@ $(document).ready(
 	function() {
 		var $container = $(".container");
 		$container.wtRotator({
-			width:1000,
-			height:200,
+			width:960,
+			height:280,
 			button_width:32,
 			button_height:32,
 			button_margin:0,
