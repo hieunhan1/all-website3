@@ -22,7 +22,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 #logo{clear:both; width:320px; height:80px; margin:20px auto 30px auto}
 
-#slider{height:280px; overflow:hidden; margin-bottom:30px; border:solid 1px #FFF}
+#slider{height:280px; overflow:hidden; margin-bottom:30px; border:solid 1px #FFF; position:relative}
 
 #contact_social{clear:both}
 #contact_social #contact_foo{width:580px; height:155px; float:left; font-size:110%; line-height:23px; padding:25px 0 0 120px; background:url(images/contact_home.png) no-repeat top left}
@@ -81,8 +81,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .home_info_noibat_item .info{height:60px; overflow:hidden}
 .home_info_noibat_item .viewmore{float:right; color:#F00}
 
-#home_info_new{width:370px; float:right; margin-right:10px}
-#home_info_new li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/arrow.gif) no-repeat left top}
+#home_info_new{width:370px; float:right; margin:0 10px 10px 0; padding:6px 8px 0 8px; border:solid 1px #CCC; background-color:#FFC; box-shadow:2px 2px 2px #b8b8b8}
+#home_info_new li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/li.gif) no-repeat left top}
 
 .home_photo_item{width:220px; float:left; margin:0 0 14px 14px; border:solid 1px #333; box-shadow:2px 2px 3px #333}
 .home_photo_item .home_photo_item_img{width:200px; height:160px; overflow:hidden; margin:auto}
@@ -160,7 +160,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 #other{clear:both}
 #other div{font-size:130%; color:#666; font-weight:bold; padding:10px 0 0 20px}
-#other li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/arrow.gif) no-repeat left top}
+#other li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/li.gif) no-repeat left top}
 
 #chuongtrinh{padding:0 20px}
 #chuongtrinh .chuongtrinh_title{height:36px; line-height:36px; text-align:center; font-weight:bold; font-size:110%; margin-bottom:20px; background:url(images/bg_chuongtrinh.jpg) no-repeat center}
@@ -242,14 +242,17 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #content_popup #content_pp{width:370px; float:right; line-height:20px; margin-bottom:30px}
 
 /*linkwebsite*/
-.linkwebsite {width:100%; height:170px; text-align:center; font-family:"Times New Roman", Times, serif; margin-bottom:30px}
+.linkwebsite {width:100%; height:165px; text-align:center; font-family:"Times New Roman", Times, serif; margin-bottom:30px}
 .linkwebsite h2 {display:block; color:#FF0; font-size:18px; height:50px; line-height:30px; margin-top:10px; text-align:center; text-transform:uppercase;}
 .linkwebsite p {display:block; height:80px; overflow:hidden; line-height:20px; font-size:16px; font-weight:bold; text-align:center; text-transform:capitalize; width:190px; }
-.linkwebsite a {display:block; color:#000; font-size:110%; float:right; margin-right:30px; text-decoration:none}
-.linkwebsite a:hover {color:#F00}
-.link_item {width:320px; height:100%; float:left; color:#FFFFFF}
+.linkwebsite a {display:block; color:#FF9; font-size:110%; float:right; margin-right:30px}
+.linkwebsite a:hover {color:#FF0}
+
+.link_item {width:310px; height:165px; float:left; color:#FFFFFF; background:url(images/bg_linkwebsite.png) no-repeat center}
 .link_item p{margin-left:110px;padding-left:0;}
 .link_item h2{margin-left:115px;}
+.link_item .link_item_img{width:100px; height:165px; overflow:hidden; float:left}
+.link_item .link_item_img img{height:165px}
 
 /*partner*/
 .simply-scroll-container {position:relative}

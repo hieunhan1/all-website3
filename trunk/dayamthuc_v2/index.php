@@ -105,31 +105,28 @@ if(@$_GET['danhmuc']){
 <body>
 <div id="wrapper">
 	<img src="images/bg-header.png" width="960" style="margin:5px 0 10px 0" />
-    <!--
-    <div id="logo">
+    <!--<div id="logo">
         <div class="aleoflash-swf" style="display:block;"><embed src="images/logo.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="320" height="80" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed></div>
         <script language="JavaScript">var hasFlash=false;if(window.ActiveXObject){ try { if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) hasFlash=true;} catch(e){}} else { if(navigator.plugins["Shockwave Flash"]){hasFlash=true;}}var elems=document.getElementsByTagName("div"); for(var i in elems){if(!hasFlash && elems[i].className=="aleoflash-gif") elems[i].style.display="block"; else if ((!hasFlash && elems[i].className=="aleoflash-swf") || elems[i].className=="aleoflash") elems[i].style.display="none";}</script>
-        
-    </div>
-    -->
+    </div>-->
     <?php
     include_once('blocks/menu.php');
 	
-	$qr = $tc->slider_banner(1,$idMenu);
-	if(mysql_num_rows($qr)>0){
-		$row = mysql_fetch_array($qr);
-		echo '<div id="slider"><a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"  /></a></div>';
-	}
+	include_once('blocks/slider.php');
 	
 	/*linkwebsite*/
 	$qr = $tc->menu(1,5);
 	if(mysql_num_rows($qr) > 0){
+		$i = 0;
 		echo '<script type="text/javascript" src="library/realshadow.js"></script>
 		<div class="linkwebsite">';
 		while($row = mysql_fetch_array($qr)){
-			echo '<div class="link_item" style="background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">	
-			<h2 class="realshadow block round cr" rel="r" >'.$row['name'].'</h2>
-			<p class="realshadow block round cr" rel="r">'.$row['title'].'</p>
+			$i++;
+			if($i!=1) $style = 'style="margin-left:15px"'; else $style = '';
+			echo '<div class="link_item" '.$style.'>
+			<div class="link_item_img"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+			<h2 class="realshadow  round cr" rel="r" >'.$row['name'].'</h2>
+			<p class="realshadow  round cr" rel="r">'.$row['title'].'</p>
 			<a href="'.$row['url'].'">'.$row['metaDescription'].'</a></div>';
 		}
 		echo '<script type="text/javascript"> (function(){ realshadow(document.getElementsByClassName("realshadow")); })(); </script>
@@ -218,6 +215,7 @@ if(@$_GET['danhmuc']){
     </div>
 </div>
 <?php
+if(@$script_slider) echo $script_slider;
 if(@$script_photo) echo $script_photo;
 mysql_close();
 ?>
