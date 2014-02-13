@@ -122,7 +122,7 @@ $form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();
 //tel
 if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
-$form->getProperties('Hotline', 'tel', 1, 'input_medium', $value, 100);
+$form->getProperties('ND video', 'tel', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 //facebook
 if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];

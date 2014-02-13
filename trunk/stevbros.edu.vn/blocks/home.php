@@ -4,7 +4,7 @@ $view_post = '<div id="left">
 	<div class="item1">
 		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros – đơn vị chuyên đào tạo Quản Lý Dự Án mã số 3807 của Viện Quản Lý Dự Án Hoa Kỳ (PMI)</h3></div>
 		<iframe src="http://www.youtube.com/embed/iSkm2Prr2WE?origin=http://'.$domain.'&rel=0" frameborder="0" allowfullscreen></iframe>
-		<p>Stevbros chuyên thiết kế và cung cấp các khóa học quản lý dự án cho doanh nghiệp và cá nhân ở nhiều lĩnh vực khác nhau trong khu vực Châu Á và các khóa học quản lý dự án online toàn cầu.</p>
+		<p>'.$row_config['tel'].'</p>
 	</div>';
 
 $view_post .= '<div class="item2"><div class="title_home" style="background:url(images/icon_2.gif) no-repeat top left"><h3>Các khoá học cho doanh nghiệp phổ biến</h3></div><div class="item">';
