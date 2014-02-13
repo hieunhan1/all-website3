@@ -37,6 +37,8 @@ if(@$_GET['danhmuc']){
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	else $menu_root = $idMenu;
 	
+	$str_daynauan = '<h3>'.$row_config['contact_foo'].'</h3>';
+	
 	if(!@$_GET['detail'] || $danhmuc=='danh-muc'){
 		($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
 		$url = 'http://'.$domain.'/'.$row_menu_one['url'];
@@ -55,8 +57,9 @@ if(@$_GET['danhmuc']){
 			case 7 : include_once('blocks/contact.php'); break;
 			case 8 : include_once('blocks/dangky.php'); break;
 			case 9 : include_once('blocks/thuvien.php'); break;
+			case 11 : include_once('blocks/tuyendung_list.php'); break;
 			
-			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
+			default: echo '<div id="content"><p style="height:200px; padding:20px 10px"><font color="#FF0000"><b>Could not be found</b></font></p></div>';
 		}
 		$include = ob_get_clean();
 	}else{
@@ -89,7 +92,9 @@ if(@$_GET['danhmuc']){
 	$description = strip_tags($row_menu_one['metaDescription'],''); $description = str_replace('"',' ',$description);
 	$keyword = strip_tags($row_menu_one['metaKeyword'],''); $keyword = str_replace('"',' ',$keyword);
 	$seo = $tc->seo($domain,$title.$page_name,$description.$page_name,$keyword,$image,$url);
-
+	
+	$str_daynauan = '<h1>'.$row_config['contact_foo'].'</h1>';
+	
 	$include = ob_start();
 	include_once('blocks/home.php');
 	$include = ob_get_clean();
@@ -123,11 +128,12 @@ if(@$_GET['danhmuc']){
 		while($row = mysql_fetch_array($qr)){
 			$i++;
 			if($i!=1) $style = 'style="margin-left:15px"'; else $style = '';
+			$str_info = str_replace(' - ','<br />',$row['title']);
 			echo '<div class="link_item" '.$style.'>
 			<div class="link_item_img"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 			<h2 class="realshadow  round cr" rel="r" >'.$row['name'].'</h2>
-			<p class="realshadow  round cr" rel="r">'.$row['title'].'</p>
-			<a href="'.$row['url'].'">'.$row['metaDescription'].'</a></div>';
+			<p class="realshadow  round cr" rel="r">'.$str_info.'</p>
+			<a href="'.$row['url'].'">Xem chi tiết</a></div>';
 		}
 		echo '<script type="text/javascript"> (function(){ realshadow(document.getElementsByClassName("realshadow")); })(); </script>
     	</div>';
@@ -195,7 +201,7 @@ if(@$_GET['danhmuc']){
     </div>
 
     <div id="footer">
-    	<?php echo '<h5><strong>'.$row_config['contact_foo'].'</strong></h5> <p style="width:auto; float:right">'.$row_config['copyright'].'</p>'; ?>
+    	<?php echo $str_daynauan.'<p style="width:auto; float:right">'.$row_config['copyright'].'</p>'; ?>
     </div>
 </div>
 
