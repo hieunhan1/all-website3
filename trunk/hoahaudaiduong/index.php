@@ -1,17 +1,19 @@
 <?php
 session_start();
+error_reporting(E_ALL ^ E_NOTICE);
+
 if(!@$_GET['lang']) $lang = 'vi';
 else $lang = $_GET['lang'];
 
 $error_sql = "Lỗi kết nối";
-define(does_not_exist,'Mục này không tồn tại.');
+define('does_not_exist','Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
-	$dm = explode('_page_',$dm);
+	$dm = explode('/',$dm);
 	$danhmuc = $dm[0];
 	if($dm[1]==''){
 		$page = 1; $page_name = '';
@@ -41,11 +43,12 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
-			/*case 3 : include_once('blocks/products_list.php'); break;
-			case 4 : include_once('blocks/picture_list.php'); break;
-			case 5 : include_once('blocks/video_list.php'); break;
-			case 6 : include_once('blocks/contact.php'); break;
-			case 7 : include_once('blocks/giohang.php'); break;*/
+			case 3 : include_once('blocks/thisinh_list.php'); break;
+			case 4 : include_once('blocks/bosuutap_list.php'); break;
+			case 5 : include_once('blocks/picture.php'); break;
+			case 6 : include_once('blocks/video_list.php'); break;
+			case 7 : include_once('blocks/dangky_tructuyen.php'); break;
+			case 8 : include_once('blocks/contact.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -54,10 +57,10 @@ if(@$_GET['danhmuc']){
 		$dt = $_GET['detail'];
 		$include = ob_start();
 		switch($type){
-			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
-			/*case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
-			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
-			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;*/
+			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
+			case 3 : $qr = $tc->thisinh_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_thisinh_image; include_once('blocks/thisinh.php'); break;
+			case 4 : $qr = $tc->bosuutap_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_bosuutap_image; include_once('blocks/bosuutap.php'); break;
+			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -105,8 +108,8 @@ if(@$_GET['danhmuc']){
 <div id="wrapper">
 	<div id="top">
     	<div id="lang">
-        	<li><a href="javascript:;"><img src="images/vi.gif" alt="Tiếng Việt" /> Tiếng Việt</a></li>
-            <li><a href="javascript:;"><img src="images/en.gif" alt="English" /> English</a></li>
+        	<!--<li><a href="?lang=vi"><img src="images/vi.gif" alt="Tiếng Việt" /> Tiếng Việt</a></li>
+            <li><a href="?lang=en"><img src="images/en.gif" alt="English" /> English</a></li>-->
         </div>
         <div id="search">
         	<input type="text" name="txtSearch" class="txtSearch" value="Nhập từ khóa.." onfocus="if(value=='Nhập từ khóa..') value=''" onblur="if(value=='') value='Nhập từ khóa..'" />
@@ -116,14 +119,32 @@ if(@$_GET['danhmuc']){
 	<div id="logo_slider">
     	<div id="logo"><a href=""><img src="images/logo.png" alt="<?php echo $row_menu_one['title'];?>" /></a></div>
         <?php include_once('blocks/slider.php'); ?>
-        <!--<div id="slider"><img src="public/images/slider/slider.jpg" alt="" /></div>-->
     </div>
 	<?php
     include_once('blocks/menu.php');
 	echo $include;
 	?>
 	
+    <div id="home_thisinh">
+        <div class="home_thisinh_title">Nhà tài trợ</div>
     
+        <script type="text/javascript" src="library/partner/common.js"></script>
+        <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
+        <script type="text/javascript">(function($){$(function(){$("#scroller").simplyScroll();});})(jQuery);</script>
+        <div class="simply-scroll simply-scroll-container" style="width:1000px; margin:auto">
+            <div class="simply-scroll-clip">
+                <ul id="scroller" class="simply-scroll-list" style="width: 2255px;">
+                <?php
+                $qr = $tc->slider_banner(2);
+				while($row = mysql_fetch_array($qr)){
+					echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
+				}
+				?>
+                </ul>
+            </div>
+        </div>
+        <div style="clear:both; height:30px"></div>
+    </div>
 	<div id="footer">
     	<div id="menu_foo">
         <?php
@@ -132,6 +153,7 @@ if(@$_GET['danhmuc']){
 			echo '<a href="'.$row['url'].'">'.$row['name'].'</a>';
 		}
 		?>
+        	<div id="run_top"><a href="javascript:;" title="Lên đầu trang"><img src="images/top.png" alt="run top" /> TOP</a></div>
         </div>
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
         	<tr>
@@ -140,14 +162,34 @@ if(@$_GET['danhmuc']){
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/facebook.jpg" alt="" />Facebook</a></p>
                     <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/youtube.gif" alt="" />Youtube</a></p>
                 </td>
-            	<td><?php echo $row_config['contact_foo']; ?></td>
-            	<td align="right" style="width:250px"><?php echo $row_config['copyright']; ?></td>
+            	<td valign="top" style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
+            	<td valign="top" align="right" style="width:250px; line-height:22px"><?php echo $row_config['copyright']; ?><embed src="public/musics.mp3" autostart="true" loop="true" hidden="true" volume="60"></embed></td>
             </tr>
         </table><br />
     </div>
-    
-    <div id="formdangky"><a href="public/Ban_DK_Du_Thi_Hoa_Hau_Dai_Duong_VN_2014.docx"><img src="images/download.png" alt="" />Tải form đăng ký Hoa Hậu Đại Dương</a></div>
+    <?php
+    $qr = $tc->menu_type(7,0,$lang);
+	$row_dangky = mysql_fetch_array($qr);
+	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'"><img src="images/download.png" alt="" />Tải form đăng ký Hoa Hậu Đại Dương</a></div>';
+	?>
 </div>
+<?php
+	if(!@$_SESSION['popup']){
+		$_SESSION['popup'] = 1;
+		include_once('blocks/popup.php');
+	}
+?>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47572922-1', 'hoahaudaiduongvietnam.com');
+  ga('send', 'pageview');
+</script>
+
 <?php mysql_close();?>
 </body>
 </html>
