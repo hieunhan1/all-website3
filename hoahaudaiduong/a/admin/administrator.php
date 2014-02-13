@@ -1,4 +1,8 @@
-<?php session_start(); ob_start();
+<?php
+session_start();
+ob_start();
+error_reporting(E_ALL ^ E_NOTICE);
+
 if(isset($_GET['language'])) {
 	$_SESSION['language'] = $_GET['language'];
 } else {
@@ -8,12 +12,13 @@ if(isset($_GET['language'])) {
 }
 
 $lang = $_SESSION['language'];
-
-$idUser = $_SESSION["id_admin"];
-$idGroup = $_SESSION["group_admin"];
-$user = $_SESSION["user_admin"];
-$quyen_xem = $_SESSION['quyen_xem'];
-$quyen_action = $_SESSION['quyen_action'];
+if(@$_SESSION["id_admin"]){
+	$idUser = $_SESSION["id_admin"];
+	$idGroup = $_SESSION["group_admin"];
+	$user = $_SESSION["user_admin"];
+	$quyen_xem = $_SESSION['quyen_xem'];
+	$quyen_action = $_SESSION['quyen_action'];
+}
 if(@$user) {
 	require_once 'config.php';
 	require_once 'layout.php';
@@ -77,7 +82,7 @@ function SetFileField(fileUrl, data){
         	<?php
             $menuadmin = $qt->MenuAdmin();
 			while($row_menuadmin = mysql_fetch_array($menuadmin)){
-				echo '<a href="administrator.php?p='.$row_menuadmin[url].'">'.$row_menuadmin[name].'</a>';
+				echo '<a href="administrator.php?p='.$row_menuadmin['url'].'">'.$row_menuadmin['name'].'</a>';
 			}
 			?>
         </div>
@@ -88,8 +93,8 @@ function SetFileField(fileUrl, data){
 		$m = explode('_ac', $p); $page = $m[0];
 		$navigator = $qt->Navigator($p);
 		$row_navigator = mysql_fetch_array($navigator);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, $for_view);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, $for_action);
 		
 		if($page==$p){
 			$url = 'administrator.php?p='.$page;

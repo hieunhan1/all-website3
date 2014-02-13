@@ -6,7 +6,7 @@
     
     <div id="content_popup">
         <p style="margin-bottom:5px"><img src="public/poster.jpg" alt="Ai sẽ là hoa hậu đại dương" style="border:solid 1px #999" /></p>
-        <p align="center"><a href="public/Ban_DK_Du_Thi_Hoa_Hau_Dai_Duong_VN_2014.docx"><img src="images/registor.gif" alt="registor hoa hậu đại dương" /></a></p>
+        <p align="center"><a href="<?php echo $row_dangky['url']; ?>"><img src="images/registor.gif" alt="registor hoa hậu đại dương" /></a></p>
     </div>
 </div>
 <div id="backgroundPopup"></div>
@@ -20,5 +20,8 @@ $(document).ready(function() {
 	$("#popupContact").click(function(){
 		disablePopup();
 	});
-	setTimeout(function(){ disablePopup(); }, 8000);
+	setTimeout(function(){ disablePopup(); }, 10000);
+	$("#backgroundPopup").click(function() { 
+        disablePopup(); 
+    });
 });</script>

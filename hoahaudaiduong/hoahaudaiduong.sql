@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 16, 2014 at 02:15 AM
+-- Generation Time: Feb 13, 2014 at 05:26 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -12,6 +12,75 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- 
 -- Database: `hoahaudaiduong`
 -- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `bosuutap`
+-- 
+
+CREATE TABLE `bosuutap` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `metaDescription` text,
+  `content` text,
+  `metaKeyword` varchar(250) default NULL,
+  `other` tinyint(1) default '0',
+  `lang` varchar(3) default 'vi',
+  `menu_id` varchar(30) NOT NULL,
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `bosuutap`
+-- 
+
+INSERT INTO `bosuutap` VALUES (1, 'Bộ sưu tập a', 'bo-suu-tap-a', '', 'Bộ sưu tập a', '<p>Bộ sưu tập a</p>\r\n', 'Bộ sưu tập a', 0, 'vi', ',7,', 1, '2014-01-23 13:12:57', '2014-01-23 13:12:57', 'admin', NULL, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `bosuutap_images`
+-- 
+
+CREATE TABLE `bosuutap_images` (
+  `id` int(11) NOT NULL auto_increment,
+  `id_bosuutap` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `url_hinh_bst` varchar(150) NOT NULL,
+  `lang` varchar(2) default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+-- 
+-- Dumping data for table `bosuutap_images`
+-- 
+
+INSERT INTO `bosuutap_images` VALUES (1, 1, 'Màu ký ức 1', 'mau-ky-uc-1.jpg', 'vi', 1, '2014-01-22 10:47:34', '2014-01-22 10:47:34', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (2, 1, 'Màu Ký Ức 2', 'mau-ky-uc-2.jpg', 'vi', 1, '2014-01-22 10:50:30', '2014-01-22 10:50:30', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (3, 1, 'Màu Ký Ức 3', 'mau-ky-uc-3.jpg', 'vi', 1, '2014-01-22 10:50:35', '2014-01-22 10:50:35', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (4, 1, 'Màu Ký Ức 4', 'mau-ky-uc-4.jpg', 'vi', 1, '2014-01-22 10:50:38', '2014-01-22 10:50:38', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (5, 1, 'Màu Ký Ức 5', 'mau-ky-uc-5.jpg', 'vi', 1, '2014-01-22 11:03:43', '2014-01-22 11:17:29', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (6, 1, 'Màu Ký Ức 6', 'mau-ky-uc-6.jpg', 'vi', 1, '2014-01-22 11:04:13', '2014-01-22 11:17:26', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (7, 1, 'Màu Ký Ức 7', 'mau-ky-uc-7.jpg', 'vi', 1, '2014-01-22 11:04:53', '2014-01-22 11:17:24', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (8, 1, 'Màu Ký Ức 8', 'mau-ky-uc-8.jpg', 'vi', 1, '2014-01-22 11:04:59', '2014-01-22 11:04:59', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (9, 1, 'Màu ký ức 9', 'mau-ky-uc-9.jpg', 'vi', 1, '2014-01-22 11:17:49', '2014-01-22 11:19:12', 'admin', NULL, 0);
+INSERT INTO `bosuutap_images` VALUES (10, 1, 'Bộ sưu tập a 22', 'mau-ky-uc-22.jpg', 'vi', 1, '2014-01-23 13:13:18', '2014-01-23 13:14:48', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -50,8 +119,8 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 -- 
 
-INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/hoahaudaiduong', 10, 10, 10, 10, 'Copyright © 2012 by Hoa Hau Dai Duong', '<p><strong>Giấy phép số 73/GP-TTĐT cấp ngày 12/04/2010</strong></p>\r\n\r\n<p>Cục phát thanh, truyền hình và thông tin điện tử</p>\r\n\r\n<p>Bộ thông tin và truyền thông&nbsp;</p>\r\n', '<p>Địa chỉ: 87 Thăng Long, Phường 4, Quận Tân Bình, Tp.Hồ Chí Minh, Việt Nam.<br />\r\nĐiện thoại: (84.8) 3 948 4696 - Fax: ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0988388003', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 02:09:15', 'admin', 'admin', 0);
-INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/hoahaudaiduong', 10, 10, 10, 10, 'Copyright © 2012 by Hoa Hau Dai Duong', '<p><strong>Giấy phép số 73/GP-TTĐT cấp ngày 12/04/2010</strong><br />\r\nCục phát thanh, truyền hình và thông tin điện tử - Bộ thông tin và truyền thông&nbsp;</p>\r\n', '<p>Địa chỉ: 87 Thăng Long, Phường 4, Quận Tân Bình, Tp.Hồ Chí Minh, Việt Nam.<br />\r\nĐiện thoại: (84.8) 3 948 4696 - Fax: ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 1, '2013-08-10 10:09:29', '2013-08-10 23:16:07', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (1, 'Việt Nam', 'vi', '', 'localhost/all/hoahaudaiduong', 10, 10, 10, 10, 'Copyright © 2012 by Hoa Hau Dai Duong', '<p><strong>Giấy phép số 73/GP-TTĐT cấp ngày 12/04/2010</strong></p>\r\n\r\n<p>Cục phát thanh, truyền hình và thông tin điện tử</p>\r\n\r\n<p>Bộ thông tin và truyền thông&nbsp;</p>\r\n', '<p><strong>Hoa hậu đại dương Việt Nam</strong>&nbsp;thuộc quyền sở hữu của&nbsp;<strong><a href="http://www.vovietchung.com" style="line-height: 1.6em;" target="_blank" title="Công ty TNHH MTV Võ Việt Chung"><span style="color:#FFD700;">Công ty&nbsp;TNHH MTV Võ Việt Chung</span></a></strong></p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0988388003', 'http://facebook.com', 1, '2013-02-20 13:35:24', '2013-03-01 14:30:01', 'admin', 'admin', 0);
+INSERT INTO `config` VALUES (2, 'English', 'en', '', 'localhost/all/hoahaudaiduong', 10, 10, 10, 10, 'Copyright © 2012 by Hoa Hau Dai Duong', '<p><strong>Giấy phép số 73/GP-TTĐT cấp ngày 12/04/2010</strong></p>\r\n\r\n<p>Cục phát thanh, truyền hình và thông tin điện tử</p>\r\n\r\n<p>Bộ thông tin và truyền thông&nbsp;</p>\r\n', '<p><strong>Hoa hậu đại dương Việt Nam</strong>&nbsp;thuộc quyền sở hữu của&nbsp;<strong><a href="http://www.vovietchung.com" style="line-height: 1.6em;" target="_blank" title="Công ty TNHH MTV Võ Việt Chung"><span style="color:#FFD700;">Công ty&nbsp;TNHH MTV Võ Việt Chung</span></a></strong></p>\r\n', 'hieunhan112@gmail.com', '', '', '', '', 1, '2013-08-10 10:09:29', '2013-08-10 12:24:34', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -107,12 +176,16 @@ CREATE TABLE `info` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `info`
 -- 
 
+INSERT INTO `info` VALUES (1, 'Thông tin Hoa Hậu Việt Nam năm 2014 “Blue Ocean World”', 'thong-tin-hoa-hau-viet-nam-nam-2014-blue-ocean-world', '', '<p>Cuộc thi Hoa Hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans 2014) là cuộc thi sắc đẹp được tổ chức trên phạm vi lãnh thổ Việt Nam nhằm tìm kiếm gương mặt đại diện cho Dự Án “Blue Ocean World”</p>\r\n', '<p><strong>I. MỤC ĐÍCH, Ý NGHĨA</strong></p>\r\n\r\n<p style="margin-left: 40px;">-&nbsp; Cuộc thi Hoa Hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans 2014) là cuộc thi sắc đẹp được tổ chức trên phạm vi lãnh thổ Việt Nam nhằm tìm kiếm gương mặt đại diện cho Dự Án “Blue Ocean World”, do Công ty TNHH MTV Võ Việt Chung và Quỹ bảo vệ môi trường Việt Nam thuộc Bộ Tài nguyên và Môi trường sáng lập.</p>\r\n\r\n<p style="margin-left: 40px;">- Thông qua những hoạt động thiết thực cuộc thi Hoa Hậu Đại Dương 2014 (Miss Vietnam Oceans 2014), chúng tôi mong muốn góp phần nâng cao nhận thức và hành động của cộng đồng, hướng đến việc làm sạch môi trường biển, đại dương hiện nay đang bị ô nhiễm; bảo vệ môi trường biển trước các nguy cơ bị ô nhiễm mới hoặc tái ô nhiễm, bảo vệ các loài sinh vật biển.</p>\r\n\r\n<p style="margin-left: 40px;">- Cuộc thi Hoa Hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans 2014) được tổ chức lần đầu tiên tại Việt Nam nhằm mục đích tuyên truyền cho việc bảo vệ thiên nhiên biển và môi trường biển, đại dương, là một phần quan trọng trong các hoạt động của Dự án “Blue Ocean World”. Thông qua các nội dung của cuộc thi, chúng tôi muốn kêu gọi mọi người chung tay, góp sức giữ gìn biển Việt Nam trong sạch, đồng thời quảng bá cho du lịch biển của nước ta.</p>\r\n\r\n<p style="margin-left: 40px;">- Thí sinh tham gia Hoa Hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans &nbsp;2014) sẽ hội tụ đầy đủ các yếu tố của những người đẹp, có tri thức và am hiểu các vấn đề về môi trường, nhất là môi trường biển. Họ sẽ đại diện cho Dự án “Blue Ocean World” trong các hoạt động bảo vệ môi trường biển Việt Nam.&nbsp;</p>\r\n\r\n<p><strong>II. THỂ LỆ CUỘC THI</strong></p>\r\n\r\n<p style="margin-left: 40px;"><strong>1. Đối tư­ợng đư­ợc đăng ký tham dự cuộc thi</strong></p>\r\n\r\n<p style="margin-left: 80px;">- Là nữ công dân Việt Nam.</p>\r\n\r\n<p style="margin-left: 80px;">- Độ tuổi từ 18 tuổi đến 26 tuổi (tính theo ngày, tháng, năm sinh của giấy Chứng minh thư nhân dân hoặc Hộ chiếu đang còn thời hạn).</p>\r\n\r\n<p style="margin-left: 80px;">- Không có tiền án, không trong thời gian bị truy cứu trách nhiệm hình sự.</p>\r\n\r\n<p style="margin-left: 80px;">- Sơ yếu lý lịch có xác nhận của chính quyền địa phương hoặc cơ quan, tổ chức nơi thí sinh đang học tập, công tác.</p>\r\n\r\n<p style="margin-left: 80px;">- Có tư cách đạo đức tốt,</p>\r\n\r\n<p style="margin-left: 80px;">- Có trình độ văn hóa tốt nghiệp phổ thông trung học trở lên.</p>\r\n\r\n<p style="margin-left: 80px;">- Chưa lập gia đình, chưa sinh con (bao gồm cả các trường hợp đã tổ chức cưới theo phong tục, tập quán hoặc có thời gian chung sống như vợ, chồng không được tham dự cuộc thi).</p>\r\n\r\n<p style="margin-left: 80px;">- Chưa qua giải phẫu thẩm mỹ hoặc chuyển đổi giới tính.</p>\r\n\r\n<p style="margin-left: 80px;">- Cao từ 1,65cm trở lên, ngoại hình cân đối.</p>\r\n\r\n<p style="margin-left: 80px;">- Nộp hồ sơ đăng ký dự thi hợp lệ theo quy định của cuộc thi.</p>\r\n\r\n<p style="margin-left: 80px;"><strong>* Các đối tượng được ưu tiên:</strong></p>\r\n\r\n<p style="margin-left: 80px;">Các thí sinh đã đoạt danh hiệu trong các cuộc thi Hoa hậu, Hoa khôi, Người đẹp năm 2012 và năm 2013 được Ban tổ chức xem xét để đặc cách vào danh sách dự thi các vòng (phải đáp ứng thể lệ cuộc thi ở trên và hoàn thiện hồ sơ theo quy định).</p>\r\n\r\n<p style="margin-left: 80px;">- Những thí sinh đạt 03 danh hiệu chính trong cuộc thi Hoa hậu, Hoa khôi, Người đẹp năm 2012 và năm 2013 được Ban tổ chức xem xét để đặc cách vào danh sách dự thi Vòng Chung kết.</p>\r\n\r\n<p style="margin-left: 80px;">- Những thí sinh đạt danh hiệu phụ trong cuộc thi Hoa hậu, Hoa khôi, Người đẹp năm 2012 và năm 2013 sẽ được Ban tổ chức xem xét để đặc cách vào danh sách dự thi Vòng Bán kết.</p>\r\n\r\n<p style="margin-left: 40px;"><strong>2. Hồ sơ đăng ký dự thi</strong></p>\r\n\r\n<p style="margin-left: 80px;">- Đơn đăng ký dự thi (theo mẫu của Ban tổ chức).</p>\r\n\r\n<p style="margin-left: 80px;">- Bản sao giấy khai sinh.</p>\r\n\r\n<p style="margin-left: 80px;">- Sơ yếu lý lịch (được chính quyền địa phương hoặc cơ quan, tổ chức nơi thí sinh đang học tập, công tác xác nhận. Thời gian xác nhận không quá 06 tháng tính đến ngày tổ chức chung kết cuộc thi).</p>\r\n\r\n<p style="margin-left: 80px;">- Bằng tốt nghiệp hoặc giấy xác nhận của nhà trường đã tốt nghiệp phổ thông trung học (bản sao có công chứng).</p>\r\n\r\n<p style="margin-left: 80px;">- 02 ảnh chân dung và 02 ảnh toàn thân (mặc trang phục tự chọn và bikini).&nbsp;</p>\r\n\r\n<p style="margin-left: 80px;">- Bằng chứng nhận giải thưởng (đối với thí sinh xét đối tượng ưu tiên).</p>\r\n\r\n<p style="margin-left: 40px;"><strong>3. Thời gian, địa điểm nhận hồ sơ</strong></p>\r\n\r\n<p style="margin-left: 80px;"><strong>3.1. Thời gian nhận hồ sơ đăng ký dự thi</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Thông báo từ ngày 01/01/2014</p>\r\n\r\n<p style="margin-left: 120px;">- Nhận hồ sơ: từ ngày 01/01/2014 đến ngày 01/04/2014</p>\r\n\r\n<p style="margin-left: 80px;"><strong>3.2. Địa điểm nhận hồ sơ đăng ký dự thi</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Khu vực phía Bắc: 106 Mai Hắc Đế, Quận Hai Bà Trưng, Hà Nội.</p>\r\n\r\n<p style="margin-left: 120px;">- Khu vực phía Nam: 115 Lý Tự Trọng, P.Bến Thành, Quận 1, TP Hồ Chí Minh.</p>\r\n\r\n<p style="margin-left: 120px;">Ngoài hồ sơ ghi rõ: Hồ sơ đăng ký dự thi Hoa Hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans 2014)</p>\r\n\r\n<p><strong>III. NỘI DUNG VÀ TRÌNH TỰ TỔ CHỨC</strong></p>\r\n\r\n<p style="margin-left: 40px;"><strong>1. Thời gian và địa điểm tổ chức vòng thi sơ tuyển</strong></p>\r\n\r\n<p style="margin-left: 80px;"><strong>1.1. Sơ tuyển khu vực 1</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Thời gian: ngày 20/04/2014</p>\r\n\r\n<p style="margin-left: 120px;">- Địa điểm: Khách sạn Sheraton Hotel – Thủ đô Hà Nội</p>\r\n\r\n<p style="margin-left: 120px;">- Nội dung thi: kiểm tra tính hợp lệ của hồ sơ đăng ký dự thi, trình diễn trang phục tự chọn và bikini.</p>\r\n\r\n<p style="margin-left: 80px;"><strong>1.2. Sơ tuyển khu vực 2</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Thời gian: ngày 25/04/2014</p>\r\n\r\n<p style="margin-left: 120px;">- Địa điểm: Khách sạn Riverside Palace - TP. Hồ Chí Minh</p>\r\n\r\n<p style="margin-left: 120px;">- Nội dung thi: kiểm tra tính hợp lệ của hồ sơ đăng ký dự thi, trình diễn trang phục tự chọn và bikini.</p>\r\n\r\n<p style="margin-left: 80px;"><strong>1.3. Công bố kết quả:</strong> kết quả vòng thi sơ tuyển được công bố trong vòng 24 giờ sau khi kết thúc sơ tuyển.</p>\r\n\r\n<p style="margin-left: 40px;"><strong>2. Vòng Bán kết&nbsp;</strong></p>\r\n\r\n<p style="margin-left: 80px;">- Thời gian: ngày <span style="color:#FFFF00;"><strong>01/05/2014</strong></span></p>\r\n\r\n<p style="margin-left: 80px;">- Địa điểm: Khách sạn Riverside Palace - TP. Hồ Chí Minh.</p>\r\n\r\n<p style="margin-left: 80px;">- Nội dung thi:</p>\r\n\r\n<p style="margin-left: 80px;">+ Các bác sĩ nhân trắc học sẽ kiểm tra chỉ số hình thể của các thí sinh.</p>\r\n\r\n<p style="margin-left: 80px;">+ Trình diễn catwalk theo nhạc trong trang phục áo tắm và tự chọn.</p>\r\n\r\n<p style="margin-left: 80px;">+ Trả lời phỏng vấn của Ban Giám khảo.</p>\r\n\r\n<p style="margin-left: 80px;">- Lưu ý:</p>\r\n\r\n<p style="margin-left: 80px;">+ Trang điểm và trang phục thí sinh tự chuẩn bị.</p>\r\n\r\n<p style="margin-left: 80px;">+ Ban Giám khảo sẽ chọn ra 35 thí sinh vào vòng Chung kết.</p>\r\n\r\n<p style="margin-left: 80px;">- Công bố kết quả:</p>\r\n\r\n<p style="margin-left: 80px;">+ Kết quả sẽ được công bố và thông báo cho thí sinh trong vòng 24 giờ sau khi Ban Giám khảo kết thúc chấm điểm.</p>\r\n\r\n<p style="margin-left: 80px;">+ Danh sách thí sinh được chọn lựa căn cứ theo quyết định và điểm số của Ban Giám khảo.</p>\r\n\r\n<p style="margin-left: 40px;"><strong>3. Vòng thi Chung kết</strong></p>\r\n\r\n<p style="margin-left: 80px;">- Thời gian: từ ngày 10 đến ngày 23 tháng 05 năm 2014</p>\r\n\r\n<p style="margin-left: 80px;">- Địa điểm:&nbsp; Khu Resort Mũi Né (Mũi Né Bay) - Phan Thiết, Bình Thuận.</p>\r\n\r\n<p style="margin-left: 80px;">- Ngày 10/05/2014, Ban tổ chức đón tiếp 35 thí sinh lọt vào vòng chung kết cuộc thi để tham gia các hoạt động ngoài trời và các giải thưởng phụ.&nbsp;</p>\r\n\r\n<p style="margin-left: 80px;"><strong>3.1. Các vòng thi chọn danh hiệu phụ</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp áo dài.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp tài năng.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp biển xanh.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp bikini.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp ảnh.</p>\r\n\r\n<p style="margin-left: 80px;"><strong>3.2. Đêm Chung kết Hoa hậu Đại Dương Việt Nam</strong></p>\r\n\r\n<p style="margin-left: 120px;">-&nbsp; Thời gian:&nbsp; ngày 23 tháng 05 năm 2014</p>\r\n\r\n<p style="margin-left: 120px;">-&nbsp; Địa điểm:&nbsp; Khu Resort Mũi Né (Mũi Né Bay) - Phan Thiết, Bình Thuận.</p>\r\n\r\n<p style="margin-left: 120px;">-&nbsp; Nội dung:&nbsp; 4 phần bắt buộc</p>\r\n\r\n<p style="margin-left: 160px;">+ Trình diễn trang phục áo dài (Ban tổ chức tài trợ))</p>\r\n\r\n<p style="margin-left: 160px;">+ Trình diễn trang phục áo tắm (Ban tổ chức tài trợ)</p>\r\n\r\n<p style="margin-left: 160px;">+ Trình diễn trang phục dạ hội (Thí sinh tự chuẩn bị)</p>\r\n\r\n<p style="margin-left: 160px;">+ Thi ứng xử (5 thí sinh có tổng điểm cao nhất sau 3 vòng thi trên)</p>\r\n\r\n<p style="margin-left: 120px;">- Sau 3 phần trình diễn, Ban Giám khảo công bố 15 thí sinh có số điểm cao nhất và 5 thí sinh tham gia vòng thi ứng xử.</p>\r\n\r\n<p style="margin-left: 120px;">- Công bố các danh hiệu cho 5 thí sinh đoạt giải thưởng phụ.</p>\r\n\r\n<p style="margin-left: 120px;"><span style="line-height: 1.6em;">- Danh hiệu Á hậu 1, Á hậu 2, và Hoa hậu sẽ được công bố sau phần thi ứng xử của các thí sinh.</span></p>\r\n\r\n<p><strong>IV. DANH HIỆU, CƠ CẤU GIẢI THƯỞNG VÀ QUYỀN, TRÁCH NHIỆM CỦA THÍ SINH DỰ THI, NGƯỜI ĐẠT DANH HIỆU NGƯỜI ĐẸP</strong></p>\r\n\r\n<p style="margin-left: 40px;"><strong>1. Danh hiệu và cơ cấu giải thư­ởng</strong></p>\r\n\r\n<p style="margin-left: 80px;"><strong>1.1. Danh hiệu chính thức của cuộc thi</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Thí sinh đạt điểm cao nhất trong đêm chung kết đ­ược trao danh hiệu Hoa Hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans 2014) ; giải thư­ởng bằng tiền mặt 400.000.000 VNĐ (Bốn trăm triệu đồng), kèm theo vư­ơng miện trị giá 1.500.000.000 VNĐ (Một tỷ năm trăm triệu đồng) và bằng chứng nhận của Ban tổ chức. Lưu ý: Vương miện hoa hậu sẽ được trao luân lưu.</p>\r\n\r\n<p style="margin-left: 120px;">- Thí sinh đạt điểm cao thứ hai trong đêm chung kết đư­ợc trao danh hiệu Á hậu 1 giải thư­ởng bằng tiền mặt 200.000.000 VNĐ (Hai trăm triệu đồng) và Bằng chứng nhận của Ban tổ chức.</p>\r\n\r\n<p style="margin-left: 120px;">- Thí sinh đạt điểm cao thứ ba trong đêm toàn quốc đư­ợc trao danh hiệu: Á hậu 2 giải thư­ởng bằng tiền mặt 150.000.000 VNĐ (Một trăm năm mươi triệu đồng) và Bằng chứng nhận của Ban tổ chức.</p>\r\n\r\n<p style="margin-left: 80px;"><strong>1.2. Danh hiệu phụ của cuộc thi</strong></p>\r\n\r\n<p style="margin-left: 120px;">Thí sinh đạt các danh hiệu phụ của cuộc thi được giải thư­ởng bằng tiền mặt 20.000.000 VNĐ (hai mươi triệu đồng) và Bằng chứng nhận của Ban tổ chức. Các danh hiệu phụ gồm:</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp áo dài.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp tài năng.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp biển xanh.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp bikini.</p>\r\n\r\n<p style="margin-left: 120px;">- Người đẹp ảnh.</p>\r\n\r\n<p style="margin-left: 120px;">(Các thí sinh đạt danh hiệu phụ nằm trong nhóm 15 thí sinh đứng đầu)</p>\r\n\r\n<p style="margin-left: 80px;"><strong>1.3. Thời gian trao giải thư­ởng:</strong> giải thư­ởng tiền mặt và hiện vật sẽ được trao cho thí sinh ngay trong đêm chung kết cuộc thi.&nbsp;</p>\r\n\r\n<p style="margin-left: 40px;"><strong>2. Quyền, trách nhiệm của thí sinh dự thi và ngư­ời đạt danh hiệu Người đẹp</strong></p>\r\n\r\n<p style="margin-left: 80px;"><strong>2.1. Quyền</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Thí sinh đoạt giải nhất của Hoa hậu Đại Dương Việt Nam 2014 (Miss Vietnam Oceans 2014) sẽ được đăng hình ảnh trên trang bìa của Tạp chí Travellive, Heritage, Sành Điệu… sau khi cuộc thi kết thúc.</p>\r\n\r\n<p style="margin-left: 120px;">- Được nhận giải thưởng bằng tiền mặt và hiện vật (nếu có).</p>\r\n\r\n<p style="margin-left: 120px;">- Được tham gia các chương trình, sự kiện do Dự án “Blue Ocean World” tổ chức, trình diễn các chương trình do NTK Võ Việt Chung tổ chức, các NTK nổi tiếng trong và ngoài nước, các tuần lễ thời trang quốc tế…</p>\r\n\r\n<p style="margin-left: 120px;">- BTC sẽ chịu trách nhiệm về chi phí đi lại cho các thí sinh khu vực phía Bắc tham dự vòng bán kết tại TP.HCM.</p>\r\n\r\n<p style="margin-left: 120px;">-&nbsp; Vòng chung kết, các thí sinh sẽ được hỗ trợ toàn bộ chi phí đi lại và ăn, ở trong suốt quá trình diễn ra cuộc thi.</p>\r\n\r\n<p style="margin-left: 120px;">- Nhằm đánh giá khiếu thẩm mỹ của các thí sinh, trong vòng thi chung kết các thí sinh sẽ tự chuẩn bị trang phục dạ hội. BTC sẽ tài trợ bikini và trang phục áo dài cho các thí sinh.</p>\r\n\r\n<p style="margin-left: 80px;"><strong>2.2. Trách nhiệm</strong></p>\r\n\r\n<p style="margin-left: 120px;">- Thí sinh tham dự cuộc thi phải thực hiện đúng Quyết định cho phép, Đề án tổ chức cuộc thi trình Bộ Văn hóa, Thể thao và Du lịch, Nghị định số 79/2012/NĐ-CP ngày 05 tháng 10 năm 2012 của Chính phủ và Thông tư số 03/2013/TT-BVHTTDL ngày 28 tháng 01 năm 2013 và các quy định của pháp luật Việt Nam. Chấp hành nội quy tập trung luyện tập và yêu cầu cụ thể của các vòng thi, bài thi.</p>\r\n\r\n<p style="margin-left: 120px;">- Tham gia các hoạt động xã hội, từ thiện theo chương trình do Ban tổ chức xây dựng trong suốt cuộc thi. Nếu đoạt giải, các danh vị Hoa hậu, Á hậu phải ưu tiên tham gia các họat động xã hội, từ thiện theo chương trình của Đơn vị tổ chức và Nhà tài trợ chính trong suốt nhiệm kỳ.</p>\r\n\r\n<p style="margin-left: 120px;">- &nbsp;Đóng thuế thu nhập theo quy định của pháp luật Việt Nam.</p>\r\n\r\n<p style="margin-left: 120px;">- Chuẩn bị các trang phục áo dài, áo dạ hội để tham dự các vòng thi.</p>\r\n\r\n<p style="margin-left: 120px;">- Tuân thủ các quy định của Ban Tổ chức và thể lệ của cuộc thi.</p>\r\n\r\n<p style="margin-left: 40px;"><strong>3. Thể lệ chấm thi và cho điểm:</strong></p>\r\n\r\n<p style="margin-left: 80px;"><em><strong>Phương thức và tiêu chí chấm điểm:</strong></em></p>\r\n\r\n<p style="margin-left: 80px;">- Ban Giám khảo thống nhất chấm theo thang điểm 10 cho mỗi phần thi (cho điểm lẻ đến 0,5)</p>\r\n\r\n<p style="margin-left: 80px;">- Điểm xét danh hiệu và giải thưởng lấy từ cao xuống thấp theo tổng điểm 10 của các thí sinh.</p>\r\n\r\n<p style="margin-left: 80px;">- Chỉ số về hình thể, vẻ đẹp khuôn mặt, vóc dáng hài hoà, kiến thức:</p>\r\n\r\n<p style="margin-left: 80px;">+ Gư­ơng mặt (mắt, mũi, miệng).</p>\r\n\r\n<p style="margin-left: 80px;">+ Hình thể (các vòng đo, dáng, da).</p>\r\n\r\n<p style="margin-left: 80px;">+ Chiều cao (&gt;&nbsp; 1m65).</p>\r\n\r\n<p style="margin-left: 80px;">+ Phong cách, kỹ năng trình diễn, thẩm mỹ (mặc trang phục, trang điểm…).</p>\r\n\r\n<p style="margin-left: 80px;">+ Tài Năng, sự hiểu biết, khả năng diễn đạt, Anh ngữ và giao tiếp.</p>\r\n\r\n<p style="margin-left: 80px;">+ Kiến thức văn hoá, xã hội và trí tuệ (trả lời câu hỏi, giao tiếp, ứng xử).</p>\r\n\r\n<p style="margin-left: 80px;">+ Những thành tích nổi bật trong hoạt động xã hội, từ thiện.</p>\r\n', 'Thông tin Hoa Hậu Việt Nam năm 2014 “Blue Ocean World”', 1, 'vi', ',5,', 1, '2014-01-20 09:49:52', '2014-01-20 09:49:52', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (2, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan.jpg', '<p>Quỹ Bảo vệ môi trường Việt Nam và Công ty trách nhiệm hữu hạn Một thành viên Võ Việt Chung đã triển khai dự án Blue Ocean World (Môi trường thế giới biển xanh) tại khu làng chài Rạng, phường Mũi Né, thành phố Phan Thiết (Bình Thuận)</p>\r\n', '<h2>Chiều 25/9, Quỹ Bảo vệ môi trường Việt Nam và Công ty trách nhiệm hữu hạn Một thành viên Võ Việt Chung đã triển khai dự án Blue Ocean World (Môi trường thế giới biển xanh) tại khu làng chài Rạng, phường Mũi Né, thành phố Phan Thiết (Bình Thuận). Đây là dự án nhằm nâng cao nhận thức của ngư dân cũng như cộng đồng về việc bảo vệ môi trường biển.</h2>\r\n\r\n<p style="text-align: center;"><img alt="4 đại sứ của Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan.jpg" style="width: 450px; height: 300px;" /></p>\r\n\r\n<p style="margin-left: 120px;"><em><span style="line-height: 1.6em;">4 đại sứ của Blue Ocean World gồm:</span></em></p>\r\n\r\n<ol style="margin-left: 120px;">\r\n	<li><em><span style="line-height: 1.6em;">Đạo diễn-DVĐA Kim Khánh</span></em></li>\r\n	<li><em><span style="line-height: 1.6em;">Hoa hậu-Ảo thuật gia quốc tế Ngô Mỹ Uyên</span></em></li>\r\n	<li><em><span style="line-height: 1.6em;">MC-Ca sĩ Nguyệt Ánh</span></em></li>\r\n	<li><em><span style="line-height: 1.6em;">Hoa hậu Đông Nam Á- Diệu Hân</span></em></li>\r\n</ol>\r\n\r\n<p>Với chủ đề “Bảo vệ môi trường biển, đại dương là&nbsp;bảo vệ&nbsp;cuộc sống của chính mình”, <strong>dự án Blue Ocean World&nbsp;</strong>triển khai&nbsp;nhiều hoạt động thiết thực như: dọn dẹp, làm sạch bãi biển, phát túi nilon phân hủy để&nbsp;bảo vệ&nbsp;môi trường, kêu gọi người dân thả những sinh vật về&nbsp;biển&nbsp;nhằm cân bằng hệ sinh thái, không đánh bắt cá bằng chất hóa học và thuốc nổ…</p>\r\n\r\n<p>Tại buổi lễ, đại diện Dự án đã có buổi nói chuyện với đông đảo người dân sinh sống&nbsp;tại&nbsp;làng chài về những tác hại của việc ô nhiễm môi trường&nbsp;biển&nbsp;đối với cuộc sống của người dân, tình trạng cạn kiệt nguồn tài nguyên biển, biến đổi khí hậu… Sau khi kết thúc buổi lễ, đông đảo người dân cùng các đại sứ của Dự án đã ra tay thu gom rác thải, làm vệ sinh bãi biển.</p>\r\n\r\n<p><strong>Ông Nguyễn Văn Khoa, Chủ tịch Hiệp hội Du lịch Bình Thuận</strong> cho biết: Thông qua những hoạt động của dự án Blue Ocean World, ý thức&nbsp;bảo vệ&nbsp;môi trường sống xung quanh của người dân sẽ được nâng cao, từ đó góp phần nâng cao hình ảnh “Du lịch xanh” của Bình Thuận đến với mọi người.</p>\r\n\r\n<p>S ắp tới, dự án sẽ có những hoạt động như: dọn vệ sinh bờ biển; đến những làng chài phổ biến những kiến thức về&nbsp;bảo vệ&nbsp;môi trường&nbsp;biển&nbsp;cho ngư dân; trồng cây ở một số khu vực&nbsp;biển&nbsp;Nha Trang (Khánh Hòa), Ðà Nẵng; tổ chức các cuộc thi vẽ tranh dành cho thiếu nhi ở các làng chài, thành phố biển; tổ chức cuộc thi thiết kế thời trang với chủ đề&nbsp;bảo vệ&nbsp;môi trường biển...</p>\r\n\r\n<p>Nằm trong khuôn khổ các hoạt động&nbsp;tại&nbsp;Bình Thuận, <a href="http://www.vovietchung.com/" title="nhà thiết kế Võ Việt Chung"><strong>nhà thiết kế Võ Việt Chung</strong></a>, Giám đốc dự án <strong>Blue Ocean World</strong> giới thiệu bộ sưu tập “Màu đại dương” với thông điệp hãy chung tay giữ gìn môi trường đại dương xanh, sạch…</p>\r\n', 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 1, 'vi', ',10,', 1, '2014-01-20 09:50:50', '2014-01-20 09:50:50', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (3, 'Nghệ sĩ, hoa hậu cùng ngư dân nhặt rác bờ biển', 'nghe-si-hoa-hau-cung-ngu-dan-nhat-rac-bo-bien', 'nghe-si-hoa-hau-cung-ngu-dan-nhat-rac-bo-bien.jpg', '<p>Hàng trăm ngư dân, đoàn viên thanh niên, nhân viên khu du lịch, cư dân cùng các nghệ sĩ, hoa hậu tham gia làm vệ sinh khu vực bờ biển ở phường Hàm Tiến (Phan Thiết, Bình Thuận) ngày 25-9.</p>\r\n', '<h2>Hàng trăm ngư dân, đoàn viên thanh niên, nhân viên khu du lịch, cư dân cùng các nghệ sĩ, hoa hậu tham gia làm vệ sinh khu vực bờ biển ở phường Hàm Tiến (Phan Thiết, Bình Thuận) ngày 25-9.</h2>\r\n\r\n<p style="text-align: center;"><em><strong><img alt="Hoa hậu Đông Nam Á Diệu Hân, MC ca sĩ Nguyệt Ánh cùng mọi người làm vệ sinh bãi biển Hàm Tiến, Mũi Né" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/nghe-si-hoa-hau-cung-ngu-dan-nhat-rac-bo-bien.jpg" style="width: 600px; height: 400px;" /><br />\r\nHoa hậu Đông Nam Á Diệu Hân</strong> (ngồi), MC ca sĩ Nguyệt Ánh cùng mọi người làm vệ sinh bãi biển Hàm Tiến, Mũi Né</em></p>\r\n\r\n<p style="text-align: center;"><em style="font-size: 13px; text-align: center;"><strong><img alt="Ngư dân cùng tham gia làm vệ sinh bãi biển Hàm Tiến, Mũi Né" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/nghe-si-hoa-hau-cung-ngu-dan-nhat-rac-bo-bien-2.jpg" style="width: 600px; height: 400px;" /></strong></em><br />\r\n<em>Ngư dân cùng tham gia làm vệ sinh bãi biển Hàm Tiến, Mũi Né</em></p>\r\n\r\n<p>Đây là chuỗi hoạt động vì môi trường biển tại khu du lịch nổi tiếng của VN do quỹ <strong>Blue Ocean World</strong> tổ chức hưởng ứng Ngày Du lịch thế giới (27-9).</p>\r\n\r\n<p>Hoạt động này nhằm tuyền truyền cho du khách, dân cư làng biển ý thức giữ gìn bảo vệ cảnh quang, làm sạch môi trường xung quanh với khẩu hiện "hành động bảo vệ môi trường hôm nay chính là bảo vệ môi trường cho thế hệ mai sau này".</p>\r\n\r\n<p>Nhìn một góc bãi biển đã dọn sạch rác, ngư dân Thái Văn Hùng vui mừng cho biết thuyền của anh "tối nay ra khơi sẽ không bi rác quấn chân vịt nữa". Đây là bến đậu thuyền đánh cá gần bờ và hứng rác bị sóng biển đánh tấp vô tạo thành một khu vực tập trung rác lớn nhất ở khu du lịch Mũi Né.</p>\r\n', 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 1, 'vi', ',10,', 1, '2014-01-20 09:51:36', '2014-01-20 09:51:36', 'admin', NULL, 0);
+INSERT INTO `info` VALUES (4, 'NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World', 'ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world', 'ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world.jpg', '<p>Mới đây tại Hồ Tràm strip, Xuyên Mộc, tỉnh Bà Rịa – Vũng Tàu đã diễn ra lễ ký kết Thỏa thuận hợp tác xây dựng và triển khai dự án “Blue Ocean World” giữa Quỹ Bảo vệ môi trường Việt Nam và Công ty TNHH MTV Võ Việt Chung.</p>\r\n', '<h2>Mới đây (ngày 02/8/2013) tại Hồ Tràm strip, Xuyên Mộc, tỉnh Bà Rịa – Vũng Tàu đã diễn ra lễ ký kết Thỏa thuận hợp tác xây dựng và triển khai dự án “Blue Ocean World” giữa Quỹ Bảo vệ môi trường Việt Nam và Công ty TNHH MTV Võ Việt Chung.</h2>\r\n\r\n<p>Đây là sự kiện được nhiều người quan tâm với sự hợp tác của Quỹ Bảo vệ môi trường Việt Nam và Công ty TNHH MTV Võ Việt Chung tại The Grand Hồ Tràm Strip. Đại diện Quỹ Bảo vệ môi trường Việt Nam có ông Bùi Cách Tuyến – thứ trưởng bộ Tài Nguyên môi trường, chủ tịch hội đồng quản lý Quỹ bảo vệ môi trường Việt Nam. Ông Nguyễn Nam Phương – Giám đốc quỹ bảo vệ môi trường Việt Nam.<br />\r\n<br />\r\nVề phía đại diện&nbsp;<strong>Công ty TNHH MTV Võ Việt Chung</strong>: Giám đốc triển khai dự án Blue Ocean World – NTK Võ Việt Chung và đại diện cấp cao của The Grand Hồ Tràm Strip cùng các quan chức có mặt tại buổi ký kết.<br />\r\n<br />\r\nÔng Bùi Cách Tuyến thứ trưởng bộ Tài Nguyên Môi trường Việt Nam đã có phát biểu trong buổi lễ: Để nâng cao nhận thức của cộng đồng, nhất là trong giới văn nghệ sĩ, tôi ủng hộ việc thành lập dự án Blue Ocean World của NTK Võ Việt Chung. Để nâng cao nhận thức về biển- đại dương, cũng như tầm ảnh hưởng của những người làm nghệ thuật sẽ tác động mạnh và cùng chung tay hành động để dự án được phát triển hiệu quả trong thời gian sắp tới…<br />\r\n<br />\r\nÔng Võ Việt Chung – giám đốc triển khai dự án Blue Ocean World đã phát biểu: Mọi người hãy cùng chung tay hành động trước khi quá muộn. Tôi kêu gọi các bạn, chúng ta hãy cùng nắm tay nhau hành động những điều thiết thực nhất để biển trở nên sạch đẹp và xanh hơn. Qua đó, NTK cũng đã chia sẻ những tình cảm và suy nghĩ của mình, những kế hoạch trong thời gian sắp tới để triển khai dự án Blue Ocean World…</p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world.jpg" style="width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-2.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /><br />\r\n<em><span style="line-height: 1.6em;">Hình ảnh tại buổi lễ ký kết thỏa thuận hợp tác</span></em></p>\r\n\r\n<p>Trong dịp này, <strong>ông Võ Việt Chung</strong> cũng đã công bố 4 đại sứ của Blue Ocean World gồm có:</p>\r\n\r\n<ol>\r\n	<li>Đạo diễn - DVĐA Kim Khánh</li>\r\n	<li>Hoa hậu - Ảo thuật gia quốc tế Ngô Mỹ Uyên</li>\r\n	<li>MC - Ca sĩ Nguyệt Ánh</li>\r\n	<li>Hoa hậu Đông Nam Á- Diệu Hân</li>\r\n</ol>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-3.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p>Một số hình ảnh khác tại lễ ký kết Thỏa thuận hợp tác xây dựng và triển khai dự án “Blue Ocean World” giữa Quỹ Bảo vệ môi trường Việt Nam và Công ty TNHH MTV Võ Việt Chung:</p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-4.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-5.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-6.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-7.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-8.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-9.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-10.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-11.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p style="text-align: center;"><img alt="NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World" src="http://www.hoahaudaiduongvietnam.com/public/images/articles/ntk-vo-viet-chung-chinh-thuc-la-giam-doc-trien-khai-du-an-blue-ocean-world-12.jpg" style="font-size: 13px; text-align: center; width: 555px; height: 370px;" /></p>\r\n\r\n<p>Tham dự buổi ký kết triển khai <strong>dự án Blue Ocean World</strong> còn có rất nhiều phóng viên các báo đài, các nhân vật cấp cao trong chính phủ cũng như các nghệ sĩ nổi tiếng trong và ngoài nước tham dự.</p>\r\n', 'NTK Võ Việt Chung chính thức là giám đốc triển khai dự án Blue Ocean World', 1, 'vi', ',10,', 1, '2014-01-20 09:52:09', '2014-01-20 09:54:05', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -208,23 +281,33 @@ CREATE TABLE `menu` (
   `delete` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `url` (`url`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 -- 
 -- Dumping data for table `menu`
 -- 
 
-INSERT INTO `menu` VALUES (1, 'Trang chủ', 'hoa-hau-dai-duong', 'javascript:;#1', '', 'Hoa Hậu Đại Dương', 'Hoa Hậu Đại Dương', 'Hoa Hậu Đại Dương', 0, 1, ',1,3,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 02:12:42', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (1, 'Trang chủ', 'hoa-hau-dai-duong', '?lang=vi', '', 'Hoa Hậu Đại Dương', 'Hoa Hậu Đại Dương', 'Hoa Hậu Đại Dương', 0, 1, ',1,3,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 12:25:08', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2013-10-09 16:26:35', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2013-10-09 16:26:49', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'javascript:;#2', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,3,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 02:12:59', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (6, 'Thí sinh', 'thi-sinh', 'javascript:;#3', '', 'Thí sinh', 'Thí sinh', 'Thí sinh', 0, 3, ',1,3,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 02:13:04', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (7, 'Bộ sưu tập', 'bo-suu-tap', 'javascript:;#4', '', 'Bộ sưu tập', 'Bộ sưu tập', 'Bộ sưu tập', 0, 4, ',1,3,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 02:13:10', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (8, 'Photo', 'photo', 'javascript:;#5', '', 'Photo', 'Photo', 'Photo', 0, 2, ',1,3,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 02:13:14', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (10, 'Thông tin - Sự kiện', 'thong-tin-su-kien', 'javascript:;#7', '', 'Thông tin - Sự kiện', 'Thông tin - Sự kiện', 'Thông tin - Sự kiện', 0, 2, ',1,3,', 'vi', 0, 7, 1, '2014-01-15 23:19:16', '2014-01-15 02:13:25', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (9, 'Video', 'video', 'javascript:;#6', '', 'Video', 'Video', 'Video', 0, 6, ',1,3,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 02:13:20', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (11, 'Liên hệ', 'lien-he', 'javascript:;#8', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,3,', 'vi', 0, 8, 1, '2014-01-15 23:19:34', '2014-01-15 02:13:30', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,3,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 17:38:39', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (6, 'Thí sinh', 'thi-sinh', 'thi-sinh/', '', 'Thí sinh', 'Thí sinh', 'Thí sinh', 0, 3, ',1,3,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 09:59:38', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (7, 'Bộ sưu tập', 'bo-suu-tap', 'bo-suu-tap/', '', 'Bộ sưu tập', 'Bộ sưu tập', 'Bộ sưu tập', 0, 4, ',1,3,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 09:23:43', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (8, 'Photo', 'photo', 'photo/', '', 'Photo', 'Photo', 'Photo', 0, 5, ',1,3,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 14:13:34', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (10, 'Thông tin - Sự kiện', 'thong-tin-su-kien', 'thong-tin-su-kien/', '', 'Thông tin - Sự kiện', 'Thông tin - Sự kiện', 'Thông tin - Sự kiện', 0, 2, ',1,3,', 'vi', 0, 7, 1, '2014-01-15 23:19:16', '2014-01-15 17:39:08', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (9, 'Video', 'video', 'video/', '', 'Video', 'Video', 'Video', 0, 6, ',1,3,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 10:36:42', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (11, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,3,', 'vi', 0, 8, 1, '2014-01-15 23:19:34', '2014-01-15 09:57:27', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (12, 'Home', 'home', '?lang=en', '', 'Home', 'Home', 'Home', 0, 1, ',1,', 'en', 0, 1, 1, '2014-01-18 17:42:43', '2014-01-18 12:25:15', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (13, 'Tiêu điểm', 'tieu-diem', 'tieu-diem/', '', 'Tiêu điểm', 'Tiêu điểm', 'Tiêu điểm', 10, 2, ',1,', 'vi', 0, 1, 1, '2014-01-20 09:55:30', '2014-01-20 09:55:30', 'admin', '', 0);
+INSERT INTO `menu` VALUES (14, 'Lịch trình diễn', 'Lịch trình diễn', 'Lịch trình diễn/', '', 'Lịch trình diễn', 'Lịch trình diễn', 'Lịch trình diễn', 10, 2, ',1,', 'vi', 0, 2, 1, '2014-01-20 09:55:52', '2014-01-20 09:55:52', 'admin', '', 0);
+INSERT INTO `menu` VALUES (15, 'Nhật ký cuộc thi', 'nhat-ky-cuoc-thi', 'nhat-ky-cuoc-thi/', '', 'Nhật ký cuộc thi', 'Nhật ký cuộc thi', 'Nhật ký cuộc thi', 10, 2, ',1,', 'vi', 0, 3, 1, '2014-01-20 09:56:06', '2014-01-20 09:56:06', 'admin', '', 0);
+INSERT INTO `menu` VALUES (16, 'Sự kiện', 'su-kien', 'su-kien/', '', 'Sự kiện', 'Sự kiện', 'Sự kiện', 10, 2, ',1,', 'vi', 0, 4, 1, '2014-01-20 09:56:22', '2014-01-20 09:56:22', 'admin', '', 0);
+INSERT INTO `menu` VALUES (17, 'Báo chí', 'bao-chi', 'bao-chi/', '', 'Báo chí', 'Báo chí', 'Báo chí', 10, 2, ',1,', 'vi', 0, 5, 1, '2014-01-20 09:56:37', '2014-01-20 09:56:37', 'admin', '', 0);
+INSERT INTO `menu` VALUES (18, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan/', '', 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 8, 5, ',5,', 'vi', 0, 0, 1, '2014-01-20 15:05:16', '2014-01-20 15:05:16', 'admin', '', 0);
+INSERT INTO `menu` VALUES (19, 'Vòng loại', 'vong-loai', 'vong-loai/', '', 'Vòng loại', 'Vòng loại', 'Vòng loại', 6, 3, ',1,5,', 'vi', 0, 1, 1, '2014-01-23 13:59:37', '2014-01-23 14:07:40', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (20, 'Bán kết', 'ban-ket', 'ban-ket/', '', 'Bán kết', 'Bán kết', 'Bán kết', 6, 3, ',1,', 'vi', 0, 2, 1, '2014-01-23 14:29:16', '2014-01-23 14:29:16', 'admin', '', 0);
+INSERT INTO `menu` VALUES (21, 'Đăng ký trực tuyến', 'dang-ky-truc-tuyen', 'dang-ky-truc-tuyen/', '', 'Đăng ký trực tuyến Hoa Hậu Đại Dương Việt Nam', 'Khi điền vào bản đăng ký này là bạn đã đồng ý chấp nhận tuân theo mọi quy định của Ban Tổ chức cuộc thi Hoa Hậu Đại Dương Việt Nam 2014', 'Đăng ký trực tuyến Hoa Hậu Đại Dương Việt Nam', 0, 7, ',6,', 'vi', 0, 100, 1, '2014-02-13 15:26:45', '2014-02-13 15:37:59', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -252,10 +335,10 @@ INSERT INTO `menu_admin` VALUES (2, 'Cấu hình website', 'config', NULL, 2, 1,
 INSERT INTO `menu_admin` VALUES (3, 'Danh mục menu', 'menu', NULL, 3, 1, 0);
 INSERT INTO `menu_admin` VALUES (4, 'Thông tin, bài viết', 'info', NULL, 4, 1, 0);
 INSERT INTO `menu_admin` VALUES (5, 'Thông tin, bài viết bình luận', 'info_comment', NULL, 5, 0, 0);
-INSERT INTO `menu_admin` VALUES (6, 'Sản phẩm', 'products', NULL, 6, 1, 0);
-INSERT INTO `menu_admin` VALUES (7, 'Support Online', 'support', '', 7, 0, 0);
-INSERT INTO `menu_admin` VALUES (8, 'Booking online', 'booking', NULL, 8, 0, 0);
-INSERT INTO `menu_admin` VALUES (9, 'Danh sách bảng giá', 'booking_banggia', NULL, 9, 0, 0);
+INSERT INTO `menu_admin` VALUES (6, 'Thí sinh', 'thisinh', NULL, 6, 1, 0);
+INSERT INTO `menu_admin` VALUES (7, 'Bộ sưu tập', 'bosuutap', '', 7, 1, 0);
+INSERT INTO `menu_admin` VALUES (8, 'Photo', 'photo_gallery', NULL, 8, 1, 0);
+INSERT INTO `menu_admin` VALUES (9, 'Video', 'video', NULL, 9, 1, 0);
 INSERT INTO `menu_admin` VALUES (10, 'Danh sách đi từ', 'booking_form', NULL, 10, 0, 0);
 INSERT INTO `menu_admin` VALUES (11, 'Danh sách đến', 'booking_to', NULL, 11, 0, 0);
 INSERT INTO `menu_admin` VALUES (12, 'Track & trace', 'tracktrace', NULL, 12, 0, 0);
@@ -310,7 +393,7 @@ INSERT INTO `menu_type` VALUES (3, 'Thí sinh', 0);
 INSERT INTO `menu_type` VALUES (4, 'Bộ sưu tập', 0);
 INSERT INTO `menu_type` VALUES (5, 'Photo', 0);
 INSERT INTO `menu_type` VALUES (6, 'Video', 0);
-INSERT INTO `menu_type` VALUES (7, 'Loại temp 4', 1);
+INSERT INTO `menu_type` VALUES (7, 'Đăng ký trực tuyến', 0);
 INSERT INTO `menu_type` VALUES (8, 'Liên hệ', 0);
 INSERT INTO `menu_type` VALUES (9, 'Không', 0);
 
@@ -333,7 +416,7 @@ CREATE TABLE `photo_gallery` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=110 ;
 
 -- 
 -- Dumping data for table `photo_gallery`
@@ -442,6 +525,12 @@ INSERT INTO `photo_gallery` VALUES (100, 'Diễn viên Hà Hiền - Trường NE
 INSERT INTO `photo_gallery` VALUES (101, 'Đoàn làm phim Bếp của Mẹ', 'doan-lam-phim-bep-cua-me.jpg', '', ',70,', 1, '0000-00-00 00:00:00', NULL, 'admin', NULL, 0);
 INSERT INTO `photo_gallery` VALUES (102, 'Đoàn làm phim Bếp của Mẹ tại Trường NETSPACE', 'doan-lam-phim-bep-cua-me-2.jpg', '', ',70,', 1, '0000-00-00 00:00:00', NULL, 'admin', NULL, 0);
 INSERT INTO `photo_gallery` VALUES (103, 'Diễn viên Trường Thịnh tại Trường NETSPACE', 'dien-vien-truong-thinh.jpg', '', ',70,', 1, '0000-00-00 00:00:00', NULL, 'admin', NULL, 0);
+INSERT INTO `photo_gallery` VALUES (104, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan-1.jpg', 'vi', ',8,', 1, '2014-01-20 14:16:12', '2014-01-20 14:16:12', 'admin', NULL, 0);
+INSERT INTO `photo_gallery` VALUES (105, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận 2', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan-2.jpg', 'vi', ',8,', 1, '2014-01-20 14:16:19', '2014-01-20 14:16:19', 'admin', NULL, 0);
+INSERT INTO `photo_gallery` VALUES (106, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận 3', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan-3.jpg', 'vi', ',8,', 1, '2014-01-20 14:16:23', '2014-01-20 14:16:23', 'admin', NULL, 0);
+INSERT INTO `photo_gallery` VALUES (107, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận 4', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan-4.jpg', 'vi', ',8,', 1, '2014-01-20 14:16:28', '2014-01-20 14:16:28', 'admin', NULL, 0);
+INSERT INTO `photo_gallery` VALUES (108, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận 5', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan-5.jpg', 'vi', ',8,', 1, '2014-01-20 14:27:49', '2014-01-20 14:27:49', 'admin', NULL, 0);
+INSERT INTO `photo_gallery` VALUES (109, 'Triển khai dự án bảo vệ môi trường biển tại Bình Thuận 6', 'trien-khai-du-an-bao-ve-moi-truong-bien-tai-binh-thuan-6.jpg', 'vi', ',8,', 1, '2014-01-20 14:27:55', '2014-01-20 14:27:55', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -523,7 +612,172 @@ CREATE TABLE `slider_banner_position` (
 -- 
 
 INSERT INTO `slider_banner_position` VALUES (1, 'Slider 740x255 px', 0);
-INSERT INTO `slider_banner_position` VALUES (2, 'Event home 490x280 px', 0);
+INSERT INTO `slider_banner_position` VALUES (2, 'Partner 160 x 95 px', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `thisinh`
+-- 
+
+CREATE TABLE `thisinh` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `metaDescription` text,
+  `metaKeyword` varchar(250) default NULL,
+  `sbd` int(5) NOT NULL,
+  `ngaysinh` date NOT NULL,
+  `noisinh` varchar(50) NOT NULL,
+  `chieucao` varchar(4) NOT NULL,
+  `cannang` varchar(4) NOT NULL,
+  `sodo` varchar(10) NOT NULL,
+  `cmnd` varchar(10) NOT NULL,
+  `ngaycap` date NOT NULL,
+  `noicap` varchar(50) NOT NULL,
+  `hokhau` varchar(250) NOT NULL,
+  `choohientai` varchar(250) NOT NULL,
+  `dienthoai` varchar(30) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `trangmang_xh` varchar(250) NOT NULL,
+  `nghenghiep` varchar(100) NOT NULL,
+  `noicongtac` varchar(100) NOT NULL,
+  `trinhdo` varchar(50) NOT NULL,
+  `ngoaingu` varchar(100) NOT NULL,
+  `kenh_timkiem` varchar(30) NOT NULL,
+  `sothich` varchar(200) NOT NULL,
+  `link_video` varchar(30) NOT NULL,
+  `other2` text,
+  `other3` text,
+  `other4` text,
+  `other` tinyint(1) default '0',
+  `lang` varchar(3) default 'vi',
+  `menu_id` varchar(30) NOT NULL,
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `thisinh`
+-- 
+
+INSERT INTO `thisinh` VALUES (1, 'Trần Thị Kim Xuyến', 'tran-thi-kim-xuyen-123456', 'thi-sinh.jpg', NULL, 'Trần Thị Kim Xuyến', 0, '0000-00-00', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, 0, 'vi', ',6,', 1, '2014-01-23 12:36:06', '1994-01-23 13:56:32', 'admin', 'admin', 0);
+INSERT INTO `thisinh` VALUES (2, 'Phan Thị Lý', 'phan-thi-ly-123457', 'thi-sinh.jpg', NULL, 'Phan Thị Lý', 0, '0000-00-00', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, 0, 'vi', ',6,', 1, '2014-01-23 13:37:38', '1992-01-23 13:56:25', 'admin', 'admin', 0);
+INSERT INTO `thisinh` VALUES (3, 'Phan Thị Hoa', 'phan-thi-hoa-123458', 'thi-sinh.jpg', NULL, 'Phan Thị Hoa', 0, '0000-00-00', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, 0, 'vi', ',6,', 1, '2014-01-23 13:37:59', '1991-01-23 13:56:16', 'admin', 'admin', 0);
+INSERT INTO `thisinh` VALUES (4, 'Phan Thị Hồng', 'phan-thi-hong-123459', 'thi-sinh.jpg', 'Sinh ra trong môi trường nghèo khó', 'Phan Thị Hồng', 123459, '1989-04-30', 'Thủ Thừa', '1.73', '49', '88-70-89', '301318160', '2004-11-18', 'Long An', '16/155B ẤP Nhà Dài', '9/9 đường 5E, Khu Phố 21', '0988388003', 'hieu_nhan1@yahoo.com', 'facebook.com/hieunhan1', 'CNTT', '30 Nguyễn Huy Tự', '6', 'Tiếng Anh', '3', 'Nghe nhạc, chơi game', '56ada5dads', 'Đam mê làm hoa hậu', 'chưa tham gia', 'không có', 0, 'vi', ',6,19,20,', 1, '2014-01-23 13:38:33', '1990-01-23 14:29:25', 'admin', 'admin', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `thisinh_binhchon`
+-- 
+
+CREATE TABLE `thisinh_binhchon` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `diachi` varchar(200) NOT NULL,
+  `sdt` varchar(20) NOT NULL,
+  `message` text NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `thisinh_binhchon`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `thisinh_bk`
+-- 
+
+CREATE TABLE `thisinh_bk` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `diachi` varchar(200) NOT NULL,
+  `metaDescription` text,
+  `metaKeyword` varchar(250) default NULL,
+  `sbd` int(5) NOT NULL,
+  `chieucao` varchar(4) NOT NULL,
+  `cannang` varchar(4) NOT NULL,
+  `sodo` varchar(10) NOT NULL,
+  `trinhdo` varchar(50) NOT NULL,
+  `sothich` varchar(200) NOT NULL,
+  `link_video` varchar(30) NOT NULL,
+  `other` tinyint(1) default '0',
+  `lang` varchar(3) default 'vi',
+  `menu_id` varchar(30) NOT NULL,
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`),
+  UNIQUE KEY `sbd` (`sbd`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `thisinh_bk`
+-- 
+
+INSERT INTO `thisinh_bk` VALUES (1, 'Trần Thị Kim Xuyến', 'tran-thi-kim-xuyen-123456', 'thi-sinh.jpg', '', NULL, 'Trần Thị Kim Xuyến', 123456, '1.7', '44', '88-80-89', '4', 'Ca hát', 'yasafzxf3sdsd', 0, 'vi', ',6,', 1, '2014-01-23 12:36:06', '1994-01-23 13:56:32', 'admin', 'admin', 0);
+INSERT INTO `thisinh_bk` VALUES (2, 'Phan Thị Lý', 'phan-thi-ly-123457', 'thi-sinh.jpg', '', NULL, 'Phan Thị Lý', 123457, '1.8', '45', '87-79-90', '5', 'Ca hát', '56ada5dads', 0, 'vi', ',6,', 1, '2014-01-23 13:37:38', '1992-01-23 13:56:25', 'admin', 'admin', 0);
+INSERT INTO `thisinh_bk` VALUES (3, 'Phan Thị Hoa', 'phan-thi-hoa-123458', 'thi-sinh.jpg', '', NULL, 'Phan Thị Hoa', 123458, '1.8', '45', '87-79-90', '5', 'Ca hát', '56ada5dads', 0, 'vi', ',6,', 1, '2014-01-23 13:37:59', '1991-01-23 13:56:16', 'admin', 'admin', 0);
+INSERT INTO `thisinh_bk` VALUES (4, 'Phan Thị Hồng', 'phan-thi-hong-123459', 'thi-sinh.jpg', '123 CMT 8', NULL, 'Phan Thị Hồng', 123459, '1.8', '45', '87-79-90', '5', 'Ca hát', '56ada5dads', 0, 'vi', ',6,19,20,', 1, '2014-01-23 13:38:33', '1990-01-23 14:29:25', 'admin', 'admin', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `thisinh_images`
+-- 
+
+CREATE TABLE `thisinh_images` (
+  `id` int(11) NOT NULL auto_increment,
+  `id_thisinh` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `url_hinh_bst` varchar(150) NOT NULL,
+  `lang` varchar(2) default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+-- 
+-- Dumping data for table `thisinh_images`
+-- 
+
+INSERT INTO `thisinh_images` VALUES (1, 1, 'Trần Thị Kim Xuyến 1', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 13:12:25', '2014-01-23 13:14:40', 'admin', 'admin', 1);
+INSERT INTO `thisinh_images` VALUES (2, 4, 'Phan Thị Hồng 1', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 13:45:26', '2014-01-23 13:45:26', 'admin', NULL, 0);
+INSERT INTO `thisinh_images` VALUES (3, 4, 'Phan Thị Hồng 2', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 13:45:28', '2014-01-23 13:45:28', 'admin', NULL, 0);
+INSERT INTO `thisinh_images` VALUES (4, 4, 'Phan Thị Hồng 3', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 13:45:30', '2014-01-23 13:45:30', 'admin', NULL, 0);
+INSERT INTO `thisinh_images` VALUES (5, 4, 'Phan Thị Hồng 4', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 14:43:00', '2014-01-23 14:43:00', 'admin', NULL, 0);
+INSERT INTO `thisinh_images` VALUES (6, 4, 'Phan Thị Hồng 5', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 14:43:02', '2014-01-23 14:43:02', 'admin', NULL, 0);
+INSERT INTO `thisinh_images` VALUES (7, 4, 'Phan Thị Hồng 6', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 14:43:07', '2014-01-23 14:43:20', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -558,7 +812,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 -- 
 
-INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,6,13,14,15,', ',1,2,3,4,6,13,14,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
+INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,6,7,8,9,13,14,15,', ',1,2,3,4,6,7,8,9,13,14,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -591,8 +845,8 @@ CREATE TABLE `video` (
   `name` varchar(250) NOT NULL,
   `name_rewrite` varchar(250) NOT NULL,
   `url_hinh` varchar(150) default NULL,
-  `link_video` varchar(250) default NULL,
-  `description` text,
+  `link` varchar(250) default NULL,
+  `metaDescription` text,
   `content` text,
   `metaKeyword` varchar(250) default NULL,
   `other` tinyint(1) default '0',
@@ -605,37 +859,14 @@ CREATE TABLE `video` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- 
 -- Dumping data for table `video`
 -- 
 
-INSERT INTO `video` VALUES (2, 'Vietnamese Cuisine Part 1', 'vietnamese-cuisine-part-1', 'Vietnamese-Cuisine-1.jpg', 'http://www.youtube.com/embed/UjOZRdO-KQk', 'Vietnamese Cuisine Part 1', '', 'Vietnamese Cuisine Part 1', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (3, 'Vietnamese Cuisine Part 2', 'vietnamese-cuisine-part-2', 'Vietnamese-Cuisine-2.jpg', 'http://www.youtube.com/embed/uwEPzyHyQF8', 'Vietnamese Cuisine Part 2', '', 'Vietnamese Cuisine Part 2', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (4, 'Vietnamese Cuisine Part 3', 'vietnamese-cuisine-part-3', 'Vietnamese-Cuisine-3.jpg', 'http://www.youtube.com/embed/Ev_tBCwKZng', 'Vietnamese Cuisine Part 3', '', 'Vietnamese Cuisine Part 3', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (5, 'Vietnamese Cuisine Part 4', 'vietnamese-cuisine-part-4', 'Vietnamese-Cuisine-4.jpg', 'http://www.youtube.com/watch?v=IY8wJD3RdY0', 'Vietnamese Cuisine Part 4', '', 'Vietnamese Cuisine Part 4', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (6, 'Vietnamese Cuisine Part 5', 'vietnamese-cuisine-part-5', 'Vietnamese-Cuisine-5.jpg', 'http://www.youtube.com/watch?v=X4tDkxC7MXo', 'Vietnamese Cuisine Part 5', '', 'Vietnamese Cuisine Part 5', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (7, 'Vietnamese Cuisine Part 6', 'vietnamese-cuisine-part-6', 'Vietnamese-Cuisine-6.jpg', 'http://www.youtube.com/watch?v=TtQO4BBermU', 'Vietnamese Cuisine Part 6', '', 'Vietnamese Cuisine Part 6', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (8, 'Diễn Viên- Trương Minh Cường học nấu ăn tại Trường NetSpace.', 'Dien-Vien-Truong-Minh-Cuong-Hoc-Nau-An-Tai-Truong-Netspace', 'dien-vien-truong-minh-cuong-tai-truong-netspace.jpg', 'http://www.youtube.com/embed/HzPkh9oBPvI', 'Diễn Viên - Trương Minh Cường học nấu ăn tại Trường NetSpace.', '', 'Diễn Viên Trương Minh Cường, học nấu ăn tại Trường NetSpace.', 0, 'vi', ',74,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (9, 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 1', 'lang-kinh-nghe-nghiep-danh-thuc-tai-nang-viet-phan-1', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-1.jpg', 'http://www.youtube.com/embed/5NEYiKjiWNs', 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 1', '', 'Lăng kính nghề nghiệp, Đánh thức tài năng Việt', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (10, 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 2', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-2', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-2.jpg', 'http://www.youtube.com/embed/AOZfx_1Jf_I', 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 2', '', 'Lăng kính nghề nghiệp,Đánh thức tài năng Việt', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (11, 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 3', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-3', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-3.jpg', 'http://www.youtube.com/embed/CrgaA-pKahA', 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 3', '', 'Lăng kính nghề nghiệp, Đánh thức tài năng Việt', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (12, 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 4', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-4', 'Lang-Kinh-Nghe-Nghiep-Danh-Thuc-Tai-Nang-Viet-Phan-4.jpg', 'http://www.youtube.com/embed/xvuCdlYOTns', 'Lăng kính nghề nghiệp - Đánh thức tài năng Việt - Phần 4', '', 'Lăng kính nghề nghiệp, Đánh thức tài năng Việt', 0, 'vi', ',75,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (13, 'Học viên học nấu ăn tại trường NetSpace tham gia kỷ lục các món cuốn Việt Nam', 'Hoc-Vien-Hoc-Nau-An-Tai-Truong-Netspace-Tham-Gia-Ky-Luc-Cac-Mon-Cuon-Viet-Nam', 'lien-hoan-cac-mon-cuon-viet-nam.jpg', 'http://www.youtube.com/embed/HVZ94TWPI60', 'Học viên học nấu ăn tại trường NetSpace tham gia kỷ lục các món cuốn Việt Nam', '', 'Học viên, học nấu ăn, tại trường NetSpace,kỷ lục các món cuốn Việt Nam', 0, 'vi', ',74,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (14, 'Chef Norbert Ehrbar Dạy Nấu Ăn tại Trường NetSpace', 'Chef-Norbert-Ehrbar-Day-Nau-An-Tai-Truong-Netspace', 'Chef-Norbert-Ehrbar-Day-Nau-An-Tai-Truong-Netspace.jpg', 'http://www.youtube.com/embed/6QzKTBIKSDU', 'Chef Norbert Ehrbar Dạy Nấu Ăn tại Trường NetSpace', '', 'Chef Norbert Ehrbar, Dạy Nấu Ăn, tại Trường NetSpace', 0, 'vi', ',74,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (15, 'Học viên trường NetSpace học nấu ăn với thầy Đỗ Quang Long', 'Hoc-Vien-Truong-Netspace-Hoc-Nau-An-Voi-Thay-Do-Quang-Long', 'Sieu-Dau-Bep-Do-Quang-Long-Huong-Dan-Kinh-Nghiem-Lam-Bep-Thanh-Cong-10-01-2013.jpg', 'http://www.youtube.com/embed/0xk5KON_5W8', 'Học viên trường NetSpace học nấu ăn với thầy Đỗ Quang Long', '', 'Học viên trường NetSpace, học nấu ăn với thầy Đỗ Quang Long', 0, 'vi', ',74,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (16, 'Năm 2013 nghề bếp hấp dẫn bạn trẻ - Học nấu ăn', 'Nam-2013-Nghe-Bep-Hap-Dan-Ban-Tre-Hoc-Nau-An', 'Nam-2013-Nghe-Bep-Hap-Dan-Ban-Tre-Hoc-Nau-An.jpg', 'http://www.youtube.com/embed/ETL1u-EsUbU', '', '', 'Năm 2013 nghề bếp hấp dẫn bạn trẻ - Học nấu ăn', 1, 'vi', ',73,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (17, 'Tiệc Tất Niên 2013 trường ẩm thực NETSPACE', 'Tiec-Tat-Nien-2013-Truong-Am-Thuc-Netspace', 'Tiec-Tat-Nien-2013-Truong-Am-Thuc-Netspace.png', 'http://www.youtube.com/embed/lgogLzkOVAY', 'Tiệc Tất Niên 2013 trường ẩm thực NETSPACE', '', 'Tiệc Tất Niên 2013, trường ẩm thực NETSPACE', 0, 'vi', ',74,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (18, 'Hoạt động của trường dạy nghề ẩm thực NETSPACE năm 2012', 'Cac-Hoat-Dong-Cua-Truong-Day-Nghe-Am-Thuc-Netspace', 'Cac-Hoat-Dong-Cua-Truong-Day-Nghe-Am-Thuc-Netspace.jpg', 'http://www.youtube.com/embed/s5j9JgNiOyE', 'Các hoạt động của trường dạy nghề ẩm thực NETSPACE năm 2012', '', 'Các hoạt động của trường dạy nghề ẩm thực NETSPACE', 1, 'vi', ',74,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (19, 'Học nấu ăn các món Âu tại trường dạy nghề ẩm thực NETSPACE', 'Hoc-Nau-An-Cac-Mon-Au-Tai-Truong-Day-Nghe-Am-Thuc-Netspace', 'Hoc-Nau-An-Cac-Mon-Au-Tai-Truong-Day-Nghe-Am-Thuc-Netspace.jpg', 'http://www.youtube.com/embed/plS-81GTQC8', 'Học nấu ăn các món Âu tại trường dạy nghề ẩm thực NETSPACE', '', 'Học nấu ăn, các món Âu, trường dạy nghề ẩm thực NETSPACE', 0, 'vi', ',76,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (20, 'Học nấu ăn các món Hoa tại trường dạy nghề ẩm thực NETSPACE', 'Hoc-Nau-An-Cac-Mon-Hoa-Tai-Truong-Day-Nghe-Am-Thuc-Netspace', 'Hoc-Nau-An-Cac-Mon-Hoa-Tai-Truong-Day-Nghe-Am-Thuc-Netspace.jpg', 'http://www.youtube.com/embed/R7eDXCAHapw', 'Học nấu ăn các món Hoa tại trường dạy nghề ẩm thực NETSPACE', '', 'Học nấu ăn, các món Hoa, tại trường dạy nghề ẩm thực NETSPACE', 1, 'vi', ',76,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (21, 'Học nấu ăn - Dạy nướng Teppanyaki - Nhật Bản ', 'Hoc-Nau-An-Day-Nuong-Teppanyaki-Nhat-Ban', 'Hoc-Nau-An-Day-Nuong-Teppanyaki-Nhat-Ban.jpg', 'http://www.youtube.com/embed/h66cbZuVux4', 'Học nấu ăn - Dạy nướng Teppanyaki - Nhật Bản ', '', 'Học nấu ăn,Dạy nướng Teppanyaki Nhật Bản ', 1, 'vi', ',72,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (22, 'Dạy pha chế Barrista Bartender - Trường dạy pha chế NetSpace ', 'day-pha-che-barrista-bartender-truong-day-pha-che-netspace', 'Hoc-Nau-An-Worlds-Best-Bartender.jpg', 'http://www.youtube.com/embed/T8rtIXLcdtE', 'Dạy pha chế Barrista Bartender - Trường dạy pha chế NetSpace ', '', 'Dạy pha chế Barrista Bartender - Trường dạy pha chế NetSpace ', 1, 'vi', ',72,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (23, 'Thầy Nguyễn Văn Lập giảng viên trường NETSPACE thi Siêu Đầu Bếp ', 'Thay-Nguyen-Van-Lap-Giang-Vien-Truong-Netspace-Thi-Sieu-Dau-Bep', 'Thay-Nguyen-Van-Lap-Giang-Vien-Truong-Netspace-Thi-Sieu-Dau-Bep.jpg', 'http://www.youtube.com/embed/v12mC_vyKo4', '', '', 'Thầy Nguyễn Văn Lập giảng viên trường NETSPACE thi Siêu Đầu Bếp ', 1, 'vi', ',73,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (24, 'Nguyễn Văn Lập Dạy Cắt Tỉa Tại Trường NETSPACE - Dạy Nấu Ăn', 'Nguyen-Van-Lap-Day-Cat-Tia-Tai-Truong-Netspace-Day-Nau-An', 'Nguyen-Van-Lap-Day-Cat-Tia-Tai-Truong-Netspace-Day-Nau-An.jpg', 'http://www.youtube.com/embed/u3nJRno992Q', '', '', 'Nguyễn Văn Lập Dạy Cắt Tỉa Tại Trường NETSPACE - Dạy Nấu Ăn', 1, 'vi', ',73,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (25, 'Kinh doanh quán ăn nhỏ', 'kinh-doanh-quan-an-nho', 'kinh-doanh-quan-an-nho.jpg', 'http://www.youtube.com/embed/UxxGOQDvK4I', 'Kinh doanh quán ăn nhỏ - Trường dạy nghề ẩm thực NETSPACE', '<p style="text-align: center;"><img alt="Kinh doanh quán ăn nhỏ" src="/upload/images/video/kinh-doanh-quan-an-nho.jpg" style="line-height: 1.6em; width: 550px; height: 385px;" /></p>\r\n\r\n<p style="text-align: center;"><em><strong>Kinh doanh quán ăn nhỏ - Trường dạy nghề ẩm thực NETSPACE</strong></em></p>\r\n', 'Kinh doanh quán ăn nhỏ', 0, NULL, ',34,', 1, '0000-00-00 00:00:00', NULL, 'admin', NULL, 0);
-INSERT INTO `video` VALUES (26, 'Học nấu ăn, Nướng Teppanyaki Nhật Bản tại Trường dạy nghề ẩm thực NETSPACE', 'hoc-nau-an-nuong-teppanyaky-nhat-ban', 'hoc-nau-an-nuong-teppanyaky-nhat-ban.jpg', 'http://www.youtube.com/embed/VRCHwpu1Lgc', 'Học nấu ăn, Nướng Teppanyaki Nhật Bản tại Trường dạy nghề ẩm thực NETSPACE', '<p style="text-align: center;"><strong>Học nấu ăn, Nướng Teppanyaki Nhật Bản tại Trường dạy nghề ẩm thực NETSPACE</strong></p>\r\n\r\n<p style="text-align: center;"><strong><img alt="Học nấu ăn, Nướng TEPPANYAKY Nhật Bản" src="/upload/images/video/hoc-nau-an-nuong-teppanyaky-nhat-ban.jpg" style="width: 550px; height: 354px;" /></strong></p>\r\n', 'Học nấu ăn, Nướng TEPPANYAKY Nhật Bản,Nướng TEPPANYAKY', 0, NULL, ',72,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (27, 'Siêu đầu bếp Nguyễn Văn Lập - Dạy nấu ăn', 'sieu-dau-bep-nguyen-van-lap-day-nau-an', 'sieu-dau-bep-nguyen-van-lap-day-nau-an.png', 'http://www.youtube.com/embed/28oIxsPN4Xo', 'Siêu đầu bếp Nguyễn Văn Lập - Dạy nấu ăn', '', 'Siêu đầu bếp Nguyễn Văn Lập, Dạy nấu ăn', 0, NULL, ',34,', 1, '0000-00-00 00:00:00', NULL, 'admin', 'admin', 0);
-INSERT INTO `video` VALUES (28, 'Siêu đầu bếp Lê Võ Anh Duy - Dạy nấu ăn', 'sieu-dau-bep-le-vo-anh-duy-day-nau-an', 'sieu-dau-bep-le-vo-anh-duy-day-nau-an.png', 'http://www.youtube.com/embed/I21HhBkv6jU', 'Siêu đầu bếp Lê Võ Anh Duy - Dạy nấu ăn', '<p style="text-align: center;"><img alt="Siêu đầu bếp Lê Võ Anh Duy - Dạy nấu ăn" src="/upload/images/video/sieu-dau-bep-le-vo-anh-duy-day-nau-an.png" style="width: 455px; height: 315px;" /></p>\r\n', 'Siêu đầu bếp Lê Võ Anh Duy,Dạy nấu ăn', 0, NULL, ',34,', 1, '0000-00-00 00:00:00', NULL, 'admin', NULL, 0);
-INSERT INTO `video` VALUES (29, 'Video Clip Hoạt Động Dã Ngoại NetSpace 18/07/2013', 'video-clip-hoat-dong-da-ngoai-netspace-18-07-2013', 'ngay-vui-da-ngoai-cua-truong-am-thuc-netspace-27.jpg', 'http://www.youtube.com/embed/9-O_VXSRvEw', 'Nhằm tạo ra tình thân ái, giao lưu, gắn kết giữa các Giảng viên và học viên, ngày 18/07/2013 Trường ẩm thực Netspace đã tổ chức chương trình giao lưu dã ngoại hết sức vui tươi và hấp dẫn tại Trạm dừng chân Mekong Long Thành, Đồng Nai.', '<h2 style="margin: 0px; font-size: 13px; line-height: 22px; font-family: Arial, Helvetica, sans-serif;">Nhằm tạo ra tình thân ái, giao lưu, gắn kết giữa các Giảng viên và học viên, ngày 18/07/2013 Trường ẩm thực Netspace đã tổ chức chương trình giao lưu dã ngoại hết sức vui tươi và hấp dẫn tại Trạm dừng chân Mekong Long Thành, Đồng Nai.</h2>\r\n', 'Hoạt động dã ngoại Trường Ẩm Thực NetSpace', 1, NULL, ',74,', 1, '0000-00-00 00:00:00', NULL, 'chau', 'chau', 0);
+INSERT INTO `video` VALUES (1, '42 Người đẹp Việt tham dự VCK tự giới thiệu', '42-nguoi-dep-viet-tham-du-vck-tu-gioi-thieu', '42-nguoi-dep-viet-tham-du-vck-tu-gioi-thieu.jpg', 'txMAS8BUkxI', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.</h2>\r\n\r\n<p><strong>Aenean dictum lacinia tortor.</strong></p>\r\n\r\n<p>Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', '42 Người đẹp Việt tham dự VCK tự giới thiệu', 1, 'vi', ',9,', 1, '2014-01-20 10:21:15', '2014-01-20 10:21:15', 'admin', NULL, 0);
+INSERT INTO `video` VALUES (2, 'Á hậu Kiều Khanh tham dự Miss World', 'a-hau-kieu-khanh-tham-du-miss-world', '42-nguoi-dep-viet-tham-du-vck-tu-gioi-thieu.jpg', 'txMAS8BUkxI', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.</h2>\r\n\r\n<p><strong>Aenean dictum lacinia tortor.</strong></p>\r\n\r\n<p>Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', 'Á hậu Kiều Khanh tham dự Miss World', 1, 'vi', ',9,', 1, '2014-01-20 10:23:16', '2014-01-14 10:38:43', 'admin', 'admin', 0);
+INSERT INTO `video` VALUES (3, 'Đêm chung kết HHTGNV 2010 - Phần III', 'dem-chung-ket-hhtgnv-2010-phan-iii', '42-nguoi-dep-viet-tham-du-vck-tu-gioi-thieu.jpg', 'txMAS8BUkxI', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.</h2>\r\n\r\n<p><strong>Aenean dictum lacinia tortor.</strong></p>\r\n\r\n<p>Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', 'Đêm chung kết HHTGNV 2010 - Phần III', 1, 'vi', ',9,', 1, '2014-01-20 10:23:30', '2014-01-18 10:23:30', 'admin', NULL, 0);
+INSERT INTO `video` VALUES (4, 'Đêm chung kết HHTGNV 2010 - Phần II', 'dem-chung-ket-hhtgnv-2010-phan-ii', '42-nguoi-dep-viet-tham-du-vck-tu-gioi-thieu.jpg', 'txMAS8BUkxI', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.</h2>\r\n\r\n<p><strong>Aenean dictum lacinia tortor.</strong></p>\r\n\r\n<p>Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', 'Đêm chung kết HHTGNV 2010 - Phần II', 1, 'vi', ',9,', 1, '2014-01-20 10:23:39', '2014-01-17 10:23:39', 'admin', NULL, 0);
+INSERT INTO `video` VALUES (5, 'Đêm chung kết HHTGNV 2010 - Phần I', 'dem-chung-ket-hhtgnv-2010-phan-i', '42-nguoi-dep-viet-tham-du-vck-tu-gioi-thieu.jpg', 'txMAS8BUkxI', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.', '<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla.</h2>\r\n\r\n<p><strong>Aenean dictum lacinia tortor.</strong></p>\r\n\r\n<p>Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor.&nbsp;</p>\r\n', 'Đêm chung kết HHTGNV 2010 - Phần I', 1, 'vi', ',9,', 1, '2014-01-20 10:23:48', '2014-01-16 10:23:48', 'admin', NULL, 0);

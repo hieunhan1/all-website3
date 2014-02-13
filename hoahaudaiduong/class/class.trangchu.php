@@ -95,7 +95,7 @@ class trangchu extends db {
 		if($total_pages > 1){
 			for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#FFFF66; color:#333'>{$i}</a>";
 				} elseif($i>0) {
 					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
 				}
@@ -118,6 +118,54 @@ class trangchu extends db {
 	function info_detail($alias){
 		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_update FROM info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
+	}
+	function info_noibat($lang){
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 9";
+		return mysql_query($qr);
+	}
+	
+	/*video*/
+	function video_home($lang){
+		$qr = "SELECT name,name_rewrite,link,menu_id FROM video WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 5";
+		return mysql_query($qr);
+	}
+	function video_detail($alias){
+		$qr = "SELECT name,name_rewrite,url_hinh,link,metaDescription,content,metaKeyword,date_create FROM video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function video_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
+		return mysql_query($qr);
+	}
+	
+	/*bosuutap*/
+	function home_bosuutap($lang){
+		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM bosuutap WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 4";
+		return mysql_query($qr);
+	}
+	function bosuutap_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_update FROM bosuutap WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	
+	/*thisinh*/
+	function home_thisinh($lang){
+		$qr = "SELECT name,name_rewrite,url_hinh,sbd,menu_id FROM thisinh WHERE `delete`=0 AND status=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 8";
+		return mysql_query($qr);
+	}
+	function thisinh_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,sbd,chieucao,cannang,sodo,trinhdo,sothich,link_video,date_update FROM thisinh WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	
+	/*other*/
+	function datetime($datetime){
+		$date = date("d F Y",strtotime($datetime));
+		$date = explode(' ',$date);
+		
+		return "<p style='font-size:250%; font-weight:bold; padding-bottom:5px'>{$date[0]}</p>
+		<p>{$date[1]}</p>
+		<p>{$date[2]}</p>";
 	}
 }// end trangchu
 ?>
