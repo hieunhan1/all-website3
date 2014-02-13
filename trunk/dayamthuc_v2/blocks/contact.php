@@ -41,7 +41,7 @@
 	$qr = $tc->chinhanh_ds();
 	while($row = mysql_fetch_array($qr)){
 		$i++;
-		if($i!=1) $str = 'Chi nhánh: '.$row['name']; else $str = $row['name'].': <span style="font-size:15px">TRƯỜNG DẠY NGHỀ ẨM THỰC NETSPACE</span>';
+		if($i!=1) $str = 'Chi nhánh: '.$row['name']; else $str = '<h1 style="font-size:100%; line-height:22px">'.$row['name'].': TRƯỜNG DẠY NGHỀ ẨM THỰC NETSPACE</h1>';
 		echo '<div class="viewpost" style="margin-left:25px; width:440px; height:200px; float:left">
 			<p style="color:#C00; font-weight:bold">'.$str.'</p>
 			<p>Địa chỉ: <b>'.$row['diachi'].'</b></p>

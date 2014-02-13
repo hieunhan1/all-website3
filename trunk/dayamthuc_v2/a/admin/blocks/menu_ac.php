@@ -127,7 +127,7 @@ echo $form->DisplayProperties();
 
 //Loại menu
 $value = array();
-$qr = mysql_query("SELECT * FROM menu_type WHERE `delete`=0 ");
+$qr = mysql_query("SELECT * FROM menu_type WHERE `delete`=0 ORDER BY `order`");
 while($row_temp = mysql_fetch_array($qr)){
 	$value[$row_temp['id']] = $row_temp['name'];
 }
