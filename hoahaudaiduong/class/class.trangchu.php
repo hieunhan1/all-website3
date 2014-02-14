@@ -154,7 +154,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function thisinh_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,sbd,chieucao,cannang,sodo,trinhdo,sothich,link_video,date_update FROM thisinh WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,sbd,chieucao,cannang,sodo,trinhdo,sothich,link_video,ngaysinh FROM thisinh WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	
