@@ -27,6 +27,7 @@ if(@$_GET['danhmuc']){
 	$type = $row_menu_one['type_id'];
 	$lang = $row_menu_one['lang'];
 	
+	if($lang=='') $lang='vi';
 	include("languages/{$lang}.php");
 	include_once('config.php');
 	
@@ -170,7 +171,7 @@ if(@$_GET['danhmuc']){
     <?php
     $qr = $tc->menu_type(7,0,$lang);
 	$row_dangky = mysql_fetch_array($qr);
-	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'">Đăng ký cuộ thi Hoa Hậu Đại Dương Việt Nam</a></div>';
+	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'">Đăng ký cuộc thi Hoa Hậu Đại Dương Việt Nam</a></div>';
 	?>
 </div>
 <?php

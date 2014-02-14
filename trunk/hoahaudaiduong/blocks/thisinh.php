@@ -40,7 +40,7 @@ for($i=0; $i<=6; $i++){
 		break;
 	}
 }
-$ngaysinh = date('Y') - date('Y',strtotime($row_detail['date_update']));
+$ngaysinh = date('Y') - date('Y',strtotime($row_detail['ngaysinh']));
 $info = '<table width="100%" border="0" cellpadding="0" cellspacing="0" id="info_thisinh">
 	<tr>
 		<td>Chiều cao: '.$row_detail['chieucao'].'m</td>

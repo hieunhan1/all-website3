@@ -134,9 +134,8 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 #run_top a{padding:0px 10px !important}
 #run_top img{float:left; margin-top:2px}
 
-#formdangky{position:fixed; bottom:0; width:400px; height:33px; line-height:33px; font-size:110%; font-weight:bold; margin-left:600px; background-color:#009CFF}
+#formdangky{position:fixed; bottom:0; width:400px; height:33px; line-height:33px; padding-left:14px; text-align:center; font-size:110%; font-weight:bold; margin-left:600px; background:url(images/register.gif) no-repeat left #009CFF}
 #formdangky a{color:#FF0}
-#formdangky img{float:left; margin:5px 10px 0 15px}
 
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
