@@ -161,14 +161,14 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#FFFF66; color:#333}
 
-#form_dangky{border-collapse:collapse; border:solid 1px #CCC; margin:auto; color:#FFF}
-#form_dangky td, #form_dangky th {padding:8px; border-bottom:solid 1px #CCC}
+#form_dangky{margin:auto; color:#FFF}
+#form_dangky td, #form_dangky th {padding:10px 8px}
 #form_dangky .txt_dangky{width:500px; height:20px; line-height:20px; background-color:#FFF; border:solid 1px #999}
 #form_dangky .txt_dangky2{width:150px; height:20px; line-height:20px; background-color:#FFF; border:solid 1px #999}
 #form_dangky .select_dangky{width:250px; height:20px; line-height:20px; background-color:#FFF; border:solid 1px #999}
 #form_dangky .textarea_dangky{width:500px; height:80px; line-height:20px; background-color:#FFF; border:solid 1px #999; resize:none; overflow:auto}
 #form_dangky .textarea_dangky2{width:715px; height:80px; line-height:20px; background-color:#FFF; border:solid 1px #999; resize:none; overflow:auto}
-#form_dangky #btn_dangky{height:50px; line-height:50px; padding:0 60px; color:#FFF; font-weight:bold; font-size:150%; background-color:#09F; border:solid 2px #FFF; cursor:pointer}
+#form_dangky #btn_dangky{width:715px; height:50px; line-height:50px; text-align:center; color:#FFF; font-weight:bold; font-size:150%; background-color:#09F; border:solid 2px #FFF; cursor:pointer}
 #form_dangky span{float:right}
 #form_dangky p{margin-bottom:10px}
 

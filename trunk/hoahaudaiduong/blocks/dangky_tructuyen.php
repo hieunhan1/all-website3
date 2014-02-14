@@ -2,14 +2,28 @@
 $navigator = '<div id="navigator"><a href="http://'.$domain.'/?lang='.$lang.'"><img src="images/home.png" alt="" /></a>'.$tc->navigator($idMenu).'</div>';
 $view_post = '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2></div><div style="clear:both; height:20px"></div>';
 
+if(!@$_SESSION['upload_image']) $_SESSION['upload_image'] = '1';
+
+if(!file_exists('public/temp/'.$_SESSION['upload_image'])){
+	$image_upload = '<p><form id="imageform" method="post" enctype="multipart/form-data" action="ajax_image.php">Tải ảnh của bạn (ảnh dưới 2MB) &nbsp; &nbsp; <input type="file" name="photoimg" id="photoimg" /></form></p><p id="preview"></p>';
+}else{
+	$image_upload = '<img src="public/temp/'.$_SESSION['upload_image'].'" class="preview" /> ** Nếu bạn muốn đổi hình đại diện khác vui lòng tắt tất cả trình duyệt, upload lại.';
+}
+
 echo $navigator.$view_post;
 ?>
+<style>
+.preview{width:100px; float:left; border:solid 1px #dedede; margin-right:10px; padding:2px}
+#preview{color:#FF5959; font-size:12px}
+</style>
+
 <div id="ajax_dangky">
 <table width="90%" border="0" cellpadding="0" cellspacing="0" id="form_dangky">
 	<tr>
-    	<td width="30" align="right" style="font-weight:bold">1.</td>
-    	<td width="200">Họ tên:</td>
-        <td><input type="text" name="name" class="txt_dangky" /></td>
+    	<td width="30" align="right" valign="top" style="font-weight:bold">1.</td>
+    	<td width="200" valign="top">Họ tên:</td>
+        <td><p><input type="text" name="name" class="txt_dangky" /></p>
+        <?php echo $image_upload; ?></td>
     </tr>
 	<tr>
     	<td align="right" style="font-weight:bold">2.</td>
@@ -18,12 +32,12 @@ echo $navigator.$view_post;
     </tr>
 	<tr>
     	<td align="right" style="font-weight:bold">3.</td>
-    	<td>Chiều cao:</td>
-        <td><input type="text" name="chieucao" class="txt_dangky2" /> <span>Cân nặng: <input type="text" name="cannang" class="txt_dangky2" /></span></td>
+    	<td>Chiều cao (m):</td>
+        <td><input type="text" name="chieucao" class="txt_dangky2" /> <span>Cân nặng (kg): <input type="text" name="cannang" class="txt_dangky2" /></span></td>
     </tr>
 	<tr>
-    	<td align="right" style="font-weight:bold">4.</td>
-    	<td>Số đo 3 vòng (ngực - eo - mông):</td>
+    	<td align="right" valign="top" style="font-weight:bold">4.</td>
+    	<td>Số đo 3 vòng (cm)<br />(ngực - eo - mông):</td>
         <td><input type="text" name="sodo" class="txt_dangky2" /></td>
     </tr>
 	<tr>
@@ -133,6 +147,20 @@ echo $navigator.$view_post;
 <link href="library/datepicker/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="library/datepicker/jquery.ui.core.js"></script>
 <script type="text/javascript" src="library/datepicker/jquery.ui.datepicker.js"></script>
+
+<script type="text/javascript" src="library/jquery.form.js"></script>
+<script type="text/javascript" >
+$(document).ready(function() { 
+	$('#photoimg').live('change', function(){ 
+		$("#preview").html('');
+		$("#preview").html('<img src="images/loader.gif" alt="Uploading...."/>');
+		$("#imageform").ajaxForm({
+			target: '#preview'
+		}).submit();
+	});
+}); 
+</script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".select_date").datepicker({
@@ -176,7 +204,7 @@ $(document).ready(function(){
 			alert("Nhập họ tên");
 			$("input[name=name]").focus();
 			return false;
-		/*}else if(ngaysinh==''){
+		}else if(ngaysinh==''){
 			alert("Nhập ngày sinh");
 			$("input[name=ngaysinh]").focus();
 			return false;
@@ -242,12 +270,12 @@ $(document).ready(function(){
 			return false;
 		}else if(metaDescription==''){
 			alert("Nhập giới thiệu về bản thân");
-			$("input[name=metaDescription]").focus();
-			return false;*/
+			$("textarea[name=metaDescription]").focus();
+			return false;
 		}else{
 			$("#ajax_dangky").html('<p style="font-weight:bold; padding:30px 0 60px;">Đang xử lý....</p>');
 			$.post("ajax.php",{dangky_tructuyen:"dangky_tructuyen",name:name,ngaysinh:ngaysinh,noisinh:noisinh,chieucao:chieucao,cannang:cannang,sodo:sodo,cmnd:cmnd,ngaycap:ngaycap,noicap:noicap,hokhau:hokhau,choohientai:choohientai,dienthoai:dienthoai,email:email,trangmang_xh:trangmang_xh,nghenghiep:nghenghiep,noicongtac:noicongtac,trinhdo:trinhdo,ngoaingu:ngoaingu,sothich:sothich,metaDescription:metaDescription,kenh_timkiem:kenh_timkiem,other2:other2,other3:other3,other4:other4},function(data){
-				if(data!='0') setTimeout(function(){ $("#ajax_dangky").html('<p style="color:#FFF; font-weight:bold; padding:30px 0 60px;">Đăng ký cuộc thi Hoa Hậu Đại Dương Việt Nam năm 2014 thành công.</p>'); },200);
+				if(data=='1') setTimeout(function(){ $("#ajax_dangky").html('<p style="color:#FFF; font-weight:bold; padding:30px 0 60px;">Đăng ký cuộc thi Hoa Hậu Đại Dương Việt Nam năm 2014 thành công.</p>'); },200);
 				else $("#ajax_dangky").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
 			});
 		}

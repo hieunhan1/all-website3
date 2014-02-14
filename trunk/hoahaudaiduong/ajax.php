@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('config.php');
 
 if($_POST['contact']=='contact'){
@@ -29,6 +30,7 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 	$noisinh = trim($_POST['noisinh']);
 	$chieucao = trim($_POST['chieucao']);
 	$cannang = trim($_POST['cannang']);
+	$sodo = trim($_POST['sodo']);
 	$cmnd = trim($_POST['cmnd']);
 	$ngaycap = trim($_POST['ngaycap']);
 	$noicap = trim($_POST['noicap']);
@@ -48,9 +50,29 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 	$other3 = trim($_POST['other3']);
 	$other4 = trim($_POST['other4']);
 	
-	
-	$qr =  "INSERT INTO `thisinh` VALUES (NULL, 'name', 'name_rewrite', 'url_hinh', 'metaDescription', 'metaKeyword', '123', '2014-02-13', 'noisinh', 'chieucao', 'cannang', 'sodo', 'cmnd', '2014-02-13',  'noicap', 'hokhau', 'choohientai', 'dienthoai', 'email', 'trangmang_xh', 'nghenghiep', 'noicongtac', 'trinhdo', 'ngoaingu', 'kenh_timkiem', 'sothich', 'link_video', 'other2', 'other3', 'other4',  '0', 'vi', ',6,19,', '1', '2014-02-13 17:30:10', '2014-02-13 17:30:10', 'admin', NULL , '0') ";
-	return true;
+	if($name!='' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
+		$ngaysinh = explode('/',$ngaysinh); $ngaysinh = "{$ngaysinh[2]}-{$ngaysinh[1]}-{$ngaysinh[0]}";
+		$ngaycap = explode('/',$ngaycap); $ngaycap = "{$ngaycap[2]}-{$ngaycap[1]}-{$ngaycap[0]}";
+		$date = date('Y-m-d H:i:s');
+		
+		$sdb = mysql_num_rows(mysql_query("SELECT id FROM thisinh"));
+		
+		include_once('class/functions.php');
+		$name_rewrite = change_alias($name)."-{$sdb}";
+		
+		$path_temp = "public/temp/";
+		$url_hinh = $_SESSION['upload_image'];
+		
+		rename($path_temp.$url_hinh,url_thisinh_image.$url_hinh);
+		
+		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$url_hinh}', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'admin', NULL , '0') ";
+		
+		if(mysql_query($qr)){
+			echo '1';
+			return true;
+		}else return false;
+		
+	}else return false;
 }
 
 mysql_close();
