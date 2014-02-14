@@ -7,7 +7,15 @@
 
 <body>
 
-<div style="height:60px; overflow:hidden"><embed width="250" height="60" src="public/musics.mp3" loop="true" volume="20"></embed></div>
+<?php
+if(file_exists('public/temp/'.$_SESSION['upload_image'])){
+	echo 1;
+}else echo 0;
+
+echo '<br /> '.'public/temp/'.$_SESSION['upload_image'];
+
+
+?>
 
 </body>
 </html>

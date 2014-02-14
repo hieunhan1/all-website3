@@ -170,7 +170,7 @@ if(@$_GET['danhmuc']){
     <?php
     $qr = $tc->menu_type(7,0,$lang);
 	$row_dangky = mysql_fetch_array($qr);
-	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'"><img src="images/download.png" alt="" />Tải form đăng ký Hoa Hậu Đại Dương</a></div>';
+	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'">Đăng ký cuộ thi Hoa Hậu Đại Dương Việt Nam</a></div>';
 	?>
 </div>
 <?php
