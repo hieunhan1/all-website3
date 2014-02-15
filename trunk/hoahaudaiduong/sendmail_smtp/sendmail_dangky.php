@@ -4,8 +4,8 @@
 //Nhúng thư viện phpmailer
 require_once('class.phpmailer.php');
 
-$email_gui = 'inform@hoahaudaiduongvietnam.com';
-$email_gui_pass = 'inform1234';
+$email_gui = 'no-reply@hoahaudaiduongvietnam.com';
+$email_gui_pass = 'no-reply1234';
 $title = 'Đăng ký cuộc thi Hoa Hậu Đại Dương';
 
 $email_nhan = $row_config['email'];
