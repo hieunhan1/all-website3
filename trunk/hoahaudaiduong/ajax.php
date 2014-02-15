@@ -68,6 +68,7 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$url_hinh}', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'admin', NULL , '0') ";
 		
 		if(mysql_query($qr)){
+			include_once('sendmail/sendmail_dangky.php');
 			echo '1';
 			return true;
 		}else return false;

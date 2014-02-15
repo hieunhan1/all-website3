@@ -11,15 +11,15 @@ $mail->SMTPSecure = 'ssl';
 $mail->Username = "contactwebsite112@gmail.com"; // your SMTP username or your gmail username 
 $mail->Password = "contactwebsite112#123*"; // your SMTP password or your gmail password 
 $from = "contactwebsite112@gmail.com"; // Reply to this email 
-$to = $row_config['email']; // Recipients email ID 
+$to = 'hieunhan112@gmail.com';//$row_config['email']; // Recipients email ID 
 //$name="Thien Phat"; // Recipient's name 
 $mail->From = $from; 
-$mail->FromName = $_POST['name']; // Name to indicate where the email came from when the recepient received 
-$mail->AddAddress($to,'Lien he Keo Han Quoc'); 
+$mail->FromName = $name; // Name to indicate where the email came from when the recepient received 
+$mail->AddAddress($to,'Lien he Hoa Hau Dai Duong'); 
 $mail->AddReplyTo($from,"admin"); 
 $mail->WordWrap = 50; // set word wrap 
 $mail->IsHTML(true); // send as HTML 
-$mail->Subject = 'Khách hàng liên hệ từ Website Keo Han Quoc'; 
+$mail->Subject = 'Khách hàng liên hệ từ Website Hoa Hậu Đại Dương'; 
 $mail->HoTen = $name;
 $mail->Email = $email;
 $mail->LoiNhan = $content;
