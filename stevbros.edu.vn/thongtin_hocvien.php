@@ -7,7 +7,7 @@ $qr = mysql_query("SELECT * FROM dangky WHERE `delete`=0 AND id='{$id}' LIMIT 1 
 $row = mysql_fetch_array($qr);
 
 if(mysql_num_rows($qr)==1 && $row['status']!=1){
-	mysql_query("UPDATE dangky SET status=1,date_update='".date('Y-m-d H:i:s')."',user_update='admin' WHERE id='{$id}'");
+	mysql_query("UPDATE dangky SET status=1,date_update='".date('Y-m-d H:i:s')."',user_update='email_admin' WHERE id='{$id}'");
 }
 
 
