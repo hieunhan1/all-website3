@@ -1,5 +1,6 @@
 <?php
 session_start();
+$lang = 'vi';
 include_once('config.php');
 
 if($_POST['contact']=='contact'){
@@ -12,7 +13,7 @@ if($_POST['contact']=='contact'){
 	if($name!='' && $email!='' && $phone!='' && $message!=''){
 		if($tc->insert_contact($name,$email,$phone,$diachi,$message)){
 			echo '1';
-			include_once('sendmail/sendmail.php');
+			include_once('sendmail_smtp/sendmail.php');
 			return true;
 		}else{
 			echo '0';
@@ -50,7 +51,9 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 	$other3 = trim($_POST['other3']);
 	$other4 = trim($_POST['other4']);
 	
-	if($name!='' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
+	$url_hinh = $_SESSION['upload_image'];
+	
+	if($name!='' && $url_hinh!='1' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
 		$ngaysinh = explode('/',$ngaysinh); $ngaysinh = "{$ngaysinh[2]}-{$ngaysinh[1]}-{$ngaysinh[0]}";
 		$ngaycap = explode('/',$ngaycap); $ngaycap = "{$ngaycap[2]}-{$ngaycap[1]}-{$ngaycap[0]}";
 		$date = date('Y-m-d H:i:s');
@@ -61,19 +64,17 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 		$name_rewrite = change_alias($name)."-{$sdb}";
 		
 		$path_temp = "public/temp/";
-		$url_hinh = $_SESSION['upload_image'];
 		
 		rename($path_temp.$url_hinh,url_thisinh_image.$url_hinh);
 		
 		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$url_hinh}', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'admin', NULL , '0') ";
 		
 		if(mysql_query($qr)){
-			include_once('sendmail/sendmail_dangky.php');
-			echo '1';
+			include_once('sendmail_smtp/sendmail_dangky.php');
 			return true;
-		}else return false;
+		}else{ echo '0'; return false; }
 		
-	}else return false;
+	}else{ echo '0'; return false; }
 }
 
 mysql_close();
