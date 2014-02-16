@@ -65,9 +65,20 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 		
 		$path_temp = "public/temp/";
 		
-		rename($path_temp.$url_hinh,url_thisinh_image.$url_hinh);
+		/*upload anh*/
+		require_once('class/SimpleImage.php');
+		$image = new SimpleImage();
+		$image->load($path_temp.$url_hinh);
 		
-		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$url_hinh}', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'admin', NULL , '0') ";
+		$image->resizeToWidth(200);
+		$image->save(url_thisinh_image_thumb.$name_rewrite.'.jpg');
+		
+		$image->resizeToWidth(1000);
+		$image->save(url_thisinh_image.$name_rewrite.'.jpg');
+		
+		unlink($path_temp.$url_hinh);
+		
+		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$name_rewrite}.jpg', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'admin', NULL , '0') ";
 		
 		if(mysql_query($qr)){
 			include_once('sendmail_smtp/sendmail_dangky.php');
