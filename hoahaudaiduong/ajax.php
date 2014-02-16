@@ -70,11 +70,11 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 		$image = new SimpleImage();
 		$image->load($path_temp.$url_hinh);
 		
-		$image->resizeToWidth(200);
-		$image->save(url_thisinh_image_thumb.$name_rewrite.'.jpg');
-		
 		$image->resizeToWidth(1000);
 		$image->save(url_thisinh_image.$name_rewrite.'.jpg');
+		
+		$image->resizeToWidth(200);
+		$image->save(url_thisinh_image_thumb.$name_rewrite.'.jpg');
 		
 		unlink($path_temp.$url_hinh);
 		
