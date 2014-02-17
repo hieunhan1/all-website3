@@ -259,13 +259,12 @@ $('input[name=btnCancel]').live('click',function(){
 $("input[name=create_user]").click(function(){
 	var id_register = $.trim($("input[name=id_register]").val());
 	var username = $.trim($("input[name=username]").val());
-	var notes = $.trim($("input[name=notes]").val());
 	
 	if(username.length < 6){ alert('Username phải hơn 6 ký tự'); $("input[name=username]").focus(); return false; };
 	
 	$("input[name=create_user]").hide();
 	
-	$.post("ajax.php",{create_user:'create_user',id_register:id_register,username:username,notes:notes},function(data){
+	$.post("ajax.php",{create_user:'create_user',id_register:id_register,username:username},function(data){
 		if(data=='2'){
 			$("input[name=create_user]").show();
 			alert('User này đã tồn tại. Vui lòng nhập user khác.');
@@ -289,7 +288,6 @@ $("input[name=create_khoahoc]").live("click",function(){
 	var id_khoahoc = $("select[name=id_khoahoc]").val();
 	var id_hocvien = $("input[name=id_hocvien]").val();
 	var name_khoahoc = $("select[name=id_khoahoc] option:selected").html();
-	
 	if(id_khoahoc != '0'){
 		$.post("ajax.php",{create_khoahoc:'create_khoahoc',id_khoahoc:id_khoahoc,id_hocvien:id_hocvien},function(data){
 			if(data!='0'){
@@ -301,6 +299,35 @@ $("input[name=create_khoahoc]").live("click",function(){
 	}else{
 		alert('Chọn khóa học!');
 	}
+});
+
+
+
+var lophoc = $(".select_lophoc").val();
+var hocvien = $(".select_hocvien").val();
+/*var cotdiem = $(".select_cotdiem").val();*/
+$.post("ajax.php",{select_hocvien:lophoc,hocvien:hocvien},function(data){
+	$(".select_hocvien").html(data);
+});
+/*$.post("ajax.php",{select_cotdiem:lophoc,cotdiem:cotdiem},function(data){
+	$(".select_cotdiem").html(data);
+});*/
+
+$(".select_lophoc").change(function(){
+	var lophoc = $(this).val();
+	$.post("ajax.php",{select_hocvien:lophoc},function(data){
+		$(".select_hocvien").html(data);
+	});
+	
+	/*$.post("ajax.php",{select_cotdiem:lophoc},function(data){
+		$(".select_cotdiem").html(data);
+	});*/
+});
+
+$(".select_hocvien").live("change",function(){
+	var lophoc = $(".select_lophoc option:selected").html();
+	var hocvien = $(".select_hocvien option:selected").html();
+	$("#name").val(lophoc + ' | ' + hocvien);
 });
 
 

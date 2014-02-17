@@ -132,8 +132,24 @@ class trangchu extends db {
 	/*register*/
 	function insert_register($name,$phone,$email,$khoahoc){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `register` VALUES ('','{$name}','{$email}','{$phone}','','{$khoahoc}','vi','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `daotao_hocvien` VALUES ('','{$name}','{$email}','{$phone}','','{$khoahoc}','','','vi','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
+	
+	function select_user(){
+		$qr = "SELECT name,email,phone,diachi FROM daotao_hocvien WHERE `delete`=0 AND status=1 AND id='".$_SESSION['user_id']."' LIMIT 1";
+		return mysql_query($qr);
+	}
+	
+	function select_lophoc(){
+		$qr = "SELECT daotao_lophoc.id,daotao_lophoc.name FROM daotao_khoahoc,daotao_lophoc WHERE daotao_lophoc.`delete`=0 AND id_hocvien='".$_SESSION['user_id']."' AND id_lophoc=daotao_lophoc.id ";
+		return mysql_query($qr);
+	}
+	
+	function select_bangdiem($lophoc){
+		$qr = "SELECT diem1,diem2,diem3,diem4,diem5,diem6,diem7,diem8 FROM daotao_bangdiem WHERE `delete`=0 AND status=1 AND id_lophoc='{$lophoc}' AND id_hocvien='".$_SESSION['user_id']."' LIMIT 1";
+		return mysql_query($qr);
+	}
+	
 }// end trangchu
 ?>

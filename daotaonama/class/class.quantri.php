@@ -60,13 +60,14 @@ class quantri extends db {
 	
 	/*register*/
 	function checks_register($id){
-		$qr = "SELECT id,name,notes FROM register_hocvien WHERE id_register='{$id}' AND status=1 AND `delete`=0";
+		$qr = "SELECT username,password FROM daotao_hocvien WHERE id='{$id}' AND `delete`=0";
 		return mysql_query($qr);
 	}
 	
 	function danhsach_khoahoc($id){
+		$date = date('Y-m-d');
 		$str = '<select name="id_khoahoc" style="width:160px"> <option value="0">-- CHỌN KHÓA HỌC --</option>'; 
-		$qr = mysql_query("SELECT id,name FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC ");
+		$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 AND status=1 AND date_update>='{$date}' ORDER BY date_update");
 		while($row = mysql_fetch_array($qr)){
 			$str .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
 		}
@@ -75,7 +76,7 @@ class quantri extends db {
 	}
 	
 	function hocvien_khoahoc($id_hocvien){
-		$qr = "SELECT info.name FROM info,register_khoahoc WHERE id_hocvien='{$id_hocvien}' AND register_khoahoc.status=1 AND id_khoahoc=info.id ORDER BY register_khoahoc.date_update";
+		$qr = "SELECT daotao_lophoc.name FROM daotao_lophoc,daotao_khoahoc WHERE id_hocvien='{$id_hocvien}' AND daotao_khoahoc.status=1 AND id_lophoc=daotao_lophoc.id ORDER BY daotao_khoahoc.date_update";
 		return mysql_query($qr);
 	}
 	

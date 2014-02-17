@@ -96,6 +96,10 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#ED1E28}
 
+/*user*/
+.select_lophoc{width:280px; float:left; color:#03F; font-weight:bold; font-size:100%; text-align:center; margin:5px 0 !important; cursor:pointer}
+.txt_update_hocvien{width:350px; height:25px; line-height:25px; padding:0 5px; background:none; border:solid 1px #999}
+
 /*menu*/
 #menu{width:auto; height:55px; float:right; font-size:150%; text-transform:uppercase; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif }
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
