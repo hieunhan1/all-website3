@@ -9,16 +9,19 @@
 
 <?php
 
-$content = file_get_contents('http://opi.yahoo.com/online?u=hieu_nhan1&m=t');
+/*$content = file_get_contents('http://opi.yahoo.com/online?u=hieu_nhan1&m=t');
 
 if( preg_match('/NOT ONLINE$/', $content) ) {
     echo "Not online";
 }
 else {
     echo "Online";
-}
+}*/
 
+echo $_GET['user'];
 ?>
+
+
 
 
 </body>

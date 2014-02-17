@@ -27,41 +27,6 @@ if($id == 0){ //create
 	$user_login = $form->DisplayProperties();
 	
 	$type = 2; //loại sql update $type = 2;
-	
-	$qr = $qt->checks_register($id);
-	if(mysql_num_rows($qr) == 0){
-		$check_create_user = "<tr id='create_user'>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='username' maxlength='20' size='10' /></td>
-			<td style='border-bottom:solid 1px #CCC'>&nbsp;</td>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='notes' size='25' /></td>
-			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_user' value='Tạo user' /> <input type='hidden' name='id_register' value='{$id}' /></td>
-		</tr>";
-	}else{
-		$row_hv = mysql_fetch_array($qr);
-		
-		$qr = $qt->hocvien_khoahoc($row_hv['id']);
-		while($row_ds_kh = mysql_fetch_array($qr)){
-			$str_ds_kh .= '<p style="color:blue">- '.$row_ds_kh['name'].'</p>';
-		}
-		
-		$check_create_user = "<tr>
-			<td style='border-bottom:solid 1px #CCC'>{$row_hv['name']}</td>
-			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'>{$str_ds_kh}</div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
-			<td style='border-bottom:solid 1px #CCC'>{$row_hv['notes']}</td>
-			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$row_hv['id']}' /></td>
-		</tr>";
-	}
-	
-	$create_acc = "<table width='700' border='0' cellspacing='0' cellpadding='5'>
-		<tr style='background:#AEC7FF'>
-			<th align='left' width='100'>Username</th>
-			<th align='left' width='300'>Khóa học</th>
-			<th align='left'>Ghi chú</th>
-			<th align='left' width='60'>&nbsp; <input type='hidden' name='id_tracing_express' value='{$id}' /></th>
-		</tr>
-		<tbody id='ajax_user'>".$check_create_user."</tbody>
-		<tr><td colspan='4'>&nbsp;</td></tr>
-	</table>";
 }
 
 if(!empty($_POST)){
@@ -102,7 +67,7 @@ echo $date_create;
 echo $user_login;
 
 //Trạng thái status
-$value = array(1 => 'Đã xem', 0 => 'Chưa xem');
+$value = array(1 => 'Hiện', 0 => 'Ẩn');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 1; //giá trị mặc định
@@ -125,37 +90,31 @@ if(mysql_num_rows($qr) > 1){
 	echo $form->DisplayProperties();
 }
 
-//Ngày date_update
+//Ngày KG date_update
 if(@$_POST['date_update']) $value = $_POST['date_update'];
 else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
 else $value = date('d/m/Y');
-$form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $value, 20);
+$form->getProperties('Ngày KG', 'date_update', 1, 'input_large select_date', $value, 20);
+echo $form->DisplayProperties();
+
+//id_khoahoc
+$values = array();
+$qr = mysql_query("SELECT id,name FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,5,%' ");
+while($row = mysql_fetch_array($qr)){
+	$values[] = array('id'=>$row['id'],'name'=>$row['name']);
+}
+if(@$_POST['id_khoahoc']) $check = $_POST['id_khoahoc']; else $check = $detail['id_khoahoc'];
+$form->getProperties('Khóa học', 'id_khoahoc', 6, 'input_large', $values, $check);
 echo $form->DisplayProperties();
 
 //Mô tả name
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
-$form->getProperties("Họ tên {$required}", 'name', 1, 'input_medium', $value, 100);
+$form->getProperties("Tên lớp (khóa học)", 'name', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
 
-//email
-if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
-$form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 150);
-echo $form->DisplayProperties();
-//phone
-if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
-$form->getProperties("Phone", 'phone', 1, 'input_medium', $value, 20);
-echo $form->DisplayProperties();
-//diachi
-if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
-$form->getProperties("Địa chỉ", 'diachi', 1, 'input_medium', $value, 150);
-echo $form->DisplayProperties();
-
-//khoahoc
-$qr = mysql_query("SELECT name FROM info WHERE id='{$detail['khoahoc']}'");
-$row_kh = mysql_fetch_array($qr);
-
-if(@$_POST['khoahoc']) $value = $_POST['khoahoc']; else $value = $detail['khoahoc'];
-$form->getProperties("Khóa học", 'khoahoc', 1, 'input_medium'.$disabled, $value, 10, '<p style="color:blue">'.$row_kh['name'].'</p>');
+//notes
+if(@$_POST['notes']) $value = $_POST['notes']; else $value = $detail['notes'];
+$form->getProperties('Ghi chú', 'notes', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 echo "

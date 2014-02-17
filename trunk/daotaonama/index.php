@@ -38,6 +38,7 @@ if(@$_GET['danhmuc']){
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
 			case 3 : include_once('blocks/articles_list.php'); break;
+			case 4 : include_once('blocks/thongtinhocvien.php'); break;
 			case 8 : include_once('blocks/contact.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
@@ -99,7 +100,16 @@ if(@$_GET['danhmuc']){
     <?php include_once('blocks/slider.php'); ?>
     <div id="hot_login">
     	<div id="hotline"><font color="#DA0000">HOTLINE:</font> <?php echo $row_config['hotline']; ?></div>
-    	<div id="login">ID <input type="text" name="username" class="txt_bo" /> Pass <input type="password" name="password" class="txt_bo" /> <input type="button" name="login" value="Go" class="txt_bo" id="btn_login" /></div>
+    	<div id="login">
+        <?php
+        if(!@$_SESSION['user_id']) echo 'ID <input type="text" name="username" class="txt_bo" /> Pass <input type="password" name="password" class="txt_bo" /> <input type="button" name="login" value="Go" class="txt_bo" id="btn_login" />';
+		else{
+			$user = $_SESSION['user_name'];
+			$user_view = $_SESSION['user_name_view'];
+			echo 'Chào: <a href="thong-tin-hoc-vien/">'.$user_view.'</a> | <a href="thong-tin-hoc-vien/logout/">Logout</a>';
+		}
+		?>
+        </div>
     </div>
     <div id="left">
     	<div id="home_chuongtrinh">

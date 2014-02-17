@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 09, 2014 at 05:31 PM
+-- Generation Time: Feb 17, 2014 at 05:07 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -81,6 +81,221 @@ CREATE TABLE `contact` (
 -- Dumping data for table `contact`
 -- 
 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_bangdiem`
+-- 
+
+CREATE TABLE `daotao_bangdiem` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `id_lophoc` int(3) NOT NULL,
+  `id_hocvien` int(11) NOT NULL,
+  `diem1` float default NULL,
+  `diem2` float default NULL,
+  `diem3` float default NULL,
+  `diem4` float default NULL,
+  `diem5` float default NULL,
+  `diem6` float default NULL,
+  `diem7` float default NULL,
+  `diem8` float default NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- 
+-- Dumping data for table `daotao_bangdiem`
+-- 
+
+INSERT INTO `daotao_bangdiem` VALUES (1, 'Anh ngữ giao tiếp - K2 | Trần Hiếu Nhân', 2, 1, 7, 8, 9, 8, 7, 7, 0, 0, 'vi', 1, '2014-02-17 13:28:19', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (2, 'Anh ngữ giao tiếp - K2 | Ngọc Khang', 2, 3, 7, 8, 9, 9, 9, 9, 9, 9, 'vi', 1, '2014-02-17 13:38:34', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (3, 'Anh ngữ giao tiếp - K2 | Ngoc Hien', 2, 2, 8, 8, 8, 8, 8, 8, 8, 8, 'vi', 1, '2014-02-17 13:38:48', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (4, 'TOEIC - K1 | Trần Hiếu Nhân', 3, 1, 7.5, 7.5, 8.5, 0, 0, 0, 0, 0, 'vi', 1, '2014-02-17 15:03:46', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (5, 'IELTS | Trần Hiếu Nhân', 6, 1, 7, 7.5, 7, 8.5, 0, 0, 0, 0, 'vi', 1, '2014-02-17 15:47:27', '0000-00-00 00:00:00', 'admin', NULL, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_bangdiem_v2`
+-- 
+
+CREATE TABLE `daotao_bangdiem_v2` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `id_lophoc` int(3) NOT NULL,
+  `id_cotdiem` int(3) NOT NULL,
+  `id_hocvien` int(11) NOT NULL,
+  `diem` float NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Dumping data for table `daotao_bangdiem_v2`
+-- 
+
+INSERT INTO `daotao_bangdiem_v2` VALUES (1, 'gioi', 2, 1, 1, 8, 'vi', 1, '2014-02-17 13:05:41', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem_v2` VALUES (2, 'gioi', 2, 2, 1, 9, 'vi', 1, '2014-02-17 13:06:00', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem_v2` VALUES (3, 'gioi', 2, 3, 1, 9, 'vi', 1, '2014-02-17 13:06:21', '0000-00-00 00:00:00', 'admin', NULL, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_cotdiem`
+-- 
+
+CREATE TABLE `daotao_cotdiem` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `id_khoahoc` int(3) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `order` int(2) default '0',
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+
+-- 
+-- Dumping data for table `daotao_cotdiem`
+-- 
+
+INSERT INTO `daotao_cotdiem` VALUES (1, 'Anh ngữ giao tiếp kỳ 1 - Cột điểm 1', 3, 'vi', 1, 1, '2014-02-17 11:17:00', '2014-02-17 11:13:28', 'admin', 'admin', 0);
+INSERT INTO `daotao_cotdiem` VALUES (2, 'Anh ngữ giao tiếp kỳ 1 - Cột điểm 2', 3, 'vi', 2, 1, '2014-02-17 11:17:10', '2014-02-17 11:09:56', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (3, 'Anh ngữ giao tiếp kỳ 1 - Cột điểm 3', 3, 'vi', 3, 1, '2014-02-17 11:17:20', '2014-02-17 11:09:59', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (4, 'Anh ngữ giao tiếp kỳ 1 - Cột điểm 4', 3, 'vi', 4, 1, '2014-02-17 11:17:30', '2014-02-17 11:10:04', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (5, 'Anh ngữ giao tiếp kỳ 2 - Cột điểm 5', 3, 'vi', 5, 1, '2014-02-17 11:17:40', '2014-02-17 11:10:12', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (6, 'Anh ngữ giao tiếp kỳ 2 - Cột điểm 6', 3, 'vi', 6, 1, '2014-02-17 11:17:50', '2014-02-17 11:10:21', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (7, 'Anh ngữ giao tiếp kỳ 2 - Cột điểm 7', 3, 'vi', 7, 1, '2014-02-17 11:18:00', '2014-02-17 11:10:28', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (8, 'Anh ngữ giao tiếp kỳ 2 - Cột điểm 8', 3, 'vi', 8, 1, '2014-02-17 11:18:10', '2014-02-17 11:10:33', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (9, 'TOEIC kỳ 1 - Cột điểm 1', 4, 'vi', 1, 1, '2014-02-17 11:18:20', '2014-02-17 11:11:01', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (10, 'TOEIC kỳ 1 - Cột điểm 2', 4, 'vi', 2, 1, '2014-02-17 11:18:30', '2014-02-17 11:11:06', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (11, 'TOEIC kỳ 1 - Cột điểm 3', 4, 'vi', 3, 1, '2014-02-17 11:18:40', '2014-02-17 11:11:10', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (12, 'TOEIC kỳ 1 - Cột điểm 4', 4, 'vi', 4, 1, '2014-02-17 11:18:41', '2014-02-17 11:20:03', 'admin', 'admin', 0);
+INSERT INTO `daotao_cotdiem` VALUES (13, 'TOEIC kỳ 2 - Cột điểm 5', 4, 'vi', 5, 1, '2014-02-17 11:18:45', '2014-02-17 11:19:34', 'admin', 'admin', 0);
+INSERT INTO `daotao_cotdiem` VALUES (14, 'TOEIC kỳ 2 - Cột điểm 6', 4, 'vi', 6, 1, '2014-02-17 11:18:51', '2014-02-17 11:19:37', 'admin', 'admin', 0);
+INSERT INTO `daotao_cotdiem` VALUES (15, 'TOEIC kỳ 2 - Cột điểm 7', 4, 'vi', 7, 1, '2014-02-17 11:19:49', '2014-02-17 11:19:49', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (16, 'TOEIC kỳ 2 - Cột điểm 8', 4, 'vi', 8, 1, '2014-02-17 11:19:54', '2014-02-17 11:19:54', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (17, 'Anh văn thiếu niên kỳ 1 - Cột điểm 1', 6, 'vi', 1, 1, '2014-02-17 11:21:13', '2014-02-17 11:21:13', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (18, 'Anh văn thiếu niên kỳ 1 - Cột điểm 2', 6, 'vi', 2, 1, '2014-02-17 11:21:16', '2014-02-17 11:21:16', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (19, 'Anh văn thiếu niên kỳ 1 - Cột điểm 3', 6, 'vi', 3, 1, '2014-02-17 11:21:20', '2014-02-17 11:21:20', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (20, 'Anh văn thiếu niên kỳ 1 - Cột điểm 4', 6, 'vi', 4, 1, '2014-02-17 11:21:24', '2014-02-17 11:21:24', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (21, 'Anh văn thiếu niên kỳ 2 - Cột điểm 5', 6, 'vi', 5, 1, '2014-02-17 11:21:30', '2014-02-17 11:21:30', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (22, 'Anh văn thiếu niên kỳ 2 - Cột điểm 6', 6, 'vi', 6, 1, '2014-02-17 11:21:35', '2014-02-17 11:21:35', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (23, 'Anh văn thiếu niên kỳ 2 - Cột điểm 7', 6, 'vi', 7, 1, '2014-02-17 11:21:40', '2014-02-17 11:21:40', 'admin', NULL, 0);
+INSERT INTO `daotao_cotdiem` VALUES (24, 'Anh văn thiếu niên kỳ 2 - Cột điểm 8', 6, 'vi', 8, 1, '2014-02-17 11:21:45', '2014-02-17 11:21:45', 'admin', NULL, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_hocvien`
+-- 
+
+CREATE TABLE `daotao_hocvien` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `diachi` varchar(200) NOT NULL,
+  `khoahoc` int(3) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Dumping data for table `daotao_hocvien`
+-- 
+
+INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 12:39:08', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (2, 'Ngoc Hien', 'ngochien@yahoo.com', '0976307543', '', 3, 'ngochien', '8d067d1b49f9e4d0b2de7bdf0f79ef65', 'vi', 1, '2014-02-17 12:22:49', '2014-02-17 12:22:49', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (3, 'Ngọc Khang', 'ngockhang@yahoo.com', '01234567890', '', 2, 'ngockhang', 'a2e0e53f9485d77a1ec9636842aacf04', 'vi', 1, '2014-02-17 12:36:08', '2014-02-17 12:36:08', 'khachhang', 'admin', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_khoahoc`
+-- 
+
+CREATE TABLE `daotao_khoahoc` (
+  `id` int(5) NOT NULL auto_increment,
+  `id_lophoc` int(3) NOT NULL,
+  `id_hocvien` int(5) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+-- 
+-- Dumping data for table `daotao_khoahoc`
+-- 
+
+INSERT INTO `daotao_khoahoc` VALUES (1, 2, 1, 'vi', 1, '2014-02-17 12:32:59', '2014-02-17 12:32:59', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (2, 3, 1, 'vi', 1, '2014-02-17 12:33:04', '2014-02-17 12:33:04', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (3, 2, 2, 'vi', 1, '2014-02-17 12:35:13', '2014-02-17 12:35:13', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (4, 2, 3, 'vi', 1, '2014-02-17 12:36:42', '2014-02-17 12:36:42', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (5, 3, 3, 'vi', 1, '2014-02-17 12:38:44', '2014-02-17 12:38:44', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (6, 6, 1, 'vi', 1, '2014-02-17 15:47:05', '2014-02-17 15:47:05', 'admin', '', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_lophoc`
+-- 
+
+CREATE TABLE `daotao_lophoc` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `id_khoahoc` int(3) NOT NULL,
+  `notes` text,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+-- 
+-- Dumping data for table `daotao_lophoc`
+-- 
+
+INSERT INTO `daotao_lophoc` VALUES (1, 'Anh ngữ giao tiếp - K1', 3, 'Giảng viên: Trần Văn B', 'vi', 1, '2014-02-17 10:26:32', '2014-02-10 10:59:49', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-17 10:55:28', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (3, 'TOEIC - K1', 4, '', 'vi', 1, '2014-02-17 10:49:26', '2014-02-17 10:49:26', 'admin', NULL, 0);
+INSERT INTO `daotao_lophoc` VALUES (6, 'IELTS', 5, '', 'vi', 1, '2014-02-17 15:46:55', '2014-02-17 15:46:55', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -220,7 +435,7 @@ CREATE TABLE `menu` (
   `delete` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `url` (`url`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- 
 -- Dumping data for table `menu`
@@ -235,6 +450,7 @@ INSERT INTO `menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sả
 INSERT INTO `menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 0, '2013-10-09 15:39:46', '2013-10-09 15:39:46', 'admin', 'admin', 1);
 INSERT INTO `menu` VALUES (8, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:40:21', '2013-10-09 10:55:42', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:40:52', '2013-10-09 10:55:46', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (10, 'Thông tin học viên', 'thong-tin-hoc-vien', 'thong-tin-hoc-vien/', '', 'Thông tin học viên', 'Thông tin học viên', 'Thông tin học viên', 0, 4, ',6,', 'vi', 0, 100, 1, '2014-02-17 14:04:22', '2014-02-17 14:04:22', 'admin', '', 0);
 
 -- --------------------------------------------------------
 
@@ -265,10 +481,10 @@ INSERT INTO `menu_admin` VALUES (5, 'Thông tin, bài viết bình luận', 'inf
 INSERT INTO `menu_admin` VALUES (6, 'Sản phẩm', 'products', NULL, 6, 1, 0);
 INSERT INTO `menu_admin` VALUES (7, 'Support Online', 'support', '', 7, 0, 0);
 INSERT INTO `menu_admin` VALUES (8, 'Booking online', 'booking', NULL, 8, 0, 0);
-INSERT INTO `menu_admin` VALUES (9, 'Danh sách bảng giá', 'booking_banggia', NULL, 9, 0, 0);
-INSERT INTO `menu_admin` VALUES (10, 'Danh sách đi từ', 'booking_form', NULL, 10, 0, 0);
-INSERT INTO `menu_admin` VALUES (11, 'Danh sách đến', 'booking_to', NULL, 11, 0, 0);
-INSERT INTO `menu_admin` VALUES (12, 'Đăng ký học', 'register', NULL, 12, 1, 0);
+INSERT INTO `menu_admin` VALUES (9, 'Đào tạo - Lớp học', 'daotao_lophoc', NULL, 21, 1, 0);
+INSERT INTO `menu_admin` VALUES (10, 'Đào tạo - Cột điểm', 'daotao_cotdiem', NULL, 22, 0, 0);
+INSERT INTO `menu_admin` VALUES (11, 'Đào tạo - Bảng điểm', 'daotao_bangdiem', NULL, 23, 1, 0);
+INSERT INTO `menu_admin` VALUES (12, 'Đào tạo - Học viên', 'daotao_hocvien', NULL, 20, 1, 0);
 INSERT INTO `menu_admin` VALUES (13, 'Slider & banner', 'slider_banner', NULL, 13, 1, 0);
 INSERT INTO `menu_admin` VALUES (14, 'Liên hệ', 'contact', NULL, 14, 1, 0);
 INSERT INTO `menu_admin` VALUES (15, 'Tài khoản', 'users', NULL, 100, 1, 0);
@@ -317,7 +533,7 @@ CREATE TABLE `menu_type` (
 INSERT INTO `menu_type` VALUES (1, 'Trang chủ', 0);
 INSERT INTO `menu_type` VALUES (2, 'Thông tin, bài viết', 0);
 INSERT INTO `menu_type` VALUES (3, 'Chương trình (khóa học)', 0);
-INSERT INTO `menu_type` VALUES (4, 'Loại temp 1', 1);
+INSERT INTO `menu_type` VALUES (4, 'Thông tin học viên', 0);
 INSERT INTO `menu_type` VALUES (5, 'Loại temp 2', 1);
 INSERT INTO `menu_type` VALUES (6, 'Loại temp 3', 1);
 INSERT INTO `menu_type` VALUES (7, 'Loại temp 4', 1);
@@ -488,106 +704,6 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `register`
--- 
-
-CREATE TABLE `register` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `diachi` varchar(200) NOT NULL,
-  `khoahoc` int(3) NOT NULL,
-  `lang` varchar(2) NOT NULL,
-  `status` tinyint(1) default '0',
-  `date_create` datetime NOT NULL,
-  `date_update` datetime NOT NULL,
-  `user_create` varchar(20) default NULL,
-  `user_update` varchar(20) default NULL,
-  `delete` tinyint(1) default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
-
--- 
--- Dumping data for table `register`
--- 
-
-INSERT INTO `register` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:19:43', '2014-01-09 10:19:43', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (2, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:38:38', '2014-01-09 10:38:38', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (3, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:39:58', '2014-01-09 10:39:58', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (4, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:42:02', '2014-01-09 10:42:02', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (5, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:42:37', '2014-01-09 10:42:37', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (6, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:43:09', '2014-01-09 10:43:09', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (7, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:43:52', '2014-01-09 10:43:52', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (8, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:44:15', '2014-01-09 10:44:15', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (9, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:45:44', '2014-01-09 10:45:44', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (10, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:45:55', '2014-01-09 10:45:55', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (11, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:46:28', '2014-01-09 10:46:28', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (12, 'Trần Hiếu Nhân 2', 'hieu_nhan1@yahoo.com', '0988388003', '', 7, 'vi', 0, '2014-01-09 10:46:40', '2014-01-09 10:46:40', 'khachhang', '', 0);
-INSERT INTO `register` VALUES (13, 'Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '', 5, 'vi', 0, '2014-01-09 10:51:32', '2014-01-09 16:39:56', 'khachhang', 'admin', 0);
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `register_hocvien`
--- 
-
-CREATE TABLE `register_hocvien` (
-  `id` int(5) NOT NULL auto_increment,
-  `name` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `notes` varchar(200) default NULL,
-  `id_register` int(5) NOT NULL,
-  `lang` varchar(2) NOT NULL,
-  `status` tinyint(1) default '0',
-  `date_create` datetime NOT NULL,
-  `date_update` datetime NOT NULL,
-  `user_create` varchar(20) default NULL,
-  `user_update` varchar(20) default NULL,
-  `delete` tinyint(1) default '0',
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `name` (`name`),
-  UNIQUE KEY `id_register` (`id_register`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
--- 
--- Dumping data for table `register_hocvien`
--- 
-
-INSERT INTO `register_hocvien` VALUES (1, 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'notes', 13, 'vi', 1, '2014-01-09 17:16:57', '2014-01-09 17:16:57', 'admin', '', 0);
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `register_khoahoc`
--- 
-
-CREATE TABLE `register_khoahoc` (
-  `id` int(5) NOT NULL auto_increment,
-  `id_khoahoc` int(2) NOT NULL,
-  `id_hocvien` int(5) NOT NULL,
-  `lang` varchar(2) NOT NULL,
-  `status` tinyint(1) default '0',
-  `date_create` datetime NOT NULL,
-  `date_update` datetime NOT NULL,
-  `user_create` varchar(20) default NULL,
-  `user_update` varchar(20) default NULL,
-  `delete` tinyint(1) default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
--- 
--- Dumping data for table `register_khoahoc`
--- 
-
-INSERT INTO `register_khoahoc` VALUES (1, 7, 1, 'vi', 1, '2014-01-09 17:29:01', '2014-01-09 17:29:01', 'admin', '', 0);
-INSERT INTO `register_khoahoc` VALUES (2, 3, 1, 'vi', 1, '2014-01-09 17:29:03', '2014-01-09 17:29:03', 'admin', '', 0);
-INSERT INTO `register_khoahoc` VALUES (3, 6, 1, 'vi', 1, '2014-01-09 17:29:06', '2014-01-09 17:29:06', 'admin', '', 0);
-INSERT INTO `register_khoahoc` VALUES (4, 2, 1, 'vi', 1, '2014-01-09 17:29:09', '2014-01-09 17:29:09', 'admin', '', 0);
-
--- --------------------------------------------------------
-
--- 
 -- Table structure for table `slider_banner`
 -- 
 
@@ -613,7 +729,7 @@ CREATE TABLE `slider_banner` (
 -- Dumping data for table `slider_banner`
 -- 
 
-INSERT INTO `slider_banner` VALUES (2, 'Slider', 'slider.jpg', 'javascript:;', '', 'vi', 1, ',1,5,8,', 1, '2014-01-08 17:27:40', '2014-01-08 17:57:27', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (2, 'Slider', 'slider.jpg', 'javascript:;', '', 'vi', 1, ',1,5,8,9,10,', 1, '2014-01-08 17:27:40', '2014-01-08 14:05:26', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -668,7 +784,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 -- 
 
-INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,6,12,13,14,15,', ',1,2,3,4,6,12,13,14,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
+INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,6,12,13,14,9,10,11,15,', ',1,2,3,4,6,12,13,14,9,10,11,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 

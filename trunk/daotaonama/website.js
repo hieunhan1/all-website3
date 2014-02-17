@@ -154,4 +154,101 @@ $(document).ready(function($){
 		});
 		
 	});
+	
+	/*user*/
+	$(".ds_cotdiem").hide();
+	$(".ds_cotdiem:first").show();
+	$(".select_lophoc:first").css("color","#F00");
+	
+	$(".select_lophoc").click(function(){
+		var id = ($(this).attr('class')).split("select_lophoc select_lophoc_");
+		$(".select_lophoc").css("color","#03F");
+		$(this).css("color","#F00");
+		
+		$(".ds_cotdiem").hide();
+		$(".ds_cotdiem_" + id[1]).show();
+	});
+	
+	$("input[name=btn_update_user]").click(function(){
+		$("#thongtinhocvien").hide(100);
+		$("#thongtinhocvien_update").show(200);
+	});
+	$("input[name=btn_update_pass]").click(function(){
+		$("#thongtinhocvien").hide(100);
+		$("#thongtinhocvien_pass").show(200);
+	});
+	$("input[name=btn_cancel]").click(function(){
+		$("#thongtinhocvien_update").hide(100);
+		$("#thongtinhocvien_pass").hide(100);
+		$("#thongtinhocvien").show(200);
+	});
+	
+	$("input[name=btn_change]").click(function(){
+		var name = $.trim($("input[name=name]").val());
+		var email = $.trim($("input[name=email]").val());
+		var phone = $.trim($("input[name=phone]").val());
+		var diachi = $.trim($("input[name=diachi]").val());
+		if(name.length<2){
+			alert("Nhập họ tên");
+			$("input[name=name]").focus();
+			return false;
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+			alert("Email chưa đúng");
+			$("input[name=email]").focus();
+			return false;
+		}else if(phone.length<10){
+			alert("Số điện thoại chưa đúng");
+			$("input[name=phone]").focus();
+			return false;
+		}else if(diachi.length<6){
+			alert("Địa chỉ phải hơn 6 ký tự");
+			$("input[name=diachi]").focus();
+			return false;
+		}else{
+			$.post("ajax.php",{update_user:"update_user",name:name,email:email,phone:phone,diachi:diachi},function(data){
+				if(data=='1'){
+					$("#thongtinhocvien_update").html('<p style="color:#03F">Cập nhật thông tin thành công. 5 giây sau sẽ tải lại trang</p>');
+					setTimeout(function(){
+						window.location.reload()
+					},5000);
+					return true;
+				}else{
+					$("#thongtinhocvien_update").html('<p style="color:#F00">Lỗi: Vui lòng ấn F5 thử lại.</p>');
+					return false;
+				}
+			});
+		}
+	});
+	
+	$("input[name=btn_change_pass]").click(function(){
+		var pass_cu = $("input[name=pass_cu]").val();
+		var pass_moi = $("input[name=pass_moi]").val();
+		var pass_moi_2 = $("input[name=pass_moi_2]").val();
+		if(pass_cu.length < 6){
+			alert("Mật khẩu cũ phải hơn 6 ký tự");
+			$("input[name=pass_cu]").focus();
+			return false;
+		}else if(pass_moi.length < 6){
+			alert("Mật khẩu mới phải hơn 6 ký tự");
+			$("input[name=pass_moi]").focus();
+			return false;
+		}else if(pass_moi != pass_moi_2){
+			alert("Mật khẩu nhắc lại chưa đúng");
+			$("input[name=pass_moi_2]").focus();
+			return false;
+		}else{
+			$.post("ajax.php",{password:pass_cu,pass_moi:pass_moi,pass_moi_2:pass_moi_2},function(data){
+				if(data=='1'){
+					$("#thongtinhocvien_pass").html('<p style="color:#03F">Thay đổi mật khẩu thành công. 5 giây sau sẽ tải lại trang</p>');
+					setTimeout(function(){
+						window.location.reload()
+					},5000);
+					return true;
+				}else{
+					alert("Mật khẩu chưa đúng.");
+					return false;
+				}
+			});
+		}
+	});
 });

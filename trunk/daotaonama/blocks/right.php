@@ -10,7 +10,7 @@
     </div>
     <div id="register">
         <div id="title_register">Đăng ký online</div>
-        <?php if($_SESSION['checks_register']==0){ ?>
+        <?php if($_SESSION['checks_register']==0 && !@$_SESSION['user_id']){ ?>
         <div id="ajax_register" style="display:none; padding:30px 20px">Đang xử lý...</div>
         <div id="form_register">
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
