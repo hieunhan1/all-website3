@@ -160,8 +160,12 @@ if(@$_GET['danhmuc']){
         	<tr>
             	<td style="width:240px">
                 	<p style="font-weight:bold; margin:0 15px 10px 0; padding-bottom:10px; border-bottom:solid 1px #666">Kết nối với chúng tôi</p>
-                    <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/facebook.jpg" alt="" />Facebook</a></p>
-                    <p style="line-height:33px; width:120px; float:left"><a href="" style="color:#CCC"><img style="float:left; margin-right:5px" src="public/images/catalog/youtube.gif" alt="" />Youtube</a></p>
+                    <?php
+                    $qr = $tc->menu(0,4);
+					while($row = mysql_fetch_array($qr)){
+						echo '<p style="line-height:33px; width:120px; float:left"><a href="'.$row['url'].'" target="_blank" style="color:#CCC"><img style="float:left; margin-right:5px" src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" />'.$row['name'].'</a></p>';
+					}
+					?>
                 </td>
             	<td valign="top" style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
             	<td valign="top" align="right" style="width:250px; line-height:22px"><?php echo $row_config['copyright']; ?><embed src="public/musics.mp3" autostart="true" loop="true" hidden="true" volume="60"></embed></td>
