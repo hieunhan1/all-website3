@@ -133,5 +133,5 @@ $qr = "CREATE TABLE `thisinh_images` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8";
 mysql_query($qr);*/
 
-/*$qr = "UPDATE `menu_type` SET  `name`='Đăng ký trực tuyến',`delete` =  '0' WHERE  `menu_type`.`id` =7 LIMIT 1";
-mysql_query($qr);*/
+$qr = "UPDATE `menu_position` SET  `name`='Social',`delete`='0' WHERE `id` =4 LIMIT 1";
+mysql_query($qr);
