@@ -4,8 +4,8 @@
 //Nhúng thư viện phpmailer
 require_once('class.phpmailer.php');
 
-$email_gui = 'no-reply@hoahaudaiduongvietnam.com';
-$email_gui_pass = 'no-reply1234';
+$email_gui = 'inform@hoahaudaiduongvietnam.com';
+$email_gui_pass = 'inform1234';
 $title = 'Đăng ký cuộc thi Hoa Hậu Đại Dương';
 
 $email_nhan = $row_config['email'];
@@ -61,6 +61,11 @@ $array_trinhdo = array('','Chưa tốt nghiệp phổ thông','Tốt nghiệp ph
 //Thiết lập nội dung chính của email
 $body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;đăng ký cuộc thi Hoa Hậu Đại Dương Việt Năm năm 2014 với thông tin như sau:<br /><br />
 <table width="90%" border="0" cellpadding="0" cellspacing="10">
+	<tr>
+    	<td width="30" align="right" valign="top" style="font-weight:bold">&nbsp;</td>
+    	<td width="200" valign="top"><img src="http://www.hoahaudaiduongvietnam.com/public/images/thisinh/'.$name_rewrite.'.jpg" width="190" /></td>
+        <td><a href="http://www.hoahaudaiduongvietnam.com/public/images/thisinh/'.$name_rewrite.'.jpg">Link hình ảnh thí sinh</a></td>
+    </tr>
 	<tr>
     	<td width="30" align="right" valign="top" style="font-weight:bold">1.</td>
     	<td width="200" valign="top">Họ tên:</td>
