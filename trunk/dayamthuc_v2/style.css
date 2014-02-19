@@ -210,6 +210,11 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 #run_top{font-weight:bold; float:right; margin-right:20px; color:#C00}
 
+#tuyendung{border-collapse:collapse}
+#tuyendung td, #tuyendung th{padding:10px 5px; border-bottom:dotted 1px #CCC}
+
+#tuyendung_thongtin td, #tuyendung_thongtin th{padding:10px 15px; border-bottom:dotted 1px #CCC}
+
 /*menu*/
 #menu{height:48px; margin-bottom:15px}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}

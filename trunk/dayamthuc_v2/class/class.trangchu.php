@@ -183,6 +183,16 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	
+	/*tuyendung*/
+	function tuyendung_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,content,noilamviec,mucluong,soluongtuyen,quyenloi,yeucau,tuyendung_cty_id FROM tuyendung WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
+		return mysql_query($qr);
+	}
+	function tuyendung_cty($id){
+		$qr = "SELECT name,content,diachi,phone,email,website,fax FROM tuyendung_cty WHERE `delete`=0 AND status=1 AND id='{$id}' LIMIT 1";
+		return mysql_query($qr);
+	}
+	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');

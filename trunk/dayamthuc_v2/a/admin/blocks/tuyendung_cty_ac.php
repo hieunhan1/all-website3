@@ -60,7 +60,7 @@ if(!empty($_POST)){
 // form
 echo "
 <form action='' method='post' name='form1'>
-<table width='620' border='0' cellspacing='0' cellpadding='5'>
+<table width='900' border='0' cellspacing='0' cellpadding='5'>
 ";
 //date create
 echo $date_create;
@@ -68,21 +68,11 @@ echo $date_create;
 echo $user_login;
 
 //Trạng thái status
-$value = array(1 => 'Show', 0 => 'Hide');
+$value = array(1 => 'Đã xem', 0 => 'Chưa xem');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 1; //giá trị mặc định
 $form->getProperties('Trạng thái', 'status', 5, $check, $value, ' &nbsp; ');
-echo $form->DisplayProperties();
-//Ngày date_update
-if(@$_POST['date_update']) $value = $_POST['date_update'];
-else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
-else $value = date('d/m/Y');
-$form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $value, 20);
-echo $form->DisplayProperties();
-//name
-if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
-$form->getProperties('Mô tả', 'name', 1, 'input_medium', $value, 20);
 echo $form->DisplayProperties();
 
 //lang
@@ -101,74 +91,70 @@ if(mysql_num_rows($qr) > 1){
 	echo $form->DisplayProperties();
 }
 
-/*
-//slogan
-if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
-$form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
-//domain
-if(@$_POST['domain']) $value = $_POST['domain']; else $value = $detail['domain'];
-$form->getProperties('Domain', 'domain', 1, 'input_medium', $value, 30);
-echo $form->DisplayProperties();
-*/
-
-//max_limit_1
-if(@$_POST['max_limit_1']) $value = $_POST['max_limit_1']; else $value = $detail['max_limit_1'];
-$form->getProperties('Bài viết', 'max_limit_1', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
-//max_limit_2
-if(@$_POST['max_limit_2']) $value = $_POST['max_limit_2']; else $value = $detail['max_limit_2'];
-$form->getProperties('Tuyển dụng', 'max_limit_2', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
-//max_limit_3
-if(@$_POST['max_limit_3']) $value = $_POST['max_limit_3']; else $value = $detail['max_limit_3'];
-$form->getProperties('Hình ảnh', 'max_limit_3', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
-//max_limit_4
-if(@$_POST['max_limit_4']) $value = $_POST['max_limit_4']; else $value = $detail['max_limit_4'];
-$form->getProperties('Video', 'max_limit_4', 1, 'input_medium', $value, 2);
+//Ngày date_update
+if(@$_POST['date_update']) $value = $_POST['date_update'];
+else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
+else $value = date('d/m/Y');
+$form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $value, 20);
 echo $form->DisplayProperties();
 
-/*
+//Mô tả name
+if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
+$form->getProperties("Tên cty", 'name', 1, 'input_medium', $value, 200);
+echo $form->DisplayProperties();
 //email
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
-$form->getProperties('Email liên hệ', 'email', 1, 'input_medium', $value, 50);
+$form->getProperties("Email", 'email', 1, 'input_medium', $value, 60);
 echo $form->DisplayProperties();
-//yahoo
-if(@$_POST['yahoo']) $value = $_POST['yahoo']; else $value = $detail['yahoo'];
-$form->getProperties('Yahoo', 'yahoo', 1, 'input_medium', $value, 30);
+//phone
+if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
+$form->getProperties("Điện thoại", 'phone', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();
-//tel
-if(@$_POST['tel']) $value = $_POST['tel']; else $value = $detail['tel'];
-$form->getProperties('Điện thoại', 'tel', 1, 'input_medium', $value, 50);
+//fax
+if(@$_POST['fax']) $value = $_POST['fax']; else $value = $detail['fax'];
+$form->getProperties("FAX", 'fax', 1, 'input_medium', $value, 30);
 echo $form->DisplayProperties();
-//hotline
-if(@$_POST['hotline']) $value = $_POST['hotline']; else $value = $detail['hotline'];
-$form->getProperties('Hotline', 'hotline', 1, 'input_medium', $value, 50);
+//diachi
+if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
+$form->getProperties("Địa chỉ", 'diachi', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
-*/
-
-//copyright
-if(@$_POST['copyright']) $value = $_POST['copyright']; else $value = $detail['copyright'];
-$form->getProperties('Copyright', 'copyright', 1, 'input_medium', $value, 200);
-echo $form->DisplayProperties();
-//contact_foo
-if(@$_POST['contact_foo']) $value = $_POST['contact_foo']; else $value = $detail['contact_foo'];
-$form->getProperties('Footer', 'contact_foo', 1, 'input_medium', $value, 250);
+//website
+if(@$_POST['website']) $value = $_POST['website']; else $value = $detail['website'];
+$form->getProperties("Website", 'website', 1, 'input_medium', $value, 200);
 echo $form->DisplayProperties();
 
-//contact_form
+//content
 $orther = "
 <script>
-CKEDITOR.replace( 'contact_form', {
+CKEDITOR.replace( 'content', {
 	uiColor: '#b5d8ef',
-	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic','RemoveFormat','-', 'Link', 'Unlink','Format','TextColor','BGColor'],
+	filebrowserBrowseUrl: 'ckeditor/ckfinder/ckfinder.php',
+	filebrowserImageBrowseUrl: 'ckeditor/ckfinder/ckfinder.php?Type=Images',
+	filebrowserFlashBrowseUrl: 'ckeditor/ckfinder/ckfinder.php?Type=Flash',
+	filebrowserUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+	filebrowserImageUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+	filebrowserFlashUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+	filebrowserWindowWidth: '900',
+	filebrowserWindowHeight: '600',
+	toolbar:
+	[
+	['Source','-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
+	['Undo','Redo','-','Find','Replace','-','RemoveFormat'],
+	['Link','Unlink','Iframe'],
+	['Maximize', 'ShowBlocks'],
+	['Image','Flash', 'Video', 'Table'],
+	['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+	'/',
+	['Styles','Format','Font','FontSize'],
+	['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+	['TextColor','BGColor','-','HorizontalRule','Smiley','SpecialChar','PageBreak']
 	]
-});
-</script>";
-if(@$_POST['contact_form']) $value = $_POST['contact_form']; else $value = $detail['contact_form'];
-$form->getProperties('Contact form', 'contact_form', 3, 'textarea', $value, 1, $orther);
+	});
+</script>
+";
+if(@$_POST['content']) $value = $_POST['content']; else $value = $detail['content'];
+$form->getProperties('Sơ lược về cty', 'content', 3, 'textarea', $value, 3, $orther);
 echo $form->DisplayProperties();
 
 echo "
@@ -180,6 +166,5 @@ echo "
 </tr>
 </table>
 </form>
-<br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
 ";
-?>
