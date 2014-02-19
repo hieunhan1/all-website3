@@ -20,6 +20,12 @@
 		echo list_column($page, $row[$field[0]], $row[$field[1]], $row[$field[2]], $row[$field[3]], $row[$field[4]], $row[$field[5]], $row[$field[6]]);
     }
 	mysql_free_result($qr);
+	/*
+	* Phân trang
+	*/
+	echo '<div id="phantrang">';
+	phantrang($page,$max_results,$page_number,$order);
+	echo '</div>';
 	?>
     
 </div>

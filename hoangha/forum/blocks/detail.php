@@ -17,12 +17,14 @@ if(@$_POST['btnSubmit_info_cm']){
 $qr = $tc->users_select($row_detail['user_create']);
 $row_user = mysql_fetch_array($qr);
 
+if($row_user['avarta'] != '') $avarta = url_avarta_image.$row_user['avarta']; else $avarta = 'images/avarta.gif';
+
 echo '<div style="clear:both; height:30px"></div>
 <div class="title">'.$menu_name['name'].'</div>
 <div id="detail">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="detail">
 		<tr><td width="220" valign="top" class="detail_left" style="background-color:#CCC">
-				<div class="img"><img src="images/avarta.gif" alt="avarta" /></div>
+				<div class="img"><img src="'.$avarta.'" alt="avarta" /></div>
 				<div class="info"><strong>Tên: '.$row_user['name'].'</strong><br />Chi nhánh: '.$row_user['chinhanh'].'</div>
 			</td>
 			<td valign="top" class="detail_right">
@@ -43,11 +45,13 @@ if($row_detail['other']==1){
 		$total = mysql_num_rows($qr);
 		$i = 0;
 		while($row = mysql_fetch_array($qr)){
+			if($row['avarta'] != '') $avarta = url_avarta_image.$row['avarta']; else $avarta = 'images/avarta.gif';
+			
 			$i++;
 			if($i!=$total){
 				echo '<tr>
 					<td width="220" valign="top" class="detail_left" style="background-color:#F2F2F2; border-bottom:solid 1px #CFCFCF">
-						<div class="img"><img src="images/avarta.gif" alt="avarta" /></div>
+						<div class="img"><img src="'.$avarta.'" alt="avarta" /></div>
 						<div class="info"><strong>Tên: '.$row['hoten'].'</strong><br />Chi nhánh: '.$row['chinhanh'].'</div>
 					</td>
 					<td valign="top" class="detail_right" style="border-bottom:solid 1px #CFCFCF">
@@ -57,7 +61,7 @@ if($row_detail['other']==1){
 				</tr>';
 			}else echo '<tr>
 					<td width="220" valign="top" class="detail_left" style="background-color:#F2F2F2; border-bottom:solid 1px #CFCFCF">
-						<div class="img"><img src="images/avarta.gif" alt="avarta" /></div>
+						<div class="img"><img src="'.$avarta.'" alt="avarta" /></div>
 						<div class="info"><strong>Tên: '.$row['hoten'].'</strong><br />Chi nhánh: '.$row['chinhanh'].'</div>
 					</td>
 					<td valign="top" class="detail_right" style="border-bottom:solid 1px #CFCFCF">

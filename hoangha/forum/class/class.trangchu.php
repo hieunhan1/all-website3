@@ -96,13 +96,14 @@ class trangchu extends db {
 	/*Tai khoan*/
 	function KiemTraLogin($user,$pass){
 		$pass = md5($pass);
-		$qr = mysql_query("SELECT id,name,Username,idGroup FROM forum_users WHERE Username='{$user}' AND Password='{$pass}' AND status=1");
+		$qr = mysql_query("SELECT id,name,Username,idGroup,avarta FROM forum_users WHERE Username='{$user}' AND Password='{$pass}' AND status=1");
 		if(mysql_num_rows($qr)==1) {
 			$row = mysql_fetch_array($qr);
 			$_SESSION['idUser']		= $row['id'];
-			$_SESSION['name']		= $row['name'];
+			$_SESSION['name_forum']	= $row['name'];
 			$_SESSION['Username'] 	= $row['Username'];
 			$_SESSION['idGroup'] 	= $row['idGroup'];
+			$_SESSION['avarta_forum'] 	= $row['avarta'];
 			
 			return true;
 		}else return false;
@@ -156,8 +157,8 @@ class trangchu extends db {
 	}
 	function forum_info_insert_cm($content,$id){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO forum_info_comment VALUES ('','{$id}','{$content}','1','{$date}','{$date}','".$_SESSION['Username']."','','0')";
-		return mysql_query($qr);
+		$qr = mysql_query("SELECT id FROM forum_info_comment WHERE forum_info_id='{$id}' AND content='{$content}' ");
+		if(mysql_num_rows($qr)==0) mysql_query("INSERT INTO forum_info_comment VALUES ('','{$id}','{$content}','1','{$date}','{$date}','".$_SESSION['Username']."','','0')");
 	}
 	
 }// end trangchu
