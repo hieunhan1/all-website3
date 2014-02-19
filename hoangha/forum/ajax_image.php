@@ -19,21 +19,26 @@ if(@$_SESSION['idUser']){
 					$tmp = $_FILES['photoimg']['tmp_name'];
 					if(move_uploaded_file($tmp, $path.$url_hinh)){
 						/*upload anh*/
-						require_once('../class/SimpleImage.php');
+						require_once('class/SimpleImage.php');
 						$image = new SimpleImage();
 						$image->load($path.$url_hinh);
 						
 						$image->resizeToWidth(200);
 						$image->save($path_avarta.$url_hinh);
 						
+						/*require_once('PHPThumb/ThumbLib.inc.php');
+						$thumb = PhpThumbFactory::create();
+						$thumb->adaptiveResize(150,150);
+						$thumb->save($path_avarta.$url_hinh);*/
+						
 						unlink($path.$url_hinh);
 						if($_SESSION['avarta_forum'] != '') unlink($path_avarta.$_SESSION['avarta_forum']);
 						
-						mysql_query("UPDATE forum_users SET `avarta`='{$url_hinh}' WHERE `delete`=0 AND id='".$_SESSION['idUser']."' ");
+						mysql_query("UPDATE `forum_users` SET `avarta`='{$url_hinh}' WHERE `delete`=0 AND id='".$_SESSION['idUser']."' ");
 						
 						$_SESSION['avarta_forum'] = $url_hinh;
 						
-						echo '<img src="'.$path_avarta.$url_hinh.'" /> <script> $(document).ready(function(){ $("#imageform").hide(); })</script>';
+						echo '<img src="'.$path_avarta.$url_hinh.'" height="150" /> <script> $(document).ready(function(){ $("#imageform").hide(); })</script>';
 					}else echo "failed";
 				}else echo "Image file size max 2 MB";					
 			}else echo "Invalid file format..";	

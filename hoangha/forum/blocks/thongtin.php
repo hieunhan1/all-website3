@@ -12,7 +12,6 @@
 ?>
 <style>
 #preview{width:150px; height:150px; overflow:hidden; border:solid 1px #CCC}
-#preview img{height:150px}
 </style>
 <table width="60%" border="0" cellpadding="0" cellspacing="0" id="doimatkhau" class="popup_dis" style="margin:auto">
     <tr><td id="name_title"><p style="padding-bottom:20px; font-size:20px; color:blue">Đổi ảnh đại diện</p></td></tr>
@@ -40,7 +39,7 @@ $(document).ready(function() {
     <tr><td colspan="2" style="color:#F00"><?php echo $result; ?></td></tr>
     <tr>
         <th align="left" width="150">Họ tên:</th>
-        <td><input type="text" name="hoten" class="txt_login" value="<?php echo $_SESSION['name_forum']?>" /></td>
+        <td><input type="text" name="hoten" class="txt_login" value="<?php echo $_SESSION['name_forum']; ?>" /></td>
     </tr>
     <tr><td colspan="2">&nbsp;</td></tr>
     <tr>
