@@ -10,13 +10,37 @@
 		}*/
 	}
 ?>
+<style>
+#preview{width:150px; height:150px; overflow:hidden; border:solid 1px #CCC}
+#preview img{height:150px}
+</style>
+<table width="60%" border="0" cellpadding="0" cellspacing="0" id="doimatkhau" class="popup_dis" style="margin:auto">
+    <tr><td id="name_title"><p style="padding-bottom:20px; font-size:20px; color:blue">Đổi ảnh đại diện</p></td></tr>
+    <tr><td><p id="preview"><img src="<?php if($_SESSION['avarta_forum'] != '') echo 'public/avarta/'.$_SESSION['avarta_forum']; else echo 'images/avarta.gif'; ?>" alt="" height="150px" /></p>
+    <p><form id="imageform" method="post" enctype="multipart/form-data" action="ajax_image.php">
+    	Tải ảnh của bạn (ảnh dưới 2MB) &nbsp; &nbsp; <input type="file" name="photoimg" id="photoimg" />
+    </form></p></td></tr>
+</table><br /><br /><br />
+<script type="text/javascript" src="../library/jquery.form.js"></script>
+<script type="text/javascript" >
+$(document).ready(function() { 
+	$('#photoimg').live('change', function(){ 
+		$("#preview").html('');
+		$("#preview").html('<img src="images/loader.gif" alt="Uploading...."/>');
+		$("#imageform").ajaxForm({
+			target: '#preview'
+		}).submit();
+	});
+}); 
+</script>
+
 <form action="" name="thongtin" method="post" onSubmit="return KiemTra();">
 <table width="60%" border="0" cellpadding="0" cellspacing="0" id="doimatkhau" class="popup_dis" style="margin:auto">
     <tr><td colspan="2" id="name_title"><p style="padding-bottom:20px; font-size:20px; color:blue">Đổi thông tin tài khoản</p></td></tr>
     <tr><td colspan="2" style="color:#F00"><?php echo $result; ?></td></tr>
     <tr>
         <th align="left" width="150">Họ tên:</th>
-        <td><input type="text" name="hoten" class="txt_login" value="<?php echo $_SESSION['name']?>" /></td>
+        <td><input type="text" name="hoten" class="txt_login" value="<?php echo $_SESSION['name_forum']?>" /></td>
     </tr>
     <tr><td colspan="2">&nbsp;</td></tr>
     <tr>

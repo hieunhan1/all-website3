@@ -33,6 +33,7 @@ $row_tracking = mysql_fetch_array($qr);
             </td>
         </tr>
     </table>
+    
     <div id="form_bill" style="margin-top:50px">
     <?php if(mysql_num_rows($qr)==1){ ?>
     	<table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:35px; margin:auto; font-weight:bold">
@@ -74,7 +75,10 @@ $row_tracking = mysql_fetch_array($qr);
                 <td style="color:#00F"><?php echo $row_tracking['trongluong']; ?></td>
             </tr>
         </table><br />
-        <table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:25px; margin:auto">
+        <?php
+        $qr = $tc->select_tracking_express_detail($row_tracking['id']);
+		if(mysql_num_rows($qr) > 0){
+			echo '<table width="800" border="0" cellpadding="0" cellspacing="0" style="line-height:25px; margin:auto">
             <tr>
                 <td colspan="4" style="color:#00F; font-size:14px; font-weight:bold">HÀNH TRÌNH PHÁT:</td>
             </tr>
@@ -82,9 +86,7 @@ $row_tracking = mysql_fetch_array($qr);
                 <td width="130" style="padding-left:5px">Ngày</td>
                 <td width="250">Bưu cục</td>
                 <td>Ghi chú</td>
-            </tr>
-            <?php
-            $qr = $tc->select_tracking_express_detail($row_tracking['id']);
+            </tr>';
 			while($row = mysql_fetch_array($qr)){
 				echo '<tr>
 					<td style="border-bottom:dotted 1px #CCC; padding-left:5px">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
@@ -92,9 +94,9 @@ $row_tracking = mysql_fetch_array($qr);
 					<td style="border-bottom:dotted 1px #CCC">'.$row['notes'].'&nbsp;</td>
 				</tr>';
 			}
-			?>
-        </table>
-    <?php } ?>
+			echo '</table>';
+		}
+	} ?>
     </div>
     <div style="clear:both; height:30px"></div>
 </div>

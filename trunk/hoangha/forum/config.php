@@ -20,6 +20,8 @@ define(url_no_image,'images/no-image.jpg');
 
 define(url_default_image,'images/logo.jpg');
 
+define(url_avarta_image,'public/avarta/');
+
 define(url_danhmuc_image,'public/images/catalog/');
 
 define(url_detail_image_thumb,'public/_thumbs/Images/articles/');
