@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Feb 14, 2014 at 11:05 AM
+-- Generation Time: Feb 19, 2014 at 05:25 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -1000,7 +1000,7 @@ INSERT INTO `menu` VALUES (53, 'Hướng dẫn pha chế', 'huong-dan-pha-che', 
 INSERT INTO `menu` VALUES (54, 'Hướng dẫn nấu ăn', 'huong-dan-nau-an', 'http://www.hocnauan.net.vn/', 'Ky-Luc-Nhieu-Mon-Cuon-Vn.jpg', '2013-01-15 14:50:00', '2013-01-15 12:47:57', 35, 1, 1, 'Hướng dẫn nấu ăn', 'Hướng dẫn nấu ăn', 'Hướng dẫn nấu ăn', 0, 'vi', 2, ',', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (55, 'Nghiên Cứu và Phát Triển Ẩm Thực', 'nghien-cuu-va-phat-trien-am-thuc', 'javascript:;', 'nghien-cuu-phat-trien.png', '2013-01-15 14:50:00', '2014-02-07 15:10:43', 1, 203, 1, 'Nghiên Cứu và Phát Triển Ẩm Thực', 'Nghiên Cứu và Phát Triển Ẩm Thực', 'Nghiên Cứu và Phát Triển Ẩm Thực', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (56, 'Xem tin', 'xem-tin', 'xem-tin/', '', '2013-01-15 14:51:00', '2014-02-07 09:51:25', 6, 1000, 1, 'Thông tin học nấu ăn', 'Thông tin học nấu ăn', 'Thông tin học nấu ăn', 0, 'vi', 2, ',6,', 'admin', 'admin', 0);
-INSERT INTO `menu` VALUES (57, 'Tuyển dụng đầu bếp', 'tuyen-dung-dau-bep-nop-ho-so-tuyen-dung', 'tuyen-dung-dau-bep-nop-ho-so-tuyen-dung/', 'tu-van.png', '2013-01-23 13:11:00', '2014-02-08 10:21:26', 1, 206, 1, 'Tuyển dụng đầu bếp - Nộp hồ sơ tuyển dụng', 'Tuyển dụng đầu bếp - Nộp hồ sơ tuyển dụng', 'Tuyển dụng đầu bếp,Nộp hồ sơ tuyển dụng', 0, 'vi', 11, ',5,', 'admin', 'admin', 0);
+INSERT INTO `menu` VALUES (57, 'Tuyển dụng đầu bếp', 'tuyen-dung-dau-bep', 'tuyen-dung-dau-bep/', 'tu-van.png', '2013-01-23 13:11:00', '2014-02-08 15:31:45', 1, 206, 1, 'Tuyển dụng đầu bếp - Nộp hồ sơ tuyển dụng', 'Tuyển dụng đầu bếp - Nộp hồ sơ tuyển dụng', 'Tuyển dụng đầu bếp,Nộp hồ sơ tuyển dụng', 0, 'vi', 11, ',5,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (58, 'Hoạt động của Trường', 'hoat-dong-cua-truong', 'hoat-dong-cua-truong/', 'album-hoat-dong-truong.jpg', '2013-03-15 13:26:00', '2013-03-15 14:18:57', 5, 0, 1, 'Hoạt động của Trường', 'Hoạt động của Trường', 'Hoạt động của Trường', 1, 'vi', 5, ',6,', 'admin', 'admin', 0);
 INSERT INTO `menu` VALUES (59, 'Bánh Âu', 'banh-au', 'banh-au/', 'album-banh-au.jpg', '2013-03-15 13:26:00', '2013-03-15 14:12:10', 61, 2, 1, 'Bánh Âu', 'Bánh Âu', 'Bánh Âu', 0, 'vi', 5, ',5,', 'admin', '', 0);
 INSERT INTO `menu` VALUES (60, 'Hình ảnh các lớp', 'hinh-anh-cac-lop', 'hinh-anh-cac-lop/', 'album-anh-cac-lop.jpg', '2013-03-15 13:26:00', '2013-03-15 15:49:05', 5, 2, 1, 'Hình ảnh các lớp', 'Hình ảnh các lớp', 'Hình ảnh các lớp', 1, 'vi', 5, ',6,', 'admin', 'admin', 0);
@@ -1211,7 +1211,7 @@ CREATE TABLE `menu_admin` (
   `status` tinyint(1) default '1',
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 -- 
 -- Dumping data for table `menu_admin`
@@ -1221,17 +1221,18 @@ INSERT INTO `menu_admin` VALUES (1, 'Trang chủ', 'home', NULL, 1, 1, 0);
 INSERT INTO `menu_admin` VALUES (2, 'Cấu hình website', 'config', NULL, 2, 1, 0);
 INSERT INTO `menu_admin` VALUES (3, 'Menu', 'menu', NULL, 3, 1, 0);
 INSERT INTO `menu_admin` VALUES (4, 'Thông tin, bài viết', 'info', NULL, 4, 1, 0);
-INSERT INTO `menu_admin` VALUES (5, 'Thông tin, bài viết bình luận', 'info_comment', NULL, 5, 0, 1);
-INSERT INTO `menu_admin` VALUES (6, 'Sản phẩm', 'product', NULL, 6, 0, 1);
-INSERT INTO `menu_admin` VALUES (7, 'Thông tin chi nhánh', 'chinhanh', NULL, 15, 1, 0);
-INSERT INTO `menu_admin` VALUES (8, 'Lịch khai giảng', 'lichkhaigiang', NULL, 13, 1, 0);
-INSERT INTO `menu_admin` VALUES (9, 'Liên hệ trực tuyến', 'contact', NULL, 15, 1, 0);
-INSERT INTO `menu_admin` VALUES (10, 'Đăng ký trực tuyến', 'dangky_tructuyen', NULL, 14, 1, 0);
-INSERT INTO `menu_admin` VALUES (11, 'Hình ảnh', 'photo_gallery', NULL, 10, 1, 0);
-INSERT INTO `menu_admin` VALUES (12, 'Slider', 'slider_banner', NULL, 11, 1, 0);
-INSERT INTO `menu_admin` VALUES (13, 'Video', 'video', NULL, 12, 1, 0);
-INSERT INTO `menu_admin` VALUES (14, 'THÔNG BÁO', 'thongbao', NULL, 14, 1, 0);
-INSERT INTO `menu_admin` VALUES (15, 'Tài khoản', 'users', NULL, 16, 1, 0);
+INSERT INTO `menu_admin` VALUES (5, 'Hình ảnh', 'photo_gallery', NULL, 5, 1, 0);
+INSERT INTO `menu_admin` VALUES (6, 'Slider banner', 'slider_banner', NULL, 6, 1, 0);
+INSERT INTO `menu_admin` VALUES (7, 'Video', 'video', NULL, 7, 1, 0);
+INSERT INTO `menu_admin` VALUES (8, 'Lịch khai giảng', 'lichkhaigiang', NULL, 8, 1, 0);
+INSERT INTO `menu_admin` VALUES (9, 'Thông báo', 'thongbao', NULL, 9, 1, 0);
+INSERT INTO `menu_admin` VALUES (10, 'Đăng ký trực tuyến', 'dangky_tructuyen', NULL, 10, 1, 0);
+INSERT INTO `menu_admin` VALUES (11, 'Liên hệ trực tuyến', 'contact', NULL, 11, 1, 0);
+INSERT INTO `menu_admin` VALUES (12, 'Danh sách chi nhánh', 'chinhanh', NULL, 12, 1, 0);
+INSERT INTO `menu_admin` VALUES (13, 'Tuyển dụng - Thông tin', 'tuyendung', NULL, 13, 1, 0);
+INSERT INTO `menu_admin` VALUES (14, 'Tuyển dụng - Công ty', 'tuyendung_cty', NULL, 14, 1, 0);
+INSERT INTO `menu_admin` VALUES (15, 'Tuyển dụng - Hộ sơ', 'tuyendung_hoso', NULL, 15, 1, 0);
+INSERT INTO `menu_admin` VALUES (16, 'Tài khoản', 'users', NULL, 16, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -4979,6 +4980,108 @@ INSERT INTO `slider_banner_position` VALUES (3, 'Đối tác 200x120 px', 0);
 -- --------------------------------------------------------
 
 -- 
+-- Table structure for table `tuyendung`
+-- 
+
+CREATE TABLE `tuyendung` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `name_rewrite` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `metaDescription` text,
+  `metaKeyword` varchar(150) NOT NULL,
+  `content` text,
+  `noilamviec` int(2) NOT NULL,
+  `mucluong` varchar(20) NOT NULL,
+  `soluongtuyen` int(2) NOT NULL,
+  `quyenloi` text NOT NULL,
+  `yeucau` text NOT NULL,
+  `menu_id` varchar(20) NOT NULL,
+  `tuyendung_cty_id` int(3) NOT NULL,
+  `lang` varchar(3) NOT NULL default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_rewrite` (`name_rewrite`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Dumping data for table `tuyendung`
+-- 
+
+INSERT INTO `tuyendung` VALUES (1, 'Bếp chính bếp Hoa nhà hàng', 'bep-chinh-bep-hoa-nha-hang', NULL, 'Biết nấu các loại chao khac nhau. Có kinh nghiệm nấu ăn. Có kiến thức về vệ sinh an toàn thực phẩm. Có sức khỏe tốt, nhân thân tốt', 'Bếp chính bếp Hoa nhà hàng', '<p>Biết nấu các loại chao khac nhau</p>\r\n\r\n<p>Có kinh nghiệm nấu ăn</p>\r\n\r\n<p>Có kiến thức về vệ sinh an toàn thực phẩm.</p>\r\n\r\n<p>Có sức khỏe tốt, nhân thân tốt</p>\r\n', 1, 'Thỏa thuận', 3, '<p>Luong thu viec = 3.500k + an o&nbsp;<br />\r\nLuong chinh thuc = 4.000k + an o&nbsp;<br />\r\nThưởng theo năng lực và những đề xuất cải tiến<br />\r\nLàm ngày lễ được 150% lương<br />\r\nTháng lương thứ 13 ( tết âm)<br />\r\nLiên hoan hàng tháng...</p>\r\n', '<p>- Đơn xin việc<br />\r\n- Sơ yếu lý lịch.<br />\r\n- Hộ khẩu, chứng minh nhân dân và giấy khám sức khỏe.<br />\r\n- Các bằng cấp có liên quan.<br />\r\n( Lưu ý: Liên hệ trong giờ hành chính)<br />\r\n(không trả lại hồ sơ nếu không trúng tuyển)</p>\r\n', ',57,', 1, 'vi', 1, '2014-02-19 16:23:44', '2014-02-19 17:12:34', 'admin', 'admin', 0);
+INSERT INTO `tuyendung` VALUES (2, 'Bếp chính nhà hàng', 'bep-chinh-nha-hang', NULL, 'Biết nấu các loại chao khac nhau. Có kinh nghiệm nấu ăn. Có kiến thức về vệ sinh an toàn thực phẩm. Có sức khỏe tốt, nhân thân tốt', 'Bếp chính nhà hàng', '<p>Biết nấu các loại chao khac nhau</p>\r\n\r\n<p>Có kinh nghiệm nấu ăn</p>\r\n\r\n<p>Có kiến thức về vệ sinh an toàn thực phẩm.</p>\r\n\r\n<p>Có sức khỏe tốt, nhân thân tốt</p>\r\n', 1, 'Thỏa thuận', 3, '<p>Luong thu viec = 3.500k + an o&nbsp;<br />\r\nLuong chinh thuc = 4.000k + an o&nbsp;<br />\r\nThưởng theo năng lực và những đề xuất cải tiến<br />\r\nLàm ngày lễ được 150% lương<br />\r\nTháng lương thứ 13 ( tết âm)<br />\r\nLiên hoan hàng tháng...</p>\r\n', '<p>- Đơn xin việc<br />\r\n- Sơ yếu lý lịch.<br />\r\n- Hộ khẩu, chứng minh nhân dân và giấy khám sức khỏe.<br />\r\n- Các bằng cấp có liên quan.<br />\r\n( Lưu ý: Liên hệ trong giờ hành chính)<br />\r\n(không trả lại hồ sơ nếu không trúng tuyển)</p>\r\n', ',57,', 2, 'vi', 1, '2014-02-19 16:24:00', '2014-02-19 17:12:29', 'admin', 'admin', 0);
+INSERT INTO `tuyendung` VALUES (3, 'Nhân viên pha chế cafe', 'nhan-vien-pha-che-cafe', NULL, 'Biết nấu các loại chao khac nhau. Có kinh nghiệm nấu ăn. Có kiến thức về vệ sinh an toàn thực phẩm. Có sức khỏe tốt, nhân thân tốt', 'Nhân viên pha chế cafe', '<p>Biết nấu các loại chao khac nhau</p>\r\n\r\n<p>Có kinh nghiệm nấu ăn</p>\r\n\r\n<p>Có kiến thức về vệ sinh an toàn thực phẩm.</p>\r\n\r\n<p>Có sức khỏe tốt, nhân thân tốt</p>\r\n', 5, 'Thỏa thuận', 3, '<p>Luong thu viec = 3.500k + an o&nbsp;<br />\r\nLuong chinh thuc = 4.000k + an o&nbsp;<br />\r\nThưởng theo năng lực và những đề xuất cải tiến<br />\r\nLàm ngày lễ được 150% lương<br />\r\nTháng lương thứ 13 ( tết âm)<br />\r\nLiên hoan hàng tháng...</p>\r\n', '<p>- Đơn xin việc<br />\r\n- Sơ yếu lý lịch.<br />\r\n- Hộ khẩu, chứng minh nhân dân và giấy khám sức khỏe.<br />\r\n- Các bằng cấp có liên quan.<br />\r\n( Lưu ý: Liên hệ trong giờ hành chính)<br />\r\n(không trả lại hồ sơ nếu không trúng tuyển)</p>\r\n', ',57,', 1, 'vi', 1, '2014-02-19 16:24:20', '2014-02-19 17:10:45', 'admin', 'admin', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tuyendung_cty`
+-- 
+
+CREATE TABLE `tuyendung_cty` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(200) NOT NULL,
+  `content` text,
+  `diachi` varchar(250) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `website` varchar(200) default NULL,
+  `fax` varchar(30) default NULL,
+  `lang` varchar(3) NOT NULL default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `tuyendung_cty`
+-- 
+
+INSERT INTO `tuyendung_cty` VALUES (1, 'Công ty kế toán - kiểm toán Thanh Trí', '<p><strong>Công ty kế toán - kiểm toán Thanh Trí</strong> được Sở Kế Hoạch &amp; Đầu Tư TP.HCM cấp phép hoạt động từ năm 2002, nhân sự công ty là tập hợp các chuyên viên kiểm toán-kế toán chuyên nghiệp, chúng tôi hoạt động mạnh trong lãnh vực tư vấn thuế - dịch vụ pháp lý cho các công ty và đào tạo kế toán chuyên nghiệp.</p>\r\n\r\n<p>Công ty có hướng dẫn cách làm kế toán tổng hợp bằng chứng từ thực tế cho :</p>\r\n\r\n<ul>\r\n	<li>Các bạn đã học kế toán nhưng chưa đi làm hoặc làm trái ngành;</li>\r\n	<li>Các bạn sinh viên sắp tốt nghiệp hoặc mới ra trường;</li>\r\n	<li>Các bạn là kế toán viên, kế toán nội bộ chưa được làm báo cáo thuế, sổ sách kế toán.</li>\r\n</ul>\r\n', '123 CMT 8, Quận 10, Tp.HCM', '08.5687.2135', 'nhahangfo@gmail.com', 'http://www.nhahangfo.com', '', 'vi', 1, '2014-02-19 17:06:09', '2014-02-19 17:24:37', 'admin', 'admin', 0);
+INSERT INTO `tuyendung_cty` VALUES (2, 'Công ty chế biến thủy sản', '<p>Xuất khẩu tôm năm 2013 đạt kỷ lục chạm mức gần 3 tỷ USD, vẫn là mặt hàng xuất khẩu mũi nhọn của ngành thủy sản. Năm 2014, tình hình sẽ sáng sủa hơn nếu giải quyết tốt bài toán quy hoạch vùng nuôi và chính sách thương mại với Trung Quốc…</p>\r\n', '10 Trần Hưng, Q.Bình Tân, Tp.HCM', '08.3987.2365', 'thuysan@gmail.com', 'www.thuysan.com', '08.3987.2366', 'vi', 1, '2014-02-19 17:12:19', '2014-02-19 17:12:19', 'admin', NULL, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tuyendung_hoso`
+-- 
+
+CREATE TABLE `tuyendung_hoso` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `url_hinh` varchar(150) default NULL,
+  `content` text,
+  `diachi` varchar(250) NOT NULL,
+  `dienthoai` varchar(30) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `trinhdo` int(1) NOT NULL,
+  `lang` varchar(3) NOT NULL default 'vi',
+  `status` tinyint(1) default '1',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime default NULL,
+  `user_create` varchar(30) NOT NULL,
+  `user_update` varchar(30) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `tuyendung_hoso`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
 -- Table structure for table `users`
 -- 
 
@@ -5009,14 +5112,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 -- 
 
-INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'fc7fc678608590b123692867f176fe63', ',1,2,3,4,11,12,13,8,10,14,9,7,15,', ',1,2,3,4,11,12,13,8,10,14,9,7,15,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
-INSERT INTO `users` VALUES (40, 'Vinh Tran', 'vinh', 'e10adc3949ba59abbe56e057f20f883e', ',', ',', 1, 1, NULL, NULL, NULL, NULL, 0, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
-INSERT INTO `users` VALUES (101, 'Châu Lai', 'chau', '6626270ec374dc0def87953d7dfa360a', '', '', 1, 1, NULL, 0, NULL, NULL, 0, '2013-07-20 14:07:40', NULL, 'admin', 'admin', 0);
-INSERT INTO `users` VALUES (103, 'Thanh Huyen', 'huyen', 'affa1d444373d54a2579e4d84be48cc5', '', '', 1, 1, NULL, 0, NULL, NULL, 1, '2013-08-29 10:06:37', NULL, 'admin', 'admin', 1);
-INSERT INTO `users` VALUES (105, 'Long', 'longruoi', '93a466321a41cfcb8254561a5215905d', ',1,3,11,13,', ',1,3,11,13,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-10-03 14:04:51', NULL, 'admin', NULL, 0);
-INSERT INTO `users` VALUES (106, 'Tư Vấn', 'tuvan', 'e10adc3949ba59abbe56e057f20f883e', '', ',', 1, 1, NULL, 0, NULL, NULL, 1, '2013-11-08 15:23:34', NULL, 'admin', 'admin', 1);
-INSERT INTO `users` VALUES (107, 'ho te', 'abc', 'e10adc3949ba59abbe56e057f20f883e', '', '', 1, 1, NULL, 0, NULL, NULL, 1, '2013-11-08 15:31:17', NULL, 'admin', 'admin', 1);
-INSERT INTO `users` VALUES (108, 'Mỹ Tiên', 'tien', 'e10adc3949ba59abbe56e057f20f883e', ',1,10,', ',1,10,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-11-22 15:02:44', NULL, 'admin', NULL, 0);
+INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'fc7fc678608590b123692867f176fe63', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
+INSERT INTO `users` VALUES (105, 'Long', 'longruoi', '93a466321a41cfcb8254561a5215905d', ',1,3,5,', ',1,3,5,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-10-03 14:04:51', '0000-00-00 00:00:00', 'admin', 'admin', 0);
+INSERT INTO `users` VALUES (108, 'Mỹ Tiên', 'tien', 'e10adc3949ba59abbe56e057f20f883e', ',1,10,', ',1,10,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-11-22 15:02:44', '0000-00-00 00:00:00', 'admin', 'admin', 0);
 INSERT INTO `users` VALUES (109, 'Hảo', 'hao', 'e10adc3949ba59abbe56e057f20f883e', ',1,4,14,', ',1,4,14,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-12-27 10:14:13', NULL, 'admin', NULL, 0);
 
 -- --------------------------------------------------------
