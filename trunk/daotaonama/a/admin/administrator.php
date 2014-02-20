@@ -111,7 +111,9 @@ function SetFileField(fileUrl, data){
 		if((count($m)==1 && sizeof($for_view[0])==1) ||(count($m)==2 && sizeof($for_action[0])==1) || (!@$p) || $p=='thongtin'){
 			echo "<div class='title'>{$row_navigator[name]} ".column_general($p)."&nbsp;</div>
 			<div style='margin-bottom:10px'>{$view_lang}</div>";
-			if(count($m)==1 && ($page=='info' || $page=='products' || $page=='booking_banggia' || $page=='slider_banner')) require_once('search.php');
+			if(count($m)==1 && $page=='info') require_once('search.php');
+			
+			if(count($m)==1 && $page=='daotao_hocvien') require_once('search_daotao.php');
 			
 			if(@$p){
 				if (file_exists('blocks/'.$p.'.php')) include_once('blocks/'.$p.'.php');
