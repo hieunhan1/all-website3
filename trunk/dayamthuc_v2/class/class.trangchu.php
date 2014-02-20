@@ -192,6 +192,11 @@ class trangchu extends db {
 		$qr = "SELECT name,content,diachi,phone,email,website,fax FROM tuyendung_cty WHERE `delete`=0 AND status=1 AND id='{$id}' LIMIT 1";
 		return mysql_query($qr);
 	}
+	function tuyendung_hoso($name,$content,$diachi,$phone,$email,$trinhdo,$tuyendung_id){
+		$date = date('Y-m-d H:i:s');
+		$qr = "INSERT INTO `tuyendung_hoso` VALUES (NULL,'{$name}','','{$content}','{$diachi}','{$phone}','{$email}','{$trinhdo}','{$tuyendung_id}','vi','0','{$date}','{$date}','khachhang','','0') ";
+		mysql_query($qr);
+	}
 	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
