@@ -113,7 +113,7 @@ function SetFileField(fileUrl, data){
 			<div style='margin-bottom:10px'>{$view_lang}</div>";
 			if(count($m)==1 && $page=='info') require_once('search.php');
 			
-			if(count($m)==1 && $page=='daotao_hocvien') require_once('search_daotao.php');
+			if(count($m)==1 && ($page=='daotao_hocvien' || $page=='daotao_bangdiem')) require_once('search_daotao.php');
 			
 			if(@$p){
 				if (file_exists('blocks/'.$p.'.php')) include_once('blocks/'.$p.'.php');

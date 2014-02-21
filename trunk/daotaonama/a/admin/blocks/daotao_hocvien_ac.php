@@ -44,7 +44,7 @@ if($id == 0){ //create
 		
 		$check_create_user = "<tr>
 			<td style='border-bottom:solid 1px #CCC'>{$row['username']}</td>
-			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'>{$str_ds_kh}</div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
+			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'>{$str_ds_kh}</div>".$qt->danhsach_khoahoc()." &nbsp;</td>
 			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$id}' /></td>
 		</tr>";
 	}
