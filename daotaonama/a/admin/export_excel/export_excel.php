@@ -5,8 +5,7 @@ $quyen_xem = $_SESSION['quyen_xem'];
 $show = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 if(@$user) {
 	$page = $_GET['p'];
-	$id = trim($_GET['ma']);
-	$danhmuc = trim($_GET['khoahoc']);
+	$lophoc = trim($_GET['lophoc']);
 	
 	include_once('../../../class/class.quantri.php');
 	$qt = new quantri();
@@ -37,22 +36,19 @@ if(@$user) {
 	function xu_ly_ngay($date){
 		return date('d/m/Y',strtotime($date));
 	}
-	function title($page,$id){
-		$qr = mysql_query("SELECT id,ten FROM {$page} WHERE `delete`=0 AND id='{$id}'");
+	function hocvien($page,$lophoc){
+		$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE id='{$lophoc}' ");
 		$row = mysql_fetch_array($qr);
-		return $row['id'].' - '.$row['ten'];
-	}
-	function hocvien($page,$danhmuc){
-		if(!@$id) return false;
 		
 		$data = array();
-		$data[1] = array('STT','Họ & tên','Email','Điện thoại','Địa chỉ','Username');
+		$data[1] = array('Mã lớp: ',$row['id'],'Tên lớp: ',$row['name']);
+		$data[2] = array('STT','Họ & tên','Email','Điện thoại','Địa chỉ','Username');
 		
-		if($danhmuc=='0'){
-			return $show.'Bạn chưa chọn dữ liệu nào để xuất';
+		if($lophoc=='' || $lophoc=='0'){
+			return $show.'Ban chua chon lop hoc de xuat du lieu';
 		} else {
 			$i = 0;
-			$str = "SELECT * FROM {$page} WHERE `delete`=0 AND status=1 AND khoahoc='{$danhmuc}'";
+			$str = "SELECT daotao_hocvien.* FROM daotao_hocvien,daotao_khoahoc WHERE daotao_hocvien.`delete`=0 AND daotao_hocvien.status=1 AND id_hocvien=daotao_hocvien.id AND id_lophoc='{$lophoc}'";
 			$qr = mysql_query($str);
 			while($row = mysql_fetch_array($qr)){
 				$i++;
@@ -62,26 +58,48 @@ if(@$user) {
 		}
 		export_excel($data,$page);
 	}
-	function diemthi($page,$id,$danhmuc){
-		if(!@$id && !@$danhmuc) return '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />Bạn chưa chọn dữ liệu nào để xuất';
-		$data = array();
-		$data[1] = array('Học viên','KT lần 1','KT lần 2','KT lần 3','KT lần 4','TBKT','Điểm thi TN','Điểm TN','Xếp loại','Ghi chú');
+	function bangdiem($page,$lophoc){
+		$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE id='{$lophoc}' ");
+		$row = mysql_fetch_array($qr);
 		
-		$str = "SELECT {$page}.*,concat(hocvien_id,' | ',ho,' ',ten) as hocvien FROM {$page},hocvien WHERE {$page}.`delete`=0 AND hocvien_id=hocvien.id ";
-		if($id!=NULL && $id!='Mã học viên'){
-			if(@$_GET['btnSearch']) $str .= " AND hocvien_id='{$id}' ";
-			else $str .= " AND {$page}.id='{$id}' ";
+		$data = array();
+		$data[1] = array('Mã lớp: ',$row['id'],'Tên lớp: ',$row['name']);
+		$data[2] = array('STT','Họ & tên','Cột 1','Cột 2','Cột 3','Cột 4','Cột 5','Cột 6','Cột 7','Cột 8');
+		
+		if($lophoc=='' || $lophoc=='0'){
+			return $show.'Ban chua chon lop hoc de xuat du lieu';
+		} else {
+			$i = 0;
+			$str = "SELECT diem1,diem2,diem3,diem4,diem5,diem6,diem7,diem8,daotao_hocvien.name as hoten FROM daotao_bangdiem,daotao_hocvien WHERE daotao_bangdiem.`delete`=0 AND id_hocvien=daotao_hocvien.id AND id_lophoc='{$lophoc}' ";
+			$qr = mysql_query($str);
+			while($row = mysql_fetch_array($qr)){
+				$i++;
+				$data[] = array($i,$row['hoten'],$row['diem1'],$row['diem2'],$row['diem3'],$row['diem4'],$row['diem5'],$row['diem6'],$row['diem7'],$row['diem8']);
+			}
+			mysql_free_result($qr);
 		}
-		if($danhmuc!=NULL && $danhmuc!='') $str .= " AND {$page}.lophoc_id='{$danhmuc}' ";
-		$qr = mysql_query($str);
-		while($row = mysql_fetch_array($qr)){
-			$data[] = array($row['hocvien'],$row['kiemtra_lan1'],$row['kiemtra_lan2'],$row['kiemtra_lan3'],$row['kiemtra_lan4'],$row['kiemtra_tb'],$row['thi_tn'],$row['diem_tn'],$row['xeploai'],$row['notes']);
-		}
-		mysql_free_result($qr);
 		export_excel($data,$page);
 	}
+	
 	switch($page){
-		case 'daotao_hocvien' : echo hocvien($page,$danhmuc); echo '111';break;
+		case 'daotao_hocvien' : hocvien($page,$lophoc); break;
+		case 'daotao_bangdiem' : bangdiem($page,$lophoc); break;
 	}
+	
+	$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 AND status=1 ORDER BY `name`");
+	while($row = mysql_fetch_array($qr)){
+		$str_lophoc .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+	}
+	
+	$form = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<form action="" method="get" name="search">
+    	<input type="hidden" name="p" value="'.$page.'" />
+    	<select name="lophoc">
+    		<option value="0">-- Chọn lớp học --</option>'.$str_lophoc.'
+    	</select>
+    	<input type="submit" name="btnXuat" value="Xuất" />
+	</form>';
+	
+	if(!@$_GET['btnXuat']) echo $form;
 }
 ?>

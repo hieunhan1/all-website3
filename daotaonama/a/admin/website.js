@@ -304,7 +304,7 @@ $("input[name=create_khoahoc]").live("click",function(){
 
 
 var lophoc = $(".select_lophoc").val();
-var hocvien = $(".select_hocvien").val();
+var hocvien = $("#id_hocvien").html();
 /*var cotdiem = $(".select_cotdiem").val();*/
 $.post("ajax.php",{select_hocvien:lophoc,hocvien:hocvien},function(data){
 	$(".select_hocvien").html(data);

@@ -89,10 +89,11 @@ if(@$_SESSION["id_admin"]) {
 	if(@$_POST['select_hocvien']){
 		echo '<option value="0">-- Chọn học viên --</option>';
 		$lophoc = $_POST['select_hocvien'];
-		$hocvien = $_POST['hocvien'];
-		$qr = mysql_query("SELECT daotao_hocvien.id,daotao_hocvien.name FROM daotao_hocvien,daotao_khoahoc WHERE  daotao_khoahoc.`delete`=0 AND id_lophoc='{$lophoc}' AND id_hocvien=daotao_hocvien.id AND daotao_hocvien.id NOT IN (SELECT id_hocvien FROM daotao_bangdiem WHERE id_lophoc='{$lophoc}') ORDER BY daotao_hocvien.name");
+		$id_hocvien = $_POST['hocvien'];
+		if($_POST['hocvien']==0) $hocvien = ''; else $hocvien = " AND id_hocvien<>'{$id_hocvien}' ";
+		$qr = mysql_query("SELECT daotao_hocvien.id,daotao_hocvien.name FROM daotao_hocvien,daotao_khoahoc WHERE  daotao_khoahoc.`delete`=0 AND id_lophoc='{$lophoc}' AND id_hocvien=daotao_hocvien.id AND daotao_hocvien.id NOT IN (SELECT id_hocvien FROM daotao_bangdiem WHERE id_lophoc='{$lophoc}' {$hocvien}) ORDER BY daotao_hocvien.name");
 		while($row = mysql_fetch_array($qr)){
-			if($row['id'] != $hocvien) echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+			if($row['id'] != $id_hocvien) echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
 			else echo '<option value="'.$row['id'].'" selected="selected">'.$row['name'].'</option>';
 		}
 		return true;

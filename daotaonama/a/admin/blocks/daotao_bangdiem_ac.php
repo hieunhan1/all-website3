@@ -147,9 +147,10 @@ if(@$_POST['diem8']) $value = $_POST['diem8']; else $value = $detail['diem8'];
 $form->getProperties("Cột điểm 8", 'diem8', 1, 'input_medium', $value, 5);
 echo $form->DisplayProperties();
 
+if($detail['id_hocvien']=='') $hocvien = '0'; else $hocvien = $detail['id_hocvien'];
 echo "
 <tr style='background:#b0b0b0'>
-    <th align='right'>&nbsp;</th> 
+    <th align='right'><p id='id_hocvien' style='display:none'>{$hocvien}</p></th> 
     <td><input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />
 	<input type='button' name='btnCancel' value='Cancel' class='button' onClick='window.location.href=\"administrator.php?p={$page}\"'>
 	</td>
