@@ -6,6 +6,7 @@ if($_POST['post_nhanxet']=='post_nhanxet'){
 	$email = trim($_POST['email']);
 	$content = trim($_POST['content']);
 	$alias = trim($_POST['alias']);
+	$link_baiviet = trim($_POST['link_baiviet']);
 	if($name!='' && $email!='' && $content!='' && $alias!=''){
 		$tc->insert_nhanxet($name,$email,$content,$alias);
 		$view_post = '<div class="item_nx">
@@ -14,6 +15,7 @@ if($_POST['post_nhanxet']=='post_nhanxet'){
 			<div style="clear:both; height:1px"></div>
 		</div>';
 		echo $view_post;
+		include_once('sendmail_smtp/sendmail_nhanxet.php');
 		return true;
 	}else{
 		echo '0';
@@ -27,7 +29,7 @@ if($_POST['contact']=='contact'){
 	if($name!='' && $email!='' && $content!=''){
 		if($tc->insert_contact($name,$email,$content)){
 			echo '1';
-			include_once('sendmail/sendmail.php');
+			include_once('sendmail_smtp/sendmail.php');
 		}
 	}else{
 		echo '0';

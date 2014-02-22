@@ -64,6 +64,8 @@ $("input[name=btnNhatxet]").click(function(){
 	var email = $.trim($("input[name=email]").val());
 	var content = $.trim($("textarea[name=content]").val());
 	var alias = $.trim($("input[name=alias]").val());
+	var link_baiviet = $.trim($("input[name=link_baiviet]").val());
+
 	if(name=="" || name=="Name"){ alert("Input name"); $("input[name=name]").val(''); $("input[name=name]").focus(); return false; }
 	else if(email=="" || email=="Email"){ alert("Input email"); $("input[name=email]").val(''); $("input[name=email]").focus(); return false; }
 	else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){ alert("Wrong email address"); $("input[name=email]").focus(); return false; }
@@ -72,12 +74,12 @@ $("input[name=btnNhatxet]").click(function(){
 	else if(alias==""){ return false; }
 	else{
 		$("#list_nx").append('<p class="loading">loading...<br /><br /></p>');
-		$.post("ajax.php",{post_nhanxet:"post_nhanxet",name:name,email:email,content:content,alias:alias},function(data){
+		$.post("ajax.php",{post_nhanxet:"post_nhanxet",name:name,email:email,content:content,alias:alias,link_baiviet:link_baiviet},function(data){
 			if(data!='0'){
 				setTimeout(function(){
 					$("#list_nx").prepend(data); 
-					$("input[name=name]").val('Name'); 
-					$("input[name=email]").val('Email'); 
+					$("input[name=name]").val('Name');
+					$("input[name=email]").val('Email');
 					$("textarea[name=content]").val('Input your comment...');
 					$(".loading").hide(); }, 1000);
 				return true;

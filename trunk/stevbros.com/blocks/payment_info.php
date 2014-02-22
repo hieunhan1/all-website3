@@ -43,7 +43,7 @@ if($nl_result){
 			$content = $view_post.'<p style="line-height:22px; margin:10px 0"><strong>This email is sent automatically. Please do not reply. Contact us at <a href="mailto:support@stevbros.com">support@stevbros.com</a> for further information</strong></p>';
 			$tc->update_khachhang($mTransactionID,$nl_errorcode,$_SERVER['REQUEST_URI']);
 			$send = ob_start();
-			include_once('sendmail/sendmail_thanhtoan.php');
+			include_once('sendmail_smtp/sendmail_thanhtoan.php');
 			$send = ob_get_clean();
 		}
 		$view_post = $navigator.$view_post;

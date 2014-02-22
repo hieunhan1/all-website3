@@ -11,7 +11,7 @@ $mail->SMTPSecure = 'ssl';
 $mail->Username = "stevbros.contact@gmail.com"; // your SMTP username or your gmail username 
 $mail->Password = "stevbros123"; // your SMTP password or your gmail password 
 $from = "stevbros.contact@gmail.com"; // Reply to this email 
-$to = "support@stevbros.com"; // Recipients email ID 
+$to = 'hieunhan112@gmail.com';//"support@stevbros.com"; // Recipients email ID 
 $name="Contact Stevbros"; // Recipient's name 
 $mail->From = $from; 
 $mail->FromName = $_POST['name']; // Name to indicate where the email came from when the recepient received 
@@ -28,5 +28,6 @@ $mail->AltBody =''; //Text Body
 //$mail->SMTPDebug = 2; 
 $mail->SetFrom($tmp, 'Test Mail'); 
 $mail->CharSet = "UTF-8"; 
-if($mail->Send()) return true; 
-else return false;
+$mail->Send();
+/*if($mail->Send()) return true; 
+else return false;*/

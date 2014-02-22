@@ -19,4 +19,5 @@ $view_post .= '</div><div id="view_more_nx"><a href="javascript:;">Xem thêm</a>
 <div class="nx_txt_area"><textarea name="content">Input your comment...</textarea></div>
 <input type="hidden" name="alias" value="'.$row_detail['name_rewrite'].'" />
 <div class="nx_btn"><input type="button" name="btnNhatxet" value="Post comment" /></div>
+<input type="hidden" name="link_baiviet" value="http://www.stevbros.com/'.$_SERVER['REQUEST_URI'].'" />
 <div style="clear:both; height:20px"></div></div>';
