@@ -36,7 +36,7 @@ a:hover{color:#ed1c24; text-decoration:underline}
 #home_maps{margin:0 40px}
 #home_maps h2{font-size:200%; color:#1bb16b; margin:10px 0 30px}
 
-#footer{background-color:#2B2D7A; padding:20px 0; color:#FFF}
+#footer{width:100%; background-color:#2B2D7A; padding:20px 0; color:#FFF}
 
 #navigator{width:auto; float:left; height:35px; line-height:35px; color:#666; padding-left:25px; border-left:solid 10px #ED3237}
 #navigator span{font-size:70%; padding:0 8px 0 15px}
