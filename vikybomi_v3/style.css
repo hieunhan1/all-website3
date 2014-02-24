@@ -56,7 +56,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .title_list h2{font-size:105%; font-weight:100; margin-bottom:15px}
 
 #left{width:185px; float:left}
-#left .box_left{clear:both; margin-bottom:30px; padding:10px 5px; border:solid 1px #CCC; background-color:#FF9}
+#left .box_left{clear:both; margin-bottom:30px; padding:10px 5px; border:solid 1px #DD8F00; background-color:#FF6}
 #left .box_left .title_left{line-height:22px; margin-bottom:5px; padding:0 0 6px 20px; background:url(images/icon_title_left.png) left top no-repeat; border-bottom:solid 2px #DA251E}
 #left .box_left .title_left h3{font-size:105%}
 #left .box_left .title_left a{font-weight:bold; color:#DA251E}
