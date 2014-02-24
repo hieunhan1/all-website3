@@ -41,4 +41,7 @@ $(document).ready(function(){
 	}, function(){
 			$(this).find('ul:first').css({visibility: 'hidden'});
 	});
+	
+	var width = parseInt(screen.availWidth);
+	if(width <= 800) $("#header, #slider, #footer").width("960px");
 });
