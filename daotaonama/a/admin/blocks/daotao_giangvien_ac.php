@@ -25,41 +25,11 @@ if($id == 0){ //create
 	//hidden field user_update
 	$form->getProperties(NULL, 'user_update', 2, NULL, $user, 20);
 	$user_login = $form->DisplayProperties();
+	//hidden field date_update
+	$form->getProperties(NULL, 'date_update', 2, NULL, date('Y-m-d H:i:s'), 20);
+	$date_create = $form->DisplayProperties();
 	
 	$type = 2; //loại sql update $type = 2;
-	
-	$qr = $qt->checks_register($id);
-	$row = mysql_fetch_array($qr);
-	if($row['username']=='' && $row['password']==''){
-		$check_create_user = "<tr id='create_user'>
-			<td style='border-bottom:solid 1px #CCC'><input type='text' name='username' maxlength='20' size='10' /></td>
-			<td style='border-bottom:solid 1px #CCC'>&nbsp;</td>
-			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_user' value='Tạo user' /> <input type='hidden' name='id_register' value='{$id}' /></td>
-		</tr>";
-	}else{
-		$qr = $qt->hocvien_khoahoc($id);
-		while($row_ds_kh = mysql_fetch_array($qr)){
-			$str_ds_kh .= '<p style="color:blue">- '.$row_ds_kh['name'].'</p>';
-		}
-		
-		$check_create_user = "<tr>
-			<td style='border-bottom:solid 1px #CCC'>{$row['username']}</td>
-			<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'>{$str_ds_kh}</div>".$qt->danhsach_khoahoc()." &nbsp;</td>
-			<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$id}' /></td>
-		</tr>";
-	}
-	
-	$create_acc = "<table width='700' border='0' cellspacing='0' cellpadding='5'>
-		<tr><td colspan='3'><em><b>Lưu ý:</b><br /> - Mật khẩu có dạng <b>username + 123</b> <br /> - Trạng thái bắt buộc phải được <b>enable</b> <br />
-		VD: Username là <b>daotaonama</b> thì mật khẩu là <b>daotaonama123</b></em></td></tr>
-		<tr style='background:#AEC7FF'>
-			<th align='left' width='100'>Username</th>
-			<th align='left' width='300'>Khóa học</th>
-			<th align='left' width='60'>&nbsp; <input type='hidden' name='id_tracing_express' value='{$id}' /></th>
-		</tr>
-		<tbody id='ajax_user'>".$check_create_user."</tbody>
-		<tr><td colspan='3'>&nbsp;</td></tr>
-	</table>";
 }
 
 if(!empty($_POST)){
@@ -92,7 +62,7 @@ if(!empty($_POST)){
 * other, lang, delete
 */
 // form
-echo $create_acc."<form action='' method='post' name='form1'>
+echo "<form action='' method='post' name='form1'>
 <table width='620' border='0' cellspacing='0' cellpadding='5'>";
 //date create
 echo $date_create;
@@ -100,7 +70,7 @@ echo $date_create;
 echo $user_login;
 
 //Trạng thái status
-$value = array(1 => 'enable', 0 => 'disable');
+$value = array(1 => 'Hiện', 0 => 'Ẩn');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 1; //giá trị mặc định
@@ -128,13 +98,6 @@ if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
 $form->getProperties("Họ tên {$required}", 'name', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
 
-//date_update
-if(@$_POST['date_update']) $value = $_POST['date_update'];
-else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
-
-$form->getProperties('Ngày sinh', 'date_update', 1, 'input_large select_date', $value, 20);
-echo $form->DisplayProperties();
-
 //gioitinh
 $value = array(1 => 'Nam', 0 => 'Nữ');
 if($_POST['gioitinh'] != '') $check = $_POST['gioitinh'];
@@ -145,23 +108,20 @@ echo $form->DisplayProperties();
 
 //email
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
-$form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 150);
+$form->getProperties("Email", 'email', 1, 'input_medium', $value, 150);
 echo $form->DisplayProperties();
 //phone
 if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
-$form->getProperties("Phone", 'phone', 1, 'input_medium', $value, 20);
+$form->getProperties("Điện thoại", 'phone', 1, 'input_medium', $value, 20);
 echo $form->DisplayProperties();
 //diachi
 if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
 $form->getProperties("Địa chỉ", 'diachi', 1, 'input_medium', $value, 150);
 echo $form->DisplayProperties();
 
-//khoahoc
-$qr = mysql_query("SELECT name FROM info WHERE id='{$detail['khoahoc']}'");
-$row_kh = mysql_fetch_array($qr);
-
-if(@$_POST['khoahoc']) $value = $_POST['khoahoc']; else $value = $detail['khoahoc'];
-$form->getProperties("Khóa học", 'khoahoc', 1, 'input_medium'.$disabled, $value, 10, '<p style="color:blue">'.$row_kh['name'].'</p>');
+//bangcap
+if(@$_POST['bangcap']) $value = $_POST['bangcap']; else $value = $detail['bangcap'];
+$form->getProperties('Bằng cấp', 'bangcap', 3, 'textarea', $value, 1);
 echo $form->DisplayProperties();
 
 echo "

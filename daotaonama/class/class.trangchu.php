@@ -132,7 +132,7 @@ class trangchu extends db {
 	/*register*/
 	function insert_register($name,$phone,$email,$khoahoc){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `daotao_hocvien` VALUES ('','{$name}','{$email}','{$phone}','','{$khoahoc}','','','vi','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `daotao_hocvien` VALUES ('','{$name}','1','{$email}','{$phone}','','{$khoahoc}','','','vi','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	

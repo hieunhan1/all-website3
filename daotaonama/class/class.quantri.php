@@ -65,7 +65,7 @@ class quantri extends db {
 	}
 	
 	function danhsach_khoahoc(){
-		$date = date('Y-m-d');
+		$date = date('Y-m-d 00:00:00');
 		$str = '<select name="id_khoahoc" style="width:160px"> <option value="0">-- CHỌN KHÓA HỌC --</option>'; 
 		$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 AND status=1 AND date_update>='{$date}' ORDER BY date_update");
 		while($row = mysql_fetch_array($qr)){

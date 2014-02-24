@@ -57,16 +57,18 @@ if(@$_SESSION["id_admin"]) {
 		
 		if($username != ''){
 			if(!eregi("^[[:alnum:]]+$", $username)){ echo '3'; return false; }
-			
-			$qr = mysql_query("UPDATE daotao_hocvien SET username='{$username}', password='{$password}' WHERE id='{$id_register}' ");
-			if($qr){
+			$qr = mysql_query("SELECT id FROM daotao_hocvien WHERE username='{$username}' ");
+			if(mysql_num_rows($qr) == 0){
+				mysql_query("UPDATE daotao_hocvien SET username='{$username}', password='{$password}' WHERE id='{$id_register}' ");
 				echo "<tr>
 					<td style='border-bottom:solid 1px #CCC'>{$username}</td>
 					<td style='border-bottom:solid 1px #CCC'><div id='ajax_khoahoc'></div>".$qt->danhsach_khoahoc(5)." &nbsp;</td>
 					<td style='border-bottom:solid 1px #CCC'><input type='button' name='create_khoahoc' value='Đăng ký học' /> <input type='hidden' name='id_hocvien' value='{$id_register}' /></td>
 				</tr>";
-			}else echo '2';
-			return true;
+				return true;
+			}else{
+				echo '2'; return false;
+			}
 		}else{
 			echo '0'; return false;
 		}
