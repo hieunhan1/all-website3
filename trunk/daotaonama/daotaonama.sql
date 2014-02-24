@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Feb 17, 2014 at 05:07 PM
+-- Generation Time: Feb 24, 2014 at 05:44 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -205,12 +205,13 @@ INSERT INTO `daotao_cotdiem` VALUES (24, 'Anh văn thiếu niên kỳ 2 - Cột 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `daotao_hocvien`
+-- Table structure for table `daotao_giangvien`
 -- 
 
-CREATE TABLE `daotao_hocvien` (
+CREATE TABLE `daotao_giangvien` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(100) NOT NULL,
+  `gioitinh` tinyint(1) NOT NULL default '1',
   `email` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `diachi` varchar(200) NOT NULL,
@@ -226,15 +227,47 @@ CREATE TABLE `daotao_hocvien` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `daotao_giangvien`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `daotao_hocvien`
+-- 
+
+CREATE TABLE `daotao_hocvien` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `gioitinh` tinyint(1) NOT NULL default '1',
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `diachi` varchar(200) NOT NULL,
+  `khoahoc` int(3) NOT NULL,
+  `username` char(32) NOT NULL,
+  `password` char(32) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `status` tinyint(1) default '0',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  `user_create` varchar(20) default NULL,
+  `user_update` varchar(20) default NULL,
+  `delete` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `daotao_hocvien`
 -- 
 
-INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 12:39:08', 'khachhang', 'admin', 0);
-INSERT INTO `daotao_hocvien` VALUES (2, 'Ngoc Hien', 'ngochien@yahoo.com', '0976307543', '', 3, 'ngochien', '8d067d1b49f9e4d0b2de7bdf0f79ef65', 'vi', 1, '2014-02-17 12:22:49', '2014-02-17 12:22:49', 'khachhang', 'admin', 0);
-INSERT INTO `daotao_hocvien` VALUES (3, 'Ngọc Khang', 'ngockhang@yahoo.com', '01234567890', '', 2, 'ngockhang', 'a2e0e53f9485d77a1ec9636842aacf04', 'vi', 1, '2014-02-17 12:36:08', '2014-02-17 12:36:08', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 0, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'ae550ca71e7f8cd2c69b3103e28b4d46', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 12:39:08', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (2, 'Ngoc Hien', 0, 'ngochien@yahoo.com', '0976307543', '', 3, 'ngochien', '8d067d1b49f9e4d0b2de7bdf0f79ef65', 'vi', 1, '2014-02-17 12:22:49', '2014-02-17 12:22:49', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (3, 'Ngọc Khang', 1, 'ngockhang@yahoo.com', '01234567890', '', 2, 'ngockhang', 'a2e0e53f9485d77a1ec9636842aacf04', 'vi', 1, '2014-02-17 12:36:08', '1989-04-30 17:00:23', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (4, 'Việt Nam', 1, 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 2, 'hieunhan11', '6801c40776af9c2b365faf77b7d7399c', 'vi', 1, '2014-02-24 17:11:08', '2014-02-24 17:11:08', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -293,7 +326,7 @@ CREATE TABLE `daotao_lophoc` (
 -- 
 
 INSERT INTO `daotao_lophoc` VALUES (1, 'Anh ngữ giao tiếp - K1', 3, 'Giảng viên: Trần Văn B', 'vi', 1, '2014-02-17 10:26:32', '2014-02-10 10:59:49', 'admin', 'admin', 0);
-INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-17 10:55:28', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-28 10:03:27', 'admin', 'admin', 0);
 INSERT INTO `daotao_lophoc` VALUES (3, 'TOEIC - K1', 4, '', 'vi', 1, '2014-02-17 10:49:26', '2014-02-17 10:49:26', 'admin', NULL, 0);
 INSERT INTO `daotao_lophoc` VALUES (6, 'IELTS', 5, '', 'vi', 1, '2014-02-17 15:46:55', '2014-02-17 15:46:55', 'admin', NULL, 0);
 
@@ -478,13 +511,13 @@ INSERT INTO `menu_admin` VALUES (2, 'Cấu hình website', 'config', NULL, 2, 1,
 INSERT INTO `menu_admin` VALUES (3, 'Danh mục menu', 'menu', NULL, 3, 1, 0);
 INSERT INTO `menu_admin` VALUES (4, 'Thông tin, bài viết', 'info', NULL, 4, 1, 0);
 INSERT INTO `menu_admin` VALUES (5, 'Thông tin, bài viết bình luận', 'info_comment', NULL, 5, 0, 0);
-INSERT INTO `menu_admin` VALUES (6, 'Sản phẩm', 'products', NULL, 6, 1, 0);
+INSERT INTO `menu_admin` VALUES (6, 'Sản phẩm', 'products', NULL, 6, 0, 0);
 INSERT INTO `menu_admin` VALUES (7, 'Support Online', 'support', '', 7, 0, 0);
 INSERT INTO `menu_admin` VALUES (8, 'Booking online', 'booking', NULL, 8, 0, 0);
-INSERT INTO `menu_admin` VALUES (9, 'Đào tạo - Lớp học', 'daotao_lophoc', NULL, 21, 1, 0);
-INSERT INTO `menu_admin` VALUES (10, 'Đào tạo - Cột điểm', 'daotao_cotdiem', NULL, 22, 0, 0);
+INSERT INTO `menu_admin` VALUES (9, 'Đào tạo - Giảng viên', 'daotao_giangvien', NULL, 19, 1, 0);
+INSERT INTO `menu_admin` VALUES (10, 'Đào tạo - Lớp học', 'daotao_lophoc', NULL, 20, 1, 0);
 INSERT INTO `menu_admin` VALUES (11, 'Đào tạo - Bảng điểm', 'daotao_bangdiem', NULL, 23, 1, 0);
-INSERT INTO `menu_admin` VALUES (12, 'Đào tạo - Học viên', 'daotao_hocvien', NULL, 20, 1, 0);
+INSERT INTO `menu_admin` VALUES (12, 'Đào tạo - Học viên', 'daotao_hocvien', NULL, 21, 1, 0);
 INSERT INTO `menu_admin` VALUES (13, 'Slider & banner', 'slider_banner', NULL, 13, 1, 0);
 INSERT INTO `menu_admin` VALUES (14, 'Liên hệ', 'contact', NULL, 14, 1, 0);
 INSERT INTO `menu_admin` VALUES (15, 'Tài khoản', 'users', NULL, 100, 1, 0);
