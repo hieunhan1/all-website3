@@ -16,7 +16,7 @@ $to = $email; // Recipients email ID
 $mail->From = $from; 
 $mail->FromName = 'Stevbros'; // Name to indicate where the email came from when the recepient received 
 $mail->AddAddress($to,$name);
-$mail->AddAddress("training@stevbros.com","Stevbros");
+$mail->AddAddress("support@stevbros.com","Stevbros");
 $mail->AddReplyTo($from,"Stevbros"); 
 $mail->WordWrap = 50; // set word wrap 
 $mail->IsHTML(true); // send as HTML 
