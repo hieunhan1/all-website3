@@ -6,7 +6,7 @@ require_once('class.phpmailer.php');
 
 $email_gui = 'noreply@stevbros.com';
 $email_gui_pass = 'noreply123';
-$title = 'Thông báo thanh toán thành công - Stevbros';
+$title = 'Stevbros PMI R.E.P: Thank you';
 
 $email_nhan = $row_config['email'];
 
