@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Feb 24, 2014 at 05:44 PM
+-- Generation Time: Feb 25, 2014 at 05:33 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -215,9 +215,7 @@ CREATE TABLE `daotao_giangvien` (
   `email` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `diachi` varchar(200) NOT NULL,
-  `khoahoc` int(3) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `bangcap` text NOT NULL,
   `lang` varchar(2) NOT NULL,
   `status` tinyint(1) default '0',
   `date_create` datetime NOT NULL,
@@ -225,14 +223,15 @@ CREATE TABLE `daotao_giangvien` (
   `user_create` varchar(20) default NULL,
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `daotao_giangvien`
 -- 
 
+INSERT INTO `daotao_giangvien` VALUES (1, 'Tran Van A', 1, 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 'DH KHTN', 'vi', 1, '2014-02-25 10:17:38', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_giangvien` VALUES (2, 'Trần Văn B', 1, 'daiphongco@vikybomi.com.vn', '0988388003', 'Lê Đức Thọ , Gò Vấp', 'DH', 'vi', 1, '2014-02-25 10:59:34', '0000-00-00 00:00:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -264,7 +263,7 @@ CREATE TABLE `daotao_hocvien` (
 -- Dumping data for table `daotao_hocvien`
 -- 
 
-INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 0, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'ae550ca71e7f8cd2c69b3103e28b4d46', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 12:39:08', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 1, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'ae550ca71e7f8cd2c69b3103e28b4d46', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 17:09:45', 'khachhang', 'admin', 0);
 INSERT INTO `daotao_hocvien` VALUES (2, 'Ngoc Hien', 0, 'ngochien@yahoo.com', '0976307543', '', 3, 'ngochien', '8d067d1b49f9e4d0b2de7bdf0f79ef65', 'vi', 1, '2014-02-17 12:22:49', '2014-02-17 12:22:49', 'khachhang', 'admin', 0);
 INSERT INTO `daotao_hocvien` VALUES (3, 'Ngọc Khang', 1, 'ngockhang@yahoo.com', '01234567890', '', 2, 'ngockhang', 'a2e0e53f9485d77a1ec9636842aacf04', 'vi', 1, '2014-02-17 12:36:08', '1989-04-30 17:00:23', 'khachhang', 'admin', 0);
 INSERT INTO `daotao_hocvien` VALUES (4, 'Việt Nam', 1, 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 2, 'hieunhan11', '6801c40776af9c2b365faf77b7d7399c', 'vi', 1, '2014-02-24 17:11:08', '2014-02-24 17:11:08', 'admin', NULL, 0);
@@ -310,6 +309,8 @@ CREATE TABLE `daotao_lophoc` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(100) NOT NULL,
   `id_khoahoc` int(3) NOT NULL,
+  `id_giangvien` int(3) NOT NULL,
+  `capdo` varchar(1) NOT NULL,
   `notes` text,
   `lang` varchar(2) NOT NULL,
   `status` tinyint(1) default '0',
@@ -325,10 +326,10 @@ CREATE TABLE `daotao_lophoc` (
 -- Dumping data for table `daotao_lophoc`
 -- 
 
-INSERT INTO `daotao_lophoc` VALUES (1, 'Anh ngữ giao tiếp - K1', 3, 'Giảng viên: Trần Văn B', 'vi', 1, '2014-02-17 10:26:32', '2014-02-10 10:59:49', 'admin', 'admin', 0);
-INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-28 10:03:27', 'admin', 'admin', 0);
-INSERT INTO `daotao_lophoc` VALUES (3, 'TOEIC - K1', 4, '', 'vi', 1, '2014-02-17 10:49:26', '2014-02-17 10:49:26', 'admin', NULL, 0);
-INSERT INTO `daotao_lophoc` VALUES (6, 'IELTS', 5, '', 'vi', 1, '2014-02-17 15:46:55', '2014-02-17 15:46:55', 'admin', NULL, 0);
+INSERT INTO `daotao_lophoc` VALUES (1, 'Anh ngữ giao tiếp - K1', 3, 1, '1', '', 'vi', 1, '2014-02-17 10:26:32', '2014-02-10 11:02:43', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, 1, '2', '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-28 11:02:47', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (3, 'TOEIC - K1', 4, 2, '', '', 'vi', 1, '2014-02-17 10:49:26', '2014-02-17 10:59:39', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (6, 'IELTS', 5, 2, '', '', 'vi', 1, '2014-02-17 15:46:55', '2014-02-17 10:59:44', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 

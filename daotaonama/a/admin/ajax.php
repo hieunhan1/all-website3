@@ -101,6 +101,25 @@ if(@$_SESSION["id_admin"]) {
 		return true;
 	}
 	
+	if(@$_POST['type_export_excel']){
+		$type = $_POST['type_export_excel'];
+		if($type==1 || $type==3){
+			$str .= '<option value="0">-- Chọn lớp học --</option>';
+			$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 AND status=1 ORDER BY `name` ");
+			while($row = mysql_fetch_array($qr)){
+				$str .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+			}
+		}else if($type==2 || $type==4){
+			$str .= '<option value="0">-- Chọn khóa học --</option>';
+			$qr = mysql_query("SELECT id,name FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,5,%' ");
+			while($row = mysql_fetch_array($qr)){
+				$str .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+			}
+		}
+		
+		echo '<select name="danhsach" style="width:300px; padding:3px 10px">'.$str.'</select>';
+	}
+	
 	/*if(@$_POST['select_cotdiem']){
 		$lophoc = $_POST['select_cotdiem'];
 		$cotdiem = $_POST['cotdiem'];
