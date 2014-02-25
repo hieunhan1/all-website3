@@ -112,6 +112,21 @@ if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
 $form->getProperties("Tên lớp (khóa học)", 'name', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
 
+//capdo
+if(@$_POST['capdo']) $value = $_POST['capdo']; else $value = $detail['capdo'];
+$form->getProperties("Cấp độ", 'capdo', 1, 'input_medium', $value, 1);
+echo $form->DisplayProperties();
+
+//id_giangvien
+$values = array();
+$qr = mysql_query("SELECT id,name FROM daotao_giangvien WHERE `delete`=0 AND status=1 ORDER BY `name`");
+while($row = mysql_fetch_array($qr)){
+	$values[] = array('id'=>$row['id'],'name'=>$row['name']);
+}
+if(@$_POST['id_giangvien']) $check = $_POST['id_giangvien']; else $check = $detail['id_giangvien'];
+$form->getProperties('Giảng viên', 'id_giangvien', 6, 'input_large', $values, $check);
+echo $form->DisplayProperties();
+
 //notes
 if(@$_POST['notes']) $value = $_POST['notes']; else $value = $detail['notes'];
 $form->getProperties('Ghi chú', 'notes', 3, 'textarea', $value, 1);
