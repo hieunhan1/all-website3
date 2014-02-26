@@ -2,7 +2,9 @@
 session_start();
 $path = "public/temp/";
 
-if(!file_exists($path.$_SESSION['upload_image'])){
+$arr_url_hinh = explode(',', $_SESSION['upload_image']);
+$total_url_hinh = count($arr_url_hinh);
+if($total_url_hinh != 4){
 	$valid_formats = array("jpg", "png", "gif", "bmp");
 	if(isset($_POST) and $_SERVER['REQUEST_METHOD']=="POST"){
 		$name = $_FILES['photoimg']['name'];
@@ -15,8 +17,16 @@ if(!file_exists($path.$_SESSION['upload_image'])){
 					$actual_image_name = date('ymd-his').".".$ext;
 					$tmp = $_FILES['photoimg']['tmp_name'];
 					if(move_uploaded_file($tmp, $path.$actual_image_name)){
-						$_SESSION['upload_image'] = $actual_image_name;
-						echo '<img src="'.$path.$actual_image_name.'" class="preview" /> <script> $(document).ready(function(){ $("#imageform").hide(); })</script>';
+						if($_SESSION['upload_image']==1) $_SESSION['upload_image'] = $actual_image_name;
+						else $_SESSION['upload_image'] = $_SESSION['upload_image'].','.$actual_image_name;
+						
+						$arr_url_hinh = explode(',',$_SESSION['upload_image']);
+						
+						if(count($arr_url_hinh)!=4){
+							echo '<img src="'.$path.$actual_image_name.'" class="preview" />';
+						}else{
+							echo '<img src="'.$path.$actual_image_name.'" class="preview" /> <script> $(document).ready(function(){ $("#imageform").hide(); })</script>';
+						}
 					}else echo "failed";
 				}else echo "Image file size max 2 MB";					
 			}else echo "Invalid file format..";	

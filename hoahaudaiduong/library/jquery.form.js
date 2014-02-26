@@ -139,8 +139,9 @@ $.fn.ajaxSubmit = function(options) {
 	if (!options.dataType && options.target) {
 		var oldSuccess = options.success || function(){};
 		callbacks.push(function(data) {
-			var fn = options.replaceTarget ? 'replaceWith' : 'html';
+			var fn = options.replaceTarget ? 'replaceWith' : 'append';
 			$(options.target)[fn](data).each(oldSuccess, arguments);
+			$("#ajax_loading").hide();
 		});
 	}
 	else if (options.success) {

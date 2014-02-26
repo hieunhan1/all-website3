@@ -4,10 +4,23 @@ $view_post = '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$ro
 
 if(!@$_SESSION['upload_image']) $_SESSION['upload_image'] = '1';
 
-if(!file_exists('public/temp/'.$_SESSION['upload_image'])){
-	$image_upload = '<p><form id="imageform" method="post" enctype="multipart/form-data" action="ajax_image.php">Tải ảnh của bạn (ảnh dưới 2MB) &nbsp; &nbsp; <input type="file" name="photoimg" id="photoimg" /></form></p><p id="preview"></p>';
+$arr_url_hinh = explode(',', $_SESSION['upload_image']);
+$total_url_hinh = count($arr_url_hinh);
+if($total_url_hinh != 4){
+	for($i=0; $i<$total_url_hinh; $i++){
+		if($arr_url_hinh[$i] != '1')
+			$image_upload .= '<img src="public/temp/'.$arr_url_hinh[$i].'" class="preview" />';
+	}
+	
+	$image_upload = '<p><form id="imageform" method="post" enctype="multipart/form-data" action="ajax_image.php">
+		<b style="color:#FF0">Tải 4 ảnh của bạn (mỗi ảnh dưới 2MB) &nbsp; &nbsp; </b>
+		<input type="file" name="photoimg" id="photoimg" />
+	</form></p><p id="preview">'.$image_upload.'</p>
+	<img src="images/loader.gif" alt="Uploading...." id="ajax_loading" />';
 }else{
-	$image_upload = '<img src="public/temp/'.$_SESSION['upload_image'].'" class="preview" /> ** Nếu bạn muốn đổi hình đại diện khác vui lòng tắt tất cả trình duyệt, upload lại.';
+	for($i=0; $i<$total_url_hinh; $i++) $image_upload .= '<img src="public/temp/'.$arr_url_hinh[$i].'" class="preview" />';
+	
+	$image_upload .= '<div style="clear:both">** Nếu bạn muốn đổi hình đại diện khác vui lòng tắt tất cả trình duyệt, upload lại.</div>';
 }
 
 echo $navigator.$view_post;
@@ -151,9 +164,9 @@ echo $navigator.$view_post;
 <script type="text/javascript" src="library/jquery.form.js"></script>
 <script type="text/javascript" >
 $(document).ready(function() { 
+	$("#ajax_loading").hide();
 	$('#photoimg').live('change', function(){ 
-		$("#preview").html('');
-		$("#preview").html('<img src="images/loader.gif" alt="Uploading...."/>');
+		$("#ajax_loading").show();
 		$("#imageform").ajaxForm({
 			target: '#preview'
 		}).submit();

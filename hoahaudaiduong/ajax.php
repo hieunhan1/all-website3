@@ -51,9 +51,12 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 	$other3 = trim($_POST['other3']);
 	$other4 = trim($_POST['other4']);
 	
-	$url_hinh = $_SESSION['upload_image'];
+	$arr_url_hinh = explode(',', $_SESSION['upload_image']);
+	$total_url_hinh = count($arr_url_hinh);
 	
-	if($name!='' && $url_hinh!='1' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
+	//$url_hinh = $_SESSION['upload_image'];
+	
+	if($name!='' && $total_url_hinh=='4' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
 		$ngaysinh = explode('/',$ngaysinh); $ngaysinh = "{$ngaysinh[2]}-{$ngaysinh[1]}-{$ngaysinh[0]}";
 		$ngaycap = explode('/',$ngaycap); $ngaycap = "{$ngaycap[2]}-{$ngaycap[1]}-{$ngaycap[0]}";
 		$date = date('Y-m-d H:i:s');
@@ -65,23 +68,32 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 		
 		$path_temp = "public/temp/";
 		
-		/*upload anh*/
-		require_once('class/SimpleImage.php');
-		$image = new SimpleImage();
-		$image->load($path_temp.$url_hinh);
-		
-		$image->resizeToWidth(1000);
-		$image->save(url_thisinh_image.$name_rewrite.'.jpg');
-		
-		$image->resizeToWidth(200);
-		$image->save(url_thisinh_image_thumb.$name_rewrite.'.jpg');
-		
-		unlink($path_temp.$url_hinh);
-		
-		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$name_rewrite}.jpg', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'admin', NULL , '0') ";
+		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$name_rewrite}-1.jpg', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'khachhang', NULL , '0') ";
 		
 		if(mysql_query($qr)){
+			$id = mysql_insert_id();
+			
+			require_once('class/SimpleImage.php');
+			$image = new SimpleImage();
+			
+			for($i=0; $i<=3; $i++){
+				mysql_query("INSERT INTO `thisinh_images` VALUES (NULL,'{$id}','{$name} {$i}','{$name_rewrite}-{$i}.jpg','vi','1','{$date}','{$date}','khachhang','','0') ");
+				/*upload anh*/
+				$image->load($path_temp.$arr_url_hinh[$i]);
+				
+				$image->resizeToWidth(1000);
+				$image->save(url_thisinh_image.$name_rewrite."-{$i}.jpg");
+				
+				$image->resizeToWidth(200);
+				$image->save(url_thisinh_image_thumb.$name_rewrite."-{$i}.jpg");
+				
+				unlink($path_temp.$arr_url_hinh[$i]);
+				
+				$url_hinh_view .= '<img src="http://www.hoahaudaiduongvietnam.com/'.url_thisinh_image_thumb.$name_rewrite.'-'.$i.'.jpg" width="190" />';
+				$url_hinh_name .= '<a href="http://www.hoahaudaiduongvietnam.com/'.url_thisinh_image.$name_rewrite.'-'.$i.'.jpg">Link hình ảnh '.$i.'</a> &nbsp; ';
+			}
 			include_once('sendmail_smtp/sendmail_dangky.php');
+			$_SESSION['upload_image'] = 1;
 			return true;
 		}else{ echo '0'; return false; }
 		
