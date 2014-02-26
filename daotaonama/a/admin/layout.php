@@ -14,18 +14,16 @@ function btnCancel($page){
 function column_general($p) {
 	$m = explode('_ac', $p);
 	if(count($m) == 1){
-		$search = explode('/administrator.php?',$_SERVER['REQUEST_URI']);
+		/*$search = explode('/administrator.php?',$_SERVER['REQUEST_URI']);
 		$search = 'export_excel/export_excel.php?'.$search[1];
 		if($p=='daotao_hocvien' || $p=='daotao_bangdiem')
 			$excel = "<a href='{$search}' target='_blank' onclick=\"return confirm('Bạn có muốn xuất ra excel?')\"><img src='img/excel.jpg' alt='' width='15' /> Xuất ra excel</a>";
-		else $excel='';
-		
+		else $excel='';*/
 		$display =  
 		"<span id='action'>
 			<a href='administrator.php?p={$m[0]}_ac&id=0'><img src='img/add.gif' alt='' /> Thêm mới</a> | 
 			<a href='javascript:;' id='update'>See the change</a>
 			<a href='javascript:;' id='create'>See the not change</a>
-			{$excel}
 		</span>";
 	} else {$display = "<span id='action'><a href='administrator.php?p={$m[0]}'><img src='img/back.png' alt='' /> Trở lại</a></span>";}
 	return $display;

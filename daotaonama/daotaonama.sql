@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Feb 25, 2014 at 05:33 PM
+-- Generation Time: Feb 26, 2014 at 05:10 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -109,7 +109,7 @@ CREATE TABLE `daotao_bangdiem` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- 
 -- Dumping data for table `daotao_bangdiem`
@@ -120,6 +120,8 @@ INSERT INTO `daotao_bangdiem` VALUES (2, 'Anh ngữ giao tiếp - K2 | Ngọc Kh
 INSERT INTO `daotao_bangdiem` VALUES (3, 'Anh ngữ giao tiếp - K2 | Ngoc Hien', 2, 2, 8, 8, 8, 8, 8, 8, 8, 8, 'vi', 1, '2014-02-17 13:38:48', '0000-00-00 00:00:00', 'admin', NULL, 0);
 INSERT INTO `daotao_bangdiem` VALUES (4, 'TOEIC - K1 | Trần Hiếu Nhân', 3, 1, 7.5, 7.5, 8.5, 0, 0, 0, 0, 0, 'vi', 1, '2014-02-17 15:03:46', '0000-00-00 00:00:00', 'admin', NULL, 0);
 INSERT INTO `daotao_bangdiem` VALUES (5, 'IELTS | Trần Hiếu Nhân', 6, 1, 7, 7.5, 7, 8.5, 0, 0, 0, 0, 'vi', 1, '2014-02-17 15:47:27', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (6, 'Anh ngữ giao tiếp - K1 | Việt Nam', 1, 4, 8, 7, 7, 8, 7, 9, 8, 7, 'vi', 1, '2014-02-26 16:57:47', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (7, 'Anh ngữ giao tiếp - K1 | Trần Hiếu Nhân', 1, 1, 9, 9, 9, 9, 9, 9, 9, 9, 'vi', 1, '2014-02-26 16:57:59', '0000-00-00 00:00:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -263,10 +265,10 @@ CREATE TABLE `daotao_hocvien` (
 -- Dumping data for table `daotao_hocvien`
 -- 
 
-INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 1, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'ae550ca71e7f8cd2c69b3103e28b4d46', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 17:09:45', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', 1, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 3, 'hieunhan1', 'ae550ca71e7f8cd2c69b3103e28b4d46', 'vi', 1, '2014-02-17 12:09:54', '2014-02-17 16:46:20', 'khachhang', 'admin', 0);
 INSERT INTO `daotao_hocvien` VALUES (2, 'Ngoc Hien', 0, 'ngochien@yahoo.com', '0976307543', '', 3, 'ngochien', '8d067d1b49f9e4d0b2de7bdf0f79ef65', 'vi', 1, '2014-02-17 12:22:49', '2014-02-17 12:22:49', 'khachhang', 'admin', 0);
 INSERT INTO `daotao_hocvien` VALUES (3, 'Ngọc Khang', 1, 'ngockhang@yahoo.com', '01234567890', '', 2, 'ngockhang', 'a2e0e53f9485d77a1ec9636842aacf04', 'vi', 1, '2014-02-17 12:36:08', '1989-04-30 17:00:23', 'khachhang', 'admin', 0);
-INSERT INTO `daotao_hocvien` VALUES (4, 'Việt Nam', 1, 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 2, 'hieunhan11', '6801c40776af9c2b365faf77b7d7399c', 'vi', 1, '2014-02-24 17:11:08', '2014-02-24 17:11:08', 'admin', NULL, 0);
+INSERT INTO `daotao_hocvien` VALUES (4, 'Việt Nam', 1, 'hieu_nhan1@yahoo.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 2, 'hieunhan11', '6801c40776af9c2b365faf77b7d7399c', 'vi', 1, '2014-02-24 17:11:08', '2014-02-24 16:46:26', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -286,7 +288,7 @@ CREATE TABLE `daotao_khoahoc` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 -- 
 -- Dumping data for table `daotao_khoahoc`
@@ -298,6 +300,8 @@ INSERT INTO `daotao_khoahoc` VALUES (3, 2, 2, 'vi', 1, '2014-02-17 12:35:13', '2
 INSERT INTO `daotao_khoahoc` VALUES (4, 2, 3, 'vi', 1, '2014-02-17 12:36:42', '2014-02-17 12:36:42', 'admin', '', 0);
 INSERT INTO `daotao_khoahoc` VALUES (5, 3, 3, 'vi', 1, '2014-02-17 12:38:44', '2014-02-17 12:38:44', 'admin', '', 0);
 INSERT INTO `daotao_khoahoc` VALUES (6, 6, 1, 'vi', 1, '2014-02-17 15:47:05', '2014-02-17 15:47:05', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (7, 1, 1, 'vi', 1, '2014-02-26 16:46:55', '2014-02-26 16:46:55', 'admin', '', 0);
+INSERT INTO `daotao_khoahoc` VALUES (8, 1, 4, 'vi', 1, '2014-02-26 16:47:03', '2014-02-26 16:47:03', 'admin', '', 0);
 
 -- --------------------------------------------------------
 
@@ -326,8 +330,8 @@ CREATE TABLE `daotao_lophoc` (
 -- Dumping data for table `daotao_lophoc`
 -- 
 
-INSERT INTO `daotao_lophoc` VALUES (1, 'Anh ngữ giao tiếp - K1', 3, 1, '1', '', 'vi', 1, '2014-02-17 10:26:32', '2014-02-10 11:02:43', 'admin', 'admin', 0);
-INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, 1, '2', '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-28 11:02:47', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (1, 'Anh ngữ giao tiếp - K1', 3, 2, '1', '', 'vi', 1, '2014-02-17 10:26:32', '2014-02-27 16:50:24', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (2, 'Anh ngữ giao tiếp - K2', 3, 1, '2', '', 'vi', 1, '2014-02-17 10:49:09', '2014-02-28 16:46:05', 'admin', 'admin', 0);
 INSERT INTO `daotao_lophoc` VALUES (3, 'TOEIC - K1', 4, 2, '', '', 'vi', 1, '2014-02-17 10:49:26', '2014-02-17 10:59:39', 'admin', 'admin', 0);
 INSERT INTO `daotao_lophoc` VALUES (6, 'IELTS', 5, 2, '', '', 'vi', 1, '2014-02-17 15:46:55', '2014-02-17 10:59:44', 'admin', 'admin', 0);
 
