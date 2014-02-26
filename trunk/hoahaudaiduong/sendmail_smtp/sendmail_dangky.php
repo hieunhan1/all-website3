@@ -63,8 +63,8 @@ $body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$na
 <table width="90%" border="0" cellpadding="0" cellspacing="10">
 	<tr>
     	<td width="30" align="right" valign="top" style="font-weight:bold">&nbsp;</td>
-    	<td width="200" valign="top"><img src="http://www.hoahaudaiduongvietnam.com/public/images/thisinh/'.$name_rewrite.'.jpg" width="190" /></td>
-        <td><a href="http://www.hoahaudaiduongvietnam.com/public/images/thisinh/'.$name_rewrite.'.jpg">Link hình ảnh thí sinh</a></td>
+    	<td valign="top" colspan="2"><p>'.$url_hinh_view.'</p>
+		<div style="clear:both; padding-top:10px">'.$url_hinh_name.'</div></td>
     </tr>
 	<tr>
     	<td width="30" align="right" valign="top" style="font-weight:bold">1.</td>
