@@ -1,6 +1,5 @@
 <?php
 session_start();
-ob_start();
 
 if(isset($_GET['language'])) {
 	$_SESSION['language'] = $_GET['language'];
@@ -23,6 +22,9 @@ if(@$user){
 	
 	$p = $_GET["p"];
 	$url = trim($p,'_ac');
+	$id = $_GET["id"];
+	
+	if(!isset($_GET['page_number'])) $page_number = 1; else $page_number = $_GET['page_number'];
 	
 	if($p=='thoat') {
 		session_destroy();
@@ -70,27 +72,28 @@ function SetFileField(fileUrl, data){
 
 </head>
 
-<body bgcolor="#b5d8ef">
+<body style="background:url(images/bg_header.gif) repeat-x #b5d8ef">
 
-<div id="header">
-    <div id="logo">Trang quản trị website</div>
-    <div id="thongtin">
-      User: <strong><?php echo $user; ?></strong>    <a href="administrator.php?p=thongtin">Thông tin tài khoản</a> | <a href="<?php echo "administrator.php?p=thoat"?>">Logout</a>
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">Trang quản trị website</div>
+        <div id="thongtin">
+          User: <strong><?php echo $user; ?></strong>    <a href="administrator.php?p=thongtin">Thông tin tài khoản</a> | <a href="<?php echo "administrator.php?p=thoat"?>">Logout</a>
+        </div>
     </div>
-</div>
 
-<div id="container">
 	<div id="left">
-    	<div class="title">Chức năng quản trị</div>
+    	<div class="title">&nbsp;</div>
         <div id="catalog">
         	<?php
-            $menuadmin = $qt->MenuAdmin();
-			while($row_menuadmin = mysql_fetch_array($menuadmin)){
-				echo "<a href='administrator.php?p={$row_menuadmin[url]}'>{$row_menuadmin[name]} </a>";
+            $qr = $qt->MenuAdmin();
+			while($row = mysql_fetch_array($qr)){
+				if($url != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
+				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#F00">'.$row['name'].'</a>';
 			}
-			mysql_free_result($menuadmin);
 			?>
         </div>
+        <div style="clear:both; height:50px"></div>
     </div>
     
 	<div id="right">
@@ -109,21 +112,27 @@ function SetFileField(fileUrl, data){
 					if($_SESSION['language'] != $row['ma'])
 						$view_lang .= '<a href="'.$url_lang.'&language='.$row['ma'].'">'.$row['name'].'</a> &nbsp; | &nbsp; ';
 					else
-						$view_lang .= '<a href="'.$url_lang.'&language='.$row['ma'].'" style="background-color:#FF0; border:solid 1px #999; padding:2px 5px">'.$row['name'].'</a> &nbsp; | &nbsp; ';
+						$view_lang .= '<a href="'.$url_lang.'&language='.$row['ma'].'" style="background-color:#FF0; color:#333; border:solid 1px #999; padding:2px 5px">'.$row['name'].'</a> &nbsp; | &nbsp; ';
 				}
 			}
 		}
 		
-		if(sizeof($for_view[0])==1){
-			if(!@$_GET['page']) $page = 1; else $page = $_GET['page'];
+		//if(sizeof($for_view[0])==1){
+			if($id=='') $btn_right = btn_add_create($url).btn_see_change();
+			else $btn_right = '';
 			
-			echo '<div class="title">'.$row_navigator['name'].'</div> <div style="clear:both; margin-bottom:10px">'.$view_lang.'</div>';
+			echo '<div class="title" style="width:auto; float:left">'.$row_navigator['name'].'</div>
+			<div class="title" style="width:auto; float:right">'.$btn_right.'</div>
+			
+			<div style="clear:both; height:1px"></div>
+			<div style="clear:both; margin-bottom:10px">'.$view_lang.'</div>';
+			
 			if(@$p){
 				if (file_exists('blocks/'.$p.'.php')) include_once('blocks/'.$p.'.php');
 				else echo "Danh mục này không tồn tại.";
 			}else include_once('blocks/home.php');
-		}else
-			echo '<div class="title">Thông báo</div> <div style="width:500px; clear:both; margin:20px 0; font-weight:bold; color:red">Bạn không có quyền vào thư mục này</div>';
+		//}else
+			//echo '<div class="title">Thông báo</div> <div style="width:500px; clear:both; margin:20px 0; font-weight:bold; color:red">Bạn không có quyền vào thư mục này</div>';
 		?>
     </div>
 </div>
