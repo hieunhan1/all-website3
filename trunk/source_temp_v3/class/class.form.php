@@ -1,96 +1,119 @@
 <?php
 class form {
-	var $_displayname;
-	var $_name;
 	var $_type;
-	var $_cssclass;
-	var $_value;
-	var $_length;
-	var $_orther;
+	var $_values;
+	var $_properties;
+	var $_views;
+	var $_others;
 	
-	var $_cssid;
-	var $_errors;
-	
-	function getProperties($displayname, $name, $type, $cssclass, $value = NULL, $length = NULL, $orther = NULL){
-		$this->_displayname = $displayname;
-		$this->_name = $name;
+	function getProperties($type,$values,$properties,$views,$others=NULL){
 		$this->_type = $type;
-		$this->_cssclass = $cssclass;
-		$this->_value = $value;
-		$this->_length = $length;
-		$this->_orther = $orther;
+		$this->_values = $values;
+		$this->_properties = $properties;
+		$this->_views = $views;
+		$this->_others = $others;
 	}
-	function setProperties(){
-		$this->_cssid = $this->_name;
-	}
+	
 	function DisplayProperties(){
-		$this->setProperties();
+		
 		switch($this->_type){
-			case 1  : $display = $this->input_text();			break;
-			case 2  : $display = $this->input_hidden();			break;
-			case 3  : $display = $this->textarea();				break;
-			case 4  : $display = $this->input_checkbox();		break;
-			case 41 : $display = $this->input_checkbox_group();	break;
-			case 5  : $display = $this->input_radio();			break;
-			case 6  : $display = $this->select();				break;
-			case 7  : $display = $this->input_button();			break;
-			case 8  : $display = $this->input_submit();			break;
-			case 9  : $display = $this->DeQuy();				break;
+			case 1 : $display = $this->input_text();			break;
+			case 2 : $display = $this->input_hidden();			break;
+			case 3 : $display = $this->textarea();				break;
+			case 4 : $display = $this->input_radio();			break;
+			case 5 : $display = $this->select();				break;
+			case 6 : $display = $this->input_button();			break;
+			case 7 : $display = $this->input_checkbox();		break;
+			case 8 : $display = $this->DeQuy();					break;
+			case 9 : $display = $this->input_submit();			break;
 			
 			default : $display = 'Không có form thuộc tính bạn yêu cầu';
 		}
 		return $display;
 	}
-	function input_text(){ // 1
-		$displayname = $this->_displayname;
-		$name = $this->_name;
-		$cssclass = $this->_cssclass;
-		$length = $this->_length;
-		$value = $this->_value;
-		if($this->_orther == NULL) $orther = '';
-		else $orther = $this->_orther;
-		$str .= "<tr><th align='right'>{$displayname}</th><td>";
-		$str .= "<input type='text' name='{$name}' id='{$name}' class='{$cssclass}' maxlength='{$this->_length}' value='{$value}' />";
-		$str .= $orther;
-		$str .= '</td></tr>';
-		
+	
+	/* 1. input_text */
+	function input_text(){
+		$values = $this->_values;
+		$properties = $this->_properties; /*maxlength other*/
+		$views = $this->_views; /*label id&name class style*/
+		$others = $this->_others;
+		$str = '<tr><td class="label">'.$views[0].'</td>
+		<td><input type="text" name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'" '.$views[3].' value="'.$values.'" maxlength="'.$properties[0].'" '.$properties[1].' />'.$others.'</td></tr>';
 		return $str;
 	}
-	function input_hidden(){ // 2
-		$name = $this->_name;
-		$length = $this->_length;
-		$value = $this->_value;
-		if($this->_orther == NULL) $orther = '';
-		else $orther = $this->_orther;
-		$str .= "<input type='hidden' name='{$name}' id='{$name}' maxlength='{$length}' value='{$value}' />";
-		$str .= $orther;
-		
+	/* 2. input_hidden */
+	function input_hidden(){
+		$values = $this->_values;
+		$views = $this->_views; /*name*/
+
+		$str = '<input type="hidden" name="'.$views.'" value="'.$values.'" />';
 		return $str;
 	}
-	function textarea(){ // 3
-		$displayname = $this->_displayname;
-		$name = $this->_name;
-		$cssclass = $this->_cssclass;
-		$colspan = $this->_length;
-		$value = $this->_value;
-		if($this->_orther == NULL) $orther = '';
-		else $orther = $this->_orther;
-		if($colspan <= 1){
-			$str .= "<tr><th align='right' valign='top'>{$displayname}</th><td>";
-			$str .= "<textarea name='{$name}' id='{$name}' class='{$cssclass}'>{$value}</textarea>";
-			$str .= $orther;
-			$str .= '</td></tr>';
-		} else {
-			$str .= "<tr><td colspan='{$colspan}'><textarea name='{$name}' id='{$name}' class='{$cssclass}'>{$value}</textarea>";
-			$str .= '</td></tr>';
-			$str .= $orther;
+	/* 3. textarea */
+	function textarea(){
+		$values = $this->_values;
+		$properties = $this->_properties; /*other*/
+		$views = $this->_views; /*label id&name class style*/
+		$others = $this->_others;
+		$str = '<tr><td class="label">'.$views[0].'</td>
+    	<td><textarea name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'" '.$views[3].' '.$properties.'>'.$values.'</textarea></td></tr>';
+		return $str;
+	}
+	/* 4. input_radio */
+	function input_radio(){
+		$values = $this->_values;
+		$properties = $this->_properties; /*check*/
+		$views = $this->_views; /*label name class*/
+		
+		foreach($values as $value){
+			if($value['id'] != $properties) $check = ''; else $check = 'checked="checked"';
+			$str .= '<input type="radio" name="'.$views[1].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].' &nbsp; ';
 		}
 		
+		$str = '<tr><td class="label">'.$views[0].'</td> <td>'.$str.'</td></tr>';
 		return $str;
 	}
-	function input_checkbox(){ // 4
+	/* 5. select */
+	function select(){
+		$values = $this->_values;
+		$properties = $this->_properties; /*check*/
+		$views = $this->_views; /*label id&name class*/
 		
+		foreach($values as $value){
+			if($value['id'] != $properties) $select = ''; else $select = 'selected="selected"';
+			$str .= '<option value="'.$value['id'].'" '.$select.'>'.$value['name'].'</option>';
+		}
+		
+		$str = '<tr><td class="label">'.$views[0].'</td>
+		<td><select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select></td></tr>';
+		return $str;
 	}
+	/* 6. input_button*/
+	function input_button(){
+		$values = $this->_values;
+		$views = $this->_views; /*label id&name class style*/
+		$str = ' <input type="button" name="'.$views[1].'" id="'.$views[1].'" value="'.$views[0].'" class="'.$views[2].'" onclick="BrowseServer(\'Images:/\',\''.$values.'\')" />';
+		return $str;
+	}
+	/* 7. input_checkbox */
+	function input_checkbox(){
+		$values = $this->_values;
+		$properties = $this->_properties; /*check*/
+		$views = $this->_views; /*label name class*/
+		
+		foreach($values as $value){
+			if (preg_match("/,{$value['id']},/",$properties)) $check = 'checked="checked"'; else  $check = '';
+			$str .= '<input type="checkbox" name="'.$views[1].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].' <br />';
+		}
+		
+		$str = '<tr><td class="label">'.$views[0].'</td> <td>'.$str.'</td></tr>';
+		return $str;
+	}
+	
+	
+	
+	
 	function input_checkbox_group(){ // 41
 		$displayname = $this->_displayname;
 		$name = $this->_name;
@@ -112,52 +135,7 @@ class form {
 		
 		return $str;
 	}
-	function input_radio(){ // 5 
-		$displayname = $this->_displayname;
-		$name = $this->_name;
-		$check = $this->_cssclass;
-		$value = $this->_value;
-		$value_k = array_keys($value);
-		$value_v = array_values($value);
-		if($this->_length == NULL) $orther = '';
-		else $orther = $this->_length;
-		$str .= "<tr><th align='right' valign='top'>{$displayname}</th><td>";
-		for($i = 0; $i < count($value); $i++){
-			if($value_k[$i] == $check) $checked = "checked='checked'"; else $checked = '';
-			$str .= "<input type='radio' name='{$name}' id='{$name}_{$i}' {$checked} value='{$value_k[$i]}' /> {$value_v[$i]}".$orther;
-		}
-		$str .= '</td></tr>';
-		
-		return $str;
-	}
-	function select(){ // 6
-		$displayname = $this->_displayname;
-		$name = $this->_name;
-		$cssclass = $this->_cssclass;
-		$values = $this->_value;
-		$check = $this->_length;
-		$str .= "<tr><th align='right'>{$displayname}</th><td>";
-		$str .= "<select name='{$name}' class='{$cssclass}'><option value='0'>-- Danh mục gốc --</option>";
-		foreach($values as $value){
-			if($check != $value['id']) $str .= "<option value='{$value[id]}'>$value[name]</option>";
-			else $str .= "<option value='{$value[id]}' selected='selected'>$value[name]</option>";;
-		}
-		$str .= '</select></td></tr>';
-		
-		return $str;
-	}
-	function input_button(){ // 7
-		$displayname = $this->_displayname;
-		$name = $this->_name;
-		$cssclass = $this->_cssclass;
-		if($this->_orther == NULL) $orther = '';
-		else $orther = $this->_orther;
-		$str .= "<input type='button' name='{$name}' id='{$name}' value='{$displayname}' class='{$cssclass}' ";
-		$str .= $orther;
-		$str .= '/>';
-		
-		return $str;
-	}
+	
 	function input_submit(){ // 8
 		
 	}

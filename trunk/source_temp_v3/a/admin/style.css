@@ -11,19 +11,22 @@ a:hover {color:#F00; text-decoration:underline}
 #login input{width:235px; line-height:22px; height:22px; border:solid 1px #999; background-color:#C6DDFF}
 #login #btnLogin{width:150px; height:25px; margin:10px 0 0 45px; border:none; background:url(images/btn-dangnhap.gif); cursor:pointer}
 
-#header{width:100%; height:79px; line-height:79px; background:url(images/bg_header.jpg) repeat-x; border-bottom:solid 1px #6593cf; margin-bottom:5px;}
-#header #logo{width:auto; float:left; font-size:26px; font-weight:bold; color:#06F; padding:0 20px}
-#header #thongtin{width:auto; float:right; font-size:16px; padding:0 20px}
+#wrapper{width:1130px; margin:auto}
+
+#header{width:100%; height:80px; line-height:80px; margin-bottom:5px;}
+#header #logo{width:auto; float:left; font-size:26px; font-weight:bold; color:#06F}
+#header #thongtin{width:auto; float:right; font-size:16px}
 
 .title{line-height:25px; font-weight:bold; color:#0037A0; margin-bottom:10px}
 
 #container {width:100%; clear:both}
 
-#left{width:180px; float:left; padding:1px 10px; background:url(images/bg_tieude.jpg) top repeat-x #FFF; margin-right:5px; border:solid 1px #6593CF}
+#left{width:180px; float:left; padding:1px 10px; background:url(images/bg_tieude.jpg) top repeat-x #FFF; border:solid 1px #6593CF}
 
-#catalog a{display:block; padding:8px 0}
+#catalog a{display:block; color:#333; line-height:23px; margin:20px 0; text-align:center; font-weight:bold; background:url(images/bg-cn.jpg) no-repeat}
+#catalog a:hover{color:#F00}
 
-#right {width:770px; float:left; padding:1px 10px; background:url(images/bg_tieude.jpg) top repeat-x #FFF; border:solid 1px #6593CF}
+#right {width:900px; float:right; padding:1px 10px; background:url(images/bg_tieude.jpg) top repeat-x #FFF; border:solid 1px #6593CF}
 
 #action {float:right; margin-right:20px}
 #action a {padding:0 10px}
@@ -32,24 +35,28 @@ a:hover {color:#F00; text-decoration:underline}
 #view_select{}
 #view_select td, #view_select th{height:25px; overflow:hidden; padding:0 5px; border-bottom:solid 1px #88C4FF}
 
-#phantrang{clear:both; margin-top:10px}
+#phantrang{clear:both; margin-top:20px}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#ED1E28}
 
+.label{width:100px; text-align:right; vertical-align:top; font-weight:bold; padding-top:3px}
+.radio{margin-top:5px}
+.checkbox{margin-top:5px}
 
-/*.input_large {width:150px; padding:2px 3px; border:solid 1px #999}
-.input_medium {width:350px; padding:2px 3px; border:solid 1px #999}
-.input_small {width:450px; padding:2px 3px; border:solid 1px #999}
-.textarea {width:350px; padding:2px 3px; height:80px; border:solid 1px #999}
-.button {padding:3px 20px; margin:0px 5px}
-.list_check {width:300px; height:200px; overflow:scroll; background-color:#FFFFCC; padding:3px; border:solid 1px #999}
-.list_check2 {width:100%; height:350px; overflow:scroll; background-color:#FFFFCC; padding:3px; border:solid 1px #999}
+.input_large{width:200px; padding:3px; border:solid 1px #999}
+.input_medium{width:350px; padding:3px; border:solid 1px #999}
+.input_small{width:450px; padding:3px; border:solid 1px #999}
 
-.message {color:#00F; padding:10px 0px; font-weight:bold}
-.error {color:#F00; padding:10px 0px; font-weight:bold}
+.textarea{width:350px !important; height:80px; overflow:auto; padding:2px 3px; border:solid 1px #999}
+.button{padding:3px 20px; margin:0px 5px
 
-#phantrang {margin:20px 0}
-#phantrang a {padding:3px 8px; background:#E6E6E6; border:solid 1px #999999; color:#000; margin:0 2px}
+/*.list_check{width:300px; height:200px; overflow:scroll; background-color:#FFFFCC; padding:3px; border:solid 1px #999}
+.list_check2{width:100%; height:350px; overflow:scroll; background-color:#FFFFCC; padding:3px; border:solid 1px #999}*/
+
+.message{color:#00F; padding:10px 0px; font-weight:bold}
+.error{color:#F00; padding:10px 0px; font-weight:bold}
+
+/*
 
 #search{background-color:#999; padding:3px; margin-bottom:5px}
 #search .txt{width:150px}

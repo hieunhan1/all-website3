@@ -65,19 +65,18 @@
 			$qr = "SELECT {$select} FROM {$table} WHERE {$where} ORDER BY date_create DESC {$limit}";
 			return mysql_query($qr);
 		}
-		function phantrang($link,$page_number,$max_results,$select,$table,$where){
-			$qr = $this->list_item($select,$table,$where);
+		function phantrang($url,$page_number,$max_results,$select,$where,$limit=NULL){
+			$qr = $this->list_item($select,$url,$where);
 			$total = mysql_num_rows($qr);
-			mysql_free_result($qr);
 			
 			$str = '<div style="clear:both"></div>';
 			$total_pages = ceil($total / $max_results);
 			if($total_pages > 1){
 				for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
 					if($page_number == $i){
-						$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
-					} elseif($i>0) {
-						$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
+						$str .= '<a href="?p='.$url.'&page_number='.$i.'" style="font-weight:bold; background-color:#ED1E28">'.$i.'</a>';
+					} elseif($i > 0) {
+						$str .= '<a href="?p='.$url.'&page_number='.$i.'">'.$i.'</a>';
 					}
 				}
 			}

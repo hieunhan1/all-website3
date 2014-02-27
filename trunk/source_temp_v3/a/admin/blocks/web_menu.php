@@ -11,8 +11,10 @@
             <th width="90">Thao tác</th>
         </tr>
         <?php
-        $from = (($page - 1) * $max_results);
-		$str = "SELECT id,name,`order`,status,date_create,date_update,user_create,user_update FROM {$url} WHERE `delete`=0 ORDER BY `order` LIMIT {$from},{$max_results}";
+        $from = (($page_number - 1) * $max_results);
+		$where = "`delete`=0 AND `lang`='{$lang}'";
+		$limit = "LIMIT {$from},{$max_results}";
+		$str = "SELECT id,name,`order`,status,date_create,date_update,user_create,user_update FROM {$url} WHERE {$where} ORDER BY `order` {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -26,19 +28,18 @@
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
 				<td align="center" class="update">'.$row['user_update'].'</td>
 				<td align="center">
-					<a href="javascript:;" class="status status_'.$row['id'].'" name="'.$row['status'].' -|- '.$url.' -|- '.$row['name'].'"><img src="images/anhien_'.$row['status'].'.gif"></a> &nbsp;
-					<a href="administrator.php?p='.$url.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt=""></a> &nbsp;
-					<a href="javascript:;" class="delete_one delete_one_'.$row['id'].'" name="'.$url.' -|- '.$row['name'].'"><img src="images/delete.gif" alt=""></a>
+					<a href="javascript:;"><img src="images/anhien_'.$row['status'].'.gif" class="status status_'.$row['id'].'" status="'.$row['status'].'" url="'.$url.'" name="'.$row['name'].'"></a> &nbsp;
+					<a href="?p='.$url.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt=""></a> &nbsp;
+					<a href="javascript:;" class="delete_one delete_one_'.$row['id'].'" url="'.$url.'" name="'.$row['name'].'"><img src="images/delete.gif" alt=""></a>
 				</td>
 			</tr>';
 		}
 		?>
     </table>
     <?php
-    //$phantrang = $tc->phantrang($url_page,$page,$max_results,'id',$table,$where);
-	//$str_info = '<div id="phantrang">'.$phantrang.'</div>';
-	//echo $str.'111';
+    $phantrang = $qt->phantrang($url,$page_number,$max_results,'id',$where,$limit);
+	echo '<div id="phantrang">'.$phantrang.'</div>';
 	?>
     
-    
+    <div style="clear:both; height:50px"></div>
 </div>

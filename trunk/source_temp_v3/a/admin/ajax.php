@@ -1,39 +1,12 @@
-<?php session_start();
+<?php
+session_start();
 if(@$_SESSION["username_admin"]) {
 	$user = $_SESSION["username_admin"];
 	
 	require_once 'config.php';
-	require_once DIR.'class.quantri.php';
-	$qt = new quantri();
+	$datetime = date('Y-m-d H:i:s');
 	
-	require_once DIR.'class.sql.php';
-	$sql = new sql();
-	
-	if(@$_POST['delete']){
-		$type = 3;
-		$table = $_POST['page'];
-		$id = $_POST['id'];
-		if($user=='admin'){
-			$sql->get_sql($type,$table,$user,$id);
-			$sql->executable();
-		}else{
-			$qr = mysql_query("SELECT user_create FROM {$table} WHERE id='{$id}'");
-			$row = mysql_fetch_array($qr);
-			if($row['user_create']==$user){
-				$sql->get_sql($type,$table,$user,$id);
-				$sql->executable();
-			}
-		}
-	}
-	if(@$_POST['status']){
-		$type = 7;
-		$table = $_POST['page'];
-		$set = $_POST['set'];
-		$id = $_POST['id'];
-		$sql->get_sql($type,$table,$user,$set,$id);
-		echo $sql->executable();
-	}
-	
+	/*tai khoan*/
 	if(isset($_POST['KiemTraUser'])) {
 		$user = $_POST['KiemTraUser'];
 		$total = mysql_result($qt->Users_KiemTraUser($user),0);
@@ -52,54 +25,21 @@ if(@$_SESSION["username_admin"]) {
 		$user = $_POST['ResetPass'];
 		$qt->Users_ResetPass($user);
 	}
-	if(@$_POST['info_id']){
-		$qr = mysql_query("SELECT name FROM info WHERE id=".$_POST['info_id']);
-		$row = mysql_fetch_array($qr);
-		echo $row['name'];
-	}
 	
-	/////////////////
-	if($_POST['tracing_express_detail']=='tracing_express_detail'){
-		$id = trim($_POST['id']);
-		$name = trim($_POST['name']);
-		$notes = trim($_POST['notes']);
-		$date_update = trim($_POST['date_update']);
-		
-		if($id!='0' && $id!='' && $name!='' && $date_update!=''){
-			$id_insert = $qt->insert_tracing_express_detail($id,$name,$notes,$date_update);
-			echo "<tr id='tracing_express_detail_{$id_insert}'>
-				<td style='border-bottom:solid 1px #CCC'>".date('d/m/Y H:i',strtotime($date_update))."</td>
-				<td style='border-bottom:solid 1px #CCC'>{$name}</td>
-				<td style='border-bottom:solid 1px #CCC'>{$notes}</td>
-				<td style='border-bottom:solid 1px #CCC'><p class='delete_tracing_express_detail {$id_insert}'><a href='javascript:;'>Xóa</a></p></td>
-			</tr>";
-			return true;
-		}else{
-			echo 0; return false;
-		}
-		
+	/*status detele*/
+	if(isset($_POST['status'])){
+		$id = $_POST['id'];
+		if($_POST['status'] == '1') $status = 0; else $status = 1;
+		$url = $_POST['url'];
+		$qr = "UPDATE `{$url}` SET `status`='{$status}',user_update='{$user}',date_update='{$datetime}' WHERE `delete`=0 AND `id`='{$id}' LIMIT 1 ";
+		mysql_query($qr);
 	}
-	if($_POST['delete_tracing_express_detail']=='delete_tracing_express_detail'){
-		$id = trim($_POST['id']);
-		if($id!=''){
-			if($user=='admin'){
-				$qr = mysql_query("UPDATE tracing_express_detail SET `delete`=1 WHERE id='{$id}'");
-				return true;
-			}else{
-				$qr = mysql_query("SELECT user_create FROM tracing_express_detail WHERE id='{$id}'");
-				$row = mysql_fetch_array($qr);
-				if($row['user_create']==$user){
-					$qr = mysql_query("UPDATE tracing_express_detail SET `delete`=1 WHERE id='{$id}'");
-					return true;
-				}else{
-					echo '0';
-					return false;
-				}
-			}
-		}else{
-			echo '0';
-			return false;
-		}
+	if(isset($_POST['delete_one'])){
+		$id = $_POST['id'];
+		$url = $_POST['url'];
+		$qr = "UPDATE `{$url}` SET `delete`='1',user_update='{$user}',date_update='{$datetime}' WHERE `delete`=0 AND `id`='{$id}' LIMIT 1 ";
+		mysql_query($qr);
 	}
+		
+	//echo '111111111';	
 }
-?>
