@@ -1,9 +1,14 @@
 <?php
-if($id == 0) $lable_submit = 'Thêm mới'; else $lable_submit = 'Cập nhật';
+if($id == 0){
+	$lable_submit = 'Thêm mới';
+}else{
+	$lable_submit = 'Cập nhật';
+	$qr = mysql_query("SELECT * FROM `{$table}` WHERE `delete`=0 AND `id`='{$id}' ");
+	$row_detail = mysql_fetch_array($qr);
+}
 
 
 if(!empty($_POST)){
-	$table = str_replace('_ac','',$p);
 	$field = array_keys($_POST);
 	$value = array_values($_POST);
 	$sql->get_sql($type,$table,$field,$value,$id);
