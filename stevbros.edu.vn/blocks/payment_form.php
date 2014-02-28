@@ -132,11 +132,11 @@ if(@$_POST['nlpayment']) {
 					 'item_url1' => 'http://nganluong.vn/');
 					 			 
 	 $payment_method = 'VISA';
-	 $bank_code = $_POST['bankcode'];
+	 $bank_code = $_POST['bankCode'];
 	 $order_code = 'stevbros'.rand(1000000000,9999999999);;
 	 $total_amount = $row_detail['price'];
 	 $payment_type ='';
-	 if($_POST['bankcode']=='VISA') $discount_amount = $row_detail['price'] * 0.1; else $discount_amount = 0;
+	 if($bank_code=='VISA') $discount_amount = $row_detail['price'] * 0.2; else $discount_amount = 0;
 	 $order_description='';
 	 $tax_amount=0;
 	 $fee_shipping=0;
@@ -155,13 +155,13 @@ if(@$_POST['nlpayment']) {
 		$expire_date = time() + 60*1*1*1;
 		setcookie('error_thanhtoan',$result[1],$expire_date,"/","");
 		
-		$tc->insert_khachhang($order_code,$buyer_fullname,'U',$buyer_email,$buyer_mobile,$_SERVER['REMOTE_ADDR'],'','00','TTQT',$row_detail['id']);
+		$tc->insert_khachhang($order_code,$buyer_fullname,'U',$buyer_email,$buyer_mobile,$_SERVER['REMOTE_ADDR'],'','00',$bank_code,$row_detail['id']);
 			
-		if($payment_method =="VISA"){
+		if($payment_method == "VISA"){
 		
 			$nl_result= $nlcheckout->VisaCheckout($order_code,$total_amount,$payment_type,$order_description,$tax_amount,
 											  $fee_shipping,$discount_amount,$return_url,$cancel_url,$buyer_fullname,$buyer_email,$buyer_mobile, 
-									          $buyer_address,$array_items);
+									          $buyer_address,$array_items,$bank_code);
 											  
 		}elseif($payment_method =="NL"){
 			$nl_result= $nlcheckout->NLCheckout($order_code,$total_amount,$payment_type,$order_description,$tax_amount,
@@ -193,13 +193,13 @@ if(@$_POST['nlpayment']) {
  }		
 /*end ngan luong*/
 
-$img_nganhang = '<div style="clear:both; color:#0080FF; font-size:115%; font-weight:bold; padding:10px 0">Thanh toán bằng thẻ Quốc tế</div>';
+$img_nganhang_NL = '<div style="clear:both; color:#0080FF; font-size:115%; font-weight:bold; padding:10px 0">Thanh toán bằng thẻ Quốc tế: <span style="clear:both; font-style:italic; font-weight:bold; color:#F00; margin-bottom:10px">Stevbros đang giảm 20% cho khách hàng thanh toán bằng Visa phát hành tại Việt Nam</span></div>';
 $ds_nganhang = $tc->ds_nganhang(1);
 while($row_nh = mysql_fetch_array($ds_nganhang)){
-	$img_nganhang .= '<img src="'.url_danhmuc_image.$row_nh['url_hinh'].'" alt="'.$row_nh['name'].'" class="nganluong img_nganhang img_nganhang_'.$row_nh['manh'].'" />';
+	$img_nganhang_NL .= '<img src="'.url_danhmuc_image.$row_nh['url_hinh'].'" alt="'.$row_nh['name'].'" class="nganluong img_nganhang img_nganhang_'.$row_nh['manh'].'" />';
 }
 
-$img_nganhang .= '<div style="clear:both; color:#0080FF; font-size:115%; font-weight:bold; padding:30px 0 10px 0">Thanh toán bằng thẻ nội địa</div>
+$img_nganhang_123Pay = '<div style="clear:both; color:#0080FF; font-size:115%; font-weight:bold; padding:30px 0 10px 0">Thanh toán bằng thẻ nội địa</div>
 <div><p><em><strong>Các bạn thanh toán bằng thẻ nội địa lưu ý 2 lỗi thường gặp:</strong></em></p>
 <li style="margin:10px 25px">1/ Cần <strong>đăng ký chức năng e-commerce</strong> cho thẻ ATM với ngân hàng phát hành thẻ trước khi giao dịch. Hiện nay, ngân hàng tại Việt Nam tách biệt chức năng e-commerce và chức năng internet banking. Nếu bạn đã đăng ký chức năng internet banking nhưng chưa đăng ký chức năng e-commerce thì vẫn chưa thanh toán qua mạng bằng thẻ ATM được.</li>
 <li style="margin:10px 25px">2/ Khi giao dịch, các bạn vui lòng <strong>nhập số thẻ in trên thẻ</strong> chứ không phải số tài khoản.</li>
@@ -207,7 +207,7 @@ $img_nganhang .= '<div style="clear:both; color:#0080FF; font-size:115%; font-we
 <p style="font-weight:bold">Vui lòng chọn ngân hàng:</p></div>';
 $ds_nganhang = $tc->ds_nganhang(0);
 while($row_nh = mysql_fetch_array($ds_nganhang)){
-	$img_nganhang .= '<img src="'.url_danhmuc_image.$row_nh['url_hinh'].'" alt="'.$row_nh['name'].'" class="123pay img_nganhang img_nganhang_'.$row_nh['manh'].'" />';
+	$img_nganhang_123Pay .= '<img src="'.url_danhmuc_image.$row_nh['url_hinh'].'" alt="'.$row_nh['name'].'" class="123pay img_nganhang img_nganhang_'.$row_nh['manh'].'" />';
 }
 
 $view_post .= $tc->navigator($row_menu_one['url'],$row_menu_one['name'],$row_menu_one['title'],'h3');
@@ -221,10 +221,36 @@ $view_post .= '
 	<div style="width:400px; float:right"><p style="margin-bottom:10px"><em style="text-decoration:underline">Chú ý:</em> Chi tiết đơn hàng của bạn và thông tin truy cập khoá học sẽ được gởi vào địa chỉ email do bạn cung cấp</p><p>Bạn vui lòng cung cấp số điện thoại để Stevbros hỗ trợ bạn nhanh chóng lúc cần thiết.</p>
 	<p style="width:180px; height:28px; line-height:28px; font-weight:bold; background:url(images/chi-tiet-kh.png); text-align:center"><a href="'.$row_detail['link'].'" style="color:#FFF">Chi tiết khóa học</a></p></div>
 	
-	<div style="clear:both; font-weight:bold; font-size:130%; color:#DB1D17; padding:25px 0 5px">Mời bạn chọn thẻ, sau đó điền thông tin bên dưới:</div>
-	<div style="margin-left:25px">'.$img_nganhang.$error_form.'</div>
-	<div style="clear:both; height:30px"></div>
+	<div style="clear:both; font-weight:bold; font-size:130%; color:#008040; padding:25px 0 5px">Mời bạn chọn thẻ, sau đó điền thông tin bên dưới:</div>
+	<div style="margin-left:25px">'.$img_nganhang_NL.$error_form.'</div>
+	'.$error_nganluong.'
+	<div id="nganluong" style="display:none; clear:both">
+		'.$script.'
+		<form  name="NLpayBank" action="" method="post" onsubmit="return KiemTra2()">
+		<table width="100%" border="0" cellpadding="0" cellspacing="20" style="margin-top:10px">
+			<tr>
+				<td width="180" align="right">Họ Tên: </td>
+				<td><input type="text" id="fullname" name="buyer_fullname" class="field-check txtthanhtoan" value=""></td>
+			</tr>
+			<tr>
+				<td align="right">Email: </td>
+				<td><input type="text" id="fullname" name="buyer_email" class="field-check txtthanhtoan" value=""></td>
+			</tr>
+			<tr>
+				<td align="right">Số Điện thoại: </td>
+				<td><input type="text" id="fullname" name="buyer_mobile" class="field-check txtthanhtoan" value=""></td>
+			</tr>	
+			<tr>
+				<td>&nbsp;<input type="hidden" name="bankCode" value="" /></td>
+				<td><input type="submit" name="nlpayment" value="Thanh toán" class="btnthanhtoan" /></td>
+			</tr>					
+		</table>
+		</form>
+	</div>
 	
+	<div style="clear:both; height:10px"></div>
+	
+	<div style="margin-left:25px">'.$img_nganhang_123Pay.$error_form.'</div>
 	<div id="123pay" style="display:none">
 		<form action="" method="post" name="thanhtoan" onsubmit="return KiemTra()">
 	<table width="100%" border="0" cellpadding="0" cellspacing="20" style="margin-top:10px">
@@ -257,30 +283,7 @@ $view_post .= '
 	</table></form>
 	</div>
 	
-	'.$error_nganluong.'
-	<div id="nganluong" style="display:none">
-		'.$script.'
-		<form  name="NLpayBank" action="" method="post" onsubmit="return KiemTra2()">
-		<table width="100%" border="0" cellpadding="0" cellspacing="20" style="margin-top:10px">
-			<tr>
-				<td width="180" align="right">Họ Tên: </td>
-				<td><input type="text" id="fullname" name="buyer_fullname" class="field-check txtthanhtoan" value=""></td>
-			</tr>
-			<tr>
-				<td align="right">Email: </td>
-				<td><input type="text" id="fullname" name="buyer_email" class="field-check txtthanhtoan" value=""></td>
-			</tr>
-			<tr>
-				<td align="right">Số Điện thoại: </td>
-				<td><input type="text" id="fullname" name="buyer_mobile" class="field-check txtthanhtoan" value=""></td>
-			</tr>	
-			<tr>
-				<td>&nbsp;</td>
-				<td><input type="submit" name="nlpayment" value="Thanh toán" class="btnthanhtoan" /></td>
-			</tr>					
-		</table>
-		</form>
-	</div>
+	
 	
 </div></div>
 <hr />
