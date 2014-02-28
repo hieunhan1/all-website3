@@ -54,10 +54,14 @@ class form {
 	function textarea(){
 		$values = $this->_values;
 		$properties = $this->_properties; /*other*/
-		$views = $this->_views; /*label id&name class style*/
+		$views = $this->_views; /*label id&name class colspan*/
 		$others = $this->_others;
-		$str = '<tr><td class="label">'.$views[0].'</td>
-    	<td><textarea name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'" '.$views[3].' '.$properties.'>'.$values.'</textarea></td></tr>';
+		if($views[3]==''){
+			$str = '<tr><td class="label">'.$views[0].'</td>
+    		<td><textarea name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'" '.$properties.'>'.$values.'</textarea>'.$others.'</td></tr>';
+		}else{
+			$str = '<tr><td colspan="2"><textarea name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'" '.$properties.'>'.$values.'</textarea>'.$others.'</td></tr>';
+		}
 		return $str;
 	}
 	/* 4. input_radio */
@@ -93,53 +97,38 @@ class form {
 	function input_button(){
 		$values = $this->_values;
 		$views = $this->_views; /*label id&name class style*/
-		$str = ' <input type="button" name="'.$views[1].'" id="'.$views[1].'" value="'.$views[0].'" class="'.$views[2].'" onclick="BrowseServer(\'Images:/\',\''.$values.'\')" />';
+		if($values != '') $values = 'onclick="BrowseServer(\'Images:/\',\''.$values.'\')"'; else $values = '';
+		$str = ' <input type="button" name="'.$views[1].'" id="'.$views[1].'" value="'.$views[0].'" class="'.$views[2].'" '.$values.' />';
 		return $str;
 	}
 	/* 7. input_checkbox */
 	function input_checkbox(){
 		$values = $this->_values;
 		$properties = $this->_properties; /*check*/
-		$views = $this->_views; /*label name class*/
+		$views = $this->_views; /*label name class width*/
 		
 		foreach($values as $value){
 			if (preg_match("/,{$value['id']},/",$properties)) $check = 'checked="checked"'; else  $check = '';
 			$str .= '<input type="checkbox" name="'.$views[1].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].' <br />';
 		}
 		
-		$str = '<tr><td class="label">'.$views[0].'</td> <td>'.$str.'</td></tr>';
-		return $str;
-	}
-	
-	
-	
-	
-	function input_checkbox_group(){ // 41
-		$displayname = $this->_displayname;
-		$name = $this->_name;
-		$cssclass = $this->_cssclass;
-		$checks = explode(',', $this->_length);
-		$values = $this->_value;
-		if($this->_orther == NULL) $orther = '';
-		else $orther = $this->_orther;
-		$str .= "<tr><th align='right' valign='top'>{$displayname}</th><td><div class='{$cssclass}'>";
-		foreach($values as $value){
-			$str .= "<input type='checkbox' name='{$name}' class='{$orther}' value='{$value[id]}' ";
-			for($i=0; $i < count($checks); $i++){
-				if($checks[$i] == $value['id']) $str .= " checked='checked' ";
-			}
-			$str .= " />&nbsp; {$value[name]} <br />";
+		if($views[3] != ''){
+			if($views[0] != '') $label = "<b>{$views[0]}</b><br />";
+			$str = '<div style="float:left; padding:5px; border:solid 1px #999; background-color:#FFC; overflow:auto; '.$views[3].'">'.$label.$str.'</div>';
 		}
-		//$str .= $orther;
-		$str .= '</div></td></tr>';
 		
 		return $str;
 	}
-	
-	function input_submit(){ // 8
-		
+	/* 9. input_submit */
+	function input_submit(){
+		$properties = $this->_properties; /*other*/
+		$views = $this->_views; /*label id&name class style*/
+		$others = $this->_others;
+		$str = '<tr><td>&nbsp;</td>
+		<td><input type="submit" name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'" '.$views[3].' value="'.$views[0].'" '.$properties.' /> '.$others.'</td></tr>';
+		return $str;
 	}
-	function DeQuy(){ //9
+	function DeQuy(){
 		$displayname = $this->_displayname;
 		$name = $this->_name;
 		$value = $this->_value;

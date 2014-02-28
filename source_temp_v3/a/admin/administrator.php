@@ -21,7 +21,7 @@ if(@$user){
 	include_once('layout.php');
 	
 	$p = $_GET["p"];
-	$url = trim($p,'_ac');
+	$table = trim($p,'_ac');
 	$id = $_GET["id"];
 	
 	if(!isset($_GET['page_number'])) $page_number = 1; else $page_number = $_GET['page_number'];
@@ -32,7 +32,7 @@ if(@$user){
 	}
 }else header("location:index.php");
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -42,14 +42,14 @@ if(@$user){
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="website.js"></script>
 
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="ckeditor/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="../../library/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="../../library/ckeditor/ckfinder/ckfinder.js"></script>
 
 <link type="text/css" href="../../library/datetimepick/jquery.simple-dtpicker.css" rel="stylesheet" />
 <script type="text/javascript" src="../../library/datetimepick/jquery.simple-dtpicker.js"></script>
 <script type="text/javascript">
-	$(function(){
-		$("input[name=date_update], .datetimepick").appendDtpicker({
+	$(document).ready(function(){
+		$(".datetimepick").appendDtpicker({
 			//"dateFormat": "DD/MM/YYYY h:m",
 		});
 	});
@@ -62,7 +62,7 @@ function BrowseServer( startupPath, functionData ){
 	finder.startupPath = startupPath;
 	finder.selectActionFunction = SetFileField;
 	finder.selectActionData = functionData;
-	finder.popup(900, 600);
+	finder.popup(860, 530);
 }
 function SetFileField(fileUrl, data){
 	var sFileName = this.getSelectedFile().name;
@@ -86,10 +86,13 @@ function SetFileField(fileUrl, data){
     	<div class="title">&nbsp;</div>
         <div id="catalog">
         	<?php
+			$i = 0;
             $qr = $qt->MenuAdmin();
 			while($row = mysql_fetch_array($qr)){
-				if($url != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
+				$i++;
+				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
 				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#F00">'.$row['name'].'</a>';
+				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />';
 			}
 			?>
         </div>
@@ -98,14 +101,15 @@ function SetFileField(fileUrl, data){
     
 	<div id="right">
     	<?php
-		$navigator = $qt->Navigator($url);
+		$navigator = $qt->Navigator($table);
 		$row_navigator = mysql_fetch_array($navigator);
 		
 		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
 		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
 		
-		if($p==$url){
-			$url_lang = 'administrator.php?p='.$url;
+		/*languages*/
+		if($p==$table){
+			$url_lang = 'administrator.php?p='.$table;
 			$qr = $qt->language();
 			if(mysql_num_rows($qr) > 1){
 				while($row = mysql_fetch_array($qr)){
@@ -117,9 +121,10 @@ function SetFileField(fileUrl, data){
 			}
 		}
 		
+		/* action */
 		//if(sizeof($for_view[0])==1){
-			if($id=='') $btn_right = btn_add_create($url).btn_see_change();
-			else $btn_right = '';
+			if($id=='') $btn_right = btn_add_create($table).btn_see_change();
+			else $btn_right = btn_go_back($table);
 			
 			echo '<div class="title" style="width:auto; float:left">'.$row_navigator['name'].'</div>
 			<div class="title" style="width:auto; float:right">'.$btn_right.'</div>
