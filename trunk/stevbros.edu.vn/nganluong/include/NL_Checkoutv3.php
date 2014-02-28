@@ -85,7 +85,7 @@
 		 */			
 		function VisaCheckout($order_code,$total_amount,$payment_type,$order_description,$tax_amount,
 									$fee_shipping,$discount_amount,$return_url,$cancel_url,$buyer_fullname,$buyer_email,$buyer_mobile, 
-									$buyer_address,$array_items) 
+									$buyer_address,$array_items,$bank_code) 
 				{
 				 $params = array(
 						'cur_code'			=>	$this->cur_code,
@@ -96,7 +96,8 @@
 						'merchant_password'		=> MD5($this->merchant_password), //MD5(Mật khẩu kết nối giữa merchant và NganLuong.vn)						
 						'order_code'			=> $order_code, //Mã hóa đơn do website bán hàng sinh ra
 						'total_amount'			=> $total_amount, //Tổng số tiền của hóa đơn
-						'payment_method'		=> 'VISA', //Phương thức thanh toán, nhận một trong các giá trị 'VISA','ATM_ONLINE', 'ATM_OFFLINE' hoặc 'NH_OFFLINE'												
+						'payment_method'		=> 'VISA', //Phương thức thanh toán, nhận một trong các giá trị 'VISA','ATM_ONLINE', 'ATM_OFFLINE' hoặc 'NH_OFFLINE'	
+						'bank_code'		=> $bank_code,											
 						'payment_type'			=> $payment_type, //Kiểu giao dịch: 1 - Ngay; 2 - Tạm giữ; Nếu không truyền hoặc bằng rỗng thì lấy theo chính sách của NganLuong.vn
 						'order_description'		=> $order_description, //Mô tả đơn hàng
 						'tax_amount'			=> $tax_amount, //Tổng số tiền thuế
