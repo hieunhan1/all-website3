@@ -1,73 +1,105 @@
 <form name="form_action" method="post" action="">
-<table width="100%" border="0" cellpadding="0" cellspacing="10">
-	<tr>
-    	<td class="label">Trạng thái</td>
-        <td><select name="" id="" class="input_medium">
-        	<option value="1">111111111</option>
-        </select></td>
-    </tr>
+<table width="100%" border="0" cellpadding="0" cellspacing="10" style="margin-bottom:50px">
 	<?php
-	/*input_radio*/
+	//date_update
+	$values = '';
+	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//input_radio
 	$arr = array();
 	$arr[] = array('id'=>'1', 'name'=>'Hiện');
 	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	$properties = 1; /*default check*/
-	$views = array('Trạng thái','status','radio'); /*label name class*/
+	$properties = 1; //default check
+	$views = array('Trạng thái','status','radio'); //label name class
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	/*select*/
+	//select
 	$arr = array();
 	$arr[] = array('id'=>'0', 'name'=>'-- Chọn danh sách --');
 	$arr[] = array('id'=>'1', 'name'=>'Trang 1');
 	$arr[] = array('id'=>'2', 'name'=>'Trang 2');
 	$arr[] = array('id'=>'3', 'name'=>'Trang 3');
-	$properties = '3'; /*default check*/
-	$views = array('Danh sách','danhsach','input_medium'); /*label id&name class*/
+	$properties = '3'; //default check
+	$views = array('Danh sách','danhsach','input_medium'); //label id&name class
     $form->getProperties('5',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	/*input_radio*/
+	//input_radio
 	$arr = array();
 	$arr[] = array('id'=>'1', 'name'=>'Top');
 	$arr[] = array('id'=>'2', 'name'=>'Left');
 	$arr[] = array('id'=>'3', 'name'=>'Right');
-	$properties = ',1,2,'; /*default check*/
-	$views = array('Check box','name_checkbox','checkbox'); /*label name class*/
+	$properties = ',1,2,'; //default check
+	$views = array('Check box','name_checkbox','checkbox'); //label name class
     $form->getProperties('7',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	/*input_text*/
-	$values = 'tran nhan';
-	$properties = array('12'); /*maxlength OTHER (disabled="disabled" - readonly="readonly") */
-	$views = array('Mô tả','name','input_medium'); /*label id&name class style*/
+	//name
+	$values = '';
+	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Mô tả','name','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	/*input_hidden*/
-	$values = 'tran nhan id';
-	$views = 'id'; /*name*/
-    $form->getProperties('2',$values,'',$views);
+	//name_rewrite
+	$values = '';
+	$properties = array('200'); //maxlength OTHER (disabled, readonly)
+	$views = array('Mô tả viết lại','name_rewrite','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	/*input_hinhanh*/
+	//metaKeyword
+	$values = '';
+	$properties = array('200'); //maxlength OTHER (disabled, readonly)
+	$views = array('Keyword','metaKeyword','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//url_hinh
 	$values = 'url_hinh';
-	$views = array('Chọn file ảnh','btnBrowse','button'); /*label id&name class*/
+	$views = array('Chọn file ảnh','btnBrowse','button'); //label id&name class
 	$form->getProperties('6',$values,'',$views);
 	$other = $form->DisplayProperties();
 	
 	$values = 'hinhanh.jpg';
-	$properties = array('150'); /*maxlength OTHER (disabled="disabled" - readonly="readonly") */
-	$views = array('Ảnh đại diện','url_hinh','input_large'); /*label id&name class*/
+	$properties = array('150'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Ảnh đại diện','url_hinh','input_large'); //label id&name class
     $form->getProperties('1',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
-	/*textarea*/
+	//metaDescription
 	$values = 'tran nhan text area';
-	$properties = ''; /*disabled="disabled" - readonly="readonly"*/
-	$views = array('Noi dung','content','textarea'); /*label id&name class*/
-    $form->getProperties('3',$values,$properties,$views);
+	$properties = ''; //disabled, readonly
+	$views = array('Tóm tắt','metaDescription','textarea'); //label id&name class colspan
+	$other = ckeditor_custom('metaDescription');
+    $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
+	
+	//content
+	$values = 'tran nhan text area';
+	$properties = ''; //disabled, readonly
+	$views = array('Nội dung','content','textarea','colspan=2'); //label id&name class colspan
+	$other = ckeditor_full('content');
+    $form->getProperties('3',$values,$properties,$views,$other);
+	echo $form->DisplayProperties();
+	
+	//id
+	$values = 'tran nhan id';
+	$views = 'id'; //name
+    $form->getProperties('2',$values,'',$views);
+	echo $form->DisplayProperties();
+	
+	//name
+	$values = '';
+	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Mô tả','name','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	?>
 </table>
 </form>
