@@ -47,7 +47,7 @@ class form {
 		$values = $this->_values;
 		$views = $this->_views; /*name*/
 
-		$str = '<input type="hidden" name="'.$views.'" value="'.$values.'" />';
+		$str = '<input type="hidden" name="'.$views.'" id="'.$views.'" value="'.$values.'" />';
 		return $str;
 	}
 	/* 3. textarea */
