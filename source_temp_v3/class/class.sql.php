@@ -10,11 +10,6 @@ class sql {
 		0  => 'Không có chức năng bạn tìm.',
 		1  => 'Thêm mới không được.',
 		2  => 'Cập nhật không được',
-		3  => 'Xóa không được',
-		4  => 'Phục hồi không được.',
-		5  => 'Xóa hẵn không được',
-		6  => 'Không truy vấn được',
-		7  => 'Không đổi được trạng thái',
 		89 => '1' //thực hiện thành công
 	);
 	
@@ -27,20 +22,13 @@ class sql {
 	}
 	function executable(){
 		switch($this->_var1){
-			case 1 : $action = $this->create();		break;
-			case 2 : $action = $this->update();		break;
-			case 3 : $action = $this->select(); 	break;
+			case 1 : $qr = $this->create(); if(mysql_query($qr)) $message = $this->_list_error[89]; else $message = $this->_list_error[1]; break;
+			case 2 : $qr = $this->update();	if(mysql_query($qr)) $message = $this->_list_error[89]; else $message = $this->_list_error[2]; break;
 			
-			default : $this->_error = $this->_list_error[0];
+			default : $message = $this->_list_error[0];
 		}
-		return $action;
+		return $message;
 	}
-	
-	function KiemTra(){
-		if(count($this->_error) == 0) return $this->_error = $this->_list_error[89];
-		else return $this->_error;
-	}
-	
 	/* 1. create */
 	function create(){
 		$table  = $this->_var2;
@@ -58,7 +46,7 @@ class sql {
 		$str_value = rtrim($str_value,',');
 		
 		$str = "INSERT INTO  `{$table}` ( {$str_field} ) VALUES ( {$str_value} )";
-		return mysql_query($str);
+		return $str;
 	}
 	/* 2. update */
 	function update(){
@@ -73,26 +61,6 @@ class sql {
 		$str = rtrim($str,',');
 		
 		$str = "UPDATE `{$table}` SET {$str} WHERE `delete`=0 AND `id`='{$id}' ";
-		return mysql_query($str);
-	}
-	/* 3. select */
-	function select(){
-		$table = $this->_var2;
-		$field = $this->_var3; //array
-		$order = $this->_var4;
-		$limit = $this->_var5;//array chỉ 2 phần tử
-		if(count($limit) > 0){
-			$form = $limit[0];
-			$max_results = $limit[1];
-			$limit = " LIMIT {$form}, {$max_results}";
-		} else $limit = '';
-		$qr = "SELECT ";
-		for($i = 0; $i < count($field); $i++){
-			if($i != (count($field)-1)) $dau = ",";
-			else $dau = '';
-			$qr .= $field[$i].$dau;
-		}
-		$qr .= " FROM `{$table}` WHERE `delete`=0 AND lang='".$_SESSION['language']."' {$order} {$limit}";
-		return mysql_query($qr);
+		return $str;
 	}
 }
