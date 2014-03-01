@@ -38,7 +38,8 @@ $mail->IsHTML(true);
 $mail->SetFrom($email_gui,'No-reply');
 
 //Thiết lập thông tin người nhận
-$mail->AddAddress($email_nhan,'Admin');
+$mail->AddAddress($email,$name);
+$mail->AddCC($email_nhan,'Admin');
 //$mail->AddCC('ceo@netspace.edu.vn','CEO');
 //$mail->AddCC('temp@dayamthuc.vn','Temp');
 
