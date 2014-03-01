@@ -18,103 +18,65 @@ class sql {
 		89 => '1' //thực hiện thành công
 	);
 	
-	function get_sql($type, $table, $field = NULL, $value = NULL, $id = NULL){
+	function get_sql($type, $table, $fields, $values, $id=NULL){
 		$this->_var1 = $type;
 		$this->_var2 = $table;
-		$this->_var3 = $field;
-		$this->_var4 = $value;
+		$this->_var3 = $fields;
+		$this->_var4 = $values;
 		$this->_var5 = $id;
 	}
 	function executable(){
 		switch($this->_var1){
-			case 1 : $action = $this->create();				break;
-			case 2 : $action = $this->update();				break;
-			case 3 : $action = $this->delete_backup();		break;
-			case 4 : $action = $this->delete_restore(); 	break;
-			case 5 : $action = $this->delete(); 			break;
-			case 6 : return $action = $this->select(); 		break;
-			case 7 : $action = $this->status(); 			break;
-			case 8 : return $action = $this->select2(); 	break;
+			case 1 : $action = $this->create();		break;
+			case 2 : $action = $this->update();		break;
+			case 3 : $action = $this->select(); 	break;
 			
 			default : $this->_error = $this->_list_error[0];
 		}
-		return $this->KiemTra();
+		return $action;
 	}
+	
 	function KiemTra(){
 		if(count($this->_error) == 0) return $this->_error = $this->_list_error[89];
 		else return $this->_error;
 	}
-	function create() { //1
-		$table = $this->_var2;
+	
+	/* 1. create */
+	function create(){
+		$table  = $this->_var2;
 		$field = $this->_var3;
 		$value = $this->_var4;
-		$qr = "INSERT INTO `{$table}` (";
-		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)) $dau = '`,';
-			else $dau = '`';
-			if($field[$i] != 'user_update'){
-				$qr .= "`{$field[$i]}{$dau}";
-			}
+		
+		for($i=0; $i<count($field)-1; $i++){
+			$str_field .= "`{$field[$i]}`,";
 		}
-		$qr .= ') VALUES (';
+		$str_field = rtrim($str_field,',');
+		
 		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)){
-				$dau = "'";
-				$cuoi = "',";
-			}
-			else $cuoi = "')";
-			if($field[$i] != 'date_create' and $field[$i] != 'date_update'){
-				if($field[$i] != 'user_update') $qr .= "{$dau}{$value[$i]}{$cuoi}";
-			} else if($field[$i] == 'date_create'){
-				$qr .= $dau.date('Y-m-d H:i:s').$cuoi;
-			} else {
-				$datetime = $value[$i];
-				$qr .= "{$dau}{$datetime}{$cuoi}";
-			}
+			$str_value .= "'{$value[$i]}',";
 		}
-		mysql_query($qr) or ($this->_error = $this->_list_error[1]);
+		$str_value = rtrim($str_value,',');
+		
+		$str = "INSERT INTO  `{$table}` ( {$str_field} ) VALUES ( {$str_value} )";
+		return mysql_query($str);
 	}
-	function update() { //2
+	/* 2. update */
+	function update(){
 		$table = $this->_var2;
 		$field = $this->_var3;
 		$value = $this->_var4;
 		$id = $this->_var5;
-		$qr = "UPDATE `{$table}` SET ";
-		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)) $dau = "',";
-			else $dau = "' WHERE `id`='{$id}'";
-			if($field[$i] != 'date_create' and $field[$i] != 'user_create'){
-				if($field[$i] != 'date_update'){
-					$qr .= "`{$field[$i]}`='{$value[$i]}{$dau}";
-				} else {
-					$datetime = $value[$i];
-					$qr .= "`{$field[$i]}`='{$datetime}{$dau}";
-				}
-			}
+		
+		for($i=0; $i<count($field)-1; $i++){
+			$str .= "`{$field[$i]}`='{$value[$i]}',";
 		}
-		mysql_query($qr) or ($this->_error = $this->_list_error[2]);
+		$str = rtrim($str,',');
+		
+		$str = "UPDATE `{$table}` SET {$str} WHERE `delete`=0 AND `id`='{$id}' ";
+		return mysql_query($str);
 	}
-	function delete_backup() { //3
-		$table = $this->_var2;
-		$user = $this->_var3;
-		$id = $this->_var4;
-		$qr = "UPDATE `{$table}` SET `delete`=1, `user_update`='{$user}' WHERE `id`='{$id}'";
-		mysql_query($qr) or ($this->_error = $this->_list_error[3]);
-	}
-	function delete_restore() { //4
-		$table = $this->_var2;
-		$user = $this->_var3;
-		$id = $this->_var4;
-		$qr = "UPDATE `{$table}` SET `delete`=0, `user_update`='{$user}' WHERE `id`='{$id}'";
-		mysql_query($qr) or ($this->_error = $this->_list_error[4]);
-	}
-	function delete() { //5
-		$table = $this->_var2;
-		$id = $this->_var5;
-		$qr = "DELETE FROM `{$table}` WHERE `id`='{$id}'";
-		mysql_query($qr) or ($this->_error = $this->_list_error[5]);
-	}
-	function select() { //6
+	/* 3. select */
+	function select(){
 		$table = $this->_var2;
 		$field = $this->_var3; //array
 		$order = $this->_var4;
@@ -131,33 +93,6 @@ class sql {
 			$qr .= $field[$i].$dau;
 		}
 		$qr .= " FROM `{$table}` WHERE `delete`=0 AND lang='".$_SESSION['language']."' {$order} {$limit}";
-		return mysql_query($qr);
-	}
-	function status() { //7
-		$table = $this->_var2;
-		$user = $this->_var3;
-		$set = $this->_var4;
-		$id = $this->_var5;
-		$qr = "UPDATE `{$table}` SET `status`='{$set}', `user_update`='{$user}' WHERE `id`='{$id}'";
-		mysql_query($qr) or ($this->_error = $this->_list_error[7]);
-	}
-	function select2() { //8
-		$table = $this->_var2;
-		$field = $this->_var3; //array
-		$order = $this->_var4;
-		$limit = $this->_var5;//array chỉ 2 phần tử
-		if(count($limit) > 0){
-			$form = $limit[0];
-			$max_results = $limit[1];
-			$limit = " LIMIT {$form}, {$max_results}";
-		} else $limit = '';
-		$qr = "SELECT ";
-		for($i = 0; $i < count($field); $i++){
-			if($i != (count($field)-1)) $dau = ",";
-			else $dau = '';
-			$qr .= $field[$i].$dau;
-		}
-		$qr .= " FROM `{$table}` WHERE `delete`=0 {$order} {$limit}";
 		return mysql_query($qr);
 	}
 }

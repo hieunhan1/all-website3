@@ -84,6 +84,18 @@ $(document).ready(function(){
 		$(this).val(name + ',' + change_alias(name,' '));
 	});
 	
+	/*checks box*/
+	function checks_box_item(list_check, list_view){
+		$('.'+list_check).change(function(){
+			var str=",";
+			$('.'+list_check+':checked').each(function(i,val){
+				str += $(this).val() + ',';
+			});
+			$('#'+list_view).attr('value',str);
+		});
+	};
+	checks_box_item('checkbox', 'menu_id'); //class, id
+	
 	/*btn_action*/
 	$(".btn_action").click(function(){
 		setTimeout(function(){

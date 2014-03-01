@@ -8,11 +8,16 @@
 <body>
 <?php
 
-if (preg_match("/PHP/", "PHP is the web scripting language of choice.")) {
+/*if (preg_match("/PHP/", "PHP is the web scripting language of choice.")) {
     echo "A match was found.";
 } else {
     echo "A match was not found.";
-}
+}*/
+
+$str = "',1,',";
+
+echo rtrim($str,',');
+
 
 ?>
 
