@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Feb 21, 2014 at 06:20 PM
+-- Generation Time: Mar 01, 2014 at 02:04 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -104,12 +104,13 @@ CREATE TABLE `web_info` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
 -- Dumping data for table `web_info`
 -- 
 
+INSERT INTO `web_info` VALUES (1, ',1,2,', 'Mô tả', 'mo-ta', 'ca-phe-cafe-collagen-2-zero-duoc-ban-khap-hoa-ky-va-canada.jpg', 'Tóm tắt', 'Mô tả,mo ta', '<p>nội dung</p>\r\n', 0, 'vi', 1, '2014-03-01 12:29:36', '2014-03-10 12:29:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -212,15 +213,15 @@ CREATE TABLE `web_menu` (
 -- Dumping data for table `web_menu`
 -- 
 
-INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Trang chủ "abc" <b>abc1</b> ', 'Trang chủ "abc" <b>abc2</b>', 'Trang chủ "abc" <b>abc3</b>', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2013-10-01 17:58:07', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2013-10-09 16:26:35', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2013-10-09 16:26:49', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2013-10-09 16:27:02', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2013-10-09 15:39:02', 'admin', '', 0);
-INSERT INTO `web_menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:14:52', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Trang chủ "abc" <b>abc1</b> ', 'Trang chủ "abc" <b>abc2</b>', 'Trang chủ "abc" <b>abc3</b>', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2014-02-28 14:14:37', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2014-02-27 13:21:10', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2014-02-27 13:21:11', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2014-02-28 14:14:40', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2014-02-28 14:14:40', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:14:52', 'admin', '', 0);
 INSERT INTO `web_menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 15:39:46', 'admin', '', 0);
 INSERT INTO `web_menu` VALUES (8, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 15:40:21', 'admin', '', 0);
-INSERT INTO `web_menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2013-10-09 15:48:07', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2014-02-27 13:20:50', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -277,10 +278,10 @@ CREATE TABLE `web_menu_position` (
 
 INSERT INTO `web_menu_position` VALUES (1, 'Main', 1);
 INSERT INTO `web_menu_position` VALUES (2, 'Top', 0);
-INSERT INTO `web_menu_position` VALUES (3, 'Bottom', 0);
+INSERT INTO `web_menu_position` VALUES (3, 'Bottom', 1);
 INSERT INTO `web_menu_position` VALUES (4, 'Left', 0);
-INSERT INTO `web_menu_position` VALUES (5, 'Right', 0);
-INSERT INTO `web_menu_position` VALUES (6, 'Social', 0);
+INSERT INTO `web_menu_position` VALUES (5, 'Right', 1);
+INSERT INTO `web_menu_position` VALUES (6, 'Social', 1);
 INSERT INTO `web_menu_position` VALUES (7, 'Item 7', 0);
 INSERT INTO `web_menu_position` VALUES (8, 'Không', 1);
 
@@ -307,8 +308,8 @@ INSERT INTO `web_menu_type` VALUES (3, 'Loại temp 0', 0);
 INSERT INTO `web_menu_type` VALUES (4, 'Loại temp 1', 0);
 INSERT INTO `web_menu_type` VALUES (5, 'Loại temp 2', 0);
 INSERT INTO `web_menu_type` VALUES (6, 'Loại temp 3', 0);
-INSERT INTO `web_menu_type` VALUES (7, 'Loại temp 4', 0);
-INSERT INTO `web_menu_type` VALUES (8, 'Loại temp 5', 0);
+INSERT INTO `web_menu_type` VALUES (7, 'Hình ảnh', 1);
+INSERT INTO `web_menu_type` VALUES (8, 'Video', 1);
 INSERT INTO `web_menu_type` VALUES (9, 'Liên hệ', 1);
 INSERT INTO `web_menu_type` VALUES (10, 'Không', 1);
 
@@ -524,7 +525,7 @@ CREATE TABLE `web_users` (
 -- Dumping data for table `web_users`
 -- 
 
-INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',3,15,', '', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',3,15,', '', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:22', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 

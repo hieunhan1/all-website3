@@ -13,7 +13,7 @@
 	$arr[] = array('id'=>'1', 'name'=>'Hiện');
 	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
 	$properties = 1; //default check
-	$views = array('Trạng thái','status','radio'); //label name class
+	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	

@@ -68,11 +68,11 @@ class form {
 	function input_radio(){
 		$values = $this->_values;
 		$properties = $this->_properties; /*check*/
-		$views = $this->_views; /*label name class*/
+		$views = $this->_views; /*label name class other*/
 		
 		foreach($values as $value){
 			if($value['id'] != $properties) $check = ''; else $check = 'checked="checked"';
-			$str .= '<input type="radio" name="'.$views[1].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].' &nbsp; ';
+			$str .= '<input type="radio" name="'.$views[1].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].$views[3];
 		}
 		
 		$str = '<tr><td class="label">'.$views[0].'</td> <td>'.$str.'</td></tr>';
