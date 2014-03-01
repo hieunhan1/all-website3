@@ -144,6 +144,7 @@ $seo = $tc->seo($domain,$title,$description,$keywords,$image,$url);
         <div style="width:630px; float:left">
 			<div style="background:url(images/bg-menu-foo.png) no-repeat; width:628px; height:60px; line-height:35px; margin-top:5px; float:left; text-align:center"><?php echo $row_config['footer'];?></div>
             <div style="clear:both; text-align:center">
+            	<a href="https://plus.google.com/107858421761902347937?rel=author"><h3 style="font-size:100%">Trường dạy nấu ăn NetSpace</h3></a>
 			<?php
             if($_COOKIE['tinhthanh']=='Đà Nẵng'){
 				echo '<p><strong>Địa chỉ: Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng</strong> <br />Điện thoại: 05113.634.879<br />Hotline: 0905 295 402 - 0932 743 799</p>';
