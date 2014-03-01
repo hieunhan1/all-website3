@@ -65,7 +65,7 @@ if(count($url_token)==1){
 			$content = $view_post.'<p style="line-height:22px; margin:10px 0"><strong>Đây là email tự động. Xin đừng trả lời. Nếu cần liên hệ xin email về <a href="mailto:support@stevbros.com">support@stevbros.com</a></strong></p>';
 			$tc->update_khachhang($mTransactionID,$result[2],1);
 			$send = ob_start();
-			include_once('sendmail/sendmail_thanhtoan.php');
+			include_once('sendmail_smtp/sendmail_thanhtoan.php');
 			$send = ob_get_clean();
 		}
 		$view_post = $navigator.$view_post;
@@ -134,7 +134,7 @@ if(count($url_token)==1){
 				$content = $view_post.'<p style="line-height:22px; margin:10px 0"><strong>Đây là email tự động. Xin đừng trả lời. Nếu cần liên hệ xin email về <a href="mailto:support@stevbros.com">support@stevbros.com</a></strong></p>';
 				$tc->update_khachhang($mTransactionID,$nl_errorcode,1);
 				$send = ob_start();
-				include_once('sendmail/sendmail_thanhtoan.php');
+				include_once('sendmail_smtp/sendmail_thanhtoan.php');
 				$send = ob_get_clean();
 			}
 			$view_post = $navigator.$view_post;

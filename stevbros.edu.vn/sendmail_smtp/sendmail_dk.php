@@ -6,7 +6,7 @@ require_once('class.phpmailer.php');
 
 $email_gui = 'noreply@stevbros.edu.vn';
 $email_gui_pass = 'noreply123';
-$title = 'Liên hệ đến Stevbros';
+$title = 'Đăng ký khóa học Stevbros';
 
 $email_nhan = $row_config['email'];
 
@@ -57,7 +57,7 @@ $mail->Subject = $title;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br /><br />'.$content.'<br /><br />Email: '.$email;
+$body = '<h3>Chào ban quản trị website.</h3></br>Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;đã đăng ký khóa học: '.'<br /><p style="margin-left:35px; font-weight:bold">'.$khoahoc.'</p><br /><p>Thông tin học viên: <a href="http://stevbros.edu.vn/thongtin_hocvien.php?id='.$id.'">Click vào đây để xem.</a></p>';
 
 $mail->Body = $body;
 
