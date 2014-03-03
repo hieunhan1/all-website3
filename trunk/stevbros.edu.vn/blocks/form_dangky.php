@@ -61,7 +61,7 @@ $(document).ready(function(e) {
 		}else{
 			$("#dangky_khoahoc").html('<p style="font-weight:bold; padding:30px; text-align:center">Đang xử lý...</p>');
 			$.post("ajax.php",{dangky:"dangky",name:name,email:email,phone:phone,diachi:diachi,message:message,khoahoc:khoahoc},function(data){
-				if(data!='0') setTimeout(function(){ $("#dangky_khoahoc").html('<p style="color:blue; font-weight:bold; padding:30px 0 60px; text-align:center">Đăng ký thành công. Chúng tôi sẽ liên hệ cho bạn sớm nhất.</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#dangky_khoahoc").html('<p style="color:blue; font-weight:bold; padding:30px 0 60px; text-align:center">Đăng ký thành công. Chúng tôi sẽ liên hệ bạn sớm nhất.</p>'); },200);
 				else $("#dangky_khoahoc").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px; text-align:center">Lỗi. Vui lòng ấn F5 thử lại.</p>');
 			});
 			return true;
