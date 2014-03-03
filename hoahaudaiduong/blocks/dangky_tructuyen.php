@@ -1,8 +1,10 @@
 <?php
 $navigator = '<div id="navigator"><a href="http://'.$domain.'/?lang='.$lang.'"><img src="images/home.png" alt="" /></a>'.$tc->navigator($idMenu).'</div>';
 $view_post = '<div class="viewpost">
-	<h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2>
-	<p><a href="gioi-thieu/" target="_blank" style="color:#FF0; font-style:italic; padding-left:30px">Xem chi tiết thể lệ cuộc thi tại đây</a></p>
+	<h1>'.$row_menu_one['title'].'</h1>
+	<p><a href="http://www.hoahaudaiduongvietnam.com/public/Ban_DK_Du_Thi_Hoa_Hau_Dai_Duong_VN_2014.docx" style="color:#FF0">Tải form đăng ký Hoa Hậu Đại Dương Việt Nam năm 2014 tại đây</a></p>
+	<h2>'.$row_menu_one['metaDescription'].'</h2>
+	<p><a href="gioi-thieu/" target="_blank" style="color:#FF0; font-style:italic; padding-left:35px">Xem chi tiết thể lệ cuộc thi tại đây</a></p>
 </div> <div style="clear:both; height:20px"></div>';
 
 if(!@$_SESSION['upload_image']) $_SESSION['upload_image'] = '1';
