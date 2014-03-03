@@ -11,35 +11,23 @@
             <th width="90">Thao tác</th>
         </tr>
         <?php
-        $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0 AND `lang`='{$lang}'";
-		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,`order`,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `order` {$limit}";
-		$qr = mysql_query($str);
-		$i = $from;
-		while($row = mysql_fetch_array($qr)){
-			$i++;
-			echo '<tr class="row row_'.$row['id'].'">
-				<td align="center">'.$i.'</td>
-				<td>'.$row['name'].'</td>
-				<td align="center">'.$row['order'].'</td>
-				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($row['date_create'])).'</td>
-				<td align="center" class="create">'.$row['user_create'].'</td>
-				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
-				<td align="center" class="update">'.$row['user_update'].'</td>
-				<td align="center">
-					<a href="javascript:;"><img src="images/anhien_'.$row['status'].'.gif" class="status status_'.$row['id'].'" status="'.$row['status'].'" url="'.$table.'" name="'.$row['name'].'"></a> &nbsp;
-					<a href="?p='.$table.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt=""></a> &nbsp;
-					<a href="javascript:;" class="delete_one delete_one_'.$row['id'].'" url="'.$table.'" name="'.$row['name'].'"><img src="images/delete.gif" alt=""></a>
-				</td>
-			</tr>';
+		echo '<select name="aaaa">';
+		$arr = $qt->dequy_menu_select(0,'');
+		foreach($arr as $gt){
+			echo '<option value="'.$gt['id'].'">'.$gt['name'].'</option>';
 		}
+		echo '</select>';
+		
+		$stt = 0;
+		$qr = $qt->menu_root(0,$lang);
+		while($row = mysql_fetch_array($qr)){
+			$stt++;
+			$str .= $qt->menu_view($table,$row['id'],$stt,$row['name'],$row['order'],$row['date_create'],$row['user_create'],$row['date_update'],$row['user_update'],$row['status']);
+			$str .= $qt->get_submenu($row['id'],$lang,$table);
+		}
+		echo $str;
 		?>
     </table>
-    <?php
-    $phantrang = $qt->phantrang($table,$page_number,$max_results,'id',$where,$limit);
-	echo '<div id="phantrang">'.$phantrang.'</div>';
-	?>
     
     <div style="clear:both; height:50px"></div>
 </div>
