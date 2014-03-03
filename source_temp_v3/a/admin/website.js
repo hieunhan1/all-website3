@@ -94,6 +94,7 @@ $(document).ready(function(){
 			$('#'+list_view).attr('value',str);
 		});
 	};
+	checks_box_item('checkbox', 'position_id'); //class, id
 	checks_box_item('checkbox', 'menu_id'); //class, id
 	
 	/*btn_action*/

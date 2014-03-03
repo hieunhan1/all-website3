@@ -83,12 +83,60 @@
 			return $str;
 		}
 		
-		/*select view data*/
-		function data_view(){
-			$array = array(
-				
-			);
+		/*danh mục MENU*/
+		function menu_view($table,$id,$stt,$name,$order,$date_create,$user_create,$date_update,$user_update,$status){
+			$str = '<tr class="row row_'.$id.'">
+				<td align="center">'.$stt.'</td>
+				<td>'.$name.'</td>
+				<td align="center">'.$order.'</td>
+				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($date_create)).'</td>
+				<td align="center" class="create">'.$user_create.'</td>
+				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($date_update)).'</td>
+				<td align="center" class="update">'.$user_update.'</td>
+				<td align="center">
+					<a href="javascript:;"><img src="images/anhien_'.$status.'.gif" class="status status_'.$id.'" status="'.$status.'" url="'.$table.'" name="'.$name.'"></a> &nbsp;
+					<a href="?p='.$table.'_ac&id='.$id.'"><img src="images/edit.gif" alt=""></a> &nbsp;
+					<a href="javascript:;" class="delete_one delete_one_'.$id.'" url="'.$table.'" name="'.$name.'"><img src="images/delete.gif" alt=""></a>
+				</td>
+			</tr>';
+			return $str;
 		}
+		function menu_root($level,$lang,$type=NULL){
+			if($type != NULL) $type = "AND type_id='{$type}' "; else $type = '';
+			
+			$qr = "SELECT id,name,`order`,status,date_create,date_update,user_create,user_update 
+			FROM `web_menu` 
+			WHERE `delete`=0 AND `lang`='{$lang}' AND parent_id='{$level}' {$type} 
+			ORDER BY `order` ";
+			return mysql_query($qr);
+		}
+		function get_submenu($level,$lang,$table){
+			$qr = $this->menu_root($level,$lang);
+			if(mysql_num_rows($qr) > 0){
+				$i = 0;
+				while($row = mysql_fetch_array($qr)){
+					$i++;
+					$name_view = $i.'. '.$row['name'];
+					$str .= $this->menu_view($table, $row['id'], $stt, $name_view, $row['order'],$row['date_create'],$row['user_create'],$row['date_update'],$row['user_update'],$row['status']);
+					$str .= $this->get_submenu($row['id'],$lang,$table);
+				}
+			}
+			return $str;
+		}
+		function dequy_menu_select($level, $style1, $arr=NULL){
+			if(!$arr) $arr = array();
+			$style2 = '-- ';
+			
+			$qr = mysql_query("SELECT id,name FROM web_menu WHERE `delete`=0 AND parent_id='{$level}' ");
+			while($row = mysql_fetch_array($qr)){
+				$arr[] = array('id'=>$row['id'], 'name'=>$style1.$row['name']);
+				$arr = $this->dequy_menu_select($row['id'],$style1.$style2, $arr);
+			}
+			
+			return $arr;  
+		}
+		
+		
 		
 		/*other quan tri*/
 	}

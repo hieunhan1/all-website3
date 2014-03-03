@@ -60,15 +60,20 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 	
 	//position_id
+	$values = $row_detail['position_id'];
+	$views = 'position_id'; //name
+    $form->getProperties('2',$values,'',$views);
+	$hidden_item = $form->DisplayProperties();
+	
 	$arr = array();
 	$qr = mysql_query("SELECT * FROM `web_menu_position` WHERE `status`=1 ");
 	while($row = mysql_fetch_array($qr)){
 		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
 	}
 	$properties = $row_detail['position_id']; //default check
-	$views = array('Vị trí','position_id','checkbox'); //label name class width
+	$views = array('','','checkbox'); //label name class width
     $form->getProperties('7',$arr,$properties,$views);
-	echo '<tr><td class="label">Check box</td> <td>'.$form->DisplayProperties().'</td></tr>';
+	echo '<tr><td class="label">Vị trí</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
 	
 	//type_id
 	$arr = array();
@@ -83,15 +88,17 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 	
 	//parent_id
-	$arr = array();
-	$arr[] = array('id'=>'0', 'name'=>'-- Chọn danh mục --');
-	$arr[] = array('id'=>'1', 'name'=>'Trang 1');
-	$arr[] = array('id'=>'2', 'name'=>'Trang 2');
-	$arr[] = array('id'=>'3', 'name'=>'Trang 3');
-	$properties = '3'; //default check
+
+	
+	$arr = $qt->dequy_menu_select(0,'');
+	
+	$properties = $row_detail['parent_id']; //default check
 	$views = array('Danh mục gốc','parent_id','input_medium'); //label id&name class
     $form->getProperties('5',$arr,$properties,$views);
 	echo $form->DisplayProperties();
+	
+	
+	
 	
 	//name
 	$values = $row_detail['name'];
