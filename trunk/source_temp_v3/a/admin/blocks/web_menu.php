@@ -11,19 +11,11 @@
             <th width="90">Thao tác</th>
         </tr>
         <?php
-		echo '<select name="aaaa">';
-		$arr = $qt->dequy_menu_select(0,'');
-		foreach($arr as $gt){
-			echo '<option value="'.$gt['id'].'">'.$gt['name'].'</option>';
-		}
-		echo '</select>';
-		
 		$stt = 0;
-		$qr = $qt->menu_root(0,$lang);
-		while($row = mysql_fetch_array($qr)){
+		$array = $qt->danhmuc_menu(0,$lang,'');
+		foreach($array as $row){
 			$stt++;
 			$str .= $qt->menu_view($table,$row['id'],$stt,$row['name'],$row['order'],$row['date_create'],$row['user_create'],$row['date_update'],$row['user_update'],$row['status']);
-			$str .= $qt->get_submenu($row['id'],$lang,$table);
 		}
 		echo $str;
 		?>

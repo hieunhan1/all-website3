@@ -13,13 +13,6 @@ if($id == 0){
 	$views = 'user_create';
     $form->getProperties('2',$values,'',$views);
 	$user_action = $form->DisplayProperties();
-	//password
-	$values = md5('123456789');
-	$views = 'password';
-    $form->getProperties('2',$values,'',$views);
-	$password = $form->DisplayProperties();
-	//disabled
-	$disabled = '';
 }else{
 	$lable_submit = 'Cập nhật';
 	$type = 2;
@@ -29,11 +22,6 @@ if($id == 0){
 	$views = 'user_update';
     $form->getProperties('2',$values,'',$views);
 	$user_action = $form->DisplayProperties();
-	//password
-	$password = '';
-	
-	//disabled
-	$disabled = 'disabled="disabled"';
 	
 	$qr = mysql_query("SELECT * FROM `{$table}` WHERE `delete`=0 AND `id`='{$id}' ");
 	$row_detail = mysql_fetch_array($qr);
@@ -50,8 +38,7 @@ if(!empty($_POST)){
 	else echo "<p class='error'>{$check}</p>";
 }
 
-echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản password mặc định là "<b>123456789</b>"</p>
-<form name="form_action" method="post" action="">
+echo '<form name="form_action" method="post" action="">
 <table width="100%" border="0" cellpadding="0" cellspacing="10" style="margin-bottom:50px">';
 	
 	echo $date_create.$user_action;
@@ -79,54 +66,38 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//username
-	$values = $row_detail['username'];
-	$properties = array('32',$disabled); //maxlength OTHER (disabled, readonly)
-	$views = array('Username','username','input_medium'); //label id&name class style
+	//email
+	$values = $row_detail['email'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Email','email','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//password
-	echo $password;
+	//phone
+	$values = $row_detail['phone'];
+	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Điện thoại','phone','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
 	
-	//phan quyen
-	$arr = array();
-	$qr = mysql_query("SELECT `id`,`name` FROM `web_menu_admin` WHERE `status`=1 ORDER BY `order` ");
-	while($row = mysql_fetch_array($qr)){
-		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
-	}
+	//diachi
+	$values = $row_detail['diachi'];
+	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Địa chỉ','diachi','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
 	
-	$properties = $row_detail['quyen_xem']; //default check
-	$views = array('Xem','','checkbox checkbox_xem','width:167px; height:220px;'); //label name class width
-	$form->getProperties('7',$arr,$properties,$views);
-	$xem = $form->DisplayProperties();
-	
-	$properties = $row_detail['quyen_action']; //default check
-	$views = array('Quyền','','checkbox checkbox_action','width:167px; height:220px;'); //label name class width
-	$form->getProperties('7',$arr,$properties,$views);
-	$quyen = $form->DisplayProperties();
-	
-	$values = $row_detail['quyen_xem'];
-	$views = 'quyen_xem'; //name
-    $form->getProperties('2',$values,'',$views);
-	$xem .= $form->DisplayProperties();
-	
-	$values = $row_detail['quyen_action'];
-	$views = 'quyen_action'; //name
-    $form->getProperties('2',$values,'',$views);
-	$quyen .= $form->DisplayProperties();
-	
-	echo '<tr><td class="label">Phân quyền</td> <td>'.$xem.$quyen.'</td></tr>';
+	//message
+	$values = $row_detail['message'];
+	$properties = ''; //disabled, readonly
+	$views = array('Nội dung','message','textarea'); //label id&name class colspan
+	$other = ckeditor_custom('message');
+    $form->getProperties('3',$values,$properties,$views,$other);
+	echo $form->DisplayProperties();
 	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name
-    $form->getProperties('2',$values,'',$views);
-	echo $form->DisplayProperties();
-	
-	//lang
-	$values = $lang;
-	$views = 'lang'; //name
     $form->getProperties('2',$values,'',$views);
 	echo $form->DisplayProperties();
 	

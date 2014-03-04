@@ -133,7 +133,7 @@ function SetFileField(fileUrl, data){
 			<div style="clear:both; height:1px"></div>
 			<div style="clear:both; margin-bottom:10px">'.$view_lang.'</div>';
 			
-			if(@$p){
+			if(isset($p)){
 				if (file_exists('blocks/'.$p.'.php')) include_once('blocks/'.$p.'.php');
 				else echo "Danh mục này không tồn tại.";
 			}else include_once('blocks/home.php');

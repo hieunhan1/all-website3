@@ -11,9 +11,9 @@
         </tr>
         <?php
         $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0";
+		$where = "`delete`=0 ";
 		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `name` {$limit}";
+		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -27,8 +27,7 @@
 				<td align="center" class="update">'.$row['user_update'].'</td>
 				<td align="center">
 					<a href="javascript:;"><img src="images/anhien_'.$row['status'].'.gif" class="status status_'.$row['id'].'" status="'.$row['status'].'" url="'.$table.'" name="'.$row['name'].'"></a> &nbsp;
-					<a href="?p='.$table.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt=""></a> &nbsp;
-					<a href="javascript:;" class="delete_one delete_one_'.$row['id'].'" url="'.$table.'" name="'.$row['name'].'"><img src="images/delete.gif" alt=""></a>
+					<a href="?p='.$table.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt=""></a>
 				</td>
 			</tr>';
 		}

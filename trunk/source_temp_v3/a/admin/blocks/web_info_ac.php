@@ -65,12 +65,12 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('2',$values,'',$views);
 	$hidden_item = $form->DisplayProperties();
 	
-	$arr = array();
-	$arr[] = array('id'=>'1', 'name'=>'Top');
-	$arr[] = array('id'=>'2', 'name'=>'Left');
-	$arr[] = array('id'=>'3', 'name'=>'Right');
+	$where = "AND type_id=2";
+	$arr = $qt->danhmuc_menu_checkbox(0,'',$where);
+	$properties = $row_detail['parent_id']; //default check
+
 	$properties = $row_detail['menu_id']; //default check
-	$views = array('','','checkbox','width:345px; height:70px;'); //label name class width
+	$views = array('','','checkbox checkbox_item','width:345px; height:170px;'); //label name class width
     $form->getProperties('7',$arr,$properties,$views);
 	echo '<tr><td class="label">Danh mục</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
 	
@@ -97,7 +97,7 @@ echo '<form name="form_action" method="post" action="">
 	
 	$values = $row_detail['url_hinh'];
 	$properties = array('150'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ảnh đại diện','url_hinh','input_large'); //label id&name class
+	$views = array('Ảnh đại diện','url_hinh','input_medium'); //label id&name class
     $form->getProperties('1',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
