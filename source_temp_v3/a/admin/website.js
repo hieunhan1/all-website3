@@ -84,6 +84,12 @@ $(document).ready(function(){
 		$(this).val(name + ',' + change_alias(name,' '));
 	});
 	
+	/*link danh muc menu*/
+	$('.url').dblclick(function(){
+		var name_rewrite = $.trim($('#name_rewrite').val());
+		$(this).val(name_rewrite + '/');
+	});
+	
 	/*checks box*/
 	function checks_box_item(list_check, list_view){
 		$('.'+list_check).change(function(){
@@ -94,8 +100,10 @@ $(document).ready(function(){
 			$('#'+list_view).attr('value',str);
 		});
 	};
-	checks_box_item('checkbox', 'position_id'); //class, id
-	checks_box_item('checkbox', 'menu_id'); //class, id
+	checks_box_item('checkbox_item', 'position_id'); //class, id
+	checks_box_item('checkbox_item', 'menu_id'); //class, id
+	checks_box_item('checkbox_xem', 'quyen_xem'); //class, id
+	checks_box_item('checkbox_action', 'quyen_action'); //class, id
 	
 	/*btn_action*/
 	$(".btn_action").click(function(){

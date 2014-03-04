@@ -47,7 +47,7 @@ echo '<form name="form_action" method="post" action="">
 	$arr = array();
 	$arr[] = array('id'=>'1', 'name'=>'Hiện');
 	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	$properties = $row_detail['status']; //default check
+	$properties = 1; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
@@ -58,83 +58,38 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-	
-	//position_id
-	$values = $row_detail['position_id'];
-	$views = 'position_id'; //name
+
+	//menu_id
+	$values = $row_detail['menu_id'];
+	$views = 'menu_id'; //name
     $form->getProperties('2',$values,'',$views);
 	$hidden_item = $form->DisplayProperties();
 	
+	$where = "";
+	$arr = $qt->danhmuc_menu_checkbox(0,'',$where);
+	$properties = $row_detail['parent_id']; //default check
+
+	$properties = $row_detail['menu_id']; //default check
+	$views = array('','','checkbox checkbox_item','width:345px; height:170px;'); //label name class width
+    $form->getProperties('7',$arr,$properties,$views);
+	echo '<tr><td class="label">Danh mục</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
+	
+	//position_id
 	$arr = array();
-	$qr = mysql_query("SELECT * FROM `web_menu_position` WHERE `status`=1 ");
+	$arr[] = array('id'=>0, 'name'=>'----- select -----');
+	$qr = mysql_query("SELECT * FROM `web_slider_banner_position` WHERE `status`=1");
 	while($row = mysql_fetch_array($qr)){
 		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
 	}
 	$properties = $row_detail['position_id']; //default check
-	$views = array('','','checkbox checkbox_item'); //label name class width
-    $form->getProperties('7',$arr,$properties,$views);
-	echo '<tr><td class="label">Vị trí</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
-	
-	//type_id
-	$arr = array();
-	$arr = array();
-	$qr = mysql_query("SELECT * FROM `web_menu_type` WHERE `status`=1 ");
-	while($row = mysql_fetch_array($qr)){
-		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
-	}
-	$properties = $row_detail['type_id']; //default check
-	$views = array('Loại menu','type_id','radio','<br />'); //label name class other
-    $form->getProperties('4',$arr,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//parent_id
-	$name_default = array('danh mục gốc',$id);
-	$arr = $qt->danhmuc_menu_select(0,'',$name_default);
-	$properties = $row_detail['parent_id']; //default check
-	$views = array('Danh mục gốc','parent_id','input_medium'); //label id&name class
+	$views = array('Danh mục gốc','position_id','input_medium'); //label id&name class
     $form->getProperties('5',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//name
 	$values = $row_detail['name'];
-	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Tên hiển thị','name','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//title
-	$values = $row_detail['title'];
-	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Tiêu đề','title','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//name_rewrite
-	$values = $row_detail['name_rewrite'];
-	$properties = array('100'); //maxlength OTHER (disabled, readonly)
-	$views = array('Tiêu đề viết lại','name_rewrite','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//url
-	$values = $row_detail['url'];
-	$properties = array('150'); //maxlength OTHER (disabled, readonly)
-	$views = array('Link','url','input_medium url'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//metaDescription
-	$values = $row_detail['metaDescription'];
-	$properties = ''; //disabled, readonly
-	$views = array('Description','metaDescription','textarea'); //label id&name class colspan
-	//$other = ckeditor_custom('metaDescription');
-    $form->getProperties('3',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//metaKeyword
-	$values = $row_detail['metaKeyword'];
-	$properties = array('200'); //maxlength OTHER (disabled, readonly)
-	$views = array('Tags (keyword)','metaKeyword','input_medium'); //label id&name class style
+	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Mô tả','name','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
@@ -151,11 +106,19 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
-	//order
-	$values = $row_detail['order'];
-	$properties = array('2'); //maxlength OTHER (disabled, readonly)
-	$views = array('Thứ tự','order','input_medium'); //label id&name class style
+	//url
+	$values = $row_detail['url'];
+	$properties = array('200'); //maxlength OTHER (disabled, readonly)
+	$views = array('Link','url','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//content
+	$values = $row_detail['content'];
+	$properties = ''; //disabled, readonly
+	$views = array('Thông tin','content','textarea'); //label id&name class colspan
+	//$other = ckeditor_custom('metaDescription');
+    $form->getProperties('3',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//id

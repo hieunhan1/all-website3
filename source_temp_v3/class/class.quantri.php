@@ -50,7 +50,7 @@
 		
 		/*general*/
 		function language(){
-			$qr = "SELECT id,name,ma FROM web_language ORDER BY `order` ";
+			$qr = "SELECT `id`,`name`,`ma` FROM `web_language` WHERE `status`=1 ORDER BY `order` ";
 			return mysql_query($qr);
 		}
 		function MenuAdmin() {
@@ -86,58 +86,75 @@
 		/*danh mục MENU*/
 		function menu_view($table,$id,$stt,$name,$order,$date_create,$user_create,$date_update,$user_update,$status){
 			$str = '<tr class="row row_'.$id.'">
-				<td align="center">'.$stt.'</td>
-				<td>'.$name.'</td>
-				<td align="center">'.$order.'</td>
-				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($date_create)).'</td>
-				<td align="center" class="create">'.$user_create.'</td>
-				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($date_update)).'</td>
-				<td align="center" class="update">'.$user_update.'</td>
-				<td align="center">
-					<a href="javascript:;"><img src="images/anhien_'.$status.'.gif" class="status status_'.$id.'" status="'.$status.'" url="'.$table.'" name="'.$name.'"></a> &nbsp;
-					<a href="?p='.$table.'_ac&id='.$id.'"><img src="images/edit.gif" alt=""></a> &nbsp;
-					<a href="javascript:;" class="delete_one delete_one_'.$id.'" url="'.$table.'" name="'.$name.'"><img src="images/delete.gif" alt=""></a>
-				</td>
-			</tr>';
+			<td align="center">'.$stt.'</td>
+			<td>'.$name.'</td>
+			<td align="center">'.$order.'</td>
+			<td align="center" class="create">'.date('d/m/Y H:i',strtotime($date_create)).'</td>
+			<td align="center" class="create">'.$user_create.'</td>
+			<td align="center" class="update">'.date('d/m/Y H:i',strtotime($date_update)).'</td>
+			<td align="center" class="update">'.$user_update.'</td>
+			<td align="center">
+				<a href="javascript:;"><img src="images/anhien_'.$status.'.gif" class="status status_'.$id.'" status="'.$status.'" url="'.$table.'" name="'.$name.'"></a> &nbsp;
+				<a href="?p='.$table.'_ac&id='.$id.'"><img src="images/edit.gif" alt=""></a> &nbsp;
+				<a href="javascript:;" class="delete_one delete_one_'.$id.'" url="'.$table.'" name="'.$name.'"><img src="images/delete.gif" alt=""></a>
+			</td></tr>';
 			return $str;
 		}
 		function menu_root($level,$lang,$type=NULL){
 			if($type != NULL) $type = "AND type_id='{$type}' "; else $type = '';
 			
-			$qr = "SELECT id,name,`order`,status,date_create,date_update,user_create,user_update 
-			FROM `web_menu` 
-			WHERE `delete`=0 AND `lang`='{$lang}' AND parent_id='{$level}' {$type} 
-			ORDER BY `order` ";
+			$qr = "SELECT id,name,`order`,status,date_create,date_update,user_create,user_update FROM `web_menu` WHERE `delete`=0 AND `lang`='{$lang}' AND parent_id='{$level}' {$type} ORDER BY `order` ";
 			return mysql_query($qr);
 		}
-		function get_submenu($level,$lang,$table){
+		function danhmuc_menu($level,$lang,$style_1,$arr=NULL){
+			if(!$arr) $arr = array();
+			$style_2 = '-- ';
+			
 			$qr = $this->menu_root($level,$lang);
-			if(mysql_num_rows($qr) > 0){
-				$i = 0;
-				while($row = mysql_fetch_array($qr)){
-					$i++;
-					$name_view = $i.'. '.$row['name'];
-					$str .= $this->menu_view($table, $row['id'], $stt, $name_view, $row['order'],$row['date_create'],$row['user_create'],$row['date_update'],$row['user_update'],$row['status']);
-					$str .= $this->get_submenu($row['id'],$lang,$table);
-				}
+			while($row = mysql_fetch_array($qr)){
+				$arr[] = array(
+					'id'			=> $row['id'],
+					'name'			=> $style_1.$row['name'],
+					'order'			=> $row['order'],
+					'status'		=> $row['status'],
+					'date_create'	=> $row['date_create'],
+					'user_create'	=> $row['user_create'],
+					'date_update'	=> $row['date_update'],
+					'user_update'	=> $row['user_update'],
+				);
+				$arr = $this->danhmuc_menu($row['id'],$lang,$style_1.$style_2,$arr);
 			}
-			return $str;
+			return $arr;
 		}
-		function dequy_menu_select($level, $style1, $arr=NULL){
+		function danhmuc_menu_select($level, $style1, $name_default, $arr=NULL){
+			if(!$arr){
+				$arr = array();
+				$arr[] = array('id'=>0, 'name'=>"--------- {$name_default[0]} ---------");
+			}
+			$style2 = '-- ';
+			
+			$qr = mysql_query("SELECT id,name FROM web_menu WHERE `delete`=0 AND parent_id='{$level}' AND id<>'{$name_default[1]}' ORDER BY `order` ");
+			while($row = mysql_fetch_array($qr)){
+				$arr[] = array('id'=>$row['id'], 'name'=>$style1.$row['name']);
+				$arr = $this->danhmuc_menu_select($row['id'],$style1.$style2,$name_default,$arr);
+			}
+			
+			return $arr;  
+		}
+		function danhmuc_menu_checkbox($level,$style1,$where,$arr=NULL){
 			if(!$arr) $arr = array();
 			$style2 = '-- ';
 			
-			$qr = mysql_query("SELECT id,name FROM web_menu WHERE `delete`=0 AND parent_id='{$level}' ");
+			$qr = mysql_query("SELECT id,name FROM web_menu WHERE `delete`=0 AND parent_id='{$level}' {$where} ORDER BY `order` ");
 			while($row = mysql_fetch_array($qr)){
 				$arr[] = array('id'=>$row['id'], 'name'=>$style1.$row['name']);
-				$arr = $this->dequy_menu_select($row['id'],$style1.$style2, $arr);
+				$arr = $this->danhmuc_menu_select($row['id'],$style1.$style2,$where,$arr);
 			}
 			
 			return $arr;  
 		}
 		
-		
-		
 		/*other quan tri*/
+		
 	}
 ?>

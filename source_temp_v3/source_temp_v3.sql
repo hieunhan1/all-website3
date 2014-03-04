@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 01, 2014 at 02:04 PM
+-- Generation Time: Mar 04, 2014 at 03:35 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -48,8 +48,8 @@ CREATE TABLE `web_config` (
 -- Dumping data for table `web_config`
 -- 
 
-INSERT INTO `web_config` VALUES (1, 'Việt Nam', 'vi', 'localhost/all/source_temp', 0, 10, 2, 10, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Địa chỉ: 87 Thăng Long, Phường 4, Quận Tân Bình, Tp.Hồ Chí Minh, Việt Nam.<br />\r\nĐiện thoại: (84.8) 3 948 4696 - Fax: ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0861116111', '0988388003', 1, '2013-02-20 13:35:24', '2013-03-01 16:18:17', 'admin', 'admin', 0);
-INSERT INTO `web_config` VALUES (2, 'English', 'en', 'localhost/all/source_temp', 0, 10, 2, NULL, 'HOANG HA INTERNATIONAL LOGISTICS JSC.,', '<p>Add: 87 Thang Long Str., Ward 4, Tan Binh Dist, HCMC, Vietnam.<br />\r\nTel: (84.8) 3 948 4696 - Fax : ( 84.8) 3 948 4697 - Email: info@hoangha.com</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">HEAD OFFICE</span></h3>\r\n\r\n			<p>Add: Lot III/22, 19/5A Rd, Tan Binh IZ, Tan Phu Dist., Ho Chi Minh city, Vietnam<br />\r\n			Tel: (84.8) 3 815 5319 - Fax: (84.8) 3 815 5320<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;">DANANG OFFICE</span></h3>\r\n\r\n			<p>Add: 183 Nguyen Tri Phuong Str., W. Vinh Trung, Thanh Khe Dist., Da Nang city, Vietnam<br />\r\n			Tel: (84.511) 3 561 561 - Fax: (84.511) 3 824 602<br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3 style="font-size: 13px;"><span style="color:#FF0000;">HCM OFFICE</span></h3>\r\n\r\n			<p style="font-size: 13px;">Add: 87 Thang Long Str., Ward 4, Tan Binh Dist., HCMC, Vietnam<br />\r\n			Tel: (84.8) 3 948 4696 - Fax: (84.8) 3 948 4697<br />\r\n			&nbsp;</p>\r\n			</td>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">CANTHO OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: 40 A3 Str., Hung Phu I, Cai Rang Dist., Can Tho city, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.0710) 625 8539 - Fax: (84.0710) 625 8540</span><br />\r\n			&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<h3><span style="color:#FF0000;"><span style="font-size: 13px;">HANOI OFFICE</span></span></h3>\r\n\r\n			<p><span style="font-size: 13px;">Add: No. 1 Alley 71, Linh Lang Str., Cong Vi Ward, Ba Dinh Dist., Ha Noi, Vietnam</span><br style="font-size: 13px;" />\r\n			<span style="font-size: 13px;">Tel: (84.4) 3 726 0122 - Fax: (84.4) 3 726 0144</span></p>\r\n			</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 'hieunhan112@gmail.com', '', '', '', 1, '2013-08-10 10:09:29', '2013-08-10 15:35:08', 'admin', 'admin', 0);
+INSERT INTO `web_config` VALUES (1, 'Việt Nam', 'vi', 'localhost/all/source_temp', 10, 10, 10, 10, 'Copyright © 2014', '', '', 'hieunhan112@gmail.com', 'hieu_nhan1', '0988 388 388', '0988 388 388', 1, '2013-02-20 13:35:24', '2013-03-01 16:18:00', 'admin', 'admin', 0);
+INSERT INTO `web_config` VALUES (2, 'English', 'en', 'localhost/all/source_temp', 10, 10, 10, 10, 'Copyright © 2014', '', '', 'hieunhan112@gmail.com', 'hieu_nhan1', '0988 388 388', '0988 388 388', 1, '2013-08-10 10:09:29', '2013-08-10 15:35:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -72,12 +72,13 @@ CREATE TABLE `web_contact` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
 -- Dumping data for table `web_contact`
 -- 
 
+INSERT INTO `web_contact` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', '<p>1111111111111111</p>\r\n', 'vi', 0, '2014-03-04 14:37:30', '2014-03-04 14:37:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ CREATE TABLE `web_info` (
 -- Dumping data for table `web_info`
 -- 
 
-INSERT INTO `web_info` VALUES (1, ',1,2,', 'Mô tả', 'mo-ta', 'ca-phe-cafe-collagen-2-zero-duoc-ban-khap-hoa-ky-va-canada.jpg', 'Tóm tắt', 'Mô tả,mo ta', '<p>nội dung</p>\r\n', 0, 'vi', 1, '2014-03-01 12:29:36', '2014-03-10 12:29:00', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (1, ',5,', 'Mô tả', 'mo-ta', 'ca-phe-cafe-collagen-2-zero-duoc-ban-khap-hoa-ky-va-canada.jpg', 'Tóm tắt', 'Mô tả,mo ta', '<p>nội dung</p>\r\n', 0, 'vi', 1, '2014-03-01 12:29:36', '2014-03-04 12:29:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -213,15 +214,15 @@ CREATE TABLE `web_menu` (
 -- Dumping data for table `web_menu`
 -- 
 
-INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Trang chủ "abc" <b>abc1</b> ', 'Trang chủ "abc" <b>abc2</b>', 'Trang chủ "abc" <b>abc3</b>', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2014-02-28 14:14:37', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2014-02-27 13:21:10', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 1, 3, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2014-02-27 13:21:11', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', '', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 8, ',6,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2014-02-28 14:14:40', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2014-02-28 14:14:40', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2013-10-09 16:14:52', 'admin', '', 0);
-INSERT INTO `web_menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2013-10-09 15:39:46', 'admin', '', 0);
+INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'trang-chu/', '', 'Trang chủ ', 'Trang chủ', 'Trang chủ ', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2014-03-03 16:02:00', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',8,', 'vi', 0, 0, 1, '2013-10-09 15:38:02', '2014-03-03 16:22:00', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm,trang chu san pham', 1, 10, ',1,', 'vi', 0, 0, 1, '2013-10-09 15:38:25', '2014-03-04 11:30:00', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', 'hinhanh.jpg', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 10, ',1,', 'vi', 0, 0, 1, '2013-10-09 15:38:38', '2014-03-04 15:08:14', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (5, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 2, ',1,', 'vi', 0, 2, 1, '2013-10-09 15:39:02', '2014-03-04 15:08:16', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (6, 'Sản phẩm', 'san-pham', 'san-pham/', '', 'Sản phẩm', 'Sản phẩm', 'Sản phẩm', 0, 3, ',1,', 'vi', 0, 3, 1, '2013-10-09 15:39:24', '2014-03-04 15:08:17', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (7, 'Thông tin, bài viết', 'thong-tin-bai-viet', 'thong-tin-bai-viet/', '', 'Thông tin, bài viết', 'Thông tin, bài viết', 'Thông tin, bài viết', 0, 2, ',1,', 'vi', 0, 4, 1, '2013-10-09 15:39:46', '2014-03-03 16:02:57', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (8, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 'Tin tức - Sự kiện', 0, 2, ',1,', 'vi', 0, 5, 1, '2013-10-09 15:40:21', '2013-10-09 15:40:21', 'admin', '', 0);
-INSERT INTO `web_menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ', 0, 8, ',1,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2014-02-27 13:20:50', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (9, 'Liên hệ', 'lien-he', 'lien-he/', '', 'Liên hệ', 'Liên hệ', 'Liên hệ,lien he', 0, 9, ',1,', 'vi', 0, 6, 1, '2013-10-09 15:40:52', '2014-03-04 13:21:47', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -470,7 +471,7 @@ CREATE TABLE `web_slider_banner` (
 -- Dumping data for table `web_slider_banner`
 -- 
 
-INSERT INTO `web_slider_banner` VALUES (1, NULL, '', 'San pham', 'Sanpham', 'javascript:;', '', 'vi', 1, '2013-10-09 16:34:33', '2013-10-09 17:24:23', 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (1, 2, ',1,5,6,', 'Sản phẩm', '', 'javascript:;', 'thông tin', 'vi', 1, '2013-10-09 16:34:33', '2014-03-04 14:00:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -519,13 +520,13 @@ CREATE TABLE `web_users` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 -- 
 -- Dumping data for table `web_users`
 -- 
 
-INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',3,15,', '', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:22', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,13,14,15,', ',1,2,3,4,13,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
