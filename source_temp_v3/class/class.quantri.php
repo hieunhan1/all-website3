@@ -47,6 +47,12 @@
 				}
 			}
 		}
+		function Users_ResetPass($id,$user){
+			$date = date('Y-m-d H:i:s');
+			$pass = md5('123456789');
+			$qr = "UPDATE web_users SET password='{$pass}', date_update='{$date}', user_update='".$_SESSION["username_admin"]."' WHERE id='{$id}' AND username='{$user}'";
+			return mysql_query($qr);
+		}
 		
 		/*general*/
 		function language(){
@@ -58,7 +64,7 @@
 			return mysql_query($qr);
 		}
 		function Navigator($url){
-			$qr = "SELECT id,name FROM web_menu_admin WHERE status=1 AND url='{$url}' LIMIT 1";
+			$qr = "SELECT id,name,url FROM web_menu_admin WHERE status=1 AND url='{$url}' LIMIT 1";
 			return mysql_query($qr);	
 		}
 		function list_item($select,$table,$where,$limit=NULL){

@@ -61,9 +61,8 @@ hr{border: solid 2px #F3A972}
 .avarta{clear:both; height:80px; overflow:hidden}
 .avarta img{height:78px; border:solid 1px #CCC}
 
-/*
 
-#search{background-color:#999; padding:3px; margin-bottom:5px}
-#search .txt{width:150px}
-#search .select{width:150px}
-#search .btn{padding:2px 10px}*/
+#search{background-color:#5ECBFF; padding:4px 10px; margin-bottom:5px}
+#search .txt{width:150px; padding:3px; border:solid 1px #999; color:#666}
+#search .select{width:150px; padding:3px; border:solid 1px #999}
+#search .btn{padding:3px 20px;}

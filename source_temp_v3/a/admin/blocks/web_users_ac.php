@@ -20,6 +20,8 @@ if($id == 0){
 	$password = $form->DisplayProperties();
 	//disabled
 	$disabled = '';
+	//reset password
+	$reset_pass = '';
 }else{
 	$lable_submit = 'Cập nhật';
 	$type = 2;
@@ -37,6 +39,12 @@ if($id == 0){
 	
 	$qr = mysql_query("SELECT * FROM `{$table}` WHERE `delete`=0 AND `id`='{$id}' ");
 	$row_detail = mysql_fetch_array($qr);
+	
+	//reset password
+	$reset_pass = '<div style="color:#F00; font-size:110%; font-style:italic; margin-bottom:50px">
+		<a href="javascript:;" id="reset_pass">Reset password (Password: "<b>123456789</b>")</a>
+		<input type="hidden" name="reset_id" value="'.$row_detail['id'].'" /> <input type="hidden" name="reset_user" value="'.$row_detail['username'].'" />
+	</div>';
 }
 
 
@@ -139,4 +147,4 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
     $form->getProperties('9','',$properties,$views,$other);
 	echo $form->DisplayProperties();
 
-echo '</table></form>';
+echo '</table></form>'.$reset_pass;

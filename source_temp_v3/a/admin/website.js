@@ -113,6 +113,19 @@ $(document).ready(function(){
 		},500);
 	});
 	
+	/* reset password */
+	$("#reset_pass").click(function(){
+		var id = $("input[name=reset_id]").val();
+		var name = $("input[name=reset_user]").val();
+		
+		if(confirm("Bạn có muốn reset password cho tài khoản này?")){
+			$.post("ajax.php",{ResetPass:"ResetPass",id:id,name:name},function(data){
+				if(data=='1') alert('Mật khẩu được reset thành "123456789" thành công.');
+				else alert('Tài khoản của bạn không có quyền reset password.');
+			});
+		}
+	});
+	
 	/*other*/
 	
 	
