@@ -21,7 +21,7 @@ if(@$user){
 	include_once('config.php');
 	include_once('layout.php');
 	
-	$p = $_GET["p"];
+	if(isset($_GET["p"])) $p = $_GET["p"]; else $p = 'home';
 	$table = trim($p,'_ac');
 	$id = $_GET["id"];
 	
@@ -79,7 +79,7 @@ function SetFileField(fileUrl, data){
     <div id="header">
         <div id="logo">Trang quản trị website</div>
         <div id="thongtin">
-          User: <strong><?php echo $user; ?></strong>    <a href="administrator.php?p=thongtin">Thông tin tài khoản</a> | <a href="<?php echo "administrator.php?p=thoat"?>">Logout</a>
+          User: <strong><?php echo $user; ?></strong>    <a href="administrator.php?p=account">Thông tin tài khoản</a> | <a href="<?php echo "administrator.php?p=thoat"?>">Logout</a>
         </div>
     </div>
 
@@ -105,11 +105,13 @@ function SetFileField(fileUrl, data){
 		$navigator = $qt->Navigator($table);
 		$row_navigator = mysql_fetch_array($navigator);
 		
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
+		//preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
+		//preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
 		
 		/*languages*/
 		if($p==$table){
+			$phan_quyen = preg_match("/,{$row_navigator['id']},/i", $quyen_xem);
+			
 			$url_lang = 'administrator.php?p='.$table;
 			$qr = $qt->language();
 			if(mysql_num_rows($qr) > 1){
@@ -120,10 +122,12 @@ function SetFileField(fileUrl, data){
 						$view_lang .= '<a href="'.$url_lang.'&language='.$row['ma'].'" style="background-color:#FF0; color:#333; border:solid 1px #999; padding:2px 5px">'.$row['name'].'</a> &nbsp; | &nbsp; ';
 				}
 			}
+		}else{
+			$phan_quyen = preg_match("/,{$row_navigator['id']},/i", $quyen_action);
 		}
 		
 		/* action */
-		//if(sizeof($for_view[0])==1){
+		if($phan_quyen==true || $p=='account'){
 			if($id=='') $btn_right = btn_add_create($table).btn_see_change();
 			else $btn_right = btn_go_back($table);
 			
@@ -137,8 +141,8 @@ function SetFileField(fileUrl, data){
 				if (file_exists('blocks/'.$p.'.php')) include_once('blocks/'.$p.'.php');
 				else echo "Danh mục này không tồn tại.";
 			}else include_once('blocks/home.php');
-		//}else
-			//echo '<div class="title">Thông báo</div> <div style="width:500px; clear:both; margin:20px 0; font-weight:bold; color:red">Bạn không có quyền vào thư mục này</div>';
+		}else
+			echo '<div class="title">Thông báo</div> <div style="height:380px; clear:both; margin:20px 0; font-weight:bold; color:red">Bạn không có quyền vào thư mục này</div>';
 		?>
     </div>
 </div>
