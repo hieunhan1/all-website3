@@ -46,14 +46,9 @@ if(@$user) {
 	
 	function bangdiem_theolop($lophoc){
 		$qr = mysql_query("SELECT daotao_lophoc.id,daotao_lophoc.name,capdo,daotao_giangvien.name as giangvien FROM daotao_lophoc,daotao_giangvien WHERE daotao_lophoc.id='{$lophoc}' AND id_giangvien=daotao_giangvien.id");
-		$row = mysql_fetch_array($qr);
+		$row_lop = mysql_fetch_array($qr);
 		
 		$data = array();
-		$data[] = array('Mã lớp: ',$row['id']);
-		$data[] = array('Tên lớp: ',$row['name']);
-		$data[] = array('Cấp độ: ',$row['capdo']);
-		$data[] = array('Giảng viên: ',$row['giangvien']);
-		$data[] = array();
 		$data[] = array('STT','Họ & tên','Cột 1','Cột 2','Cột 3','Cột 4','Cột 5','Cột 6','Cột 7','Cột 8');
 		
 		if($lophoc=='' || $lophoc=='0'){
@@ -69,6 +64,13 @@ if(@$user) {
 			}
 			mysql_free_result($qr);
 		}
+		
+		$data[] = array();
+		$data[] = array('Mã lớp: ',$row_lop['id']);
+		$data[] = array('Tên lớp: ',$row_lop['name']);
+		$data[] = array('Cấp độ: ',$row_lop['capdo']);
+		$data[] = array('Giảng viên: ',$row_lop['giangvien']);
+		
 		export_excel($data,'bangdiem-');
 	}
 	
