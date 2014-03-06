@@ -1,22 +1,32 @@
 <?php
-$max_results = 30;
-define(DIR, '../../class/');
+$error_sql = "Lỗi kết nối";
+define(does_not_exist,'Mục này không tồn tại.');
 
-include_once(DIR.'class.quantri.php');
-$qt = new quantri();
+include_once('class/class.trangchu.php');
+$tc = new trangchu();
 
-include_once(DIR.'class.form.php');
-$form = new form();
+$config = $tc->config($lang) or die ($error_sql);
+$row_config = mysql_fetch_array($config);
 
-include_once(DIR.'class.sql.php');
-$sql = new sql();
+$domain = $row_config['domain'];
+$lang = $row_config['lang'];
 
-$error_sql = "<p class='error'>Không truy vấn được.</p>";
-$required = "<span style='color:red'>*</span>";
+define(max_limit_1,$row_config['max_limit_1']);
+define(max_limit_2,$row_config['max_limit_2']);
+define(max_limit_3,$row_config['max_limit_3']);
+define(max_limit_4,$row_config['max_limit_4']);
 
-/*ảnh đại điện*/
-define('url_articles_image_thumb','public/_thumbs/Images/articles/');
-define('url_catalog_image_thumb','public/_thumbs/Images/articles/');
-define('url_slider_image_thumb','public/_thumbs/Images/articles/');
-define('url_photos_image_thumb','public/_thumbs/Images/articles/');
-define('url_video_image_thumb','public/_thumbs/Images/articles/');
+define(url_no_image,'images/no-image.jpg');
+define(url_default_image,'images/logo.jpg');
+
+define(url_catalog_image,'public/images/catalog/');
+define(url_slider_image,'public/images/slider_banner/');
+
+define(url_detail_image,'public/images/articles/');
+define(url_detail_image_thumb,'public/_thumbs/Images/articles/');
+
+define(url_photos_image,'public/images/photos/');
+define(url_photos_image_thumb,'public/_thumbs/Images/photos/');
+
+define(url_video_image,'public/images/video/');
+define(url_video_image_thumb,'public/_thumbs/Images/video/');

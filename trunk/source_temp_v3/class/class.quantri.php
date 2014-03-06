@@ -60,7 +60,7 @@
 			return mysql_query($qr);
 		}
 		function MenuAdmin() {
-			$qr = "SELECT name,url FROM web_menu_admin WHERE status=1 ORDER BY `order`";
+			$qr = "SELECT name,url,url_hinh FROM web_menu_admin WHERE status=1 ORDER BY `order`";
 			return mysql_query($qr);
 		}
 		function Navigator($url){
@@ -135,7 +135,7 @@
 		function danhmuc_menu_select($level, $style1, $name_default, $arr=NULL){
 			if(!$arr){
 				$arr = array();
-				$arr[] = array('id'=>0, 'name'=>"--------- {$name_default[0]} ---------");
+				$arr[] = array('id'=>0, 'name'=>"--- {$name_default[0]} ---");
 			}
 			$style2 = '-- ';
 			

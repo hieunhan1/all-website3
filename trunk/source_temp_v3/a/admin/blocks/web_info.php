@@ -1,14 +1,4 @@
-<form action="" method="get" name="search">
-<div id="search">
-	<input type="hidden" name="p" value="<?php echo $table; ?>" />
-    <input type="text" name="txt" value="Mô tả" class="txt" onclick="if(value=='Mô tả') value=''" />
-    <select name="dm" class="select">
-    	<option value="0">-- chọn danh mục --</option>
-    </select>
-    <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
-</div>
-</form>
-
+<?php include_once('search.php'); ?>
 <div id="content">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
@@ -21,13 +11,6 @@
             <th width="90">Thao tác</th>
         </tr>
         <?php
-		/*search*/
-		if(isset($_GET['btnSearch'])){
-			$str_search = '';
-		}else{
-			$str_search = '';
-		}
-		
         $from = (($page_number - 1) * $max_results);
 		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";

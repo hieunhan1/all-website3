@@ -105,11 +105,8 @@ function SetFileField(fileUrl, data){
 		$navigator = $qt->Navigator($table);
 		$row_navigator = mysql_fetch_array($navigator);
 		
-		//preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
-		//preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
-		
 		/*languages*/
-		if($p==$table){
+		if($p==$table && $p!='home'){
 			$phan_quyen = preg_match("/,{$row_navigator['id']},/i", $quyen_xem);
 			
 			$url_lang = 'administrator.php?p='.$table;
@@ -128,8 +125,8 @@ function SetFileField(fileUrl, data){
 		
 		/* action */
 		if($phan_quyen==true || $p=='account'){
-			if($id=='') $btn_right = btn_add_create($table).btn_see_change();
-			else $btn_right = btn_go_back($table);
+			if($id=='' && $p!='home' && $p!='account') $btn_right = btn_add_create($table).btn_see_change();
+			elseif($p!='home' && $p!='account') $btn_right = btn_go_back($table);
 			
 			echo '<div class="title" style="width:auto; float:left">'.$row_navigator['name'].'</div>
 			<div class="title" style="width:auto; float:right">'.$btn_right.'</div>
