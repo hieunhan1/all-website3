@@ -93,6 +93,7 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 				$url_hinh_name .= '<a href="http://www.hoahaudaiduongvietnam.com/'.url_thisinh_image.$name_rewrite.'-'.$i.'.jpg">Link hình ảnh '.$i.'</a> &nbsp; ';
 			}
 			include_once('sendmail_smtp/sendmail_dangky.php');
+			include_once('sendmail_smtp/sendmail_thongbao.php');
 			$_SESSION['upload_image'] = 1;
 			return true;
 		}else{ echo '0'; return false; }

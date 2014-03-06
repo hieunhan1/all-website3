@@ -293,7 +293,7 @@ $(document).ready(function(){
 		}else{
 			$("#ajax_dangky").html('<p style="font-weight:bold; padding:30px 0 60px;">Đang xử lý....</p>');
 			$.post("ajax.php",{dangky_tructuyen:"dangky_tructuyen",name:name,ngaysinh:ngaysinh,noisinh:noisinh,chieucao:chieucao,cannang:cannang,sodo:sodo,cmnd:cmnd,ngaycap:ngaycap,noicap:noicap,hokhau:hokhau,choohientai:choohientai,dienthoai:dienthoai,email:email,trangmang_xh:trangmang_xh,nghenghiep:nghenghiep,noicongtac:noicongtac,trinhdo:trinhdo,ngoaingu:ngoaingu,sothich:sothich,metaDescription:metaDescription,kenh_timkiem:kenh_timkiem,other2:other2,other3:other3,other4:other4},function(data){
-				if(data!='0') setTimeout(function(){ $("#ajax_dangky").html('<p style="color:#FFF; font-weight:bold; padding:30px 0 60px;">Đăng ký cuộc thi Hoa Hậu Đại Dương Việt Nam năm 2014 thành công.</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#ajax_dangky").html('<p style="color:#FFF; font-weight:bold; padding:30px 0 60px;">Đăng ký cuộc thi Hoa Hậu Đại Dương Việt Nam năm 2014 thành công. Chúng tôi đã gửi một mail thông báo mà bạn đã cung cấp trước đó.</p>'); },200);
 				else $("#ajax_dangky").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
 			});
 		}
