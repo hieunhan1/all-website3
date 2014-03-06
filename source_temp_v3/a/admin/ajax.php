@@ -27,9 +27,6 @@ if(@$_SESSION["username_admin"]) {
 		$qt->Users_ResetPass($id,$user);
 		echo '1';
 		return true;
-	}else{
-		echo '0';
-		return false;
 	}
 	
 	/*status detele*/
