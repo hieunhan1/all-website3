@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 05, 2014 at 05:07 PM
+-- Generation Time: Mar 06, 2014 at 10:13 AM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -111,7 +111,7 @@ CREATE TABLE `web_info` (
 -- Dumping data for table `web_info`
 -- 
 
-INSERT INTO `web_info` VALUES (1, ',5,', 'Mô tả', 'mo-ta', 'ca-phe-cafe-collagen-2-zero-duoc-ban-khap-hoa-ky-va-canada.jpg', 'Tóm tắt', 'Mô tả,mo ta', '<p>nội dung</p>\r\n', 0, 'vi', 1, '2014-03-01 12:29:36', '2014-03-04 12:29:00', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (1, ',5,7,', 'Trần Nhân', 'mo-ta', 'ca-phe-cafe-collagen-2-zero-duoc-ban-khap-hoa-ky-va-canada.jpg', 'Tóm tắt', 'Mô tả,mo ta', '<p>nội dung</p>\r\n', 0, 'vi', 1, '2014-03-01 12:29:36', '2014-03-04 12:29:00', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -244,21 +244,21 @@ CREATE TABLE `web_menu_admin` (
 -- Dumping data for table `web_menu_admin`
 -- 
 
-INSERT INTO `web_menu_admin` VALUES (1, 'Trang chủ', 'home', NULL, 1, 1);
-INSERT INTO `web_menu_admin` VALUES (2, 'Cấu hình website', 'web_config', NULL, 2, 1);
-INSERT INTO `web_menu_admin` VALUES (3, 'Danh mục menu', 'web_menu', NULL, 3, 1);
-INSERT INTO `web_menu_admin` VALUES (4, 'Thông tin, bài viết', 'web_info', NULL, 4, 1);
-INSERT INTO `web_menu_admin` VALUES (5, 'Item 5', '', NULL, 5, 0);
-INSERT INTO `web_menu_admin` VALUES (6, 'Item 6', '', NULL, 6, 0);
-INSERT INTO `web_menu_admin` VALUES (7, 'Item 7', '', '', 7, 0);
-INSERT INTO `web_menu_admin` VALUES (8, 'Item 8', '', NULL, 8, 0);
-INSERT INTO `web_menu_admin` VALUES (9, 'Item 9', '', NULL, 9, 0);
-INSERT INTO `web_menu_admin` VALUES (10, 'Item 10', '', NULL, 10, 0);
-INSERT INTO `web_menu_admin` VALUES (11, 'Item 11', '', NULL, 11, 0);
-INSERT INTO `web_menu_admin` VALUES (12, 'Item 12', '', NULL, 12, 0);
-INSERT INTO `web_menu_admin` VALUES (13, 'Slider & banner', 'web_slider_banner', NULL, 13, 1);
-INSERT INTO `web_menu_admin` VALUES (14, 'Liên hệ', 'web_contact', NULL, 14, 1);
-INSERT INTO `web_menu_admin` VALUES (15, 'Tài khoản', 'web_users', NULL, 100, 1);
+INSERT INTO `web_menu_admin` VALUES (1, 'Trang chủ', 'home', 'icon-home', 1, 1);
+INSERT INTO `web_menu_admin` VALUES (2, 'Cấu hình website', 'web_config', 'icon-cau-hinh.jpg', 2, 1);
+INSERT INTO `web_menu_admin` VALUES (3, 'Danh mục menu', 'web_menu', 'icon-menu.jpg', 3, 1);
+INSERT INTO `web_menu_admin` VALUES (4, 'Thông tin, bài viết', 'web_info', 'icon-info.jpg', 4, 1);
+INSERT INTO `web_menu_admin` VALUES (5, 'Item 5', '', 'icon-product.jpg', 5, 0);
+INSERT INTO `web_menu_admin` VALUES (6, 'Item 6', '', 'icon-item.jpg', 6, 0);
+INSERT INTO `web_menu_admin` VALUES (7, 'Item 7', '', 'icon-item.jpg', 7, 0);
+INSERT INTO `web_menu_admin` VALUES (8, 'Item 8', '', 'icon-item.jpg', 8, 0);
+INSERT INTO `web_menu_admin` VALUES (9, 'Item 9', '', 'icon-item.jpg', 9, 0);
+INSERT INTO `web_menu_admin` VALUES (10, 'Item 10', '', 'icon-item.jpg', 10, 0);
+INSERT INTO `web_menu_admin` VALUES (11, 'Item 11', '', 'icon-item.jpg', 11, 0);
+INSERT INTO `web_menu_admin` VALUES (12, 'Slider & banner', 'web_slider_banner', 'icon-slider-banner.jpg', 12, 1);
+INSERT INTO `web_menu_admin` VALUES (13, 'Đăng ký trực tuyến', 'web_register', 'icon-register.jpg', 13, 0);
+INSERT INTO `web_menu_admin` VALUES (14, 'Liên hệ', 'web_contact', 'icon-contact.jpg', 14, 1);
+INSERT INTO `web_menu_admin` VALUES (15, 'Tài khoản', 'web_users', 'icon-account.jpg', 100, 1);
 
 -- --------------------------------------------------------
 
@@ -526,7 +526,7 @@ CREATE TABLE `web_users` (
 -- Dumping data for table `web_users`
 -- 
 
-INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,13,14,15,', ',1,2,3,4,13,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,12,14,15,', ',1,2,3,4,12,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
 INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,15,', ',1,15,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-03-05 15:58:57', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------

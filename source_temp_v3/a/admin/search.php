@@ -1,43 +1,30 @@
-<?php 
-if(@$_POST['btnSearch']){
-	($_POST['txtname'] != '') ? $order.=" AND name LIKE '%{$_POST['txtname']}%' " : $order.='';
-	($_POST['danhmuc'] != 0) ? $order.=" AND menu_id LIKE '%,{$_POST['danhmuc']},%' " : $order.='';
-}
-//Danh mục
-/*switch($p){
-	case 'info' : $type_id=2; break;
-	case 'product' : $type_id=3; break;
-	case 'photo_gallery' : $type_id=4; break;
-	case 'video' : $type_id=5; break;
-	default : $type_id=0;
-}*/
-
-function danhmuctim($parent_id=0,$style='',$lang,$arr=NULL){
-	if(!$arr) $arr = array();
-	$qr = "SELECT id,name FROM menu WHERE `delete`=0 AND lang='{$lang}' AND parent_id=";
-	$qr .= $parent_id;
-	$qr .= ' ORDER BY `order`';
-	$sql = mysql_query($qr);
-	while($row = mysql_fetch_array($sql)){
-		$arr[] = array('id'=>$row['id'],'name'=>$style.$row['name']);
-		$arr = danhmuctim($row['id'],$style.'--- ',$lang,$arr);
+<?php
+	/*search*/
+	if(isset($_GET['btnSearch'])){
+		if($_GET['txt']!='' && $_GET['txt']!='Mô tả') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
+		if($_GET['dm']!='0' && $_GET['dm']!='') $str_search .= " AND menu_id LIKE '%,{$_GET['dm']},%' ";
+	}else{
+		$str_search = '';
 	}
-	return $arr;
-}
-$danhmuc = danhmuctim(0,'',$lang);
 ?>
+<form action="" method="get" name="search">
 <div id="search">
-<form action="" method="post" name="search">
-	<input type="text" name="txtname" class="txt" value="<?php if(@$_POST['txtname']) echo $_POST['txtname']?>" />
-    	<select name="danhmuc" class="select">
-    	<option value="0">-- Chọn danh mục --</option>
-    	<?php
-        foreach($danhmuc as $dm){
-			if($_POST['danhmuc']!=$dm['id']) echo "<option value=\"{$dm['id']}\">{$dm['name']}</option>";
-			else echo "<option value=\"{$dm['id']}\" selected=\"selected\">{$dm['name']}</option>";
-		}
-		?>
-    </select>
-    <input type="submit" name="btnSearch" value="Tìm" class="btn" />
-</form>
+	<input type="hidden" name="p" value="<?php echo $table; ?>" />
+    <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Mô tả'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Mô tả') value=''" />
+	<?php
+    $qr = mysql_query("SELECT `id`,`name` FROM `web_menu` WHERE `delete`=0 AND (type_id=1 OR type_id=2) ");
+    while($row = mysql_fetch_array($qr)){
+        //echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+    }
+    
+    //parent_id
+    $name_default = array('Chọn',$id);
+    $arr = $qt->danhmuc_menu_select(0,'',$name_default);
+    $properties = $_GET['dm']; //default check
+    $views = array('','dm','select'); //label id&name class
+    $form->getProperties('5',$arr,$properties,$views);
+    echo $form->DisplayProperties();
+    ?>
+    <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
 </div>
+</form>

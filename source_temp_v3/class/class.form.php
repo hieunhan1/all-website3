@@ -89,8 +89,9 @@ class form {
 			$str .= '<option value="'.$value['id'].'" '.$select.'>'.$value['name'].'</option>';
 		}
 		
-		$str = '<tr><td class="label">'.$views[0].'</td>
-		<td><select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select></td></tr>';
+		if($views[0] == '') $str = '<select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select>';
+		else $str = '<tr><td class="label">'.$views[0].'</td> <td><select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select></td></tr>';
+		
 		return $str;
 	}
 	/* 6. input_button*/
