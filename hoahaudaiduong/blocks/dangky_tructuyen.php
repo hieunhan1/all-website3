@@ -51,17 +51,17 @@ echo $navigator.$view_post;
 	<tr>
     	<td align="right" style="font-weight:bold">3.</td>
     	<td>Chiều cao (m):</td>
-        <td><input type="text" name="chieucao" class="txt_dangky2" /> <span>Cân nặng (kg): <input type="text" name="cannang" class="txt_dangky2" /></span></td>
+        <td><input type="text" name="chieucao" class="txt_dangky2" maxlength="4" /> <span>Cân nặng (kg): <input type="text" name="cannang" class="txt_dangky2" maxlength="4" /></span></td>
     </tr>
 	<tr>
     	<td align="right" valign="top" style="font-weight:bold">4.</td>
     	<td>Số đo 3 vòng (cm)<br />(ngực - eo - mông):</td>
-        <td><input type="text" name="sodo" class="txt_dangky2" /></td>
+        <td><input type="text" name="sodo" class="txt_dangky2" maxlength="10" /></td>
     </tr>
 	<tr>
     	<td align="right" style="font-weight:bold">5.</td>
     	<td>Số CMND hoặc hộ chiếu:</td>
-        <td><input type="text" name="cmnd" class="txt_dangky2" /> <span>&nbsp; &nbsp; Nơi cấp: <input type="text" name="noicap" class="txt_dangky2" /></span> <span>Ngày cấp: <input type="text" name="ngaycap" class="txt_dangky2 select_date" /></span></td>
+        <td><input type="text" name="cmnd" class="txt_dangky2" maxlength="10" /> <span>&nbsp; &nbsp; Nơi cấp: <input type="text" name="noicap" class="txt_dangky2" /></span> <span>Ngày cấp: <input type="text" name="ngaycap" class="txt_dangky2 select_date" /></span></td>
     </tr>
 	<tr>
     	<td align="right" style="font-weight:bold">6.</td>
