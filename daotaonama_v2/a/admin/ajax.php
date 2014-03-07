@@ -66,10 +66,27 @@ if(@$_SESSION["username_admin"]) {
 		}
 	}
 	
-	if(isset($_POST['lophoc_hocvien'])){
-		$id = $_POST['lophoc_hocvien'];
-		//$qr = mysql_query("SELECT id,name FROM  WHERE `delete`=0 AND  ORDER BY `name` ");
+	if(@$_POST['lophoc_hocvien']){
+		$id_lophoc = $_POST['lophoc_hocvien'];
 		
-		echo '<option value="0">-- Chọn học viên --</option>';
+		if($_POST['id_hocvien']=='') $id_hocvien = ''; else $id_hocvien = " AND id_hocvien<>'{$id_hocvien}' ";
+		
+		$qr = mysql_query("SELECT daotao_hocvien.id,daotao_hocvien.name FROM daotao_hocvien WHERE daotao_hocvien.`delete`=0 AND ds_lophoc LIKE '%,{$id_lophoc},%' AND daotao_hocvien.id NOT IN (SELECT id_hocvien FROM daotao_bangdiem WHERE id_lophoc='{$id_lophoc}' {$id_hocvien}) ORDER BY daotao_hocvien.`name`");
+		
+		while($row = mysql_fetch_array($qr)){
+			if($row['id'] != $id_hocvien) echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+			else echo '<option value="'.$row['id'].'" selected="selected">'.$row['name'].'</option>';
+		}
+		return true;
+	}
+	
+	/*excel_tracuu*/
+	if(isset($_POST['kh_lh'])){
+		$kh = $_POST['kh_lh'];
+		$qr = mysql_query("SELECT id,name,capdo FROM daotao_lophoc WHERE `delete`=0 AND id_khoahoc='{$kh}' ORDER BY `name`");
+		while($row = mysql_fetch_array($qr)){
+			$str .= '<option value="'.$row['id'].'">'.$row['name'].' | Level '.$row['capdo'].'</option>';
+		}
+		echo '<option value="0">-- Chọn lớp học --</option>'.$str.'';
 	}
 }

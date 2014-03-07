@@ -38,6 +38,8 @@
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
             <th align="left">Lớp học</th>
+            <th width="60">Level</th>
+            <th width="90">Ngày KG</th>
             <th width="110" class="create">Ngày tạo</th>
             <th width="90" class="create">Người tạo</th>
             <th width="110" class="update">Date update</th>
@@ -48,7 +50,7 @@
         $from = (($page_number - 1) * $max_results);
 		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
+		$str = "SELECT id,name,ngay_kg,capdo,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -56,6 +58,8 @@
 			echo '<tr class="row row_'.$row['id'].'">
 				<td align="center">'.$i.'</td>
 				<td>'.$row['name'].'</td>
+				<td align="center">'.$row['capdo'].'</td>
+				<td align="center">'.date('d/m/Y',strtotime($row['ngay_kg'])).'</td>
 				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($row['date_create'])).'</td>
 				<td align="center" class="create">'.$row['user_create'].'</td>
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>

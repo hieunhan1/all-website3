@@ -1,8 +1,8 @@
 <?php
 	/*search*/
 	if(isset($_GET['btnSearch'])){
-		if($_GET['txt']!='' && $_GET['txt']!='Họ tên') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
-		//if($_GET['dm']!='0' && $_GET['dm']!='') $str_search .= " AND menu_id LIKE '%,{$_GET['dm']},%' ";
+		if($_GET['txt']!='' && $_GET['txt']!='Mô tả') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
+		if($_GET['dm']!='0' && $_GET['dm']!='') $str_search .= " AND id_lophoc='{$_GET['dm']}' ";
 	}else{
 		$str_search = '';
 	}
@@ -10,7 +10,25 @@
 <form action="" method="get" name="search">
 <div id="search">
 	<input type="hidden" name="p" value="<?php echo $table; ?>" />
-    <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Họ tên'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Họ tên') value=''" />
+    <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Mô tả'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Mô tả') value=''" />
+	<?php
+    $qr = mysql_query("SELECT `id`,`name` FROM `web_menu` WHERE `delete`=0 AND (type_id=1 OR type_id=2) ");
+    while($row = mysql_fetch_array($qr)){
+        //echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+    }
+    
+    //parent_id
+    $arr = array();
+	$arr[] = array('id'=>0, 'name'=>'--- Chọn lớp học ---');
+	$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 ORDER BY `id_khoahoc`,`name`");
+	while($row = mysql_fetch_array($qr)){
+		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
+	}
+    $properties = $_GET['dm']; //default check
+    $views = array('','dm','select'); //label id&name class
+    $form->getProperties('5',$arr,$properties,$views);
+    echo $form->DisplayProperties();
+    ?>
     <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
 </div>
 </form>
@@ -19,7 +37,7 @@
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
-            <th align="left">Họ tên</th>
+            <th align="left">Mô tả</th>
             <th width="110" class="create">Ngày tạo</th>
             <th width="90" class="create">Người tạo</th>
             <th width="110" class="update">Date update</th>

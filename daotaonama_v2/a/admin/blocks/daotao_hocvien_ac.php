@@ -71,6 +71,24 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	//ds_lophoc
+	$values = $row_detail['ds_lophoc'];
+	$views = 'ds_lophoc'; //name
+    $form->getProperties('2',$values,'',$views);
+	$hidden_item = $form->DisplayProperties();
+	
+	$date = date('Y-m-d');
+	$arr = array();
+	$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 AND ngay_kg>='{$date}' ORDER BY `id_khoahoc`,`name`");
+	while($row = mysql_fetch_array($qr)){
+		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
+	}
+
+	$properties = $row_detail['ds_lophoc']; //default check
+	$views = array('','','checkbox checkbox_item','width:345px; height:300px;'); //label name class width
+    $form->getProperties('7',$arr,$properties,$views);
+	echo '<tr><td class="label">Lớp học</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
+	
 	//name
 	$values = $row_detail['name'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 

@@ -70,12 +70,14 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 	
 	//id_hocvien
-	echo '<tr><td class="label">Học viên</td> <td><select name="id_hocvien" class="input_medium hocvien"></select></td></tr>';
+	echo '<tr><td class="label">Học viên</td> <td><select name="id_hocvien" class="input_medium hocvien"></select>
+	<div id="id_hocvien" style="display:none">'.$row_detail['id_hocvien'].'</div>
+	</td></tr>';
 	
 	//name
 	$values = $row_detail['name'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Mô tả','name','input_medium'); //label id&name class style
+	$views = array('Mô tả','name','input_medium mota_bangdiem'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	

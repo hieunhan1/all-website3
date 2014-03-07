@@ -20,6 +20,7 @@
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
             <th align="left">Họ tên</th>
+            <th width="110">Điện thoại</th>
             <th width="110" class="create">Ngày tạo</th>
             <th width="90" class="create">Người tạo</th>
             <th width="110" class="update">Date update</th>
@@ -30,7 +31,7 @@
         $from = (($page_number - 1) * $max_results);
 		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
+		$str = "SELECT id,name,phone,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -38,6 +39,7 @@
 			echo '<tr class="row row_'.$row['id'].'">
 				<td align="center">'.$i.'</td>
 				<td>'.$row['name'].'</td>
+				<td align="center">'.$row['phone'].'</td>
 				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($row['date_create'])).'</td>
 				<td align="center" class="create">'.$row['user_create'].'</td>
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
