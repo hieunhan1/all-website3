@@ -71,9 +71,11 @@ if($_POST['update_user']=='update_user' && @$_SESSION['user_id']){
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
 	$diachi = $_POST['diachi'];
+	$gioitinh = $_POST['gioitinh'];
+	$ngaysinh = $_POST['ngaysinh'];
 	
 	if($name!='' && $email!='' && $phone!='' && $diachi!=''){
-		$qr = "UPDATE daotao_hocvien SET name='{$name}',email='{$email}',phone='{$phone}',diachi='{$diachi}' WHERE `delete`=0 AND status=1 AND id='".$_SESSION['user_id']."' AND username='".$_SESSION['user_name']."' ";
+		$qr = "UPDATE daotao_hocvien SET name='{$name}',email='{$email}',phone='{$phone}',diachi='{$diachi}',gioitinh='{$gioitinh}',ngaysinh='{$ngaysinh}' WHERE `delete`=0 AND status=1 AND id='".$_SESSION['user_id']."' AND username='".$_SESSION['user_name']."' ";
 		mysql_query($qr);
 		echo '1';
 		return true;

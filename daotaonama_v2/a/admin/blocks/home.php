@@ -9,4 +9,5 @@ while($row = mysql_fetch_array($qr)){
 	</a></div>';
 }
 ?>
+<div style="clear:both; height:1px"></div>
 </div>

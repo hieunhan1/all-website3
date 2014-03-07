@@ -13,18 +13,36 @@ if($id == 0){
 	$views = 'user_create';
     $form->getProperties('2',$values,'',$views);
 	$user_action = $form->DisplayProperties();
+	//disabled
+	$disabled = '';
 }else{
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
     $form->getProperties('2',$values,'',$views);
 	$user_action = $form->DisplayProperties();
 	
+	//disabled
+	$disabled = '" disabled="disabled';
+	
 	$qr = mysql_query("SELECT * FROM `{$table}` WHERE `delete`=0 AND `id`='{$id}' ");
 	$row_detail = mysql_fetch_array($qr);
+	
+	if($row_detail['username'] == '') $btn_user_hv = '<span id="ajax_user_hv" style="font-weight:bold; color:#F00; font-size:120%"><input type="text" name="username" class="input_large" /> <input type="button" name="create_user" class="button" value="Tạo tài khoản" /></span>';
+	else $btn_user_hv = '<span id="ajax_user_hv" style="font-weight:bold; color:#F00; font-size:120%">'.$row_detail['username'].'</span>';
+		
+	//user_hocvien
+	$user_hv = '<div style="line-height:20px; margin-bottom:20px"><em><b>Lưu ý:</b><br> - Mật khẩu có dạng <b>username + 123</b> <br> - Trạng thái bắt buộc phải được <b>enable</b> <br>
+	VD: Username là <b>daotaonama</b> thì mật khẩu là <b>daotaonama123</b></em></div>
+	<div style="margin-bottom:20px; padding:5px 10px; background-color:#FFA">Tài khoản: '.$btn_user_hv.'</div>';
 }
 
 
@@ -38,6 +56,7 @@ if(!empty($_POST)){
 	else echo "<p class='error'>{$check}</p>";
 }
 
+echo $user_hv;
 echo '<form name="form_action" method="post" action="">
 <table width="100%" border="0" cellpadding="0" cellspacing="10" style="margin-bottom:50px">';
 	
@@ -45,18 +64,11 @@ echo '<form name="form_action" method="post" action="">
 	
 	//status
 	$arr = array();
-	$arr[] = array('id'=>'1', 'name'=>'Hiện');
-	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
+	$arr[] = array('id'=>'1', 'name'=>'enable');
+	$arr[] = array('id'=>'0', 'name'=>'disable');
 	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//date_update
-	$values = $row_detail['date_update'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//name
@@ -64,6 +76,22 @@ echo '<form name="form_action" method="post" action="">
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Họ tên','name','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//ngaysinh
+	$values = $row_detail['ngaysinh'];
+	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Ngày sinh','ngaysinh','input_large datetimepick'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//gioitinh
+	$arr = array();
+	$arr[] = array('id'=>'1', 'name'=>'Nam');
+	$arr[] = array('id'=>'0', 'name'=>'Nữ');
+	$properties = $row_detail['gioitinh']; //default check
+	$views = array('Giới tính','gioitinh','radio',' &nbsp; '); //label name class other
+    $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//email
@@ -87,17 +115,27 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//message
-	$values = $row_detail['message'];
-	$properties = ''; //disabled, readonly
-	$views = array('Nội dung','message','textarea'); //label id&name class colspan
-	$other = ckeditor_custom('message');
-    $form->getProperties('3',$values,$properties,$views,$other);
+	//id_khoahoc
+	$arr = array();
+	$arr[] = array('id'=>0, 'name'=>'--- Chọn khóa học ---');
+	$qr = mysql_query("SELECT id,name FROM web_info WHERE `delete`=0 AND menu_id LIKE '%,5,%' ORDER BY `name` ");
+	while($row = mysql_fetch_array($qr)){
+		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
+	}
+	$properties = $row_detail['id_khoahoc']; //default check
+	$views = array('Khóa học','id_khoahoc','input_medium'.$disabled); //label id&name class
+    $form->getProperties('5',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name
+    $form->getProperties('2',$values,'',$views);
+	echo $form->DisplayProperties();
+	
+	//lang
+	$values = $lang;
+	$views = 'lang'; //name
     $form->getProperties('2',$values,'',$views);
 	echo $form->DisplayProperties();
 	

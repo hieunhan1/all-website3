@@ -188,6 +188,9 @@ $(document).ready(function($){
 		var email = $.trim($("input[name=email]").val());
 		var phone = $.trim($("input[name=phone]").val());
 		var diachi = $.trim($("input[name=diachi]").val());
+		var gioitinh = $.trim($("select[name=gioitinh]").val());
+		var ngaysinh = $.trim($("input[name=nam]").val()) + '-' + $.trim($("input[name=thang]").val()) + '-' + $.trim($("input[name=ngay]").val());
+		
 		if(name.length<2){
 			alert("Nhập họ tên");
 			$("input[name=name]").focus();
@@ -205,7 +208,7 @@ $(document).ready(function($){
 			$("input[name=diachi]").focus();
 			return false;
 		}else{
-			$.post("ajax.php",{update_user:"update_user",name:name,email:email,phone:phone,diachi:diachi},function(data){
+			$.post("ajax.php",{update_user:"update_user",name:name,email:email,phone:phone,diachi:diachi,gioitinh:gioitinh,ngaysinh:ngaysinh},function(data){
 				if(data=='1'){
 					$("#thongtinhocvien_update").html('<p style="color:#03F">Cập nhật thông tin thành công. 5 giây sau sẽ tải lại trang</p>');
 					setTimeout(function(){

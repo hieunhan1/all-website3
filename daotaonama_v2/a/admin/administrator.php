@@ -21,8 +21,14 @@ if(@$user){
 	include_once('config.php');
 	include_once('layout.php');
 	
-	if(isset($_GET["p"])) $p = $_GET["p"]; else $p = 'home';
-	$table = trim($p,'_ac');
+	if(isset($_GET["p"])){
+		$p = $_GET["p"];
+		$table = explode('_ac',$p);
+		$table = $table[0];
+	}else{
+		$p = 'home';
+		$table = 'home';
+	}
 	$id = $_GET["id"];
 	
 	if(!isset($_GET['page_number'])) $page_number = 1; else $page_number = $_GET['page_number'];
@@ -93,7 +99,7 @@ function SetFileField(fileUrl, data){
 				$i++;
 				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
 				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#F00">'.$row['name'].'</a>';
-				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />';
+				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />'; else if($i == 9) echo '<hr />';
 			}
 			?>
         </div>

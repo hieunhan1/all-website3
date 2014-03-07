@@ -5,6 +5,8 @@ body{color:#1E1E1E; font-family:Arial, Helvetica, sans-serif; font-size:13px}
 a {color:#0000FF; text-decoration:none}
 a:hover {color:#F00; text-decoration:underline}
 hr{border: solid 2px #F3A972}
+select{background-color:#FFC}
+
 
 #login{width:240px; height:260px; margin:30px auto 0; padding:10px; border:solid 1px #a9c1d4; background:url(images/bg-dangnhap.gif) repeat-x}
 #login h2{display:block; margin-bottom:10px; padding-bottom:10px; border-bottom:solid 1px #b4b8be}
@@ -41,7 +43,7 @@ hr{border: solid 2px #F3A972}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#ED1E28}
 
-.label{width:100px; text-align:right; vertical-align:top; font-weight:bold; padding-top:3px}
+.label{width:150px; text-align:right; vertical-align:top; font-weight:bold; padding-top:3px}
 .radio{margin-top:5px}
 .checkbox{margin-top:5px}
 
@@ -66,6 +68,6 @@ hr{border: solid 2px #F3A972}
 #search .select{width:150px; padding:3px; border:solid 1px #999}
 #search .btn{padding:3px 20px;}
 
-#chucnang{width:560px; height:380px; margin:auto; padding-top:20px}
+#chucnang{margin:auto; padding:20px 40px 50px 80px}
 #chucnang .item{width:120px; height:120px; float:left; text-align:center; margin:20px 10px; background-color:#FFF}
 #chucnang .item p{font-weight:bold; padding:5px 0}
