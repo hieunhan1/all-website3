@@ -126,9 +126,42 @@ $(document).ready(function(){
 		}
 	});
 	
-	/*other*/
+	///////////////////////////////////
+	////////////*other*////////////////
+	///////////////////////////////////
+	$("input[name=create_user]").click(function(){
+		var id = $.trim($("input[name=id]").val());
+		var username = $.trim($("input[name=username]").val());
+		
+		if(username.length < 6){ alert('Username phải hơn 6 ký tự'); $("input[name=username]").focus(); return false; };
+		
+		$("input[name=create_user]").hide();
+		
+		$.post("ajax.php",{create_user:id,username:username},function(data){
+			if(data=='2'){
+				$("input[name=create_user]").show();
+				alert('User này đã tồn tại. Vui lòng nhập user khác.');
+				$("input[name=username]").focus();
+				return false;
+			}else if(data=='3'){
+				$("input[name=create_user]").show();
+				alert('Username không được chứa ký tự đặc biệt');
+				$("input[name=username]").focus();
+				return false;
+			}else if(data=='0'){
+				alert('Lỗi. Vui lòng ấn F5 thử lại.');
+				return false;
+			}else{
+				$("#ajax_user_hv").html(data);
+			}
+		});
+	});
 	
+	$(".lophoc").change(function(){
+		var id = $(this).val();
+		$.post("ajax.php",{lophoc_hocvien:id},function(data){
+			$(".hocvien").html(data);
+		});
+	});
 	
-	// alert(); 
-	// function(data){ $("body").prepend(data);
 });

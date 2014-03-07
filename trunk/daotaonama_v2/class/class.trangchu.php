@@ -132,12 +132,12 @@ class trangchu extends db {
 	/*register*/
 	function insert_register($name,$phone,$email,$khoahoc){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `daotao_hocvien` VALUES ('','{$name}','1','{$email}','{$phone}','','{$khoahoc}','','','vi','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `daotao_hocvien` VALUES ('','{$name}','','1','{$email}','{$phone}','','{$khoahoc}','','','vi','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	
 	function select_user(){
-		$qr = "SELECT name,email,phone,diachi FROM daotao_hocvien WHERE `delete`=0 AND status=1 AND id='".$_SESSION['user_id']."' LIMIT 1";
+		$qr = "SELECT name,ngaysinh,gioitinh,email,phone,diachi FROM daotao_hocvien WHERE `delete`=0 AND status=1 AND id='".$_SESSION['user_id']."' LIMIT 1";
 		return mysql_query($qr);
 	}
 	

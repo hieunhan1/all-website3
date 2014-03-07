@@ -19,6 +19,21 @@ $row = mysql_fetch_array($qr);
                 <td><input type="text" name="name" value="<?php echo $row['name']; ?>" class="txt_update_hocvien" /></td>
             </tr>
             <tr>
+                <td align="right" width="25%">Ngày sinh:</td>
+                <td>
+                <input type="text" name="ngay" value="" class="txt_update_hocvien" maxlength="2" style="width:60px" /> dd/ 
+                <input type="text" name="thang" value="" class="txt_update_hocvien" maxlength="2" style="width:60px" /> mm/ 
+                <input type="text" name="nam" value="" class="txt_update_hocvien" maxlength="4" style="width:120px" />yyyy
+                </td>
+            </tr>
+            <tr>
+                <td align="right" width="25%">Giới tính:</td>
+                <td><select name="gioitinh" class="txt_update_hocvien" style="width:100px">
+                	<option value="1" <?php if($row['gioitinh']==1) echo 'selected="selected"'; ?> >Nam</option>
+                	<option value="0" <?php if($row['gioitinh']==0) echo 'selected="selected"'; ?> >Nữ</option>
+                </select></td>
+            </tr>
+            <tr>
                 <td align="right">Email:</td>
                 <td><input type="text" name="email" value="<?php echo $row['email']; ?>" class="txt_update_hocvien" /></td>
             </tr>
@@ -67,6 +82,14 @@ $row = mysql_fetch_array($qr);
             <tr>
                 <td align="right" width="50%">Họ tên:</td>
                 <td><?php echo $row['name']; ?>&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right" width="50%">Ngày sinh:</td>
+                <td><?php echo date('d/m/Y',strtotime($row['ngaysinh'])); ?>&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right" width="50%">Giới tính:</td>
+                <td><?php if($row['gioitinh']==1) echo 'Nam'; else echo 'Nữ'; ?>&nbsp;</td>
             </tr>
             <tr>
                 <td align="right">Email:</td>

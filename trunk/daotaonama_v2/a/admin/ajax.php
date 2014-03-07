@@ -44,5 +44,32 @@ if(@$_SESSION["username_admin"]) {
 		mysql_query($qr);
 	}
 		
-	//echo '111111111';	
+	/*other*/
+	if(isset($_POST['create_user'])){
+		$id = trim($_POST['create_user']);
+		$username = trim($_POST['username']);
+		$password = md5($username.'123');
+		$date = date('Y-m-d H:i:s');
+		
+		if($username!='' && $id!=''){
+			if(!eregi("^[[:alnum:]]+$", $username)){ echo '3'; return false; }
+			$qr = mysql_query("SELECT id FROM daotao_hocvien WHERE username='{$username}' ");
+			if(mysql_num_rows($qr) == 0){
+				mysql_query("UPDATE daotao_hocvien SET username='{$username}',password='{$password}',date_update='{$date}' WHERE id='{$id}' ");
+				echo $username;
+				return true;
+			}else{
+				echo '2'; return false;
+			}
+		}else{
+			echo '0'; return false;
+		}
+	}
+	
+	if(isset($_POST['lophoc_hocvien'])){
+		$id = $_POST['lophoc_hocvien'];
+		//$qr = mysql_query("SELECT id,name FROM  WHERE `delete`=0 AND  ORDER BY `name` ");
+		
+		echo '<option value="0">-- Chọn học viên --</option>';
+	}
 }
