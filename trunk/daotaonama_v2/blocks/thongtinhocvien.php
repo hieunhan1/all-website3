@@ -108,22 +108,21 @@ $row = mysql_fetch_array($qr);
         </table><br />
         
         <?php
-        $qr = $tc->select_lophoc();
-        while($row = mysql_fetch_array($qr)){
-            $str_lophoc .= '<div class="select_lophoc select_lophoc_'.$row['id'].'">'.$row['name'].'</div>';
-            $qr_d = $tc->select_bangdiem($row['id']);
-            $row_d = mysql_fetch_array($qr_d);
-            
-            $str_cotdiem .= '<tbody class="ds_cotdiem ds_cotdiem_'.$row['id'].'">';
-            for($i=1; $i<=8; $i++){
-                if($row_d['diem'.$i] != 0){
-                    $str_cotdiem .= '<tr><td align="right" width="50%">Cột điểm '.$i.':</td>
-                    <td>'.$row_d['diem'.$i].'&nbsp;</td></tr>';
-                }
-            }
-            $str_cotdiem .= '</tbody>';
-            
-        }
+		$qr = $tc->select_lophoc();
+		while($row = mysql_fetch_array($qr)){
+			$str_lophoc .= '<div class="select_lophoc select_lophoc_'.$row['id'].'">'.$row['name'].'</div>';
+			$qr_d = $tc->select_bangdiem($row['id']);
+			$row_d = mysql_fetch_array($qr_d);
+			
+			$str_cotdiem .= '<tbody class="ds_cotdiem ds_cotdiem_'.$row['id'].'">';
+			for($i=1; $i<=8; $i++){
+				if($row_d['diem'.$i] != 0){
+					$str_cotdiem .= '<tr><td align="right" width="50%">Cột điểm '.$i.':</td>
+					<td>'.$row_d['diem'.$i].'&nbsp;</td></tr>';
+				}
+			}
+			$str_cotdiem .= '</tbody>';
+		}
         ?>
         <table width="80%" border="0" cellpadding="0" cellspacing="10" style="margin:auto">
             <tr>

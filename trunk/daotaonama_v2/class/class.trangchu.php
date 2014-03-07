@@ -142,7 +142,18 @@ class trangchu extends db {
 	}
 	
 	function select_lophoc(){
-		$qr = "SELECT daotao_lophoc.id,daotao_lophoc.name FROM daotao_khoahoc,daotao_lophoc WHERE daotao_lophoc.`delete`=0 AND id_hocvien='".$_SESSION['user_id']."' AND id_lophoc=daotao_lophoc.id ";
+		$ds_lophoc = explode(',',$_SESSION['danhsach_lophoc']);
+		$total = count($ds_lophoc)-1;
+		if($total > 1){
+			$str = ' AND (';
+			for($i=1; $i<$total; $i++){
+				$str .= " id='{$ds_lophoc[$i]}' OR ";
+			}
+			$str = rtrim($str,'OR ');
+			$str .= ') ';
+		}
+		
+		$qr = "SELECT id,name FROM daotao_lophoc WHERE `delete`=0 ".$str;
 		return mysql_query($qr);
 	}
 	

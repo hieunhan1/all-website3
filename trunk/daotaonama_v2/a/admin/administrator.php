@@ -99,7 +99,7 @@ function SetFileField(fileUrl, data){
 				$i++;
 				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
 				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#F00">'.$row['name'].'</a>';
-				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />'; else if($i == 9) echo '<hr />';
+				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />'; else if($i == 10) echo '<hr />';
 			}
 			?>
         </div>

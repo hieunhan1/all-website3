@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 06, 2014 at 05:01 PM
+-- Generation Time: Mar 07, 2014 at 05:25 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -40,12 +40,16 @@ CREATE TABLE `daotao_bangdiem` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `daotao_bangdiem`
 -- 
 
+INSERT INTO `daotao_bangdiem` VALUES (1, 'Anh Văn Thiếu Niên - K1 | Ngọc Hiền', 1, 2, 8, 8, 8, 8, 8, 8, 8, 8, 'vi', 1, '2014-03-07 15:48:25', '2014-03-07 16:35:11', 'admin', 'admin', 0);
+INSERT INTO `daotao_bangdiem` VALUES (2, 'Anh Văn Thiếu Niên - K1 | Trần Hiếu Nhân', 1, 1, 7, 8, 7, 8, 0, 8, 7, 8, 'vi', 1, '2014-03-07 15:51:11', '2014-03-07 16:35:08', 'admin', 'admin', 0);
+INSERT INTO `daotao_bangdiem` VALUES (3, 'Anh Văn Thiếu Niên - K2 | Trần Hiếu Nhân', 2, 1, 8, 9, 7, 8, 8, 7, 8, 9, 'vi', 1, '2014-03-07 15:52:45', '2014-03-07 16:35:05', 'admin', 'admin', 0);
+INSERT INTO `daotao_bangdiem` VALUES (4, 'Anh Văn Thiếu Niên - K2 | Vũ Đào', 2, 3, 7, 7, 7, 7, 7, 7, 7, 7, 'vi', 1, '2014-03-07 16:34:50', '0000-00-00 00:00:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -69,12 +73,14 @@ CREATE TABLE `daotao_giangvien` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `daotao_giangvien`
 -- 
 
+INSERT INTO `daotao_giangvien` VALUES (1, 'Trần Văn A', 1, 'vana@yahoo.com', '0988388003', '123 CMT 8', 'DH', 'vi', 1, '2014-03-07 11:10:33', '2014-03-07 14:23:40', 'admin', 'admin', 0);
+INSERT INTO `daotao_giangvien` VALUES (2, 'Nguyễn Thị Bé', 0, 'be@yahoo.com', '01234567890', '123 CMT 8, Quận 10, Tp.HCM', 'Th.S', 'vi', 1, '2014-03-07 11:11:03', '2014-03-07 14:23:32', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -85,11 +91,13 @@ CREATE TABLE `daotao_giangvien` (
 CREATE TABLE `daotao_hocvien` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(100) NOT NULL,
+  `ngaysinh` datetime default NULL,
   `gioitinh` tinyint(1) NOT NULL default '1',
   `email` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `diachi` varchar(200) NOT NULL,
-  `khoahoc` int(3) NOT NULL,
+  `id_khoahoc` int(3) NOT NULL,
+  `ds_lophoc` varchar(30) NOT NULL,
   `username` char(32) NOT NULL,
   `password` char(32) NOT NULL,
   `lang` varchar(2) NOT NULL,
@@ -100,12 +108,15 @@ CREATE TABLE `daotao_hocvien` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- 
 -- Dumping data for table `daotao_hocvien`
 -- 
 
+INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', '1989-04-30 00:00:00', 1, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 7, ',1,2,', 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'vi', 1, '2014-03-07 12:21:41', '2014-03-07 15:17:29', 'admin', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (2, 'Ngọc Hiền', '1991-11-19 00:00:00', 0, 'hien@yahoo.com', '01234567890', '123 CMT 8, Quận 10, Tp.HCM', 7, ',1,', 'hientran', 'ba96ba58f371c9168e2af5c88701f6b0', 'vi', 1, '2014-03-07 14:12:19', '2014-03-07 15:17:24', 'admin', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (3, 'Vũ Đào', '1990-02-02 00:00:00', 1, 'vudao@yahoo.com', '0911988788', 'Lê Đức Thọ , Gò Vấp', 4, ',1,2,', 'vudao1', '19e0af83e292a3fa5256e117f1e0f826', 'vi', 1, '2014-03-07 14:15:29', '2014-03-07 16:15:29', 'khachhang', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -141,6 +152,7 @@ CREATE TABLE `daotao_khoahoc` (
 CREATE TABLE `daotao_lophoc` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(100) NOT NULL,
+  `ngay_kg` datetime NOT NULL,
   `id_khoahoc` int(3) NOT NULL,
   `id_giangvien` int(3) NOT NULL,
   `capdo` varchar(1) NOT NULL,
@@ -153,12 +165,14 @@ CREATE TABLE `daotao_lophoc` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `daotao_lophoc`
 -- 
 
+INSERT INTO `daotao_lophoc` VALUES (1, 'Anh Văn Thiếu Niên - K1', '2014-03-07 11:43:00', 7, 1, '1', '', 'vi', 1, '2014-03-07 11:43:57', '2014-03-07 15:12:05', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (2, 'Anh Văn Thiếu Niên - K2', '2014-03-07 13:27:00', 7, 2, '2', '', 'vi', 1, '2014-03-07 13:27:14', '2014-03-07 14:23:47', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -197,7 +211,7 @@ CREATE TABLE `web_config` (
 -- Dumping data for table `web_config`
 -- 
 
-INSERT INTO `web_config` VALUES (1, 'Việt Nam', 'vi', 'localhost/all/daotaonama_v2', 10, 10, 10, 10, 'Copyright © 2014', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<h3><span style="color:#FF0000;">TRUNG TÂM ĐÀO TẠO NAM Á</span></h3>\r\n\r\n<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1,hieu_nhan111', 'Trần Ngọc Phú,Nguyễn Trọng Thắng', '090 387 65 67,091 939 23 43', '0988 388 388', '0903 876 567 - 0919 39 2343', 1, '2013-02-20 13:35:24', '2013-03-01 16:18:00', 'admin', 'admin', 0);
+INSERT INTO `web_config` VALUES (1, 'Việt Nam', 'vi', 'localhost/all/daotaonama_v2', 10, 10, 10, 10, 'Copyright © 2014', '<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', '<h3><span style="color:#FF0000;">TRUNG TÂM ĐÀO TẠO NAM Á</span></h3>\r\n\r\n<p>Địa chỉ: 69 Xuân Hồng, P.12, Q.Tân Bình<br />\r\nĐiện thoại: 083 811 29 28 - 083 948 55 94<br />\r\nWebsite: www.daotaonama.com</p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1,hieu_nhan111', 'Trần Ngọc Phú,Nguyễn Trọng Thắng', '090 387 65 67,091 939 23 43', '0988 388 388', '0903 876 567 - 0919 39 2343', 1, '2013-02-20 13:35:24', '2014-03-07 14:18:53', 'admin', 'admin', 0);
 INSERT INTO `web_config` VALUES (2, 'English', 'en', 'localhost/all/source_temp', 10, 10, 10, 10, 'Copyright © 2014', '', '', 'hieunhan112@gmail.com', 'hieu_nhan1', '', '', '0988 388 388', '0988 388 388', 1, '2013-08-10 10:09:29', '2013-08-10 15:35:00', 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
@@ -272,7 +286,7 @@ INSERT INTO `web_info` VALUES (9, ',1,', 'Giới thiệu', 'gioi-thieu', '', 'Đ
 INSERT INTO `web_info` VALUES (10, ',8,', 'Tặng 200 phần quà cho Tết Nguyên Đán 2014', 'tang-200-phan-qua-cho-tet-nguyen-dan-2014', '', 'Tặng 200 phần quà cho Tết Nguyên Đán 2014 Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravid', 'Tặng 200 phần quà cho Tết Nguyên Đán 2014,tang 200 phan qua cho tet nguyen dan 2014', '<p>Tặng 200 phần quà cho Tết Nguyên Đán 2014</p>\r\n', 1, 'vi', 1, '2014-03-06 16:04:07', '2014-03-06 16:04:00', 'admin', 'admin', 0);
 INSERT INTO `web_info` VALUES (11, ',8,', 'Thư chúc mừng năm mới giáp ngọ 2014', 'thu-chuc-mung-nam-moi-giap-ngo-2014', '', 'Thư chúc mừng năm mới giáp ngọ 2014 sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. ', 'Thư chúc mừng năm mới giáp ngọ 2014,thu chuc mung nam moi giap ngo 2014', '<p>Thư chúc mừng năm mới giáp ngọ 2014</p>\r\n', 1, 'vi', 1, '2014-03-06 16:05:54', '2014-03-06 16:05:00', 'admin', 'admin', 0);
 INSERT INTO `web_info` VALUES (12, ',8,', 'Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á', 'su-kien-chao-mung-nam-giap-ngo-cua-trung-tam-dao-tao-nam-a', '', 'Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á , cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque,', 'Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á,su kien chao mung nam giap ngo cua trung tam dao tao nam a', '<p>Sự kiện chào mừng năm Giáp Ngọ của trung tâm đào tạo Nam Á</p>\r\n', 1, 'vi', 1, '2014-03-06 16:06:31', '2014-03-06 16:06:00', 'admin', NULL, 0);
-INSERT INTO `web_info` VALUES (13, ',8,', 'Họat động chào mừng ngày nhà giáo VN', 'hoat-dong-chao-mung-ngay-nha-giao-vn', '', 'Họat động chào mừng ngày nhà giáo Việt Nam  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus', 'Họat động chào mừng ngày nhà giáo VN,hoat dong chao mung ngay nha giao vn', '<p>Họat động chào mừng ngày nhà giáo VN</p>\r\n', 1, 'vi', 1, '2014-03-06 16:06:55', '2014-03-06 16:06:00', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (13, ',8,', 'Họat động chào mừng ngày nhà giáo VN', 'hoat-dong-chao-mung-ngay-nha-giao-vn', '', 'Họat động chào mừng ngày nhà giáo Việt Nam  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus', 'Họat động chào mừng ngày nhà giáo VN,hoat dong chao mung ngay nha giao vn', '<p>Họat động chào mừng ngày nhà giáo VN</p>\r\n', 1, 'vi', 1, '2014-03-06 16:06:55', '2014-03-07 14:19:07', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -375,7 +389,7 @@ CREATE TABLE `web_menu` (
 -- Dumping data for table `web_menu`
 -- 
 
-INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', '', '', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2014-03-06 15:49:23', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', '', '', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 'Trung tâm đào tạo Nam Á', 0, 1, ',1,', 'vi', 0, 1, 1, '2013-10-09 15:36:09', '2014-03-07 14:20:00', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (2, 'Trang chủ giới thiệu', 'trang-chu-gioi-thieu', 'trang-chu-gioi-thieu/', '', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 'Trang chủ giới thiệu', 1, 2, ',8,', 'vi', 0, 0, 0, '2013-10-09 15:38:02', '2014-03-06 15:49:58', 'admin', 'admin', 1);
 INSERT INTO `web_menu` VALUES (3, 'Trang chủ sản phẩm', 'trang-chu-san-pham', 'trang-chu-san-pham/', '', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm', 'Trang chủ sản phẩm,trang chu san pham', 1, 10, ',1,', 'vi', 0, 0, 0, '2013-10-09 15:38:25', '2014-03-06 15:49:58', 'admin', 'admin', 1);
 INSERT INTO `web_menu` VALUES (4, 'Trang chủ liên hệ', 'trang-chu-lien-he', 'trang-chu-lien-he/', 'hinhanh.jpg', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 'Trang chủ liên hệ', 1, 10, ',1,', 'vi', 0, 0, 0, '2013-10-09 15:38:38', '2014-03-06 15:49:59', 'admin', 'admin', 1);
@@ -410,12 +424,12 @@ INSERT INTO `web_menu_admin` VALUES (1, 'Trang chủ', 'home', 'icon-home', 1, 1
 INSERT INTO `web_menu_admin` VALUES (2, 'Cấu hình website', 'web_config', 'icon-cau-hinh.jpg', 2, 1);
 INSERT INTO `web_menu_admin` VALUES (3, 'Danh mục menu', 'web_menu', 'icon-menu.jpg', 3, 1);
 INSERT INTO `web_menu_admin` VALUES (4, 'Thông tin, bài viết', 'web_info', 'icon-info.jpg', 4, 1);
-INSERT INTO `web_menu_admin` VALUES (5, 'Item 5', '', 'icon-product.jpg', 5, 0);
-INSERT INTO `web_menu_admin` VALUES (6, 'Item 6', '', 'icon-item.jpg', 6, 0);
-INSERT INTO `web_menu_admin` VALUES (7, 'Item 7', '', 'icon-item.jpg', 7, 0);
-INSERT INTO `web_menu_admin` VALUES (8, 'Item 8', '', 'icon-item.jpg', 8, 0);
-INSERT INTO `web_menu_admin` VALUES (9, 'Item 9', '', 'icon-item.jpg', 9, 0);
-INSERT INTO `web_menu_admin` VALUES (10, 'Item 10', '', 'icon-item.jpg', 10, 0);
+INSERT INTO `web_menu_admin` VALUES (5, 'item', '', '', 5, 0);
+INSERT INTO `web_menu_admin` VALUES (6, 'Đào tạo - Giảng Viên', 'daotao_giangvien', 'icon-registry-2.jpg', 6, 1);
+INSERT INTO `web_menu_admin` VALUES (7, 'Đào tạo - Lớp học', 'daotao_lophoc', 'icon-lop-hoc.jpg', 7, 1);
+INSERT INTO `web_menu_admin` VALUES (8, 'Đào tạo - Học viên', 'daotao_hocvien', 'icon-hoc-vien.jpg', 8, 1);
+INSERT INTO `web_menu_admin` VALUES (9, 'Đào tạo - Bảng điểm', 'daotao_bangdiem', 'icon-item.jpg', 9, 1);
+INSERT INTO `web_menu_admin` VALUES (10, 'Xuất ecxel - Tra cứu', 'excel_tracuu', 'icon-tra-cuu-cap-bang.jpg', 10, 1);
 INSERT INTO `web_menu_admin` VALUES (11, 'Item 11', '', 'icon-item.jpg', 11, 0);
 INSERT INTO `web_menu_admin` VALUES (12, 'Slider & banner', 'web_slider_banner', 'icon-slider-banner.jpg', 5, 1);
 INSERT INTO `web_menu_admin` VALUES (13, 'Đăng ký trực tuyến', 'web_register', 'icon-register.jpg', 13, 0);
@@ -633,7 +647,7 @@ CREATE TABLE `web_slider_banner` (
 -- Dumping data for table `web_slider_banner`
 -- 
 
-INSERT INTO `web_slider_banner` VALUES (1, 1, ',1,5,8,9,10,', 'Slider', 'slider.jpg', 'javascript:;', '', 'vi', 1, '2013-10-09 16:34:33', '2014-03-04 14:00:00', 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (1, 1, ',1,5,8,9,10,', 'Slider', 'slider.jpg', 'javascript:;', '', 'vi', 1, '2013-10-09 16:34:33', '2014-03-07 14:19:13', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -688,7 +702,7 @@ CREATE TABLE `web_users` (
 -- Dumping data for table `web_users`
 -- 
 
-INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,12,14,15,', ',1,2,3,4,12,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,12,6,7,8,9,10,14,15,', ',1,2,3,4,12,6,7,8,9,10,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
 INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,15,', ',1,15,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-03-05 15:58:57', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------

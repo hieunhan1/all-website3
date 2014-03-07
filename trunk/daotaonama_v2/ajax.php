@@ -50,12 +50,13 @@ if($_POST['login']=='login'){
 	if( strlen($username)>5 && strlen($password)>5 ){
 		$password = md5($password);
 		
-		$qr = mysql_query("SELECT id,name,username FROM daotao_hocvien WHERE `delete`=0 AND status=1 AND username='{$username}' AND password='{$password}' ");
+		$qr = mysql_query("SELECT id,name,username,ds_lophoc FROM daotao_hocvien WHERE `delete`=0 AND status=1 AND username='{$username}' AND password='{$password}' ");
 		if(mysql_num_rows($qr) == 1){
 			$row = mysql_fetch_array($qr);
 			$_SESSION['user_id'] = $row['id'];
 			$_SESSION['user_name_view'] = $row['name'];
 			$_SESSION['user_name'] = $row['username'];
+			$_SESSION['danhsach_lophoc'] = $row['ds_lophoc'];
 			echo 'http://'.$domain.'/thong-tin-hoc-vien/';
 			return true;
 		}else{

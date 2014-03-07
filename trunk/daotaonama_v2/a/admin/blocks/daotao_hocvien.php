@@ -2,7 +2,7 @@
 	/*search*/
 	if(isset($_GET['btnSearch'])){
 		if($_GET['txt']!='' && $_GET['txt']!='Họ tên') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
-		//if($_GET['dm']!='0' && $_GET['dm']!='') $str_search .= " AND menu_id LIKE '%,{$_GET['dm']},%' ";
+		if($_GET['dm']!='0' && $_GET['dm']!='') $str_search .= " AND ds_lophoc LIKE '%,{$_GET['dm']},%' ";
 	}else{
 		$str_search = '';
 	}
@@ -11,6 +11,24 @@
 <div id="search">
 	<input type="hidden" name="p" value="<?php echo $table; ?>" />
     <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Họ tên'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Họ tên') value=''" />
+	<?php
+    $qr = mysql_query("SELECT `id`,`name` FROM `web_menu` WHERE `delete`=0 AND (type_id=1 OR type_id=2) ");
+    while($row = mysql_fetch_array($qr)){
+        //echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+    }
+    
+    //parent_id
+    $arr = array();
+	$arr[] = array('id'=>0, 'name'=>'--- Chọn lớp học ---');
+	$qr = mysql_query("SELECT id,name FROM daotao_lophoc WHERE `delete`=0 ORDER BY `id_khoahoc`,`name`");
+	while($row = mysql_fetch_array($qr)){
+		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
+	}
+    $properties = $_GET['dm']; //default check
+    $views = array('','dm','select'); //label id&name class
+    $form->getProperties('5',$arr,$properties,$views);
+    echo $form->DisplayProperties();
+    ?>
     <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
 </div>
 </form>
@@ -20,6 +38,8 @@
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
             <th align="left">Họ tên</th>
+            <th width="120">Tài khoản</th>
+            <th width="110">Điện thoại</th>
             <th width="110" class="create">Ngày tạo</th>
             <th width="90" class="create">Người tạo</th>
             <th width="110" class="update">Date update</th>
@@ -30,7 +50,7 @@
         $from = (($page_number - 1) * $max_results);
 		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
+		$str = "SELECT id,name,phone,username,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -38,6 +58,8 @@
 			echo '<tr class="row row_'.$row['id'].'">
 				<td align="center">'.$i.'</td>
 				<td>'.$row['name'].'</td>
+				<td align="center">'.$row['username'].'&nbsp;</td>
+				<td align="center">'.$row['phone'].'&nbsp;</td>
 				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($row['date_create'])).'</td>
 				<td align="center" class="create">'.$row['user_create'].'</td>
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>

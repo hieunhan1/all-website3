@@ -104,6 +104,7 @@ $(document).ready(function(){
 	checks_box_item('checkbox_item', 'menu_id'); //class, id
 	checks_box_item('checkbox_xem', 'quyen_xem'); //class, id
 	checks_box_item('checkbox_action', 'quyen_action'); //class, id
+	checks_box_item('checkbox_item', 'ds_lophoc'); //class, id
 	
 	/*btn_action*/
 	$(".btn_action").click(function(){
@@ -157,10 +158,30 @@ $(document).ready(function(){
 		});
 	});
 	
+	var id_hocvien = $("#id_hocvien").html();
+	var id_lophoc = $(".lophoc").val();
+	$.post("ajax.php",{lophoc_hocvien:id_lophoc,id_hocvien:id_hocvien},function(data){
+		$(".hocvien").html(data);
+	});
+	
 	$(".lophoc").change(function(){
 		var id = $(this).val();
 		$.post("ajax.php",{lophoc_hocvien:id},function(data){
 			$(".hocvien").html(data);
+		});
+	});
+	
+	$(".mota_bangdiem").dblclick(function(){
+		var lop = $("select[name=id_lophoc] option:selected").html();
+		var name = $("select[name=id_hocvien] option:selected").html();
+		$(this).val(lop + ' | ' +name);
+	});
+	
+	/*excel_tracuu*/
+	$("select[name=kh]").change(function(){
+		var kh = $(this).val();
+		$.post("ajax.php",{kh_lh:kh},function(data){
+			$("select[name=lh]").html(data);
 		});
 	});
 	
