@@ -61,6 +61,32 @@
 				<td align="center">'.$row['diem8'].'</td>
         	</tr>';
 		}
+	}elseif($gv!=0){
+		$qr = "
+		SELECT daotao_hocvien.name,daotao_lophoc.name as lophoc,capdo,daotao_giangvien.name as giangvien,diem1,diem2,diem3,diem4,diem5,diem6,diem7,diem8
+		FROM daotao_hocvien,daotao_bangdiem,daotao_lophoc,daotao_giangvien
+		WHERE daotao_hocvien.`delete`=0 AND id_hocvien=daotao_hocvien.id AND daotao_lophoc.id=id_lophoc AND id_giangvien=daotao_giangvien.id AND daotao_giangvien.id='{$gv}'
+		ORDER BY daotao_lophoc.name,daotao_hocvien.name
+		";
+		$i = 0;
+		$qr = mysql_query($qr);
+		while($row = mysql_fetch_array($qr)){
+			$i++;
+			$str_search .= '<tr class="row row1">
+				<td align="center">'.$i.'</td>
+				<td>'.$row['name'].'</td>
+				<td>'.$row['lophoc'].' | Level '.$row['capdo'].'</td>
+				<td>'.$row['giangvien'].'</td>
+				<td align="center">'.$row['diem1'].'</td>
+				<td align="center">'.$row['diem2'].'</td>
+				<td align="center">'.$row['diem3'].'</td>
+				<td align="center">'.$row['diem4'].'</td>
+				<td align="center">'.$row['diem5'].'</td>
+				<td align="center">'.$row['diem6'].'</td>
+				<td align="center">'.$row['diem7'].'</td>
+				<td align="center">'.$row['diem8'].'</td>
+        	</tr>';
+		}
 	}
 ?>
 <form action="" method="get" name="search">
@@ -97,7 +123,7 @@
 </div>
 <script>
 	$(document).ready(function() {
-        $("#wrapper").width(1530); //1130px
+        $("#wrapper").width(1535); //1130px
         $("#right").width(1300); //900px
     });
 </script>
