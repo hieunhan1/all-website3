@@ -73,20 +73,6 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//phone
-	$values = $row_detail['phone'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Điện thoại','phone','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//diachi
-	$values = $row_detail['diachi'];
-	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Địa chỉ','diachi','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
 	//message
 	$values = $row_detail['message'];
 	$properties = ''; //disabled, readonly

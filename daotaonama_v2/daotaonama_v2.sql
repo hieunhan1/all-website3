@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 07, 2014 at 05:25 PM
+-- Generation Time: Mar 08, 2014 at 12:12 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -40,7 +40,7 @@ CREATE TABLE `daotao_bangdiem` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- 
 -- Dumping data for table `daotao_bangdiem`
@@ -50,6 +50,7 @@ INSERT INTO `daotao_bangdiem` VALUES (1, 'Anh Văn Thiếu Niên - K1 | Ngọc H
 INSERT INTO `daotao_bangdiem` VALUES (2, 'Anh Văn Thiếu Niên - K1 | Trần Hiếu Nhân', 1, 1, 7, 8, 7, 8, 0, 8, 7, 8, 'vi', 1, '2014-03-07 15:51:11', '2014-03-07 16:35:08', 'admin', 'admin', 0);
 INSERT INTO `daotao_bangdiem` VALUES (3, 'Anh Văn Thiếu Niên - K2 | Trần Hiếu Nhân', 2, 1, 8, 9, 7, 8, 8, 7, 8, 9, 'vi', 1, '2014-03-07 15:52:45', '2014-03-07 16:35:05', 'admin', 'admin', 0);
 INSERT INTO `daotao_bangdiem` VALUES (4, 'Anh Văn Thiếu Niên - K2 | Vũ Đào', 2, 3, 7, 7, 7, 7, 7, 7, 7, 7, 'vi', 1, '2014-03-07 16:34:50', '0000-00-00 00:00:00', 'admin', NULL, 0);
+INSERT INTO `daotao_bangdiem` VALUES (5, 'IELTS - K1 | Thu Hằng', 3, 4, 8, 8, 8, 8, 8, 7, 8, 8, 'vi', 1, '2014-03-08 11:22:57', '0000-00-00 00:00:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -108,15 +109,16 @@ CREATE TABLE `daotao_hocvien` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `daotao_hocvien`
 -- 
 
-INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', '1989-04-30 00:00:00', 1, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 7, ',1,2,', 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'vi', 1, '2014-03-07 12:21:41', '2014-03-07 15:17:29', 'admin', 'admin', 0);
-INSERT INTO `daotao_hocvien` VALUES (2, 'Ngọc Hiền', '1991-11-19 00:00:00', 0, 'hien@yahoo.com', '01234567890', '123 CMT 8, Quận 10, Tp.HCM', 7, ',1,', 'hientran', 'ba96ba58f371c9168e2af5c88701f6b0', 'vi', 1, '2014-03-07 14:12:19', '2014-03-07 15:17:24', 'admin', 'admin', 0);
-INSERT INTO `daotao_hocvien` VALUES (3, 'Vũ Đào', '1990-02-02 00:00:00', 1, 'vudao@yahoo.com', '0911988788', 'Lê Đức Thọ , Gò Vấp', 4, ',1,2,', 'vudao1', '19e0af83e292a3fa5256e117f1e0f826', 'vi', 1, '2014-03-07 14:15:29', '2014-03-07 16:15:29', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (1, 'Trần Hiếu Nhân', '1989-04-30 00:00:00', 1, 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', 7, ',2,', 'hieunhan1', 'dc9ad4e56ca354389df5e771aa5fb844', 'vi', 1, '2014-03-07 12:21:41', '2014-03-08 11:18:03', 'admin', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (2, 'Ngọc Hiền', '1991-11-19 00:00:00', 0, 'hien@yahoo.com', '01234567890', '123 CMT 8, Quận 10, Tp.HCM', 7, ',1,2,', 'hientran', 'ba96ba58f371c9168e2af5c88701f6b0', 'vi', 1, '2014-03-07 14:12:19', '2014-03-08 11:17:58', 'admin', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (3, 'Nguyễn Vũ Đào', '1990-02-02 00:00:00', 1, 'vudao@yahoo.com', '0911988788', 'Lê Đức Thọ , Gò Vấp', 4, ',1,', 'vudao1', '19e0af83e292a3fa5256e117f1e0f826', 'vi', 1, '2014-03-07 14:15:29', '2014-03-08 11:17:46', 'khachhang', 'admin', 0);
+INSERT INTO `daotao_hocvien` VALUES (4, 'Thu Hằng', '1989-03-08 08:45:00', 0, 'thuhang@yahoo.com', '0904651986', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', 7, ',3,2,', 'thuhang', 'edf34f73a7c9f7d07bb4d0ef87cd4f7e', 'vi', 1, '2014-03-08 08:45:21', '2014-03-08 11:22:22', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -165,14 +167,15 @@ CREATE TABLE `daotao_lophoc` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- 
 -- Dumping data for table `daotao_lophoc`
 -- 
 
-INSERT INTO `daotao_lophoc` VALUES (1, 'Anh Văn Thiếu Niên - K1', '2014-03-07 11:43:00', 7, 1, '1', '', 'vi', 1, '2014-03-07 11:43:57', '2014-03-07 15:12:05', 'admin', 'admin', 0);
-INSERT INTO `daotao_lophoc` VALUES (2, 'Anh Văn Thiếu Niên - K2', '2014-03-07 13:27:00', 7, 2, '2', '', 'vi', 1, '2014-03-07 13:27:14', '2014-03-07 14:23:47', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (1, 'Anh Văn Thiếu Niên - K1', '2014-03-08 11:43:00', 7, 1, '1', '', 'vi', 1, '2014-03-07 11:43:57', '2014-03-08 11:17:40', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (2, 'Anh Văn Thiếu Niên - K2', '2014-03-08 13:27:00', 7, 2, '2', '', 'vi', 1, '2014-03-07 13:27:14', '2014-03-08 08:45:13', 'admin', 'admin', 0);
+INSERT INTO `daotao_lophoc` VALUES (3, 'IELTS - K1', '2014-03-08 11:21:00', 6, 2, '1', '', 'vi', 1, '2014-03-08 11:21:52', '0000-00-00 00:00:00', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -429,8 +432,8 @@ INSERT INTO `web_menu_admin` VALUES (6, 'Đào tạo - Giảng Viên', 'daotao_g
 INSERT INTO `web_menu_admin` VALUES (7, 'Đào tạo - Lớp học', 'daotao_lophoc', 'icon-lop-hoc.jpg', 7, 1);
 INSERT INTO `web_menu_admin` VALUES (8, 'Đào tạo - Học viên', 'daotao_hocvien', 'icon-hoc-vien.jpg', 8, 1);
 INSERT INTO `web_menu_admin` VALUES (9, 'Đào tạo - Bảng điểm', 'daotao_bangdiem', 'icon-item.jpg', 9, 1);
-INSERT INTO `web_menu_admin` VALUES (10, 'Xuất ecxel - Tra cứu', 'excel_tracuu', 'icon-tra-cuu-cap-bang.jpg', 10, 1);
-INSERT INTO `web_menu_admin` VALUES (11, 'Item 11', '', 'icon-item.jpg', 11, 0);
+INSERT INTO `web_menu_admin` VALUES (10, 'Tra cứu - Thông tin HV', 'tracuu_hocvien', 'icon-tra-cuu-cap-bang.jpg', 10, 1);
+INSERT INTO `web_menu_admin` VALUES (11, 'Tra cứu - Bảng điểm', 'tracuu_bangdiem', 'icon-tra-cuu-diem-thi.jpg', 11, 1);
 INSERT INTO `web_menu_admin` VALUES (12, 'Slider & banner', 'web_slider_banner', 'icon-slider-banner.jpg', 5, 1);
 INSERT INTO `web_menu_admin` VALUES (13, 'Đăng ký trực tuyến', 'web_register', 'icon-register.jpg', 13, 0);
 INSERT INTO `web_menu_admin` VALUES (14, 'Liên hệ', 'web_contact', 'icon-contact.jpg', 14, 1);
@@ -702,7 +705,7 @@ CREATE TABLE `web_users` (
 -- Dumping data for table `web_users`
 -- 
 
-INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,12,6,7,8,9,10,14,15,', ',1,2,3,4,12,6,7,8,9,10,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,12,6,7,8,9,10,11,14,15,', ',1,2,3,4,12,6,7,8,9,10,11,14,15,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
 INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,15,', ',1,15,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-03-05 15:58:57', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------

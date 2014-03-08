@@ -99,7 +99,7 @@ function SetFileField(fileUrl, data){
 				$i++;
 				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
 				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#F00">'.$row['name'].'</a>';
-				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />'; else if($i == 10) echo '<hr />';
+				if($i == 2) echo '<hr />'; else if($i == 5) echo '<hr />'; else if($i == 11) echo '<hr />';
 			}
 			?>
         </div>
@@ -131,8 +131,8 @@ function SetFileField(fileUrl, data){
 		
 		/* action */
 		if($phan_quyen==true || $p=='account'){
-			if($id=='' && $p!='home' && $p!='account') $btn_right = btn_add_create($table).btn_see_change();
-			elseif($p!='home' && $p!='account') $btn_right = btn_go_back($table);
+			if($id=='' && $p!='home' && $p!='account' && $p!='tracuu_bangdiem' && $p!='tracuu_hocvien') $btn_right = btn_add_create($table).btn_see_change();
+			elseif($p!='home' && $p!='account' && $p!='tracuu_bangdiem' && $p!='tracuu_hocvien') $btn_right = btn_go_back($table);
 			
 			echo '<div class="title" style="width:auto; float:left">'.$row_navigator['name'].'</div>
 			<div class="title" style="width:auto; float:right">'.$btn_right.'</div>
