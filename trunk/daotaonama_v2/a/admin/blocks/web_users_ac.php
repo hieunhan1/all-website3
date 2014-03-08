@@ -105,12 +105,12 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
 	}
 	
 	$properties = $row_detail['quyen_xem']; //default check
-	$views = array('Xem','','checkbox checkbox_xem','width:167px; height:270px;'); //label name class width
+	$views = array('Xem','','checkbox checkbox_xem','width:167px; height:300px;'); //label name class width
 	$form->getProperties('7',$arr,$properties,$views);
 	$xem = $form->DisplayProperties();
 	
 	$properties = $row_detail['quyen_action']; //default check
-	$views = array('Quyền','','checkbox checkbox_action','width:167px; height:270px;'); //label name class width
+	$views = array('Quyền','','checkbox checkbox_action','width:167px; height:300px;'); //label name class width
 	$form->getProperties('7',$arr,$properties,$views);
 	$quyen = $form->DisplayProperties();
 	
