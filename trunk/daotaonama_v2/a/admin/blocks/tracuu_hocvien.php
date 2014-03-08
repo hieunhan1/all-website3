@@ -121,7 +121,7 @@
 </div>
 <script>
 	$(document).ready(function() {
-        $("#wrapper").width(1530); //1130px
+        $("#wrapper").width(1535); //1130px
         $("#right").width(1300); //900px
     });
 </script>
