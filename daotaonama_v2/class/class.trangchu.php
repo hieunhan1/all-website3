@@ -151,7 +151,7 @@ class trangchu extends db {
 			}
 			$str = rtrim($str,'OR ');
 			$str .= ') ';
-		}
+		}else $str = " id='0' ";
 		
 		$qr = "SELECT id,name FROM daotao_lophoc WHERE `delete`=0 ".$str;
 		return mysql_query($qr);
