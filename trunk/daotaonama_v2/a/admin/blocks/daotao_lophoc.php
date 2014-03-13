@@ -37,6 +37,7 @@
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
+            <th width="60">Mã lớp</th>
             <th align="left">Lớp học</th>
             <th width="60">Level</th>
             <th width="90">Ngày KG</th>
@@ -57,6 +58,7 @@
 			$i++;
 			echo '<tr class="row row_'.$row['id'].'">
 				<td align="center">'.$i.'</td>
+				<td align="center">'.$row['id'].'</td>
 				<td>'.$row['name'].'</td>
 				<td align="center">'.$row['capdo'].'</td>
 				<td align="center">'.date('d/m/Y',strtotime($row['ngay_kg'])).'</td>
