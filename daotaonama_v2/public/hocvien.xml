@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Windows7</Author>
+  <LastAuthor>Windows7</LastAuthor>
+  <Created>2014-03-13T06:47:32Z</Created>
+  <LastSaved>2014-03-13T08:08:42Z</LastSaved>
+  <Version>12.00</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>7935</WindowHeight>
+  <WindowWidth>16215</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>90</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s53" ss:Name="Hyperlink">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s63">
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s64" ss:Parent="s53">
+   <Alignment ss:Vertical="Bottom"/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s65">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#FF0000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s68">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s69">
+   <NumberFormat ss:Format="@"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="4" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Column ss:Width="82.5"/>
+   <Column ss:Width="51"/>
+   <Column ss:Width="45"/>
+   <Column ss:Width="87.75"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="66.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="58.5"/>
+   <Column ss:Index="8" ss:Width="33.75"/>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Họ tên</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Ngày sinh</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Giới tính</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Email</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Phone</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Địa chỉ</Data></Cell>
+    <Cell ss:Index="8" ss:StyleID="s66"><Data ss:Type="String">Lưu ý:</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Trần Văn An</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="DateTime">1991-02-05T00:00:00.000</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s64" ss:HRef="mailto:an@yahoo.com"><Data ss:Type="String">an@yahoo.com</Data></Cell>
+    <Cell><Data ss:Type="String">0987564851</Data></Cell>
+    <Cell><Data ss:Type="String">Trần Hưởng</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Ngày sinh theo định dạng: tháng/Ngày/năm</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Trần Hiếu Nhân</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="DateTime">1989-04-30T00:00:00.000</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s64" ss:HRef="mailto:hieu@yahoo.com"><Data ss:Type="String">hieu@yahoo.com</Data></Cell>
+    <Cell><Data ss:Type="String">0988388003</Data></Cell>
+    <Cell><Data ss:Type="String">123 CMT 8</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Giới tính:</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Nam = 1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Trần Thanh Ngày</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="DateTime">1990-05-28T00:00:00.000</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s64" ss:HRef="mailto:ngan@yahoo.co"><Data ss:Type="String">ngan@yahoo.co</Data></Cell>
+    <Cell><Data ss:Type="String">01234567890</Data></Cell>
+    <Cell><Data ss:Type="String">Tô ký</Data></Cell>
+    <Cell ss:Index="10" ss:StyleID="s67"><Data ss:Type="String">Nữ = 0</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>0</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>3</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

@@ -15,13 +15,13 @@ if(@$user) {
 	
 	function bangdiem($kh,$lh,$gv){
 		$data = array();
-		$data[] = array('STT','Họ & tên','Lớp học','Cấp độ','Giảng viên','Cột 1','Cột 2','Cột 3','Cột 4','Cột 5','Cột 6','Cột 7','Cột 8');
+		$data[] = array('STT','Mã HV','Họ & tên','Mã lớp','Lớp học','Cấp độ','Giảng viên','Cột 1','Cột 2','Cột 3','Cột 4','Cột 5','Cột 6','Cột 7','Cột 8');
 		
 		if($kh!=0) $qr_kh = " AND daotao_lophoc.id_khoahoc='{$kh}' ";
 		if($lh!=0) $qr_lh = " AND daotao_lophoc.id='{$lh}' ";
 		if($gv!=0) $qr_gv = " AND daotao_giangvien.id='{$gv}' ";
 		$qr = "
-		SELECT daotao_hocvien.name,daotao_lophoc.name as lophoc,capdo,daotao_giangvien.name as giangvien,diem1,diem2,diem3,diem4,diem5,diem6,diem7,diem8
+		SELECT daotao_hocvien.id as ma_hv,daotao_hocvien.name,daotao_lophoc.id as ma_lop,daotao_lophoc.name as lophoc,capdo,daotao_giangvien.name as giangvien,diem1,diem2,diem3,diem4,diem5,diem6,diem7,diem8
 		FROM daotao_hocvien,daotao_bangdiem,daotao_lophoc,daotao_giangvien
 		WHERE daotao_hocvien.`delete`=0 AND id_hocvien=daotao_hocvien.id AND daotao_lophoc.id=id_lophoc AND id_giangvien=daotao_giangvien.id {$qr_kh} {$qr_lh} {$qr_gv}
 		ORDER BY daotao_lophoc.name,daotao_hocvien.name
@@ -31,7 +31,7 @@ if(@$user) {
 		$qr = mysql_query($qr);
 		while($row = mysql_fetch_array($qr)){
 			$i++;
-			$data[] = array($i,$row['name'],$row['lophoc'],$row['capdo'],$row['giangvien'],$row['diem1'],$row['diem2'],$row['diem3'],$row['diem4'],$row['diem5'],$row['diem6'],$row['diem7'],$row['diem8']);
+			$data[] = array($i,$row['ma_hv'],$row['name'],$row['ma_lop'],$row['lophoc'],$row['capdo'],$row['giangvien'],$row['diem1'],$row['diem2'],$row['diem3'],$row['diem4'],$row['diem5'],$row['diem6'],$row['diem7'],$row['diem8']);
 		}
 		
 		export_excel($data,'bangdiem-'.date('His'));
@@ -39,7 +39,7 @@ if(@$user) {
 	
 	function hocvien($kh,$lh,$gv){
 		$data = array();
-		$data[] = array('STT','Họ & tên','Ngày sinh','Giới tính','Điện thoại','Email','Địa chỉ');
+		$data[] = array('STT','Mã HV','Họ & tên','Ngày sinh','Giới tính','Điện thoại','Email','Địa chỉ','Mã lớp','Lớp học','Cấp độ','Giảng viên');
 		
 		if($kh!=0){
 			if($gv!=0) $qr_gv = " AND id_giangvien='{$gv}' ";
@@ -57,13 +57,8 @@ if(@$user) {
 				while($row = mysql_fetch_array($qr)){
 					$i++;
 					if($row['gioitinh']==1) $gioitinh = 'Nam'; else $gioitinh = 'Nữ';
-					$data[] = array($i,$row['name'],date('m/d/Y',strtotime($row['ngaysinh'])),$gioitinh,$row['phone'],$row['email'],$row['diachi']);
+					$data[] = array($i,$row['id'],$row['name'],date('m/d/Y',strtotime($row['ngaysinh'])),$gioitinh,$row['phone'],$row['email'],$row['diachi'],$row_lh['id'],$row_lh['name'],$row_lh['capdo'],$row_lh['giangvien']);
 				}
-				$data[] = array('Lớp học',$row_lh['name']);
-				$data[] = array('Cấp độ',$row_lh['capdo']);
-				$data[] = array('Giảng viên',$row_lh['giangvien']);
-				$data[] = array();
-				$data[] = array();
 			}
 		}elseif($gv!=0){
 			$qr_lh = "SELECT daotao_lophoc.id,daotao_lophoc.name,capdo,daotao_giangvien.name as giangvien 
@@ -78,13 +73,8 @@ if(@$user) {
 				while($row = mysql_fetch_array($qr)){
 					$i++;
 					if($row['gioitinh']==1) $gioitinh = 'Nam'; else $gioitinh = 'Nữ';
-					$data[] = array($i,$row['name'],date('m/d/Y',strtotime($row['ngaysinh'])),$gioitinh,$row['phone'],$row['email'],$row['diachi']);
+					$data[] = array($i,$row['id'],$row['name'],date('m/d/Y',strtotime($row['ngaysinh'])),$gioitinh,$row['phone'],$row['email'],$row['diachi'],$row_lh['id'],$row_lh['name'],$row_lh['capdo'],$row_lh['giangvien']);
 				}
-				$data[] = array('Lớp học',$row_lh['name']);
-				$data[] = array('Cấp độ',$row_lh['capdo']);
-				$data[] = array('Giảng viên',$row_lh['giangvien']);
-				$data[] = array();
-				$data[] = array();
 			}
 		}
 		export_excel($data,'hocvien-'.date('His'));

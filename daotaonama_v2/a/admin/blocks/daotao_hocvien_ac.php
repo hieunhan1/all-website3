@@ -13,8 +13,6 @@ if($id == 0){
 	$views = 'user_create';
     $form->getProperties('2',$values,'',$views);
 	$user_action = $form->DisplayProperties();
-	//disabled
-	$disabled = '';
 }else{
 	$lable_submit = 'Cập nhật';
 	$type = 2;
@@ -29,9 +27,6 @@ if($id == 0){
 	$views = 'user_update';
     $form->getProperties('2',$values,'',$views);
 	$user_action = $form->DisplayProperties();
-	
-	//disabled
-	$disabled = '" disabled="disabled';
 	
 	$qr = mysql_query("SELECT * FROM `{$table}` WHERE `delete`=0 AND `id`='{$id}' ");
 	$row_detail = mysql_fetch_array($qr);
@@ -141,7 +136,7 @@ echo '<form name="form_action" method="post" action="">
 		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
 	}
 	$properties = $row_detail['id_khoahoc']; //default check
-	$views = array('Khóa học','id_khoahoc','input_medium'.$disabled); //label id&name class
+	$views = array('Khóa học','id_khoahoc','input_medium'); //label id&name class
     $form->getProperties('5',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
