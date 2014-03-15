@@ -283,8 +283,6 @@ $view_post .= '
 	</table></form>
 	</div>
 	
-	
-	
 </div></div>
 <hr />
 
