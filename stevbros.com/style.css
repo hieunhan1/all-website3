@@ -8,7 +8,7 @@ a:hover{color:#0d6086; text-decoration:underline}
 
 #header{height:140px}
 #header #item1 img{width:120px; float:left; padding-top:10px}
-#header #item2{width:360px; height:25px; float:left; margin-left:120px; background-color:#619bb6; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
+#header #item2{width:400px; height:25px; float:left; margin-left:120px; background-color:#619bb6; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
 #header #item2 #top{width:auto; float:left; line-height:25px; padding-left:10px}
 #header #item2 #top a{color:#EFEFEF; padding:0 10px; border-left:solid 1px #E6E6E6}
 #header #item2 #top a:hover{color:#FFF}
@@ -117,7 +117,7 @@ a:hover{color:#0d6086; text-decoration:underline}
 .btnthanhtoan{color:#FFF; width:150px; padding:5px; background-color:#4D93C1; border:none; cursor:pointer}
 .img_nganhang{width:80px; height:50px; float:left; border:solid 2px #f2f2f2; cursor:pointer}
 .img_nganhang_ac{width:80px; height:50px; float:left; border:solid 2px #F00; cursor:pointer}
-.list_kh{width:320px; height:140px; float:left}
+.list_kh{width:320px; float:left; margin-bottom:20px}
 .list_kh img{width:140px; height:100px; float:left; margin-right:5px; border:solid 1px #CCC}
 .list_kh h3{font-size:100%}
 
