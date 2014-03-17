@@ -16,7 +16,7 @@ $required = "<span style='color:red'>*</span>";
 
 /*ảnh đại điện*/
 define('url_articles_image_thumb','../../public/_thumbs/Images/articles/');
-define('url_catalog_image_thumb','../../public/_thumbs/Images/articles/');
-define('url_slider_image_thumb','../../public/_thumbs/Images/articles/');
-define('url_photos_image_thumb','../../public/_thumbs/Images/articles/');
-define('url_video_image_thumb','../../public/_thumbs/Images/articles/');
+define('url_catalog_image_thumb','../../public/_thumbs/Images/catalog/');
+define('url_slider_image_thumb','../../public/_thumbs/Images/slider/');
+define('url_photos_image_thumb','../../public/_thumbs/Images/photos/');
+define('url_video_image_thumb','../../public/_thumbs/Images/video/');
