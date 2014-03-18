@@ -84,6 +84,8 @@ $(document).ready(function($){
 		$("#nav li a").mouseover(function(){
 			$(this).corner("10px");
 		});
+		
+		$("#active").corner("10px");
 	}
 	
 	/*Login*/
