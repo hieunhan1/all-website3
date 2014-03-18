@@ -124,10 +124,11 @@ if(@$_GET['danhmuc']){
 			$qr = $tc->home_chuongtrinh($id_chuongtrinh);
 			while($row_ct = mysql_fetch_array($qr)){
 				$i++;
+				if($row_ct['name_rewrite'] != $dt) $style = ''; else $style = 'style="color:#DB0000"';
 				if($i%2 == 1){
-					$str_l .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html">'.$row_ct['name'].'</a></li>';
+					$str_l .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html" '.$style.'>'.$row_ct['name'].'</a></li>';
 				}else{
-					$str_r .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html">'.$row_ct['name'].'</a></li>';
+					$str_r .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html" '.$style.'>'.$row_ct['name'].'</a></li>';
 				} 
 			}
 			echo '<div style="width:310px; float:left">'.$str_l.'</div>
