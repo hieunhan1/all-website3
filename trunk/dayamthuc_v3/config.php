@@ -1,10 +1,4 @@
 <?php
-$error_sql = "Lỗi kết nối";
-define(does_not_exist,'Mục này không tồn tại.');
-
-include_once('class/class.trangchu.php');
-$tc = new trangchu();
-
 $config = $tc->config($lang) or die ($error_sql);
 $row_config = mysql_fetch_array($config);
 
@@ -19,14 +13,14 @@ define(max_limit_4,$row_config['max_limit_4']);
 define(url_no_image,'images/no-image.jpg');
 define(url_default_image,'images/logo.jpg');
 
-define(url_catalog_image,'public/images/catalog/');
-define(url_slider_image,'public/images/slider_banner/');
+define(url_catalog_image,'upload/images/danhmuc/');
+define(url_slider_image,'upload/images/slider_banner/');
 
-define(url_detail_image,'public/images/articles/');
-define(url_detail_image_thumb,'public/_thumbs/Images/articles/');
+define(url_detail_image,'upload/images/articles/');
+define(url_detail_image_thumb,'upload/_thumbs/Images/articles/');
 
-define(url_photos_image,'public/images/photos/');
-define(url_photos_image_thumb,'public/_thumbs/Images/photos/');
+define(url_picture_image,'upload/images/photogallery/');
+define(url_picture_image_thumb,'upload/_thumbs/Images/photogallery/');
 
-define(url_video_image,'public/images/video/');
-define(url_video_image_thumb,'public/_thumbs/Images/video/');
+define(url_video_image,'upload/images/video/');
+define(url_video_image_thumb,'upload/_thumbs/Images/video/');
