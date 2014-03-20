@@ -105,9 +105,11 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .home_item_3 .more_item_3 h3{clear:both; list-style:none; font-family:"UTM-Swiss-Condensed"; font-size:110%; font-weight:100; margin:8px 0; padding-left:18px; background:url(images/sao.png) no-repeat left top}
 .home_item_3 .more_item_3 a{color:#FFF; }
 
-.home_item_3 .photo_item{width:240px}
-
-
+.home_item_3 .photo_item_3{width:240px; float:left}
+.home_item_3 .photo_item_3 .img_photo_item_3{width:220px; height:160px; overflow:hidden; margin:10px 0; padding:10px; box-shadow:0 0 10px #999}
+.home_item_3 .photo_item_3 .img_photo_item_3 img{width:220px}
+.home_item_3 .photo_item_3 h3{font-size:120%; font-family:"UTM-Azuki"; text-transform:uppercase; text-align:center}
+.home_item_3 .photo_item_3 a{color:#ED1C24}
 
 
 #nauan_other{height:153px; padding:35px 30px 0 30px; background:url(images/bg_catlogy.png) no-repeat}
