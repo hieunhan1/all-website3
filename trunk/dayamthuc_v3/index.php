@@ -201,9 +201,24 @@ if(@$_GET['danhmuc']){
     
     <div class="home_title">Hình ảnh</div>
     <div class="home_item_3">
-    	<div class="photo_item">
-        	
+    	<div class="photo_item_3">
+        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
+            <h3>Hình ảnh hoạt động</h3></a>
         </div>
+    	<div class="photo_item_3">
+        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
+            <h3>Hình ảnh hoạt động</h3></a>
+        </div>
+    	<div class="photo_item_3">
+        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
+            <h3>Hình ảnh hoạt động</h3></a>
+        </div>
+    	<div class="photo_item_3">
+        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
+            <h3>Hình ảnh hoạt động</h3></a>
+        </div>
+        
+        <div style="clear:both; height:1px"></div>
     </div>
 </div>
 
