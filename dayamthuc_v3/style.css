@@ -39,11 +39,13 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 		 url('fonts/UTM-Swiss-Condensed.svg') format('svg');
 }
 
-#wrapper{width:960px; margin:auto}
+.wrapper{width:980px; margin:auto}
+
+#top{height:20px; background-color:#DB0000}
 
 #logo{clear:both; width:320px; height:80px; margin:20px auto 30px auto}
 
-#slider{height:280px; overflow:hidden; margin-bottom:30px; border:solid 1px #FFF; position:relative}
+#slider{height:280px; overflow:hidden; margin:0 10px 20px; border:solid 3px #FFF; position:relative; box-shadow: 0px 0px 10px #666}
 
 #contact_social{clear:both}
 #contact_social #contact_foo{width:580px; height:155px; float:left; font-size:110%; line-height:23px; padding:25px 0 0 120px; background:url(images/contact_home.png) no-repeat top left}
@@ -73,6 +75,41 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #support_hotline{clear:both; line-height:22px; padding:10px 0; text-align:center; font-weight:bold}
 
 /*home*/
+#home_item_1{clear:both; height:290px;  background:url(images/bg-item-1.png) no-repeat}
+#home_item_1 .item_1{width:170px; height:142px; float:left; text-align:center; margin-top:97px; padding:0 10px 0 100px}
+#home_item_1 .item_1 h2{font-size:140%; font-family:"UTM-Azuki"; font-weight:100; text-transform:uppercase; margin:5px 0 3px 0; height:40px; line-height:20px; overflow:hidden}
+#home_item_1 .item_1 a{color:#ED1C24}
+#home_item_1 .item_1 p{font-size:90%; line-height:18px; height:72px; overflow:hidden}
+#home_item_1 .item_1 p a{font-style:italic; font-family:"UTM-Azuki"}
+
+#home_item_2{height:250px; padding-top:15px; background:url(images/bg-item-2.png) repeat-x top}
+#home_item_2 .item_2{width:320px; height:300px; float:left}
+#home_item_2 .item_2 .img_item_2{clear:both; height:200px; overflow:hidden}
+#home_item_2 .item_2 .img_item_bo{width:156px; height:156px; overflow:hidden; position:relative; z-index:1; margin:20px 0 0 83px}
+#home_item_2 .item_2 .img_item_bo img{height:156px}
+#home_item_2 .item_2 .img_item_bg{width:320px; height:200px; background:url(images/bg-item-3.png); position:absolute; z-index:2; }
+#home_item_2 .item_2 h2{font-size:160%; font-family:"UTM-Azuki"; font-weight:100; text-transform:uppercase; text-align:center; line-height:25px; height:50px; overflow:hidden; margin:0 30px}
+#home_item_2 .item_2 a{color:#010101}
+
+.home_title{font-family:"UTM-Novido"; font-size:350%; font-weight:bold; color:#ED1C24; margin:0 10px}
+
+.home_item_3{clear:both; margin:0 10px; padding:10px 20px; background-color:#FFF; box-shadow:0 0 20px #666}
+.home_item_3 .nb_item_3{width:490px; height:125px; float:left; margin:10px 0}
+.home_item_3 .nb_item_3 .img_item_3{width:160px; height:105px; overflow:hidden; float:left; margin-right:10px; border:solid 5px #FFF; box-shadow:0 0 5px #999}
+.home_item_3 .nb_item_3 .img_item_3 img{width:160px}
+.home_item_3 .nb_item_3 h3{font-family:"UTM-Swiss-Condensed"; font-weight:100; font-size:120%; line-height:22px; margin-bottom:3px}
+.home_item_3 .nb_item_3 a{color:#007CB6}
+.home_item_3 .nb_item_3 p{line-height:18px; height:54px; overflow:hidden; margin-bottom:5px}
+
+.home_item_3 .more_item_3{width:390px; height:260px; float:right; margin-top:10px; padding:0 10px; background-color:#ED1C24; border:solid 2px #FFF; box-shadow:0 0 5px #999}
+.home_item_3 .more_item_3 h3{clear:both; list-style:none; font-family:"UTM-Swiss-Condensed"; font-size:110%; font-weight:100; margin:8px 0; padding-left:18px; background:url(images/sao.png) no-repeat left top}
+.home_item_3 .more_item_3 a{color:#FFF; }
+
+.home_item_3 .photo_item{width:240px}
+
+
+
+
 #nauan_other{height:153px; padding:35px 30px 0 30px; background:url(images/bg_catlogy.png) no-repeat}
 #nauan_other .nauan_other_item{width:300px; float:left; font-family:"UVNBayBuom"}
 #nauan_other .nauan_other_item a{color:#333}
@@ -239,15 +276,15 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .btn_nop_hs{clear:both; width:118px; height:29px; line-height:29px !important; font-weight:bold; color:#FFF; margin:0; padding-left:30px; background:url(images/btn-nop-hs.gif); cursor:pointer}
 
 /*menu*/
-#menu{height:37px; margin-bottom:15px; background:url(images/bg-menu.gif) repeat-x}
+#menu{height:37px; margin:0 10px 10px; background:url(images/bg-menu.gif) repeat-x}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:37px; color:#FFF; font-weight:bold; text-transform:uppercase; padding:0 30px}
+#nav li a {line-height:37px; color:#FFF; font-size:126%; font-family:"UTM-Azuki"; text-transform:uppercase; padding:0 30px}
 #nav a:hover {text-decoration:none; color:#FF0}
 #nav li {float:left; position:relative}
-#nav ul {width:160px; position:absolute; top:33px; display:none}
-#nav li ul a {width:180px; line-height:28px; float:left; margin-left:23px; color:#CCC; text-transform:none; font-weight:100; border-bottom:solid 1px #8E0607}
-#nav li ul a:hover {background-color:#666; color:#FFF}
+#nav ul {width:160px; position:absolute; top:37px; display:none}
+#nav li ul a {width:180px; line-height:30px; float:left; color:#CCC; font-family:Arial, Helvetica, sans-serif; font-size:13px; text-transform:none; border-top:solid 1px #8E0607; background-color:#B4050C}
+#nav li ul a:hover {background-color:#ED1C24; color:#FFF}
 #nav ul ul {top:auto}
 #nav li ul ul {left:220px}
 #nav li ul ul a{font-weight:100}

@@ -109,42 +109,124 @@ if(@$_GET['danhmuc']){
 </head>
 
 <body>
-<div id="wrapper">
-	<img src="images/bg-header.png" width="960" style="margin:5px 0 10px 0" />
-    <!--<div id="logo">
-        <div class="aleoflash-swf" style="display:block;"><embed src="images/logo.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="320" height="80" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed></div>
-        <script language="JavaScript">var hasFlash=false;if(window.ActiveXObject){ try { if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) hasFlash=true;} catch(e){}} else { if(navigator.plugins["Shockwave Flash"]){hasFlash=true;}}var elems=document.getElementsByTagName("div"); for(var i in elems){if(!hasFlash && elems[i].className=="aleoflash-gif") elems[i].style.display="block"; else if ((!hasFlash && elems[i].className=="aleoflash-swf") || elems[i].className=="aleoflash") elems[i].style.display="none";}</script>
-    </div>-->
+
+<div id="top"></div>
+
+<div class="wrapper">
+    <img src="images/bg-header.png" width="960" style="margin:5px 10px" />
     <?php
     include_once('blocks/menu.php');
-	
-	include_once('blocks/slider.php');
-	
-	/*linkwebsite*/
-	$qr = $tc->menu(1,5);
-	if(mysql_num_rows($qr) > 0){
-		$i = 0;
-		echo '<script type="text/javascript" src="library/realshadow.js"></script>
-		<div class="linkwebsite">';
-		while($row = mysql_fetch_array($qr)){
-			$i++;
-			if($i!=1) $style = 'style="margin-left:15px"'; else $style = '';
-			$str_info = str_replace(' - ','<br />',$row['title']);
-			echo '<div class="link_item" '.$style.'>
-			<div class="link_item_img"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-			<h2 class="realshadow  round cr" rel="r" >'.$row['name'].'</h2>
-			<p class="realshadow  round cr" rel="r">'.$str_info.'</p>
-			<a href="'.$row['url'].'">Xem chi tiết</a></div>';
-		}
-		echo '<script type="text/javascript"> (function(){ realshadow(document.getElementsByClassName("realshadow")); })(); </script>
-    	</div>';
-	}
-	
-	/*view content*/
-	echo $include;
-	
-	?>
+    include_once('blocks/slider.php');
+    ?>
     
+    <div id="home_item_1">
+    	<div class="item_1" style="margin-left:18px; background:url(upload/images/danhmuc/dich-vu-tu-van.png) no-repeat">
+        	<h2><a href="">Dịch vụ Tư Vấn Setup</a></h2>
+            <p>Tư vấn ý tưởng, quản lý, điều hành, tái cấu trúc các mô hình, nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...</p>
+            <p><a href="">Xem chi tiết</a></p>
+        </div>
+        
+    	<div class="item_1" style="margin-left:45px; background:url(upload/images/danhmuc/tuyen-dung.png) no-repeat">
+        	<h2><a href="">Dịch vụ đặt tiệc</a></h2>
+            <p>Nhận đặt tiệc cưới, sinh nhật, sự kiện theo yêu cầu</p>
+            <p><a href="">Xem chi tiết</a></p>
+        </div>
+        
+    	<div class="item_1" style="margin-left:45px; background:url(upload/images/danhmuc/cung-ung-nhan-su.png) no-repeat">
+        	<h2><a href="">Cung ứng & tuyển dụng Nhân sự</a></h2>
+            <p>Cung ứng và tuyển dụng nhân sự cấp cao trong lĩnh vực nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...</p>
+            <p><a href="">Xem chi tiết</a></p>
+        </div>
+    </div>
+</div>
+    
+<div id="home_item_2">
+	<div class="wrapper" style="padding:0 10px">
+    	<div class="item_2">
+        	<div class="img_item_2">
+            	<div class="img_item_bg"></div>
+            	<div class="img_item_bo"><img src="upload/images/danhmuc/cam-nghi-hoc-vien.png" alt="" /></div>
+            </div>
+            <a href=""><h2>Cảm nghĩ học viên</h2></a>
+
+        </div>
+        
+        <div class="item_2">
+        	<div class="img_item_2">
+            	<div class="img_item_bg"></div>
+            	<div class="img_item_bo"><img src="upload/images/danhmuc/cam-nghi-hoc-vien.png" alt="" /></div>
+            </div>
+            <a href=""><h2>Các mô hình kinh doanh của học viên</h2></a>
+        </div>
+        
+        <div class="item_2">
+        	<div class="img_item_2">
+            	<div class="img_item_bg"></div>
+            	<div class="img_item_bo"><img src="upload/images/danhmuc/cam-nghi-hoc-vien.png" alt="" /></div>
+            </div>
+            <a href=""><h2>Nghiên cứu & phát triễn món ăn, thức uống mới</h2></a>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="home_title">Thông tin</div>
+    <div class="home_item_3">
+        <div class="more_item_3">
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
+        </div>
+        
+    	<div class="nb_item_3">
+        	<div class="img_item_3"><img src="upload/_thumbs/Images/articles/1(2).jpg" alt="" /></div>
+            <a href=""><h3>Chương trình đào tạo Quản Lý Nhà Hàng rình đào tạo Quản Lý Nhà Hàng</h3></a>
+            <p>Kinh doanh Nhà hàng là mô hình kinh doanh đặc thù, đòi hỏi Nhà quản lý không những có khả năng tổ chức, quản lý con người mà còn am hiểu về ẩm thực thức ăn, thức...</p>
+            <a href="" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">Xem chi tiết</a>
+        </div>
+    	<div class="nb_item_3">
+        	<div class="img_item_3"><img src="upload/_thumbs/Images/articles/1(2).jpg" alt="" /></div>
+            <a href=""><h3>Chương trình đào tạo Quản Lý Nhà Hàng</h3></a>
+            <p>Kinh doanh Nhà hàng là mô hình kinh doanh đặc thù, đòi hỏi Nhà quản lý không những có khả năng tổ chức, quản lý con người mà còn am hiểu về ẩm thực thức ăn, thức...</p>
+            <a href="" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">Xem chi tiết</a>
+        </div>
+        
+        <div style="clear:both; height:1px"></div>
+    </div>
+    
+    <div class="home_title">Hình ảnh</div>
+    <div class="home_item_3">
+    	<div class="photo_item">
+        	
+        </div>
+    </div>
+</div>
+
+<div style="clear:both; height:30px"></div>
+
+<div class="wrapper">
+    <!--partner-->
+    <div class="home_item_3" style="height:130px; padding:5px 0">
+        <div class="simply-scroll simply-scroll-container">
+            <div class="simply-scroll-clip">
+                <ul id="scroller" class="simply-scroll-list" style="width:2255px">
+                    <?php
+                    $qr = $tc->slider_banner(3);
+					while($row = mysql_fetch_array($qr)){
+						echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
+					}
+					?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!--Contact Social-->
     <div id="contact_social">
     	<div id="contact_foo">
@@ -184,27 +266,10 @@ if(@$_GET['danhmuc']){
         </div>
         <div style="clear:both; height:20px"></div>
     </div>
-    
-    <!--partner-->
-    <div style="clear:both; height:130px; margin:0 7px 10px 10px; padding-top:5px; background-color:#FFF">
-        <div class="simply-scroll simply-scroll-container">
-            <div class="simply-scroll-clip">
-                <ul id="scroller" class="simply-scroll-list" style="width:2255px">
-                    <?php
-                    $qr = $tc->slider_banner(3);
-					while($row = mysql_fetch_array($qr)){
-						echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
-					}
-					?>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <div id="footer">
     	<?php echo $str_daynauan.'<p style="width:auto; float:right">'.$row_config['copyright'].'</p>'; ?>
     </div>
-</div>
 
 <script type="text/javascript" src="library/jquery.min.js"></script>
 <script type="text/javascript" src="website.js"></script>

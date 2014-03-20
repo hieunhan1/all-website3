@@ -121,8 +121,15 @@ $(document).ready(function($){
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
 		$("#support_online").corner("top 10px");
-		$("#nav li a, #home_info_new, .ds_chinhanh_item, .select_chinhanh, .box_right").corner("5px");
-		$("#slider, .home_info, #content_popup").corner("15px");
+		$("#home_info_new, .ds_chinhanh_item, .select_chinhanh, .box_right").corner("5px");
+		$(".home_info, #content_popup").corner("15px");
+		
+		$(".img_item_bo").corner("78px");
+		$(".more_item_3").corner("8px");
+		
+	}else{
+		$(".img_item_bg").css("background","none");
+		$(".img_item_bo").css({"border":"solid 3px #FFF"});
 	}
 	
 	/*support*/
