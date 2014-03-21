@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 18, 2014 at 05:00 PM
+-- Generation Time: Mar 21, 2014 at 05:06 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -138,9 +138,9 @@ CREATE TABLE `web_chinhanh` (
 -- Dumping data for table `web_chinhanh`
 -- 
 
-INSERT INTO `web_chinhanh` VALUES (1, 'Cơ sở chính', 'info@dayamthuc.vn', '(08).6291.2698', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0987.937.938 - 0947.333.488 - 098.333.8333', 'consultant_netspace,consultant_netspace2,consultant_netspace3', 'Tư vấn 1,Tư vấn 2,Tư vấn 3', 'vi', 1, '2014-02-07 15:07:53', '2014-02-07 17:07:36', 'admin', 'admin', 0);
-INSERT INTO `web_chinhanh` VALUES (2, 'Tp.HCM', 'info@dayamthuc.vn', '(08).3526.8716', 'Số 19 Đường Đặng Tất, Phường Tân Định, Quận 1, Tp.HCM', '0987.937.938 - 0947.333.488 - 098.333.8333', 'consultant_netspace,consultant_netspace2,consultant_netspace3', 'Tư vấn 1,Tư vấn 2,Tư vấn 3', 'vi', 1, '2014-02-07 15:10:52', '2014-02-06 17:07:00', 'admin', 'admin', 0);
-INSERT INTO `web_chinhanh` VALUES (3, 'Đà Nẵng', 'danang@dayamthuc.vn', '(051).1363.4879', 'Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng', '0905.295.402 - 0932.743.799', 'consultant_netspace4,consultant_netspace5', 'Tư vấn 4,Tư vấn 5', 'vi', 1, '2014-02-07 15:13:40', '2014-02-05 17:08:16', 'admin', 'admin', 0);
+INSERT INTO `web_chinhanh` VALUES (1, 'Cơ sở chính', 'info@dayamthuc.vn', '(08).6291.2698', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0987.937.938 - 0947.333.488 - 098.333.8333', 'consultant_netspace,consultant_netspace2,consultant_netspace3', 'Tư vấn 1,Tư vấn 2,Tư vấn 3', 'vi', 1, '2014-02-07 15:07:53', '2014-03-21 17:07:00', 'admin', 'admin', 0);
+INSERT INTO `web_chinhanh` VALUES (2, 'Tp.HCM', 'info@dayamthuc.vn', '(08).3526.8716', 'Số 19 Đường Đặng Tất, Phường Tân Định, Quận 1, Tp.HCM', '0987.937.938 - 0947.333.488 - 098.333.8333', 'consultant_netspace,consultant_netspace2,consultant_netspace3', 'Tư vấn 1,Tư vấn 2,Tư vấn 3', 'vi', 1, '2014-02-07 15:10:52', '2014-03-20 17:07:00', 'admin', 'admin', 0);
+INSERT INTO `web_chinhanh` VALUES (3, 'Đà Nẵng', 'danang@dayamthuc.vn', '(051).1363.4879', 'Số 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng', '0905.295.402 - 0932.743.799', 'consultant_netspace4,consultant_netspace5', 'Tư vấn 4,Tư vấn 5', 'vi', 1, '2014-02-07 15:13:40', '2014-03-19 17:08:00', 'admin', 'admin', 0);
 INSERT INTO `web_chinhanh` VALUES (4, 'Cần Thơ', 'cantho@dayamthuc.vn', '(071).0373.4371', '118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ', '0912.187.489 - 0912.287.489', 'consultant_netspace6,consultant_netspace7', 'Tư vấn 6,Tư vấn 7', 'vi', 1, '2014-02-07 15:14:42', '2014-03-18 11:32:45', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
@@ -1013,7 +1013,7 @@ INSERT INTO `web_menu` VALUES (3, 'Chương trình đào tạo', 'Chuong-Trinh-D
 INSERT INTO `web_menu` VALUES (5, 'Thư viện hình ảnh', 'thu-vien-hinh-anh', 'Thu-Vien-Hinh-Anh/', '', '0000-00-00 00:00:00', '1970-01-01 12:44:24', 45, 1, 1, 'Thư viện hình ảnh', 'Thư viện hình ảnh', 'Thư viện hình ảnh', 0, 'vi', 5, ',6,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (6, 'Thông tin học nấu ăn', 'Thong-Tin-Hoc-Nau-An', 'danh-muc/Thong-Tin-Hoc-Nau-An-6-1.html', '', '2012-12-20 20:46:00', '2012-12-20 10:23:52', 10, 8, 1, 'Thông tin học nấu ăn của trường dạy nấu ăn NETSPACE', 'Thông tin học nấu ăn của trường dạy nấu ăn NETSPACE, trường học nấu ăn', 'Thông tin học nấu ăn,trường dạy nấu ăn', 0, 'vi', 2, ',4,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (4, 'Lịch khai giảng', 'Lich-Khai-Giang', 'danh-muc/Lich-Khai-Giang-4-1.html', 'icon-lich.png', '2012-12-20 20:44:00', '2012-12-20 12:43:03', 0, 4, 1, 'Lịch khai giảng các khóa học Ẩm Thực', 'Lịch khai giảng của trường dạy nghề ẩm thực NETSPACE, lịch khai giảng dạy nấu ăn', 'Lịch khai giảng,Lich Khai Giang', 0, 'vi', 4, ',2,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (10, 'Thông tin cần biết', 'Thong-Tin-Can-Biet', 'danh-muc/Thong-Tin-Can-Biet-10-1.html', '', '2012-12-20 20:49:00', '2012-12-20 12:53:13', 0, 100, 1, 'Thông tin cần biết', '', 'Thong Tin Can Biet', 0, 'vi', 2, ',4,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (10, 'Thông tin cần biết', 'Thong-Tin-Can-Biet', 'javascript:;', '', '2012-12-20 20:49:00', '2012-12-20 12:53:00', 0, 100, 1, 'Thông tin cần biết', '', 'Thong Tin Can Biet', 0, 'vi', 2, ',4,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (11, 'HỖ TRỢ SINH VIÊN', 'Ho-Tro-Sinh-Vien', 'danh-muc/Ho-Tro-Sinh-Vien-11-1.htm', '', '2012-12-20 20:49:00', '2012-12-20 12:49:32', 0, 101, 1, 'HỖ TRỢ SINH VIÊN', '', 'Ho Tro Sinh Vien', 0, 'vi', 10, ',4,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (12, 'Mẫu bằng tốt nghiệp', 'Mau-Bang-Tot-Nghiep', 'danh-muc/Mau-Bang-Tot-Nghiep-12-1.html', '', '2012-12-20 20:50:00', '2012-12-20 10:22:58', 10, 1, 1, 'Mẫu bằng tốt nghiệp trường dạy học nấu ăn', 'Mẫu bằng tốt nghiệp trường dạy nấu ăn dạy ẩm thực NETSPACE', 'Mẫu bằng tốt nghiệp trường dạy học nấu ăn', 0, 'vi', 2, ',4,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (13, 'Khác biệt của chương trình', 'Khac-Biet-Cua-Chuong-Trinh', 'danh-muc/Khac-Biet-Cua-Chuong-Trinh-13-1.html', '', '2012-12-20 20:50:00', '2012-12-20 10:24:59', 10, 2, 1, 'Khác biệt của chương trình trường dạy nấu ăn NETSPACE', 'Khác biệt của chương trình của trường dạy nấu ăn dạy ẩm thực NETSPACE', 'Khác biệt của chương trình trường dạy nấu ăn NETSPACE,Khac Biet Cua Chuong Trinh', 0, 'vi', 2, ',4,', 'admin', 'admin', 0);
@@ -1025,11 +1025,11 @@ INSERT INTO `web_menu` VALUES (19, 'Tư vấn', 'Tu-Van', 'ymsgr:sendIM?dayamthu
 INSERT INTO `web_menu` VALUES (20, 'Hotline: 0903 646 893', 'Hotline-0903-646-893', 'javascript:;', '', '2012-12-20 20:53:00', '2012-12-20 12:48:55', 11, 0, 1, 'Hotline: 0903 646 893', '', 'Hotline 0903 646 893', 0, 'vi', 10, ',4,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (21, 'Email: info@dayamthuc.vn', 'Email-Info@Dayamthucvn', 'javascript:;', '', '2012-12-20 20:53:00', '2012-12-20 12:49:00', 11, 0, 1, 'Email: info@dayamthuc.vn', '', 'Email Info@Dayamthucvn', 0, 'vi', 10, ',4,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (22, 'Các khóa đào tạo nghề chuyên nghiệp', 'Cac-Khoa-Dao-Tao-Nghe-Chuyen-Nghiep', 'danh-muc/Cac-Khoa-Dao-Tao-Nghe-Chuyen-Nghiep-22-1.html', '', '2012-12-20 20:54:00', '2012-12-20 09:57:24', 3, 1, 1, 'Các khóa đào tạo nghề chuyên nghiệp', 'Các khóa đào tạo nghề chuyên nghiệp như bếp chính bếp Việt, bếp chính bếp Hoa, bếp chính bếp âu,...', 'Các khóa đào tạo nghề chuyên nghiệp,Cac Khoa Dao Tao Nghe Chuyen Nghiep', 0, 'vi', 3, ',6,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (23, 'Dạy Nấu Ăn Online', 'day-nau-an-online', 'javascript:;', 'day-nau-an-online.png', '2012-12-20 20:55:00', '2014-02-07 15:10:37', 1, 202, 1, 'Dạy Nấu Ăn Online', 'Dạy Nấu Ăn Online', 'Dạy Nấu Ăn Online', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (23, 'Các mô hình kinh doanh của học viên', 'cac-mo-hinh-kinh-doanh-cua-hoc-vien', 'javascript:;', 'cam-nghi-hoc-vien.png', '2012-12-20 20:55:00', '2014-02-07 15:10:00', 1, 202, 1, 'Các mô hình kinh doanh của học viên', 'Các mô hình kinh doanh của học viên', 'Các mô hình kinh doanh của học viên,cac mo hinh kinh doanh cua hoc vien', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (24, 'Các khóa đào tạo món ăn truyền thống', 'cac-khoa-dao-tao-mon-an-truyen-thong', 'cac-khoa-dao-tao-mon-an-truyen-thong/', '', '2012-12-20 20:55:00', '2012-12-20 10:41:42', 3, 6, 1, 'Các khóa đào tạo món ăn truyền thống', 'Các khóa đào tạo món ăn truyền thống nấu các món ăn truyền thống Việt Nam giữ gìn Văn Hóa Việt', 'Các khóa đào tạo món ăn truyền thống', 0, 'vi', 3, ',6,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (25, 'Hội đầu bếp CN Sài Gòn', 'hoi-dau-bep-cn-sai-gon', 'hoi-dau-bep-cn-sai-gon/', 'hoi-dau-bep-cn-sai-gon.jpg', '2012-12-20 20:55:00', '2012-12-20 15:52:07', 5, 6, 1, 'Hội đầu bếp chuyên nghiệp Sài Gòn', 'Hội đầu bếp chuyên nghiệp Sài Gòn (SPC) trực thuộc HIỆP HỘI DU LỊCH TP.HCM. Là 1 tổ chức đoàn thể xã hội của giới đầu bếp chuyên nghiệp.', 'Hội đầu bếp chuyên nghiệp Sài Gòn', 0, 'vi', 5, ',6,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (26, 'Dạy cắt tỉa', 'Day-Cat-Tia', 'danh-muc/Day-Cat-Tia-26-1.html', '', '2012-12-20 20:55:00', '2012-12-20 08:51:41', 31, 16, 0, 'Dạy cắt tỉa', '', 'Day Cat Tia,Dạy cắt tỉa', 0, 'vi', 2, ',1,', 'admin', '', 0);
-INSERT INTO `web_menu` VALUES (28, 'Đội ngũ giảng viên', 'Doi-Ngu-Giang-Vien', 'danh-muc/Doi-Ngu-Giang-Vien-28-1.html', '', '2012-12-20 20:56:00', '2012-12-20 20:56:00', 2, 0, 0, 'Đội ngũ giảng viên', '', 'Doi Ngu Giang Vien', 0, 'vi', 2, ',1,', 'admin', '', 0);
+INSERT INTO `web_menu` VALUES (28, 'Đội ngũ giảng viên', 'Doi-Ngu-Giang-Vien', 'danh-muc/Doi-Ngu-Giang-Vien-28-1.html', '', '2012-12-20 20:56:00', '2014-03-20 10:53:46', 2, 0, 0, 'Đội ngũ giảng viên', '', 'Doi Ngu Giang Vien', 0, 'vi', 2, ',2,1,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (29, 'Giảng viên', 'giang-vien', 'giang-vien/', '', '2012-12-20 20:57:00', '2012-12-20 15:39:45', 2, 2, 1, 'Giảng viên trường dạy nghề ẩm thực NETSPACE', 'Giảng viên trường dạy nghề ẩm thực NETSPACE có nhiều kinh nghiệm và đang hoạt động tại các khách sạn, nhà hàng lớn', 'Giảng viên trường dạy nghề ẩm thực NETSPACE', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (30, 'Dịch vụ', 'Dich-Vu', 'danh-muc/Dich-Vu-30-1.html', '', '2012-12-20 20:57:00', '2012-12-20 12:44:04', 0, 4, 0, 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng', 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng của trường dạy nghề ẩm thực NETSPACE', 'Dịch vụ setup nhà hàng quán ăn, tư vấn mở quán ăn, mở nhà hàng', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (31, 'Temp', 'Temp', 'danh-muc/Temp-31-1.html', '', '2012-12-20 20:57:00', '2012-12-20 13:54:43', 0, 102, 0, 'Temp', '', 'Temp', 0, 'vi', 10, ',6,', 'admin', 'admin', 0);
@@ -1042,9 +1042,9 @@ INSERT INTO `web_menu` VALUES (37, 'Ý kiến học viên', 'Y-Kien-Hoc-Vien', '
 INSERT INTO `web_menu` VALUES (38, 'Các khóa đào tạo đặc biệt', 'Cac-Khoa-Dao-Tao-Dac-Biet', 'danh-muc/Cac-Khoa-Dao-Tao-Dac-Biet-38-1.html', '', '2012-12-20 20:59:00', '2012-12-20 10:41:27', 3, 3, 1, 'Các khóa đào tạo đặc biệt', 'Các khóa đào tạo đặc biệt như: dạy cắt tỉa, rang tẩm chế biến cà phê, dạy món Huế', 'Các khóa đào tạo đặc biệt,Cac Khoa Dao Tao Dac Biet', 0, 'vi', 3, ',6,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (39, 'Youtube', 'youtube', 'http://www.youtube.com/channel/UC3NYiSS1mSe7YXXAeSFqZcw', 'youtube_2.png', '2012-12-20 20:59:00', '2014-02-07 10:10:51', 1, 302, 1, 'Youtube', 'Youtube Trường dạy học nấu ăn NETSPACE', 'Youtube Trường dạy học nấu ăn NETSPACE', 0, 'vi', 10, ',3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (40, 'Các khóa đào tạo Quốc tế', 'Cac-Khoa-Dao-Tao-Quoc-Te', 'danh-muc/Cac-Khoa-Dao-Tao-Quoc-Te-40-1.html', '', '2012-12-20 21:00:00', '2012-12-20 10:41:32', 3, 4, 1, 'Các khóa đào tạo Quốc tế', 'Các khóa đào tạo Quốc tế đào tạo dạy nấu ăn theo tiêu chuẩn Quốc tế', 'Các khóa đào tạo Quốc tế,Cac Khoa Dao Tao Quoc Te', 0, 'vi', 3, ',6,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (41, 'Dịch vụ đặt tiệc', 'dat-tiec-cuoi-sinh-nhat-tiec-su-kien-tai-nha', 'dat-tiec-cuoi-sinh-nhat-tiec-su-kien-tai-nha/', 'day-am-thuc.png', '2012-12-20 21:00:00', '2014-02-08 10:11:28', 1, 205, 1, 'Đặt tiệc cưới, sinh nhật, tiệc sự kiện tại nhà', 'Dịch vụ đặt tiệc cưới, sinh nhật, tiệc sự kiện tại nhà', 'Dịch vụ đặt tiệc cưới, sinh nhật, tiệc sự kiện tại nhà', 0, 'vi', 2, ',5,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (42, 'Dịch vụ tư vấn', 'mo-nha-hang-quan-an-mo-coffee-bar-karaoke-bar', 'mo-nha-hang-quan-an-mo-coffee-bar-karaoke-bar/', 'cooking-class.png', '2012-12-20 21:00:00', '2014-02-08 10:12:23', 1, 204, 1, 'Mở nhà hàng, quán ăn - Mở Coffee, Bar, Karaoke', 'Dịch vụ tư vấn mở nhà hàng, quán ăn, mở Coffee, Bar, Karaoke', 'Dịch vụ tư vấn mở nhà hàng quán ăn,mở Coffee, Bar, Karaoke Bar', 0, 'vi', 2, ',5,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (43, 'Công Thức Nấu Ăn', 'cong-thuc-nau-an', 'javascript:;', 'cong-thuc-nau-an.png', '2012-12-20 21:00:00', '2014-02-07 15:10:29', 1, 201, 1, 'Công Thức Nấu Ăn', 'Công Thức Nấu Ăn', 'Công Thức Nấu Ăn', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (41, 'Dịch vụ đặt tiệc', 'dich-vu-dat-tiec', 'dich-vu-dat-tiec/', 'tuyen-dung.png', '2012-12-20 21:00:00', '2014-02-08 10:11:00', 1, 205, 1, 'Đặt tiệc cưới, sinh nhật, tiệc sự kiện tại nhà', 'Dịch vụ đặt tiệc cưới, sinh nhật, tiệc sự kiện tại nhà', 'Dịch vụ đặt tiệc cưới, sinh nhật, tiệc sự kiện tại nhà', 0, 'vi', 2, ',5,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (42, 'Dịch vụ tư vấn', 'dich-vu-tu-van', 'dich-vu-tu-van/', 'dich-vu-tu-van.png', '2012-12-20 21:00:00', '2014-02-08 10:12:00', 1, 204, 1, 'Mở nhà hàng, quán ăn - Mở Coffee, Bar, Karaoke', 'Tư vấn ý tưởng, quản lý, điều hành, tái cấu trúc các mô hình, nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...', 'Dịch vụ tư vấn mở nhà hàng quán ăn,mở Coffee, Bar, Karaoke Bar', 0, 'vi', 2, ',5,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (43, 'Cảm nghĩ của học viên', 'cam-nghi-cua-hoc-vien', 'javascript:;', 'cam-nghi-hoc-vien.png', '2012-12-20 21:00:00', '2014-02-07 15:10:00', 1, 201, 1, 'Cảm nghĩ của học viên', 'Cảm nghĩ của học viên', 'Cảm nghĩ của học viên,cam nghi cua hoc vien', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (44, 'Đối tác', 'Doi-Tac', 'danh-muc/Doi-Tac-44-1.html', '', '2012-12-24 16:41:00', '2012-12-24 15:39:38', 2, 1, 1, 'Đối tác trường dạy nghề ẩm thực NETSPACE', 'Đối tác trường dạy nghề ẩm thực NETSPACE: Hội đầu bếp chuyên nghiệp Sài Gòn, và Evolution Hospitality Institute.', 'Đối tác trường dạy nghề ẩm thực NETSPACE', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (45, 'Thư viện', 'thu-vien', 'thu-vien/', '', '2012-12-25 09:39:00', '2012-12-25 16:34:01', 0, 5, 1, 'Thư viện trường dạy học nấu ăn NETSPACE', 'Thư viện trường dạy học nấu ăn NETSPACE', 'Thư viện trường dạy học nấu ăn NETSPACE,day hoc nau an', 0, 'vi', 9, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (46, 'Thư viện phim', 'thu-vien-phim', 'thu-vien-phim/', '', '2012-12-25 09:52:00', '2012-12-25 16:04:03', 45, 2, 1, 'Thư viện phim', 'Thư viện phim', 'Thư viện phim', 0, 'vi', 6, ',6,', 'admin', 'admin', 0);
@@ -1057,9 +1057,9 @@ INSERT INTO `web_menu` VALUES (51, 'Bếp Việt - Khóa 06', 'bep-viet-khoa-06'
 INSERT INTO `web_menu` VALUES (52, 'Món Âu', 'mon-au', 'mon-au/', 'album-mon-au.jpg', '2012-12-28 12:07:00', '2012-12-28 14:07:21', 61, 3, 1, 'Món Âu', 'Món Âu', 'Món Âu', 0, 'vi', 5, ',5,', 'admin', '', 0);
 INSERT INTO `web_menu` VALUES (53, 'Hướng dẫn pha chế', 'huong-dan-pha-che', 'huong-dan-pha-che/', 'Lop-Pha-Che-Barista.jpg', '2013-01-15 14:49:00', '2013-01-15 12:48:01', 35, 2, 1, 'Hướng dẫn pha chế', 'Hướng dẫn pha chế', 'Hướng dẫn pha chế', 0, 'vi', 2, ',', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (54, 'Hướng dẫn nấu ăn', 'huong-dan-nau-an', 'http://www.hocnauan.net.vn/', 'Ky-Luc-Nhieu-Mon-Cuon-Vn.jpg', '2013-01-15 14:50:00', '2013-01-15 12:47:57', 35, 1, 1, 'Hướng dẫn nấu ăn', 'Hướng dẫn nấu ăn', 'Hướng dẫn nấu ăn', 0, 'vi', 2, ',', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (55, 'Nghiên Cứu và Phát Triển Ẩm Thực', 'nghien-cuu-va-phat-trien-am-thuc', 'javascript:;', 'nghien-cuu-phat-trien.png', '2013-01-15 14:50:00', '2014-02-07 15:10:43', 1, 203, 1, 'Nghiên Cứu và Phát Triển Ẩm Thực', 'Nghiên Cứu và Phát Triển Ẩm Thực', 'Nghiên Cứu và Phát Triển Ẩm Thực', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (55, 'Nghiên Cứu và Phát Triển món ăn, thức uống mới', 'nghien-cuu-va-phat-trien-mon-an-thuc-uong-moi', 'javascript:;', 'cam-nghi-hoc-vien.png', '2013-01-15 14:50:00', '2014-02-07 15:10:00', 1, 203, 1, 'Nghiên Cứu và Phát Triển món ăn, thức uống mới', 'Nghiên Cứu và Phát Triển món ăn, thức uống mới', 'Nghiên Cứu và Phát Triển món ăn, thức uống mới,nghien cuu va phat trien mon an thuc uong moi', 0, 'vi', 10, ',1,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (56, 'Xem tin', 'xem-tin', 'xem-tin/', '', '2013-01-15 14:51:00', '2014-02-07 09:51:25', 6, 1000, 1, 'Thông tin học nấu ăn', 'Thông tin học nấu ăn', 'Thông tin học nấu ăn', 0, 'vi', 2, ',6,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (57, 'Tuyển dụng đầu bếp', 'tuyen-dung-dau-bep', 'tuyen-dung-dau-bep/', 'tu-van.png', '2013-01-23 13:11:00', '2014-02-08 15:01:25', 1, 206, 1, 'Tuyển dụng đầu bếp - Nộp hồ sơ tuyển dụng', 'Tuyển dụng đầu bếp - Nộp hồ sơ tuyển dụng', 'Tuyển dụng đầu bếp,Nộp hồ sơ tuyển dụng', 0, 'vi', 11, ',5,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (57, 'Cung ứng và tuyển dụng nhân sự đầu bếp', 'cung-ung-va-tuyen-dung-nhan-su-dau-bep', 'cung-ung-va-tuyen-dung-nhan-su-dau-bep/', 'cung-ung-nhan-su.png', '2013-01-23 13:11:00', '2014-02-08 15:01:00', 1, 206, 1, 'Cung ứng và tuyển dụng nhân sự đầu bếp - Nộp hồ sơ tuyển dụng', 'Cung ứng và tuyển dụng nhân sự cấp cao trong lĩnh vực nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...', 'Tuyển dụng đầu bếp,Nộp hồ sơ tuyển dụng', 0, 'vi', 11, ',5,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (58, 'Hoạt động của Trường', 'hoat-dong-cua-truong', 'hoat-dong-cua-truong/', 'album-hoat-dong-truong.jpg', '2013-03-15 13:26:00', '2013-03-15 14:18:57', 5, 0, 1, 'Hoạt động của Trường', 'Hoạt động của Trường', 'Hoạt động của Trường', 1, 'vi', 5, ',6,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (59, 'Bánh Âu', 'banh-au', 'banh-au/', 'album-banh-au.jpg', '2013-03-15 13:26:00', '2013-03-15 14:12:10', 61, 2, 1, 'Bánh Âu', 'Bánh Âu', 'Bánh Âu', 0, 'vi', 5, ',5,', 'admin', '', 0);
 INSERT INTO `web_menu` VALUES (60, 'Hình ảnh các lớp', 'hinh-anh-cac-lop', 'hinh-anh-cac-lop/', 'album-anh-cac-lop.jpg', '2013-03-15 13:26:00', '2013-03-15 15:49:05', 5, 2, 1, 'Hình ảnh các lớp', 'Hình ảnh các lớp', 'Hình ảnh các lớp', 1, 'vi', 5, ',6,', 'admin', 'admin', 0);
@@ -1279,17 +1279,17 @@ INSERT INTO `web_menu_admin` VALUES (1, 'Trang chủ', 'home', 'icon-home', 1, 1
 INSERT INTO `web_menu_admin` VALUES (2, 'Cấu hình website', 'web_config', 'icon-cau-hinh.jpg', 2, 1);
 INSERT INTO `web_menu_admin` VALUES (3, 'Danh mục menu', 'web_menu', 'icon-menu.jpg', 3, 1);
 INSERT INTO `web_menu_admin` VALUES (4, 'Thông tin, bài viết', 'web_info', 'icon-info.jpg', 4, 1);
-INSERT INTO `web_menu_admin` VALUES (5, 'Thư viện ảnh', 'web_photo_gallery', 'icon-product.jpg', 5, 1);
-INSERT INTO `web_menu_admin` VALUES (6, 'Thư viện video', 'web_video', 'icon-item.jpg', 6, 1);
+INSERT INTO `web_menu_admin` VALUES (5, 'Thư viện ảnh', 'web_photo_gallery', 'icon-thu-vien-anh.jpg', 5, 1);
+INSERT INTO `web_menu_admin` VALUES (6, 'Thư viện video', 'web_video', 'icon-thu-vien-video.jpg', 6, 1);
 INSERT INTO `web_menu_admin` VALUES (7, 'Slider & banner', 'web_slider_banner', 'icon-slider-banner.jpg', 7, 1);
-INSERT INTO `web_menu_admin` VALUES (8, 'Lịch khai giảng', 'web_lichkhaigiang', 'icon-item.jpg', 8, 1);
-INSERT INTO `web_menu_admin` VALUES (9, 'Danh sách chi nhánh', 'web_chinhanh', 'icon-item.jpg', 9, 1);
-INSERT INTO `web_menu_admin` VALUES (10, 'Nhân viên nhận đăng ký', 'web_dangky_nhanvien', 'icon-item.jpg', 10, 1);
-INSERT INTO `web_menu_admin` VALUES (11, 'Học viên đăng ký', 'web_dangky_tructuyen', 'icon-item.jpg', 11, 1);
-INSERT INTO `web_menu_admin` VALUES (12, 'Liên hệ trực tuyến', 'web_contact', 'icon-contact.jpg', 12, 1);
-INSERT INTO `web_menu_admin` VALUES (13, 'Tuyển dụng - Thông tin', 'web_tuyendung', 'icon-register.jpg', 13, 1);
+INSERT INTO `web_menu_admin` VALUES (8, 'Lịch khai giảng', 'web_lichkhaigiang', 'icon-lich-khai-giang', 8, 1);
+INSERT INTO `web_menu_admin` VALUES (9, 'Danh sách chi nhánh', 'web_chinhanh', 'icon-product.jpg', 9, 1);
+INSERT INTO `web_menu_admin` VALUES (10, 'Nhân viên nhận đăng ký', 'web_dangky_nhanvien', 'icon-register.jpg', 10, 1);
+INSERT INTO `web_menu_admin` VALUES (11, 'Học viên đăng ký', 'web_dangky_tructuyen', 'icon-hoc-vien.jpg', 11, 1);
+INSERT INTO `web_menu_admin` VALUES (12, 'Liên hệ trực tuyến', 'web_contact', 'icon-lien-he.jpg', 12, 1);
+INSERT INTO `web_menu_admin` VALUES (13, 'Tuyển dụng - Thông tin', 'web_tuyendung', 'icon-tuyen-dung-thong-tin.jpg', 13, 1);
 INSERT INTO `web_menu_admin` VALUES (14, 'Tuyển dụng - Công ty', 'web_tuyendung_cty', 'icon-contact.jpg', 14, 1);
-INSERT INTO `web_menu_admin` VALUES (15, 'Tuyển dụng - Hồ sơ', 'web_tuyendung_hoso', 'icon-account.jpg', 15, 1);
+INSERT INTO `web_menu_admin` VALUES (15, 'Tuyển dụng - Hồ sơ', 'web_tuyendung_hoso', 'icon-tuyendung-ho-so.jpg', 15, 1);
 INSERT INTO `web_menu_admin` VALUES (16, 'Tài khoản', 'web_users', 'icon-account.jpg', 100, 1);
 
 -- --------------------------------------------------------
@@ -1310,11 +1310,11 @@ CREATE TABLE `web_menu_position` (
 -- Dumping data for table `web_menu_position`
 -- 
 
-INSERT INTO `web_menu_position` VALUES (1, 'Home Catalog', 4, 1);
+INSERT INTO `web_menu_position` VALUES (1, 'Học viên', 4, 1);
 INSERT INTO `web_menu_position` VALUES (2, 'Main', 1, 1);
 INSERT INTO `web_menu_position` VALUES (3, 'Social', 5, 1);
 INSERT INTO `web_menu_position` VALUES (4, 'Left', 2, 1);
-INSERT INTO `web_menu_position` VALUES (5, 'Link Website', 3, 1);
+INSERT INTO `web_menu_position` VALUES (5, 'Các dịch vụ', 3, 1);
 INSERT INTO `web_menu_position` VALUES (6, 'Không', 6, 1);
 
 -- --------------------------------------------------------

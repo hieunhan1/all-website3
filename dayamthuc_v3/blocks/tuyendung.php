@@ -1,4 +1,4 @@
-<div id="content">
+<div class="wrapper"><div class="home_item_3">
 	<div id="navigator">
         <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
         <?php
@@ -122,5 +122,5 @@
             </tr>
         </table>
     </div>
-</div>
+</div></div>
 <div id="backgroundPopup"></div>

@@ -126,101 +126,21 @@ if(@$_GET['danhmuc']){
             <p><a href="">Xem chi tiết</a></p>
         </div>
         
-    	<div class="item_1" style="margin-left:45px; background:url(upload/images/danhmuc/tuyen-dung.png) no-repeat">
+    	<div class="item_1" style="margin-left:40px; background:url(upload/images/danhmuc/tuyen-dung.png) no-repeat">
         	<h2><a href="">Dịch vụ đặt tiệc</a></h2>
             <p>Nhận đặt tiệc cưới, sinh nhật, sự kiện theo yêu cầu</p>
             <p><a href="">Xem chi tiết</a></p>
         </div>
         
-    	<div class="item_1" style="margin-left:45px; background:url(upload/images/danhmuc/cung-ung-nhan-su.png) no-repeat">
+    	<div class="item_1" style="margin-left:35px; background:url(upload/images/danhmuc/cung-ung-nhan-su.png) no-repeat">
         	<h2><a href="">Cung ứng & tuyển dụng Nhân sự</a></h2>
             <p>Cung ứng và tuyển dụng nhân sự cấp cao trong lĩnh vực nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...</p>
             <p><a href="">Xem chi tiết</a></p>
         </div>
     </div>
 </div>
-    
-<div id="home_item_2">
-	<div class="wrapper" style="padding:0 10px">
-    	<div class="item_2">
-        	<div class="img_item_2">
-            	<div class="img_item_bg"></div>
-            	<div class="img_item_bo"><img src="upload/images/danhmuc/cam-nghi-hoc-vien.png" alt="" /></div>
-            </div>
-            <a href=""><h2>Cảm nghĩ học viên</h2></a>
 
-        </div>
-        
-        <div class="item_2">
-        	<div class="img_item_2">
-            	<div class="img_item_bg"></div>
-            	<div class="img_item_bo"><img src="upload/images/danhmuc/cam-nghi-hoc-vien.png" alt="" /></div>
-            </div>
-            <a href=""><h2>Các mô hình kinh doanh của học viên</h2></a>
-        </div>
-        
-        <div class="item_2">
-        	<div class="img_item_2">
-            	<div class="img_item_bg"></div>
-            	<div class="img_item_bo"><img src="upload/images/danhmuc/cam-nghi-hoc-vien.png" alt="" /></div>
-            </div>
-            <a href=""><h2>Nghiên cứu & phát triễn món ăn, thức uống mới</h2></a>
-        </div>
-    </div>
-</div>
-
-<div class="wrapper">
-    <div class="home_title">Thông tin</div>
-    <div class="home_item_3">
-        <div class="more_item_3">
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        	<a href=""><h3>Trường dạy nấu ăn - Cầu nối cho những tâm hồn Nghệ sĩ</h3></a>
-        </div>
-        
-    	<div class="nb_item_3">
-        	<div class="img_item_3"><img src="upload/_thumbs/Images/articles/1(2).jpg" alt="" /></div>
-            <a href=""><h3>Chương trình đào tạo Quản Lý Nhà Hàng rình đào tạo Quản Lý Nhà Hàng</h3></a>
-            <p>Kinh doanh Nhà hàng là mô hình kinh doanh đặc thù, đòi hỏi Nhà quản lý không những có khả năng tổ chức, quản lý con người mà còn am hiểu về ẩm thực thức ăn, thức...</p>
-            <a href="" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">Xem chi tiết</a>
-        </div>
-    	<div class="nb_item_3">
-        	<div class="img_item_3"><img src="upload/_thumbs/Images/articles/1(2).jpg" alt="" /></div>
-            <a href=""><h3>Chương trình đào tạo Quản Lý Nhà Hàng</h3></a>
-            <p>Kinh doanh Nhà hàng là mô hình kinh doanh đặc thù, đòi hỏi Nhà quản lý không những có khả năng tổ chức, quản lý con người mà còn am hiểu về ẩm thực thức ăn, thức...</p>
-            <a href="" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">Xem chi tiết</a>
-        </div>
-        
-        <div style="clear:both; height:1px"></div>
-    </div>
-    
-    <div class="home_title">Hình ảnh</div>
-    <div class="home_item_3">
-    	<div class="photo_item_3">
-        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
-            <h3>Hình ảnh hoạt động</h3></a>
-        </div>
-    	<div class="photo_item_3">
-        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
-            <h3>Hình ảnh hoạt động</h3></a>
-        </div>
-    	<div class="photo_item_3">
-        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
-            <h3>Hình ảnh hoạt động</h3></a>
-        </div>
-    	<div class="photo_item_3">
-        	<a href=""><div class="img_photo_item_3"><img src="upload/images/danhmuc/album-hoat-dong-truong.jpg" alt="" /></div>
-            <h3>Hình ảnh hoạt động</h3></a>
-        </div>
-        
-        <div style="clear:both; height:1px"></div>
-    </div>
-</div>
+<?php echo $include;?>
 
 <div style="clear:both; height:30px"></div>
 
@@ -240,11 +160,19 @@ if(@$_GET['danhmuc']){
             </div>
         </div>
     </div>
+    
+    <div style="clear:both; height:20px"></div>
+    
+    <div id="copyright"><?php echo $row_config['copyright'];?></div>
+    <div id="run_top"><img src="images/top.png" alt="Top trường dạy nấu ăn NetSpace" style="margin-top:24px; margin-bottom:-24px" /></div>
 </div>
 
+<div id="footer">
     <!--Contact Social-->
-    <div id="contact_social">
+    <div id="contact_social" class="wrapper">
     	<div id="contact_foo">
+        	<?php echo $str_daynauan; ?>
+            <div style="clear:both; height:10px"></div>
         	<?php
             $i = 0;
 			$qr = $tc->chinhanh_ds();
@@ -262,13 +190,13 @@ if(@$_GET['danhmuc']){
 				}else{
 					$name_chinhanh .= '<span class="select_chinhanh chinhanh1 select_chinhanh_active">'.$row['name'].'</span>';
 					$info_chinhanh .= '<div class="chinhanh" id="chinhanh1">
-					<p>Địa chỉ: <b>'.$row['diachi'].'</b></p> <p style="color:#F00; margin-left:50px; font-size:90%">(Đối diện Chợ Đakao)</p>
+					<p>Địa chỉ: <b>'.$row['diachi'].'</b></p><p style="color:#FF6; margin-left:45px">(Đối diện Chợ Đakao)</p>
 					<p>Điện thoại: <b>'.$row['phone'].'</b></p>
 					<p>Hotline: <b>'.$row['hotline'].'</b></p>
 					<p>Email: <b>'.$row['email'].'</b></p></div>';
 				}
 			}
-			echo '<div id="select_chinhanh"><span style="font-size:110%">CHỌN CHI NHÁNH:</span> '.$name_chinhanh.'</div>'.$info_chinhanh;
+			echo '<div id="select_chinhanh"><span style="font-size:110%">Chi nhánh:</span> '.$name_chinhanh.'</div>'.$info_chinhanh;
 			?>
         </div>
     	<div id="social">
@@ -281,10 +209,15 @@ if(@$_GET['danhmuc']){
         </div>
         <div style="clear:both; height:20px"></div>
     </div>
+</div>
 
-    <div id="footer">
-    	<?php echo $str_daynauan.'<p style="width:auto; float:right">'.$row_config['copyright'].'</p>'; ?>
+<div id="support_online">
+	<img src="images/support-online.gif" alt="support online" id="btn_support" />
+    <div id="ajax_support">
+    	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />
+        <div id="ajax_support_data"></div>
     </div>
+</div>
 
 <script type="text/javascript" src="library/jquery.min.js"></script>
 <script type="text/javascript" src="website.js"></script>
@@ -294,13 +227,6 @@ if(@$_GET['danhmuc']){
 <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
 <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
 
-<div id="support_online">
-	<img src="images/support-online.gif" alt="support online" id="btn_support" />
-    <div id="ajax_support">
-    	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />
-        <div id="ajax_support_data"></div>
-    </div>
-</div>
 <?php
 if(@$script_slider) echo $script_slider;
 if(@$script_photo) echo $script_photo;

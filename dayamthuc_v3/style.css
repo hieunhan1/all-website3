@@ -47,35 +47,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 #slider{height:280px; overflow:hidden; margin:0 10px 20px; border:solid 3px #FFF; position:relative; box-shadow: 0px 0px 10px #666}
 
-#contact_social{clear:both}
-#contact_social #contact_foo{width:580px; height:155px; float:left; font-size:110%; line-height:23px; padding:25px 0 0 120px; background:url(images/contact_home.png) no-repeat top left}
-
-#contact_social #contact_foo #select_chinhanh{font-weight:bold; margin-bottom:10px}
-#contact_social #contact_foo #select_chinhanh .select_chinhanh{margin:0 10px; padding:5px 10px; border:solid 1px #999; background-color:#FF9; cursor:pointer}
-#contact_social #contact_foo #select_chinhanh .select_chinhanh_active{background-color:#F00; color:#FFF}
-
-#contact_social #social{width:225px; height:120px; float:right; padding:60px 0 0 10px; background:url(images/social.png) no-repeat}
-#contact_social #social img{width:64px}
-
-#footer{height:65px; margin:0 7px 0 10px; padding-top:10px; color:#FFF; font-weight:bold}
-#footer h1, #footer h3{font-size:120%; width:auto; float:left}
-
-#support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:10px; background:#FFF; border:solid 1px #999; z-index:5}
-#support_online #btn_support{height:40px; cursor:pointer}
-#support_online #ajax_support{display:none; padding-top:10px; border-top:solid 1px #999}
-
-#support_online #ds_chinhanh{margin:0 5px}
-#support_online #ds_chinhanh .ds_chinhanh_item{width:100px; float:left; line-height:25px; height:25px; text-align:center; margin:0 10px 5px 10px; background-color:#FF9; border:solid 1px #999; cursor:pointer}
-#support_online #ds_chinhanh .ds_chinhanh_item_active{background-color:#F00; color:#FFF; font-weight:bold}
-
-#support_online #ds_support {clear:both; margin:0 15px 0 25px; padding-top:10px}
-#support_online #ds_support .ds_support_item{line-height:25px; height:25px; margin-bottom:8px}
-#support_online #ds_support .ds_support_item img{height:25px; float:left; margin-right:10px}
-
-#support_hotline{clear:both; line-height:22px; padding:10px 0; text-align:center; font-weight:bold}
-
 /*home*/
-#home_item_1{clear:both; height:290px;  background:url(images/bg-item-1.png) no-repeat}
+#home_item_1{clear:both; height:300px; margin:0 10px;  background:url(images/bg-item-1.png) no-repeat}
 #home_item_1 .item_1{width:170px; height:142px; float:left; text-align:center; margin-top:97px; padding:0 10px 0 100px}
 #home_item_1 .item_1 h2{font-size:140%; font-family:"UTM-Azuki"; font-weight:100; text-transform:uppercase; margin:5px 0 3px 0; height:40px; line-height:20px; overflow:hidden}
 #home_item_1 .item_1 a{color:#ED1C24}
@@ -93,7 +66,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 .home_title{font-family:"UTM-Novido"; font-size:350%; font-weight:bold; color:#ED1C24; margin:0 10px}
 
-.home_item_3{clear:both; margin:0 10px; padding:10px 20px; background-color:#FFF; box-shadow:0 0 20px #666}
+.home_item_3{clear:both; margin:0 10px 10px; padding:10px 20px; background-color:#FFF; box-shadow:0 0 20px #666}
 .home_item_3 .nb_item_3{width:490px; height:125px; float:left; margin:10px 0}
 .home_item_3 .nb_item_3 .img_item_3{width:160px; height:105px; overflow:hidden; float:left; margin-right:10px; border:solid 5px #FFF; box-shadow:0 0 5px #999}
 .home_item_3 .nb_item_3 .img_item_3 img{width:160px}
@@ -102,61 +75,55 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .home_item_3 .nb_item_3 p{line-height:18px; height:54px; overflow:hidden; margin-bottom:5px}
 
 .home_item_3 .more_item_3{width:390px; height:260px; float:right; margin-top:10px; padding:0 10px; background-color:#ED1C24; border:solid 2px #FFF; box-shadow:0 0 5px #999}
-.home_item_3 .more_item_3 h3{clear:both; list-style:none; font-family:"UTM-Swiss-Condensed"; font-size:110%; font-weight:100; margin:8px 0; padding-left:18px; background:url(images/sao.png) no-repeat left top}
+.home_item_3 .more_item_3 h3{clear:both; list-style:none; font-family:"UTM-Swiss-Condensed"; font-size:110%; font-weight:100; margin:10px 0; padding-left:18px; background:url(images/sao.png) no-repeat left top}
 .home_item_3 .more_item_3 a{color:#FFF; }
 
-.home_item_3 .photo_item_3{width:240px; float:left}
-.home_item_3 .photo_item_3 .img_photo_item_3{width:220px; height:160px; overflow:hidden; margin:10px 0; padding:10px; box-shadow:0 0 10px #999}
-.home_item_3 .photo_item_3 .img_photo_item_3 img{width:220px}
-.home_item_3 .photo_item_3 h3{font-size:120%; font-family:"UTM-Azuki"; text-transform:uppercase; text-align:center}
+.home_item_3 .photo_item_3{width:220px; float:left; margin:0 5px}
+.home_item_3 .photo_item_3 .img_photo_item_3{width:200px; height:150px; overflow:hidden; margin:10px 0; padding:10px; box-shadow:0 0 10px #999}
+.home_item_3 .photo_item_3 .img_photo_item_3 img{width:200px}
+.home_item_3 .photo_item_3 h3{font-size:120%; font-family:"UTM-Azuki"; font-weight:100; text-transform:uppercase; text-align:center}
 .home_item_3 .photo_item_3 a{color:#ED1C24}
 
-
-#nauan_other{height:153px; padding:35px 30px 0 30px; background:url(images/bg_catlogy.png) no-repeat}
-#nauan_other .nauan_other_item{width:300px; float:left; font-family:"UVNBayBuom"}
-#nauan_other .nauan_other_item a{color:#333}
-#nauan_other .nauan_other_item a:hover{color:#F00}
-#nauan_other .nauan_other_item img{height:70px; float:left; margin-right:10px}
-#nauan_other .nauan_other_item h3{margin-top:5px; font-size:140%; line-height:160%}
-
-#about{clear:both; margin-bottom:25px; color:#FFF; font-family:"UVNBayBuom"; font-size:150%; letter-spacing:1px; word-spacing:2px}
-#about h1{font-size:170%; color:#FFF; margin:0}
-#about_info{width:640px; float:left}
-#about_video{width:300px; float:right}
-#about_video iframe{width:300px; height:240px; margin-top:10px}
-
-.home_info{background-color:#FFF; margin-bottom:30px; padding-top:10px}
-
-.title{clear:both; height:89px; color:#FF0; font-size:210%; font-weight:bold; text-transform:uppercase; font-family:"Times New Roman", Times, serif}
-.title .title_1 {width:43px; height:69px; float:left; background:url(images/title-1.png) no-repeat}
-.title .title_2 {width:auto; height:44px; float:left; background:url(images/title-2.png) repeat-x; padding-top:28px; text-shadow:2px 2px 3px #000}
-.title .title_2 p{width:49px; overflow:hidden; float:left}
-.title .title_3 {width:91px; height:69px; float:left; background:url(images/title-3.png) no-repeat}
-
-#home_info_noibat{width:550px; float:left; line-height:20px}
-.home_info_noibat_item{clear:both; height:140px}
-.home_info_noibat_item .home_info_noibat_img{width:200px; height:120px; float:left; overflow:hidden; margin:0 10px}
-.home_info_noibat_item .home_info_noibat_img img{width:200px}
-.home_info_noibat_item h3{font-size:110%}
-.home_info_noibat_item .info{height:60px; overflow:hidden}
-.home_info_noibat_item .viewmore{float:right; color:#F00}
-
-#home_info_new{width:370px; float:right; margin:0 10px 10px 0; padding:6px 8px 0 8px; border:solid 1px #CCC; background-color:#FFC; box-shadow:2px 2px 2px #b8b8b8}
-#home_info_new li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/li.gif) no-repeat left top}
-
-.home_photo_item{width:220px; float:left; margin:0 0 14px 14px; border:solid 1px #333; box-shadow:2px 2px 3px #333}
-.home_photo_item .home_photo_item_img{width:200px; height:160px; overflow:hidden; margin:auto}
-.home_photo_item .home_photo_item_img img{width:200px}
-.home_photo_item a{color:#FFF; text-align:center; font-size:100%}
-.home_photo_item a:hover{color:#FF0}
-.home_photo_item h4{display:block; line-height:30px; background-color:#EC1C24}
-
-.home_video_item{width:290px; height:280px; float:left; margin-left:22px}
-.home_video_item .home_video_item_img{height:180px; overflow:hidden; text-align:center; background-color:#1B1B1B; position:absolute; z-index:1}
-.home_video_item .home_video_item_img img{width:274px; margin:8px}
-.home_video_item .play_video{width:290px; height:180px; background:url(images/play-video.png) no-repeat center; position:relative; z-index:3}
-.home_video_item h4{font-size:100%; line-height:20px}
+.home_item_3 .video_item_3{width:280px; height:280px; margin:20px 13px; float:left}
+.home_item_3 .video_item_3 .img_video_item_3_bg{clear:both; width:279px; height:222px; background:url(images/video.png) no-repeat; position:absolute; z-index:2}
+.home_item_3 .video_item_3 .img_video_item_3{width:270px; height:150px; overflow:hidden; margin:8px 0 80px 5px; position:relative; z-index:1; background-color:#CCC}
+.home_item_3 .video_item_3 .img_video_item_3 img{width:270px}
+.home_item_3 .video_item_3 h3{line-height:22px; font-size:120%; font-family:"UTM-Swiss-Condensed"; text-align:center}
+.home_item_3 .video_item_3 a{color:#333}
 /*end home*/
+
+/*footer*/
+#copyright{width:653px; height:53px; line-height:53px; font-family:"UTM-Swiss-Condensed"; font-size:120%; text-align:center; color:#FFF; float:left; background:url(images/copyright.png) no-repeat}
+
+#run_top{font-weight:bold; float:right; margin-right:20px; cursor:pointer}
+
+#footer{clear:both; height:230px; color:#FFF; font-family:"UTM-Swiss-Condensed"; background-color:#ED1C24}
+#footer h1, #footer h3{font-size:130%; width:auto; float:left; color:#FF3}
+
+#contact_social{clear:both}
+#contact_social #contact_foo{width:600px; height:155px; float:left; font-size:110%; line-height:23px; padding-top:25px; margin-left:20px}
+
+#contact_social #contact_foo #select_chinhanh{font-weight:bold; margin-bottom:10px}
+#contact_social #contact_foo #select_chinhanh .select_chinhanh{color:#333; margin:0 10px; padding:5px 10px; border:solid 1px #999; background-color:#FF9; cursor:pointer}
+#contact_social #contact_foo #select_chinhanh .select_chinhanh_active{background-color:#333; color:#FFF}
+
+#contact_social #social{width:auto; height:120px; float:right; padding:25px 80px 0 0}
+#contact_social #social img{width:64px}
+
+#support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:10px; background:#FFF; border:solid 1px #999; z-index:5}
+#support_online #btn_support{height:40px; cursor:pointer}
+#support_online #ajax_support{display:none; padding-top:10px; border-top:solid 1px #999}
+
+#support_online #ds_chinhanh{margin:0 5px}
+#support_online #ds_chinhanh .ds_chinhanh_item{width:100px; float:left; line-height:25px; height:25px; text-align:center; margin:0 10px 5px 10px; background-color:#FF9; border:solid 1px #999; cursor:pointer}
+#support_online #ds_chinhanh .ds_chinhanh_item_active{background-color:#F00; color:#FFF; font-weight:bold}
+
+#support_online #ds_support {clear:both; margin:0 15px 0 25px; padding-top:10px}
+#support_online #ds_support .ds_support_item{line-height:25px; height:25px; margin-bottom:8px}
+#support_online #ds_support .ds_support_item img{height:25px; float:left; margin-right:10px}
+
+#support_hotline{clear:both; line-height:22px; padding:10px 0; text-align:center; font-weight:bold}
+/*end footer*/
 
 /*thu vien*/
 .thuvien_photo_item{width:220px; float:left; margin:0 0 14px 14px; border:solid 1px #CCC}
@@ -181,12 +148,10 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .thuvien_video_item h3{font-size:100%; line-height:20px; text-align:center; padding:0 10px}
 /*end thu vien*/
 
-#content{background-color:#FFF; margin:0 7px 30px 10px}
-
-#left{width:650px; float:left; margin-left:10px}
+#left{width:650px; float:left}
 
 /*right*/
-#right{width:250px; float:right; margin-right:10px}
+#right{width:250px; float:right}
 
 #right .box_right{clear:both; margin-bottom:30px; padding:10px 5px 5px 5px; border:solid 1px #999; box-shadow:2px 2px 3px #666}
 
@@ -222,8 +187,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #other div{font-size:130%; color:#666; font-weight:bold; padding:10px 0 0 20px}
 #other li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/li.gif) no-repeat left top}
 
-#chuongtrinh{padding:0 20px}
-#chuongtrinh .chuongtrinh_title{height:36px; line-height:36px; text-align:center; font-weight:bold; font-size:110%; margin-bottom:20px; background:url(images/bg_chuongtrinh.jpg) no-repeat center}
+#chuongtrinh{padding:0}
+#chuongtrinh .chuongtrinh_title{height:36px; line-height:36px; text-align:center; font-family:"UTM-Swiss-Condensed"; font-weight:bold; font-size:110%; margin-bottom:20px; background:url(images/bg_chuongtrinh.jpg) no-repeat center}
 #chuongtrinh .chuongtrinh_title a{color:#FF0; text-shadow:2px 2px 3px #000}
 
 #chuongtrinh .chuongtrinh_item{width:445px; height:120px}
@@ -238,12 +203,12 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .info_list .info_list_img{width:190px; height:140px; overflow:hidden; float:left; margin-right:15px}
 .info_list .info_list_img img{width:188px; border:solid 1px #CCC}
 .info_list .info_list_text{line-height:20px; height:60px; overflow:hidden}
-.info_list h3{font-size:110%; line-height:20px; margin-bottom:5px}
+.info_list h3{font-size:110%; line-height:20px; font-family:"UTM-Swiss-Condensed"; margin-bottom:5px}
 
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
 .viewpost li{margin-left:35px}
-.viewpost h1{font-size:160%; line-height:30px; color:#ED1E28; margin-bottom:10px}
+.viewpost h1{font-size:160%; font-family:"UTM-Swiss-Condensed"; line-height:30px; color:#ED1E28; margin-bottom:5px}
 .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
 .viewpost  .date{color:#888; font-style:italic; text-align:right}
 
@@ -259,7 +224,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .select_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
 .btn_dangky{width:auto; padding:8px 50px; font-size:120%; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
 
-#navigator{clear:both; padding:10px 0 10px 10px}
+#navigator{clear:both; padding:0 0 10px 10px}
 #navigator a{padding-right:15px; font-size:12px; color:#666}
 #navigator a:hover{color:#000}
 #navigator span{font-size:9px; color:#999; padding-right:5px}
@@ -267,8 +232,6 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #phantrang{clear:both; margin-top:10px}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#ED1E28}
-
-#run_top{font-weight:bold; float:right; margin-right:20px; color:#C00}
 
 #tuyendung{border-collapse:collapse}
 #tuyendung td, #tuyendung th{padding:10px 5px; border-bottom:dotted 1px #CCC}
@@ -278,7 +241,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .btn_nop_hs{clear:both; width:118px; height:29px; line-height:29px !important; font-weight:bold; color:#FFF; margin:0; padding-left:30px; background:url(images/btn-nop-hs.gif); cursor:pointer}
 
 /*menu*/
-#menu{height:37px; margin:0 10px 10px; background:url(images/bg-menu.gif) repeat-x}
+#menu{height:37px; margin:0 10px 14px; background:url(images/bg-menu.gif) repeat-x}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
 #nav li a {line-height:37px; color:#FFF; font-size:126%; font-family:"UTM-Azuki"; text-transform:uppercase; padding:0 30px}

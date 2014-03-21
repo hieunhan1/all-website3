@@ -130,6 +130,8 @@ $(document).ready(function($){
 	}else{
 		$(".img_item_bg").css("background","none");
 		$(".img_item_bo").css({"border":"solid 3px #FFF"});
+		$(".home_item_3").css({"border":"solid 1px #CCC","margin":"0 8px 8px"});
+		$(".img_photo_item_3").css({"border":"solid 1px #CCC"});
 	}
 	
 	/*support*/
@@ -139,7 +141,6 @@ $(document).ready(function($){
 	})
 	
 	/*chi nhanh*/
-	
 	$("#btn_support").click(function(){
 		$("#ajax_support").toggle(100);
 		
@@ -147,7 +148,7 @@ $(document).ready(function($){
 	$(".ds_chinhanh_item").live("click", function(){
 		var id = ($(this).attr('class')).split(" ");
 		$(".ds_chinhanh_item").css({"background-color":"#FF9","color":"#333","font-weight":"100"});
-		$(this).css({"background-color":"#F00","color":"#FFF","font-weight":"bold"});
+		$(this).css({"background-color":"#333","color":"#FFF","font-weight":"bold"});
 		
 		$(".ds_support").hide();
 		$("." + id[1]).show();
@@ -159,7 +160,7 @@ $(document).ready(function($){
 		var id = ($(this).attr('class')).split(" ");
 		
 		$(".select_chinhanh").css({"background-color":"#FF9","color":"#333"});
-		$(this).css({"background-color":"#F00","color":"#FFF"});
+		$(this).css({"background-color":"#333","color":"#FFF"});
 		
 		$(".chinhanh").hide();
 		$("#" + id[1]).show();
