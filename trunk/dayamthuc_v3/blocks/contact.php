@@ -1,4 +1,4 @@
-<div id="content">
+<div class="wrapper"><div class="home_item_3">
     <div id="navigator">
         <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
         <?php echo $tc->navigator($idMenu); ?>
@@ -42,7 +42,7 @@
 	while($row = mysql_fetch_array($qr)){
 		$i++;
 		if($i!=1) $str = 'Chi nhánh: '.$row['name']; else $str = '<h1 style="font-size:100%; line-height:22px">'.$row['name'].': TRƯỜNG DẠY NGHỀ ẨM THỰC NETSPACE</h1>';
-		echo '<div class="viewpost" style="margin-left:25px; width:440px; height:200px; float:left">
+		echo '<div class="viewpost" style="width:460px; height:180px; float:left">
 			<p style="color:#C00; font-weight:bold">'.$str.'</p>
 			<p>Địa chỉ: <b>'.$row['diachi'].'</b></p>
 			<p>Điện thoại: <b>'.$row['phone'].'</b></p>
@@ -51,5 +51,5 @@
 		</div>';
 	}
 	?>
-    <div style="clear:both; height:30px"></div>
-</div>
+    <div style="clear:both; height:1px"></div>
+</div></div>
