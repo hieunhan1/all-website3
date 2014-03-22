@@ -1,18 +1,13 @@
 <?php
-// file 02-smtp.php
-//require_once('class.smtp.php');
-//Nhúng thư viện phpmailer
 require_once('class.phpmailer.php');
 
-$email_gui = 'info@dayamthuc.vn';
-$email_gui_pass = 'Netspacepro#123*';
+$email_gui = 'no-reply@dayamthuc.vn';
+$email_gui_pass = 'no-reply#123*';
 $title = 'Đăng ký học';
 
-/*
-$email_nhan = 'hieunhan112@gmail.com';
-$name = 'Admin';
+$email_nhan = $row_config['email'];
+$name_nhan = 'Admin';
 $subject = 'Phụ bếp';
-*/
 
 //Khởi tạo đối tượng
 $mail = new PHPMailer();
@@ -36,9 +31,9 @@ $mail->IsHTML(true);
 $mail->SetFrom($email_gui,'No-reply | '.$title);
 
 //Thiết lập thông tin người nhận
-$mail->AddAddress($email_nhan,$name);
-$mail->AddCC('ceo@netspace.edu.vn','CEO');
-$mail->AddCC('temp@dayamthuc.vn','Temp');
+$mail->AddAddress($email_nhan,$name_nhan);
+//$mail->AddCC('ceo@netspace.edu.vn','CEO');
+//$mail->AddCC('temp@dayamthuc.vn','Temp');
 
 //Thiết lập email nhận email hồi đáp
 //nếu người nhận nhấn nút Reply
@@ -55,18 +50,12 @@ $mail->Subject = $subject;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào ban quản trị website.</h3><br />
-Bạn <strong>'.$name_hv.'</strong> đăng ký học. <br />
-Tên khóa học: '.$subject.'<br />
-Tại cơ sở: '.$noihoc.'<br /><br />
-<strong>Thông tin cá nhân: </strong><a href="http://www.dayamthuc.vn/thongtin_hocvien.php?chinhanh=HCM-'.$name.'&id='.$id.'&phone='.$phone.'&email='.$email.'">Click vào đây để xem thông tin học viên</a>';
+$body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br /><br />
+'.$message.'<br /><br />
+<p>Email: '.$email.'</p>
+<p>Phone: '.$phone.'</p>
+<p>Địa chỉ: '.$diachi.'</p>';
 
 $mail->Body = $body;
 
 $mail->Send();
-
-/*if(!$mail->Send()) {
-  echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-  echo "Message sent!";
-}*/

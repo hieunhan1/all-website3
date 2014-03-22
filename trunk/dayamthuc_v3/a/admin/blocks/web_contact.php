@@ -26,9 +26,9 @@
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
 				<td align="center" class="update">'.$row['user_update'].'</td>
 				<td align="center">
-					<a href="javascript:;"><img src="images/anhien_'.$row['status'].'.gif" class="status status_'.$row['id'].'" status="'.$row['status'].'" url="'.$table.'" name="'.$row['name'].'"></a> &nbsp;
-					<a href="?p='.$table.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt=""></a> &nbsp;
-					<a href="javascript:;" class="delete_one delete_one_'.$row['id'].'" url="'.$table.'" name="'.$row['name'].'"><img src="images/delete.gif" alt=""></a>
+					<a href="javascript:;"><img src="images/anhien_'.$row['status'].'.gif" /></a> &nbsp;
+					<a href="?p='.$table.'_ac&id='.$row['id'].'"><img src="images/edit.gif" alt="" /></a> &nbsp;
+					<a href="javascript:;" class="delete_one delete_one_'.$row['id'].'" url="'.$table.'" name="'.$row['name'].'"><img src="images/delete.gif" alt="" /></a>
 				</td>
 			</tr>';
 		}
