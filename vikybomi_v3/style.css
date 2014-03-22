@@ -69,8 +69,8 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .video_product iframe{width:390px; height:300px}
 .video_product h4{font-size:100%; line-height:20px; color:#F00; margin-top:5px}
 
-.viewpost{line-height:22px}
-.viewpost p, .viewpost div {line-height:20px; margin:10px 0}
+.viewpost{line-height:23px}
+.viewpost p, .viewpost div {margin:10px 0}
 .viewpost li{margin-left:35px}
 .viewpost h1{font-size:160%; line-height:30px; color:#DA251E; margin-bottom:10px}
 .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
