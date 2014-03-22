@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 21, 2014 at 05:06 PM
+-- Generation Time: Mar 22, 2014 at 03:38 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -12,102 +12,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- 
 -- Database: `dayamthuc_v3`
 -- 
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `menu_admin`
--- 
-
-CREATE TABLE `menu_admin` (
-  `id` int(3) NOT NULL auto_increment,
-  `name` varchar(100) NOT NULL,
-  `url` varchar(150) NOT NULL,
-  `url_hinh` varchar(150) default NULL,
-  `order` int(3) default '0',
-  `status` tinyint(1) default '1',
-  `delete` tinyint(1) default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
-
--- 
--- Dumping data for table `menu_admin`
--- 
-
-INSERT INTO `menu_admin` VALUES (1, 'Trang chủ', 'home', NULL, 1, 1, 0);
-INSERT INTO `menu_admin` VALUES (2, 'Cấu hình website', 'config', NULL, 2, 1, 0);
-INSERT INTO `menu_admin` VALUES (3, 'Menu', 'menu', NULL, 3, 1, 0);
-INSERT INTO `menu_admin` VALUES (4, 'Thông tin, bài viết', 'info', NULL, 4, 1, 0);
-INSERT INTO `menu_admin` VALUES (5, 'Hình ảnh', 'photo_gallery', NULL, 5, 1, 0);
-INSERT INTO `menu_admin` VALUES (6, 'Slider banner', 'slider_banner', NULL, 6, 1, 0);
-INSERT INTO `menu_admin` VALUES (7, 'Video', 'video', NULL, 7, 1, 0);
-INSERT INTO `menu_admin` VALUES (8, 'Lịch khai giảng', 'lichkhaigiang', NULL, 8, 1, 0);
-INSERT INTO `menu_admin` VALUES (9, 'Thông báo', 'thongbao', NULL, 9, 1, 0);
-INSERT INTO `menu_admin` VALUES (10, 'Đăng ký trực tuyến', 'dangky_tructuyen', NULL, 10, 1, 0);
-INSERT INTO `menu_admin` VALUES (11, 'Liên hệ trực tuyến', 'contact', NULL, 11, 1, 0);
-INSERT INTO `menu_admin` VALUES (12, 'Danh sách chi nhánh', 'chinhanh', NULL, 12, 1, 0);
-INSERT INTO `menu_admin` VALUES (13, 'Tuyển dụng - Thông tin', 'tuyendung', NULL, 13, 1, 0);
-INSERT INTO `menu_admin` VALUES (14, 'Tuyển dụng - Công ty', 'tuyendung_cty', NULL, 14, 1, 0);
-INSERT INTO `menu_admin` VALUES (15, 'Tuyển dụng - Hồ sơ', 'tuyendung_hoso', NULL, 15, 1, 0);
-INSERT INTO `menu_admin` VALUES (16, 'Tài khoản', 'users', NULL, 16, 1, 0);
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `users`
--- 
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(100) NOT NULL,
-  `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
-  `quyen_xem` varchar(200) NOT NULL,
-  `quyen_action` varchar(200) NOT NULL,
-  `group_id` int(11) default '0',
-  `Active` tinyint(1) default '1',
-  `RandomKey` varchar(255) default NULL,
-  `LoginNumber` int(11) default '0',
-  `DisableDate` datetime default NULL,
-  `Expiration` int(11) default NULL,
-  `status` tinyint(1) default '1',
-  `date_create` datetime NOT NULL,
-  `date_update` datetime default NULL,
-  `user_create` varchar(30) NOT NULL,
-  `user_update` varchar(30) default NULL,
-  `delete` tinyint(1) default '0',
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `Username` (`Username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=110 ;
-
--- 
--- Dumping data for table `users`
--- 
-
-INSERT INTO `users` VALUES (25, 'Admin', 'admin', 'fc7fc678608590b123692867f176fe63', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', 1, 1, NULL, 0, '2011-09-21 16:42:26', NULL, 1, '2013-06-14 00:00:00', '0000-00-00 00:00:00', 'admin', 'admin', 0);
-INSERT INTO `users` VALUES (105, 'Long', 'longruoi', '93a466321a41cfcb8254561a5215905d', ',1,3,5,', ',1,3,5,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-10-03 14:04:51', '0000-00-00 00:00:00', 'admin', 'admin', 0);
-INSERT INTO `users` VALUES (108, 'Mỹ Tiên', 'tien', 'e10adc3949ba59abbe56e057f20f883e', ',1,10,', ',1,10,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-11-22 15:02:44', '0000-00-00 00:00:00', 'admin', 'admin', 0);
-INSERT INTO `users` VALUES (109, 'Hảo', 'hao', 'e10adc3949ba59abbe56e057f20f883e', ',1,4,14,', ',1,4,14,', 1, 1, NULL, 0, NULL, NULL, 1, '2013-12-27 10:14:13', NULL, 'admin', NULL, 0);
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `users_group`
--- 
-
-CREATE TABLE `users_group` (
-  `idGroup` int(2) NOT NULL auto_increment,
-  `MoTa` varchar(50) NOT NULL,
-  PRIMARY KEY  (`idGroup`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
--- 
--- Dumping data for table `users_group`
--- 
-
-INSERT INTO `users_group` VALUES (1, 'Quản trị web site');
-INSERT INTO `users_group` VALUES (2, 'Thành viên');
-INSERT INTO `users_group` VALUES (3, 'null');
 
 -- --------------------------------------------------------
 
@@ -202,13 +106,14 @@ CREATE TABLE `web_contact` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `web_contact`
 -- 
 
 INSERT INTO `web_contact` VALUES (1, 'Trần Hiếu Nhân', 'hieu_nhan1@yahoo.com', '0988388003', '123 CMT 8', '<p>1111111111111111</p>\r\n', 'vi', 0, '2014-03-04 14:37:30', '2014-03-04 14:37:00', 'admin', 'admin', 0);
+INSERT INTO `web_contact` VALUES (2, 'Trần Hiếu Nhân', 'admin@netspace.edu.vn', '0988388003', '123 CMT 8', '11111111111111111', '', 0, '2014-03-22 15:29:53', '2014-03-22 15:29:53', 'khachhang', '', 0);
 
 -- --------------------------------------------------------
 
