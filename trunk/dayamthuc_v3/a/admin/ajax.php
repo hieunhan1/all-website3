@@ -82,4 +82,26 @@ if(@$_SESSION["username_admin"]) {
 		}else echo '0';
 	}
 	
+	//gui lien he
+	if(isset($_POST['gui_lienhe'])){
+		$id_nv = $_POST['gui_lienhe'];
+		$id_dk = $_POST['id_dk'];
+		
+		$qr = mysql_query("SELECT id,name,email FROM web_dangky_nhanvien WHERE `delete`=0 AND `status`=1 AND id='{$id_nv}' ");
+		$row = mysql_fetch_array($qr);
+		$email_nhan = $row['email'];
+		$name_nhan = $row['name'];
+		
+		$qr = mysql_query("SELECT id,name,message FROM web_contact WHERE `delete`=0 AND id='{$id_dk}' ");
+		$row = mysql_fetch_array($qr);
+		$id = $row['id'];
+		$name = $row['name'];
+		$message = $row['message'];
+		include_once('../../sendmail_smtp/send_contact.php');
+		
+		if( mysql_query("UPDATE web_dangky_nhanvien SET date_update='".date('Y-m-d H:i:s')."' WHERE `delete`=0 AND id='{$id_nv}' ") && mysql_query("UPDATE web_contact SET `status`=2,nhanvien_lienhe='{$id_nv}' WHERE `delete`=0 AND id='{$id_dk}' ") ){
+			echo '1';
+		}else echo '0';
+	}
+	
 }
