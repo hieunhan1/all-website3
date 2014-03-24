@@ -41,7 +41,7 @@ hr{border: solid 2px #F3A972}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
 #phantrang a:hover{background-color:#ED1E28}
 
-.label{width:100px; text-align:right; vertical-align:top; font-weight:bold; padding-top:3px}
+.label{width:150px; text-align:right; vertical-align:top; font-weight:bold; padding-top:3px}
 .radio{margin-top:5px}
 .checkbox{margin-top:5px}
 

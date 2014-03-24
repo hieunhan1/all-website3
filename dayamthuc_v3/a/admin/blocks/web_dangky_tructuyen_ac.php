@@ -17,6 +17,11 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
@@ -45,78 +50,87 @@ echo '<form name="form_action" method="post" action="">
 	
 	//status
 	$arr = array();
-	$arr[] = array('id'=>'1', 'name'=>'Hiện');
-	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
+	$arr[] = array('id'=>'0', 'name'=>'Chưa gửi');
+	$arr[] = array('id'=>'2', 'name'=>'Đang gửi');
+	$arr[] = array('id'=>'1', 'name'=>'Đã nhận');
+	if($row_detail['status']=='') $properties = 0; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
-	echo $form->DisplayProperties();
-
-	//date_update
-	$values = $row_detail['date_update'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//name
 	$values = $row_detail['name'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Tên chi nhánh','name','input_medium'); //label id&name class style
+	$views = array('Họ tên','name','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-
-	//diachi
-	$values = $row_detail['diachi'];
-	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Địa chỉ','diachi','input_medium'); //label id&name class style
+		
+	//ngaysinh
+	$values = $row_detail['ngaysinh'];
+	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Ngày sinh','ngaysinh','input_large datetimepick'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-
-	//phone
-	$values = $row_detail['phone'];
-	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Điện thoại','phone','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-
-	//hotline
-	$values = $row_detail['hotline'];
-	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Hotline','hotline','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-
+	
 	//email
 	$values = $row_detail['email'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Email','email','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-
-	//yahoo_nick
-	$values = $row_detail['yahoo_nick'];
-	$properties = array('120'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Nick yahoo','yahoo_nick','input_medium'); //label id&name class style
+	
+	//phone
+	$values = $row_detail['phone'];
+	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Điện thoại','phone','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-
-	//yahoo_name
-	$values = $row_detail['yahoo_name'];
-	$properties = array('250'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Name yahoo','yahoo_name','input_medium'); //label id&name class style
+	
+	//diachi
+	$values = $row_detail['diachi'];
+	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Địa chỉ','diachi','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//totnghiep
+	$values = $row_detail['totnghiep'];
+	$properties = array('30'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Tốt nghiệp','totnghiep','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//khoahoc
+	$values = $row_detail['khoahoc'];
+	$properties = array('150'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Khóa học','khoahoc','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//noihoc
+	$values = $row_detail['noihoc'];
+	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Nơi học','noihoc','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//other kenh tim kiem
+	$values = $row_detail['other'];
+	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Kênh tìm kiếm','other','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//hoivien
+	$values = $row_detail['hoivien'];
+	$properties = ''; //disabled, readonly
+	$views = array('Khác','hoivien','textarea'); //label id&name class colspan
+    $form->getProperties('3',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name
-    $form->getProperties('2',$values,'',$views);
-	echo $form->DisplayProperties();
-	
-	//lang
-	$values = $lang;
-	$views = 'lang'; //name
     $form->getProperties('2',$values,'',$views);
 	echo $form->DisplayProperties();
 	

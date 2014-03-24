@@ -3,11 +3,11 @@ require_once('class.phpmailer.php');
 
 $email_gui = 'no-reply@dayamthuc.vn';
 $email_gui_pass = 'no-reply#123*';
-$title = 'Liên hệ';
+$title = $name;
 
 $email_nhan = $row_config['email'];
 $name_nhan = 'Admin';
-$subject = $name;
+$subject = 'Đăng ký: '.$khoahoc;
 
 //Khởi tạo đối tượng
 $mail = new PHPMailer();
@@ -28,7 +28,7 @@ $mail->Username   = $email_gui;         // SMTP account username
 $mail->Password   = $email_gui_pass;                // SMTP account password
 $mail->IsHTML(true);
 //Thiet lap thong tin nguoi gui va email nguoi gui
-$mail->SetFrom($email_gui,'No-reply | '.$title);
+$mail->SetFrom($email_gui,$title);
 
 //Thiết lập thông tin người nhận
 $mail->AddAddress($email_nhan,$name_nhan);
@@ -50,11 +50,7 @@ $mail->Subject = $subject;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br />
-<p style="color:#666; font-size:110%">'.$message.'</p><br />
-<p>Email: '.$email.'</p>
-<p>Phone: '.$phone.'</p>
-<p>Địa chỉ: '.$diachi.'</p>';
+$body = '<h3>Chào ban quản trị website.</h3><br />Bạn <strong>'.$name.'</strong> đăng ký học. <br />Tên khóa học: '.$khoahoc.'<br />Tại cơ sở: '.$noihoc.'<br /><br /><strong>Thông tin cá nhân: </strong> <a href="http://www.dayamthuc.vn/thongtin_hocvien.php?chinhanh='.$noihoc.'&id='.$id.'">Click vào đây để xem thông tin học viên</a>';
 
 $mail->Body = $body;
 

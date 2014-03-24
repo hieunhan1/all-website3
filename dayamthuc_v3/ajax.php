@@ -1,9 +1,6 @@
 <?php
 $lang = 'vi';
 
-$error_sql = "Lỗi kết nối";
-define(does_not_exist,'Mục này không tồn tại.');
-
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
@@ -19,12 +16,32 @@ if($_POST['contact']=='contact'){
 	if($name!='' && $email!='' && $phone!='' && $message!=''){
 		if($tc->insert_contact($name,$email,$phone,$diachi,$message)){
 			echo '1';
-			include_once('sendmail_smtp/send_contact.php');
+			//include_once('sendmail_smtp/send_contact.php');
 			return true;
 		}else{
 			echo '0';
 			return false;
 		}
+	}else{
+		echo '0';
+		return false;
+	}
+}
+
+if($_POST['dangky']=='dangky'){
+	$name = trim($_POST['HoTen']);
+	$email = trim($_POST['Email']);
+	$phone = str_replace(' ','',$_POST['DienThoai']);
+	$diachi = trim($_POST['DiaChi']);
+	$ngaysinh = trim($_POST['NgaySinh']);
+	$khoahoc = trim($_POST['KhoaHoc']);
+	$noihoc = trim($_POST['NoiHoc']);
+	
+	if($name!='' && $email!='' && $phone!='' && $diachi!=''){
+		$id = $tc->dangky_tructuyen($name,$ngaysinh,$email,$phone,$diachi,$_POST['TotNghiep'],$khoahoc,$noihoc,$_POST['thongtin_khac'],$_POST['ThanhVienHoi']);
+		echo '1';
+		//include_once('sendmail_smtp/send_dangky.php');
+		return true;
 	}else{
 		echo '0';
 		return false;

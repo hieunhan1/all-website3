@@ -2,7 +2,6 @@
 session_start();
 $lang = 'vi';
 
-$error_sql = "Lỗi kết nối";
 define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
@@ -117,27 +116,20 @@ if(@$_GET['danhmuc']){
     <?php
     include_once('blocks/menu.php');
     include_once('blocks/slider.php');
+	
+	$i = 0;
+	$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
+	echo '<div id="home_item_1">';
+	$qr = $tc->menu(1,5,$lang);
+	while($row = mysql_fetch_array($qr)){
+		echo '<div class="item_1" style="'.$style[$i].'background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">
+		<a href="'.$row['url'].'"><h2>'.$row['name'].'</h2></a>
+		<p>'.$row['metaDescription'].'</p>
+		<p><a href="'.$row['url'].'">Xem chi tiết</a></p></div>';
+		$i++;
+	}
+	echo '</div>';
     ?>
-    
-    <div id="home_item_1">
-    	<div class="item_1" style="margin-left:18px; background:url(upload/images/danhmuc/dich-vu-tu-van.png) no-repeat">
-        	<h2><a href="">Dịch vụ Tư Vấn Setup</a></h2>
-            <p>Tư vấn ý tưởng, quản lý, điều hành, tái cấu trúc các mô hình, nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...</p>
-            <p><a href="">Xem chi tiết</a></p>
-        </div>
-        
-    	<div class="item_1" style="margin-left:40px; background:url(upload/images/danhmuc/tuyen-dung.png) no-repeat">
-        	<h2><a href="">Dịch vụ đặt tiệc</a></h2>
-            <p>Nhận đặt tiệc cưới, sinh nhật, sự kiện theo yêu cầu</p>
-            <p><a href="">Xem chi tiết</a></p>
-        </div>
-        
-    	<div class="item_1" style="margin-left:35px; background:url(upload/images/danhmuc/cung-ung-nhan-su.png) no-repeat">
-        	<h2><a href="">Cung ứng & tuyển dụng Nhân sự</a></h2>
-            <p>Cung ứng và tuyển dụng nhân sự cấp cao trong lĩnh vực nhà hàng, chuỗi quán ăn, bar, cà phê, karaoke...</p>
-            <p><a href="">Xem chi tiết</a></p>
-        </div>
-    </div>
 </div>
 
 <?php echo $include;?>

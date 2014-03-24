@@ -52,9 +52,21 @@ echo '<form name="form_action" method="post" action="">
 	$arr = array();
 	$arr[] = array('id'=>'1', 'name'=>'Hiện');
 	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['status'] == '') $properties = 1; $properties = $row_detail['status']; //default check
+	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//tuyendung_cty_id
+	$arr = array();
+	$arr[] = array('id'=>0, 'name'=>'----- chọn công ty -----');
+	$qr = mysql_query("SELECT id,name FROM `web_tuyendung_cty` WHERE `delete`=0 AND `status`=1 ORDER BY `name`");
+	while($row = mysql_fetch_array($qr)){
+		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
+	}
+	$properties = $row_detail['tuyendung_cty_id']; //default check
+	$views = array('<span style="color:#F00">** Công ty tuyển dụng</span>','tuyendung_cty_id','input_medium'); //label id&name class
+    $form->getProperties('5',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//hannop
@@ -124,7 +136,7 @@ echo '<form name="form_action" method="post" action="">
 	//metaDescription
 	$values = $row_detail['metaDescription'];
 	$properties = ''; //disabled, readonly
-	$views = array('Tóm tắt','metaDescription','textarea'); //label id&name class colspan
+	$views = array('Mô tả ngắn công việc','metaDescription','textarea'); //label id&name class colspan
 	//$other = ckeditor_custom('metaDescription');
     $form->getProperties('3',$values,$properties,$views);
 	echo $form->DisplayProperties();

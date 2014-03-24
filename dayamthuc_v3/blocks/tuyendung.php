@@ -85,19 +85,19 @@
         <table width="100%" border="0" cellpadding="0" cellspacing="15" id="form_nop_hs">
         	<tr>
             	<td width="140" valign="top">Họ tên:</td>
-            	<td><input type="text" name="name" class="text_dangky" /><p id="name" class="error"></p></td>
+            	<td><input type="text" name="name" class="text_dangky" maxlength="50" /><p id="name" class="error"></p></td>
             </tr>
         	<tr>
             	<td valign="top">Địa chỉ:</td>
-            	<td><input type="text" name="diachi" class="text_dangky" /><p id="diachi" class="error"></p></td>
+            	<td><input type="text" name="diachi" class="text_dangky" maxlength="250" /><p id="diachi" class="error"></p></td>
             </tr>
         	<tr>
             	<td valign="top">Điện thoại:</td>
-            	<td><input type="text" name="phone" class="text_dangky" /><p id="phone" class="error"></p></td>
+            	<td><input type="text" name="phone" class="text_dangky" maxlength="11" /><p id="phone" class="error"></p></td>
             </tr>
         	<tr>
             	<td valign="top">Email:</td>
-            	<td><input type="text" name="email" class="text_dangky" /><p id="email" class="error"></p></td>
+            	<td><input type="text" name="email" class="text_dangky" maxlength="50" /><p id="email" class="error"></p></td>
             </tr>
         	<tr>
             	<td valign="top">Trình độ:</td>
