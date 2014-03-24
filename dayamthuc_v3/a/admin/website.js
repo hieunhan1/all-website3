@@ -155,4 +155,21 @@ $(document).ready(function(){
 		}
 	});
 	
+	// gui lien he
+	$("input[name=btn_gui_lienhe]").click(function(){ 
+		var id_nv = $("select[name=nhanvien_lienhe]").val();
+		var id_dk = $("input[name=id]").val();
+		
+		if(id_nv != '0'){
+			$.post("ajax.php",{gui_lienhe:id_nv,id_dk:id_dk},function(data){
+				if(data != '0'){
+					$("input[name=status]:checked").val('2');
+					$("#ajax_gui_thongtin").html('Gửi thành công.');
+				}else alert('Lỗi. Vui lòng thử lại');
+			});
+		}else{
+			alert('Bạn chưa chọn nhân viên để gửi thông tin');
+		}
+	});
+	
 });

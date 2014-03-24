@@ -5,8 +5,8 @@ $email_gui = 'no-reply@dayamthuc.vn';
 $email_gui_pass = 'no-reply#123*';
 $title = 'Liên hệ';
 
-$email_nhan = $row_config['email'];
-$name_nhan = 'Admin';
+//$email_nhan = $row_config['email'];
+//$name_nhan = 'Admin';
 $subject = $name;
 
 //Khởi tạo đối tượng
@@ -52,9 +52,7 @@ $mail->CharSet = "utf-8";
 //Thiết lập nội dung chính của email
 $body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br />
 <p style="color:#666; font-size:110%">'.$message.'</p><br />
-<p>Email: '.$email.'</p>
-<p>Phone: '.$phone.'</p>
-<p>Địa chỉ: '.$diachi.'</p>';
+<p><strong>Thông tin cá nhân: </strong> <a href="http://www.dayamthuc.vn/hocvien_lienhe.php?nguoinhan='.$id_nv.'&id='.$id.'">Click vào đây để xem thông tin học viên</a></p>';
 
 $mail->Body = $body;
 

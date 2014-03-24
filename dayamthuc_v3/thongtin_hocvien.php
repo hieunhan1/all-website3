@@ -16,7 +16,7 @@ $qr = mysql_query("SELECT * FROM web_dangky_tructuyen WHERE `delete`=0 AND id='{
 $row = mysql_fetch_array($qr);
 
 if(mysql_num_rows($qr)==1 && $row['status']==2){
-	mysql_query("UPDATE web_dangky_tructuyen SET status=1,date_update='".date('Y-m-d H:i:s')."',user_update='".$nguoinhan."' WHERE id='{$id}'");
+	mysql_query("UPDATE web_dangky_tructuyen SET status=1,date_update='".date('Y-m-d H:i:s')."',user_update='".$row_nguoinhan['name']."' WHERE id='{$id}'");
 }
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
