@@ -83,6 +83,7 @@ class form {
 		$values = $this->_values;
 		$properties = $this->_properties; /*check*/
 		$views = $this->_views; /*label id&name class*/
+		$others = $this->_others;
 		
 		foreach($values as $value){
 			if($value['id'] != $properties) $select = ''; else $select = 'selected="selected"';
@@ -90,7 +91,7 @@ class form {
 		}
 		
 		if($views[0] == '') $str = '<select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select>';
-		else $str = '<tr><td class="label">'.$views[0].'</td> <td><select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select></td></tr>';
+		else $str = '<tr><td class="label">'.$views[0].'</td> <td><select name="'.$views[1].'" id="'.$views[1].'" class="'.$views[2].'">'.$str.'</select>'.$others.'</td></tr>';
 		
 		return $str;
 	}

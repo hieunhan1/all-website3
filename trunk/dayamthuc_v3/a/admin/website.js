@@ -127,8 +127,32 @@ $(document).ready(function(){
 	});
 	
 	/*other*/
+	// cap nhat: dang ky, lien he, nop ho so
+	$.post("ajax.php",{hocvien_dangky:"hocvien_dangky"},function(data){
+		$("#hocvien_dangky").html(' (' + data + ')');
+	});
+	$.post("ajax.php",{hocvien_lienhe:"hocvien_lienhe"},function(data){
+		$("#hocvien_lienhe").html(' (' + data + ')');
+	});
+	$.post("ajax.php",{hoso_tuyendung:"hoso_tuyendung"},function(data){
+		$("#hoso_tuyendung").html(' (' + data + ')');
+	});
 	
+	// gui thong tin
+	$("input[name=btn_gui_thongtin]").click(function(){ 
+		var id_nv = $("select[name=nhanvien_lienhe]").val();
+		var id_dk = $("input[name=id]").val();
+		
+		if(id_nv != '0'){
+			$.post("ajax.php",{gui_thongtin:id_nv,id_dk:id_dk},function(data){
+				if(data != '0'){
+					$("input[name=status]:checked").val('2');
+					$("#ajax_gui_thongtin").html('Gửi thành công.');
+				}else alert('Lỗi. Vui lòng thử lại');
+			});
+		}else{
+			alert('Bạn chưa chọn nhân viên để gửi thông tin');
+		}
+	});
 	
-	// alert(); 
-	// function(data){ $("body").prepend(data);
 });

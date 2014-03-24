@@ -46,8 +46,8 @@ echo '<form name="form_action" method="post" action="">
 	//status
 	$arr = array();
 	$arr[] = array('id'=>'0', 'name'=>'Chưa gửi');
-	$arr[] = array('id'=>'2', 'name'=>'Đang gửi');
-	$arr[] = array('id'=>'1', 'name'=>'Đã nhận');
+	$arr[] = array('id'=>'2', 'name'=>'Đã gửi');
+	$arr[] = array('id'=>'1', 'name'=>'Đã xem');
 	if($row_detail['status']=='') $properties = 0; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);

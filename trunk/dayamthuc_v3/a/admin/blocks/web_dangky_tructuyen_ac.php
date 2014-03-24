@@ -51,11 +51,25 @@ echo '<form name="form_action" method="post" action="">
 	//status
 	$arr = array();
 	$arr[] = array('id'=>'0', 'name'=>'Chưa gửi');
-	$arr[] = array('id'=>'2', 'name'=>'Đang gửi');
-	$arr[] = array('id'=>'1', 'name'=>'Đã nhận');
+	$arr[] = array('id'=>'2', 'name'=>'Đã gửi');
+	$arr[] = array('id'=>'1', 'name'=>'Đã xem');
 	if($row_detail['status']=='') $properties = 0; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//nhanvien_lienhe
+	$other = '<input type="button" name="btn_gui_thongtin" value="Gửi thông tin" class="button" /><br /> <span id="ajax_gui_thongtin" class="message"></span>';
+	
+	$arr = array();
+	$arr[] = array('id'=>0, 'name'=>'----- chọn nhân viên -----');
+	$qr = mysql_query("SELECT id,name,email FROM `web_dangky_nhanvien` WHERE `delete`=0 AND `status`=1 ORDER BY `date_update`");
+	while($row = mysql_fetch_array($qr)){
+		$arr[] = array('id'=>$row['id'], 'name'=>"{$row['name']} - ({$row['email']})");
+	}
+	$properties = $row_detail['nhanvien_lienhe']; //default check
+	$views = array('<span style="color:#F00">** Gửi đến nhân viên</span>','nhanvien_lienhe','input_medium'); //label id&name class
+    $form->getProperties('5',$arr,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
 	//name
