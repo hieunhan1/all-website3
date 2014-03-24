@@ -91,8 +91,14 @@ function SetFileField(fileUrl, data){
             $qr = $qt->MenuAdmin();
 			while($row = mysql_fetch_array($qr)){
 				$i++;
-				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].'</a>';
-				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#F00">'.$row['name'].'</a>';
+				
+				if($i==11) $style = '<span id="hocvien_dangky" class="ajax_thongtin"></span>';
+				elseif($i==12) $style = '<span id="hocvien_lienhe" class="ajax_thongtin"></span>';
+				elseif($i==15) $style = '<span id="hoso_tuyendung" class="ajax_thongtin"></span>';
+				else $style = '';
+				
+				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
+				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
 				if($i == 2) echo '<hr />'; else if($i == 7) echo '<hr />'; else if($i == 12) echo '<hr />';
 			}
 			?>
