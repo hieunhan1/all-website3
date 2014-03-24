@@ -188,8 +188,50 @@ $(document).ready(function($){
 		}else{
 			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
 			$.post("ajax.php",{contact:"contact",name:name,email:email,phone:phone,diachi:diachi,message:message},function(data){
-				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#ff8400; font-weight:bold; padding:30px 0 60px;">Liên hệ thành công.</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#00F; font-weight:bold; padding:30px 0 60px;">Liên hệ thành công. Chúng tôi sẽ trả lời cho bạn sớm nhất.<br /><br />Thanks,<br />NETSPACE.</p>'); },200);
 				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
+			});
+			return true;
+		}
+	});
+	
+	/*dang ky hoc*/
+	$("input[name=btnSendDK]").click(function(){
+		var HoTen = $("input[name=HoTen]").val();
+		var NgaySinh = $("input[name=nam]").val() + '-' + $("input[name=thang]").val() + '-' + $("input[name=ngay]").val();
+		var Email = $("input[name=Email]").val();
+		var DiaChi = $("input[name=DiaChi]").val();
+		var DienThoai = $("input[name=DienThoai]").val();
+		var TotNghiep = $("select[name=TotNghiep]").val();
+		var KhoaHoc = $("select[name=KhoaHoc]").val();
+		var NoiHoc = $("select[name=NoiHoc]").val();
+		var ThanhVienHoi = $("textarea[name=ThanhVienHoi]").val();
+		var thongtin_khac = $("select[name=thongtin_khac]").val();
+		if(HoTen.length<3){
+			alert("Nhập họ tên");
+			$("input[name=HoTen]").focus();
+			return false;
+		}else if(NgaySinh.length<6){
+			alert("Nhập ngày sinh");
+			$("input[name=ngay]").focus();
+			return false;
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Email))){
+			alert("Email chưa đúng");
+			$("input[name=Email]").focus();
+			return false;
+		}else if(DiaChi.length<6){
+			alert("Nhập địa chỉ");
+			$("input[name=DiaChi]").focus();
+			return false;
+		}else if(DienThoai.length<6){
+			alert("Nhập điện thoại");
+			$("input[name=DienThoai]").focus();
+			return false;
+		}else{
+			$("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
+			$.post("ajax.php",{dangky:"dangky",HoTen:HoTen,NgaySinh:NgaySinh,Email:Email,DiaChi:DiaChi,DienThoai:DienThoai,TotNghiep:TotNghiep,KhoaHoc:KhoaHoc,NoiHoc:NoiHoc,thongtin_khac:thongtin_khac,ThanhVienHoi:ThanhVienHoi},function(data){
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="line-height:25px; color:#00F; font-size:16px; font-weight:bold; padding-top:30px;">Đăng ký thành công. Chúng tôi sẽ liên hệ và thông báo lịch học cho bạn sớm nhất.<br /><br />Thanks,<br />NETSPACE</p>'); },200);
+				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 10px 60px 10px;">Có sự cố. Vui lòng ấn F5 thử lại.</p>');
 			});
 			return true;
 		}
@@ -246,7 +288,7 @@ $(document).ready(function($){
 		}else{
 			$("#form_nop_hs").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
 			$.post("ajax.php",{nop_hs:tuyendung_id,name:name,email:email,phone:phone,diachi:diachi,trinhdo:trinhdo,content:content},function(data){
-				if(data!='0') setTimeout(function(){ $("#form_nop_hs").html('<p style="color:#ff8400; line-height:22px; font-weight:bold; padding:30px 0 60px;">Nộp hồ sơ tuyển dụng thành công. Chúng tôi sẽ liên hệ cho bạn nếu hồ sơ của bạn đáp ứng được nhu cầu tuyển dụng của chúng tôi.</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#form_nop_hs").html('<p style="color:#E87900; line-height:22px; font-weight:bold; padding:30px 0 60px;">Nộp hồ sơ tuyển dụng thành công. Chúng tôi sẽ liên hệ cho bạn nếu hồ sơ của bạn đáp ứng được nhu cầu tuyển dụng của chúng tôi.</p>'); },200);
 				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
 			});
 			return true;

@@ -1,4 +1,5 @@
 <?php
+$error_sql = "Lỗi kết nối";
 $config = $tc->config($lang) or die ($error_sql);
 $row_config = mysql_fetch_array($config);
 

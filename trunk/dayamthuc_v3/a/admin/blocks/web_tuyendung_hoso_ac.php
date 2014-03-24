@@ -52,7 +52,7 @@ echo '<form name="form_action" method="post" action="">
 	$arr = array();
 	$arr[] = array('id'=>'1', 'name'=>'Hiện');
 	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['status'] == '') $properties = 1; $properties = $row_detail['status']; //default check
+	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
@@ -126,10 +126,14 @@ echo '<form name="form_action" method="post" action="">
 	//btn_cancel
 	$other = '<input type="button" name="btn_cancel" id="btn_cancel" value="Hủy" class="submit" onClick="window.location.href=\'administrator.php?p='.$table.'\'" />';
 	
-	//btn_submit
-	$properties = ''; //disabled, readonly
-	$views = array($lable_submit,'btn_action','submit btn_action'); //label id&name class style
-    $form->getProperties('9','',$properties,$views,$other);
-	echo $form->DisplayProperties();
+	if($id != 0){
+		//btn_submit
+		$properties = ''; //disabled, readonly
+		$views = array($lable_submit,'btn_action','submit btn_action'); //label id&name class style
+		$form->getProperties('9','',$properties,$views,$other);
+		echo $form->DisplayProperties();
+	}else{
+		echo '<tr><td>&nbsp;</td> <td>'.$other.'</td></tr>';
+	}
 
 echo '</table></form>';

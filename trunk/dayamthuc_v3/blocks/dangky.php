@@ -32,23 +32,27 @@
               </tr>
               <tr>
                 <td align="right" valign="top"><span class="style1">*</span> Họ và tên:</td>
-                <td><input type="text" name="HoTen" class="text_dangky" value="<?=$_POST["HoTen"]?>" size="50" /></td>
+                <td><input type="text" name="HoTen" class="text_dangky" value="" maxlength="50" /></td>
               </tr>
               <tr>
                 <td align="right" valign="top"><span class="style1">*</span> Ngày sinh:</td>
-                <td><input type="text" name="NgaySinh" class="text_dangky" value="<?=$_POST["NgaySinh"]?>" size="50" /></td>
+                <td style="color:#999">
+                	<input type="text" name="ngay"  class="text_dangky" maxlength="2" style="width:50px" /> ngày 
+                    <input type="text" name="thang" class="text_dangky" maxlength="2" style="width:50px" /> tháng 
+                    <input type="text" name="nam"   class="text_dangky" maxlength="4" style="width:80px" /> năm
+                </td>
               </tr>
               <tr>
                 <td align="right" valign="top"><span class="style1">*</span> Email:</td>
-                <td><input type="text" name="Email" class="text_dangky" value="<?=$_POST["Email"]?>" size="50" /></td>
+                <td><input type="text" name="Email" class="text_dangky" value="" maxlength="50" /></td>
               </tr>
               <tr>
                 <td align="right" valign="top"><span class="style1">*</span> Địa chỉ:</td>
-                <td><input type="text" name="DiaChi" class="text_dangky" value="<?=$_POST["DiaChi"]?>" size="50" /></td>
+                <td><input type="text" name="DiaChi" class="text_dangky" value="" maxlength="250" /></td>
               </tr>
               <tr>
                 <td align="right" valign="top"><span class="style1">*</span> Điện thoại:</td>
-                <td><input type="text" name="DienThoai" class="text_dangky" value="<?=$_POST["DienThoai"]?>" size="50" /></td>
+                <td><input type="text" name="DienThoai" class="text_dangky" value="" maxlength="11" /></td>
               </tr>
               <tr>
                 <td align="right" valign="top">Đã tốt nghiệp:</td>
@@ -123,64 +127,16 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="2"><em>Là thành viên Hội đầu bếp chuyên nghiệp Sài Gòn:</em>
-                  <input type="radio" name="ThanhVienHoi" value="Có" /> Có &nbsp; &nbsp; 
-                  <input type="radio" name="ThanhVienHoi" value="Không" checked="checked" /> Không
-                </td>
+              	<td align="right" valign="top">Khác:</td>
+                <td><textarea name="ThanhVienHoi" class="text_dangky" style="height:80px; line-height:20px; overflow:auto; resize:none"></textarea></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
-                <td><input name="btnSend" type="submit" value="ĐĂNG KÝ" class="btn_dangky" /></td>
+                <td><input type="submit" name="btnSendDK" value="ĐĂNG KÝ" class="btn_dangky" /></td>
               </tr>
             </table>
             </div>
         </div>
-        <script type="text/javascript">
-        $(document).ready(function(e) {
-            $("input[name=btnSend]").click(function(){
-                var HoTen = $("input[name=HoTen]").val();
-                var NgaySinh = $("input[name=NgaySinh]").val();
-                var Email = $("input[name=Email]").val();
-                var DiaChi = $("input[name=DiaChi]").val();
-                var DienThoai = $("input[name=DienThoai]").val();
-                var TotNghiep = $("select[name=TotNghiep]").val();
-                var KhoaHoc = $("select[name=KhoaHoc]").val();
-                var NoiHoc = $("select[name=NoiHoc]").val();
-                var ThanhVienHoi = $("input[name=ThanhVienHoi]:checked").val();
-                var thongtin_khac = $("select[name=thongtin_khac]").val();
-                if(HoTen.length<3){
-                    alert("Nhập họ tên");
-                    $("input[name=HoTen]").focus();
-                    return false;
-                }else if(NgaySinh.length<6){
-                    alert("Nhập ngày sinh");
-                    $("input[name=NgaySinh]").focus();
-                    return false;
-                }else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Email))){
-                    alert("Nhập email");
-                    $("input[name=Email]").focus();
-                    return false;
-                }else if(DiaChi.length<6){
-                    alert("Nhập địa chỉ");
-                    $("input[name=DiaChi]").focus();
-                    return false;
-                }else if(DienThoai.length<6){
-                    alert("Nhập điện thoại");
-                    $("input[name=DienThoai]").focus();
-                    return false;
-                }else{
-                    $("#form").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
-                    $.post("ajax.php",{dangky:"dangky",HoTen:HoTen,NgaySinh:NgaySinh,Email:Email,DiaChi:DiaChi,DienThoai:DienThoai,TotNghiep:TotNghiep,KhoaHoc:KhoaHoc,NoiHoc:NoiHoc,ThanhVienHoi:ThanhVienHoi,thongtin_khac:thongtin_khac},function(data){
-                        if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:blue; font-size:16px; font-weight:bold; padding:30px 0 60px 30px;">Đăng ký thành công. Trường NETSPACE sẽ liên hệ Bạn vào ngày 10/02/2014. Chúc năm mới Vạn Sự Như Ý.</p>'); },200);
-                        else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 10px 60px 10px;">Có sự cố. Vui lòng ấn F5 thử lại.</p>');
-                        //Đăng ký thành công. Chúng tôi sẽ liên hệ Quý khách sớm nhất để thông báo lịch học
-                    });
-                    return true;
-                }
-            });
-        });
-        </script>
-    
     </div>
     
     <?php include_once('blocks/right.php'); ?>

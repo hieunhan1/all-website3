@@ -68,7 +68,7 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
 	$arr = array();
 	$arr[] = array('id'=>'1', 'name'=>'Hiện');
 	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['status'] == '') $properties = 1; $properties = $row_detail['status']; //default check
+	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();

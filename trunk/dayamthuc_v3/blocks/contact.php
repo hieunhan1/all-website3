@@ -12,15 +12,15 @@
               </tr>
               <tr>
                 <td width="100">Họ &amp; tên:</td>
-                <td><input type="text" name="name" class="txt" /></td>
+                <td><input type="text" name="name" class="txt" maxlength="50" /></td>
                 <td width="100" align="right">Email:</td>
-                <td><input type="text" name="email" class="txt" /></td>
+                <td><input type="text" name="email" class="txt" maxlength="60" /></td>
               </tr>
               <tr>
                 <td>Điện thoại:</td>
-                <td><input type="text" name="phone" class="txt" /></td>
+                <td><input type="text" name="phone" class="txt" maxlength="11" /></td>
                 <td align="right">Địa chỉ:</td>
-                <td><input type="text" name="diachi" class="txt" /></td>
+                <td><input type="text" name="diachi" class="txt" maxlength="250" /></td>
               </tr>
               <tr>
                 <td valign="top">Nội dung:</td>
