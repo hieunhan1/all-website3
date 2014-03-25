@@ -61,7 +61,7 @@ function ckeditor_full($name){
 		//filebrowserUploadUrl: 		'".$dir_ckeditor."ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
 		//filebrowserImageUploadUrl: 	'".$dir_ckeditor."ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
 		//filebrowserFlashUploadUrl: 	'".$dir_ckeditor."ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-		filebrowserWindowWidth: '860',
+		filebrowserWindowWidth: '1000',
 		filebrowserWindowHeight: '530',
 		toolbar:
 		[

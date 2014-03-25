@@ -1,4 +1,3 @@
-<?php include_once('search.php'); ?>
 <div id="content">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
@@ -12,7 +11,7 @@
         </tr>
         <?php
         $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
+		$where = "`delete`=0 AND lang='{$lang}' ";
 		$limit = "LIMIT {$from},{$max_results}";
 		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
