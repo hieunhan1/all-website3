@@ -1,6 +1,6 @@
 <div id="chucnang">
 <?php
-$qr = $qt->MenuAdmin();
+$qr = $qt->menu_admin();
 while($row = mysql_fetch_array($qr)){
 	echo '<div class="item">
 	<a href="administrator.php?p='.$row['url'].'">

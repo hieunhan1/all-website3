@@ -132,7 +132,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function info_home(){
-		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 ORDER BY date_update DESC LIMIT 10";
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 10";
 		return mysql_query($qr);
 	}
 	function info_detail($alias){

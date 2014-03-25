@@ -131,6 +131,15 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
+	//other
+	$arr = array();
+	$arr[] = array('id'=>'1', 'name'=>'Hiện');
+	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
+	if($row_detail['other']=='') $properties = 1; else $properties = $row_detail['other']; //default check
+	$views = array('Hiện trang chủ','other','radio',' &nbsp; '); //label name class other
+    $form->getProperties('4',$arr,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name

@@ -32,12 +32,10 @@
 			
 			if($total > 1){
 				while($row = mysql_fetch_array($list)){
-					$str_info .= '<div class="home_video_item">
-						<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="home_video_item_img"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-						<div class="play_video"></div>
-						<img src="images/video.gif" alt="video" style="margin-bottom:5px" />
-						<h4>'.$row['name'].'</h4></a>
-					</div>';
+					$str_info .= '<div class="video_item_3" style="margin:20px">
+					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
+					<div class="img_video_item_3"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+					<h3>'.$row['name'].'</h3></a></div>';
 				}
 				
 				if($danhmuc!='danh-muc') $url_page = $danhmuc;

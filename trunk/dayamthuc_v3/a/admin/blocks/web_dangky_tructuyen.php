@@ -1,9 +1,26 @@
-<?php include_once('search.php'); ?>
+<?php
+	/*search*/
+	if(isset($_GET['btnSearch'])){
+		if($_GET['txt']!='' && $_GET['txt']!='Mô tả') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
+	}else{
+		$str_search = '';
+	}
+?>
+<form action="" method="get" name="search">
+<div id="search">
+	<input type="hidden" name="p" value="<?php echo $table; ?>" />
+    <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Mô tả'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Mô tả') value=''" />
+    <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
+</div>
+</form>
+
+
 <div id="content">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
             <th align="left">Mô tả</th>
+            <th width="90" align="center">Nơi học</th>
             <th width="110" class="create">Ngày tạo</th>
             <th width="90" class="create">Người tạo</th>
             <th width="110" class="update">Date update</th>
@@ -14,7 +31,7 @@
         $from = (($page_number - 1) * $max_results);
 		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
+		$str = "SELECT id,name,noihoc,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -22,6 +39,7 @@
 			echo '<tr class="row row_'.$row['id'].'">
 				<td align="center">'.$i.'</td>
 				<td>'.$row['name'].'</td>
+				<th>'.$row['noihoc'].'</th>
 				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($row['date_create'])).'</td>
 				<td align="center" class="create">'.$row['user_create'].'</td>
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>

@@ -63,7 +63,7 @@ function BrowseServer( startupPath, functionData ){
 	finder.startupPath = startupPath;
 	finder.selectActionFunction = SetFileField;
 	finder.selectActionData = functionData;
-	finder.popup(860, 530);
+	finder.popup(1000, 530);
 }
 function SetFileField(fileUrl, data){
 	var sFileName = this.getSelectedFile().name;
@@ -88,18 +88,20 @@ function SetFileField(fileUrl, data){
         <div id="catalog">
         	<?php
 			$i = 0;
-            $qr = $qt->MenuAdmin();
-			while($row = mysql_fetch_array($qr)){
-				$i++;
-				
-				if($i==11) $style = '<span id="hocvien_dangky" class="ajax_thongtin"></span>';
-				elseif($i==12) $style = '<span id="hocvien_lienhe" class="ajax_thongtin"></span>';
-				elseif($i==15) $style = '<span id="hoso_tuyendung" class="ajax_thongtin"></span>';
-				else $style = '';
-				
-				if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
-				else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
-				if($i == 2) echo '<hr />'; else if($i == 7) echo '<hr />'; else if($i == 12) echo '<hr />';
+            $qr = $qt->menu_admin();
+			if($qr){
+				while($row = mysql_fetch_array($qr)){
+					$i++;
+					
+					if($i==11) $style = '<span id="hocvien_dangky" class="ajax_thongtin"></span>';
+					elseif($i==12) $style = '<span id="hocvien_lienhe" class="ajax_thongtin"></span>';
+					elseif($i==15) $style = '<span id="hoso_tuyendung" class="ajax_thongtin"></span>';
+					else $style = '';
+					
+					if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
+					else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
+					if($i == 2) echo '<hr />'; else if($i == 7) echo '<hr />'; else if($i == 12) echo '<hr />';
+				}
 			}
 			?>
         </div>

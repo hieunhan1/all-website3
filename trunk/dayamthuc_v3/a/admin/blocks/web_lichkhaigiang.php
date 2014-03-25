@@ -1,3 +1,30 @@
+<?php
+	/*search*/
+	if(isset($_GET['btnSearch'])){
+		if($_GET['txt']!='' && $_GET['txt']!='Mô tả') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
+		if($_GET['dm']!='0' && $_GET['dm']!='') $str_search .= " AND menu_id LIKE '%,{$_GET['dm']},%' ";
+	}else{
+		$str_search = '';
+	}
+?>
+<form action="" method="get" name="search">
+<div id="search">
+	<input type="hidden" name="p" value="<?php echo $table; ?>" />
+    <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Mô tả'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Mô tả') value=''" />
+    
+    <select name="dm" id="dm" class="select">
+        <option value="0" selected="selected">--- Chọn ---</option>
+        <?php
+        $qr = mysql_query("SELECT `id`,`name` FROM `web_menu` WHERE `delete`=0 AND type_id=4 ORDER BY `order`");
+        while($row = mysql_fetch_array($qr)){
+            echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+        }
+        ?>
+    </select>
+    <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
+</div>
+</form>
+
 <div id="content">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
@@ -11,7 +38,7 @@
         </tr>
         <?php
         $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0";
+		$where = "`delete`=0".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
 		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);

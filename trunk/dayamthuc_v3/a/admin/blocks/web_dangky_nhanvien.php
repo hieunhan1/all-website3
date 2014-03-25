@@ -1,9 +1,9 @@
-<?php include_once('search.php'); ?>
 <div id="content">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
         	<th width="40">STT</th>
             <th align="left">Mô tả</th>
+            <th width="200" align="left">Email</th>
             <th width="110" class="create">Ngày tạo</th>
             <th width="90" class="create">Người tạo</th>
             <th width="110" class="update">Date update</th>
@@ -12,9 +12,9 @@
         </tr>
         <?php
         $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
+		$where = "`delete`=0 AND lang='{$lang}' ";
 		$limit = "LIMIT {$from},{$max_results}";
-		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
+		$str = "SELECT id,name,email,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
 		$i = $from;
 		while($row = mysql_fetch_array($qr)){
@@ -22,6 +22,7 @@
 			echo '<tr class="row row_'.$row['id'].'">
 				<td align="center">'.$i.'</td>
 				<td>'.$row['name'].'</td>
+				<td>'.$row['email'].'</td>
 				<td align="center" class="create">'.date('d/m/Y H:i',strtotime($row['date_create'])).'</td>
 				<td align="center" class="create">'.$row['user_create'].'</td>
 				<td align="center" class="update">'.date('d/m/Y H:i',strtotime($row['date_update'])).'</td>
