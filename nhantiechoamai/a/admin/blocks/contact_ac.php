@@ -108,9 +108,9 @@ if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
 $form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 150);
 echo $form->DisplayProperties();
 //phone
-/*if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
-$form->getProperties("Phone", 'phone', 1, 'input_medium', $value, 20);
-echo $form->DisplayProperties();*/
+if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
+$form->getProperties("Điện thoại", 'phone', 1, 'input_medium', $value, 20);
+echo $form->DisplayProperties();
 //diachi
 if(@$_POST['diachi']) $value = $_POST['diachi']; else $value = $detail['diachi'];
 $form->getProperties("Địa chỉ", 'diachi', 1, 'input_medium', $value, 150);

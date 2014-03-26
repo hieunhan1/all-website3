@@ -72,6 +72,12 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 .box_dichvu .box_dichvu_info h3{font-size:200%; margin-bottom:10px}
 .box_dichvu .box_dichvu_info p{line-height:22px}
 
+.box_baiviet{width:400px; margin:10px 0}
+.box_baiviet h3{font-size:110%; margin-bottom:8px}
+.box_baiviet .box_baiviet_img{width:140px; height:85px; float:left; overflow:hidden; margin-right:8px; border:1px solid #999}
+.box_baiviet .box_baiviet_img img{width:140px}
+.box_baiviet p{line-height:22px; height:88px; overflow:hidden}
+
 .box_tiec{width:400px; height:380px}
 .box_tiec .box_tiec_img{height:200px; overflow:hidden}
 .box_tiec .box_tiec_img img{width:400px}
@@ -96,7 +102,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
 #contact{clear:both; padding:25px 0}
 #contact #info{line-height:22px; margin:15px 0; font-weight:bold}
-#contact #map_contact{width:350px; float:left}
+#contact #map_contact{width:400px; float:left}
 #contact #map_contact h1{font-size:160%; font-weight:100; color:#00A651; margin:20px 0 10px 0}
 #contact #map_contact p{color:#666; line-height:22px}
 #contact #form{width:400px; float:right}
@@ -116,14 +122,14 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #nav{list-style:none; position:relative; z-index:1000; width:auto; float:left}
 #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:38px; color:#FFF; font-weight:bold; padding:0 15px} /* letter-spacing:1px; word-spacing:2px */
+#nav li a {line-height:38px; color:#FFF; font-weight:bold; padding:0 12px} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; background-color:#FF7C38}
 #nav li {float:left; position:relative}
 #nav ul {width:160px; position:absolute; top:38px; display:none}
-#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 25px; background-color:#888; border-bottom:solid 1px #999}
+#nav li ul a {width:170px; line-height:30px; float:left; color:#FFF; padding:0 12px; background-color:#888; border-bottom:solid 1px #999}
 #nav li ul a:hover {background-color:#666; color:#FFF}
 #nav ul ul {top:auto}
-#nav li ul ul {left:220px; border-left:solid 1px #FFF}
+#nav li ul ul {left:190px; border-left:solid 1px #FFF}
 #nav li ul ul a{font-weight:100}
 #nav li:hover ul ul,
 #nav li:hover ul ul ul,

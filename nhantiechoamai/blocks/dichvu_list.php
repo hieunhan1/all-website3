@@ -1,25 +1,21 @@
 <?php
-$from = (($page - 1) * max_limit_2);
+$from = (($page - 1) * max_limit_1);
 $select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id,date_create';
 $table = 'info';
 $where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
-$limit = "LIMIT {$from},".max_limit_2;
+$limit = "LIMIT {$from},".max_limit_1;
 $list = $tc->list_item($select,$table,$where,$limit);
 $total = mysql_num_rows($list);
 
 if($total > 1){
-	$i = 0;
 	while($row = mysql_fetch_array($list)){
-		$i++;
-		if($i%2 == 1) $style = 'style="float:left"'; else $style = 'style="float:right"';
-		$link = "http://{$domain}/".$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
-		$str_info .= '<div class="box_baiviet" '.$style.'>
-			<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
-			<div class="box_baiviet_img"><a href="'.$link.'"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
-			<p>'.strip_tags($row['metaDescription']).'</p>
-		</div>';
+	$link = "http://{$domain}/".$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
+	$str_info .= '<div class="box_dichvu">
+		<div class="box_dichvu_img"><a href="'.$link.'"><img src="'.url_detail_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
+		<div class="box_dichvu_info"><a href="'.$link.'"><h3>'.$row['name'].'</h3></a><p>'.$row['metaDescription'].'</p></div>
+	</div>';
 	}
-	$phantrang = $tc->phantrang($danhmuc,$page,max_limit_2,'id',$table,$where);
+	$phantrang = $tc->phantrang($danhmuc,$page,max_limit_1,'id',$table,$where);
 	$str_info .= "<div id=\"phantrang\">{$phantrang}</div>";
 }elseif($total == 1){
 	$row = mysql_fetch_array($list);
