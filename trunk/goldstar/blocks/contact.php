@@ -63,7 +63,7 @@ $(document).ready(function(e) {
 		}else{
 			$("#form").html('<p style="font-weight:bold; padding:30px">Processing...</p>');
 			$.post("ajax.php",{contact:"contact",name:name,email:email,phone:phone,diachi:diachi,message:message,lang:"<?php echo $lang; ?>"},function(data){
-				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#ff8400; font-weight:bold; padding:30px 0 60px;">Send success.</p>'); },200);
+				if(data!='0') setTimeout(function(){ $("#form").html('<p style="color:#00F; font-weight:bold; padding:30px 0 60px;">Send success.</p>'); },200);
 				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Undeliverable. Please press F5 to try again.</p>');
 			});
 			return true;

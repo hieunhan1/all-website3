@@ -6,7 +6,7 @@ if(mysql_num_rows($qr)>0){
 		<div class="home_img"><img src="'.url_detail_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 		<h1>'.$row['name'].'</h1>
 		<p>'.$row['metaDescription'].'</p>
-		<p><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'">Xem thêm..</a></p>
+		<p align="right"><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'">Xem thêm..</a></p>
 	</div>';
 }
 

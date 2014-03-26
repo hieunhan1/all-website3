@@ -1,5 +1,6 @@
 <?php
 session_start();
+$lang = 'vi';
 include_once('config.php');
 
 if($_POST['contact']=='contact'){
@@ -12,7 +13,7 @@ if($_POST['contact']=='contact'){
 	if($name!='' && $email!='' && $phone!='' && $message!=''){
 		if($tc->insert_contact($name,$email,$phone,$diachi,$message)){
 			echo '1';
-			include_once('sendmail/sendmail.php');
+			include_once('sendmail_smtp/send_contact.php');
 			return true;
 		}else{
 			echo '0';
@@ -33,7 +34,7 @@ if($_POST['dathang']=='dathang'){
 		$_SESSION['list_name'][$id] = $name;
 		$_SESSION['list_price'][$id] = $price;
 		$_SESSION['list_soluong'][$id] += $soluong;
-		echo 'http://www.goldstars.com.vn/gio-hang-banh-keo-han-quoc/';
+		echo 'http://'.$domain.'/gio-hang-banh-keo-han-quoc/';
 		return true;
 	}else{
 		echo 0;
