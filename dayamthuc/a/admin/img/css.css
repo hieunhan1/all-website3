@@ -19,8 +19,8 @@ a:hover {color: #FF9900;text-decoration: underline;}
 .row .col_full {float:left; overflow:hidden; width:auto; height:16px}
 .row .col_action {width:100px; float:right; text-align:center; padding:0 3px; overflow:hidden}
 .row .col_order {width:100px; float:right; text-align:center; padding:0 3px; font-weight:bold; overflow:hidden}
-.row .col_create {width:100px; float:right; text-align:center; padding:0 3px; overflow:hidden}
-.row .col_update {width:100px; float:right; text-align:center; padding:0 3px; overflow:hidden}
+.row .col_create {width:140px; float:right; text-align:center; padding:0 3px; overflow:hidden}
+.row .col_update {width:140px; float:right; text-align:center; padding:0 3px; overflow:hidden}
 .row .col_fix {width:160px; float:left; overflow:hidden}
 .title {font-weight:bold; color:#0037A0; margin-bottom:15px;}
 
