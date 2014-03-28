@@ -8,7 +8,7 @@ var window_w = $(window).width();
 if(window_w >= 1024){
 	$('body').css('width', window_w);
 	$('#container').css('width', window_w);
-	$('#right').css('width', window_w - 230);
+	$('#right').css('width', window_w - 310);
 }
 
 //chieu cao auto
@@ -35,7 +35,7 @@ $('#create').click(function(){
 
 //tinh column full
 var width_content = $('#content').width();
-$('.col_full').width(width_content - 230 - $('.col_fix').width() - $('.col_action').width() - $('.col_order').width());
+$('.col_full').width(width_content - 310 - $('.col_fix').width() - $('.col_action').width() - $('.col_order').width());
 
 /*
 * chon nhieu menu
