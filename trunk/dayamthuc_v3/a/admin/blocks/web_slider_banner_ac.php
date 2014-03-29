@@ -98,7 +98,7 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('Chọn file ảnh','btnBrowse','button'); //label id&name class
 	$form->getProperties('6',$values,'',$views);
 	$other = $form->DisplayProperties();
-	if($row_detail['url_hinh'] != '') $other .= '<div class="avarta"><img src="'.url_articles_image_thumb.$row_detail['url_hinh'].'" /></div>';
+	if($row_detail['url_hinh'] != '') $other .= '<div class="avarta"><img src="'.url_slider_image_thumb.$row_detail['url_hinh'].'" /></div>';
 	
 	$values = $row_detail['url_hinh'];
 	$properties = array('150'); //maxlength OTHER (disabled, readonly) 
