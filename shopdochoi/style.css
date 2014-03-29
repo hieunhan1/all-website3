@@ -1,0 +1,170 @@
+*{margin:0; padding:0}
+body{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; background-color:#F8E6E3}
+img{border:0}
+a:link,a:visited,a:active{color:#0055A5; text-decoration:none}
+a:hover{color:#ED1E28; text-decoration:underline}
+hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
+
+.wrapper{width:980px; margin:auto}
+
+#top{height:20px; background-color:#DB0000}
+
+#logo{clear:both; width:320px; height:80px; margin:20px auto 30px auto}
+
+#slider{height:280px; overflow:hidden; margin:0 10px 20px; border:solid 3px #FFF; position:relative; box-shadow: 0px 0px 10px #666}
+
+/*home*/
+
+/*end home*/
+
+/*footer*/
+#run_top{font-weight:bold; float:right; margin-right:20px; cursor:pointer}
+
+#footer{clear:both; height:230px; color:#FFF; font-family:"UTM-Swiss-Condensed"; background-color:#ED1C24}
+#footer h1, #footer h3{font-size:130%; width:auto; float:left; color:#FF3}
+
+#support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:10px; background:#FFF; border:solid 1px #999; z-index:5}
+#support_online #btn_support{height:40px; cursor:pointer}
+#support_online #ajax_support{display:none; padding-top:10px; border-top:solid 1px #999}
+
+#support_hotline{clear:both; line-height:22px; padding:10px 0; text-align:center; font-weight:bold}
+/*end footer*/
+
+/*thu vien*/
+.thuvien_photo_item{width:220px; float:left; margin:0 0 14px 14px; border:solid 1px #CCC}
+.thuvien_photo_item .thuvien_photo_item_img{width:200px; height:160px; overflow:hidden; margin:auto}
+.thuvien_photo_item .thuvien_photo_item_img img{width:200px}
+.thuvien_photo_item a{color:#FFF; text-align:center}
+.thuvien_photo_item a:hover{color:#FF0}
+.thuvien_photo_item h3{display:block; font-size:100%; height:44px; line-height:22px; overflow:hidden; padding:0 5px}
+
+.photo_item{width:205px; float:left; border:solid 1px #CCC}
+.photo_item .photo_item_img{width:175px; height:110px; overflow:hidden; margin:15px; position:absolute; z-index:1}
+.photo_item .photo_item_img img{width:175px}
+.photo_item .album_icon{position:relative; z-index:2}
+.photo_item a{color:#F33}
+.photo_item a:hover{color:#C00}
+.photo_item h3{display:block; font-size:100%; text-align:center; line-height:22px; height:44px; overflow:hidden}
+
+.thuvien_video_item{width:290px; height:250px; float:left; margin-left:22px; background-color:#f2f2f2; border:1px solid #CCC;}
+.thuvien_video_item .thuvien_video_item_img{width:210px; height:200px; overflow:hidden; position:absolute; z-index:1}
+.thuvien_video_item .thuvien_video_item_img img{height:200px; margin:8px 0 0 8px}
+.thuvien_video_item .album_icon_video{width:290px; height:207px; background:url(images/video_icon.png) no-repeat center; position:relative; z-index:3}
+.thuvien_video_item h3{font-size:100%; line-height:20px; text-align:center; padding:0 10px}
+/*end thu vien*/
+
+#left{width:650px; float:left}
+
+/*right*/
+#right{width:250px; float:right}
+
+#right .box_right{clear:both; margin-bottom:30px; padding:10px 5px 5px 5px; border:solid 1px #999; box-shadow:2px 2px 3px #666}
+
+#right .box_right_title{height:25px; line-height:25px; color:#DA251D; font-size:200%; font-family:"UVNBayBuom"; font-weight:bold; margin-bottom:10px; padding-bottom:15px; background:url(images/line-right.jpg) repeat-x bottom}
+#right .box_right_title img{float:left; margin-right:10px}
+
+.box_right_video{margin-bottom:10px}
+.box_right_video .box_right_video_img{height:140px; overflow:hidden; text-align:center; background-color:#1B1B1B; position:absolute; z-index:1}
+.box_right_video .box_right_video_img img{width:230px; margin:4px}
+.box_right_video .play_video{width:250px; height:140px; background:url(images/play-video.png) no-repeat center; position:relative; z-index:3}
+.box_right_video h4, .box_right_video h3 {font-size:100%; line-height:20px}
+
+#right .box_right_hocvien{height:37px; line-height:37px; font-weight:bold; margin-bottom:10px; padding:0 15px 0 20px; background:url(images/bg-thong-tin.png)}
+#right .box_right_hocvien a{color:#902D17}
+#right .box_right_hocvien a:hover{color:#F00}
+
+#right .box_right_info{clear:both; height:80px}
+#right .box_right_info .box_right_info_img{width:80px; height:60px; overflow:hidden; float:left; margin-right:5px}
+#right .box_right_info .box_right_info_img img{width:78px; border:solid 1px #CCC}
+#right .box_right_info h3{font-size:100%}
+
+.photo_danhmuc_c1{font-weight:bold; line-height:25px; font-size:100%}
+.photo_danhmuc_c1 a{color:#F55}
+
+.photo_danhmuc_c2{line-height:16px; font-weight:bold; font-style:italic; font-size:90%}
+.photo_danhmuc_c2 a{display:block; margin-left:5px; padding:0 0 8px 10px; background:url(images/arrow.gif) no-repeat left; background-position:0px -1px}
+
+.photo_danhmuc_c3{padding:0 0 5px 20px; line-height:16px; font-size:90%}
+.photo_danhmuc_c3 a{display:block; color:#666; margin-left:0; padding:0 0 8px 10px; background:url(images/arrow.gif) no-repeat left; background-position:0px -1px}
+/*end right*/
+
+#other{clear:both}
+#other div{font-size:130%; color:#666; font-weight:bold; padding:10px 0 0 20px}
+#other li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/li.gif) no-repeat left top}
+
+.info_list{height:150px}
+.info_list .info_list_img{width:190px; height:140px; overflow:hidden; float:left; margin-right:15px}
+.info_list .info_list_img img{width:188px; border:solid 1px #CCC}
+.info_list .info_list_text{line-height:20px; height:60px; overflow:hidden}
+.info_list h3{font-size:110%; line-height:20px; font-family:"UTM-Swiss-Condensed"; margin-bottom:5px}
+
+.viewpost{line-height:22px}
+.viewpost p, .viewpost div {line-height:20px; margin:10px 0}
+.viewpost li{margin-left:35px}
+.viewpost h1{font-size:160%; font-family:"UTM-Swiss-Condensed"; line-height:30px; color:#ED1E28; margin-bottom:5px}
+.viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
+.viewpost  .date{color:#888; font-style:italic; text-align:right}
+
+#contact{padding:25px}
+#contact #info{line-height:22px}
+#contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
+#contact #info p, #contact #info div {margin:10px 0}
+#contact .txt{width:250px; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .textarea{width:662px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
+#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
+
+.text_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
+.select_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
+.btn_dangky{width:auto; padding:8px 50px; font-size:120%; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
+
+#navigator{clear:both; padding:0 0 10px 10px}
+#navigator a{padding-right:15px; font-size:12px; color:#666}
+#navigator a:hover{color:#000}
+#navigator span{font-size:9px; color:#999; padding-right:5px}
+
+#phantrang{clear:both; margin-top:10px}
+#phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#666; color:#FFF}
+#phantrang a:hover{background-color:#ED1E28}
+
+#tuyendung{border-collapse:collapse}
+#tuyendung td, #tuyendung th{padding:10px 5px; border-bottom:dotted 1px #CCC}
+
+#tuyendung_thongtin td, #tuyendung_thongtin th{padding:10px 15px; border-bottom:dotted 1px #CCC}
+
+.btn_nop_hs{clear:both; width:118px; height:29px; line-height:29px !important; font-weight:bold; color:#FFF; margin:0; padding-left:30px; background:url(images/btn-nop-hs.gif); cursor:pointer}
+
+/*menu*/
+#menu{height:37px; margin:0 10px 14px; background:url(images/bg-menu.gif) repeat-x}
+#nav, #nav ul {list-style:none; position:relative; z-index:1000}
+#nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
+#nav li a {line-height:37px; color:#FFF; font-size:126%; font-family:"UTM-Azuki"; text-transform:uppercase; padding:0 30px}
+#nav a:hover {text-decoration:none; color:#FF0}
+#nav li {float:left; position:relative}
+#nav ul {width:160px; position:absolute; top:37px; display:none}
+#nav li ul a {width:180px; line-height:30px; float:left; color:#CCC; font-family:Arial, Helvetica, sans-serif; font-size:13px; text-transform:none; border-top:solid 1px #8E0607; background-color:#B4050C}
+#nav li ul a:hover {background-color:#ED1C24; color:#FFF}
+#nav ul ul {top:auto}
+#nav li ul ul {left:220px}
+#nav li ul ul a{font-weight:100}
+#nav li:hover ul ul,
+#nav li:hover ul ul ul,
+#nav li:hover ul ul ul ul {display:none}
+#nav li:hover ul,
+#nav li li:hover ul,
+#nav li li li:hover ul,
+#nav li li li li:hover ul {display:block}
+
+/* popup */
+#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
+#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
+#content_popup{width:600px; height:auto; padding:10px 10px 25px 25px; background-color:#FFF}
+.error{font-style:italic; color:#F00}
+
+/*Photos*/
+#photos * {margin:0px; padding:0px}
+#photos ul li {display:inline; width:200px; height:180px; float:left; overflow:hidden; margin:6px}
+#photos .wide {border-bottom:1px #000 solid; width:4000px}
+#photos .img{display:block; height:120px; overflow:hidden; margin-bottom:3px; border:solid 3px #000}
+#photos .img a{display:block; width:208px; height:120px; border:solid 1px #CCC}
+#photos .img img{width:196px}
+#photos h3{font-size:100%; font-weight:100; color:#666}
