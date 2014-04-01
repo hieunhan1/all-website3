@@ -6,7 +6,7 @@ require_once('class.phpmailer.php');
 
 $email_gui = 'inform@hoahaudaiduongvietnam.com';
 $email_gui_pass = 'inform1234';
-$title = 'Thông báo đăng ký thành công cuộc thi Hoa Hậu Đại Dương Việt Nam';
+$title = 'BTC Cuộc thi “Hoa Hậu Đại Dương Việt Nam 2014” ';
 
 $email_nhan = $email;
 
@@ -57,9 +57,22 @@ $mail->Subject = $title;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào bạn '.$name.'</h3>
-<p style="line-height:22px">Bạn đã đăng ký thành công cuộc thi Hoa Hậu Đại Dương Việt Nam năm 2014. Chúng tôi sẽ kiểm tra và xem xét thông tin của bạn đăng ký, nếu hợp lệ thông tin của bạn sẽ được chúng tôi cập nhật lên trang <b>Thí Sinh cuộc thi Hoa Hậu Đại Dương Việt Nam</b> <em>(<a href="http://www.hoahaudaiduongvietnam.com/thi-sinh/">Link các thí sinh</a>)</em>. <br />
-Trân trọng,</p>';
+$body = '<h3>Chào bạn!</h3>
+<p>Bạn đã đăng ký dự thi cuộc thi “Hoa Hậu Đại Dương Việt Nam 2014” . BTC cần bạn bổ sung những giấy tờ cần thiết bao gồm:</p>
+<p style="margin-left:35px">+ Bản sao chứng minh thư (có công chứng)</p>
+<p style="margin-left:35px">+ Bản sao giấy khai sinh (nếu bản photo thì phải có công chứng)</p>
+<p style="margin-left:35px">+ Sơ yếu lý lịch (được chính quyền địa phương hoặc cơ quan tổ chức nơi thí sinh đang hoạt động xác nhận) </p>
+<p style="margin-left:35px">+ Bằng tốt nghiệp hoặc giấy xác nhận của nhà trường đã tốt nghiệp trung học phổ thông (có công chứng)</p>
+<p style="margin-left:35px">+ Bằng cấp về học vấn vd: Trung cấp- Cao đẳng- Đại học…(nếu có)</p>
+<p style="margin-left:35px">+ 02 ảnh chân dung và 02 ảnh toàn thân (mặc trang phục tự chọn và Bikini). </p>
+<p style="margin-left:35px">+ Bằng chứng nhận giải thường các cuộc thi từng tham gia.(nếu có)</p><br />
+<p style="font-weight:bold">Thời gian và địa chỉ như sau:</p>
+<p style="margin-left:35px">- Trước  ngày <b>15/04/2014</b> từ <b>9h - 21h</b> </p>
+<p style="margin-left:35px">- Địa chỉ: 115 đường Lý Tự Trọng, phường Bến Thành, Quận 1, Tp.Hồ Chí Minh</p>
+<p style="margin-left:35px">- Điện thoại: 08 3914 2008</p>
+Cám ơn bạn đã đăng ký dự thi
+<p style="font-weight:bold; font-style:italic">BTC Cuộc thi “ Hoa Hậu Đại Dương Việt Nam 2014”</p>
+<p style="font-weight:bold; font-style:italic">Trân Trọng</p>';
 
 $mail->Body = $body;
 
