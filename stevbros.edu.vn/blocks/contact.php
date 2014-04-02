@@ -21,6 +21,12 @@ $view_post .= "<div id='list_item'>".$tc->navigator($row_menu_one['url'],$row_me
       <tr>
         <td><input type='text' name='name_contact' maxlength='50' class='txt' /></td>
       </tr>
+	  <tr>
+        <td>Điện thoại: <span style='color:#FF0000'>*</span></td>
+      </tr>
+      <tr>
+        <td><input type='text' name='phone_contact' maxlength='11' class='txt' /></td>
+      </tr>
       <tr>
         <td>Email: <span style='color:#FF0000'>*</span></td>
       </tr>

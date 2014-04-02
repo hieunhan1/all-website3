@@ -86,10 +86,13 @@ echo $form->DisplayProperties();
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
 $form->getProperties("Mô tả {$required}", 'name', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
-
-//url Link
+//phone
+if(@$_POST['phone']) $value = $_POST['phone']; else $value = $detail['phone'];
+$form->getProperties("Điện thoại  {$required}", 'phone', 1, 'input_medium', $value, 20);
+echo $form->DisplayProperties();
+//email
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
-$form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 150);
+$form->getProperties("Email  {$required}", 'email', 1, 'input_medium', $value, 50);
 echo $form->DisplayProperties();
 //content
 $orther = "
