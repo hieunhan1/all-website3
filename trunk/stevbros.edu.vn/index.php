@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ALL ^ E_NOTICE);
 include_once('config.php');
 
 $url = $_SERVER['REQUEST_URI'];
@@ -78,7 +79,10 @@ PostAffTracker.track();
 	echo $view_slider.'<div id="content">'.$view_post.'<div style="clear:both; height:10px"></div></div>';
 	?>
 </div>
-<?php include_once('blocks/footer.php');?>
+<?php
+include_once('blocks/footer.php');
+mysql_close();
+?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
