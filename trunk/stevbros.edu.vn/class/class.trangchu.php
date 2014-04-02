@@ -153,9 +153,9 @@ class trangchu extends db {
 		$qr = "INSERT INTO info_comment VALUES ('','{$datetime}','{$datetime}','{$content}','{$email}','{$name}','0','{$alias}','khachhang','','0')";
 		return mysql_query($qr);
 	}
-	function insert_contact($name,$email,$content){
+	function insert_contact($name,$phone,$email,$content){
 		$datetime = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO contact VALUES ('','{$datetime}','{$datetime}','{$content}','{$email}','{$name}','0','khachhang','','0')";
+		$qr = "INSERT INTO contact VALUES ('','{$datetime}','{$datetime}','{$content}','{$phone}','{$email}','{$name}','0','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	function insert_dangky($name,$email,$phone,$diachi,$message,$khoahoc){

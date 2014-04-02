@@ -24,10 +24,11 @@ if($_POST['post_nhanxet']=='post_nhanxet'){
 }
 if($_POST['contact']=='contact'){
 	$name = trim($_POST['name']);
+	$phone = trim($_POST['phone']);
 	$email = trim($_POST['email']);
 	$content = trim($_POST['content']);
-	if($name!='' && $email!='' && $content!=''){
-		if($tc->insert_contact($name,$email,$content)){
+	if($name!='' && $phone!='' && $email!='' && $content!=''){
+		if($tc->insert_contact($name,$phone,$email,$content)){
 			echo '1';
 			include_once('sendmail_smtp/sendmail.php');
 			return true;

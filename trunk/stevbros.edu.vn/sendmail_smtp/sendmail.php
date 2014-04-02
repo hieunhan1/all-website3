@@ -57,7 +57,7 @@ $mail->Subject = $title;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br /><br />'.$content.'<br /><br />Email: '.$email;
+$body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br /><br />'.$content.'<br /><br />Điện thoại: '.$phone.'<br />Email: '.$email;
 
 $mail->Body = $body;
 

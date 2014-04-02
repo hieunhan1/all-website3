@@ -93,15 +93,17 @@ $("input[name=btnNhatxet]").click(function(){
 
 $("input[name=submit_contact_foo]").click(function(){
 	var name = $.trim($("input[name=name_contact_foo]").val());
+	var phone = $.trim($("input[name=phone_contact_foo]").val());
 	var email = $.trim($("input[name=email_contact_foo]").val());
 	var content = $.trim($("textarea[name=content_contact_foo]").val());
 	if(name==""){ alert("Nhập họ tên"); $("input[name=name_contact_foo]").val(''); $("input[name=name_contact_foo]").focus(); return false; }
+	else if(phone.length < 9){ alert("Nhập số điện thoại"); $("input[name=phone_contact_foo]").focus(); return false; }
 	else if(email==""){ alert("Nhập email"); $("input[name=email_contact_foo]").val(''); $("input[name=email_contact_foo]").focus(); return false; }
 	else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){ alert("Email chưa đúng"); $("input[name=email_contact_foo]").focus(); return false; }
 	else if(content.length < 5){ alert("Nội dung nhận xét phải hơn 5 ký tự"); $("textarea[name=content_contact_foo]").focus(); return false; }
 	else{
 		$("#contact_foo").html('<p style="color:#FFF; font-weight:bold; padding:20px;">Đang gửi...</p>');
-		$.post("ajax.php",{contact:"contact",name:name,email:email,content:content},function(data){
+		$.post("ajax.php",{contact:"contact",name:name,phone:phone,email:email,content:content},function(data){
 			if(data!='0') setTimeout(function(){ $("#contact_foo").html('<p style="color:#FFF; font-weight:bold; padding:20px;">Gửi thành công</p>'); },500);
 			else $("#contact_foo").html('<p style="color:#FFF; font-weight:bold; padding:20px;">Không gửi được. Vui lòng ấn F5 thử lại.</p>');
 		});
@@ -110,15 +112,17 @@ $("input[name=submit_contact_foo]").click(function(){
 
 $("input[name=submit_contact]").click(function(){
 	var name = $.trim($("input[name=name_contact]").val());
+	var phone = $.trim($("input[name=phone_contact]").val());
 	var email = $.trim($("input[name=email_contact]").val());
 	var content = $.trim($("textarea[name=content_contact]").val());
 	if(name==""){ alert("Nhập họ tên"); $("input[name=name_contact]").val(''); $("input[name=name_contact]").focus(); return false; }
+	else if(phone.length < 9){ alert("Nhập số điện thoại"); $("input[name=phone_contact]").focus(); return false; }
 	else if(email==""){ alert("Nhập email"); $("input[name=email_contact]").val(''); $("input[name=email_contact]").focus(); return false; }
 	else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){ alert("Email chưa đúng"); $("input[name=email_contact]").focus(); return false; }
 	else if(content.length < 5){ alert("Nội dung nhận xét phải hơn 5 ký tự"); $("textarea[name=content_contact]").focus(); return false; }
 	else{
 		$("#contact_form").html('<p style="font-weight:bold; padding:20px;">Đang gửi...</p>');
-		$.post("ajax.php",{contact:"contact",name:name,email:email,content:content},function(data){
+		$.post("ajax.php",{contact:"contact",name:name,phone:phone,email:email,content:content},function(data){
 			if(data!='0') setTimeout(function(){ $("#contact_form").html('<p style="color:#5A8FA8; font-weight:bold; padding:20px;">Gửi thành công</p>'); },500);
 			else $("#contact_form").html('<p style="color:#F00; font-weight:bold; padding:20px;">Không gửi được. Vui lòng ấn F5 thử lại.</p>');
 		});

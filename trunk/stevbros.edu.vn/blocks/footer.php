@@ -40,6 +40,8 @@
             <div id="contact_foo">
                 <p class="contact_title">Tên</p>
                 <p class="contact_text"><input type="text" name="name_contact_foo" class="input_foo" /></p>
+                <p class="contact_title">Điện thoại</p>
+                <p class="contact_text"><input type="text" name="phone_contact_foo" class="input_foo" /></p>
                 <p class="contact_title">Email</p>
                 <p class="contact_text"><input type="text" name="email_contact_foo" class="input_foo" /></p>
                 <p class="contact_title">Lời nhắn</p>
