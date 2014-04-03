@@ -1,6 +1,5 @@
 <?php
 session_start();
-ob_start();
 error_reporting(E_ALL ^ E_NOTICE);
 $idUser = $_SESSION["idUser"];
 $idGroup = $_SESSION["idGroup"];
