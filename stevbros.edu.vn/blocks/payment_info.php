@@ -38,7 +38,10 @@ if(count($url_token)==1){
 			<p style="line-height:22px; margin:10px 0">Kính gởi bạn <strong>'.$row['name'].'</strong></p>
 			<p style="line-height:22px; margin:10px 0"><strong>Công ty đào tạo và tư vấn Stevbros</strong> – uỷ quyền đào tạo của <strong>Viện Quản Lý Dự Án Hoa Kỳ (PMI)</strong> mã số 3807 – kính chào bạn. Cảm ơn bạn đã quan tâm đến các khoá học của Stevbros.</p>
 			<p style="line-height:22px; margin:10px 0">Stevbros xin thông báo bạn đã đăng ký khoá học thành công và Stevbros đã nhận được học phí của khoá học bạn đăng ký. Thông tin chi tiết như sau:</p>
-			<p style="margin-left:30px">Tên khoá học: <strong>'.$row['tensp'].'</strong><br />
+			<p style="margin-left:30px">
+				ID đơn hàng: <strong>'.$mTransactionID.'</strong><br />
+				ID khoá học: <strong>'.$row['idsp'].'</strong><br />
+				Tên khoá học: <strong>'.$row['tensp'].'</strong><br />
 				Phí khoá học: <strong>'.number_format($row['price']).'</strong> vnđ<br />
 				Email: <strong>'.$row['email'].'</strong></p>
 			<p style="line-height:22px; margin:10px 0">Nếu bạn đã đăng ký khoá học qua mạng, Stevbros sẽ cung cấp thông tin tài khoản, mật mã và hướng dẫn truy cập hệ thống học qua mạng của Stevbros qua email của bạn trong vòng 24 giờ. Nếu bạn đã đăng ký khoá học khai giảng định kỳ, Stevbros cũng sẽ liên hệ bạn qua email và phone để thông báo địa điểm cụ thể và tài liệu khoá học trong vòng 24 giờ.</p>
@@ -62,7 +65,8 @@ if(count($url_token)==1){
 		if($row['status']==0){
 			$name = $row['name'];
 			$email = $row['email'];
-			$content = $view_post.'<p style="line-height:22px; margin:10px 0"><strong>Đây là email tự động. Xin đừng trả lời. Nếu cần liên hệ xin email về <a href="mailto:support@stevbros.com">support@stevbros.com</a></strong></p>';
+			$content = $view_post.'<p style="line-height:22px; margin:10px 0">Điều kiện hủy giao dịch tham khảo tại đây: <a href="http://stevbros.edu.vn/tro-giup/tro-giup-va-dich-vu-khach-hang.html">ấn vào đây.</a></p>
+			<p style="line-height:22px; margin:10px 0"><strong>Đây là email tự động. Xin đừng trả lời. Nếu cần liên hệ xin email về <a href="mailto:support@stevbros.com">support@stevbros.com</a></strong></p>';
 			$tc->update_khachhang($mTransactionID,$result[2],1);
 			$send = ob_start();
 			include_once('sendmail_smtp/sendmail_thanhtoan.php');
@@ -107,7 +111,10 @@ if(count($url_token)==1){
 				<p style="line-height:22px; margin:10px 0">Kính gởi bạn <strong>'.$row['name'].'</strong></p>
 				<p style="line-height:22px; margin:10px 0"><strong>Công ty đào tạo và tư vấn Stevbros</strong> – uỷ quyền đào tạo của <strong>Viện Quản Lý Dự Án Hoa Kỳ (PMI)</strong> mã số 3807 – kính chào bạn. Cảm ơn bạn đã quan tâm đến các khoá học của Stevbros.</p>
 				<p style="line-height:22px; margin:10px 0">Stevbros xin thông báo bạn đã đăng ký khoá học thành công và Stevbros đã nhận được học phí của khoá học bạn đăng ký. Thông tin chi tiết như sau:</p>
-				<p style="margin-left:30px">Tên khoá học: <strong>'.$row['tensp'].'</strong><br />
+				<p style="margin-left:30px">
+					ID đơn hàng: <strong>'.$mTransactionID.'</strong><br />
+					ID khoá học: <strong>'.$row['idsp'].'</strong><br />
+					Tên khoá học: <strong>'.$row['tensp'].'</strong><br />
 					Phí khoá học: <strong>'.number_format($row['price']).'</strong> vnđ<br />
 					Email: <strong>'.$row['email'].'</strong></p>
 				<p style="line-height:22px; margin:10px 0">Nếu bạn đã đăng ký khoá học qua mạng, Stevbros sẽ cung cấp thông tin tài khoản, mật mã và hướng dẫn truy cập hệ thống học qua mạng của Stevbros qua email của bạn trong vòng 24 giờ. Nếu bạn đã đăng ký khoá học khai giảng định kỳ, Stevbros cũng sẽ liên hệ bạn qua email và phone để thông báo địa điểm cụ thể và tài liệu khoá học trong vòng 24 giờ.</p>
@@ -131,7 +138,8 @@ if(count($url_token)==1){
 			if($row['status']==0){
 				$name = $row['name'];
 				$email = $row['email'];
-				$content = $view_post.'<p style="line-height:22px; margin:10px 0"><strong>Đây là email tự động. Xin đừng trả lời. Nếu cần liên hệ xin email về <a href="mailto:support@stevbros.com">support@stevbros.com</a></strong></p>';
+				$content = $view_post.'<p style="line-height:22px; margin:10px 0">Điều kiện hủy giao dịch tham khảo tại đây: <a href="http://stevbros.edu.vn/tro-giup/tro-giup-va-dich-vu-khach-hang.html">ấn vào đây.</a></p>
+				<p style="line-height:22px; margin:10px 0"><strong>Đây là email tự động. Xin đừng trả lời. Nếu cần liên hệ xin email về <a href="mailto:support@stevbros.com">support@stevbros.com</a></strong></p>';
 				$tc->update_khachhang($mTransactionID,$nl_errorcode,1);
 				$send = ob_start();
 				include_once('sendmail_smtp/sendmail_thanhtoan.php');
