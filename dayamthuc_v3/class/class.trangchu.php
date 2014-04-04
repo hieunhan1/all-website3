@@ -100,10 +100,9 @@ class trangchu extends db {
 		$row_m = mysql_fetch_array($qr);
 		return $row_m['url'];
 	}
-	function phantrang($link,$page_number,$max_results,$select,$table,$where,$keyword=NULL,$catalog=NULL,$order=NULL){
+	function phantrang($link,$page_number,$max_results,$select,$table,$where){
 		$qr = $this->list_item($select,$table,$where);
-		$total = mysql_num_rows($qr);
-		mysql_free_result($qr);
+		if($qr) $total = mysql_num_rows($qr);
 		
 		$str = '<div style="clear:both"></div>';
 		$total_pages = ceil($total / $max_results);
