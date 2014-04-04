@@ -87,7 +87,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function view_thanhtoan_trave($id){
-		$qr = "SELECT thanhtoan_khachhang.name,gender,email,thanhtoan_khachhang.status,thanhtoan_sanpham.name as tensp,url_hinh,price FROM thanhtoan_khachhang,thanhtoan_sanpham WHERE thanhtoan_khachhang.`delete`=0 AND thanhtoan_khachhang.id='{$id}' AND ma_sanpham=thanhtoan_sanpham.id";
+		$qr = "SELECT thanhtoan_khachhang.name,gender,email,thanhtoan_khachhang.status,thanhtoan_sanpham.id as idsp,thanhtoan_sanpham.name as tensp,url_hinh,price FROM thanhtoan_khachhang,thanhtoan_sanpham WHERE thanhtoan_khachhang.`delete`=0 AND thanhtoan_khachhang.id='{$id}' AND ma_sanpham=thanhtoan_sanpham.id";
 		return mysql_query($qr);
 	}
 	function view_thanhtoan_error($id){
