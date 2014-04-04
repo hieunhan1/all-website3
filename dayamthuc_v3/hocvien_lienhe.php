@@ -42,7 +42,7 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
 <table width="500" border="0" cellpadding="10" cellspacing="0" align="center">
 	<tr><td colspan="2" align="center">
     	<span style="color:#333; font-size:30px; font-weight:bold">Liên hệ Trường NETSPACE</span><br />
-        <em>Ngày liên hệ: <b><?php echo date('d/m/Y', strtotime($row['date_create'])); ?></b></em><br />
+        <em>Ngày liên hệ: <b><?php echo date('H:i d/m/Y', strtotime($row['date_create'])); ?></b></em><br />
     	Nhân viên tiếp nhận: <span style="color:#00F; font-weight:bold"><?php echo $row_nguoinhan['name']; ?></span>
     </td></tr>
     <tr class="thongtin">

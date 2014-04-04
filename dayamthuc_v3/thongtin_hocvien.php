@@ -42,7 +42,7 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
 <table width="500" border="0" cellpadding="10" cellspacing="0" align="center">
 	<tr><td colspan="2" align="center">
     	<span style="color:#333; font-size:30px; font-weight:bold">Thông tin đăng ký học nấu ăn<br />Trường NETSPACE</span><br />
-        <em>Ngày đăng ký: <b><?php echo date('d/m/Y', strtotime($row['date_create'])); ?></b></em><br />
+        <em>Ngày đăng ký: <b><?php echo date('H:i d/m/Y', strtotime($row['date_create'])); ?></b></em><br />
     	Nhân viên tư vấn: <span style="color:#00F; font-weight:bold"><?php echo $row_nguoinhan['name']; ?></span>
     </td></tr>
     <tr class="thongtin">
@@ -51,7 +51,7 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
     </tr>
     <tr class="thongtin">
     	<td width="140">Ngày sinh</td>
-        <td><?php echo $row['ngaysinh']; ?></td>
+        <td><?php echo date('d/m/Y', strtotime($row['ngaysinh'])); ?></td>
     </tr>
     <tr class="thongtin">
     	<td width="100">Điện thoại</td>
