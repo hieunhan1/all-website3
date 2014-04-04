@@ -28,7 +28,10 @@ if($nl_result){
 			<p style="line-height:22px; margin:10px 0">Greetings from Stevbros Training and Consultancy - PMI® Registered Education Provider ID 3807.</p>
 			<p style="line-height:22px; margin:10px 0">Thank you very much for your interest in Stevbros’ training courses.</p>
 			<p style="line-height:22px; margin:10px 0">Please be informed that your enrollment is successful and your payment is well received. The detailed information is as follow:</p>
-			<p style="margin-left:30px">Course name: <strong>'.$row['tensp'].'</strong><br />
+			<p style="margin-left:30px">
+				Order ID: <strong>'.$mTransactionID.'</strong><br />
+				Course ID: <strong>'.$row['idsp'].'</strong><br />
+				Course name: <strong>'.$row['tensp'].'</strong><br />
 				Course fee: <strong>'.number_format($row['price']).'</strong> USD<br />
 				Email: <strong>'.$row['email'].'</strong></p>
 			<p style="line-height:22px; margin:10px 0">For customer enrolling online course, Stevbros will email you username, password, and guideline to access Stevbros’s online training system within 24 hours. For customers enrolling public course, Stevbros will also contact you for training venue and training materials within 24 hours.</p>
@@ -40,7 +43,9 @@ if($nl_result){
 		if($row['status']==0){
 			$name = $row['name'];
 			$email = $row['email'];
-			$content = $view_post.'<p style="line-height:22px; margin:10px 0"><strong>This email is sent automatically. Please do not reply. Contact us at <a href="mailto:support@stevbros.com">support@stevbros.com</a> for further information</strong></p>';
+			$content = $view_post.'
+			<p style="line-height:22px; margin:10px 0">If you need information of cancelation and refunds, please access this link: <a href="http://www.stevbros.com/help/help-customer-service.html">click here</a></p>
+			<p style="line-height:22px; margin:10px 0"><strong>This email is sent automatically. Please do not reply. Contact us at <a href="mailto:support@stevbros.com">support@stevbros.com</a> for further information</strong></p>';
 			$tc->update_khachhang($mTransactionID,$nl_errorcode,$_SERVER['REQUEST_URI']);
 			$send = ob_start();
 			include_once('sendmail_smtp/sendmail_thanhtoan.php');
