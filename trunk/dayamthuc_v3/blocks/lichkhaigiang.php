@@ -10,7 +10,7 @@
         echo '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2><br /></div>';
 	?>
     
-    <table cellpadding="6" cellspacing="0" border="1"  style="width:100%; border-collapse:collapse; line-height:35px">
+    <table cellpadding="6" cellspacing="0" border="1" id="lichkhaigiang">
         <tbody>
             <tr bgcolor="#990000">
                 <td style="text-align:center; padding:5px 0"><span style="color:#FF0; font-weight:bold; font-size:140%">TÊN KHÓA HỌC</span></td>
@@ -21,11 +21,11 @@
 			
             $qr = $tc->menu($idMenu,6);
             while($row = mysql_fetch_array($qr)){
-                echo '<tr bgcolor="#ffff99"><th colspan="2" style="color:#f00">'.$row['name'].'</th></tr>';
+                echo '<tr bgcolor="#ffff99"><th colspan="2" style="color:#000; font-size:110%">'.$row['name'].'</th></tr>';
                 $qr2 = $tc->menu($row['id'],6);
                 if(mysql_num_rows($qr2) > 1){
                     while($row2 = mysql_fetch_array($qr2)){
-                        echo '<tr><td colspan="2" style="text-align:center; font-size:14px; color:#0000FF; font-weight:bold">'.$row2['name'].'</td></tr>';
+                        echo '<tr><td colspan="2" style="text-align:center; font-size:14px; color:#F00; font-weight:bold">'.$row2['name'].'</td></tr>';
                         
                         $qr_kg = mysql_query("SELECT name,link,khaigiang FROM web_lichkhaigiang WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,".$row2['id'].",%' ORDER BY `order`");
                         $i = 0;
