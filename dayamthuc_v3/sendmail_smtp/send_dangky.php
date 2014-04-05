@@ -33,8 +33,8 @@ $mail->SetFrom($email_gui,$title);
 
 //Thiết lập thông tin người nhận
 $mail->AddAddress($email_nhan,$name_nhan);
-//$mail->AddCC('ceo@netspace.edu.vn','CEO');
-//$mail->AddCC('temp@dayamthuc.vn','Temp');
+$mail->AddCC('ceo@netspace.edu.vn','CEO');
+$mail->AddBCC('temp@dayamthuc.vn','Temp');
 
 //Thiết lập email nhận email hồi đáp
 //nếu người nhận nhấn nút Reply
