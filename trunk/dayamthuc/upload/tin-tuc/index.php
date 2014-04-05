@@ -1,1 +1,0 @@
-<?php header("location: http://www.dayamthuc.vn")?>
