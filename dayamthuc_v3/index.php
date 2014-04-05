@@ -217,7 +217,7 @@ if(@$_GET['danhmuc']){
 </div>
 
 <script type="text/javascript" src="library/jquery.min.js"></script>
-<script type="text/javascript" src="website.js"></script>
+<script type="text/javascript" src="website_v3.js"></script>
 <script type="text/javascript" src="library/jquery.corner.js"></script>
 
 <script type="text/javascript" src="library/partner/common.js"></script>

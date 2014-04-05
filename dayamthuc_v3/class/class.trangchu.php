@@ -200,7 +200,7 @@ class trangchu extends db {
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','vi','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','vi','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	/*dang ky truc tuyen*/
