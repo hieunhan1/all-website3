@@ -60,7 +60,7 @@
 			return mysql_query($qr);
 		}
 		function menu_admin(){
-			$qr = "SELECT `name`,`url`,`url_hinh` FROM `web_menu_admin` WHERE `status`=1 ORDER BY `order`";
+			$qr = "SELECT `id`,`name`,`url`,`url_hinh` FROM `web_menu_admin` WHERE `status`=1 ORDER BY `order`";
 			return mysql_query($qr);
 		}
 		function Navigator($url){
