@@ -2,6 +2,11 @@
 session_start();
 $lang = 'vi';
 
+if(!@$_COOKIE['case_v2']){
+	setcookie('case_v2','1',time() + 3600*24*7);
+	header("location:/");
+}
+
 define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
@@ -104,7 +109,7 @@ if(@$_GET['danhmuc']){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php echo $seo; ?>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="style_v3.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

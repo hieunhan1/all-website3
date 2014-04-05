@@ -99,5 +99,22 @@ if(@$_POST['nop_hs']){
 	}
 }
 
+if(@$_POST['sendmail_hv']){
+	$nguoigui = trim($_POST['nguoigui']);
+	
+	$title = trim($_POST['title']);
+	$ds_nguoinhan = trim($_POST['ds_nguoinhan']);
+	$content = $_POST['content'];
+	
+	if($nguoigui!='' && $title!='' && $ds_nguoinhan!=''){
+		include_once('sendmail_smtp/send_hocvien.php');
+		return true;
+	}else{
+		echo '0';
+		return false;
+	}
+}
+
+
 mysql_close();
 return true;

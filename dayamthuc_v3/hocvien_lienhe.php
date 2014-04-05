@@ -29,7 +29,7 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
 <meta http-equiv="content-language" content ="vi" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="abstract" content="Trường dạy nghề ẩm thực NETSPACE" />
-<link type="icon/x-icon" href="images/logo_icon.ico" rel="shortcut icon" /><link type="icon/x-icon" href="images/logo_icon.ico" rel="shortcut icon" />
+<link type="icon/x-icon" href="images/logo_icon.ico" rel="shortcut icon" />
 <style>
 	td{border-bottom:solid 1px #CCC}
 	.thongtin{background-color:#FF9}
