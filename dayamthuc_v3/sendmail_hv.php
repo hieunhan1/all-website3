@@ -33,7 +33,7 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
 <style>
 	td{border-bottom:solid 1px #CCC}
 	.thongtin{background-color:#FF9}
-	.txt{width:350px; line-height:25px; height:25px; border:solid 1px #999; background-color:#FFF}
+	.txt{width:450px; line-height:25px; height:25px; border:solid 1px #999; background-color:#FFF}
 	.btn{line-height:30px; height:30px; padding:5px 25px; color:#666; font-weight:bold}
 	#ajax{width:600px; margin:auto; text-align:center; font-size:20px; font-weight:bold}
 </style>
@@ -45,7 +45,7 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
 </head>
 <body>
 <div id="ajax"></div>
-<table width="600" border="0" cellpadding="10" cellspacing="0" align="center" id="form_sendmail">
+<table width="700" border="0" cellpadding="10" cellspacing="0" align="center" id="form_sendmail">
 	<tr><td colspan="2" align="center">
     	<span style="color:#333; font-size:30px; font-weight:bold">Gửi mail thông báo cho học viên<br />Trường NETSPACE</span>
     </td></tr>
@@ -59,21 +59,16 @@ if(mysql_num_rows($qr)==1 && $row['status']==2){
     </tr>
     <tr class="thongtin">
     	<td width="140" valign="top">Danh sách người nhận</td>
-        <td><textarea name="ds_nguoinhan" class="txt" style="height:80px; line-height:20px; resize:none; overflow:auto"></textarea></td>
+        <td><textarea name="ds_nguoinhan" class="txt" style="height:120px; line-height:20px; resize:none; overflow:auto"></textarea></td>
     </tr>
     <tr class="thongtin">
-    	<td width="140" valign="top">Nội dung</td>
-        <td><textarea name="content"></textarea>
+        <td colspan="2"><textarea name="content"></textarea>
             <script>
 			CKEDITOR.replace( 'content', {
 				uiColor: '#b5d8ef',
 				toolbar:
 				[
-				['Source','-','Maximize','-','PasteText','PasteFromWord'],
-				['Link','Unlink', 'NumberedList','BulletedList','-','Outdent','Indent'],
-				'/',
-				['FontSize','Bold','Italic','Underline'],
-				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','TextColor','BGColor'],
+				['Source','PasteText','PasteFromWord','Link','Unlink', 'NumberedList','BulletedList','Outdent','Indent','FontSize','Bold','Italic','Underline','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','TextColor','BGColor'],
 				]
 				});
 			</script>
