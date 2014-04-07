@@ -30,8 +30,12 @@ if(@$user){
 	if($p=='thoat') {
 		session_destroy();
 		header("location:index.php");
+		return true;
 	}
-}else header("location:index.php");
+}else{
+	header("location:index.php");
+	return false;
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -93,14 +97,16 @@ function SetFileField(fileUrl, data){
 				while($row = mysql_fetch_array($qr)){
 					$i++;
 					
-					if($i==11) $style = '<span id="hocvien_dangky" class="ajax_thongtin"></span>';
-					elseif($i==12) $style = '<span id="hocvien_lienhe" class="ajax_thongtin"></span>';
-					elseif($i==15) $style = '<span id="hoso_tuyendung" class="ajax_thongtin"></span>';
-					else $style = '';
-					
-					if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
-					else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
-					if($i == 2) echo '<hr />'; else if($i == 7) echo '<hr />'; else if($i == 12) echo '<hr />';
+					if( preg_match("/,{$row['id']},/i", $quyen_xem) ){
+						if($i==8) $style = '<span id="khachhang_dathang" class="ajax_thongtin"></span>';
+						elseif($i==9) $style = '<span id="khachhang_lienhe" class="ajax_thongtin"></span>';
+						elseif($i==12) $style = '<span id="hoso_tuyendung" class="ajax_thongtin"></span>';
+						else $style = '';
+						
+						if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
+						else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
+						if($i == 2) echo '<hr />'; else if($i == 6) echo '<hr />'; else if($i == 9) echo '<hr />'; else if($i == 12) echo '<hr />';
+					}
 				}
 			}
 			?>

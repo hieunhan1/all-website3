@@ -1,59 +1,36 @@
-<div class="wrapper"><div class="home_item_3">
-	<div id="navigator">
-        <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
-        <?php echo $tc->navigator($idMenu); ?>
-    </div>
-    <hr />
-    
-    <div id="left">
-    	<?php
-        echo '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2><br /></div>';
-		
-		$qr = $tc->menu($idMenu,6);
-		if(mysql_num_rows($qr) > 0){
-			$i = 0;
-			while($row = mysql_fetch_array($qr)){
-				$i++;
-				if($i%2 != 0) $style = 'style="margin:0 25px 25px 25px"'; else $style = 'style="margin:0 0 25px 0"';
-				
-				echo '<div class="thuvien_video_item" '.$style.'>
-				<a href="'.$row['url'].'"><div class="thuvien_video_item_img"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-				<div class="album_icon_video"></div>
-				<h3>'.$row['name'].'</h3></a></div>';
-			}
-		}else{
-			$from = (($page - 1) * max_limit_4);
-			$select = 'name,name_rewrite,url_hinh,metaDescription,menu_id';
-			$table = 'web_video';
-			$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
-			$limit = "LIMIT {$from},".max_limit_4;
-			$list = $tc->list_item($select,$table,$where,$limit);
-			$total = mysql_num_rows($list);
-			
-			if($total > 1){
-				while($row = mysql_fetch_array($list)){
-					$str_info .= '<div class="video_item_3" style="margin:20px">
-					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
-					<div class="img_video_item_3"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-					<h3>'.$row['name'].'</h3></a></div>';
-				}
-				
-				if($danhmuc!='danh-muc') $url_page = $danhmuc;
-				else $url_page = $row_menu_one['name_rewrite'];
-				
-				$phantrang = $tc->phantrang($url_page,$page,max_limit_1,'id',$table,$where);
-				$str_info .= '<div style="clear:both; height:20px"></div><div id="phantrang">'.$phantrang.'</div>';
-			}elseif($total == 1){
-				$row = mysql_fetch_array($list);
-				header('location: http://'.$domain.'/'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html');
-			}else{
-				$str_info = '<div style="padding:0 50px">update..</div>';
-			}
-			echo $str_info;
-		}
-		?>
-    </div>
-    
-    <?php include_once('blocks/right.php'); ?>
-    <div style="clear:both; height:10px"></div>
-</div></div>
+<?php
+$from = (($page - 1) * max_limit_4);
+$select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id,date_create';
+$table = 'web_video';
+$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
+$limit = "LIMIT {$from},".max_limit_4;
+$list = $tc->list_item($select,$table,$where,$limit);
+$total = mysql_num_rows($list);
+
+if($total > 1){
+	while($row = mysql_fetch_array($list)){
+	$link = "http://{$domain}/".$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
+	$str_video .= '<div class="item_video">
+		<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
+		<div class="date_video">Ngày đăng '.date('d-m-Y H:i', strtotime($row['date_create'])).'</div>
+		<div class="img_video"><div><a href="'.$link.'"><img src="'.url_video.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div></div>
+		<div class="detail_video">'.$row['metaDescription'].'</div>
+		<div style="text-align:right"><span class="social"><a href="javascript:void();" style="color:#DA251E" onclick="facebook_share(\''.$link.'\')">Share facebook</a></span>
+		<a href="'.$link.'" style="padding-left:30px; font-weight:bold; color:#DA251E">Xem chi tiết</a></div>
+	</div>';
+	}
+	$phantrang = $tc->phantrang($danhmuc,$page,max_limit_4,'id',$table,$where);
+	$str_video .= '<div style="clear:both; height:10px"></div><div id="phantrang">'.$phantrang.'</div>';
+}else{
+	$str_video = '<div style="padding:0 50px">update..</div>';
+}
+
+
+echo '<div style="clear:both; height:10px"></div>
+<div id="navigator" style="margin-bottom:15px; padding-left:20px">
+    <a href="?lang='.$lang.'"><img src="images/home.jpg" alt="trang chủ" /></a>
+    '.$tc->navigator($idMenu).'
+</div>
+
+<div class="title_list" style="margin-bottom:30px"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2></div>'.$str_video.'<div style="clear:both; height:10px"></div>
+';

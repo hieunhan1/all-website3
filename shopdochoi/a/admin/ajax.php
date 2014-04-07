@@ -46,11 +46,11 @@ if(@$_SESSION["username_admin"]) {
 		
 	/*other*/
 	// cap nhat: dang ky, lien he, nop ho so
-	if(isset($_POST['hocvien_dangky'])){
-		$qr = mysql_query("SELECT id FROM web_dangky_tructuyen WHERE `delete`=0 AND `status`=0 ");
+	if(isset($_POST['khachhang_dathang'])){
+		$qr = mysql_query("SELECT id FROM web_order WHERE `delete`=0 AND `status`=0 ");
 		echo mysql_num_rows($qr);
 	}
-	if(isset($_POST['hocvien_lienhe'])){
+	if(isset($_POST['khachhang_lienhe'])){
 		$qr = mysql_query("SELECT id FROM web_contact WHERE `delete`=0 AND `status`=0 ");
 		echo mysql_num_rows($qr);
 	}
