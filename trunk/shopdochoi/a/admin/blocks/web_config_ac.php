@@ -106,6 +106,13 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	//slogan
+	$values = $row_detail['slogan'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Slogan','slogan','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//copyright
 	$values = $row_detail['copyright'];
 	$properties = array('250'); //maxlength OTHER (disabled, readonly) 
@@ -120,14 +127,6 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//contact_foo
-	$values = $row_detail['contact_foo'];
-	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Footer','contact_foo','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	/*
 	//yahoo
 	$values = $row_detail['yahoo'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
@@ -142,16 +141,9 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//hotline
-	$values = $row_detail['hotline'];
-	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Hotline','hotline','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
 	//contact_foo
 	$values = $row_detail['contact_foo'];
-	$properties = ''; //disabled, readonly
+	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Thông tin footer','contact_foo','textarea'); //label id&name class colspan
 	$other = ckeditor_custom('contact_foo');
     $form->getProperties('3',$values,$properties,$views,$other);
@@ -164,7 +156,7 @@ echo '<form name="form_action" method="post" action="">
 	$other = ckeditor_custom('contact_form');
     $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
-	*/
+	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name

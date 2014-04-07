@@ -28,25 +28,26 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one($alias){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id,lang FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	function menu_one_id($id){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM web_menu WHERE `delete`=0 AND status=1 AND id='{$id}' LIMIT 1";
+		$qr = "SELECT id,name,url,parent_id FROM web_menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
 		return mysql_query($qr);
 	}
-	function menu($level,$position,$lang=NULL){
-		if($lang!=NULL) $lang = "AND lang='{$lang}'"; else $lang = '';
-		$qr = "SELECT id,name,url,url_hinh,title,metaDescription,type_id FROM web_menu WHERE `delete`=0 AND status=1 {$lang} AND position_id LIKE '%,{$position},%' AND parent_id ='{$level}' ORDER BY `order`";
+	function menu($level,$position=NULL,$lang=NULL){
+		if($position!=NULL) $position = " AND position_id LIKE '%,{$position},%'"; else $position = '';
+		if($lang!=NULL) $lang = " AND lang='{$lang}'"; else $lang = '';
+		$qr = "SELECT id,name,url,url_hinh,title FROM web_menu WHERE `delete`=0 AND status=1 {$lang} {$position} AND parent_id ='{$level}' ORDER BY `order`";
 		return mysql_query($qr);
 	}
-	function getSubmenu($level,$position,$lang){
+	function getSubmenu($level,$position){
 		$sql = $this->menu($level,$position);
 		if(mysql_num_rows($sql) > 0){
 			$view = '<ul>';
 			while($row = mysql_fetch_array($sql)){
-				$view .= '<li><a href="'.$row['url'].'">'.$row['name'].'</a>';
-				$view .= $this->getSubmenu($row['id'],$position,$lang);
+				$view .= "<li><a href=\"{$row['url']}\" >{$row['name']}</a>";
+				$view .= $this->getSubmenu($row['id'],$position);
 				$view .= '</li>';
 			}
 			mysql_free_result($sql);
@@ -93,11 +94,11 @@ class trangchu extends db {
 		$str = '<div style="clear:both"></div>';
 		$total_pages = ceil($total / $max_results);
 		if($total_pages > 1){
-			for($i = $page_number - 5; $i <= $page_number + 5 & $i <= $total_pages; $i++){
+			for($i = 0; $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}_page_{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
 				} elseif($i>0) {
-					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
+					$str .= "<a href='{$link}_page_{$i}/'>{$i}</a>";
 				}
 			}
 		}
@@ -105,86 +106,111 @@ class trangchu extends db {
 	}
 	
 	/*home*/
-	function chinhanh_ds(){
-		$qr = "SELECT name,email,phone,diachi,hotline,yahoo_nick,yahoo_name FROM web_chinhanh WHERE `delete`=0 AND status=1 ORDER BY date_update DESC";
+	function home_about($idMenu){
+		$qr	= "SELECT name,name_rewrite,metaDescription,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC";
+		return mysql_query($qr);
+	}
+	function home_video($idMenu){
+		$qr	= "SELECT name,name_rewrite,link,menu_id FROM web_video WHERE `delete`=0 AND status=1 AND `other`=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC";
+		return mysql_query($qr);
+	}
+	function home_danhmuc($lang){
+		$qr	= "SELECT id,name,url,url_hinh,type_id FROM web_menu WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY `order`";
+		return mysql_query($qr);
+	}
+	function home_list_product($id){
+		$qr	= "SELECT id,name,name_rewrite,url_hinh,price,price_km,menu_id FROM web_products WHERE `delete`=0 AND status=1 AND `other`=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 5";
+		return mysql_query($qr);
+	}
+	function home_list_info($id){
+		$qr	= "SELECT name,name_rewrite,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 9";
+		return mysql_query($qr);
+	}
+	function home_list_video($id){
+		$qr	= "SELECT name,name_rewrite,menu_id FROM web_video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 9";
+		return mysql_query($qr);
+	}
+	
+	/*detail*/
+	function info_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_create FROM web_info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function product_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,price,price_km,url_hinh,metaDescription,content,metaKeyword,dactinh FROM web_products WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function picture_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,date_create FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	function video_detail($alias){
+		$qr = "SELECT id,name,name_rewrite,url_hinh,link,metaDescription,content,metaKeyword,date_create FROM web_video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		return mysql_query($qr);
+	}
+	
+	/*products*/
+	function video_product($id){
+		$qr	= "SELECT name,link FROM web_video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 2";
+		return mysql_query($qr);
+	}
+	function product_other($idMenu,$id){
+		$qr = "SELECT id,name,name_rewrite,price,price_km,url_hinh FROM web_products WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 4";
 		return mysql_query($qr);
 	}
 	
 	/*info*/
-	function info_danhmuc($id,$limit=NULL){
-		if($limit==NULL) $limit = ''; else $limit = "LIMIT {$limit}";
-		$qr = "SELECT name,name_rewrite,url_hinh,content,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
-		return mysql_query($qr);
-	}
-	function info_home(){
-		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 10";
-		return mysql_query($qr);
-	}
-	function info_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,menu_id,other2 FROM web_info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
-		return mysql_query($qr);
-	}
 	function info_other($idMenu,$id){
-		$qr = "SELECT name,name_rewrite FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' AND id<>'{$id}' ORDER BY date_update DESC LIMIT 5";
+		$qr = "SELECT name,name_rewrite FROM web_info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 8";
+		return mysql_query($qr);
+	}
+	function info_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
 		return mysql_query($qr);
 	}
 	
-	/*photos*/
-	function photos_home(){
-		$qr = "SELECT name,url,url_hinh FROM web_menu WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY `order` LIMIT 4";
+	/*image*/
+	function image_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite FROM web_menu WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND parent_id='{$idMenu}' ORDER BY date_update DESC LIMIT 12";
 		return mysql_query($qr);
 	}
-	function photo_detail($id){
+	function image_all($id){
 		$qr = "SELECT name,url_hinh FROM web_photo_gallery WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC";
 		return mysql_query($qr);
 	}
 	
 	/*video*/
-	function video_danhmuc($id,$limit=NULL){
-		if($limit==NULL) $limit = ''; else $limit = "LIMIT {$limit}";
-		$qr = "SELECT name,link FROM web_video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
-		return mysql_query($qr);
-	}
-	function video_home($limit){
-		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM web_video WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT {$limit}";
-		return mysql_query($qr);
-	}
-	function video_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,link FROM web_video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
-		return mysql_query($qr);
-	}
 	function video_other($idMenu,$id){
-		$qr = "SELECT name,name_rewrite FROM web_video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' AND id<>'{$id}' ORDER BY date_update DESC LIMIT 5";
+		$qr = "SELECT name,name_rewrite FROM web_video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY rand() LIMIT 8";
 		return mysql_query($qr);
 	}
-	
-	/*tuyendung*/
-	function tuyendung_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,content,noilamviec,mucluong,soluongtuyen,quyenloi,yeucau,tuyendung_cty_id FROM web_tuyendung WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
+	function video_news($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,menu_id FROM web_video WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
 		return mysql_query($qr);
-	}
-	function tuyendung_cty($id){
-		$qr = "SELECT name,content,diachi,phone,email,website,fax FROM web_tuyendung_cty WHERE `delete`=0 AND status=1 AND id='{$id}' LIMIT 1";
-		return mysql_query($qr);
-	}
-	function tuyendung_hoso($name,$content,$diachi,$phone,$email,$trinhdo,$tuyendung_id){
-		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `web_tuyendung_hoso` VALUES (NULL,'{$name}','','{$content}','{$diachi}','{$phone}','{$email}','{$trinhdo}','{$tuyendung_id}','vi','0','{$date}','{$date}','khachhang','','0') ";
-		mysql_query($qr);
 	}
 	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','vi','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
-	/*dang ky truc tuyen*/
-	function dangky_tructuyen($name,$ngaysinh,$email,$phone,$diachi,$totnghiep,$khoahoc,$noihoc,$other,$hoivien){
+	
+	/*don hang*/
+	function insert_donhang($id,$name,$email,$phone,$diachi,$message,$tongtien){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `web_dangky_tructuyen` VALUES ('','{$name}','{$ngaysinh}','{$email}','{$phone}','{$diachi}','{$totnghiep}','{$khoahoc}','{$noihoc}','{$other}','{$hoivien}','','vi','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `web_order` VALUES ('{$id}','{$date}','{$date}','{$name}','{$diachi}','{$phone}','{$email}','{$message}','{$tongtien}','vi','0','0','khachhang','')";
 		mysql_query($qr);
-		return mysql_insert_id();
 	}
+	function insert_donhang_chitiet($donhang_id,$products_id,$dongia,$soluong,$tien){
+		$qr = "INSERT INTO `web_order_detail` VALUES ('','{$donhang_id}','{$products_id}','{$soluong}','{$dongia}','{$tien}',0)";
+		mysql_query($qr);
+	}
+	
+	/*other*/
+	function properties_product_buy($id,$name,$price,$price_km=0){
+		return "{$id} -|- {$name} -|- {$price} -|- {$price_km}";
+	}
+	
 }// end trangchu
 ?>

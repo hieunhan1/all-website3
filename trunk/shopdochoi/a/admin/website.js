@@ -128,16 +128,16 @@ $(document).ready(function(){
 	
 	/*other*/
 	// cap nhat: dang ky, lien he, nop ho so
-	$.post("ajax.php",{hocvien_dangky:"hocvien_dangky"},function(data){
-		$("#hocvien_dangky").html(' (' + data + ')');
+	$.post("ajax.php",{khachhang_dathang:"khachhang_dathang"},function(data){
+		$("#khachhang_dathang").html(' (' + data + ')');
 	});
-	$.post("ajax.php",{hocvien_lienhe:"hocvien_lienhe"},function(data){
-		$("#hocvien_lienhe").html(' (' + data + ')');
+	$.post("ajax.php",{khachhang_lienhe:"khachhang_lienhe"},function(data){
+		$("#khachhang_lienhe").html(' (' + data + ')');
 	});
 	$.post("ajax.php",{hoso_tuyendung:"hoso_tuyendung"},function(data){
 		$("#hoso_tuyendung").html(' (' + data + ')');
 	});
-	
+
 	// gui thong tin
 	$("input[name=btn_gui_thongtin]").click(function(){ 
 		var id_nv = $("select[name=nhanvien_lienhe]").val();
