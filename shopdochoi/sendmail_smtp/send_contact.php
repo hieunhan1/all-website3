@@ -50,7 +50,7 @@ $mail->CharSet = "utf-8";
 //Thiết lập nội dung chính của email
 $body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br />
 <p style="color:#666; font-size:110%">'.$message.'</p><br />
-<p><strong>Thông tin cá nhân: </strong> <a href="http://www.dayamthuc.vn/hocvien_lienhe.php?nguoinhan='.$id_nv.'&id='.$id.'">Click vào đây để xem thông tin học viên</a></p>';
+<p><strong>Thông tin cá nhân: </strong> <a href="http://www.shopdochoi.com/thongtin_lienhe.php?nguoinhan='.$id_nv.'&id='.$id.'">Click vào đây để xem thông tin học viên</a></p>';
 
 $mail->Body = $body;
 

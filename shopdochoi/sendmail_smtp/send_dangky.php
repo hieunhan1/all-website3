@@ -49,7 +49,7 @@ $mail->Subject = $subject;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào ban quản trị website.</h3><br />Bạn <strong>'.$name.'</strong> đăng ký học. <br />Tên khóa học: '.$khoahoc.'<br />Tại cơ sở: '.$noihoc.'<br /><br /><strong>Thông tin cá nhân: </strong> <a href="http://www.dayamthuc.vn/thongtin_hocvien.php?nguoinhan='.$id_nv.'&id='.$id.'">Click vào đây để xem thông tin học viên</a>';
+$body = '<h3>Chào ban quản trị website.</h3><br />Bạn <strong>'.$name.'</strong> đăng ký học. <br />Tên khóa học: '.$khoahoc.'<br />Tại cơ sở: '.$noihoc.'<br /><br /><strong>Thông tin cá nhân: </strong> <a href="http://www.shopdochoi.com/thongtin_dathang.php?nguoinhan='.$id_nv.'&id='.$id.'">Click vào đây để xem thông tin học viên</a>';
 
 $mail->Body = $body;
 
