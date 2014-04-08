@@ -46,6 +46,7 @@ if(@$_GET['danhmuc']){
 			case 5 : include_once('blocks/video_list.php'); break;
 			case 6 : include_once('blocks/contact.php'); break;
 			case 7 : include_once('blocks/giohang.php'); break;
+			case 11 : include_once('blocks/tuyendung_list.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -58,6 +59,7 @@ if(@$_GET['danhmuc']){
 			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
 			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
 			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;
+			case 11 : $qr = $tc->tuyendung_detail($dt); $row_detail = mysql_fetch_array($qr); include_once('blocks/tuyendung.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -113,9 +115,12 @@ if(@$_GET['danhmuc']){
             </div>
             <?php
             //gio hang
+			$sosp = count($_SESSION['list_soluong']);
+			if($sosp > 0) $view_sl_sp = ' <span style="color:#15A6D4; font-size:110%">('.$sosp.')</span>';
+			
 			$qr = $tc->menu_type(7,0,$lang);
 			$row_giohang = mysql_fetch_array($qr);
-			echo '<div id="icon_giohang"><a href="'.$row_giohang['url'].'">'.$row_giohang['name'].'</a></div>';
+			echo '<div id="icon_giohang"><a href="'.$row_giohang['url'].'">'.$row_giohang['name'].$view_sl_sp.'</a></div>';
 			?>
         </div>
         <div id="lang">

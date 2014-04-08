@@ -49,7 +49,7 @@ if ($sosp > 0){
         	<td colspan="5"><?php echo "<div class='viewpost'><h1>{$row_menu_one['title']}</h1></div>"?>
             <div id="luuy" style="line-height:22px; font-size:105%">
                 <p style="margin-bottom:10px"><b><em>Chính sách bán hàng:</em></b></p>
-                <p style="margin-bottom:10px"><b>Hiện tại công ty chỉ giao hàng trong khu vực Trung Tâm Tp.HCM. Quí khách có nhu cầu mua bột trộn sẵn Mikko có thể đến siêu thị Co.opmart, Big C, Metro, Citimart hoặc các cửa hàng đại lý bột Mikko.</b></p>
+                <p style="margin-bottom:10px"><b>Hiện tại công ty chỉ giao hàng trong khu vực Trung Tâm Tp.HCM. Quí khách có nhu cầu mua đồ chơi của shopdochoi.com vui lòng đến địa chỉ Số 10 An Điềm, Phường 10, Quận 5, TP. Hồ Chí Minh.</b></p>
                 <p style="margin-bottom:10px">- Chỉ giao hàng miễn phí ở gần trung tâm thành phố như: Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q10, Q11, Bình Thạnh, Phú Nhuận, Tân Phú, Tân Bình, Bình Tân <b style="color:#C00">với hóa đơn lớn hơn 100.000đ</b></p>
                 <p style="margin-bottom:10px">- Còn những khu vực Q9, Q12, Thủ Đức, Củ Chi, Hóc Môn, Bình Chánh, Nhà Bè, Cần Giờ Quí khách phải trả thêm chi phi giao hàng.</p>
                 <p style="color:#00F; font-weight:bold; margin-bottom:10px">- Trước khi giao hàng nhân viên sẽ liên hệ cho Quí khách</p>
