@@ -65,7 +65,9 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 .list_info .list_img{width:140px; float:right}
 .list_info .list_img img{width:140px}
 
-#footer{text-align:center; color:#000; font-weight:bold; font-size:110%; line-height:25px; padding:20px 0; border-top:solid 10px #7B7B7B}
+#social{width:auto; float:left; margin:30px 100px 0 20px}
+#social img{height:60px}
+#footer{width:450px; float:left; text-align:center; color:#000; font-weight:bold; font-size:110%; line-height:25px; padding:20px 0}
 
 .viewpost{line-height:25px}
 .viewpost p, .viewpost div {line-height:20px; margin:15px 0}

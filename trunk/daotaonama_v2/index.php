@@ -125,10 +125,11 @@ if(@$_GET['danhmuc']){
 			while($row_ct = mysql_fetch_array($qr)){
 				$i++;
 				if($row_ct['name_rewrite'] != $dt) $style = ''; else $style = 'style="color:#DB0000"';
+				if($row_ct['other2'] == 1) $new = '<img src="images/new.gif" alt="new" />'; else $new = ''; 
 				if($i%2 == 1){
-					$str_l .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html" '.$style.'>'.$row_ct['name'].'</a></li>';
+					$str_l .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html" '.$style.'>'.$row_ct['name'].$new.'</a></li>';
 				}else{
-					$str_r .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html" '.$style.'>'.$row_ct['name'].'</a></li>';
+					$str_r .= '<li><a href="'.$row['url'].$row_ct['name_rewrite'].'.html" '.$style.'>'.$row_ct['name'].$new.'</a></li>';
 				} 
 			}
 			echo '<div style="width:310px; float:left">'.$str_l.'</div>
@@ -141,9 +142,17 @@ if(@$_GET['danhmuc']){
         
     </div>
     <?php include_once('blocks/right.php'); ?>
-    <div style="clear:both; height:20px"></div>
+    <div style="clear:both; height:20px; border-bottom:solid 10px #7B7B7B"></div>
+    <div id="social">
+    	<?php
+        $qr = $tc->menu(0,3);
+		while($row = mysql_fetch_array($qr)){
+			echo '<a href="'.$row['url'].'" title="'.$row['name'].'"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
+		}
+		?>
+    </div>
     <div id="footer"><?php echo $row_config['contact_foo']; ?></div>
-    
+    <div style="clear:both; height:5px"></div>
     <?php include_once('blocks/support_online.php'); ?>
 </div>
 <?php mysql_close();?>

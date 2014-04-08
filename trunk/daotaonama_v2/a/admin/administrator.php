@@ -36,8 +36,12 @@ if(@$user){
 	if($p=='thoat') {
 		session_destroy();
 		header("location:index.php");
+		return true;
 	}
-}else header("location:index.php");
+}else{
+	header("location:index.php");
+	return false;
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
