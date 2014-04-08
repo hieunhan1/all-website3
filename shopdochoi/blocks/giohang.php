@@ -71,7 +71,7 @@ if ($sosp > 0){
         </tr>
         <tr>
         	<td width="120" align="right">Họ tên:</td>
-        	<td><input type="text" name="name" style="width:300px; height:25px; line-height:25px; border:solid 1px #CCC" /></td>
+        	<td><input type="text" name="name" maxlength="30" style="width:300px; height:25px; line-height:25px; border:solid 1px #CCC" /></td>
         </tr>
         <tr>
         	<td align="right">Email:</td>
@@ -79,11 +79,11 @@ if ($sosp > 0){
         </tr>
         <tr>
         	<td align="right">Điện thoại:</td>
-        	<td><input type="text" name="phone" style="width:300px; height:25px; line-height:25px; border:solid 1px #CCC" /></td>
+        	<td><input type="text" name="phone" maxlength="15" style="width:300px; height:25px; line-height:25px; border:solid 1px #CCC" /></td>
         </tr>
         <tr>
         	<td align="right">Địa chỉ:</td>
-        	<td><input type="text" name="diachi" style="width:300px; height:25px; line-height:25px; border:solid 1px #CCC" /></td>
+        	<td><input type="text" name="diachi" maxlength="200" style="width:300px; height:25px; line-height:25px; border:solid 1px #CCC" /></td>
         </tr>
         <tr>
         	<td align="right" valign="top">Yêu cầu:</td>

@@ -22,7 +22,7 @@
           </tr>
           <tr>
             <td><?php echo const_contact_phone;?>:</td>
-            <td><input type="text" name="phone" class="txt" /></td>
+            <td><input type="text" name="phone" class="txt" maxlength="15" /></td>
             <td align="center"><?php echo const_contact_diachi;?>:</td>
             <td><input type="text" name="diachi" class="txt" /></td>
           </tr>

@@ -29,7 +29,7 @@
 			else var str_price = '<div id="price_ban_popup">' + price.formatMoney(0, ',' , '.') + ' VNĐ</div>';
 			
 			var str_info = id +' -|- '+ name +' -|- '+ price +' -|- '+ price_km;
-			var str = '<div id="name_popup">' +name+ '</div>' + str_price + '<div id="soluong_popup">Số lượng: <input type="text" name="soluong" value="1" /><span id="error_soluong"></span></div>';
+			var str = '<div id="name_popup">' +name+ '</div>' + str_price + '<div id="soluong_popup">Số lượng: <input type="text" name="soluong" value="1" maxlength="3" /><span id="error_soluong"></span></div>';
 			str += '<div style="padding-left:30px"><input type="button" name="btn_datmua" value="ĐẶT MUA" class="btn_popup" style="background-color:#05941E" info="'+ str_info +'" />';
 			str += '<input type="button" name="btn_huy" value="Hủy" class="btn_popup popupContactClose" style="background-color:#999" /><span id="checks_thanhtoan"></span></div>';
 			$("#ajax_datmua").html(str);
