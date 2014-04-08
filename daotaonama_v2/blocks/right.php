@@ -4,7 +4,8 @@
         <?php
         $qr = $tc->tinnoibat();
         while($row = mysql_fetch_array($qr)){
-            echo '<li><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
+			if($row['other2'] == 1) $new = '<img src="images/new.gif" alt="new" />'; else $new = ''; 
+            echo '<li><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].$new.'</a></li>';
         }
         ?>
     </div>

@@ -103,12 +103,12 @@ class trangchu extends db {
 	
 	/*home*/
 	function home_chuongtrinh($id){
-		$qr = "SELECT id,name,name_rewrite,content FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC ";
+		$qr = "SELECT id,name,name_rewrite,content,other2 FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC ";
 		return mysql_query($qr);
 	}
 	
 	function tinnoibat(){
-		$qr = "SELECT name,name_rewrite,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 3";
+		$qr = "SELECT name,name_rewrite,menu_id,other2 FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 3";
 		return mysql_query($qr);
 	}
 	

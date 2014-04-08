@@ -125,6 +125,15 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	//other2 new.gif
+	$arr = array();
+	$arr[] = array('id'=>'1', 'name'=>'Hiện');
+	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
+	if(!isset($row_detail['other2'])) $properties = '0'; else  $properties = $row_detail['other2']; //default check
+	$views = array('New','other2','radio',' &nbsp; '); //label name class other
+    $form->getProperties('4',$arr,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//content
 	$values = $row_detail['content'];
 	$properties = ''; //disabled, readonly
