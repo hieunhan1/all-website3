@@ -104,5 +104,24 @@ if($_POST['form_thanhtoan']=='form_thanhtoan'){
 	}
 }
 
+if(@$_POST['nop_hs']){
+	$tuyendung_id = trim($_POST['nop_hs']);
+	$name = trim($_POST['name']);
+	$diachi = trim($_POST['diachi']);
+	$email = trim($_POST['email']);
+	$phone = trim($_POST['phone']);
+	$trinhdo = trim($_POST['trinhdo']);
+	$content = trim($_POST['content']);
+	
+	if($tuyendung_id!='' && strlen($name)>5 && strlen($diachi)>5 && strlen($email)>5 && strlen($phone)>9 && $trinhdo!='' && strlen($content)>49){
+		echo '1';
+		$tc->tuyendung_hoso($name,$content,$diachi,$phone,$email,$trinhdo,$tuyendung_id);
+		return true;
+	}else{
+		echo '0';
+		return false;
+	}
+}
+
 mysql_close();
 return true;

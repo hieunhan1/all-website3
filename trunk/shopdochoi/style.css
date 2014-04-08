@@ -20,7 +20,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #top #company_search #search .txtSearch{width:255px; color:#828282; height:28px; line-height:28px; padding-left:10px; background:none; border:none}
 #top #company_search #search .btnSearch{width:40px; height:28px; cursor:pointer; background:none; border:none}
 #top #company_search #icon_giohang{width:135px; height:30px; float:right; margin:19px 8px 0 0; background:url(images/images_top.gif) no-repeat; background-position:0px -74px}
-#top #company_search #icon_giohang a{display:block; color:#F17039; font-weight:bold; line-height:30px; padding-left:50px}
+#top #company_search #icon_giohang a{display:block; color:#F17039; font-weight:bold; line-height:30px; padding-left:45px}
 #top #lang{width:auto; float:right; line-height:16px; margin:10px 0}
 #top #lang p{width:auto; float:left; margin:0 3px 0 15px}
 #top #lang img{float:left; margin-right:5px}
@@ -43,7 +43,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .home_sp_item .home_sp_img{height:140px; overflow:hidden; text-align:center; margin-bottom:10px}
 .home_sp_item .home_sp_img img{height:140px}
 .home_sp_item h3{font-size:100%; line-height:20px; margin-bottom:8px}
-.home_sp_item .home_sp_buy{width:72px; line-height:22px; float:left; color:#FFF; font-weight:bold; text-align:center; background:url(images/btn_buy.jpg) no-repeat; cursor:pointer}
+.home_sp_item .home_sp_buy{width:72px; line-height:22px; float:left; color:#FFF; font-weight:bold; text-align:center; margin-bottom:2px; background:url(images/btn_buy.jpg) no-repeat; cursor:pointer}
 .home_sp_item .home_sp_price{width:100px; float:right; line-height:20px; text-align:right; font-size:12px}
 .home_sp_item .home_sp_price .home_sp_price_goc{text-decoration:line-through}
 .home_sp_item .home_sp_price .home_sp_price_ban b{font-weight:bold; color:#F00}
@@ -134,6 +134,17 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #phantrang a{margin-right:3px; padding:5px 10px; text-align:center; background-color:#999; color:#FFF}
 #phantrang a:hover{background-color:#DA251E}
 
+#tuyendung{border-collapse:collapse}
+#tuyendung td, #tuyendung th{padding:10px 5px; border-bottom:dotted 1px #CCC}
+
+#tuyendung_thongtin td, #tuyendung_thongtin th{padding:10px 15px; border-bottom:dotted 1px #CCC}
+
+.btn_nop_hs{clear:both; width:118px; height:29px; line-height:29px !important; font-weight:bold; color:#FFF; margin:0; padding-left:30px; background:url(images/btn-nop-hs.gif); cursor:pointer}
+
+.text_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
+.select_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
+.btn_dangky{width:auto; padding:8px 50px; font-size:120%; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
+
 /*menu*/
 #menu{height:34px; margin-bottom:5px; background:url(images/images_top.gif) no-repeat; background-position:0px 0px}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
@@ -159,7 +170,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #backgroundPopup{display:none; position:fixed; _position:absolute; /*IE 6*/ height:100%; width:100%; top:0; left:0; background:#FFF; order:1px solid #CECECE; z-index:1100}
 #popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
 .popupContactClose{font-weight: bold; cursor:pointer}
-#content_popup{width:500px; height:auto; border:solid 2px #E66460; background-color:#FFF}
+#content_popup{width:600px; height:auto; border:solid 2px #E66460; background-color:#FFF}
 #content_popup #title_popup{line-height:40px; color:#FFF; font-weight:bold; font-size:130%; padding:0 20px; background-color:#E66460}
 #content_popup #info_popup{line-height:28px; font-size:100%; padding:20px}
 #content_popup #info_popup #name_popup{font-weight:bold; font-size:140%; color:#0048FF}
@@ -173,6 +184,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .lienhe{display:none; width:auto; float:right; font-size:80%; margin:7px; padding:2px 10px; cursor:pointer; background-color:#828282}
 .trash{font-weight:bold; color:#ED1E24; font-size:120%; padding:10px; cursor:pointer}
 .muahang{width:180px; padding:5px 0; color:#FFF; text-align:center; font-weight:bold; margin:auto; background-color:#ED1E24; cursor:pointer}
+/* popup */
 
 /*Photos*/
 #photos * {margin:0px; padding:0px}
