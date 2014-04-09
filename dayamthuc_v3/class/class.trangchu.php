@@ -184,7 +184,7 @@ class trangchu extends db {
 	
 	/*tuyendung*/
 	function tuyendung_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,content,noilamviec,mucluong,soluongtuyen,quyenloi,yeucau,tuyendung_cty_id FROM web_tuyendung WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,content,noilamviec,mucluong,soluongtuyen,quyenloi,yeucau,hannop,tuyendung_cty_id FROM web_tuyendung WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
 		return mysql_query($qr);
 	}
 	function tuyendung_cty($id){
