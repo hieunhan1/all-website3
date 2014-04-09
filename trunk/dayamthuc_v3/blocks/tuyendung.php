@@ -66,6 +66,10 @@
 				if($row['website'] != '') echo "Website: <a href='http://".trim($row['website'],'http://')."' target='_blank'>{$row['website']}</a><br />";
 				?></td>
             </tr>
+            <tr>
+            	<td align="right" valign="top" style="border-right:dotted 1px #CCC; font-weight:bold; color:#F60">Hạn nộp hồ sơ:</td>
+            	<td style="font-weight:bold; color:#060; font-size:130%"><?php echo date('d/m/Y',strtotime($row_detail['hannop'])); ?></td>
+            </tr>
         </table>
         <div class="btn_nop_hs">Nộp hồ sơ ngay</div>
         <div style="clear:both; height:30px"></div>

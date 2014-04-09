@@ -203,7 +203,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .info_list .info_list_img{width:190px; height:140px; overflow:hidden; float:left; margin-right:15px}
 .info_list .info_list_img img{width:188px; border:solid 1px #CCC}
 .info_list .info_list_text{line-height:20px; height:60px; overflow:hidden}
-.info_list h3{font-size:110%; line-height:20px; font-family:"UTM-Swiss-Condensed"; margin-bottom:5px}
+.info_list h3{font-size:115%; line-height:20px; font-family:"UTM-Swiss-Condensed"; margin-bottom:5px}
 
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
