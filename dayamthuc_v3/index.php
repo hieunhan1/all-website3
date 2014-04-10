@@ -2,11 +2,6 @@
 session_start();
 $lang = 'vi';
 
-if(!@$_COOKIE['case_v2']){
-	setcookie('case_v2','1',time() + 3600*24*7);
-	header("location:/");
-}
-
 define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
