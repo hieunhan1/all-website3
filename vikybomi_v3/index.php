@@ -123,7 +123,8 @@ if(@$_GET['danhmuc']){
         	<p><a href="?lang=en"><img src="images/en.gif" alt="English" />English</a></p>
         </div>
         <div id="support">
-        	<p style="color:#666; width:auto; float:left; line-height:19px; text-align:center"><strong style="font-size:105%"><?php echo $row_config['tel'];?></strong><br />liên hệ trực tiếp</p>
+        	<p style="color:#666; width:auto; float:left; line-height:19px; text-align:center; padding-top:2px"><strong style="font-size:105%"><?php echo $row_config['tel'];?></strong><br />
+            <span style="font-size:80%">Hỗ trợ khách hàng</span></p>
         	<p style="width:auto; float:left; margin:22px 0 0 20px"><?php echo '<a href="ymsgr:sendIM?'.$row_config['yahoo'].'"><img src="http://opi.yahoo.com/online?u='.$row_config['yahoo'].'&amp;m=g&amp;t=1"></a>';?></p>
         </div>
     </div>
