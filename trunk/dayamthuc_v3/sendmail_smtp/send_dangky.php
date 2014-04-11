@@ -33,7 +33,7 @@ $mail->SetFrom($email_gui,$title);
 
 //Thiết lập thông tin người nhận
 $mail->AddAddress($email_nhan,$name_nhan);
-$mail->AddCC('ceo@netspace.edu.vn','CEO');
+if($noihoc == 'Tp.HCM') $mail->AddCC('ceo@netspace.edu.vn','CEO');
 $mail->AddBCC('temp@dayamthuc.vn','Temp');
 
 //Thiết lập email nhận email hồi đáp
