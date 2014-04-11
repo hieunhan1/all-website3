@@ -69,15 +69,13 @@ if(@$_SESSION["username_admin"]) {
 		$email_nhan = $row['email'];
 		$name_nhan = $row['name'];
 		
-		$qr = mysql_query("SELECT id,name,khoahoc,noihoc FROM web_dangky_tructuyen WHERE `delete`=0 AND id='{$id_dk}' ");
+		$qr = mysql_query("SELECT id,name FROM web_order WHERE `delete`=0 AND id='{$id_dk}' ");
 		$row = mysql_fetch_array($qr);
 		$id = $row['id'];
-		$khoahoc = $row['khoahoc'];
 		$name = $row['name'];
-		$noihoc = $row['noihoc'];
-		include_once('../../sendmail_smtp/send_dangky.php');
+		//include_once('../../sendmail_smtp/send_dangky.php');
 		
-		if( mysql_query("UPDATE web_dangky_nhanvien SET date_update='".date('Y-m-d H:i:s')."' WHERE `delete`=0 AND id='{$id_nv}' ") && mysql_query("UPDATE web_dangky_tructuyen SET `status`=2,nhanvien_lienhe='{$id_nv}' WHERE `delete`=0 AND id='{$id_dk}' ") ){
+		if( mysql_query("UPDATE web_dangky_nhanvien SET date_update='".date('Y-m-d H:i:s')."' WHERE `delete`=0 AND id='{$id_nv}' ") && mysql_query("UPDATE web_order SET `status`=2,nhanvien_lienhe='{$id_nv}' WHERE `delete`=0 AND id='{$id_dk}' ") ){
 			echo '1';
 		}else echo '0';
 	}
@@ -97,7 +95,7 @@ if(@$_SESSION["username_admin"]) {
 		$id = $row['id'];
 		$name = $row['name'];
 		$message = $row['message'];
-		include_once('../../sendmail_smtp/send_contact.php');
+		//include_once('../../sendmail_smtp/send_contact.php');
 		
 		if( mysql_query("UPDATE web_dangky_nhanvien SET date_update='".date('Y-m-d H:i:s')."' WHERE `delete`=0 AND id='{$id_nv}' ") && mysql_query("UPDATE web_contact SET `status`=2,nhanvien_lienhe='{$id_nv}' WHERE `delete`=0 AND id='{$id_dk}' ") ){
 			echo '1';

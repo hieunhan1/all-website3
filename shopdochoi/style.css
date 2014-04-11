@@ -21,11 +21,16 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #top #company_search #search .btnSearch{width:40px; height:28px; cursor:pointer; background:none; border:none}
 #top #company_search #icon_giohang{width:135px; height:30px; float:right; margin:19px 8px 0 0; background:url(images/images_top.gif) no-repeat; background-position:0px -74px}
 #top #company_search #icon_giohang a{display:block; color:#F17039; font-weight:bold; line-height:30px; padding-left:45px}
-#top #lang{width:auto; float:right; line-height:16px; margin:10px 0}
+#top #lang{width:200px; float:right; text-align:right; line-height:16px; margin:10px 0}
 #top #lang p{width:auto; float:left; margin:0 3px 0 15px}
 #top #lang img{float:left; margin-right:5px}
 #top #lang a{color:#666}
 #top #support{width:178px; height:38px; float:right; padding:10px; background:url(images/images_top.gif) no-repeat; background-position:0px -109px}
+
+#signin{background-color:#999; padding:4px 15px; font-weight:bold; color:#FFF !important}
+#form_login{display:none; width:180px; height:150px; text-align:left; font-weight:bold; color:#666; padding:5px 10px; background-color:#FFF; border:solid 1px #999; position:absolute; z-index:1100}
+#form_login .txt_login{width:170px; line-height:16px; height:16px; margin:3px 0; padding:3px; border:solid 1px #CCC; background:none}
+#form_login .btn_login{width:178px; line-height:26px; height:26px; margin:5px 0 8px; font-weight:bold; color:#666}
 
 #home_about{margin-top:20px; line-height:25px; font-size:14px}
 #home_about #home_about_info{width:690px; float:left; overflow:hidden}

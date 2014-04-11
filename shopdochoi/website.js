@@ -122,7 +122,15 @@ $(document).ready(function($){
 	if(browserVersion()!=7 && browserVersion()!=8){
 		$(".box_left, .box_info, .muahang").corner("8px");
 		$(".title_info").corner("top","8px");
+		$("#signin, #form_login").corner("7px");
 	}
+	
+	$("#login").click(function(){
+		$("#form_login").show(200);
+	});
+	$("#cancel_login").click(function(){
+		$("#form_login").hide(200);
+	});
 	
 	
 	/*nop ho so*/

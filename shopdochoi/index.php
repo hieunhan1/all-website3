@@ -124,8 +124,16 @@ if(@$_GET['danhmuc']){
 			?>
         </div>
         <div id="lang">
-        	<p><a href="?lang=vi"><img src="images/vi.gif" alt="Tiếng Việt" />Tiếng Việt</a></p>
-        	<p><a href="?lang=en"><img src="images/en.gif" alt="English" />English</a></p>
+        	<a href="javascript:;" id="login">Đăng nhập</a> | <a href="" id="signin">Đăng ký</a>
+            <div id="form_login">
+            	Username:<br />
+                <input type="text" name="username" class="txt_login" /><br />
+            	Password:<br />
+                <input type="password" name="password" class="txt_login" /><br />
+                <input type="button" name="btnlogin" value="Đăng nhập" class="btn_login" /><br />
+                <a href="javascript:;" style="float:left; font-weight:100; text-decoration:underline">Quên password?</a>
+                <a href="javascript:;" id="cancel_login" style="float:right;">Hủy</a>
+            </div>
         </div>
         <div id="support">
         	<p style="color:#666; width:auto; float:left; line-height:19px; text-align:center"><strong style="font-size:105%"><?php echo $row_config['tel'];?></strong><br />liên hệ trực tiếp</p>
