@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Apr 08, 2014 at 05:33 PM
+-- Generation Time: Apr 11, 2014 at 06:14 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -64,6 +64,7 @@ CREATE TABLE `web_contact` (
   `phone` varchar(20) NOT NULL,
   `diachi` varchar(200) NOT NULL,
   `message` text NOT NULL,
+  `nhanvien_lienhe` int(2) default NULL,
   `lang` varchar(2) NOT NULL,
   `status` tinyint(1) default '0',
   `date_create` datetime NOT NULL,
@@ -78,11 +79,11 @@ CREATE TABLE `web_contact` (
 -- Dumping data for table `web_contact`
 -- 
 
-INSERT INTO `web_contact` VALUES (1, 'Nguyễn Thị Huỳnh Như', 'thanhha39sty@yahoo.com.vn', '01254082755', '1F/1/1T Hương Lộ 80 - KDC Đồng Danh -Vĩnh Lộc A- Bình Chánh', 'Tôi muốn mua các loại bột sau : \nBột bánh bông lan nuớng loai 14.000 đ/ bịch (4 bịch )\nBột bánh bông lan hấp  500gr  22.000 đ/ bịch (2 bịch )\nBột bánh bò loại 21.000 đ/ bich (3 bịch)\nBột bánh xèo loại 18.000 đ/bịch (3 bịch )\nBột bánh pizza 37.000d9/ bịch (1 bịch )\nBạn có thể giao hàng cho tôi không?\nNếu có , vui lòng gọi sdt 01254082755 Tên Như ( giờ hành chính)\nXin cám ơn', '', 0, '2013-11-18 06:02:17', '2014-04-07 18:08:59', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (2, 'Việt nam', 'hieunhan112@gmail.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 'test mail abc det dcv', '', 0, '2013-11-18 09:12:16', '2014-04-07 18:09:00', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (3, 'Ms.Nguyệt', 'nguyetchenh@fosi.vn', '0909228783', '176 Hoa Lan P.2 Q Phú Nhuận', 'Xin chào quý công ty!\nEm bên công ty FOSi - đơn vị cung cấp giấy phép về thực phẩm như chứng nhận đủ ĐKATTP cho cơ sở và công bố sản phẩm trong nước và nhập khẩu...Có thể truy cập trang http://trungtamnghiencuuthucpham.vn/ để tìm hiểu thêm.\nNếu công ty có nhu cầu vui lòng liên hệ để được hỗ trợ và tư vấn.\nXin cảm ơn!', '', 0, '2013-11-22 09:02:35', '2014-04-07 18:09:00', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (4, 'Khổng Thị Thùy Trang', 'trangga_1208@yahoo.com', '01285282889', '14/21 nghĩa hưng p6 quận tân bình', 'sáng ngày 22/11 e có đặt mua một số sản phẩm của công ty nhưng do e có một số việc không có ở nhà để nhận ,vậy cho e hỏi đặt mua qua wedpage thì khi nào mới nhận được', '', 0, '2013-11-22 15:47:22', '2014-04-07 18:09:01', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (5, 'Tran Nhan', 'hieunhan112@gmail.com', '0988388003', '123 CMT 8', 'test lien he abc', '', 0, '2014-04-07 18:03:58', '2014-04-07 18:03:58', 'khachhang', '', 0);
+INSERT INTO `web_contact` VALUES (1, 'Nguyễn Thị Huỳnh Như', 'thanhha39sty@yahoo.com.vn', '01254082755', '1F/1/1T Hương Lộ 80 - KDC Đồng Danh -Vĩnh Lộc A- Bình Chánh', 'Tôi muốn mua các loại bột sau : \nBột bánh bông lan nuớng loai 14.000 đ/ bịch (4 bịch )\nBột bánh bông lan hấp  500gr  22.000 đ/ bịch (2 bịch )\nBột bánh bò loại 21.000 đ/ bich (3 bịch)\nBột bánh xèo loại 18.000 đ/bịch (3 bịch )\nBột bánh pizza 37.000d9/ bịch (1 bịch )\nBạn có thể giao hàng cho tôi không?\nNếu có , vui lòng gọi sdt 01254082755 Tên Như ( giờ hành chính)\nXin cám ơn', NULL, '', 0, '2013-11-18 06:02:17', '2014-04-07 18:08:59', 'khachhang', 'admin', 1);
+INSERT INTO `web_contact` VALUES (2, 'Việt nam', 'hieunhan112@gmail.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 'test mail abc det dcv', NULL, '', 0, '2013-11-18 09:12:16', '2014-04-07 18:09:00', 'khachhang', 'admin', 1);
+INSERT INTO `web_contact` VALUES (3, 'Ms.Nguyệt', 'nguyetchenh@fosi.vn', '0909228783', '176 Hoa Lan P.2 Q Phú Nhuận', 'Xin chào quý công ty!\nEm bên công ty FOSi - đơn vị cung cấp giấy phép về thực phẩm như chứng nhận đủ ĐKATTP cho cơ sở và công bố sản phẩm trong nước và nhập khẩu...Có thể truy cập trang http://trungtamnghiencuuthucpham.vn/ để tìm hiểu thêm.\nNếu công ty có nhu cầu vui lòng liên hệ để được hỗ trợ và tư vấn.\nXin cảm ơn!', NULL, '', 0, '2013-11-22 09:02:35', '2014-04-07 18:09:00', 'khachhang', 'admin', 1);
+INSERT INTO `web_contact` VALUES (4, 'Khổng Thị Thùy Trang', 'trangga_1208@yahoo.com', '01285282889', '14/21 nghĩa hưng p6 quận tân bình', 'sáng ngày 22/11 e có đặt mua một số sản phẩm của công ty nhưng do e có một số việc không có ở nhà để nhận ,vậy cho e hỏi đặt mua qua wedpage thì khi nào mới nhận được', NULL, '', 0, '2013-11-22 15:47:22', '2014-04-07 18:09:01', 'khachhang', 'admin', 1);
+INSERT INTO `web_contact` VALUES (5, 'Tran Nhan', 'hieunhan112@gmail.com', '0988388003', '123 CMT 8', 'test lien he abc', 4, '', 2, '2014-04-07 18:03:58', '2014-04-07 18:03:58', 'khachhang', '', 0);
 
 -- --------------------------------------------------------
 
@@ -108,10 +109,10 @@ CREATE TABLE `web_dangky_nhanvien` (
 -- Dumping data for table `web_dangky_nhanvien`
 -- 
 
-INSERT INTO `web_dangky_nhanvien` VALUES (1, 'NV nhận hàng - Tú', 'nhanhang1@shopdochoi.com', 'vi', 1, '2013-12-17 13:52:33', '2014-04-07 18:05:00', 'admin', 'admin', 0);
-INSERT INTO `web_dangky_nhanvien` VALUES (2, 'NV nhận hàng - Thanh', 'nhanhang2@shopdochoi.com', 'vi', 1, '2013-12-17 13:53:05', '2014-04-07 18:06:04', 'admin', 'admin', 0);
-INSERT INTO `web_dangky_nhanvien` VALUES (3, 'NV nhận hàng - Khắc', 'nhanhang3@shopdochoi.com', 'vi', 1, '2013-12-17 13:54:05', '2014-04-07 18:06:11', 'admin', 'admin', 0);
-INSERT INTO `web_dangky_nhanvien` VALUES (4, 'NV trả lời - Tiên', 'feedback@shopdochoi.com', 'vi', 1, '2013-12-17 13:54:18', '2014-04-07 18:06:23', 'admin', 'admin', 0);
+INSERT INTO `web_dangky_nhanvien` VALUES (1, 'NV nhận hàng - Tú', 'nhanhang1@shopdochoi.com', 'vi', 1, '2013-12-17 13:52:33', '2014-04-11 17:45:08', 'admin', 'admin', 0);
+INSERT INTO `web_dangky_nhanvien` VALUES (2, 'NV nhận hàng - Thanh', 'nhanhang2@shopdochoi.com', 'vi', 1, '2013-12-17 13:53:05', '2014-04-11 17:44:54', 'admin', 'admin', 0);
+INSERT INTO `web_dangky_nhanvien` VALUES (3, 'NV nhận hàng - Khắc', 'nhanhang3@shopdochoi.com', 'vi', 1, '2013-12-17 13:54:05', '2014-04-11 17:45:00', 'admin', 'admin', 0);
+INSERT INTO `web_dangky_nhanvien` VALUES (4, 'NV trả lời - Tiên', 'feedback@shopdochoi.com', 'vi', 1, '2013-12-17 13:54:18', '2014-04-11 17:45:53', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -344,6 +345,7 @@ CREATE TABLE `web_order` (
   `email` varchar(60) default NULL,
   `message` varchar(255) default NULL,
   `tong_thanhtien` int(8) default NULL,
+  `nhanvien_lienhe` int(2) default NULL,
   `lang` varchar(2) default 'vi',
   `status` tinyint(1) default '0',
   `delete` tinyint(1) default '0',
@@ -356,17 +358,17 @@ CREATE TABLE `web_order` (
 -- Dumping data for table `web_order`
 -- 
 
-INSERT INTO `web_order` VALUES (1404070307, '2014-04-07 18:03:07', '2014-04-07 18:03:07', 'Nhan', '123 CMT 8', '0988388003', 'hieunhan112@gmail.com', 'giao gio HC', 500000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404085845, '2014-04-08 15:58:45', '2014-04-08 15:58:45', 'Hiền', 'Lê Đức Thọ , Gò Vấp', '0987 456 258', 'hieu@yahoo.com', '', 419000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404080005, '2014-04-08 16:00:05', '2014-04-08 16:00:05', 'Tien', '123 CMT 8, Quận 10, Tp.HCM', '0987 654 788', 'tien@yahoo.com', '', 447000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404080043, '2014-04-08 16:00:43', '2014-04-08 16:00:43', 'Nguyên', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0932 456 269', 'nguyen@yahoo.com', '', 1990000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404080136, '2014-04-08 16:01:36', '2014-04-08 16:01:36', 'Huyền', '118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ', '0901 235 789', 'huyen@yahoo.com', '', 588000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404080221, '2014-04-08 16:02:21', '2014-04-08 16:02:21', 'Dũng', 'Số 19 Đường Đặng Tất, Phường Tân Định, Quận 1, Tp.HCM', '01234567890', 'dung@yahoo.com', '0955 654 122', 3640000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404080256, '2014-04-08 16:02:56', '2014-04-08 16:02:56', 'Tuyền', '118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ', '0930 569 789', 'tuyen@yahoo.com', '', 8802000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404081206, '2014-04-08 16:12:06', '2014-04-08 16:12:06', 'Huy', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0904 569 785', 'huy@yahoo.com', '', 1956000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404082937, '2014-04-08 16:29:37', '2014-04-08 16:29:37', 'Ngọc', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0940 236 899', 'ngoc@yahoo.com', '', 1800000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404083554, '2014-04-08 16:35:54', '2014-04-08 16:35:54', 'Minh', '123 CMT 8', '0963 654 123', 'minh@yahoo.com', '', 208000, 'vi', 0, 0, 'khachhang', '');
-INSERT INTO `web_order` VALUES (1404083643, '2014-04-08 16:36:43', '2014-04-08 16:36:43', 'Mẫn', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0978 698 699', 'man@yahoo.com', '', 682000, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404070307, '2014-04-07 18:03:07', '2014-04-11 17:44:33', 'Nhan', '123 CMT 8', '0988388003', 'hieunhan112@gmail.com', 'giao gio HC', 500000, 1, 'vi', 2, 0, 'khachhang', 'admin');
+INSERT INTO `web_order` VALUES (1404085845, '2014-04-08 15:58:45', '2014-04-08 15:58:45', 'Hiền', 'Lê Đức Thọ , Gò Vấp', '0987 456 258', 'hieu@yahoo.com', '', 419000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404080005, '2014-04-08 16:00:05', '2014-04-08 16:00:05', 'Tien', '123 CMT 8, Quận 10, Tp.HCM', '0987 654 788', 'tien@yahoo.com', '', 447000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404080043, '2014-04-08 16:00:43', '2014-04-08 16:00:43', 'Nguyên', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0932 456 269', 'nguyen@yahoo.com', '', 1990000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404080136, '2014-04-08 16:01:36', '2014-04-08 16:01:36', 'Huyền', '118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ', '0901 235 789', 'huyen@yahoo.com', '', 588000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404080221, '2014-04-08 16:02:21', '2014-04-08 16:02:21', 'Dũng', 'Số 19 Đường Đặng Tất, Phường Tân Định, Quận 1, Tp.HCM', '01234567890', 'dung@yahoo.com', '0955 654 122', 3640000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404080256, '2014-04-08 16:02:56', '2014-04-08 16:02:56', 'Tuyền', '118 Đường 3/2 P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ', '0930 569 789', 'tuyen@yahoo.com', '', 8802000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404081206, '2014-04-08 16:12:06', '2014-04-08 16:12:06', 'Huy', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0904 569 785', 'huy@yahoo.com', '', 1956000, NULL, 'vi', 0, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404082937, '2014-04-08 16:29:37', '2014-04-08 16:29:37', 'Ngọc', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0940 236 899', 'ngoc@yahoo.com', '', 1800000, 1, 'vi', 2, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404083554, '2014-04-08 16:35:54', '2014-04-08 16:35:54', 'Minh', '123 CMT 8', '0963 654 123', 'minh@yahoo.com', '', 208000, 3, 'vi', 2, 0, 'khachhang', '');
+INSERT INTO `web_order` VALUES (1404083643, '2014-04-08 16:36:43', '2014-04-08 16:36:43', 'Mẫn', '30 Nguyễn Huy Tự, Phường ĐaKao, Quận 1, Tp.HCM', '0978 698 699', 'man@yahoo.com', '', 682000, 4, 'vi', 2, 0, 'khachhang', '');
 
 -- --------------------------------------------------------
 
@@ -393,7 +395,7 @@ INSERT INTO `web_order_detail` VALUES (1, 1404070307, 9, 1, 500000, 500000, 0);
 INSERT INTO `web_order_detail` VALUES (2, 1404085845, 10, 1, 419000, 419000, 0);
 INSERT INTO `web_order_detail` VALUES (3, 1404080005, 2, 3, 149000, 447000, 0);
 INSERT INTO `web_order_detail` VALUES (4, 1404080043, 1, 10, 199000, 1990000, 0);
-INSERT INTO `web_order_detail` VALUES (5, 1404080136, 12, 12, 49000, 588000, 0);
+INSERT INTO `web_order_detail` VALUES (5, 1404080136, 12, 12, 49000, 588000, 1);
 INSERT INTO `web_order_detail` VALUES (6, 1404080221, 5, 20, 182000, 3640000, 0);
 INSERT INTO `web_order_detail` VALUES (7, 1404080256, 7, 18, 489000, 8802000, 0);
 INSERT INTO `web_order_detail` VALUES (8, 1404081206, 7, 4, 489000, 1956000, 0);

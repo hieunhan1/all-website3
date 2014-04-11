@@ -43,6 +43,35 @@ if(!empty($_POST)){
 	else echo "<p class='error'>{$check}</p>";
 }
 
+echo '
+<style>
+.dhct {width:600px; border-top:solid 1px #666; border-left:solid 1px #666; border-right:solid 1px #666}
+.dhct .name{width:280px; padding:3px 5px; float:left}
+.dhct .item1{width:30px; padding:3px 5px; float:left; text-align:center}
+.dhct .item2{width:70px; padding:3px 5px; float:left; text-align:center}
+.dhct .item3{width:60px; padding:3px 5px; float:left; text-align:center}
+</style>
+<div class="dhct" style="background-color:#FFCBCB"><div class="item1"><b>STT</b></div><div class="name"><b>Tên sản phẩm</b></div><div class="item3"><b>Số lượng</b></div><div class="item3"><b>Giá</b></div><div class="item2"><b>Thành tiền</b></div><div class="item1"><b>Xóa</b></div><div style="clear:both"></div></div>';
+
+if(@$_GET['order_d']) mysql_query('UPDATE web_order_detail SET `delete`=1 WHERE id='.$_GET['order_d']);
+$order_detail = mysql_query("SELECT web_order_detail.*,web_products.name as tensp FROM web_order_detail,web_products WHERE order_id='{$id}' AND product_id=web_products.id AND web_order_detail.delete=0");
+$j = 0;
+while($row_order = mysql_fetch_array($order_detail)){
+	$j++;
+	$tongsoluong += $row_order['soluong'];
+	$tongtien += $row_order['thanhtien'];
+	echo '<div class="dhct">
+	<div class="item1"><b>'.$j.'</b></div>
+	<div class="name">'.$row_order['tensp'].'</div>
+	<div class="item3">'.$row_order['soluong'].'</div>
+	<div class="item3">'.number_format($row_order['price']).'</div>
+	<div class="item2">'.number_format($row_order['thanhtien']).'</div>
+	<div class="item1"><a href="'.$_SERVER['REQUEST_URI'].'&order_d='.$row_order['id'].'">Xóa</a></div>
+	<div style="clear:both"></div>
+	</div>';
+}
+echo '<div class="dhct" style="background-color:#FFCBCB"><div class="item1">&nbsp;</div><div class="name"><b>Tổng cộng</b> <em>(chưa bao gồm VAT)</em></div><div class="item3"><b>'.$tongsoluong.'</b></div><div class="item3">&nbsp;</div><div class="item2"><b>'.number_format($tongtien).'</b></div><div style="clear:both"></div></div><br />';
+
 echo '<form name="form_action" method="post" action="">
 <table width="100%" border="0" cellpadding="0" cellspacing="10" style="margin-bottom:50px">';
 	
@@ -78,13 +107,6 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('Họ tên','name','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-		
-	//ngaysinh
-	$values = $row_detail['ngaysinh'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ngày sinh','ngaysinh','input_large datetimepick'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
 	
 	//email
 	$values = $row_detail['email'];
@@ -100,46 +122,25 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//diachi
-	$values = $row_detail['diachi'];
+	//adress
+	$values = $row_detail['adress'];
 	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Địa chỉ','diachi','input_medium'); //label id&name class style
+	$views = array('Địa chỉ','adress','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//totnghiep
-	$values = $row_detail['totnghiep'];
-	$properties = array('30'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Tốt nghiệp','totnghiep','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//khoahoc
-	$values = $row_detail['khoahoc'];
-	$properties = array('150'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Khóa học','khoahoc','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//noihoc
-	$values = $row_detail['noihoc'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Nơi học','noihoc','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//other kenh tim kiem
-	$values = $row_detail['other'];
-	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Kênh tìm kiếm','other','input_medium'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//hoivien
-	$values = $row_detail['hoivien'];
+	//message
+	$values = $row_detail['message'];
 	$properties = ''; //disabled, readonly
-	$views = array('Khác','hoivien','textarea'); //label id&name class colspan
+	$views = array('Yêu cầu khác','message','textarea'); //label id&name class colspan
     $form->getProperties('3',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//tong_thanhtien
+	$values = $row_detail['tong_thanhtien'];
+	$properties = array('10'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Tổng cộng','tong_thanhtien','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//id
