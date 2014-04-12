@@ -1,3 +1,7 @@
+<?php
+$qr = $tc->tuyendung_cty($row_detail['tuyendung_cty_id']);
+$row = mysql_fetch_array($qr);
+?>
 <div class="wrapper"><div class="home_item_3">
 	<div id="navigator">
         <a href=""><img src="images/home.jpg" alt="trang chủ" /></a>
@@ -8,9 +12,9 @@
     <hr />
     
     <div id="left" class="viewpost">
-        <?php echo '<h1>'.$row_detail['name'].'</h1>'; ?>
-        <div class="btn_nop_hs" style="float:right">Nộp hồ sơ ngay</div>
-        
+        <?php echo "<h1>{$row_detail['name']} - {$row['name']}</h1>"; ?>
+        <!--<div class="btn_nop_hs" style="float:right">Nộp hồ sơ ngay</div>-->
+        <div style="clear:both; height:1px"></div>
         <table width="100%" border="0" cellpadding="0" cellspacing="0" id="tuyendung_thongtin">
         	<tr>
             	<td colspan="2" style="background-color:#E5E5E5; font-weight:bold; padding:5px; text-align:center; color:#00F">THÔNG TIN TUYỂN DỤNG ĐẦU BẾP</td>
@@ -46,10 +50,6 @@
             <tr>
             	<td colspan="2" style="background-color:#E5E5E5; font-weight:bold; padding:5px; text-align:center; color:#00F">THÔNG TIN NHÀ TUYỂN DỤNG</td>
             </tr>
-            <?php
-            $qr = $tc->tuyendung_cty($row_detail['tuyendung_cty_id']);
-			$row = mysql_fetch_array($qr);
-			?>
             <tr>
             	<td valign="top" style="border-right:dotted 1px #CCC; font-weight:bold">Tên nhà tuyển dụng:</td>
             	<td><h2 style="color:#F00"><?php echo $row['name']; ?></h2></td>
@@ -61,9 +61,12 @@
             <tr>
             	<td valign="top" style="border-right:dotted 1px #CCC; font-weight:bold">Thông tin liên hệ:</td>
             	<td><?php
-                echo "Địa chỉ: {$row['diachi']} <br />Email: {$row['email']} <br />Điện thoại: {$row['phone']} <br />";
+                echo "Địa chỉ: {$row['diachi']} <br />Điện thoại: {$row['phone']} <br />";
+				if($row['email'] != '') echo "Email: {$row['email']}<br />";
 				if($row['fax'] != '') echo "Fax: {$row['fax']}<br />";
 				if($row['website'] != '') echo "Website: <a href='http://".trim($row['website'],'http://')."' target='_blank'>{$row['website']}</a><br />";
+				
+				if($row_detail['other'] != '') echo "<br /><b>{$row_detail['other']}</b>";
 				?></td>
             </tr>
             <tr>
@@ -71,7 +74,7 @@
             	<td style="font-weight:bold; color:#060; font-size:130%"><?php echo date('d/m/Y',strtotime($row_detail['hannop'])); ?></td>
             </tr>
         </table>
-        <div class="btn_nop_hs">Nộp hồ sơ ngay</div>
+        <!--<div class="btn_nop_hs">Nộp hồ sơ ngay</div>-->
         <div style="clear:both; height:30px"></div>
     </div>
     
