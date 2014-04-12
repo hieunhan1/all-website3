@@ -172,6 +172,13 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
+	//other
+	$values = $row_detail['other'];
+	$properties = array('250'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Khác','other','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name

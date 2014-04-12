@@ -27,11 +27,11 @@
 			$i = $from;
 			while($row = mysql_fetch_array($qr)){
 				$i++;
-				echo '<tr><th align="right">'.$i.'.</th>
-				<td><a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html">'.$row['name'].'</a></td>
-				<td align="center">'.$noilamviec[$row['noilamviec']].'</td>
-				<td align="center">'.$row['mucluong'].'</td>
-				<td align="center">'.date('d/m/Y',strtotime($row['hannop'])).'</td></tr>';
+				echo '<tr><th align="right" valign="top">'.$i.'.</th>
+				<td valign="top"><a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html">'.$row['name'].'</a></td>
+				<td align="center" valign="top">'.$noilamviec[$row['noilamviec']].'</td>
+				<td align="center" valign="top">'.$row['mucluong'].'</td>
+				<td align="center" valign="top">'.date('d/m/Y',strtotime($row['hannop'])).'</td></tr>';
 			}
 			?>
         </table><br />
