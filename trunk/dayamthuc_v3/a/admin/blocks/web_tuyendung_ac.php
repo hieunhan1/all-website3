@@ -128,7 +128,7 @@ echo '<form name="form_action" method="post" action="">
 	
 	//soluongtuyen
 	$values = $row_detail['soluongtuyen'];
-	$properties = array('3'); //maxlength OTHER (disabled, readonly) 
+	$properties = array('30'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Số lượng tuyển','soluongtuyen','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
