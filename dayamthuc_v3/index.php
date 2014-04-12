@@ -65,16 +65,18 @@ if(@$_GET['danhmuc']){
 		$dt = $_GET['detail'];
 		$include = ob_start();
 		switch($type){
-			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
-			case 3 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image; include_once('blocks/articles.php'); break;
-			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image; include_once('blocks/video.php'); break;
-			case 11 : $qr = $tc->tuyendung_detail($dt); $row_detail = mysql_fetch_array($qr); include_once('blocks/tuyendung.php'); break;
+			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
+			case 3 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
+			case 6 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_image_thumb; include_once('blocks/video.php'); break;
+			case 11 : $qr = $tc->tuyendung_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = 'upload/images/cung-ung-tuyen-dung-nhan-su.jpg'; include_once('blocks/tuyendung.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
 		$include = ob_get_clean();
 		
-		($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.$image_link.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image;
+		if($row_detail['url_hinh']!='' || $type=='11') $image='http://'.$domain.'/'.$image_link.$row_detail['url_hinh'];
+		else $image='http://'.$domain.'/'.url_default_image;
+		
 		$url = 'http://'.$domain.'/'.$row_menu_one['url'].$row_detail['name_rewrite'].'.html';
 		$title = strip_tags($row_detail['name'], ''); $title = str_replace('"',' ',$title);
 		$description = strip_tags($row_detail['metaDescription'],''); $description = str_replace('"',' ',$description);
