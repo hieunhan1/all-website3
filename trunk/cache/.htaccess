@@ -13,7 +13,7 @@ AddOutputFilterByType DEFLATE text/html text/css application/x-javascript
 
 RewriteEngine On
 
-AddDefaultCharset Off 
+AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
     Options +FollowSymLinks -Indexes
