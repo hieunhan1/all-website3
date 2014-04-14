@@ -1,0 +1,5 @@
+RewriteEngine On
+AddDefaultCharset UTF-8
+RewriteRule index.html index.php
+RewriteRule (.*)/$  index.php?danhmuc=$1
+RewriteRule (.*)/(.*).html$ index.php?danhmuc=$1&detail=$2
