@@ -1,32 +1,18 @@
 <?php
-$slider = $tc->slider_banner(1,$row_menu_one['id']);
-if(mysql_num_rows($slider)>0){
-	while($row_slider = mysql_fetch_array($slider)){
-		$view_slider .= '<li><a href="'.url_slider_image.$row_slider['url_hinh'].'" title="'.$row_slider["name"].'"></a>
-		<a href="'.$row_slider["link"].'"></a></li>';
+$qr = $tc->slider_banner(1,$row_menu_one['id']);
+if(mysql_num_rows($qr) > 0){
+	$view_slider = '<div id="slider"><div class="slider-wrapper theme-default"><div id="slider_run" class="nivoSlider">';
+	while($row = mysql_fetch_array($qr)){
+		$view_slider .= '<a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" data-thumb="'.url_slider_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" title="'.$row['info'].'" data-transition="slideInLeft" /></a>';
 	}
-	$view_slider = '<link rel="stylesheet" type="text/css" href="assets/preview.css" />
-<link rel="stylesheet" type="text/css" href="assets/wt-rotator.css" />
-<script type="text/javascript" src="assets/jquery.wt-rotator.min.js"></script>
-<script type="text/javascript" src="assets/preview.js"></script>
-<div id="slider">
-<div class="panel">
-    <div class="container">
-        <div class="wt-rotator">
-            <a href="#"></a>            
-            <div class="desc"></div>
-            <div class="preloader"></div>
-            <div class="c-panel">
-                <div class="buttons">
-                    <div class="prev-btn"></div>
-                    <div class="play-btn"></div>    
-                    <div class="next-btn"></div>               
-                </div>
-                <div class="thumbnails"><ul>'.$view_slider.'</ul></div>     
-            </div>
-        </div>	
-    </div>
-</div>
-</div>';
-echo $view_slider;
+	$view_slider .= '</div></div></div>
+	<link rel="stylesheet" href="library/nivo-slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="library/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="library/nivo-slider/jquery.nivo.slider.js"></script>
+	<script type="text/javascript">
+	$(window).load(function() {
+		$("#slider_run").nivoSlider();
+	});
+	</script>';
+	echo $view_slider;
 }

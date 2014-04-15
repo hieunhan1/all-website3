@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/all/shopdochoi/public/';
+$baseUrl = '/all/siup/public/';
 
 $baseDir = resolveUrl($baseUrl);
 
