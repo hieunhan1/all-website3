@@ -86,7 +86,7 @@ if(@$_GET['danhmuc']){
 }else{
 	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
-	$idMenu = $row_menu_one['id'];
+	$idMenu = $menu_root = $row_menu_one['id'];
 	
 	($row_menu_one['url_hinh']=='') ? $image='http://'.$domain.'/'.url_default_image : $image='http://'.$domain.'/'.url_catalog_image.$row_menu_one['url_hinh'];
 	$url = 'http://'.$domain;
