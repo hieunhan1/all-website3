@@ -109,8 +109,11 @@ if(@$_GET['danhmuc']){
 
 <div id="wrapper">
 	<div id="header"></div>
-	<?php include_once('blocks/menu.php');?>
-	<div id="slider"></div>
+	<?php
+    include_once('blocks/menu.php');
+    include_once('blocks/slider.php');
+	?>
+	
 	<div id="content">
     	<div id="left">
         	<h3>Loại hình đồ án</h3>
