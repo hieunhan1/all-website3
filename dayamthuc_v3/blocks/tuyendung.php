@@ -25,7 +25,7 @@ $row = mysql_fetch_array($qr);
             </tr>
             <tr>
             	<td style="border-right:dotted 1px #CCC; font-weight:bold">Nơi làm việc:</td>
-            	<td><?php $noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Khác'); echo $noilamviec[$row_detail['noilamviec']]; ?></td>
+            	<td><?php $noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Khác'); echo $noilamviec[$row_detail['noilamviec']]; ?></td>
             </tr>
             <tr>
             	<td style="border-right:dotted 1px #CCC; font-weight:bold">Mức lương:</td>

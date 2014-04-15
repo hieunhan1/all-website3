@@ -88,7 +88,7 @@ echo '<form name="form_action" method="post" action="">
 	//max_limit_2
 	$values = $row_detail['max_limit_2'];
 	$properties = array('2'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Số sản phẩm','max_limit_2','input_medium'); //label id&name class style
+	$views = array('Tuyển dụng','max_limit_2','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
