@@ -22,7 +22,7 @@
 			$limit = "LIMIT {$from},".max_limit_2;
 			$qr = mysql_query("SELECT name,name_rewrite,noilamviec,mucluong,hannop FROM web_tuyendung WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_create DESC {$limit}");
 			
-			$noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Khác');
+			$noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Khác');
 			
 			$i = $from;
 			while($row = mysql_fetch_array($qr)){
