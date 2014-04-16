@@ -122,13 +122,14 @@
 		function danhmuc_menu($level,$lang,$style_1,$arr=NULL){
 			if(!$arr) $arr = array();
 			$style_2 = '-- ';
+			if($level==0) $style_3 = ''; else $style_3 = '&nbsp;&nbsp;&nbsp;&nbsp; ';
 			
 			$qr = $this->menu_root($level,$lang);
 			while($row = mysql_fetch_array($qr)){
 				$arr[] = array(
 					'id'			=> $row['id'],
 					'name'			=> $style_1.$row['name'],
-					'order'			=> $row['order'],
+					'order'			=> $style_3.$row['order'],
 					'status'		=> $row['status'],
 					'date_create'	=> $row['date_create'],
 					'user_create'	=> $row['user_create'],

@@ -10,13 +10,56 @@ a:link,a:visited,a:active{color:#0048FF; text-decoration:none}
 a:hover{color:#D61D22; text-decoration:underline}
 hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 
-#wrapper{width:940px; margin:0 auto; box-shadow:0 0 5px #999}
+#wrapper{width:940px; margin:0 auto; box-shadow:0 0 5px #999; background-color:#FFF}
 
-#header{height:100px; background:url(images/bg-header.gif) no-repeat}
+#header{height:100px; overflow:hidden; padding:0px 20px; background:url(images/bg-header.gif) no-repeat}
+#header #logo{width:450px; float:left; margin-top:15px}
+#header #logo img{float:left; margin-right:15px}
+#header #logo div{line-height:18px; color:#FFF; font-weight:bold; font-size:85%; margin-top:18px}
 
-#slider{height:300px}
+#header #top{width:auto; height:21px; line-height:21px; float:right; color:#FFF; font-size:85%; margin-top:22px; padding:0 5px; background-color:#254784}
+#header #top li{list-style:none; float:left}
+#header #top a{color:#FFF;  padding:0 10px}
 
-#content{clear:both; background-color:#FFF}
+#header #search{width:200px; height:21px; clear:right; float:right; margin-top:15px; background-color:#FFF; border:solid 1px #C1C1C1}
+#header #search .txt{width:165px; height:21px; line-height:18px; color:#999; font-size:90%; padding-left:5px; border:none; background:none}
+#header #search .btn{width:25px; height:21px;  border:none; background:url(images/btn-search.gif) no-repeat; cursor:pointer}
+
+#slider{height:300px; overflow:hidden}
+
+#content{clear:both}
+
+#footer{clear:both; height:90px; color:#666; margin-bottom:30px; padding-top:20px; border-top:solid 3px #D51E20}
+#footer #copyright{width:250px; float:left; margin-left:30px}
+#footer #copyright h4{font-size:100%; margin-bottom:20px}
+#footer #copyright img{height:25px; margin-right:2px}
+
+#footer #partner{width:600px; height:60px; float:right; margin-right:30px}
+#footer #partner h4{font-size:100%; font-weight:100; margin-bottom:5px}
+#footer #all_partner{width:600px; height:40px; float:right; overflow:hidden}
+
+/*home*/
+#home_nb{height:340px; margin-top:25px; border-bottom:solid 2px #D61D22}
+#home_nb .home_nb_item{width:312px}
+#home_nb .home_nb_item h2{font-size:115%; margin-bottom:15px}
+#home_nb .home_nb_item .home_nb_img{height:144px; overflow:hidden; margin-bottom:10px; border-top:solid 5px #D51E20}
+#home_nb .home_nb_item .home_nb_img img{width:312px}
+#home_nb .home_nb_item p{line-height:22px; height:132px; overflow:hidden}
+#home_nb .home_nb_item a{display:block; color:#D51E20; float:right}
+
+#home_new{margin-top:25px}
+#home_new #home_new_title{height:45px}
+#home_new #home_new_title h4{font-size:115%}
+#home_new #home_new_title a{color:#666; text-decoration:underline; float:right}
+
+.home_new_item{height:110px; margin-bottom:30px}
+.home_new_item .home_new_img{width:160px; height:110px; overflow:hidden; float:left; margin-right:10px}
+.home_new_item .home_new_img img{width:160px}
+.home_new_item h3{font-size:115%; margin-bottom:5px}
+.home_new_item .home_new_info{display:block; font-size:95%; line-height:17px; height:51px; overflow:hidden; margin-bottom:17px}
+
+.view_detail{color:#FFF !important; font-weight:bold; font-size:90%; padding:4px 25px 4px 15px; background-color:#D51E20}
+/*end home*/
 
 #left{width:200px; float:left; background:url(images/bg-left.png) repeat-y}
 #left h3{font-size:110%; padding:30px 0 10px 15px}
@@ -24,11 +67,13 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #left li a{display:block; color:#333; margin-left:15px; padding:8px 0 8px 14px; background:url(images/li.png) no-repeat left}
 #left li a:hover{color:#D61D22}
 
-#right{width:710px; float:right}
+#right{width:660px; float:right; margin-right:40px}
 
-.video_product{width:390px}
-.video_product iframe{width:390px; height:300px}
-.video_product h4{font-size:100%; line-height:20px; color:#F00; margin-top:5px}
+#h1_dm{font-size:130%; margin-bottom:20px}
+
+#content_left{width:500px; float:right; margin-right:20px}
+
+#content_right{width:200px; float:right; border-left:solid 1px #CCC}
 
 .viewpost{line-height:23px}
 .viewpost p, .viewpost div {margin:10px 0}
@@ -40,43 +85,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .viewpost .sp_price_ban{color:#777; line-height:30px}
 .viewpost .sp_price_ban b{font-weight:bold; font-size:160%; color:#F00}
 
-#footer{clear:both; color:#666}
-#footer #footer_menu{height:33px; line-height:33px; padding:0 10px; border-top:solid 2px #E3908D; border-bottom:solid 2px #E3908D}
-#footer #footer_menu a{float:left; color:#666; padding:0 10px}
-#footer #run_top{width:auto; float:right; cursor:pointer}
-#footer #social{clear:both}
-#footer #social .item_social{width:125px; float:left; line-height:32px; margin-top:10px}
-#footer #social .item_social img{width:33px; float:left; margin-right:10px}
-
-.item_info{width:460px; height:380px; float:left; line-height:22px; margin:0 20px}
-.item_info h3{font-size:135%; font-weight:100}
-.item_info .date_info{color:#999; font-style:italic; margin-bottom:5px}
-.item_info .img_info{width:460px; height:200px; overflow:hidden; margin-bottom:5px}
-.item_info .img_info img{width:460px}
-
-.item_video{width:460px; height:410px; float:left; line-height:22px; margin:0 20px}
-.item_video h3{font-size:135%; font-weight:100}
-.item_video .date_video{color:#999; font-style:italic; margin-bottom:5px}
-.item_video .img_video{width:460px; height:260px; margin-bottom:5px; background:url(images/video.gif) bottom no-repeat #000}
-.item_video .img_video div{height:230px; overflow:hidden}
-.item_video .img_video img{width:450px; margin:5px}
-
-.item_image{width:460px; height:410px; float:left; line-height:20px; margin:0 20px}
-.item_image h3{font-size:135%; font-weight:100}
-.item_image .date_image{color:#999; font-style:italic; margin-bottom:5px}
-.item_image .img_image{width:460px; height:300px; margin-bottom:5px; background:url(images/bg-image.png) no-repeat}
-.item_image .img_image div{width:225px; height:164px; overflow:hidden; padding:81px 0 0 93px}
-.item_image .img_image img{width:225px; ma}
-
-#contact{padding:25px}
-#contact #info{line-height:22px}
-#contact #info h1{font-size:200%; font-weight:100; padding-bottom:10px; margin:0}
-#contact #info p, #contact #info div {margin:10px 0}
-#contact .txt{width:250px; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
-#contact .textarea{width:672px; height:100px; line-height:20px; resize:none; overflow:auto; padding:5px; background-color:#f7f7f7; border:solid 1px #CCC}
-#contact .btn{width:auto; padding:10px 60px; font-weight:bold; color:#FFF; background-color:#DA251E; border:none; cursor:pointer}
-
-#navigator{clear:both}
+#navigator{clear:both; margin:10px 0 30px 0}
 #navigator a{padding-right:15px; font-size:12px; color:#666}
 #navigator a:hover{color:#000}
 #navigator span{font-size:9px; color:#999; padding-right:5px}
@@ -85,14 +94,14 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #phantrang a:hover{background-color:#DA251E}
 
 /*menu*/
-#menu{height:23px; font-size:95%; background-color:#D61D22}
+#menu{height:23px; font-size:90%; background-color:#D61D22}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:23px; color:#FFF; font-weight:bold; text-transform:uppercase; padding:0 25px; border-left:solid 1px #EC373B; border-right:solid 1px #BC191D;} /* letter-spacing:1px; word-spacing:2px */
+#nav li a {line-height:23px; color:#FFF; font-weight:bold; text-transform:uppercase; padding:0 20px; border-left:solid 1px #EC373B; border-right:solid 1px #BC191D;} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; color:#FF0}
 #nav li {float:left; position:relative}
 #nav ul {width:210px; position:absolute; top:23px; display:none; background-color:#9B9B9B; padding:5px 0; box-shadow:2px 2px 2px #888}
-#nav li ul a {width:160px; line-height:25px; float:left; text-transform:none; color:#FFF; font-weight:100; padding:0 25px; border:none}
+#nav li ul a {width:170px; line-height:25px; float:left; text-transform:none; color:#FFF; font-weight:100; padding:0 20px; border:none}
 #nav li ul a:hover {background-color:#888483; color:#FFF}
 #nav ul ul {top:auto}
 #nav li ul ul {left:220px}
@@ -105,25 +114,12 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #nav li li li:hover ul,
 #nav li li li li:hover ul {display:block}
 
-/* popup */
-#backgroundPopup{display:none; position:fixed; _position:absolute; /*IE 6*/ height:100%; width:100%; top:0; left:0; background:#FFF; order:1px solid #CECECE; z-index:1100}
-#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
-.popupContactClose{font-weight: bold; cursor:pointer}
-#content_popup{width:600px; height:auto; border:solid 2px #E66460; background-color:#FFF}
-#content_popup #title_popup{line-height:40px; color:#FFF; font-weight:bold; font-size:130%; padding:0 20px; background-color:#E66460}
-#content_popup #info_popup{line-height:28px; font-size:100%; padding:20px}
-#content_popup #info_popup #name_popup{font-weight:bold; font-size:140%; color:#0048FF}
-#content_popup #info_popup #price_popup{color:#666; text-decoration:line-through; padding-left:30px}
-#content_popup #info_popup #price_ban_popup{color:#F00; font-weight:bold; font-size:130%; padding-left:30px}
-#content_popup #info_popup #soluong_popup{padding-left:30px; margin-bottom:10px}
-#content_popup #info_popup #soluong_popup input{width:50px; margin-right:10px; padding:3px 5px}
-#content_popup #info_popup #soluong_popup #error_soluong{color:#F00; font-style:italic}
-#content_popup #info_popup .btn_popup{color:#FFF; font-weight:bold; font-size:110%; margin-right:10px; padding:5px 30px; border:none; cursor:pointer}
-.dathang{width:auto; float:right; padding-top:5px; cursor:pointer}
-.lienhe{display:none; width:auto; float:right; font-size:80%; margin:7px; padding:2px 10px; cursor:pointer; background-color:#828282}
-.trash{font-weight:bold; color:#ED1E24; font-size:120%; padding:10px; cursor:pointer}
-.muahang{width:180px; padding:5px 0; color:#FFF; text-align:center; font-weight:bold; margin:auto; background-color:#ED1E24; cursor:pointer}
-/* popup */
+/*partner*/
+.simply-scroll-container {position:relative}
+.simply-scroll-clip {overflow:hidden; position:relative;}
+.simply-scroll {height:40px; width:100%;}
+.simply-scroll .simply-scroll-clip {height:40px; width:100%;}
+.simply-scroll .simply-scroll-list li {float:left; height:40px; margin-right:5px; width:90px;}
 
 /*Photos*/
 #photos * {margin:0px; padding:0px}

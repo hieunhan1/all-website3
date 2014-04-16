@@ -128,6 +128,7 @@ $(document).ready(function(){
 	
 	/*other*/
 	// cap nhat: dang ky, lien he, nop ho so
+	/*
 	$.post("ajax.php",{khachhang_dathang:"khachhang_dathang"},function(data){
 		$("#khachhang_dathang").html(' (' + data + ')');
 	});
@@ -137,7 +138,9 @@ $(document).ready(function(){
 	$.post("ajax.php",{hoso_tuyendung:"hoso_tuyendung"},function(data){
 		$("#hoso_tuyendung").html(' (' + data + ')');
 	});
+	*/
 
+	/*
 	// gui thong tin
 	$("input[name=btn_gui_thongtin]").click(function(){ 
 		var id_nv = $("select[name=nhanvien_lienhe]").val();
@@ -171,5 +174,6 @@ $(document).ready(function(){
 			alert('Bạn chưa chọn nhân viên để gửi thông tin');
 		}
 	});
+	*/
 	
 });

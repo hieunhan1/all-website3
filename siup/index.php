@@ -44,12 +44,10 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : include_once('blocks/articles_list.php'); break;
-			case 3 : include_once('blocks/products_list.php'); break;
-			case 4 : include_once('blocks/picture_list.php'); break;
-			case 5 : include_once('blocks/video_list.php'); break;
+			case 3 : include_once('blocks/project_1_list.php'); break;
+			case 4 : include_once('blocks/project_2_list.php'); break;
+			case 5 : include_once('blocks/project_3_list.php'); break;
 			case 6 : include_once('blocks/contact.php'); break;
-			case 7 : include_once('blocks/giohang.php'); break;
-			case 11 : include_once('blocks/tuyendung_list.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -59,10 +57,6 @@ if(@$_GET['danhmuc']){
 		$include = ob_start();
 		switch($type){
 			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
-			case 3 : $qr = $tc->product_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_product_image_thumb; include_once('blocks/products.php'); break;
-			case 4 : $qr = $tc->picture_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_catalog_image_thumb; include_once('blocks/picture.php'); break;
-			case 5 : $qr = $tc->video_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_video_thumb; include_once('blocks/video.php'); break;
-			case 11 : $qr = $tc->tuyendung_detail($dt); $row_detail = mysql_fetch_array($qr); include_once('blocks/tuyendung.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -108,27 +102,72 @@ if(@$_GET['danhmuc']){
 <body>
 
 <div id="wrapper">
-	<div id="header"></div>
+	<div id="header">
+    	<div id="logo">
+        	<img src="images/logo.png" alt="SIUP" />
+            <div><?php echo $row_config['contact_foo'];?></div>
+        </div>
+        
+        <div id="top">
+        	<?php
+			$qr = $tc->menu(0,1,$lang);
+			while($row = mysql_fetch_array($qr)){
+				echo '<li><a href="'.$row['url'].'" title="'.$row['name'].'">'.$row['name'].'</a>|</li>';
+			}
+			
+			if($lang=='vi') echo '<a href="?lang=en" style="border:none"><img src="images/en.gif" alt="en" style="height:13px; float:left; margin-left:15px; padding-top:4px " /> English</a>';
+			else echo '<a href="" style="border:none"><img src="images/vi.gif" alt="vi" style="height:13px; float:left; margin-left:15px; padding-top:4px " /> Tiếng Việt</a>';
+			?>
+            
+        </div>
+        
+        <div id="search">
+        	<input type="text" name="txtSearch" class="txt" value="Tìm kiếm nội dung" onclick="if(value=='Tìm kiếm nội dung') value=''" onblur="if(value=='') value='Tìm kiếm nội dung'" />
+            <input type="button" name="btnSearch" value="&nbsp;" class="btn" />
+        </div>
+    </div>
 	<?php
     include_once('blocks/menu.php');
     include_once('blocks/slider.php');
 	?>
 	
 	<div id="content">
-    	<div id="left">
-        	<h3>Loại hình đồ án</h3>
-            <li><a href="">Quy hoạch vùng</a></li>
-            <li><a href="">Quy hoạch vùng</a></li>
-            <li><a href="">Quy hoạch vùng</a></li>
-            <li><a href="">Quy hoạch vùng</a></li>
-            <li><a href="">Quy hoạch vùng</a></li>
-        </div>
-        <div id="right">
-        	
-        </div>
+        <?php echo $include; ?>
         <div style="clear:both; height:30px"></div>
     </div>
-	<div id="footer"></div>
+	<div id="footer">
+    	<div id="copyright">
+        	<?php
+            echo "<h4>{$row_config['copyright']}</h4>";
+			$qr = $tc->menu(0,6);
+			while($row = mysql_fetch_array($qr)){
+				echo '<a href="'.$row['url'].'"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
+			}
+			?>
+        </div>
+        <div id="partner">
+        	<h4>Đối tác của SIUP</h4>
+            <div id="all_partner">
+            	<!--partner-->
+                <div class="simply-scroll simply-scroll-container">
+                    <div class="simply-scroll-clip">
+                        <ul id="scroller" class="simply-scroll-list" style="width:2255px">
+                            <?php
+                            $qr = $tc->slider_banner(2);
+                            while($row = mysql_fetch_array($qr)){
+                                echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript" src="library/partner/common.js"></script>
+				<script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
+                <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
+                <!--end partner-->
+            </div>
+        </div>
+    </div>
 
 
 </div>
