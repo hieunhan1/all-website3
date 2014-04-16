@@ -1,60 +1,47 @@
-<?php
-$qr_list = $tc->home_danhmuc($lang);
-while($row_list = mysql_fetch_array($qr_list)){
-	$qr = $tc->home_list_product($row_list['id']);
-	if(mysql_num_rows($qr) > 0){
-		$i = 0;
-		$item_product = '';
-		while($row = mysql_fetch_array($qr)){
-			$i++;
-			$link = $tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
-			if($i%5 != 1) $margin = 'style="margin-left:5px"'; else $margin = '';
-			
-			if($row['price']!=0 && $row['price_km']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price'],$row['price_km']).'">Mua</div><div class="home_sp_price"><div class="home_sp_price_goc">'.number_format($row['price'],'0',',','.').' VNĐ</div> <div class="home_sp_price_ban"><b>'.number_format($row['price_km'],'0',',','.').' VNĐ</b></div></div>';
-			elseif($row['price']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price']).'">Mua</div><div class="home_sp_price"><div class="home_sp_price_ban"><b>'.number_format($row['price'],'0',',','.').' VNĐ</b></div></div>';
-			else $price = '<p style="font-weight:bold; text-align:right; padding-top:5px">'.const_contact_product.'</p>';
-			$item_product .= '<div class="home_sp_item" '.$margin.'>
-				<div class="home_sp_img"><a href="'.$link.'"><img src="'.url_product_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
-				<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
-				'.$price.'
-			</div>';
-		}
-		echo '<div class="home_list_sp">
-			<div class="home_sp_title"><a href="'.$row_list['url'].'">'.$row_list['name'].'</a></div>
-			'.$item_product.'<div style="clear:both; height:1px"></div>
-		</div>';
-	}
-}
-
-$i = 0;
-$item_product = '';
-$qr = $tc->home_sp_ua_chuong($lang);
-if(mysql_num_rows($qr) > 0){
+<div id="left">
+	<?php
+    $qr = $tc->home_left($lang,3);
+	$row = mysql_fetch_array($qr);
+	echo "<h3>{$row['title']}</h3>";
+	
+	$qr = $tc->menu($row['id'],3);
 	while($row = mysql_fetch_array($qr)){
-		$i++;
-		$link = $tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
-		if($i%5 != 1) $margin = 'style="margin-left:5px"'; else $margin = '';
-		
-		if($row['price']!=0 && $row['price_km']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price'],$row['price_km']).'">Mua</div>
-		<div class="home_sp_price">
-			<div class="home_sp_price_goc">'.number_format($row['price'],'0',',','.').' VNĐ</div>
-			<div class="home_sp_price_ban"><b>'.number_format($row['price_km'],'0',',','.').' VNĐ</b></div>
-		</div>
-		<div style="float:left; font-size:80%">Có '.$row['total'].' người mua</div>';
-		elseif($row['price']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price']).'">Mua</div>
-		<div class="home_sp_price">
-			<div class="home_sp_price_ban"><b>'.number_format($row['price'],'0',',','.').' VNĐ</b></div>
-		</div>
-		<div style="clear:both; float:left; font-size:80%">Có '.$row['total'].' người mua</div>';
-		else $price = '<p style="font-weight:bold; text-align:right; padding-top:5px">'.const_contact_product.'</p>';
-		$item_product .= '<div class="home_sp_item" '.$margin.'>
-			<div class="home_sp_img"><a href="'.$link.'"><img src="'.url_product_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
-			<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
-			'.$price.'
-		</div>';
+		echo '<li><a href="'.$row['url'].'">'.$row['name'].'</a></li>';
 	}
-	echo '<div class="home_list_sp">
-		<div class="home_sp_title"><a href="'.$row_list['url'].'">Sản phẩm ưa chuộng</a></div>
-		'.$item_product.'<div style="clear:both; height:1px"></div>
-	</div>';
-}
+	?>
+</div>
+<div id="right">
+    <div id="home_nb">
+		<?php
+        $i = 0;
+        $qr = $tc->home_info_item($idMenu,2);
+        while($row = mysql_fetch_array($qr)){
+            $i++;
+            if($i==1) $style = 'style="float:left"'; else $style = 'style="float:right"';
+            echo '<div class="home_nb_item" '.$style.'>
+                <h2>'.$row['name'].'</h2>
+                <div class="home_nb_img"><img src="'.url_detail_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+                <p>'.$row['metaDescription'].' <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">Xem chi tiết »</a></p>
+            </div>';
+        }
+        ?>
+    </div>
+    
+    <div id="home_new">
+        <?php
+        $qr = $tc->home_dm_new($lang);
+        $row = mysql_fetch_array($qr);
+        echo '<div id="home_new_title"><h4>'.$row['name'].'</h4> <a href="'.$row['url'].'">xem tất cả tin tức »</a> </div>';
+        
+        $qr = $tc->home_info_item($row['id'],3);
+        while($row = mysql_fetch_array($qr)){
+            echo '<div class="home_new_item">
+                <div class="home_new_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+                <h3>'.$row['name'].'</h3>
+                <div class="home_new_info">'.$row['metaDescription'].'</div>
+                <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">Xem chi tiết »</a>
+            </div>';
+        }
+        ?>
+    </div>
+</div>

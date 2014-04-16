@@ -112,6 +112,15 @@ $(document).ready(function($){
 	$("#nav li a:first").css("border-left","none");
 	$("#left li:first").css("border-top","none");
 	
+	var w_left = parseInt($("#left").height());
+	var w_right = parseInt($("#right").height());
+	var w_content_left = parseInt($("#content_left").height());
+	var w_content_right = parseInt($("#content_right").height());
+
+	if(w_left < w_right) $("#left").height(w_right);
+	if(w_left < w_content_left) $("#left").height(w_content_left + 55);
+	if(w_content_right < w_content_left) $("#content_right").height(w_content_left);
+	
 	$("#txtSearch").keydown(function(e){
 		if(e.keyCode==13) SearchGoogle("txtSearch");
 	});
@@ -119,14 +128,9 @@ $(document).ready(function($){
 		SearchGoogle("txtSearch");
 	});
 	
-	$('#run_top').click(function(){
-		sroll_top();
-	});
-	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$(".box_left, .box_info, .muahang").corner("8px");
-		$(".title_info").corner("top","8px");
-		$("#signin, #form_login").corner("7px");
+		$(".view_detail").corner("5px");
+		$("#phantrang a").corner("3px");
 	}
 	
 	

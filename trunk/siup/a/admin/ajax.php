@@ -46,6 +46,7 @@ if(@$_SESSION["username_admin"]) {
 		
 	/*other*/
 	// cap nhat: dang ky, lien he, nop ho so
+	/*
 	if(isset($_POST['khachhang_dathang'])){
 		$qr = mysql_query("SELECT id FROM web_order WHERE `delete`=0 AND `status`=0 ");
 		echo mysql_num_rows($qr);
@@ -58,7 +59,9 @@ if(@$_SESSION["username_admin"]) {
 		$qr = mysql_query("SELECT id FROM web_tuyendung_hoso WHERE `delete`=0 AND `status`=0 ");
 		echo mysql_num_rows($qr);
 	}
+	*/
 	
+	/*	
 	//gui thong tin
 	if(isset($_POST['gui_thongtin'])){
 		$id_nv = $_POST['gui_thongtin'];
@@ -101,5 +104,5 @@ if(@$_SESSION["username_admin"]) {
 			echo '1';
 		}else echo '0';
 	}
-	
+	*/
 }

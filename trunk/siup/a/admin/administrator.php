@@ -98,11 +98,6 @@ function SetFileField(fileUrl, data){
 					$i++;
 					
 					if( preg_match("/,{$row['id']},/i", $quyen_xem) ){
-						if($i==8) $style = '<span id="khachhang_dathang" class="ajax_thongtin"></span>';
-						elseif($i==9) $style = '<span id="khachhang_lienhe" class="ajax_thongtin"></span>';
-						elseif($i==12) $style = '<span id="hoso_tuyendung" class="ajax_thongtin"></span>';
-						else $style = '';
-						
 						if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
 						else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
 						if($i == 2) echo '<hr />'; else if($i == 6) echo '<hr />'; else if($i == 9) echo '<hr />'; else if($i == 12) echo '<hr />';

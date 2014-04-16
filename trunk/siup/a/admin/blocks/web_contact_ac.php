@@ -50,14 +50,14 @@ echo '<form name="form_action" method="post" action="">
 	
 	//status
 	$arr = array();
-	$arr[] = array('id'=>'0', 'name'=>'Chưa gửi');
-	$arr[] = array('id'=>'2', 'name'=>'Đã gửi');
+	$arr[] = array('id'=>'0', 'name'=>'Chưa xem');
 	$arr[] = array('id'=>'1', 'name'=>'Đã xem');
 	if($row_detail['status']=='') $properties = 0; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	/*
 	//nhanvien_lienhe
 	$other = '<input type="button" name="btn_gui_lienhe" value="Gửi thông tin" class="button" /><br /> <span id="ajax_gui_thongtin" class="message"></span>';
 	
@@ -71,6 +71,7 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('<span style="color:#F00">** Gửi đến nhân viên</span>','nhanvien_lienhe','input_medium'); //label id&name class
     $form->getProperties('5',$arr,$properties,$views,$other);
 	echo $form->DisplayProperties();
+	*/
 	
 	//name
 	$values = $row_detail['name'];
