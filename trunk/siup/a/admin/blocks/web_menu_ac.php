@@ -17,6 +17,11 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
@@ -53,11 +58,11 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 	
 	//date_update
-	$values = $row_detail['date_update'];
+	/*$values = $row_detail['date_update'];
 	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
 	//position_id
 	$values = $row_detail['position_id'];

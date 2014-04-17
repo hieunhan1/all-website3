@@ -26,6 +26,11 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
@@ -74,11 +79,11 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
 	echo $form->DisplayProperties();
 	
 	//date_update
-	$values = $row_detail['date_update'];
+	/*$values = $row_detail['date_update'];
 	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
 	//name
 	$values = $row_detail['name'];
@@ -105,12 +110,12 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
 	}
 	
 	$properties = $row_detail['quyen_xem']; //default check
-	$views = array('Xem','','checkbox checkbox_xem','width:167px; height:370px;'); //label name class width
+	$views = array('Xem','','checkbox checkbox_xem','width:167px; height:200px;'); //label name class width
 	$form->getProperties('7',$arr,$properties,$views);
 	$xem = $form->DisplayProperties();
 	
 	$properties = $row_detail['quyen_action']; //default check
-	$views = array('Quyền','','checkbox checkbox_action','width:167px; height:370px;'); //label name class width
+	$views = array('Quyền','','checkbox checkbox_action','width:167px; height:200px;'); //label name class width
 	$form->getProperties('7',$arr,$properties,$views);
 	$quyen = $form->DisplayProperties();
 	

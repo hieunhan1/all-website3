@@ -17,6 +17,11 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
@@ -53,11 +58,11 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 	
 	//date_update
-	$values = $row_detail['date_update'];
+	/*$values = $row_detail['date_update'];
 	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
 	//name
 	$values = $row_detail['name'];
@@ -81,35 +86,35 @@ echo '<form name="form_action" method="post" action="">
 	//max_limit_1
 	$values = $row_detail['max_limit_1'];
 	$properties = array('2'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Số tin tức','max_limit_1','input_medium'); //label id&name class style
+	$views = array('Tin tức','max_limit_1','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//max_limit_2
 	$values = $row_detail['max_limit_2'];
 	$properties = array('2'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Số sản phẩm','max_limit_2','input_medium'); //label id&name class style
+	$views = array('Dự án','max_limit_2','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//max_limit_3
+	/*//max_limit_3
 	$values = $row_detail['max_limit_3'];
 	$properties = array('2'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Số hình ảnh','max_limit_3','input_medium'); //label id&name class style
+	$views = array('Project 2','max_limit_3','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//max_limit_4
 	$values = $row_detail['max_limit_4'];
 	$properties = array('2'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Số video','max_limit_4','input_medium'); //label id&name class style
+	$views = array('Project 3','max_limit_4','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
-	//slogan
-	$values = $row_detail['slogan'];
-	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Slogan','slogan','input_medium'); //label id&name class style
+	//map_google
+	$values = $row_detail['map_google'];
+	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Google Map','map_google','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
@@ -127,7 +132,7 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//yahoo
+	/*//yahoo
 	$values = $row_detail['yahoo'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Yahoo','yahoo','input_medium'); //label id&name class style
@@ -139,7 +144,7 @@ echo '<form name="form_action" method="post" action="">
 	$properties = array('50'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Điện thoại','tel','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
 	//contact_foo
 	$values = $row_detail['contact_foo'];

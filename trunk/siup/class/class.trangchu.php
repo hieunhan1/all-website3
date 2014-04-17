@@ -96,9 +96,9 @@ class trangchu extends db {
 		if($total_pages > 1){
 			for($i = 0; $i <= $total_pages; $i++){
 				if($page_number == $i){
-					$str .= "<a href='{$link}_page_{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
 				} elseif($i>0) {
-					$str .= "<a href='{$link}_page_{$i}/'>{$i}</a>";
+					$str .= "<a href='{$link}/{$i}/'>{$i}</a>";
 				}
 			}
 		}
@@ -124,23 +124,21 @@ class trangchu extends db {
 		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,metaKeyword,date_create FROM web_info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
-	function product_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,price,price_km,url_hinh,metaDescription,content,metaKeyword,dactinh FROM web_products WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+	function tin_lienquan($idMenu,$id){
+		$qr = "SELECT id,name,name_rewrite,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 5";
 		return mysql_query($qr);
 	}
-	function picture_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,metaKeyword,date_create FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
-		return mysql_query($qr);
-	}
-	function video_detail($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,link,metaDescription,content,metaKeyword,date_create FROM web_video WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+	
+	/*project*/
+	function project_2_noibat($idMenu){
+		$qr = "SELECT id,name,content FROM web_info WHERE `delete`=0 AND status=1 AND other=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 1";
 		return mysql_query($qr);
 	}
 	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','0','{$date}','{$date}','khachhang','','0')";
+		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
 	

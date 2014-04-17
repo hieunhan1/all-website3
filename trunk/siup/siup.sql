@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Apr 16, 2014 at 06:38 PM
+-- Generation Time: Apr 17, 2014 at 06:04 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -23,7 +23,7 @@ CREATE TABLE `web_config` (
   `id` int(3) NOT NULL auto_increment,
   `name` varchar(30) NOT NULL,
   `lang` char(2) NOT NULL default '',
-  `slogan` varchar(100) default NULL,
+  `map_google` varchar(50) default NULL,
   `domain` varchar(40) default NULL,
   `max_limit_1` int(2) default NULL,
   `max_limit_2` int(2) default NULL,
@@ -48,8 +48,8 @@ CREATE TABLE `web_config` (
 -- Dumping data for table `web_config`
 -- 
 
-INSERT INTO `web_config` VALUES (1, 'Việt nam', 'vi', '', 'localhost/all/siup', 10, 20, 10, 10, 'Bản quyền © 2014 SIUP', '<p>BỘ XÂY DỰNG</p>\r\n\r\n<p>VIỆN QUY HOẠCH ĐÔ THỊ VÀ NÔNG THÔN QUỐC GIA</p>\r\n\r\n<p>PHÂN VIỆN QUY HOẠCH ĐÔ THỊ NÔNG THÔN MIỀN NAM</p>\r\n', '', 'hieunhan112@gmail.com', 'hieu_nhan1', '0988 388 008', 1, '2013-02-20 13:35:24', '2013-03-01 11:36:00', 'admin', 'admin', 0);
-INSERT INTO `web_config` VALUES (2, 'English', 'en', '', 'localhost/all/siup', 10, 20, 10, 10, 'Copyright © 2014 SIUP', '<p>BỘ XÂY DỰNG</p>\r\n\r\n<p>VIỆN QUY HOẠCH ĐÔ THỊ VÀ NÔNG THÔN QUỐC GIA</p>\r\n\r\n<p>PHÂN VIỆN QUY HOẠCH ĐÔ THỊ NÔNG THÔN MIỀN NAM</p>\r\n', '', 'hieunhan112@gmail.com', 'hieu_nhan1', '0988 388 008', 1, '2013-11-12 15:50:44', '2013-11-12 11:37:00', 'admin', 'admin', 0);
+INSERT INTO `web_config` VALUES (1, 'Việt nam', 'vi', '10.7867893,106.6972446', 'localhost/all/siup', 5, 12, 12, 10, 'Bản quyền © 2014 SIUP', '<p>BỘ XÂY DỰNG</p>\r\n\r\n<p>VIỆN QUY HOẠCH ĐÔ THỊ VÀ NÔNG THÔN QUỐC GIA</p>\r\n\r\n<p>PHÂN VIỆN QUY HOẠCH ĐÔ THỊ NÔNG THÔN MIỀN NAM</p>\r\n', '<p><strong>Thông tin liên hệ</strong></p>\r\n\r\n<p>Mọi chi tiết xin liên hệ với chúng tôi:<br />\r\nĐịa chỉ: 65 Mạc Đỉnh Chi, Phường ĐaKao, Quận 1, Tp.HCM&nbsp;<br />\r\nĐiện thoại: <span style="color:#B22222;">08 38224476</span> &nbsp; &nbsp; Fax: <span style="color:#B22222;">08 38220090</span> &nbsp; &nbsp; Email: <span style="color:#B22222;">contact@siup.vn</span></p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0988 388 008', 1, '2013-02-20 13:35:24', '2014-04-17 17:59:12', 'admin', 'admin', 0);
+INSERT INTO `web_config` VALUES (2, 'English', 'en', '10.7867893,106.6972446', 'localhost/all/siup', 5, 12, 12, 10, 'Copyright © 2014 SIUP', '<p>BỘ XÂY DỰNG</p>\r\n\r\n<p>VIỆN QUY HOẠCH ĐÔ THỊ VÀ NÔNG THÔN QUỐC GIA</p>\r\n\r\n<p>PHÂN VIỆN QUY HOẠCH ĐÔ THỊ NÔNG THÔN MIỀN NAM</p>\r\n', '<p><strong>Thông tin liên hệ</strong></p>\r\n\r\n<p>Mọi chi tiết xin liên hệ với chúng tôi:<br />\r\nĐịa chỉ: 65 Mạc Đỉnh Chi, Phường ĐaKao, Quận 1, Tp.HCM&nbsp;<br />\r\nTelephone: <span style="color:#B22222;">08 38224476</span> &nbsp; &nbsp; Fax: <span style="color:#B22222;">08 38220090</span> &nbsp; &nbsp; Email: <span style="color:#B22222;">contact@siup.vn</span></p>\r\n', 'hieunhan112@gmail.com', 'hieu_nhan1', '0988 388 008', 1, '2013-11-12 15:50:44', '2014-04-17 17:59:19', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -73,17 +73,13 @@ CREATE TABLE `web_contact` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 -- 
 -- Dumping data for table `web_contact`
 -- 
 
-INSERT INTO `web_contact` VALUES (1, 'Nguyễn Thị Huỳnh Như', 'thanhha39sty@yahoo.com.vn', '01254082755', '1F/1/1T Hương Lộ 80 - KDC Đồng Danh -Vĩnh Lộc A- Bình Chánh', 'Tôi muốn mua các loại bột sau : \nBột bánh bông lan nuớng loai 14.000 đ/ bịch (4 bịch )\nBột bánh bông lan hấp  500gr  22.000 đ/ bịch (2 bịch )\nBột bánh bò loại 21.000 đ/ bich (3 bịch)\nBột bánh xèo loại 18.000 đ/bịch (3 bịch )\nBột bánh pizza 37.000d9/ bịch (1 bịch )\nBạn có thể giao hàng cho tôi không?\nNếu có , vui lòng gọi sdt 01254082755 Tên Như ( giờ hành chính)\nXin cám ơn', NULL, '', 0, '2013-11-18 06:02:17', '2014-04-07 18:08:59', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (2, 'Việt nam', 'hieunhan112@gmail.com', '0988388003', 'Lê Đức Thọ , Gò Vấp', 'test mail abc det dcv', NULL, '', 0, '2013-11-18 09:12:16', '2014-04-07 18:09:00', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (3, 'Ms.Nguyệt', 'nguyetchenh@fosi.vn', '0909228783', '176 Hoa Lan P.2 Q Phú Nhuận', 'Xin chào quý công ty!\nEm bên công ty FOSi - đơn vị cung cấp giấy phép về thực phẩm như chứng nhận đủ ĐKATTP cho cơ sở và công bố sản phẩm trong nước và nhập khẩu...Có thể truy cập trang http://trungtamnghiencuuthucpham.vn/ để tìm hiểu thêm.\nNếu công ty có nhu cầu vui lòng liên hệ để được hỗ trợ và tư vấn.\nXin cảm ơn!', NULL, '', 0, '2013-11-22 09:02:35', '2014-04-07 18:09:00', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (4, 'Khổng Thị Thùy Trang', 'trangga_1208@yahoo.com', '01285282889', '14/21 nghĩa hưng p6 quận tân bình', 'sáng ngày 22/11 e có đặt mua một số sản phẩm của công ty nhưng do e có một số việc không có ở nhà để nhận ,vậy cho e hỏi đặt mua qua wedpage thì khi nào mới nhận được', NULL, '', 0, '2013-11-22 15:47:22', '2014-04-07 18:09:01', 'khachhang', 'admin', 1);
-INSERT INTO `web_contact` VALUES (5, 'Tran Nhan', 'hieunhan112@gmail.com', '0988388003', '123 CMT 8', '<p>test lien he abc</p>\r\n', 4, '', 0, '2014-04-07 18:03:58', '2014-04-16 18:38:12', 'khachhang', 'admin', 0);
+INSERT INTO `web_contact` VALUES (8, 'Tran Nhan', 'hieunhan112@gmail.com', '0988388003', '123 CMT 8', '<p>test noi dung lien he</p>\r\n', 0, '', 0, '2014-04-17 18:01:09', '2014-04-17 18:02:05', 'khachhang', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -138,17 +134,28 @@ CREATE TABLE `web_info` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 -- 
 -- Dumping data for table `web_info`
 -- 
 
-INSERT INTO `web_info` VALUES (16, 'Hoạt động kỷ niệm ngày 8/3 của SIUP năm nay có gì mới?', 'hoat-dong-ky-niem-ngay-8-3-cua-siup-nam-nay-co-gi-moi', 'tin-tuc.jpg', 'Như thường lệ, hàng năm nhân dịp ngày Quốc tế phụ nữ, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) phối hợp với Công đoàn tổ chức cho các cán bộ nữ du...', '<p>Như thường lệ, hàng năm nhân dịp ngày Quốc tế phụ nữ, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) phối hợp với Công đoàn tổ chức cho các cán bộ nữ du...</p>\r\n', '2014-04-16 16:41:16', '2014-04-16 15:38:00', 1, 'Hoạt động kỷ niệm ngày 8/3 của SIUP năm nay có gì mới?,hoat dong ky niem ngay 8 3 cua siup nam nay co gi moi', 1, 'vi', ',7,', 'admin', 'admin', 0);
-INSERT INTO `web_info` VALUES (15, 'Bảo tàng tỉnh Quảng Ninh nhận giải “Công trình của Năm 2013”', 'bao-tang-tinh-quang-ninh-nhan-giai-“cong-trinh-cua-nam-2013”', 'tin-tuc.jpg', 'Ngày 14/1/2014, tại khách sạn Hilton Opera Hà Nội, Hội quy hoạch phát triển đô thị Việt Nam và Trang thông tin điện tử Ashui.com đã tổ chức lễ trao giải kiến trúc sư...', '<p>Ngày 14/1/2014, tại khách sạn Hilton Opera Hà Nội, Hội quy hoạch phát triển đô thị Việt Nam và Trang thông tin điện tử Ashui.com đã tổ chức lễ trao giải kiến trúc sư...</p>\r\n', '2014-04-16 16:40:45', '2014-04-16 15:38:00', 1, 'Bảo tàng tỉnh Quảng Ninh nhận giải “Công trình của Năm 2013”,bao tang tinh quang ninh nhan giai “cong trinh cua nam 2013”', 1, 'vi', ',7,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (26, 'Dự án đường Phạm Ngọc Hiển', 'du-an-duong-pham-ngoc-hien', 'du-an-duong-pham-ngoc-hien.jpg', 'Dự án đường Phạm Ngọc Hiển', '', '2014-04-17 17:00:16', '2014-04-17 15:59:00', 1, 'Dự án đường Phạm Ngọc Hiển,du an duong pham ngoc hien', 0, 'vi', ',5,10,', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (27, 'Dự án Bong Bo Sen', 'du-an-bong-bo-sen', 'du-an-bong-bo-sen.jpg', 'Dự án Bong Bo Sen', '', '2014-04-17 17:00:39', '2014-04-17 15:59:00', 1, 'Dự án Bong Bo Sen,du an bong bo sen', 0, 'vi', ',5,10,', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (16, 'Hoạt động kỷ niệm ngày 8/3 của SIUP năm nay có gì mới?', 'hoat-dong-ky-niem-ngay-8-3-cua-siup-nam-nay-co-gi-moi', 'du-an-1.jpg', 'Như thường lệ, hàng năm nhân dịp ngày Quốc tế phụ nữ, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) phối hợp với Công đoàn tổ chức cho các cán bộ nữ du...', '<p>Như thường lệ, hàng năm nhân dịp ngày Quốc tế phụ nữ, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) phối hợp với Công đoàn tổ chức cho các cán bộ nữ du...</p>\r\n', '2014-04-16 16:41:16', '2014-04-16 15:38:00', 1, 'Hoạt động kỷ niệm ngày 8/3 của SIUP năm nay có gì mới?,hoat dong ky niem ngay 8 3 cua siup nam nay co gi moi', 1, 'vi', ',7,9,', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (17, 'Giới thiệu chung', 'gioi-thieu-chung', '', 'Giới thiệu chung', '', '2014-04-17 15:05:14', '2014-04-17 14:05:00', 1, 'Giới thiệu chung,gioi thieu chung', 1, 'vi', ',6,12,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (18, 'Quá trình hình thành', 'qua-trinh-hinh-thanh', '', 'Quá trình hình thành', '', '2014-04-17 15:05:48', '2014-04-17 14:05:00', 1, 'Quá trình hình thành,qua trinh hinh thanh', 1, 'vi', ',6,13,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (19, 'Chức năng nhiệm vụ', 'chuc-nang-nhiem-vu', '', 'Chức năng nhiệm vụ', '', '2014-04-17 15:06:10', '2014-04-17 14:06:00', 1, 'Chức năng nhiệm vụ,chuc nang nhiem vu', 1, 'vi', ',6,14,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (20, 'Cơ cấu tổ chức', 'co-cau-to-chuc', '', 'Cơ cấu tổ chức', '', '2014-04-17 15:06:20', '2014-04-17 14:06:00', 1, 'Cơ cấu tổ chức,co cau to chuc', 1, 'vi', ',6,15,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (21, 'Đối tác Quốc tế', 'doi-tac-quoc-te', '', 'Đối tác Quốc tế', '', '2014-04-17 15:06:40', '2014-04-17 14:06:00', 1, 'Đối tác Quốc tế,doi tac quoc te', 1, 'vi', ',6,16,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (22, 'Giải thưởng - Thành tựu', 'giai-thuong-thanh-tuu', '', 'Giải thưởng - Thành tựu', '', '2014-04-17 15:07:02', '2014-04-17 14:07:00', 1, 'Giải thưởng - Thành tựu,giai thuong - thanh tuu', 1, 'vi', ',6,17,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (23, 'Nhân sự phân viện', 'nhan-su-phan-vien', '', 'Nhân sự phân viện', '', '2014-04-17 15:07:23', '2014-04-17 14:07:00', 1, 'Nhân sự phân viện,nhan su phan vien', 1, 'vi', ',6,18,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (25, 'Dự án đường Đề Thám', 'du-an-duong-de-tham', 'du-an-duong-de-hoa-tham.jpg', 'Dự án đường Đề Thám', '', '2014-04-17 16:59:39', '2014-04-17 15:59:00', 1, 'Dự án đường Đề Thám,du an duong de tham', 0, 'vi', ',5,10,', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (24, 'Quy hoạch đô thị', 'quy-hoach-do-thi', 'quy-hoach-do-thi-1.jpg', 'Khi xã hội thay đổi và phát triển, môi trường đô thị và quá trình quy hoạch đô thị cũng phải thay đổi và đó là trạng thái thay đổi động cân bằng giữa phát triển kinh tế và môi trường bền vững. ', '<p>Khi xã hội thay đổi và phát triển, môi trường đô thị và quá trình quy hoạch đô thị cũng phải thay đổi và đó là trạng thái thay đổi động cân bằng giữa phát triển kinh tế và môi trường bền vững. Trọng tâm quy hoạch tương lai cần phải nhấn mạnh vào sức khỏe cộng đồng. Quy hoạch đô thị và y tế công cộng từ lâu đã gắn bó với nhau, vì vậy bản chất môi trường có liên quan đến hạnh phúc và chất lượng sống.&nbsp;</p>\r\n\r\n<p style="text-align: center;"><img alt="Quy hoạch đô thị" src="/all/siup/public/images/articles/quy-hoach-do-thi-1.jpg" style="width: 439px; height: 316px;" /><img alt="Quy hoạch đô thị" src="/all/siup/public/images/articles/quy-hoach-do-thi-2.jpg" style="opacity: 0.9; font-size: 13px; text-align: center; width: 439px; height: 316px;" /></p>\r\n\r\n<p>Khái niệm "đô thị xanh" cũng mới xuất hiện nhưng đã nhận được sự quan tâm đặc biệt của người dân và nhà đầu tư bất động sản. Đô thị xanh càng trở lên quan trọng hơn khi ô nhiễm môi trường, ô nhiễm tiếng ồn ngày một gia tăng ở các đô thị lớn. Người dân hiện có xu hướng muốn được sở hữu ngôi nhà thoáng đãng trong không gian xanh, gần gũi với thiên nhiên nhưng vẫn tiện nghi, thuận tiện, hướng đến sức khỏe cộng đồng.</p>\r\n\r\n<p>Một đô thị xanh hiện nay phải đạt 7 tiêu chí: Không gian xanh, công trình xanh, giao thông xanh, công nghiệp xanh, chất lượng môi trường đô thị xanh, bảo tồn cảnh quan thiên nhiên, danh lam thắng cảnh, công trình lịch sử, văn hóa, cộng đồng dân cư sống thân thiện với môi trường và thiên nhiên.</p>\r\n\r\n<p>&nbsp;</p>\r\n', '2014-04-17 16:51:31', '2014-04-17 15:51:00', 1, 'Quy hoạch đô thị,quy hoach do thi', 1, 'vi', ',5,10,', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (15, 'Bảo tàng tỉnh Quảng Ninh nhận giải “Công trình của Năm 2013”', 'bao-tang-tinh-quang-ninh-nhan-giai-“cong-trinh-cua-nam-2013”', 'du-an-2.jpg', 'Ngày 14/1/2014, tại khách sạn Hilton Opera Hà Nội, Hội quy hoạch phát triển đô thị Việt Nam và Trang thông tin điện tử Ashui.com đã tổ chức lễ trao giải kiến trúc sư...', '<p>Ngày 14/1/2014, tại khách sạn Hilton Opera Hà Nội, Hội quy hoạch phát triển đô thị Việt Nam và Trang thông tin điện tử Ashui.com đã tổ chức lễ trao giải kiến trúc sư...</p>\r\n', '2014-04-16 16:40:45', '2014-04-16 15:38:00', 1, 'Bảo tàng tỉnh Quảng Ninh nhận giải “Công trình của Năm 2013”,bao tang tinh quang ninh nhan giai “cong trinh cua nam 2013”', 1, 'vi', ',7,9,', 'admin', 'admin', 0);
 INSERT INTO `web_info` VALUES (12, 'Nghiên cứu phát triển', 'nghien-cuu-phat-trien', 'nghien-cuu-phat-trien.jpg', 'SIUP luôn phấn đấu không ngừng trong việc nghiên cứu và phát triển các công nghệ mới, đào tạo kỹ sữ kỹ thuật cao nhằm đáp ứng nhu cầu hiện tại.', '<p>SIUP luôn phấn đấu không ngừng trong việc nghiên cứu và phát triển các công nghệ mới, đào tạo kỹ sữ kỹ thuật cao nhằm đáp ứng nhu cầu hiện tại.</p>\r\n\r\n<p style="text-align: center;"><img alt="" src="/all/siup/public/images/articles/nghien-cuu-phat-trien.jpg" style="width: 312px; height: 144px;" /></p>\r\n', '2014-04-16 16:10:36', '2014-04-16 15:10:00', 1, 'Nghiên cứu phát triển,nghien cuu phat trien', 1, 'vi', ',1,8,', 'admin', 'admin', 0);
-INSERT INTO `web_info` VALUES (13, 'Hợp tác quốc tế', 'hop-tac-quoc-te', 'hop-tac-quoc-te.jpg', 'SIUP luôn phấn đấu không ngừng trong việc nghiên cứu và phát triển các công nghệ mới, đào tạo kỹ sữ kỹ thuật cao nhằm đáp ứng nhu cầu hiện tại', '<p>SIUP luôn phấn đấu không ngừng trong việc nghiên cứu và phát triển các công nghệ mới, đào tạo kỹ sữ kỹ thuật cao nhằm đáp ứng nhu cầu hiện tại.</p>\r\n\r\n<p style="text-align: center;"><img alt="" src="/all/siup/public/images/articles/hop-tac-quoc-te.jpg" style="width: 312px; height: 144px;" /></p>\r\n', '2014-04-16 16:12:27', '2014-04-15 15:10:00', 1, 'Hợp tác quốc tế,hop tac quoc te', 1, 'vi', ',1,8,', 'admin', 'admin', 0);
-INSERT INTO `web_info` VALUES (14, 'Ấm cúng gặp mặt đầu xuân Giáp Ngọ 2014 tại SIUP', 'am-cung-gap-mat-dau-xuan-giap-ngo-2014-tai-siup', 'tin-tuc.jpg', 'Sáng ngày 08 tháng 02, tại Hội trường, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) đã tổ chức gặp mặt đầu xuân cán bộ, viên chức. Có nhiều hoạt động giao lưu...', '<p>Sáng ngày 08 tháng 02, tại Hội trường, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) đã tổ chức gặp mặt đầu xuân cán bộ, viên chức. Có nhiều hoạt động giao lưu...</p>\r\n', '2014-04-16 16:38:05', '2014-04-16 15:38:00', 1, 'Ấm cúng gặp mặt đầu xuân Giáp Ngọ 2014 tại SIUP,am cung gap mat dau xuan giap ngo 2014 tai siup', 1, 'vi', ',7,', 'admin', NULL, 0);
+INSERT INTO `web_info` VALUES (13, 'Hợp tác quốc tế', 'hop-tac-quoc-te', 'hop-tac-quoc-te.jpg', 'SIUP luôn phấn đấu không ngừng trong việc nghiên cứu và phát triển các công nghệ mới, đào tạo kỹ sữ kỹ thuật cao nhằm đáp ứng nhu cầu hiện tại', '<p>SIUP luôn phấn đấu không ngừng trong việc nghiên cứu và phát triển các công nghệ mới, đào tạo kỹ sữ kỹ thuật cao nhằm đáp ứng nhu cầu hiện tại.</p>\r\n\r\n<p style="text-align: center;"><img alt="" src="/all/siup/public/images/articles/hop-tac-quoc-te.jpg" style="width: 312px; height: 144px;" /></p>\r\n', '2014-04-16 16:12:27', '2014-04-15 15:10:00', 1, 'Hợp tác quốc tế,hop tac quoc te', 1, 'vi', ',1,8,9,', 'admin', 'admin', 0);
+INSERT INTO `web_info` VALUES (14, 'Ấm cúng gặp mặt đầu xuân Giáp Ngọ 2014 tại SIUP', 'am-cung-gap-mat-dau-xuan-giap-ngo-2014-tai-siup', 'du-an.jpg', 'Sáng ngày 08 tháng 02, tại Hội trường, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) đã tổ chức gặp mặt đầu xuân cán bộ, viên chức. Có nhiều hoạt động giao lưu...', '<p>Sáng ngày 08 tháng 02, tại Hội trường, Viện Quy hoạch đô thị và nông thôn quốc gia (VIUP) đã tổ chức gặp mặt đầu xuân cán bộ, viên chức. Có nhiều hoạt động giao lưu...</p>\r\n', '2014-04-16 16:38:05', '2014-04-16 15:38:00', 1, 'Ấm cúng gặp mặt đầu xuân Giáp Ngọ 2014 tại SIUP,am cung gap mat dau xuan giap ngo 2014 tai siup', 1, 'vi', ',7,9,', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -200,13 +207,13 @@ CREATE TABLE `web_menu` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 -- 
 -- Dumping data for table `web_menu`
 -- 
 
-INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'http://localhost/all/siup', '', '2014-04-07 15:01:06', '2014-04-07 14:01:00', 0, 1, 1, 'SIUP', 'SIUP', 'SIUP', 0, 'vi', 1, ',2,5,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'http://localhost/all/siup', '', '2014-04-07 15:01:06', '2014-04-17 18:00:07', 0, 1, 1, 'SIUP', 'SIUP', 'SIUP', 0, 'vi', 1, ',2,5,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (25, 'Web nội bộ', 'web-noi-bo', 'web-noi-bo/', '', '2014-04-16 15:20:21', '2014-04-16 14:20:00', 0, 32, 1, 'Web nội bộ', 'Web nội bộ', 'Web nội bộ,web noi bo', 0, 'vi', 8, ',1,', 'admin', NULL, 0);
 INSERT INTO `web_menu` VALUES (2, 'Home', 'home', 'http://localhost/all/shopdochoi/lang=en', '', '2014-04-07 15:09:51', '2014-04-07 14:09:00', 0, 1, 1, 'Shop Do Choi Tre Em DN', 'Shop Do Choi Tre Em DN', 'Shop Do Choi Tre Em DN', 0, 'en', 1, ',2,', 'admin', NULL, 0);
 INSERT INTO `web_menu` VALUES (3, 'Đăng nhập', 'dang-nhap', 'dang-nhap/', '', '2014-04-07 15:14:52', '2014-04-07 14:14:00', 0, 31, 1, 'Đăng nhập', 'Đăng nhập', 'Đăng nhập,dang nhap', 0, 'vi', 8, ',1,', 'admin', 'admin', 0);
@@ -219,7 +226,7 @@ INSERT INTO `web_menu` VALUES (8, 'Nghiên cứu và phát triển', 'nghien-cuu
 INSERT INTO `web_menu` VALUES (9, 'Hợp tác Quốc tế', 'hop-tac-quoc-te', 'hop-tac-quoc-te/', '', '2014-04-07 15:37:01', '2014-04-07 14:37:00', 0, 6, 1, 'Hợp tác Quốc tế', 'Hợp tác Quốc tế', 'Hợp tác Quốc tế,hop tac quoc te', 0, 'vi', 5, ',2,5,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (10, 'Quy hoạch vùng', 'quy-hoach-vung', 'quy-hoach-vung/', '', '2014-04-07 15:37:37', '2014-04-16 12:39:00', 5, 1, 1, 'Quy hoạch vùng', 'Quy hoạch vùng', 'Quy hoạch vùng,quy hoach vung', 0, 'vi', 3, ',2,3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (11, 'Liên hệ', 'lien-he', 'lien-he/', '', '2014-04-07 15:38:16', '2014-04-07 14:37:00', 0, 7, 1, 'Liên hệ', 'Liên hệ', 'Liên hệ,lien he', 0, 'vi', 6, ',2,5,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (12, 'Giới thiệu chung', 'gioi-thieu-chung', 'gioi-thieu-chung/', '', '2014-04-07 15:40:03', '2014-04-07 14:40:00', 6, 1, 1, 'Giới thiệu chung', 'Giới thiệu chung', 'Giới thiệu chung,gioi thieu chung', 1, 'vi', 2, ',2,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (12, 'Giới thiệu chung', 'gioi-thieu-chung', 'gioi-thieu-chung/', '', '2014-04-07 15:40:03', '2014-04-07 14:40:00', 6, 1, 1, 'Giới thiệu chung', 'Giới thiệu chung', 'Giới thiệu chung,gioi thieu chung', 0, 'vi', 2, ',2,3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (13, 'Quá trình hình thành', 'qua-trinh-hinh-thanh', 'qua-trinh-hinh-thanh/', '', '2014-04-07 15:40:54', '2014-04-07 14:40:00', 6, 2, 1, 'Quá trình hình thành', 'Quá trình hình thành', 'Quá trình hình thành,qua trinh hinh thanh', 0, 'vi', 2, ',2,3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (14, 'Chức năng nhiệm vụ', 'chuc-nang-nhiem-vu', 'chuc-nang-nhiem-vu/', '', '2014-04-07 15:41:31', '2014-04-07 14:40:00', 6, 3, 1, 'Chức năng nhiệm vụ', 'Chức năng nhiệm vụ', 'Chức năng nhiệm vụ,chuc nang nhiem vu', 0, 'vi', 2, ',2,3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (15, 'Cơ cấu tổ chức', 'co-cau-to-chuc', 'co-cau-to-chuc/', '', '2014-04-07 15:41:51', '2014-04-07 14:40:00', 6, 4, 1, 'Cơ cấu tổ chức', 'Cơ cấu tổ chức', 'Cơ cấu tổ chức,co cau to chuc', 0, 'vi', 2, ',2,3,', 'admin', 'admin', 0);
@@ -233,6 +240,12 @@ INSERT INTO `web_menu` VALUES (22, 'Facebook', 'facebook', 'http://facebook.com'
 INSERT INTO `web_menu` VALUES (23, 'Youtube', 'youtube', 'http://youtube.com', 'youtube.jpg', '2014-04-08 16:33:46', '2014-04-08 15:32:00', 0, 92, 1, 'Youtube', 'Youtube', 'Youtube', 0, 'vi', 8, ',6,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (26, 'Liên kết website', 'lien-ket-website', 'lien-ket-website/', '', '2014-04-16 15:20:43', '2014-04-16 14:20:00', 0, 33, 1, 'Liên kết website', 'Liên kết website', 'Liên kết website,lien ket website', 0, 'vi', 8, ',1,', 'admin', NULL, 0);
 INSERT INTO `web_menu` VALUES (27, 'Sitemap', 'sitemap', 'sitemap/', '', '2014-04-16 15:20:59', '2014-04-16 14:20:00', 0, 34, 1, 'Sitemap', 'Sitemap', 'Sitemap,sitemap', 0, 'vi', 8, ',1,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (28, 'Đề tài nghiên cứu khoa học', 'de-tai-nghien-cuu-khoa-hoc', 'de-tai-nghien-cuu-khoa-hoc/', '', '2014-04-17 15:38:10', '2014-04-17 14:38:00', 8, 1, 1, 'Đề tài nghiên cứu khoa học', 'Đề tài nghiên cứu khoa học', 'Đề tài nghiên cứu khoa học,de tai nghien cuu khoa hoc', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (29, 'Các chuyên đề khoa học', 'cac-chuyen-de-khoa-hoc', 'cac-chuyen-de-khoa-hoc/', '', '2014-04-17 15:38:55', '2014-04-17 14:38:00', 8, 2, 1, 'Các chuyên đề khoa học', 'Các chuyên đề khoa học', 'Các chuyên đề khoa học,cac chuyen de khoa hoc', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (30, 'Bài viết nghiên cứu khoa học', 'bai-viet-nghien-cuu-khoa-hoc', 'bai-viet-nghien-cuu-khoa-hoc/', '', '2014-04-17 15:39:15', '2014-04-17 14:38:00', 8, 3, 1, 'Bài viết nghiên cứu khoa học', 'Bài viết nghiên cứu khoa học', 'Bài viết nghiên cứu khoa học,bai viet nghien cuu khoa hoc', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (31, 'Dự án hợp tác Quốc tế', 'du-an-hop-tac-quoc-te', 'du-an-hop-tac-quoc-te/', '', '2014-04-17 15:40:47', '2014-04-17 14:40:00', 9, 1, 1, 'Dự án hợp tác Quốc tế', 'Dự án hợp tác Quốc tế', 'Dự án hợp tác Quốc tế,du an hop tac quoc te', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (32, 'Lĩnh vực hợp tác Quốc tế', 'linh-vuc-hop-tac-quoc-te', 'linh-vuc-hop-tac-quoc-te/', '', '2014-04-17 15:41:40', '2014-04-17 14:40:00', 9, 2, 1, 'Lĩnh vực hợp tác Quốc tế', 'Lĩnh vực hợp tác Quốc tế', 'Lĩnh vực hợp tác Quốc tế,linh vuc hop tac quoc te', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (33, 'Đối tác hợp tác Quốc tế', 'doi-tac-hop-tac-quoc-te', 'doi-tac-hop-tac-quoc-te/', '', '2014-04-17 15:42:05', '2014-04-17 14:40:00', 9, 3, 1, 'Đối tác hợp tác Quốc tế', 'Đối tác hợp tác Quốc tế', 'Đối tác hợp tác Quốc tế,doi tac hop tac quoc te', 0, 'vi', 2, ',2,3,', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -355,7 +368,7 @@ CREATE TABLE `web_slider_banner` (
 -- Dumping data for table `web_slider_banner`
 -- 
 
-INSERT INTO `web_slider_banner` VALUES (1, 'Slider liên hệ', 'contact.jpg', 'javascript:;', '2014-04-07 17:06:16', '2014-04-15 17:49:10', 1, 'vi', 1, ',1,2,11,', NULL, 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (1, 'Slider liên hệ', 'contact.jpg', 'javascript:;', '2014-04-07 17:06:16', '2014-04-15 17:49:00', 1, 'vi', 0, ',1,2,', NULL, 'admin', 'admin', 0);
 INSERT INTO `web_slider_banner` VALUES (2, 'Slider trang chủ', 'home.jpg', 'javascript:;', '2014-04-07 17:09:35', '2014-04-16 16:09:00', 1, 'vi', 1, ',1,2,', NULL, 'admin', 'admin', 0);
 INSERT INTO `web_slider_banner` VALUES (3, 'No name', 'no-name.jpg', 'javascript:;', '2014-04-07 17:15:18', '2014-04-16 17:03:00', 1, 'vi', 2, ',', NULL, 'admin', 'admin', 0);
 INSERT INTO `web_slider_banner` VALUES (4, 'unesco', 'unesco.jpg', 'javascript:;', '2014-04-07 17:17:59', '2014-04-16 11:57:33', 1, 'vi', 2, ',4,', NULL, 'admin', 'admin', 0);
@@ -424,7 +437,7 @@ CREATE TABLE `web_users` (
 -- 
 
 INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
-INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,15,', ',1,15,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-03-05 15:58:57', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,15,', ',1,15,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-04-17 18:01:55', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
