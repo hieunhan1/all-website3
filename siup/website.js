@@ -129,7 +129,7 @@ $(document).ready(function($){
 	});
 	
 	if(browserVersion()!=7 && browserVersion()!=8){
-		$(".view_detail").corner("5px");
+		$(".view_detail, .bogoc_5px").corner("5px");
 		$("#phantrang a").corner("3px");
 	}
 	

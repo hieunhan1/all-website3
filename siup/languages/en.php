@@ -1,15 +1,13 @@
-<?
-define(home_page,'home');
-define(const_tin_khac, 'Other post');
+<?php
+define('const_tin_khac', 'Bài viết khác');
 
-define(const_thong_tin, 'Contact Information');
-define(const_date_update, 'Update ');
-define(const_txt_search, 'enter keywords..');
+define('const_txt_search', 'Tìm kiếm nội dung');
 
-define(const_contact_name, 'Name');
-define(const_contact_phone, 'Telephone');
-define(const_contact_diachi, 'Address');
-define(const_contact_message, 'Message');
-define(const_contact_sent, 'SEND');
-
-define(const_contact_product, 'Contact: 08 3854 7777');
+define('const_thong_tin', 'Mọi thắc mắc, đóng góp ý kiên vui lòng gửi cho chúng tôi bằng cách điền đầy đủ thông tin vào form bên dưới. Chúng tôi sẽ trả lời trong thời gian sớm nhất.');
+define('const_contact_name', 'Họ tên');
+define('const_contact_phone', 'Điện thoại');
+define('const_contact_diachi', 'Địa chỉ');
+define('const_contact_message', 'Nội dung');
+define('const_contact_sent', 'GỬI LIÊN HỆ');
+define('const_contact_success', 'Send success.');
+define('const_contact_error', 'Undeliverable. Please press F5 to try again.');

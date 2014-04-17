@@ -25,7 +25,16 @@
 
 <div id="content_left">
 	<?php
-    echo "<h1 id='h1_dm'>{$row_detail['name']}</h1>
-	<div class='viewpost'>{$row_detail['content']}</div>";
+    echo '<h1 id="h1_dm">'.$row_detail['name'].'</h1>
+	<div class="viewpost">'.$row_detail['content'].'</div>
+	<div style="clear:both; height:40px"></div>';
+	
+	$qr = $tc->tin_lienquan($idMenu,$row_detail['id']);
+	if(mysql_num_rows($qr)){
+		while($row = mysql_fetch_array($qr)){
+			$str_lq .= '<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a>';
+		}
+		echo '<div id="tin_lienquan"><h5>'.const_tin_khac.'</h5> '.$str_lq.'</div>';
+	}
 	?>
 </div>

@@ -15,15 +15,16 @@ if($_POST['contact']=='contact'){
 	$diachi = trim($_POST['diachi']);
 	$message = trim($_POST['message']);
 	
-	if($name!='' && $email!='' && $phone!='' && $message!=''){
+	if($name!='' && $email!='' && $message!=''){
 		if($tc->insert_contact($name,$email,$phone,$diachi,$message)){
 			echo '1';
-			include_once('sendmail/sendmail.php');
+			//include_once('sendmail/sendmail.php');
 			return true;
 		}else{
 			echo '0';
 			return false;
 		}
+		
 	}else{
 		echo '0';
 		return false;

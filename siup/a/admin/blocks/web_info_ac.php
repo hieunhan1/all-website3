@@ -65,12 +65,12 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('2',$values,'',$views);
 	$hidden_item = $form->DisplayProperties();
 	
-	$where = "AND lang='{$lang}' AND (type_id=1 OR type_id=2)";
+	$where = "AND lang='{$lang}' AND (type_id=1 OR type_id=2 OR type_id=3 OR type_id=4 OR type_id=5)";
 	$arr = $qt->danhmuc_menu_checkbox(0,'',$where);
 	$properties = $row_detail['parent_id']; //default check
 
 	$properties = $row_detail['menu_id']; //default check
-	$views = array('','','checkbox checkbox_item','width:345px; height:170px;'); //label name class width
+	$views = array('','','checkbox checkbox_item','width:345px; height:270px;'); //label name class width
     $form->getProperties('7',$arr,$properties,$views);
 	echo '<tr><td class="label">Danh mục</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
 	
@@ -126,10 +126,10 @@ echo '<form name="form_action" method="post" action="">
 	
 	//other
 	$arr = array();
-	$arr[] = array('id'=>'1', 'name'=>'Hiện');
-	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['other']=='') $properties = 1; else $properties = $row_detail['other']; //default check
-	$views = array('Hiện trang chủ','other','radio',' &nbsp; '); //label name class other
+	$arr[] = array('id'=>'1', 'name'=>'Có');
+	$arr[] = array('id'=>'0', 'name'=>'Không');
+	if($row_detail['other']=='') $properties = 0; else $properties = $row_detail['other']; //default check
+	$views = array('Trang chủ OR nổi bật','other','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
