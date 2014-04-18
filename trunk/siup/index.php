@@ -122,7 +122,7 @@ if(@$_GET['danhmuc']){
         </div>
         
         <div id="search">
-        	<input type="text" name="txtSearch" class="txt" value="<?php echo const_txt_search; ?>" onclick="if(value=='<?php echo const_txt_search; ?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search; ?>'" />
+        	<input type="text" name="txtSearch" id="txtSearch" class="txt" value="<?php echo const_txt_search; ?>" onclick="if(value=='<?php echo const_txt_search; ?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search; ?>'" />
             <input type="button" name="btnSearch" value="&nbsp;" class="btn" />
         </div>
     </div>
@@ -141,7 +141,7 @@ if(@$_GET['danhmuc']){
             echo "<h4>{$row_config['copyright']}</h4>";
 			$qr = $tc->menu(0,6);
 			while($row = mysql_fetch_array($qr)){
-				echo '<a href="'.$row['url'].'"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
+				echo '<a href="'.$row['url'].'" target="_blank"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
 			}
 			?>
         </div>
