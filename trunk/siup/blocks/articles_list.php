@@ -16,7 +16,7 @@
 		$row = mysql_fetch_array($qr);
 		$str_left .= "<h3>{$row['title']}</h3>";
 		
-		$qr = $tc->menu($row['id'],3);
+		$qr = $tc->menu($row['id'],3,$lang);
 		while($row = mysql_fetch_array($qr)){
 			$str_left .= '<li><a href="'.$row['url'].'">'.$row['name'].'</a></li>';
 		}

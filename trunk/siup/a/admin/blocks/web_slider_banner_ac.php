@@ -17,6 +17,11 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
@@ -51,13 +56,6 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
-	
-	//date_update
-	$values = $row_detail['date_update'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
 
 	//menu_id
 	$values = $row_detail['menu_id'];
@@ -65,12 +63,12 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('2',$values,'',$views);
 	$hidden_item = $form->DisplayProperties();
 	
-	$where = "";
+	$where = " AND lang='{$language}' ";
 	$arr = $qt->danhmuc_menu_checkbox(0,'',$where);
 	$properties = $row_detail['parent_id']; //default check
 
 	$properties = $row_detail['menu_id']; //default check
-	$views = array('','','checkbox checkbox_item','width:345px; height:170px;'); //label name class width
+	$views = array('','','checkbox checkbox_item_menu','width:345px; height:300px;'); //label name class width
     $form->getProperties('7',$arr,$properties,$views);
 	echo '<tr><td class="label">Danh mục</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
 	
@@ -113,13 +111,20 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	/*//content
+	//order
+	$values = $row_detail['order'];
+	$properties = array('3'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Thứ tự','order','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//content
 	$values = $row_detail['content'];
 	$properties = ''; //disabled, readonly
 	$views = array('Thông tin','content','textarea'); //label id&name class colspan
-	//$other = ckeditor_custom('metaDescription');
-    $form->getProperties('3',$values,$properties,$views);
-	echo $form->DisplayProperties();*/
+	$other = ckeditor_custom('content');
+    $form->getProperties('3',$values,$properties,$views,$other);
+	echo $form->DisplayProperties();
 	
 	//id
 	$values = $row_detail['id'];

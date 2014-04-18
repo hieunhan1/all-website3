@@ -100,8 +100,8 @@ $(document).ready(function(){
 			$('#'+list_view).attr('value',str);
 		});
 	};
-	checks_box_item('checkbox_item', 'position_id'); //class, id
-	checks_box_item('checkbox_item', 'menu_id'); //class, id
+	checks_box_item('checkbox_item_position', 'position_id'); //class, id
+	checks_box_item('checkbox_item_menu', 'menu_id'); //class, id
 	checks_box_item('checkbox_xem', 'quyen_xem'); //class, id
 	checks_box_item('checkbox_action', 'quyen_action'); //class, id
 	

@@ -4,7 +4,7 @@
 	$row = mysql_fetch_array($qr);
 	echo "<h3>{$row['title']}</h3>";
 	
-	$qr = $tc->menu($row['id'],3);
+	$qr = $tc->menu($row['id'],3,$lang);
 	while($row = mysql_fetch_array($qr)){
 		echo '<li><a href="'.$row['url'].'">'.$row['name'].'</a></li>';
 	}
@@ -31,17 +31,19 @@
         <?php
         $qr = $tc->home_dm_new($lang);
         $row = mysql_fetch_array($qr);
-        echo '<div id="home_new_title"><h4>'.$row['name'].'</h4> <a href="'.$row['url'].'">xem tất cả tin tức »</a> </div>';
         
         $qr = $tc->home_info_item($row['id'],3);
-        while($row = mysql_fetch_array($qr)){
-            echo '<div class="home_new_item">
-                <div class="home_new_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-                <h3>'.$row['name'].'</h3>
-                <div class="home_new_info">'.$row['metaDescription'].'</div>
-                <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">Xem chi tiết »</a>
-            </div>';
-        }
+		if(mysql_num_rows($qr) > 0){
+			echo '<div id="home_new_title"><h4>'.$row['name'].'</h4> <a href="'.$row['url'].'">'.const_xem_tat_ca.' »</a> </div>';
+			while($row = mysql_fetch_array($qr)){
+				echo '<div class="home_new_item">
+					<div class="home_new_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+					<h3>'.$row['name'].'</h3>
+					<div class="home_new_info">'.$row['metaDescription'].'</div>
+					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">Xem chi tiết »</a>
+				</div>';
+			}
+		}
         ?>
     </div>
 </div>

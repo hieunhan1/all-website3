@@ -122,7 +122,7 @@ if(@$_GET['danhmuc']){
         </div>
         
         <div id="search">
-        	<input type="text" name="txtSearch" class="txt" value="Tìm kiếm nội dung" onclick="if(value=='Tìm kiếm nội dung') value=''" onblur="if(value=='') value='Tìm kiếm nội dung'" />
+        	<input type="text" name="txtSearch" class="txt" value="<?php echo const_txt_search; ?>" onclick="if(value=='<?php echo const_txt_search; ?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search; ?>'" />
             <input type="button" name="btnSearch" value="&nbsp;" class="btn" />
         </div>
     </div>
@@ -146,7 +146,7 @@ if(@$_GET['danhmuc']){
 			?>
         </div>
         <div id="partner">
-        	<h4>Đối tác của SIUP</h4>
+        	<h4><?php echo const_partner; ?></h4>
             <div id="all_partner">
             	<!--partner-->
                 <div class="simply-scroll simply-scroll-container">
