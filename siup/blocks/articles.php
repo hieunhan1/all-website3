@@ -20,7 +20,36 @@
 </div>
 
 <div id="content_right">
-	1
+	<?php
+	$str = "SELECT id,name FROM web_menu
+	WHERE `delete`=0 AND status=1 AND lang='{$lang}' AND (id='{$menu_root}' OR position_id LIKE '%,4,%') AND (parent_id='0' OR parent_id='{$menu_root}') ORDER BY `order`";
+	$qr_r = mysql_query($str);
+	if(mysql_num_rows($qr_r) > 0){
+		while($row_r = mysql_fetch_array($qr_r)){
+			$qr = $tc->slider_banner(5,$row_r['id']);
+			if(mysql_num_rows($qr) > 0){
+				echo '<div class="right_title">'.$row_r['name'].'</div>';
+				while($row = mysql_fetch_array($qr)){
+					if($row['url_hinh']!='' && $row['content']!=''){
+						echo '<div class="right_box_3">
+							<a href="'.$row['link'].'"><h3>'.$row['name'].'</h3></a>
+							<div class="right_box_3_info">'.$row['content'].'</div>
+							<img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" />
+						</div>';
+					}else if($row['content']!=''){
+						echo '<div class="right_box_1">
+							<a href="'.$row['link'].'"><h3>'.$row['name'].'</h3></a>
+							<div class="right_box_1_info">'.$row['content'].'</div>
+						</div>';
+					}else{
+						echo '<a href="'.$row['link'].'" class="right_box_2"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
+					}
+				}//while qr
+				echo '<div style="clear:both; height:30px"></div>';
+			}//if qr
+		}//while qr_r
+	}//if qr_r
+	?>
 </div>
 
 <div id="content_left">

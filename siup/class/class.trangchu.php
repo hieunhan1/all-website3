@@ -24,7 +24,7 @@ class trangchu extends db {
 	}
 	function slider_banner($id,$menu_id=NULL){
 		if($menu_id!=NULL) $menu_id = "AND menu_id LIKE '%,{$menu_id},%'"; else $menu_id = '';
-		$qr = "SELECT name,url_hinh,link FROM web_slider_banner WHERE `delete`=0 AND status=1 AND position_id='{$id}' {$menu_id} ORDER BY date_update DESC";
+		$qr = "SELECT name,url_hinh,link,content FROM web_slider_banner WHERE `delete`=0 AND status=1 AND position_id='{$id}' {$menu_id} ORDER BY `order`";
 		return mysql_query($qr);
 	}
 	function menu_one($alias){

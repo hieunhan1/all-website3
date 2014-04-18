@@ -1,6 +1,7 @@
 <?php
+define('const_xem_tat_ca','xem tất cả tin tức');
 define('const_tin_khac', 'Bài viết khác');
-
+define('const_partner', 'Đối tác của SIUP');
 define('const_txt_search', 'Tìm kiếm nội dung');
 
 define('const_thong_tin', 'Mọi thắc mắc, đóng góp ý kiên vui lòng gửi cho chúng tôi bằng cách điền đầy đủ thông tin vào form bên dưới. Chúng tôi sẽ trả lời trong thời gian sớm nhất.');

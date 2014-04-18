@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Apr 17, 2014 at 06:04 PM
+-- Generation Time: Apr 18, 2014 at 03:51 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -207,7 +207,7 @@ CREATE TABLE `web_menu` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 -- 
 -- Dumping data for table `web_menu`
@@ -215,14 +215,14 @@ CREATE TABLE `web_menu` (
 
 INSERT INTO `web_menu` VALUES (1, 'Trang chủ', 'trang-chu', 'http://localhost/all/siup', '', '2014-04-07 15:01:06', '2014-04-17 18:00:07', 0, 1, 1, 'SIUP', 'SIUP', 'SIUP', 0, 'vi', 1, ',2,5,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (25, 'Web nội bộ', 'web-noi-bo', 'web-noi-bo/', '', '2014-04-16 15:20:21', '2014-04-16 14:20:00', 0, 32, 1, 'Web nội bộ', 'Web nội bộ', 'Web nội bộ,web noi bo', 0, 'vi', 8, ',1,', 'admin', NULL, 0);
-INSERT INTO `web_menu` VALUES (2, 'Home', 'home', 'http://localhost/all/shopdochoi/lang=en', '', '2014-04-07 15:09:51', '2014-04-07 14:09:00', 0, 1, 1, 'Shop Do Choi Tre Em DN', 'Shop Do Choi Tre Em DN', 'Shop Do Choi Tre Em DN', 0, 'en', 1, ',2,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (2, 'Home', 'home', '?lang=en', '', '2014-04-07 15:09:51', '2014-04-18 11:41:40', 0, 1, 1, 'Shop Do Choi Tre Em DN', 'Shop Do Choi Tre Em DN', 'Shop Do Choi Tre Em DN', 0, 'en', 1, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (3, 'Đăng nhập', 'dang-nhap', 'dang-nhap/', '', '2014-04-07 15:14:52', '2014-04-07 14:14:00', 0, 31, 1, 'Đăng nhập', 'Đăng nhập', 'Đăng nhập,dang nhap', 0, 'vi', 8, ',1,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (4, 'Cart', 'cart', 'cart/', '', '2014-04-07 15:15:43', '2014-04-07 14:15:00', 0, 0, 1, 'Cart', 'Cart', 'Cart', 0, 'en', 7, ',7,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (4, 'About US', 'about-us', 'about-us/', '', '2014-04-07 15:15:43', '2014-04-18 11:40:56', 0, 2, 1, 'About US', 'About US', 'About US,about us', 0, 'en', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (5, 'Đồ án', 'do-an', 'do-an/', '', '2014-04-07 15:28:17', '2014-04-07 14:28:00', 0, 3, 1, 'Loại hình đồ án', 'Đồ án', 'Đồ án,do an', 0, 'vi', 4, ',2,3,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (6, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', '2014-04-07 15:29:10', '2014-04-07 14:28:00', 0, 2, 1, 'Giới thiệu', 'Giới thiệu', 'Giới thiệu,gioi thieu', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (6, 'Giới thiệu', 'gioi-thieu', 'gioi-thieu/', '', '2014-04-07 15:29:10', '2014-04-18 14:20:38', 0, 2, 1, 'Giới thiệu', 'Giới thiệu', 'Giới thiệu,gioi thieu', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (24, 'Quy hoạch hạ tầng', 'quy-hoach-ha-tang', 'quy-hoach-ha-tang/', '', '2014-04-16 12:40:39', '2014-04-16 11:40:00', 5, 5, 1, 'Quy hoạch hạ tầng', 'Quy hoạch hạ tầng', 'Quy hoạch hạ tầng,quy hoach ha tang', 0, 'vi', 3, ',2,3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (7, 'Tin tức & Sự kiện', 'tin-tuc-su-kien', 'tin-tuc-su-kien/', '', '2014-04-07 15:32:52', '2014-04-07 14:32:00', 0, 4, 1, 'Tin tức & Sự kiện', 'Tin tức & Sự kiện', 'Tin tức & Sự kiện,tin tuc su kien', 1, 'vi', 2, ',2,', 'admin', 'admin', 0);
-INSERT INTO `web_menu` VALUES (8, 'Nghiên cứu và phát triển', 'nghien-cuu-va-phat-trien', 'nghien-cuu-va-phat-trien/', '', '2014-04-07 15:34:20', '2014-04-07 14:34:00', 0, 5, 1, 'Nghiên cứu và phát triển', 'Nghiên cứu và phát triển', 'Nghiên cứu và phát triển,nghien cuu va phat trien', 0, 'vi', 2, ',2,5,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (8, 'Nghiên cứu và phát triển', 'nghien-cuu-va-phat-trien', 'nghien-cuu-va-phat-trien/', '', '2014-04-07 15:34:20', '2014-04-18 15:43:36', 0, 5, 1, 'Nghiên cứu và phát triển', 'Nghiên cứu và phát triển', 'Nghiên cứu và phát triển,nghien cuu va phat trien', 0, 'vi', 2, ',2,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (9, 'Hợp tác Quốc tế', 'hop-tac-quoc-te', 'hop-tac-quoc-te/', '', '2014-04-07 15:37:01', '2014-04-07 14:37:00', 0, 6, 1, 'Hợp tác Quốc tế', 'Hợp tác Quốc tế', 'Hợp tác Quốc tế,hop tac quoc te', 0, 'vi', 5, ',2,5,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (10, 'Quy hoạch vùng', 'quy-hoach-vung', 'quy-hoach-vung/', '', '2014-04-07 15:37:37', '2014-04-16 12:39:00', 5, 1, 1, 'Quy hoạch vùng', 'Quy hoạch vùng', 'Quy hoạch vùng,quy hoach vung', 0, 'vi', 3, ',2,3,', 'admin', 'admin', 0);
 INSERT INTO `web_menu` VALUES (11, 'Liên hệ', 'lien-he', 'lien-he/', '', '2014-04-07 15:38:16', '2014-04-07 14:37:00', 0, 7, 1, 'Liên hệ', 'Liên hệ', 'Liên hệ,lien he', 0, 'vi', 6, ',2,5,', 'admin', 'admin', 0);
@@ -246,6 +246,13 @@ INSERT INTO `web_menu` VALUES (30, 'Bài viết nghiên cứu khoa học', 'bai-
 INSERT INTO `web_menu` VALUES (31, 'Dự án hợp tác Quốc tế', 'du-an-hop-tac-quoc-te', 'du-an-hop-tac-quoc-te/', '', '2014-04-17 15:40:47', '2014-04-17 14:40:00', 9, 1, 1, 'Dự án hợp tác Quốc tế', 'Dự án hợp tác Quốc tế', 'Dự án hợp tác Quốc tế,du an hop tac quoc te', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
 INSERT INTO `web_menu` VALUES (32, 'Lĩnh vực hợp tác Quốc tế', 'linh-vuc-hop-tac-quoc-te', 'linh-vuc-hop-tac-quoc-te/', '', '2014-04-17 15:41:40', '2014-04-17 14:40:00', 9, 2, 1, 'Lĩnh vực hợp tác Quốc tế', 'Lĩnh vực hợp tác Quốc tế', 'Lĩnh vực hợp tác Quốc tế,linh vuc hop tac quoc te', 0, 'vi', 2, ',2,3,', 'admin', NULL, 0);
 INSERT INTO `web_menu` VALUES (33, 'Đối tác hợp tác Quốc tế', 'doi-tac-hop-tac-quoc-te', 'doi-tac-hop-tac-quoc-te/', '', '2014-04-17 15:42:05', '2014-04-17 14:40:00', 9, 3, 1, 'Đối tác hợp tác Quốc tế', 'Đối tác hợp tác Quốc tế', 'Đối tác hợp tác Quốc tế,doi tac hop tac quoc te', 0, 'vi', 2, ',2,3,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (34, 'Các trung tâm', 'cac-trung-tam', 'javascript:;', '', '2014-04-18 11:34:27', NULL, 0, 21, 1, 'Các trung tâm', 'Các trung tâm', 'Các trung tâm,cac trung tam', 0, 'vi', 8, ',4,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (35, 'Đơn vị tổ chức', 'don-vi-to-chuc', 'don-vi-to-chuc/', '', '2014-04-18 11:37:13', '2014-04-18 15:28:10', 9, 4, 1, 'Đơn vị tổ chức', 'Đơn vị tổ chức', 'Đơn vị tổ chức,don vi to chuc', 0, 'vi', 8, ',4,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (36, 'Project', 'project', 'project/', '', '2014-04-18 11:46:02', NULL, 0, 3, 1, 'Project', 'Project', 'Project,project', 0, 'en', 3, ',2,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (37, 'International Cooperation', 'international-cooperation', 'international-cooperation/', '', '2014-04-18 11:46:36', '2014-04-18 11:50:07', 0, 6, 1, 'International Cooperation', 'International Cooperation', 'International Cooperation,international cooperation', 0, 'en', 5, ',2,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (38, 'Research & development', 'research-development', 'research-development/', '', '2014-04-18 11:48:41', '2014-04-18 11:49:55', 0, 5, 1, 'Research and development', 'Research and development', 'Research development,research development', 0, 'en', 2, ',2,', 'admin', 'admin', 0);
+INSERT INTO `web_menu` VALUES (39, 'News & Events', 'news-events', 'news-events/', '', '2014-04-18 11:50:14', NULL, 0, 4, 1, 'News and Events', 'News and Events', 'News Events,news events', 0, 'en', 2, ',2,', 'admin', NULL, 0);
+INSERT INTO `web_menu` VALUES (40, 'Contact', 'contact', 'contact/', '', '2014-04-18 11:50:54', NULL, 0, 7, 1, 'Contact', 'Contact', 'Contact', 0, 'en', 6, ',2,', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -347,36 +354,45 @@ INSERT INTO `web_menu_type` VALUES (11, 'Tuyển dụng', 8, 0);
 -- 
 
 CREATE TABLE `web_slider_banner` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` int(3) NOT NULL auto_increment,
   `name` varchar(250) NOT NULL,
   `url_hinh` varchar(150) default NULL,
   `link` varchar(250) default NULL,
   `date_create` datetime NOT NULL,
   `date_update` datetime default NULL,
   `status` tinyint(1) default '1',
+  `order` int(3) default '0',
   `lang` varchar(3) default NULL,
   `position_id` int(1) default NULL,
-  `menu_id` varchar(100) default NULL,
-  `content` text,
+  `menu_id` varchar(100) default '0',
+  `content` varchar(500) default NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 -- 
 -- Dumping data for table `web_slider_banner`
 -- 
 
-INSERT INTO `web_slider_banner` VALUES (1, 'Slider liên hệ', 'contact.jpg', 'javascript:;', '2014-04-07 17:06:16', '2014-04-15 17:49:00', 1, 'vi', 0, ',1,2,', NULL, 'admin', 'admin', 0);
-INSERT INTO `web_slider_banner` VALUES (2, 'Slider trang chủ', 'home.jpg', 'javascript:;', '2014-04-07 17:09:35', '2014-04-16 16:09:00', 1, 'vi', 1, ',1,2,', NULL, 'admin', 'admin', 0);
-INSERT INTO `web_slider_banner` VALUES (3, 'No name', 'no-name.jpg', 'javascript:;', '2014-04-07 17:15:18', '2014-04-16 17:03:00', 1, 'vi', 2, ',', NULL, 'admin', 'admin', 0);
-INSERT INTO `web_slider_banner` VALUES (4, 'unesco', 'unesco.jpg', 'javascript:;', '2014-04-07 17:17:59', '2014-04-16 11:57:33', 1, 'vi', 2, ',4,', NULL, 'admin', 'admin', 0);
-INSERT INTO `web_slider_banner` VALUES (5, 'jica', 'jica.jpg', 'javascript:;', '2014-04-16 11:57:38', '2014-04-14 10:57:00', 1, 'vi', 2, '', NULL, 'admin', NULL, 0);
-INSERT INTO `web_slider_banner` VALUES (6, 'koica', 'koica.jpg', 'javascript:;', '2014-04-16 11:57:56', '2014-04-13 10:57:00', 1, 'vi', 2, '', NULL, 'admin', NULL, 0);
-INSERT INTO `web_slider_banner` VALUES (7, 'ADB', 'ADB.jpg', 'javascript:;', '2014-04-16 11:58:10', '2014-04-12 10:57:00', 1, 'vi', 2, '', NULL, 'admin', NULL, 0);
-INSERT INTO `web_slider_banner` VALUES (8, 'fulbright', 'fulbright.jpg', 'javascript:;', '2014-04-16 11:58:22', '2014-04-12 10:57:00', 1, 'vi', 2, '', NULL, 'admin', NULL, 0);
-INSERT INTO `web_slider_banner` VALUES (9, 'SOC', 'SOC.jpg', 'javascript:;', '2014-04-16 11:58:35', '2014-04-12 10:57:00', 1, 'vi', 2, '', NULL, 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (1, 'Slider liên hệ', 'contact.jpg', 'javascript:;', '2014-04-07 17:06:16', '2014-04-15 17:49:00', 0, 0, 'vi', 1, ',11,', '', 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (2, 'Slider trang chủ', 'home.jpg', 'javascript:;', '2014-04-07 17:09:35', '2014-04-16 16:09:00', 1, 0, 'vi', 1, ',1,2,', NULL, 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (3, 'No name', 'no-name.jpg', 'javascript:;', '2014-04-07 17:15:18', '2014-04-16 17:03:00', 1, 0, 'vi', 2, ',', NULL, 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (4, 'unesco', 'unesco.jpg', 'javascript:;', '2014-04-07 17:17:59', '2014-04-16 11:57:33', 1, 0, 'vi', 2, ',4,', NULL, 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (5, 'jica', 'jica.jpg', 'javascript:;', '2014-04-16 11:57:38', '2014-04-14 10:57:00', 1, 0, 'vi', 2, '', NULL, 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (6, 'koica', 'koica.jpg', 'javascript:;', '2014-04-16 11:57:56', '2014-04-13 10:57:00', 1, 0, 'vi', 2, '', NULL, 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (7, 'ADB', 'ADB.jpg', 'javascript:;', '2014-04-16 11:58:10', '2014-04-12 10:57:00', 1, 0, 'vi', 2, '', NULL, 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (8, 'fulbright', 'fulbright.jpg', 'javascript:;', '2014-04-16 11:58:22', '2014-04-12 10:57:00', 1, 0, 'vi', 2, '', NULL, 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (9, 'SOC', 'SOC.jpg', 'javascript:;', '2014-04-16 11:58:35', '2014-04-18 14:34:36', 1, 0, 'vi', 2, ',', '', 'admin', 'admin', 0);
+INSERT INTO `web_slider_banner` VALUES (10, 'HAWAI', 'HAWAI.jpg', 'javascript:;', '2014-04-18 14:32:34', '2014-04-18 13:32:00', 1, 1, 'vi', 5, ',35,', '', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (11, 'koica', 'koica-right.jpg', 'javascript:;', '2014-04-18 14:35:15', NULL, 1, 2, 'vi', 5, ',35,', '', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (12, 'iledefrance', 'iledefrance.jpg', 'javascript:;', '2014-04-18 14:35:43', NULL, 1, 3, 'vi', 5, ',35,', '', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (13, 'UNDP', 'UNDP.jpg', 'javascript:;', '2014-04-18 14:35:55', NULL, 1, 4, 'vi', 5, ',35,', '', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (14, 'Trung tâm Quy hoạch Đô thị - Nông thôn Miền Nam 1', '', 'javascript:;', '2014-04-18 14:37:36', NULL, 1, 1, 'vi', 5, ',34,', '<p>Đia chỉ: 65 Mạc Đĩnh Chi, P.Đakao, Quận 1, TP.HCM</p>\r\n\r\n<p>Điện thoại: 084.08.38235714</p>\r\n\r\n<p>Fax: 084.08.38220090</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (15, 'Trung tâm Quy hoạch Đô thị - Nông thôn Miền Nam 2', '', 'javascript:;', '2014-04-18 14:38:06', NULL, 1, 2, 'vi', 5, ',34,', '<p>Đia chỉ: 65 Mạc Đĩnh Chi, P.Đakao, Quận 1, TP.HCM</p>\r\n\r\n<p>Điện thoại: 084.08.38235714</p>\r\n\r\n<p>Fax: 084.08.38220090</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (16, 'Trung tâm Quy hoạch Đô thị - Nông thôn Miền Nam 3', '', 'javascript:;', '2014-04-18 14:38:14', NULL, 1, 3, 'vi', 5, ',34,', '<p>Đia chỉ: 65 Mạc Đĩnh Chi, P.Đakao, Quận 1, TP.HCM</p>\r\n\r\n<p>Điện thoại: 084.08.38235714</p>\r\n\r\n<p>Fax: 084.08.38220090</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'admin', NULL, 0);
+INSERT INTO `web_slider_banner` VALUES (17, 'Trước nhất, kiến trúc phải tôn trọng địa điểm, không gian văn hóa bản địa và các bài học vô giá của lịch sử', 'map-right.jpg', 'javascript:;', '2014-04-18 14:39:23', '2014-04-18 14:40:21', 1, 1, 'vi', 5, ',8,', '<p>_Peter Zumthor, người đoạt giải Pritzker 2009</p>\r\n', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -389,7 +405,7 @@ CREATE TABLE `web_slider_banner_position` (
   `name` varchar(100) NOT NULL,
   `status` tinyint(1) default '1',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 -- 
 -- Dumping data for table `web_slider_banner_position`
@@ -399,9 +415,10 @@ INSERT INTO `web_slider_banner_position` VALUES (1, 'Slider 940x300 px', 1);
 INSERT INTO `web_slider_banner_position` VALUES (2, 'Partner 90 x 40 px', 1);
 INSERT INTO `web_slider_banner_position` VALUES (3, 'QC Left width:150px', 0);
 INSERT INTO `web_slider_banner_position` VALUES (4, 'QC Right width:150px', 0);
-INSERT INTO `web_slider_banner_position` VALUES (5, 'Bottom', 0);
+INSERT INTO `web_slider_banner_position` VALUES (5, 'Right max width 170px', 1);
 INSERT INTO `web_slider_banner_position` VALUES (6, 'Center', 0);
 INSERT INTO `web_slider_banner_position` VALUES (7, 'Partner', 0);
+INSERT INTO `web_slider_banner_position` VALUES (0, 'Không', 0);
 
 -- --------------------------------------------------------
 
@@ -437,7 +454,7 @@ CREATE TABLE `web_users` (
 -- 
 
 INSERT INTO `web_users` VALUES (25, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', ',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,', 1, NULL, 0, '2011-09-21 16:42:26', NULL, 'vi', 1, '2013-06-14 00:00:00', '2014-02-27 14:23:00', 'admin', 'admin', 0);
-INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,15,', ',1,15,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-04-17 18:01:55', 'admin', 'admin', 0);
+INSERT INTO `web_users` VALUES (27, 'Trần Nhân', 'nhan', '25f9e794323b453885f5181f1b624d0b', ',1,', ',1,', 0, NULL, 0, NULL, NULL, 'vi', 1, '2014-03-05 15:48:32', '2014-04-18 14:21:41', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 

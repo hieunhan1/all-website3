@@ -57,13 +57,6 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
-	//date_update
-	/*$values = $row_detail['date_update'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();*/
-	
 	//position_id
 	$values = $row_detail['position_id'];
 	$views = 'position_id'; //name
@@ -76,7 +69,7 @@ echo '<form name="form_action" method="post" action="">
 		$arr[] = array('id'=>$row['id'], 'name'=>$row['name']);
 	}
 	$properties = $row_detail['position_id']; //default check
-	$views = array('','','checkbox checkbox_item'); //label name class width
+	$views = array('','','checkbox checkbox_item_position'); //label name class width
     $form->getProperties('7',$arr,$properties,$views);
 	echo '<tr><td class="label">Vị trí</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
 	

@@ -12,11 +12,6 @@
 	<input type="hidden" name="p" value="<?php echo $table; ?>" />
     <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Mô tả'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Mô tả') value=''" />
 	<?php
-    $qr = mysql_query("SELECT `id`,`name` FROM `web_menu` WHERE `delete`=0 AND (type_id=1 OR type_id=2) ");
-    while($row = mysql_fetch_array($qr)){
-        //echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
-    }
-    
     //parent_id
     $name_default = array('Chọn',$id);
     $arr = $qt->danhmuc_menu_select(0,'',$name_default);

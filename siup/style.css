@@ -84,7 +84,25 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 
 #content_left{width:500px; float:right; margin-right:20px}
 
-#content_right{width:200px; float:right; border-left:solid 1px #CCC}
+#content_right{width:170px; float:right; padding:0 15px; border-left:solid 1px #CCC}
+
+.right_title{font-weight:bold; margin-bottom:10px; padding-bottom:7px; border-bottom:solid 1px #CCC}
+
+.right_box_1{clear:both; line-height:16px; font-size:90%; margin-bottom:20px}
+.right_box_1 a{color:#D51D1D}
+.right_box_1 h3{font-size:100%; padding-bottom:3px; border-bottom:dashed 1px #CCC}
+.right_box_1 .right_box_1_info{font-size:11px}
+.right_box_1 .right_box_1_info p{margin:5px 0}
+
+.right_box_2{clear:both}
+.right_box_2 img{margin-bottom:10px}
+
+.right_box_3{clear:both; line-height:16px; font-size:90%; margin-bottom:25px}
+.right_box_3 a{color:#D51D1D}
+.right_box_3 h3{font-size:100%}
+.right_box_3 .right_box_3_info{font-size:90%}
+.right_box_3 .right_box_3_info p{margin:5px 0}
+.right_box_3 img{width:170px}
 
 .viewpost{line-height:23px}
 .viewpost p, .viewpost div {margin:10px 0}
