@@ -17,6 +17,14 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//disabled
+	if($id_user!=25) $disabled = 'disabled="disabled"'; else $disabled = '';
+	
+	//date_update
+	$values = date('Y-m-d H:i:s');
+	$views = 'date_update';
+    $form->getProperties('2',$values,'',$views);
+	$date_create = $form->DisplayProperties();
 	//user_update
 	$values = $user;
 	$views = 'user_update';
@@ -50,13 +58,6 @@ echo '<form name="form_action" method="post" action="">
 	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
-	echo $form->DisplayProperties();
-	
-	//date_update
-	$values = $row_detail['date_update'];
-	$properties = array('20'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Ngày','date_update','input_large datetimepick'); //label id&name class style
-    $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//position_id
@@ -111,14 +112,14 @@ echo '<form name="form_action" method="post" action="">
 	
 	//name_rewrite
 	$values = $row_detail['name_rewrite'];
-	$properties = array('100'); //maxlength OTHER (disabled, readonly)
+	$properties = array('100',$disabled); //maxlength OTHER (disabled, readonly)
 	$views = array('Tiêu đề viết lại','name_rewrite','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//url
 	$values = $row_detail['url'];
-	$properties = array('150'); //maxlength OTHER (disabled, readonly)
+	$properties = array('150',$disabled); //maxlength OTHER (disabled, readonly)
 	$views = array('Link','url','input_medium url'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
