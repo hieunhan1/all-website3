@@ -17,6 +17,9 @@ if($id == 0){
 	$lable_submit = 'Cập nhật';
 	$type = 2;
 	
+	//disabled
+	if($id_user!=25) $disabled = 'disabled="disabled"'; else $disabled = '';
+	
 	//date_update
 	$values = date('Y-m-d H:i:s');
 	$views = 'date_update';
@@ -100,7 +103,7 @@ echo '<form name="form_action" method="post" action="">
 	
 	//name_rewrite
 	$values = $row_detail['name_rewrite'];
-	$properties = array('200'); //maxlength OTHER (disabled, readonly)
+	$properties = array('200',$disabled); //maxlength OTHER (disabled, readonly)
 	$views = array('Mô tả viết lại','name_rewrite','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
