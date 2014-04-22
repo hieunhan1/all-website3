@@ -179,6 +179,8 @@ if(@$_GET['danhmuc']){
 	?>
 </div>
 <?php
+	include_once('blocks/qc2ben.php');
+	
 	if(!@$_SESSION['popup']){
 		$_SESSION['popup'] = 1;
 		include_once('blocks/popup.php');

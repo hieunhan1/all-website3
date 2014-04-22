@@ -131,7 +131,10 @@ $qr = "CREATE TABLE `thisinh_images` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8";
-mysql_query($qr);*/
+mysql_query($qr);
 
 $qr = "UPDATE `menu_position` SET  `name`='Social',`delete`='0' WHERE `id` =4 LIMIT 1";
+mysql_query($qr);*/
+
+$qr = "INSERT INTO  `slider_banner_position` (`id` ,`name` ,`delete`) VALUES ('3',  'Left width:150px',  '0'), ('4',  'Right width:150px',  '0')";
 mysql_query($qr);
