@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Feb 14, 2014 at 04:17 PM
+-- Generation Time: Apr 22, 2014 at 05:31 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -366,7 +366,7 @@ CREATE TABLE `menu_position` (
 INSERT INTO `menu_position` VALUES (1, 'Main', 0);
 INSERT INTO `menu_position` VALUES (2, 'Top', 0);
 INSERT INTO `menu_position` VALUES (3, 'Bottom', 0);
-INSERT INTO `menu_position` VALUES (4, 'Left', 1);
+INSERT INTO `menu_position` VALUES (4, 'Social', 0);
 INSERT INTO `menu_position` VALUES (5, 'Right', 0);
 INSERT INTO `menu_position` VALUES (6, 'Không', 0);
 
@@ -586,13 +586,14 @@ CREATE TABLE `slider_banner` (
   `user_update` varchar(30) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `slider_banner`
 -- 
 
 INSERT INTO `slider_banner` VALUES (1, 'Slider', 'slider.jpg', 'javascript:;', '', 'vi', 1, ',1,5,6,7,8,9,10,11,', 1, '2013-10-09 16:34:33', '2013-10-09 00:27:35', 'admin', 'admin', 0);
+INSERT INTO `slider_banner` VALUES (2, 'Test left banner', 'partner-1.jpg', 'javascript:;', '', 'vi', 3, '', 1, '2014-04-22 17:07:42', '2014-04-22 17:07:42', 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -605,7 +606,7 @@ CREATE TABLE `slider_banner_position` (
   `name` varchar(250) NOT NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- 
 -- Dumping data for table `slider_banner_position`
@@ -613,6 +614,8 @@ CREATE TABLE `slider_banner_position` (
 
 INSERT INTO `slider_banner_position` VALUES (1, 'Slider 740x255 px', 0);
 INSERT INTO `slider_banner_position` VALUES (2, 'Partner 160 x 95 px', 0);
+INSERT INTO `slider_banner_position` VALUES (3, 'Left width:150px', 0);
+INSERT INTO `slider_banner_position` VALUES (4, 'Right width:150px', 0);
 
 -- --------------------------------------------------------
 
@@ -662,7 +665,7 @@ CREATE TABLE `thisinh` (
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name_rewrite` (`name_rewrite`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 -- 
 -- Dumping data for table `thisinh`
@@ -686,6 +689,8 @@ INSERT INTO `thisinh` VALUES (16, 'Trần Hiếu Nhân 333', 'tran-hieu-nhan-333
 INSERT INTO `thisinh` VALUES (17, 'Trần Hiếu Nhân', 'tran-hieu-nhan-15', '140214-035626.jpg', 'Mô tả ngắn gọn về bản thân', 'Trần Hiếu Nhân', 15, '2014-02-11', 'Thủ Thừa', '1.73', '45', '87-79-90', '1111111111', '2014-02-11', 'Long An', '16/155B ẤP Nhà Dài', '9/9 đường 5E, Khu Phố 21', '0988388003', 'hieu_nhan1@yahoo.com', 'facebook.com/hieunhan1', 'CNTT', '30 Nguyễn Huy Tự', '1', 'Tiếng Anh', '1', 'Ca hát', '', 'Vì sao bạn tham gia cuộc thi Hoa Hậu Đại Dương Việt Nam 2014?', 'Bạn đã từng tham gia chương trình biễu diễn thời trang, cuộc thi sắc đẹp, người mẫu nào chưa? Đó là chương trình gì? Thời gian nào?', 'Đã từng chịu sự quản lý độc quyền hoặc làm việc với công ty quảy lý người mẫu nào tại Việt Nam chưa? Nếu có, hãy nêu rõ tên công ty, địa chỉ và thời gian bạn làm việc tại công ty đó.', 0, 'vi', ',6,19,', 0, '2014-02-14 15:57:15', '2014-02-14 15:57:15', 'admin', 'admin', 1);
 INSERT INTO `thisinh` VALUES (18, 'Trần Hiếu Nhân aaaaaa', 'tran-hieu-nhan-aaaaaa-16', '140214-040256.jpg', '11111111111', 'Trần Hiếu Nhân aaaaaa', 16, '2014-02-18', 'Tp.Vũng Tàu', '1.73', '49', '87-79-90', '1111111111', '2014-02-03', 'Long An', '16/155B ẤP Nhà Dài', '9/9 đường 5E, Khu Phố 21', '0988388003', 'hieu_nhan1@yahoo.com', 'facebook.com/hieunhan1', 'CNTT', '30 Nguyễn Huy Tự', '1', 'Tiếng Anh', '1', 'Ca hát', '', '', '', '', 0, 'vi', ',6,19,', 0, '2014-02-14 16:03:31', '2014-02-14 16:03:31', 'admin', 'admin', 1);
 INSERT INTO `thisinh` VALUES (19, 'Việt Nam', 'viet-nam-17', '140214-040413_large.jpg', '3333333333333', 'Việt Nam', 17, '2014-02-19', 'Thủ Thừa', '1.73', '45', '87-79-90', '1111111111', '2014-02-11', 'Long An', '16/155B ẤP Nhà Dài', '9/9 đường 5E, Khu Phố 21', '0988388003', 'hieu_nhan1@yahoo.com', 'facebook.com/hieunhan1', 'CNTT', '30 Nguyễn Huy Tự', '1', 'Tiếng Anh', '1', 'Ca hát', '', '', '', '', 0, 'vi', ',6,19,', 1, '2014-02-14 16:05:13', '2014-02-14 16:05:13', 'admin', 'admin', 1);
+INSERT INTO `thisinh` VALUES (20, 'Trần Hiếu Nhân', 'tran-hieu-nhan-18', 'tran-hieu-nhan-18-1.jpg', 'Mô tả ngắn gọn về bản thân', 'Trần Hiếu Nhân', 18, '1990-01-23', 'Thủ Thừa', '1.73', '45', '87-79-90', '1111111111', '2014-02-26', 'Long An', '16/155B ẤP Nhà Dài', '9/9 đường 5E, Khu Phố 21', '0988388003', 'hieu_nhan1@yahoo.com', 'facebook.com/hieunhan1', 'CNTT', '30 Nguyễn Huy Tự', '5', 'Tiếng Anh', '3', 'Ca hát', '', 'Vì sao bạn tham gia cuộc thi Hoa Hậu Đại Dương Việt Nam 2014?', 'Bạn đã từng tham gia chương trình biễu diễn thời trang, cuộc thi sắc đẹp, người mẫu nào chưa? Đó là chương trình gì? Thời gian nào?', 'Đã từng chịu sự quản lý độc quyền hoặc làm việc với công ty quảy lý người mẫu nào tại Việt Nam chưa? Nếu có, hãy nêu rõ tên công ty, địa chỉ và thời gian bạn làm việc tại công ty đó.', 0, 'vi', ',6,19,', 0, '2014-02-26 15:18:45', '2014-02-26 15:18:45', 'khachhang', 'admin', 0);
+INSERT INTO `thisinh` VALUES (21, 'Trần Hiếu Nhân', 'tran-hieu-nhan-19', 'tran-hieu-nhan-19-1.jpg', 'Mô tả ngắn gọn về bản thân', 'Trần Hiếu Nhân', 19, '1989-02-26', 'Thủ Thừa', '1.73', '45', '87-79-90', '1111111111', '2014-02-26', 'Long An', '16/155B ẤP Nhà Dài', '9/9 đường 5E, Khu Phố 21', '0988388003', 'hieu_nhan1@yahoo.com', 'facebook.com/hieunhan1', 'CNTT', '30 Nguyễn Huy Tự', '5', 'Tiếng Anh', '3', 'Ca hát', '', 'Vì sao bạn tham gia cuộc thi Hoa Hậu Đại Dương Việt Nam 2014', 'Bạn đã từng tham gia chương trình biễu diễn thời trang, cuộc thi sắc đẹp, người mẫu nào chưa? Đó là chương trình gì? Thời gian nào?', 'Đã từng chịu sự quản lý độc quyền hoặc làm việc với công ty quảy lý người mẫu nào tại Việt Nam chưa? Nếu có, hãy nêu rõ tên công ty, địa chỉ và thời gian bạn làm việc tại công ty đó.', 0, 'vi', ',6,19,', 1, '2014-02-26 15:29:15', '2014-02-26 15:29:15', 'khachhang', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -779,7 +784,7 @@ CREATE TABLE `thisinh_images` (
   `user_update` varchar(20) default NULL,
   `delete` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 -- 
 -- Dumping data for table `thisinh_images`
@@ -793,6 +798,13 @@ INSERT INTO `thisinh_images` VALUES (5, 4, 'Phan Thị Hồng 4', 'thi-sinh.jpg'
 INSERT INTO `thisinh_images` VALUES (6, 4, 'Phan Thị Hồng 5', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 14:43:02', '2014-01-23 14:43:02', 'admin', NULL, 0);
 INSERT INTO `thisinh_images` VALUES (7, 4, 'Phan Thị Hồng 6', 'thi-sinh.jpg', 'vi', 1, '2014-01-23 14:43:07', '2014-01-23 14:43:20', 'admin', 'admin', 1);
 INSERT INTO `thisinh_images` VALUES (8, 19, '111111111', '140214-035626.jpg', 'vi', 1, '2014-02-14 16:05:54', '2014-02-14 16:05:54', 'admin', NULL, 0);
+INSERT INTO `thisinh_images` VALUES (9, 20, 'Trần Hiếu Nhân 0', 'tran-hieu-nhan-18-0.jpg', 'vi', 1, '2014-02-26 15:18:45', '2014-02-26 15:18:45', 'khachhang', '', 0);
+INSERT INTO `thisinh_images` VALUES (10, 20, 'Trần Hiếu Nhân 1', 'tran-hieu-nhan-18-1.jpg', 'vi', 1, '2014-02-26 15:18:45', '2014-02-26 15:18:45', 'khachhang', '', 0);
+INSERT INTO `thisinh_images` VALUES (11, 20, 'Trần Hiếu Nhân 2', 'tran-hieu-nhan-18-2.jpg', 'vi', 1, '2014-02-26 15:18:45', '2014-02-26 15:18:45', 'khachhang', '', 0);
+INSERT INTO `thisinh_images` VALUES (12, 21, 'Trần Hiếu Nhân 0', 'tran-hieu-nhan-19-0.jpg', 'vi', 1, '2014-02-26 15:29:15', '2014-02-26 15:29:15', 'khachhang', '', 0);
+INSERT INTO `thisinh_images` VALUES (13, 21, 'Trần Hiếu Nhân 1', 'tran-hieu-nhan-19-1.jpg', 'vi', 1, '2014-02-26 15:29:15', '2014-02-26 15:29:15', 'khachhang', '', 0);
+INSERT INTO `thisinh_images` VALUES (14, 21, 'Trần Hiếu Nhân 2', 'tran-hieu-nhan-19-2.jpg', 'vi', 1, '2014-02-26 15:29:15', '2014-02-26 15:29:15', 'khachhang', '', 0);
+INSERT INTO `thisinh_images` VALUES (15, 21, 'Trần Hiếu Nhân 3', 'tran-hieu-nhan-19-3.jpg', 'vi', 1, '2014-02-26 15:29:15', '2014-02-26 15:29:15', 'khachhang', '', 0);
 
 -- --------------------------------------------------------
 
