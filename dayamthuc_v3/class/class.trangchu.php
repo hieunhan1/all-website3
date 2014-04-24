@@ -120,7 +120,7 @@ class trangchu extends db {
 	
 	/*home*/
 	function chinhanh_ds(){
-		$qr = "SELECT name,email,phone,diachi,hotline,yahoo_nick,yahoo_name FROM web_chinhanh WHERE `delete`=0 AND status=1 ORDER BY date_update DESC";
+		$qr = "SELECT name,email,phone,diachi,hotline,yahoo_nick,yahoo_name,google_map FROM web_chinhanh WHERE `delete`=0 AND status=1 ORDER BY date_update DESC";
 		return mysql_query($qr);
 	}
 	

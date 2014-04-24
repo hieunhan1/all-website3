@@ -154,7 +154,7 @@ echo '<form name="form_action" method="post" action="">
 	
 	//order
 	$values = $row_detail['order'];
-	$properties = array('2'); //maxlength OTHER (disabled, readonly)
+	$properties = array('3'); //maxlength OTHER (disabled, readonly)
 	$views = array('Thứ tự','order','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();

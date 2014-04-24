@@ -80,6 +80,12 @@ if($_POST['support_online']=='support_online'){
 	</script>';
 }
 
+if(@$_POST['google_map']){
+	$id_map = $_POST['google_map'];
+	include_once('blocks/map_google.php');
+	return true;
+}
+
 if(@$_POST['nop_hs']){
 	$tuyendung_id = trim($_POST['nop_hs']);
 	$name = trim($_POST['name']);
