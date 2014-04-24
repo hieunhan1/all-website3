@@ -140,6 +140,14 @@ $(document).ready(function($){
 		$("#loading_support").hide();
 	})
 	
+	/* ho tro hoc vien */
+	$(".hotro_hocvien").mouseover(function(){
+		$(this).css("background-position","0px 160px");
+	})
+	$(".hotro_hocvien").mouseout(function(){
+		$(this).css("background-position","0px 0px");
+	})
+	
 	/*chi nhanh*/
 	$("#btn_support").click(function(){
 		$("#ajax_support").toggle(100);
