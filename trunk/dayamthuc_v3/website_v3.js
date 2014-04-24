@@ -194,6 +194,23 @@ $(document).ready(function($){
 			return true;
 		}
 	});
+	/* google_map */
+	$(".google_map").click(function(){
+		var id_map = $(this).attr("name");
+		var height = $("#popupContact").height();
+		$("#popupContact").height(height);
+		centerPopup("fix");
+		loadPopup();
+		$(window).bind("resize", function(){ centerPopup("absolute"); });
+		
+		$.post("ajax.php",{google_map:id_map},function(data){
+			$("#ajax_google_map").html(data);
+		})
+		
+		$("#backgroundPopup, #popupContactClose, input[name=btn_huy_nop_hs]").click(function(){
+			disablePopup();
+		});
+	});
 	
 	/*dang ky hoc*/
 	$("input[name=btnSendDK]").click(function(){

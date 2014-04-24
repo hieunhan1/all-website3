@@ -108,6 +108,13 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	//google_map
+	$values = $row_detail['google_map'];
+	$properties = array('30'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Google map','google_map','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name
