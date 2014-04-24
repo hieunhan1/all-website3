@@ -57,6 +57,7 @@ if(@$_GET['danhmuc']){
 			case 8 : include_once('blocks/dangky.php'); break;
 			case 9 : include_once('blocks/thuvien.php'); break;
 			case 11 : include_once('blocks/tuyendung_list.php'); break;
+			case 12 : include_once('blocks/hotro_hocvien.php'); break;
 			
 			default: echo '<div id="content"><p style="height:200px; padding:20px 10px"><font color="#FF0000"><b>Could not be found</b></font></p></div>';
 		}

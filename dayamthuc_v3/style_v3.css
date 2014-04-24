@@ -205,6 +205,10 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .info_list .info_list_text{line-height:20px; height:60px; overflow:hidden}
 .info_list h3{font-size:115%; line-height:20px; font-family:"UTM-Swiss-Condensed"; margin-bottom:5px}
 
+.hotro_hocvien{width:290px; height:160px; float:left; margin:0 7px 14px 7px; border:solid 1px #ccc}
+.hotro_hocvien h3{height:30px; line-height:30px; overflow:hidden; font-size:110%; margin-top:130px; padding:0 10px; background-color:#BFBFBF}
+
+
 .viewpost{line-height:22px}
 .viewpost p, .viewpost div {line-height:20px; margin:10px 0}
 .viewpost li{margin-left:35px}
