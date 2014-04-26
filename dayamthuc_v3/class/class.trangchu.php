@@ -197,6 +197,12 @@ class trangchu extends db {
 		mysql_query($qr);
 	}
 	
+	/*ho tro hoc vien*/
+	function list_hotro_hocvien($id){
+		$qr = "SELECT name,url,url_hinh FROM web_menu WHERE `delete`=0 AND status=1 AND parent_id='{$id}' ORDER BY `order` ";
+		return mysql_query($qr);
+	}
+	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){
 		$date = date('Y-m-d H:i:s');
