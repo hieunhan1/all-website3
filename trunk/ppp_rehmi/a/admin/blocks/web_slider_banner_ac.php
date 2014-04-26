@@ -63,12 +63,12 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('2',$values,'',$views);
 	$hidden_item = $form->DisplayProperties();
 	
-	$where = " AND lang='{$language}' ";
+	//$where = " AND lang='{$language}' ";
 	$arr = $qt->danhmuc_menu_checkbox(0,'',$where);
 	$properties = $row_detail['parent_id']; //default check
 
 	$properties = $row_detail['menu_id']; //default check
-	$views = array('','','checkbox checkbox_item_menu','width:345px; height:300px;'); //label name class width
+	$views = array('','','checkbox checkbox_item_menu','width:345px; height:100px;'); //label name class width
     $form->getProperties('7',$arr,$properties,$views);
 	echo '<tr><td class="label">Danh mục</td> <td>'.$form->DisplayProperties().$hidden_item.'</td></tr>';
 	
