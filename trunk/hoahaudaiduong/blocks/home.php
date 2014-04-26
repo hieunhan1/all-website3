@@ -50,11 +50,11 @@
 $qr = $tc->home_thisinh($lang);
 if(mysql_num_rows($qr) > 0){
 	echo '<div id="home_thisinh">
-    <div class="home_thisinh_title">Thí sinh dự thi được bình chọn nhiều nhất</div>';
+    <div class="home_thisinh_title">Các thí sinh đã vào vòng trong</div>';
 	while($row = mysql_fetch_array($qr)){
 		echo '<div class="home_thisinh_item">
 			<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img"><img src="'.url_thisinh_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h5>'.$row['name'].'</h5></a>
-			SBD: '.$row['sbd'].'<br />Chưa bình chọn</div>';
+			<!--SBD: '.$row['sbd'].'<br />Chưa bình chọn--></div>';
 	}
 	echo '<div style="clear:both; height:30px"></div>
 	</div>';

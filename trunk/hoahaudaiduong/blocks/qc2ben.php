@@ -2,14 +2,14 @@
 $slider = $tc->slider_banner(4);
 echo '<div id="divAdRight" style="DISPLAY: none; POSITION: absolute; TOP: 0px">';
 while($row_slider = mysql_fetch_array($slider)){
-	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:5px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
+	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:10px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
 }
 echo '</div>';
 
 $slider = $tc->slider_banner(3);
 echo '<div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px">';
 while($row_slider = mysql_fetch_array($slider)){
-	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:5px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="150" /></a>';
+	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:10px"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
 }
 echo '</div> ';
 ?>
@@ -72,9 +72,9 @@ echo '</div> ';
 </script> 
 
 <script type="text/javascript" language="javascript">
-	MainContentW = 1016;
-	LeftBannerW = 150;
-	RightBannerW = 150;
+	MainContentW = 1004;
+	LeftBannerW = 135;
+	RightBannerW = 135;
 	LeftAdjust = 0;
 	RightAdjust = 0;
 	TopAdjust = 40;

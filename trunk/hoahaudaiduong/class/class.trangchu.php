@@ -120,7 +120,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function info_noibat($lang){
-		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 9";
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id FROM info WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 8";
 		return mysql_query($qr);
 	}
 	
@@ -150,7 +150,7 @@ class trangchu extends db {
 	
 	/*thisinh*/
 	function home_thisinh($lang){
-		$qr = "SELECT name,name_rewrite,url_hinh,sbd,menu_id FROM thisinh WHERE `delete`=0 AND status=1 AND other=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 8";
+		$qr = "SELECT name,name_rewrite,url_hinh,sbd,menu_id FROM thisinh WHERE `delete`=0 AND status=1 AND other=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 24";
 		return mysql_query($qr);
 	}
 	function thisinh_detail($alias){
