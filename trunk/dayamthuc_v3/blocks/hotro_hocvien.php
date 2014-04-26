@@ -5,26 +5,15 @@
     </div>
     <hr />
     
-	<?php echo '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2><br /></div>'; ?>
+	<?php
+    echo '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2><br /></div>';
 	
-    <div class="hotro_hocvien" style="background:url('mau-bang-tot-nghiep.png')">
-    	<h3>Mẫu bằng tốt nghiệp</h3>
-    </div>
-    <div class="hotro_hocvien">
-    	<h3>Khác biệt của chương trình</h3>
-    </div>
-    <div class="hotro_hocvien">
-    	<h3>Điều kiện nhập học</h3>
-    </div>
-    <div class="hotro_hocvien">
-    	<h3>Hồ sơ nhập học</h3>
-    </div>
-    <div class="hotro_hocvien">
-    	<h3>Đăng ký trực tuyến</h3>
-    </div>
-    <div class="hotro_hocvien">
-    	<h3>Thông báo học viên</h3>
-    </div>
-    
-    <div style="clear:both; height:1px"></div>
+	$qr = $tc->list_hotro_hocvien($idMenu);
+	while($row = mysql_fetch_array($qr)){
+		echo '<a href="'.$row['url'].'" title="'.$row['name'].'"><div class="hotro_hocvien" style="background:url(\''.url_catalog_image.$row['url_hinh'].'\')">
+			<h3>'.$row['name'].'</h3>
+		</div></a>';
+	}
+	?>
+    <div style="clear:both; height:20px"></div>
 </div></div>

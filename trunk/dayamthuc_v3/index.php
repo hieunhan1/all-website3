@@ -1,7 +1,7 @@
 <?php
 session_start();
 $lang = 'vi';
-date_default_timezone_set('Asia/Ho_Chi_Minh');
+//date_default_timezone_set('Asia/Ho_Chi_Minh');
 define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
