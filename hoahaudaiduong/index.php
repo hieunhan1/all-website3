@@ -109,11 +109,11 @@ if(@$_GET['danhmuc']){
 <div id="wrapper">
 	<div id="top">
     	<div id="lang">
-        	<!--<li><a href="?lang=vi"><img src="images/vi.gif" alt="Tiếng Việt" /> Tiếng Việt</a></li>
-            <li><a href="?lang=en"><img src="images/en.gif" alt="English" /> English</a></li>-->
+        	<li><a href="/"><img src="images/vi.gif" alt="Tiếng Việt" /> Tiếng Việt</a></li>
+            <li><a href="?lang=en"><img src="images/en.gif" alt="English" /> English</a></li>
         </div>
         <div id="search">
-        	<input type="text" name="txtSearch" class="txtSearch" value="Nhập từ khóa.." onfocus="if(value=='Nhập từ khóa..') value=''" onblur="if(value=='') value='Nhập từ khóa..'" />
+        	<input type="text" name="txtSearch" id="txtSearch" class="txtSearch" value="<?php echo const_txt_search;?>" onfocus="if(value=='<?php echo const_txt_search;?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search;?>'" />
             <input type="button" name="btnSearch" class="btnSearch" value="&nbsp;" />
         </div>
     </div>
@@ -127,7 +127,7 @@ if(@$_GET['danhmuc']){
 	?>
 	
     <div id="home_thisinh">
-        <div class="home_thisinh_title">Nhà tài trợ</div>
+        <div class="home_thisinh_title"><?php echo cons_nha_tai_tro;?></div>
     
         <script type="text/javascript" src="library/partner/common.js"></script>
         <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
@@ -159,7 +159,7 @@ if(@$_GET['danhmuc']){
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
         	<tr>
             	<td style="width:240px">
-                	<p style="font-weight:bold; margin:0 15px 10px 0; padding-bottom:10px; border-bottom:solid 1px #666">Kết nối với chúng tôi</p>
+                	<p style="font-weight:bold; margin:0 15px 10px 0; padding-bottom:10px; border-bottom:solid 1px #666"><?php echo cons_ket_noi;?></p>
                     <?php
                     $qr = $tc->menu(0,4);
 					while($row = mysql_fetch_array($qr)){
@@ -168,14 +168,16 @@ if(@$_GET['danhmuc']){
 					?>
                 </td>
             	<td valign="top" style="line-height:22px"><?php echo $row_config['contact_foo']; ?></td>
-            	<td valign="top" align="right" style="width:250px; line-height:22px"><?php echo $row_config['copyright']; ?><embed src="public/musics.mp3" autostart="true" loop="true" hidden="true" volume="60"></embed></td>
+            	<td valign="top" align="right" style="width:250px; line-height:22px"><?php echo $row_config['copyright']; ?><br />
+                <a href="http://www.tinhocdongtam.com">Design web Tin Hoc Dong Tam</a>
+                <embed src="public/musics.mp3" autostart="true" loop="true" hidden="true" volume="60"></embed></td>
             </tr>
         </table><br />
     </div>
     <?php
     $qr = $tc->menu_type(7,0,$lang);
 	$row_dangky = mysql_fetch_array($qr);
-	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'">Đăng ký cuộc thi Hoa Hậu Đại Dương Việt Nam</a></div>';
+	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'">'.$row_dangky['title'].'</a></div>';
 	?>
 </div>
 <?php

@@ -1,5 +1,9 @@
 <?
-define('home_page','home');
+define('cons_thong_tin_moi','New Information');
+define('cons_bo_suu_tap','Collection');
+define('cons_nha_tai_tro','Sponsors');
+define('cons_ket_noi','Connect with us');
+
 define('const_tin_khac', 'Other post');
 
 define('const_thong_tin', 'Contact Information');

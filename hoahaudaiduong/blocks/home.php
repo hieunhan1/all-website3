@@ -14,7 +14,7 @@
 	}
 	
 	echo '<div id="box_new_nb">'.$box_new_nb.'</div>
-	<div id="box_new_more"><p>Thông tin mới</p>'.$box_new_more.'</div>';
+	<div id="box_new_more"><p>'.cons_thong_tin_moi.'</p>'.$box_new_more.'</div>';
 	?>
     
     <div id="box_new_video">
@@ -34,7 +34,7 @@
     </div>
 </div>
 <div id="home_bst">
-    <div class="home_bts_title">Bộ sưu tập</div>
+    <div class="home_bts_title"><?php echo cons_bo_suu_tap;?></div>
     <?php
 	$i = 0;
     $qr = $tc->home_bosuutap($lang);
