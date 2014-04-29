@@ -6,7 +6,7 @@ $str_home = '<div id="home_about">
 	
 $qr = $tc->home_video($idMenu);
 $row = mysql_fetch_array($qr);
-$str_home .= '<div id="home_video"><iframe src="'.$row['link'].'?origin=www.vikybomi.com.vn&amp;rel=0" frameborder="0"></iframe><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><h3>'.$row['name'].'</h3></a></div>
+$str_home .= '<div id="home_video"><iframe src="'.$row['link'].'?origin=www.vikybomi.com.vn&amp;rel=0&amp;wmode=transparent" frameborder="0"></iframe><a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><h3>'.$row['name'].'</h3></a></div>
 	<div style="clear:both; height:1px"></div>
 </div>';
 echo $str_home;
