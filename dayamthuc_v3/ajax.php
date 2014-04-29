@@ -1,6 +1,6 @@
 <?php
 $lang = 'vi';
-
+date_default_timezone_set('Asia/Bangkok');
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
