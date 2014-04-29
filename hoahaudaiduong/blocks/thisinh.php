@@ -43,8 +43,8 @@ for($i=0; $i<=6; $i++){
 $ngaysinh = date('Y') - date('Y',strtotime($row_detail['ngaysinh']));
 $info = '<table width="100%" border="0" cellpadding="0" cellspacing="0" id="info_thisinh">
 	<tr>
-		<td>Chiều cao: '.$row_detail['chieucao'].'m</td>
-		<td>Cân nặng: '.$row_detail['cannang'].'kg</td>
+		<td>Chiều cao: '.$row_detail['chieucao'].'</td>
+		<td>Cân nặng: '.$row_detail['cannang'].'</td>
 		<td>Số đo: '.$row_detail['sodo'].'</td>
 	</tr>
 </table>
@@ -52,7 +52,7 @@ $info = '<table width="100%" border="0" cellpadding="0" cellspacing="0" id="info
 	<tr>
 		<td><p>Trình độ: '.$trinhdo.'</p>
 			<p>Sở thích: '.$row_detail['sothich'].'</p></td>
-		<td style="font-weight:bold"><p>Số báo danh: <font color="#FFFF80">'.$row_detail['sbd'].'</font></p>
+		<td style="font-weight:bold" width="140" align="right"><p>Số báo danh: <font color="#FFFF80">'.$row_detail['sbd'].'</font></p>
 			<p>Bình chọn: <font color="#FFFF80">Chưa</font></p></td>
 	</tr>
 </table>
