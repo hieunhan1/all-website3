@@ -14,7 +14,7 @@ while($row = mysql_fetch_array($list)){
 	$binhchon = 'Chưa bình chọn';
 	$view_post .= '<div class="home_thisinh_item">
 		<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img"><img src="'.url_thisinh_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h5>'.$row['name'].'</h5></a>
-		SBD: '.$row['sbd'].'<br />'.$binhchon.'
+		<!--SBD: '.$row['sbd'].'<br />'.$binhchon.'-->
 	</div>';
 }
 
