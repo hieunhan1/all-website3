@@ -1,7 +1,7 @@
 <?php
 session_start();
 $lang = 'vi';
-//date_default_timezone_set('Asia/Ho_Chi_Minh');
+date_default_timezone_set('Asia/Bangkok');
 define(does_not_exist,'Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
@@ -205,6 +205,8 @@ if(@$_GET['danhmuc']){
         <div style="clear:both; height:20px"></div>
     </div>
 </div>
+
+<?php include_once('blocks/qc2ben.php'); ?>
 
 <div id="support_online">
 	<img src="images/support-online.gif" alt="support online" id="btn_support" />
