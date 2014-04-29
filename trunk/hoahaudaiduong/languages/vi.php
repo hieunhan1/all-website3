@@ -1,5 +1,9 @@
 <?php
-define('home_page','trang-chu');
+define('cons_thong_tin_moi','Thông tin mới');
+define('cons_bo_suu_tap','Bộ sưu tập');
+define('cons_nha_tai_tro','Nhà tài trợ');
+define('cons_ket_noi','Kết nối với chúng tôi');
+
 define('const_tin_khac', 'Bài viết khác');
 
 define('const_thong_tin', 'Thông tin liên hệ');
