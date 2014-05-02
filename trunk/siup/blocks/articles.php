@@ -55,6 +55,10 @@
 <div id="content_left">
 	<?php
     echo '<h1 id="h1_dm">'.$row_detail['name'].'</h1>
+	<div id="print_email">
+		<div id="email"></div>
+		<div id="print" onclick="window.open(\'/print.html?info='.$row_detail['name_rewrite'].'\', \'windowname1\', \'width=700, height=550\'); return false;"></div>
+	</div>
 	<div class="viewpost">'.$row_detail['content'].'</div>
 	<div style="clear:both; height:40px"></div>';
 	
