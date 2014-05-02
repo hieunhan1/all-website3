@@ -134,6 +134,14 @@ class trangchu extends db {
 		$qr = "SELECT id,name,content FROM web_info WHERE `delete`=0 AND status=1 AND other=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 1";
 		return mysql_query($qr);
 	}
+	function project_cungloai($idMenu,$id){
+		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM `web_info` WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 6";
+		return mysql_query($qr);
+	}
+	function project_img($id){
+		$qr = "SELECT name,url_hinh FROM `web_info_img` WHERE `delete`=0 AND status=1 AND info_id='{$id}' ORDER BY date_update DESC LIMIT 6";
+		return mysql_query($qr);
+	}
 	
 	/*contact*/
 	function insert_contact($name,$email,$phone,$diachi,$message){

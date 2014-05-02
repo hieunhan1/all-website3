@@ -133,5 +133,15 @@ $(document).ready(function($){
 		$("#phantrang a").corner("3px");
 	}
 	
+	$(".thumb_img:first").css("border","solid 2px #D51C21");
+	$(".thumb_img").click(function(){
+		$(".thumb_img").css("border","solid 2px #FFF");
+		$(this).css("border","solid 2px #D51C21");
+		
+		var name = $(this).attr("name");
+		var url_hinh = $(this).attr("url");
+		
+		$("#view_img").html('<img src="' + url_hinh + '" alt="' + name + '" />');
+	});
 	
 });
