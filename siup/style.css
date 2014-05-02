@@ -79,7 +79,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 
 #right{width:660px; float:right; margin-right:40px}
 
-#h1_dm{font-size:130%; margin-bottom:20px}
+#h1_dm{font-size:130%; margin-bottom:10px}
 
 #content_left{width:500px; float:right; margin-right:20px}
 
@@ -106,7 +106,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .viewpost{line-height:23px}
 .viewpost p, .viewpost div {margin:10px 0}
 .viewpost li{margin-left:35px}
-.viewpost h1{font-size:160%; line-height:30px; color:#DA251E; margin-bottom:10px}
+.viewpost h1{font-size:160%; line-height:25px; color:#DA251E; margin-bottom:5px}
 .viewpost h2, .viewpost h3, .viewpost h4, .viewpost h5, .viewpost h6 {font-size:100%}
 .viewpost .date{color:#888; font-style:italic; text-align:right}
 .viewpost .sp_price_goc{text-decoration:line-through; font-size:130%; color:#777}
@@ -118,6 +118,10 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #project_deatil #view_img img{height:400px}
 #project_deatil .thumb_img{width:100px; height:60px; float:left; overflow:hidden; margin:0 3px; border:solid 2px #FFF; cursor:pointer}
 #project_deatil .thumb_img img{width:100px}
+
+#print_email{clear:both; height:15px}
+#print_email #print{width:15px; height:15px; float:right; margin-right:10px; background:url(images/print-email-bookmark.gif) no-repeat left; cursor:pointer}
+#print_email #email{width:15px; height:15px; float:right; background:url(images/print-email-bookmark.gif) no-repeat center; cursor:pointer}
 
 #navigator{clear:both; margin:10px 0 30px 0}
 #navigator a{padding-right:15px; font-size:12px; color:#666}
