@@ -48,10 +48,10 @@ $mail->Subject = $subject;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào bạn, </h3><br />
-<b>'.$name_gui_share.'</b> chia sẻ bài viết từ website <b>sisp.org.vn</b> <br />
-Thông diệp: '.$message.'<br /><br />
-Xem chi tiết: <a href="http://sisp.org.vn'.$link_share.'">ấn vào đây</a>';
+$body = '<h3 style="line-height:26px; font-size:16px">Chào bạn, </h3>
+<p style="line-height:25px; font-size:14px"><b>'.$name_gui_share.'</b> chia sẻ bài viết từ website sisp.org.vn</p>
+<p style="line-height:25px; font-size:14px">Thông diệp: '.$message.'</p>
+<p style="line-height:25px; font-size:14px; font-weight:bold">Xem bài viết chia sẻ: <a href="http://sisp.org.vn'.$link_share.'">ấn vào đây</a></p>';
 
 $mail->Body = $body;
 
