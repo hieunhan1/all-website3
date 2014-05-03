@@ -71,3 +71,77 @@
 	}
 	?>
 </div>
+
+<div id="popupContact">
+    <div id="content_popup">
+    	<div style="text-align:right; padding:5px 5px 0 0; background-color:#FFF"><a href="javascript:;" id="popupContactClose"><img src="images/close.png" alt="sản phẩm" /></a></div>
+    	<div style="color:#C00; font-weight:bold; font-size:110%; padding-bottom:10px">Chia sẻ bài viết qua Email: <?php echo $row_detail['name']; ?></div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="15" id="form_chia_se">
+        	<tr>
+            	<td width="130">Họ tên người gửi</td>
+            	<td><input type="text" name="name_gui" class="txt_chiase" /></td>
+            </tr>
+        	<tr>
+            	<td>Email người gửi</td>
+            	<td><input type="text" name="email_gui" class="txt_chiase" /></td>
+            </tr>
+        	<tr>
+            	<td>Email người nhận</td>
+            	<td><input type="text" name="email_nhan" class="txt_chiase" /></td>
+            </tr>
+            <tr>
+            	<td valign="top">Thông điệp đính kèm</td>
+            	<td><textarea name="message" class="textarea_chiase"></textarea></td>
+            </tr>
+            <tr>
+            	<td>&nbsp;</td>
+            	<td><input type="button" name="btnGuiChiaSe" value="Gửi chia sẻ" class="btn_chiase" /></td>
+            </tr>
+        </table>
+    </div>
+</div></div>
+<div id="backgroundPopup"></div>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $("#email").click(function(){
+		sroll_top();
+		
+		var height = $("#popupContact").height();
+		$("#popupContact").height(height);
+		centerPopup("fix");
+		loadPopup();
+		$(window).bind("resize", function(){ centerPopup("absolute"); });
+		$("#backgroundPopup, #popupContactClose, input[name=btn_huy_nop_hs]").click(function(){
+			disablePopup();
+		});
+	});
+	
+	$("input[name=btnGuiChiaSe]").click(function(){
+		var name_gui = $("input[name=name_gui]").val();
+		var email_gui = $("input[name=email_gui]").val();
+		var email_nhan = $("input[name=email_nhan]").val();
+		var message = $("textarea[name=message]").val();
+		
+		if(name_gui.length<3){
+			alert("Input name");
+			$("input[name=name_gui]").focus();
+			return false;
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_gui))){
+			alert("Wrong email address");
+			$("input[name=email_gui]").focus();
+			return false;
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_nhan))){
+			alert("Wrong email address");
+			$("input[name=email_nhan]").focus();
+			return false;
+		}else{
+			$("#form_chia_se").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
+			$.post("ajax.php",{chiase_baiviet:"chiase_baiviet",name_gui:name_gui,email_gui:email_gui,email_nhan:email_nhan,link_share:"<?php echo $_SERVER['REQUEST_URI']; ?>",message:message},function(data){
+				if(data!='0') setTimeout(function(){ $("#form_chia_se").html('<p style="color:#00F; font-weight:bold; padding:30px 0 60px;">Chia sẻ bài viết thành công.</p>'); },200);
+				else $("#form_chia_se").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
+			});
+			return true;
+		}
+	});
+});
+</script>
