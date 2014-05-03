@@ -149,6 +149,11 @@ class trangchu extends db {
 		$qr = "INSERT INTO `web_contact` VALUES ('','{$name}','{$email}','{$phone}','{$diachi}','{$message}','','','0','{$date}','{$date}','khachhang','','0')";
 		return mysql_query($qr);
 	}
+	function insert_chiase_bv($name_gui,$email_gui,$email_nhan,$link_share,$message){
+		$date = date('Y-m-d H:i:s');
+		$qr = "INSERT INTO `web_info_share` VALUES ('','{$name_gui}','{$email_gui}','{$email_nhan}','{$link_share}','{$message}','vi','0','{$date}','{$date}','khachhang','','0')";
+		return mysql_query($qr);
+	}
 	
 }// end trangchu
 ?>
