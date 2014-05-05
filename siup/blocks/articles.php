@@ -99,7 +99,7 @@
             </tr>
         </table>
     </div>
-</div></div>
+</div>
 <div id="backgroundPopup"></div>
 <script type="text/javascript">
 $(document).ready(function(e) {
@@ -108,7 +108,7 @@ $(document).ready(function(e) {
 		
 		var height = $("#popupContact").height();
 		$("#popupContact").height(height);
-		centerPopup("fix");
+		centerPopup("absolute");
 		loadPopup();
 		$(window).bind("resize", function(){ centerPopup("absolute"); });
 		$("#backgroundPopup, #popupContactClose, input[name=btn_huy_nop_hs]").click(function(){
