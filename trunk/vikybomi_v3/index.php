@@ -147,7 +147,7 @@ if(@$_GET['danhmuc']){
         <table width="1000px" border="0" cellpadding="0" cellspacing="0" style="line-height:25px; margin-top:10px">
           <tr>
             <td width="250" valign="top" style="padding-right:30px">
-                <div style="font-weight:bold; color:#333; padding-bottom:5px; border-bottom:solid 1px #CCC">Kết nối với chúng tôi</div>
+                <div style="font-weight:bold; color:#333; padding-bottom:5px; border-bottom:solid 1px #CCC"><?php echo const_ket_noi_chung_toi; ?></div>
                 <div id="social">
                 <?php
                 $qr = $tc->menu(0,6);
