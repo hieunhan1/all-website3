@@ -1,15 +1,15 @@
 <?php
 $slider = $tc->slider_banner(5);
-echo '<div id="divAdRight" style="display:none; position:absolute; top:0px; margin-bottom:10px; border:solid 1px #bdbdbd">';
+echo '<div id="divAdRight" style="display:none; position:absolute; top:0px">';
 while($row_slider = mysql_fetch_array($slider)){
-	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
+	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:8px; border:solid 1px #bdbdbd"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
 }
 echo '</div>';
 
 $slider = $tc->slider_banner(4);
-echo '<div id="divAdLeft" style="display:none; position:absolute; top:0px; margin-bottom:10px; border:solid 1px #bdbdbd">';
+echo '<div id="divAdLeft" style="display:none; position:absolute; top:0px">';
 while($row_slider = mysql_fetch_array($slider)){
-	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
+	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:8px; border:solid 1px #bdbdbd"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
 }
 echo '</div> ';
 ?>
