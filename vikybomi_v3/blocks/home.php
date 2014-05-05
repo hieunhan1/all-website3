@@ -53,6 +53,6 @@ while($row_list = mysql_fetch_array($qr_list)){
 ?>
 
 <div class="home_list_sp">
-	<div class="home_sp_title"><a href=""><img src="upload/images/danhmuc/dai-ly-cua-hang.gif" alt="" /></a></div>
+	<div class="home_sp_title"><a href=""><img src="upload/images/danhmuc/<?php echo const_daily_cuahang; ?>" alt="" /></a></div>
 	<div class="viewpost"><?php echo $row_config['contact_form'];?></div>
 </div>
