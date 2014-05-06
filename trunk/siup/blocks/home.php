@@ -36,8 +36,10 @@
 		if(mysql_num_rows($qr) > 0){
 			echo '<div id="home_new_title"><h4>'.$row['name'].'</h4> <a href="'.$row['url'].'">'.const_xem_tat_ca.' »</a> </div>';
 			while($row = mysql_fetch_array($qr)){
+				if(file_exists(url_detail_image_thumb.$row['url_hinh'])) $url_hinh = url_detail_image_thumb.$row['url_hinh'];
+				else $url_hinh = url_project_image_thumb.$row['url_hinh'];
 				echo '<div class="home_new_item">
-					<div class="home_new_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+					<div class="home_new_img"><img src="'.$url_hinh.'" alt="'.$row['name'].'" /></div>
 					<h3>'.$row['name'].'</h3>
 					<div class="home_new_info">'.$row['metaDescription'].'</div>
 					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">Xem chi tiết »</a>

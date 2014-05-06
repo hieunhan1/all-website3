@@ -63,7 +63,7 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('2',$values,'',$views);
 	$hidden_item = $form->DisplayProperties();
 	
-	$where = " AND lang='{$language}' ";
+	$where = " AND lang='{$lang}' ";
 	$arr = $qt->danhmuc_menu_checkbox(0,'',$where);
 	$properties = $row_detail['parent_id']; //default check
 

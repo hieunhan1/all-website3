@@ -18,5 +18,5 @@ $required = "<span style='color:red'>*</span>";
 define('url_articles_image_thumb','../../public/_thumbs/Images/articles/');
 define('url_catalog_image_thumb','../../public/_thumbs/Images/danhmuc/');
 define('url_slider_image_thumb','../../public/_thumbs/Images/slider_banner/');
-define('url_product_image_thumb','../../public/_thumbs/Images/products/');
+define('url_project_image_thumb','../../public/_thumbs/Images/project/');
 define('url_video_image_thumb','../../public/_thumbs/Images/video/');
