@@ -64,7 +64,7 @@
 			$i++;
 			if($i%3 == 1) $style = 'margin-bottom:35px'; else $style = 'margin:0 0 35px 35px';
 			echo '<div class="project_2_item" style="'.$style.'">
-				<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="project_2_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+				<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="project_2_img"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 				<h3>'.$row['name'].'</h3></a>
 			</div>';
 		}

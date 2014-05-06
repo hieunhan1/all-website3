@@ -1,5 +1,5 @@
 <?php
-define('const_xem_tat_ca','xem tất cả tin tức');
+define('const_xem_tat_ca','xem tất cả');
 define('const_tin_khac', 'Bài viết khác');
 define('const_partner', 'Đối tác của SIUP');
 define('const_txt_search', 'Tìm kiếm nội dung');
