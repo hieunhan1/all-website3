@@ -50,13 +50,23 @@ echo '<form name="form_action" method="post" action="">
 	
 	//status
 	$arr = array();
-	$arr[] = array('id'=>'1', 'name'=>'Hiện');
-	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['status']=='') $properties = 1; else $properties = $row_detail['status']; //default check
+	$arr[] = array('id'=>'1', 'name'=>'Đã gửi');
+	$arr[] = array('id'=>'0', 'name'=>'Chưa gửi');
+	if($row_detail['status']=='') $properties = 0; else $properties = $row_detail['status']; //default check
 	$views = array('Trạng thái','status','radio',' &nbsp; '); //label name class other
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
-
+	
+	//email nha tuyen dung
+	$qr = mysql_query("SELECT web_tuyendung.name,name_rewrite,menu_id,email FROM web_tuyendung,web_tuyendung_cty WHERE web_tuyendung.`delete`=0 AND web_tuyendung.id='{$row_detail['tuyendung_id']}' AND tuyendung_cty_id=web_tuyendung_cty.id");
+	$row_nha_tuyen_dung = mysql_fetch_array($qr);
+	
+	$values = $row_nha_tuyen_dung['email'];
+	$properties = '<input type="button" name="btn_email_nhatuyendung" value="Gửi thông tin" class="button" /><br /> <span id="ajax_gui_hoso" class="message"></span>'; //other
+	$views = array('Gửi hồ sơ','email_nhatuyendung','color:#00F; width:auto; line-height:25px; float:left'); //label id&name style
+    $form->getProperties('10',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//name
 	$values = $row_detail['name'];
 	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
@@ -107,9 +117,8 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
-	$qr = mysql_query("SELECT name,name_rewrite,menu_id FROM web_tuyendung WHERE `delete`=0 AND id='{$row_detail['tuyendung_id']}'");
-	$row = mysql_fetch_array($qr);
-	echo '<tr><td colspan="2" style="font-weight:bold">Xem thông tin tuyển dụng: <a href="/'.$qt->link_detail($row['menu_id']).$row['name_rewrite'].'.html" target="_blank">'.$row['name'].'</a></tr>';
+	//Xem thong tin tuyen dung
+	echo '<tr><td colspan="2" style="font-weight:bold">Xem thông tin tuyển dụng: <a href="/'.$qt->link_detail($row_nha_tuyen_dung['menu_id']).$row_nha_tuyen_dung['name_rewrite'].'.html" target="_blank">'.$row_nha_tuyen_dung['name'].'</a></tr>';
 	
 	//id
 	$values = $row_detail['id'];

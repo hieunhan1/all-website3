@@ -1,4 +1,18 @@
-<?php include_once('search.php'); ?>
+<?php
+	/*search*/
+	if(isset($_GET['btnSearch'])){
+		if($_GET['txt']!='' && $_GET['txt']!='Mô tả') $str_search .= " AND name LIKE '%{$_GET['txt']}%' ";
+	}else{
+		$str_search = '';
+	}
+?>
+<form action="" method="get" name="search">
+<div id="search">
+	<input type="hidden" name="p" value="<?php echo $table; ?>" />
+    <input type="text" name="txt" value="<?php if(!isset($_GET['txt'])) echo 'Mô tả'; else echo $_GET['txt']; ?>" class="txt" onclick="if(value=='Mô tả') value=''" />
+    <input type="submit" name="btnSearch" value="Tìm kiếm" class="btn" />
+</div>
+</form>
 <div id="content">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="view_select">
     	<tr bgcolor="#88C4FF">
