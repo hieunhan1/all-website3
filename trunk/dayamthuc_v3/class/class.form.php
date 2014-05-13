@@ -26,6 +26,7 @@ class form {
 			case 7 : $display = $this->input_checkbox();		break;
 			case 8 : $display = $this->DeQuy();					break;
 			case 9 : $display = $this->input_submit();			break;
+			case 10 : $display = $this->text_info();			break;
 			
 			default : $display = 'Không có form thuộc tính bạn yêu cầu';
 		}
@@ -150,4 +151,12 @@ class form {
 		
 		return $arr;  
     }
+	function text_info(){
+		$values = $this->_values;
+		$properties = $this->_properties; /*maxlength other*/
+		$views = $this->_views; /*label id&name style*/
+		$str = '<tr><td class="label">'.$views[0].'</td>
+		<td><p id="'.$views[1].'" style="'.$views[2].'">'.$values.'</p>'.$properties.'</td></tr>';
+		return $str;
+	}
 }

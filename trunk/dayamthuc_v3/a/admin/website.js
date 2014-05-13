@@ -172,4 +172,21 @@ $(document).ready(function(){
 		}
 	});
 	
+	//gui thong tin cho nha tuyen dung
+	$("input[name=btn_email_nhatuyendung]").click(function(){ 
+		var email = $("#email_nhatuyendung").html();
+		var id_dk = $("input[name=id]").val();
+		alert(email + id_dk);
+		/*if(email != ''){
+			$.post("ajax.php",{email_nhatuyendung:email,id_dk:id_dk},function(data){
+				if(data != '0'){
+					$("input[name=status]:checked").val('2');
+					$("#ajax_gui_thongtin").html('Gửi thành công.');
+				}else alert('Lỗi. Vui lòng thử lại');
+			});
+		}else{
+			alert('Bạn chưa chọn nhân viên để gửi thông tin');
+		}*/
+	});
+	
 });

@@ -1,6 +1,10 @@
 <?php
 $qr = $tc->tuyendung_cty($row_detail['tuyendung_cty_id']);
 $row = mysql_fetch_array($qr);
+if($row['email'] != ''){
+	$btn_hoso_1 = '<div class="btn_nop_hs" style="float:right">Nộp hồ sơ ngay</div>';
+	$btn_hoso_2 = '<div class="btn_nop_hs">Nộp hồ sơ ngay</div>';
+}
 ?>
 <div class="wrapper"><div class="home_item_3">
 	<div id="navigator">
@@ -12,12 +16,14 @@ $row = mysql_fetch_array($qr);
     <hr />
     
     <div id="left" class="viewpost">
-        <?php echo "<h1>{$row_detail['name']} - {$row['name']}</h1>"; ?>
-        <!--<div class="btn_nop_hs" style="float:right">Nộp hồ sơ ngay</div>-->
+        <?php
+        echo "<h1>{$row_detail['name']} - {$row['name']}</h1>";
+		echo $btn_hoso_1;
+		?>
         <div style="clear:both; height:1px"></div>
         <table width="100%" border="0" cellpadding="0" cellspacing="0" id="tuyendung_thongtin">
         	<tr>
-            	<td colspan="2" style="background-color:#E5E5E5; font-weight:bold; padding:5px; text-align:center; color:#00F">THÔNG TIN TUYỂN DỤNG ĐẦU BẾP</td>
+            	<td colspan="2" style="background-color:#E5E5E5; font-weight:bold; padding:5px; text-align:center; color:#00F">THÔNG TIN TUYỂN DỤNG</td>
             </tr>
             <tr>
             	<td width="150" style="border-right:dotted 1px #CCC; font-weight:bold">Vị trí tuyển dụng:</td>
@@ -74,7 +80,7 @@ $row = mysql_fetch_array($qr);
             	<td style="font-weight:bold; color:#060; font-size:130%"><?php echo date('d/m/Y',strtotime($row_detail['hannop'])); ?></td>
             </tr>
         </table>
-        <!--<div class="btn_nop_hs">Nộp hồ sơ ngay</div>-->
+        <?php echo $btn_hoso_2;?>
         <div style="clear:both; height:30px"></div>
     </div>
     
