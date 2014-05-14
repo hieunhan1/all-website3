@@ -62,7 +62,7 @@ echo '<form name="form_action" method="post" action="">
 	$row_nha_tuyen_dung = mysql_fetch_array($qr);
 	
 	$values = $row_nha_tuyen_dung['email'];
-	$properties = '<input type="button" name="btn_email_nhatuyendung" value="Gửi thông tin" class="button" /><br /> <span id="ajax_gui_hoso" class="message"></span>'; //other
+	$properties = '<input type="button" name="btn_email_nhatuyendung" value="Gửi thông tin" class="button" /><br /> <span id="ajax_gui_thongtin" class="message"></span>'; //other
 	$views = array('Gửi hồ sơ','email_nhatuyendung','color:#00F; width:auto; line-height:25px; float:left'); //label id&name style
     $form->getProperties('10',$values,$properties,$views);
 	echo $form->DisplayProperties();

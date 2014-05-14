@@ -104,4 +104,13 @@ if(@$_SESSION["username_admin"]) {
 		}else echo '0';
 	}
 	
+	//sendmail nha tuyen dung
+	if(isset($_POST['sendmail_nhatuyendung'])){
+		$id = $_POST['id'];
+		$email_ntd = $_POST['sendmail_nhatuyendung'];
+		
+		$qr = mysql_query("SELECT * FROM web_tuyendung_hoso WHERE `delete`=0 AND id='{$id}' LIMIT 1");
+		$row = mysql_fetch_array($qr);
+		
+	}
 }

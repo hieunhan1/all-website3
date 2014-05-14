@@ -73,7 +73,7 @@ class form {
 		
 		foreach($values as $value){
 			if($value['id'] != $properties) $check = ''; else $check = 'checked="checked"';
-			$str .= '<input type="radio" name="'.$views[1].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].$views[3];
+			$str .= '<input type="radio" name="'.$views[1].'" id="'.$views[1].'_'.$value['id'].'" class="'.$views[2].'" value="'.$value['id'].'" '.$check.' /> '.$value['name'].$views[3];
 		}
 		
 		$str = '<tr><td class="label">'.$views[0].'</td> <td>'.$str.'</td></tr>';
