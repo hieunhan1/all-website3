@@ -7,7 +7,7 @@ while($row = mysql_fetch_array($qr)){
 		if($row2['price']!=0) $price = number_format($row2['price'],0,',','.').'<sup> <u>đ</u></sup>'; else $price = 'Liên hệ';
 		echo '<div class="home_product_item">
 			<a href="'.$tc->link_detail($row2['menu_id']).$row2['name_rewrite'].'.html">
-				<div class="home_product_item_img" style="background:url(\''.url_products_image_thumb.$row2['url_hinh'].'\') no-repeat center">'.$tc->type_noibat($row2['noibat']).'</div>
+				<div class="home_product_item_img" style="background:url(\''.url_product_image_thumb.$row2['url_hinh'].'\') no-repeat center">'.$tc->type_noibat($row2['noibat']).'</div>
 				<h3>'.$row2['name'].'</h3>
 			</a>
 			<div class="price_product">'.$price.'</div>

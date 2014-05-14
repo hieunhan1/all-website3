@@ -23,8 +23,8 @@ define('url_slider_image','public/images/slider_banner/');
 define('url_detail_image','public/images/articles/');
 define('url_detail_image_thumb','public/_thumbs/Images/articles/');
 
-define('url_products_image','public/images/products/');
-define('url_products_image_thumb','public/_thumbs/Images/products/');
+define('url_product_image','public/images/products/');
+define('url_product_image_thumb','public/_thumbs/Images/products/');
 
 define('url_video_image','public/images/video/');
 define('url_video_image_thumb','public/_thumbs/Images/video/');

@@ -126,6 +126,44 @@ $(document).ready(function(){
 		}
 	});
 	
+	/*create - delete hinh anh san pham*/
+	$("input[name=btnImageCreate]").click(function(){
+		var id_other = $.trim($("input[name=id_other]").val());
+		var name_other = $.trim($("input[name=name_other]").val());
+		var url_hinh_other = $.trim($("input[name=url_hinh_other]").val());
+		if(id_other!='' && name_other!='' && url_hinh_other!=''){
+			$.post("ajax.php",{upload_image_other:1,name_other:name_other,url_hinh_other:url_hinh_other,id_other:id_other},function(data){
+				if(data != '0'){
+					$("#ajax_image").prepend('<tr><td style="border-bottom:solid 1px #CCC">'+ name_other +'</td><td style="border-bottom:solid 1px #CCC">'+ url_hinh_other +'</td><td style="border-bottom:solid 1px #CCC">&nbsp;</td></tr>');
+				}else{
+					alert("Lỗi: Vui lòng ấn F5 thử lại.");
+					return false;
+				}
+			});
+		}else{
+			alert("Mô tả và tên hình không được bỏ trống.");
+			return false;
+		}
+	});
+	$(".delete_img").click(function(){
+		var id = ($(this).attr('class')).split("delete_img delete_img_");
+		var name = $(this).attr('title');
+		
+		if(confirm("Bạn có muốn xóa: " + name)){
+			$.post("ajax.php",{delete_image:1,id:id[1]},function(data){
+				if(data != '0'){
+					$("#ajax_id_" + id[1]).hide();
+					return true;
+				}else{
+					alert("Lỗi: Vui lòng ấn F5 thử lại.");
+					return false;
+				}
+			});
+		}else return false;
+	});
+	
+	
+	
 	/*other*/
 	// cap nhat: dang ky, lien he, nop ho so
 	/*

@@ -93,12 +93,19 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('Chọn file ảnh','btnBrowse','button'); //label id&name class
 	$form->getProperties('6',$values,'',$views);
 	$other = $form->DisplayProperties();
-	if($row_detail['url_hinh'] != '') $other .= '<div class="avarta"><img src="'.url_articles_image_thumb.$row_detail['url_hinh'].'" /></div>';
+	if($row_detail['url_hinh'] != '') $other .= '<div class="avarta"><img src="'.url_product_image_thumb.$row_detail['url_hinh'].'" /></div>';
 	
 	$values = $row_detail['url_hinh'];
 	$properties = array('150'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Ảnh đại diện','url_hinh','input_medium'); //label id&name class
     $form->getProperties('1',$values,$properties,$views,$other);
+	echo $form->DisplayProperties();
+	
+	//price
+	$values = $row_detail['price'];
+	$properties = array('9'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Giá SP','price','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
 	//metaDescription
@@ -114,6 +121,14 @@ echo '<form name="form_action" method="post" action="">
 	$properties = array('200'); //maxlength OTHER (disabled, readonly)
 	$views = array('Keyword','metaKeyword','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//thongtin_them
+	$values = $row_detail['thongtin_them'];
+	$properties = ''; //disabled, readonly
+	$views = array('Thông tin thêm','thongtin_them','textarea'); //label id&name class colspan
+	$other = ckeditor_custom('thongtin_them');
+    $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
 	//content
@@ -155,3 +170,36 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 
 echo '</table></form>';
+
+// hinh san pham them
+if($id != 0){ ?>
+<h2 style='color:blue'>Upload hình ảnh sản phẩm</h2><br />
+<table border="0" cellpadding="5" cellspacing="0">
+	<tr bgcolor="#0099FF">
+    	<th align="left">Mô tả</th>
+    	<th align="left">Tên hình</th>
+        <td><input type="hidden" name="id_other" value="<?php echo $id; ?>" /></td>
+    </tr>
+    <tr>
+    	<td style="border-bottom:solid 1px #CCC"><input type="text" name="name_other" class="input_large" /></td>
+    	<td style="border-bottom:solid 1px #CCC">
+            <input type='text' name='url_hinh_other' id='url_hinh_other' class='input_large' maxlength='150' value='' />
+            <input type='button' name='btnBrowse' id='btnBrowse' value='Chọn ảnh' class='button' onclick="BrowseServer('Images:/','url_hinh_other')"/>
+        </td>
+        <td style="border-bottom:solid 1px #CCC"><input type="button" name="btnImageCreate" value="Create" class="button" /></td>
+    </tr>
+    <tbody id="ajax_image"></tbody>
+    <?php
+    $qr = mysql_query("SELECT id,name,url_hinh FROM web_products_image WHERE `delete`=0 AND status=1 AND products_id='{$id}' ORDER BY date_update DESC");
+	while($row = mysql_fetch_array($qr)){
+		echo '<tr id="ajax_id_'.$row['id'].'">
+			<td style="border-bottom:solid 1px #CCC">'.$row['name'].'</td>
+			<td style="border-bottom:solid 1px #CCC">'.$row['url_hinh'].'</td>
+			<td style="border-bottom:solid 1px #CCC"><a href="javascript:;" class="delete_img delete_img_'.$row['id'].'" title="'.$row['name'].'">Xóa</a></td>
+		</tr>';
+	}
+	?>
+</table>
+
+<br /><br /><br /><br /><br />
+<?php }?>

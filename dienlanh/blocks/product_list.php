@@ -15,7 +15,7 @@ if($total > 1){
 		if($row['price']!=0) $price = number_format($row['price'],0,',','.').'<sup> <u>đ</u></sup>'; else $price = 'Liên hệ';
 		echo '<div class="home_product_item">
 			<a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html">
-				<div class="home_product_item_img" style="background:url(\''.url_products_image_thumb.$row['url_hinh'].'\') no-repeat center">'.$tc->type_noibat($row['noibat']).'</div>
+				<div class="home_product_item_img" style="background:url(\''.url_product_image_thumb.$row['url_hinh'].'\') no-repeat center">'.$tc->type_noibat($row['noibat']).'</div>
 				<h3>'.$row['name'].'</h3>
 			</a>
 			<div class="price_product">'.$price.'</div>
