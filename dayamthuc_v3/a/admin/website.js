@@ -146,7 +146,7 @@ $(document).ready(function(){
 		if(id_nv != '0'){
 			$.post("ajax.php",{gui_thongtin:id_nv,id_dk:id_dk},function(data){
 				if(data != '0'){
-					$("input[name=status]:checked").val('2');
+					$("#status_2").attr("checked", true);
 					$("#ajax_gui_thongtin").html('Gửi thành công.');
 				}else alert('Lỗi. Vui lòng thử lại');
 			});
@@ -163,7 +163,7 @@ $(document).ready(function(){
 		if(id_nv != '0'){
 			$.post("ajax.php",{gui_lienhe:id_nv,id_dk:id_dk},function(data){
 				if(data != '0'){
-					$("input[name=status]:checked").val('2');
+					$("#status_2").attr("checked", true);
 					$("#ajax_gui_thongtin").html('Gửi thành công.');
 				}else alert('Lỗi. Vui lòng thử lại');
 			});
@@ -175,18 +175,16 @@ $(document).ready(function(){
 	//gui thong tin cho nha tuyen dung
 	$("input[name=btn_email_nhatuyendung]").click(function(){ 
 		var email = $("#email_nhatuyendung").html();
-		var id_dk = $("input[name=id]").val();
-		alert(email + id_dk);
-		/*if(email != ''){
-			$.post("ajax.php",{email_nhatuyendung:email,id_dk:id_dk},function(data){
+		var id = $("input[name=id]").val();
+		
+		if(email != ''){
+			$.post("ajax.php",{sendmail_nhatuyendung:email,id:id},function(data){
 				if(data != '0'){
-					$("input[name=status]:checked").val('2');
+					$("#status_1").attr("checked", true);
 					$("#ajax_gui_thongtin").html('Gửi thành công.');
 				}else alert('Lỗi. Vui lòng thử lại');
 			});
-		}else{
-			alert('Bạn chưa chọn nhân viên để gửi thông tin');
-		}*/
+		}else return false;
 	});
 	
 });
