@@ -2,15 +2,15 @@
 <div id="product_detail">
 	<div id="product_img">
     	<?php
-		echo '<div id="product_img_view"><img src="'.url_products_image.$row_detail['url_hinh'].'" alt="'.$row_detail['name'].'" /></div>';
-		$img_list = '<li><img src="'.url_products_image_thumb.$row_detail['url_hinh'].'" alt="'.$row_detail['name'].'" name="'.url_products_image.$row_detail['url_hinh'].'" /></li>';
+		echo '<div id="product_img_view"><img src="'.url_product_image.$row_detail['url_hinh'].'" alt="'.$row_detail['name'].'" /></div>';
+		$img_list = '<li><img src="'.url_product_image_thumb.$row_detail['url_hinh'].'" alt="'.$row_detail['name'].'" name="'.url_product_image.$row_detail['url_hinh'].'" /></li>';
 		
         $qr = $tc->products_image($row_detail['id']);
 		if(mysql_num_rows($qr)>0){
 		while($row = mysql_fetch_array($qr)){
-			$img_list .= '<li><img src="'.url_products_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" name="'.url_products_image.$row['url_hinh'].'" /></li>';
+			$img_list .= '<li><img src="'.url_product_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" name="'.url_product_image.$row['url_hinh'].'" /></li>';
 		}
-		echo '<link rel="stylesheet" type="text/css" href="library/jsor-jcarousel/skins/tango/skin.css" />
+		echo '<link rel="stylesheet" type="text/css" href="library/jsor-jcarousel/skins/tango/skin.css"/>
 		<ul id="mycarousel" class="jcarousel-skin-tango">'.$img_list.'</ul>';
 		}
 		?>
@@ -73,7 +73,7 @@
 					if($row['price']!=0) $price = number_format($row['price'],0,',','.').'<sup> <u>đ</u></sup>'; else $price = 'Liên hệ';
 					echo '<div class="item_mucgia">
 						<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">
-							<div class="item_mucgia_img"><img src="'.url_products_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+							<div class="item_mucgia_img"><img src="'.url_product_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 							<h6>'.$row['name'].'</h6>
 						</a>
 						<p>'.$price.'</p>

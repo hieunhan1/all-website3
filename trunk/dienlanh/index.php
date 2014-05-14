@@ -177,7 +177,7 @@ if(@$_GET['danhmuc']){
 		</script>
     </div>
     <div id="footer">
-    	<div style="width:auto; float:left; line-height:22px"><?php echo $row_config['contact'];?></div>
+    	<div style="width:auto; float:left; line-height:22px"><?php echo $row_config['contact_foo'];?></div>
         <div id="khuyenmai">Nhân tin khuyến mãi và quà tặng</div>
         <div style="clear:both; height:1px"></div>
     </div>

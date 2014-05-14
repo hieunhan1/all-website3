@@ -123,18 +123,19 @@ a:hover{color:#FF0000; text-decoration:underline}
 #product_detail #product_content{width:640px; float:left}
 #product_detail #product_content h2, #product_detail #product_content h3{font-size:100%}
 
-#product_detail #product_right{width:340px; float:right}
-#product_detail #product_right .product_right_title{clear:both; margin-bottom:15px; padding:6px 20px; background-color:#FF8A00; font-weight:bold; color:#FFF; text-transform:uppercase}
-#product_detail #product_right #danhgia_sp{clear:both; margin-bottom:30px}
-#product_detail #product_right .item_danhgia{clear:both; margin-bottom:15px; color:#666; font-size:90%}
-#product_detail #product_right .item_danhgia h6{font-size:100%; margin:5px 0}
-#product_detail #product_right .item_danhgia p{line-height:18px}
+.product_right_title{clear:both; margin-bottom:15px; padding:6px 20px; background-color:#FF8A00; font-weight:bold; color:#FFF; text-transform:uppercase}
 
-#product_detail #product_right .item_mucgia{clear:both; height:60px; overflow:hidden; margin-bottom:15px; color:#666; font-size:90%}
-#product_detail #product_right .item_mucgia .item_mucgia_img{width:60px; height:60px; float:left; margin:0 10px}
-#product_detail #product_right .item_mucgia .item_mucgia_img img{width:60px}
-#product_detail #product_right .item_mucgia h6{font-size:100%; margin:5px 0}
-#product_detail #product_right .item_mucgia p{margin-top:7px}
+#product_right{width:340px; float:right}
+#product_right #danhgia_sp{clear:both; margin-bottom:30px}
+#product_right .item_danhgia{clear:both; margin-bottom:15px; color:#666; font-size:90%}
+#product_right .item_danhgia h6{font-size:100%; margin:5px 0}
+#product_right .item_danhgia p{line-height:18px}
+
+#product_right .item_mucgia{clear:both; height:60px; overflow:hidden; margin-bottom:15px; color:#666; font-size:90%}
+#product_right .item_mucgia .item_mucgia_img{width:60px; height:60px; float:left; margin:0 10px}
+#product_right .item_mucgia .item_mucgia_img img{width:60px}
+#product_right .item_mucgia h6{font-size:100%; margin:5px 0}
+#product_right .item_mucgia p{margin-top:7px}
 
 .view_post{line-height:22px}
 .view_post p, .view_post div {margin:10px 0}

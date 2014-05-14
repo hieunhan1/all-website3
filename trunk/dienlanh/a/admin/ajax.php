@@ -43,7 +43,34 @@ if(@$_SESSION["username_admin"]) {
 		$qr = "UPDATE `{$url}` SET `delete`='1',user_update='{$user}',date_update='{$datetime}' WHERE `delete`=0 AND `id`='{$id}' LIMIT 1 ";
 		mysql_query($qr);
 	}
+	
+	/*Hinh anh san pham*/
+	if(@$_POST['upload_image_other']){
+		$id_product = trim($_POST['id_other']);
+		$name = trim($_POST['name_other']);
+		$url_hinh = trim($_POST['url_hinh_other']);
+		$date = date('Y-m-d H:i:s');
 		
+		if($id_product!='' && $name!='' && $url_hinh!=''){
+			$qr = "INSERT INTO `web_products_image` VALUES (NULL,'{$name}','{$url_hinh}','1','{$id_product}','vi','{$date}','{$date}','".$user."',NULL,'0')";
+			mysql_query($qr);
+			echo '1';
+			return true;
+		}else{ echo '0'; return false; }
+		
+	}
+	if(@$_POST['delete_image']){
+		$id = trim($_POST['id']);
+		$date = date('Y-m-d H:i:s');
+		
+		if($id!=''){
+			$qr = "UPDATE `web_products_image` SET `delete`=1,date_update='{$date}',user_update='".$user."' WHERE `delete`=0 AND status=1 AND id='{$id}'";
+			mysql_query($qr);
+			echo '1';
+			return true;
+		}else{ echo '0'; return false; }
+	}
+	
 	/*other*/
 	// cap nhat: dang ky, lien he, nop ho so
 	/*
