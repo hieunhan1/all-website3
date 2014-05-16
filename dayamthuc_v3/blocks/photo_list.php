@@ -7,7 +7,7 @@
     
     <div id="left">
     	<?php
-        echo '<div class="viewpost"><h1>'.$row_menu_one['name'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2></div> <div style="clear:both; height:15px"></div>';
+        echo '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2></div> <div style="clear:both; height:15px"></div>';
 		
 		$qr = $tc->menu($idMenu,6);
 		if(mysql_num_rows($qr) > 0){
