@@ -149,7 +149,7 @@ echo '<form name="form_action" method="post" action="">
 	//contact_foo
 	$values = $row_detail['contact_foo'];
 	$properties = array('200'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Thông tin footer','contact_foo','textarea'); //label id&name class colspan
+	$views = array('Thông tin header','contact_foo','textarea'); //label id&name class colspan
 	$other = ckeditor_custom('contact_foo');
     $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
