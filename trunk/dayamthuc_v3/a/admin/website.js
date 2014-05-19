@@ -143,6 +143,8 @@ $(document).ready(function(){
 		var id_nv = $("select[name=nhanvien_lienhe]").val();
 		var id_dk = $("input[name=id]").val();
 		
+		$(this).attr("disabled",true);
+		
 		if(id_nv != '0'){
 			$.post("ajax.php",{gui_thongtin:id_nv,id_dk:id_dk},function(data){
 				if(data != '0'){
@@ -160,6 +162,8 @@ $(document).ready(function(){
 		var id_nv = $("select[name=nhanvien_lienhe]").val();
 		var id_dk = $("input[name=id]").val();
 		
+		$(this).attr("disabled",true);
+		
 		if(id_nv != '0'){
 			$.post("ajax.php",{gui_lienhe:id_nv,id_dk:id_dk},function(data){
 				if(data != '0'){
@@ -176,6 +180,8 @@ $(document).ready(function(){
 	$("input[name=btn_email_nhatuyendung]").click(function(){ 
 		var email = $("#email_nhatuyendung").html();
 		var id = $("input[name=id]").val();
+		
+		$(this).attr("disabled",true);
 		
 		if(email != ''){
 			$.post("ajax.php",{sendmail_nhatuyendung:email,id:id},function(data){
