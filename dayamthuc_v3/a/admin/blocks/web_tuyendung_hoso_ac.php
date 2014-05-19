@@ -118,7 +118,7 @@ echo '<form name="form_action" method="post" action="">
 	echo $form->DisplayProperties();
 	
 	//Xem thong tin tuyen dung
-	echo '<tr><td colspan="2" style="font-weight:bold">Xem thông tin tuyển dụng: <a href="/'.$qt->link_detail($row_nha_tuyen_dung['menu_id']).$row_nha_tuyen_dung['name_rewrite'].'.html" target="_blank">'.$row_nha_tuyen_dung['name'].'</a></tr>';
+	echo '<tr><td colspan="2" style="font-weight:bold" id="view_link_tuyendung">Xem thông tin tuyển dụng: <a href="http://www.dayamthuc.vn/'.$qt->link_detail($row_nha_tuyen_dung['menu_id']).$row_nha_tuyen_dung['name_rewrite'].'.html" target="_blank">'.$row_nha_tuyen_dung['name'].'</a></tr>';
 	
 	//id
 	$values = $row_detail['id'];

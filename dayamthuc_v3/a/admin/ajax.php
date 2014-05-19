@@ -107,10 +107,45 @@ if(@$_SESSION["username_admin"]) {
 	//sendmail nha tuyen dung
 	if(isset($_POST['sendmail_nhatuyendung'])){
 		$id = $_POST['id'];
-		$email_ntd = $_POST['sendmail_nhatuyendung'];
+		$email_nhan = $_POST['sendmail_nhatuyendung'];
+		
+		$arr = array(
+		1=>'Chưa tốt nghiệp phổ thông',
+		2=>'Tốt nghiệp phổ thông',
+		3=>'Trung cấp',
+		4=>'Cao đẳng',
+		5=>'Đại học',
+		6=>'Sau đại học');
 		
 		$qr = mysql_query("SELECT * FROM web_tuyendung_hoso WHERE `delete`=0 AND id='{$id}' LIMIT 1");
 		$row = mysql_fetch_array($qr);
 		
+		$qr2 = mysql_query("SELECT web_tuyendung_cty.name as name_cty,web_tuyendung.name as name,name_rewrite,menu_id FROM web_tuyendung,web_tuyendung_cty WHERE web_tuyendung.id='{$row['tuyendung_id']}' AND tuyendung_cty_id=web_tuyendung_cty.id ");
+		$row2 = mysql_fetch_array($qr2);
+		
+		if(!(mysql_num_rows($qr)==1 && mysql_num_rows($qr2)==1)){
+			echo 0;
+			return FALSE;
+		}
+		
+		mysql_query("UPDATE web_tuyendung_hoso SET `status`=1 WHERE `delete`=0 AND id='{$id}' LIMIT 1");
+		
+		
+		$link_tuyendung = '';
+		
+		$body = '<h2>Chào '.$row2['name_cty'].'</h2>
+		<p style="line-height:22px; font-size:13pt; margin:15px 0"><b>'.$row2['name_cty'].'</b> có đăng tin tuyển dụng trên website <a href="http://www.dayamthuc.vn">www.dayamthuc.vn</a></p>
+		<p style="line-height:22px; font-size:13pt; margin:15px 0">Xem chi tiết thông tin tuyển dụng: <a href="http://www.dayamthuc.vn/'.$qt->link_detail($row2['menu_id']).$row2['name_rewrite'].'.html" target="_blank">'.$row2['name'].'</a></p>
+		<p style="line-height:22px; font-size:13pt; margin:10px 0; font-weight:bold">Hồ sơ tuyển dụng gửi qua website <a href="http://www.dayamthuc.vn">www.dayamthuc.vn</a> như sau:</p>
+		<p style="line-height:22px; font-size:13pt; margin:10px 0">
+			<strong>Họ tên:</strong> '.$row['name'].'<br />
+			<strong>Địa chỉ:</strong> '.$row['diachi'].'<br />
+			<strong>Điện thoại:</strong> '.$row['phone'].'<br />
+			<strong>Email:</strong> '.$row['email'].'<br />
+			<strong>Trình độ:</strong> '.$arr[$row['trinhdo']].'<br />
+			<strong>Kinh nghiệm làm việc:</strong> <span style="color:#5c5c5c">'.$row['content'].'</span>
+		</p>';
+		
+		include_once('../../sendmail_smtp/send_nhatuyendung.php');
 	}
 }

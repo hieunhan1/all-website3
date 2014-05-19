@@ -5,9 +5,9 @@ $email_gui = 'no-reply@dayamthuc.vn';
 $email_gui_pass = 'no-reply#123*';
 $title = 'Hồ sơ tuyển dụng';
 
-$email_nhan = $email_ntd;
+//$email_nhan = $email_ntd;
 //$name_nhan = 'Admin';
-//$subject = $name;
+$subject = 'Nhà tuyển dụng '.$row2['name_cty'];
 
 //Khởi tạo đối tượng
 $mail = new PHPMailer();
@@ -31,7 +31,7 @@ $mail->IsHTML(true);
 $mail->SetFrom($email_gui,'No-reply | '.$title);
 
 //Thiết lập thông tin người nhận
-$mail->AddAddress($email_nhan);
+$mail->AddAddress($email_nhan,$row2['name_cty']);
 $mail->AddBCC('temp@dayamthuc.vn','Temp');
 
 //Thiết lập email nhận email hồi đáp
@@ -49,9 +49,7 @@ $mail->Subject = $subject;
 $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
-$body = '<h3>Chào ban quản trị website.</h3><br />Bạn &nbsp;<strong>'.$name.'</strong>&nbsp;để lại lời nhắn sau:<br />
-<p style="color:#666; font-size:110%">'.$message.'</p><br />
-<p><strong>Thông tin cá nhân: </strong> <a href="http://www.dayamthuc.vn/hocvien_lienhe.php?nguoinhan='.$id_nv.'&id='.$id.'">Click vào đây để xem thông tin học viên</a></p>';
+//$body = '';
 
 $mail->Body = $body;
 
