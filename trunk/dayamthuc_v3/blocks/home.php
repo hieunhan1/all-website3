@@ -1,6 +1,6 @@
 <?php
 /*Home catalog*/
-$qr = $tc->menu(1,1);
+$qr = $tc->menu(1,1,$lang);
 if(mysql_num_rows($qr) > 0){
 	echo '<div id="home_item_2"><div class="wrapper" style="padding:0 10px">';
 	while($row = mysql_fetch_array($qr)){
@@ -13,7 +13,7 @@ if(mysql_num_rows($qr) > 0){
 }
 
 /*thong tin*/
-$qr = $tc->info_home();
+$qr = $tc->info_home($lang);
 $i = 0;
 $str_info_new = '';
 $str_info_noibat = '';
@@ -33,7 +33,7 @@ while($row = mysql_fetch_array($qr)){
 }
 
 /*hinh anh*/
-$qr = $tc->photos_home();
+$qr = $tc->photos_home($lang);
 while($row = mysql_fetch_array($qr)){
 	$str_hinhanh .= '<div class="photo_item_3">
 	<a href="'.$row['url'].'"><div class="img_photo_item_3"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
@@ -41,7 +41,7 @@ while($row = mysql_fetch_array($qr)){
 }
 
 /*video*/
-$qr = $tc->video_home(3);
+$qr = $tc->video_home(3,$lang);
 while($row = mysql_fetch_array($qr)){
 	$str_video .= '<div class="video_item_3">
 	<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
