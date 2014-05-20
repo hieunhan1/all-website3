@@ -73,7 +73,7 @@ echo '<form name="form_action" method="post" action="">
 
 	//phone
 	$values = $row_detail['phone'];
-	$properties = array('30'); //maxlength OTHER (disabled, readonly) 
+	$properties = array('60'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Điện thoại','phone','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
