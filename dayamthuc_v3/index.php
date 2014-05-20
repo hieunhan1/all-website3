@@ -1,8 +1,12 @@
 <?php
 session_start();
-$lang = 'vi';
 date_default_timezone_set('Asia/Bangkok');
 define(does_not_exist,'Mục này không tồn tại.');
+
+if(!isset($_GET['lang']))
+	$lang = 'vi';
+else
+	$lang = $_GET['lang'];
 
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
@@ -32,6 +36,9 @@ if(@$_GET['danhmuc']){
 		$idMenu = $row_menu_one['id'];
 		$type = $row_menu_one['type_id'];
 	}
+	
+	$lang = $row_menu_one['lang'];
+	
 	
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	else $menu_root = $idMenu;
@@ -85,6 +92,8 @@ if(@$_GET['danhmuc']){
 		$seo = $tc->seo($domain,$title,$description,$keyword,$image,$url);
 	}
 }else{
+	
+	
 	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $menu_root = $row_menu_one['id'];

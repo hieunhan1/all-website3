@@ -2,7 +2,7 @@
     <div class="box_right">
         <div class="box_right_title"><img src="images/icon-right.jpg" alt="Video nổi bật" /> Video nổi bật</div>
         <?php
-        $qr = $tc->video_home(2);
+        $qr = $tc->video_home(2,$lang);
         while($row = mysql_fetch_array($qr)){
             echo '<div class="box_right_video">
             <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">

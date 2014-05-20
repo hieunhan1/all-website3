@@ -28,15 +28,15 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one($alias){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id,lang FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}' LIMIT 1";
 		return mysql_query($qr);
 	}
 	function menu_one_v2($alias){
-		$qr = "SELECT id,name,name_rewrite,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite LIKE '{$alias}%' LIMIT 1";
+		$qr = "SELECT id,name,name_rewrite,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id,lang FROM web_menu WHERE `delete`=0 AND status=1 AND name_rewrite LIKE '{$alias}%' LIMIT 1";
 		return mysql_query($qr);
 	}
 	function menu_one_id($id){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id FROM web_menu WHERE `delete`=0 AND status=1 AND id='{$id}' LIMIT 1";
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,type_id,lang FROM web_menu WHERE `delete`=0 AND status=1 AND id='{$id}' LIMIT 1";
 		return mysql_query($qr);
 	}
 	function menu($level,$position,$lang=NULL){
@@ -130,8 +130,8 @@ class trangchu extends db {
 		$qr = "SELECT name,name_rewrite,url_hinh,content,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
 		return mysql_query($qr);
 	}
-	function info_home(){
-		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 10";
+	function info_home($lang){
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 10";
 		return mysql_query($qr);
 	}
 	function info_detail($alias){
@@ -154,8 +154,8 @@ class trangchu extends db {
 	}
 	
 	/*photos*/
-	function photos_home(){
-		$qr = "SELECT name,url,url_hinh FROM web_menu WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY `order` LIMIT 4";
+	function photos_home($lang){
+		$qr = "SELECT name,url,url_hinh FROM web_menu WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY `order` LIMIT 4";
 		return mysql_query($qr);
 	}
 	function photo_detail($id){
@@ -169,8 +169,8 @@ class trangchu extends db {
 		$qr = "SELECT name,link FROM web_video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
 		return mysql_query($qr);
 	}
-	function video_home($limit){
-		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM web_video WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT {$limit}";
+	function video_home($limit,$lang){
+		$qr = "SELECT name,name_rewrite,url_hinh,menu_id FROM web_video WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT {$limit}";
 		return mysql_query($qr);
 	}
 	function video_detail($alias){
