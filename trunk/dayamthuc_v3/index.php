@@ -39,6 +39,7 @@ if(@$_GET['danhmuc']){
 	
 	$lang = $row_menu_one['lang'];
 	include_once('config.php');
+	include_once("languages/{$lang}.php");
 	
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	else $menu_root = $idMenu;
@@ -93,6 +94,7 @@ if(@$_GET['danhmuc']){
 	}
 }else{
 	include_once('config.php');
+	include_once("languages/{$lang}.php");
 	
 	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
@@ -133,12 +135,16 @@ if(@$_GET['danhmuc']){
 	$i = 0;
 	$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
 	echo '<div id="home_item_1">';
-	$qr = $tc->menu(1,5,$lang);
+	
+	$qr_type_home = $tc->menu_type(1,0,$lang);
+	$row_type_home = mysql_fetch_array($qr_type_home);
+	
+	$qr = $tc->menu($row_type_home['id'],5,$lang);
 	while($row = mysql_fetch_array($qr)){
 		echo '<div class="item_1" style="'.$style[$i].'background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">
 		<a href="'.$row['url'].'"><h2>'.$row['name'].'</h2></a>
 		<p>'.$row['metaDescription'].'</p>
-		<p><a href="'.$row['url'].'">Xem chi tiết</a></p></div>';
+		<p><a href="'.$row['url'].'">'.const_view_info.'</a></p></div>';
 		$i++;
 	}
 	echo '</div>';
@@ -185,7 +191,7 @@ flush();
             <div style="clear:both; height:10px"></div>
         	<?php
             $i = 0;
-			$qr = $tc->chinhanh_ds();
+			$qr = $tc->chinhanh_ds($lang);
 			$name_chinhanh = '';
 			$info_chinhanh = '';
 			while($row = mysql_fetch_array($qr)){
@@ -200,13 +206,13 @@ flush();
 				}else{
 					$name_chinhanh .= '<span class="select_chinhanh chinhanh1 select_chinhanh_active">'.$row['name'].'</span>';
 					$info_chinhanh .= '<div class="chinhanh" id="chinhanh1">
-					<p>Địa chỉ: <b>'.$row['diachi'].'</b></p><p style="color:#FF6; margin-left:45px">(Đối diện Chợ Đakao)</p>
-					<p>Điện thoại: <b>'.$row['phone'].'</b></p>
+					<p>'.const_contact_diachi.': <b>'.$row['diachi'].'</b></p><p style="color:#FF6; margin-left:45px">(Đối diện Chợ Đakao)</p>
+					<p>'.const_contact_phone.': <b>'.$row['phone'].'</b></p>
 					<p>Hotline: <b>'.$row['hotline'].'</b></p>
 					<p>Email: <b>'.$row['email'].'</b></p></div>';
 				}
 			}
-			echo '<div id="select_chinhanh"><span style="font-size:110%">Chi nhánh:</span> '.$name_chinhanh.'</div>'.$info_chinhanh;
+			echo '<div id="select_chinhanh">'.$name_chinhanh.'</div>'.$info_chinhanh;
 			?>
         </div>
     	<div id="social">
@@ -225,7 +231,7 @@ flush();
 include_once('blocks/qc2ben.php');
 ?>
 
-<div id="support_online">
+<div id="support_online" lang="<?php echo $lang; ?>">
 	<img src="images/support-online.gif" alt="support online" id="btn_support" />
     <div id="ajax_support">
     	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />

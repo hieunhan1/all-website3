@@ -28,7 +28,7 @@ map = new google.maps.Map(document.getElementById("map_google"), myOptions);
 	var marker = new google.maps.Marker({
 		position: myLatlng, 
 		map: map,
-		title:"TRƯỜNG DẠY NGHỀ ẨM THỰC NETSPACE"
+		title:"<?php echo $row_config['contact_foo']; ?>"
 	});
 }
 

@@ -1,6 +1,6 @@
 <?php
 /*Home catalog*/
-$qr = $tc->menu(1,1,$lang);
+$qr = $tc->menu($idMenu,1,$lang);
 if(mysql_num_rows($qr) > 0){
 	echo '<div id="home_item_2"><div class="wrapper" style="padding:0 10px">';
 	while($row = mysql_fetch_array($qr)){
@@ -27,7 +27,7 @@ while($row = mysql_fetch_array($qr)){
         	<a href="'.$link.'"><div class="img_item_3"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
             <h3>'.$row['name'].'</h3></a>
             <p>'.$row['metaDescription'].'</p>
-            <a href="'.$link.'" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">Xem chi tiết</a>
+            <a href="'.$link.'" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">'.const_view_info.'</a>
         </div>';
 	}
 }
@@ -51,20 +51,20 @@ while($row = mysql_fetch_array($qr)){
 
 
 echo '<div class="wrapper">
-	<div class="home_title">Thông tin</div>
+	<div class="home_title">'.const_home_info.'</div>
 	<div class="home_item_3">
 		<div class="more_item_3">'.$str_info_new.'</div>
 		'.$str_info_noibat.'
 		<div style="clear:both; height:1px"></div>
 	</div>
 	
-	<div class="home_title">Hình ảnh</div>
+	<div class="home_title">'.const_home_photos.'</div>
     <div class="home_item_3">
     	'.$str_hinhanh.'
         <div style="clear:both; height:1px"></div>
     </div>
 	
-	<div class="home_title">Video</div>
+	<div class="home_title">Videos</div>
     <div class="home_item_3">
 		'.$str_video.'<div style="clear:both; height:1px"></div>
     </div>

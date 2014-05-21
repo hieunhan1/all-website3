@@ -7,10 +7,12 @@
     
     <div id="left">
     	<?php
+		echo '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2><br /></div>';
+		
         $qr = $tc->menu($idMenu,6);
 		if(mysql_num_rows($qr) > 0){
 			$i = 0;
-			$str_dm_video = '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2><br /></div>';
+			$str_dm_video = '';
 			while($row = mysql_fetch_array($qr)){
 				$i++;
 				if($i%2 != 0) $style = 'style="margin:0 25px 25px 25px"'; else $style = 'style="margin:0 0 25px 0"';
