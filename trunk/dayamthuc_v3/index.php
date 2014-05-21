@@ -126,8 +126,8 @@ if(@$_GET['danhmuc']){
 <div class="wrapper">
     <img src="images/bg-header.png" width="960" style="margin:5px 10px" />
     <?php
-    include_once('blocks/menu.php');
-    include_once('blocks/slider.php');
+    include_once('blocks/menu.php'); flush();
+    include_once('blocks/slider.php'); flush();
 	
 	$i = 0;
 	$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
@@ -141,10 +141,14 @@ if(@$_GET['danhmuc']){
 		$i++;
 	}
 	echo '</div>';
+	flush();
     ?>
 </div>
 
-<?php echo $include;?>
+<?php
+	echo $include;
+	flush();
+?>
 
 <div style="clear:both; height:30px"></div>
 
@@ -159,6 +163,7 @@ if(@$_GET['danhmuc']){
 					while($row = mysql_fetch_array($qr)){
 						echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
 					}
+					flush();
 					?>
                 </ul>
             </div>
@@ -201,6 +206,7 @@ if(@$_GET['danhmuc']){
 				}
 			}
 			echo '<div id="select_chinhanh"><span style="font-size:110%">Chi nhánh:</span> '.$name_chinhanh.'</div>'.$info_chinhanh;
+			flush();
 			?>
         </div>
     	<div id="social">
