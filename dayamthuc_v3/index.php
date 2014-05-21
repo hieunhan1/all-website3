@@ -11,8 +11,6 @@ else
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
-//include_once('config.php');
-
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
 	$dm = explode('/',$dm);
@@ -39,7 +37,9 @@ if(@$_GET['danhmuc']){
 	
 	$lang = $row_menu_one['lang'];
 	include_once('config.php');
-	include_once("languages/{$lang}.php");
+	
+	$dir_lang = "languages/{$lang}.php";
+	if(file_exists($dir_lang)) include_once($dir_lang);
 	
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	else $menu_root = $idMenu;
@@ -94,7 +94,9 @@ if(@$_GET['danhmuc']){
 	}
 }else{
 	include_once('config.php');
-	include_once("languages/{$lang}.php");
+	
+	$dir_lang = "languages/{$lang}.php";
+	if(file_exists($dir_lang)) include_once($dir_lang);
 	
 	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
