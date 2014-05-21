@@ -135,9 +135,13 @@ $(document).ready(function($){
 	}
 	
 	/*support*/
-	$.post("ajax.php",{support_online:"support_online"},function(data){
-		$("#ajax_support_data").html(data);
-		$("#loading_support").hide();
+	$.post("ajax.php",{support_online:"support_online",lang:$("#support_online").attr("lang")},function(data){
+		if(data!="0"){
+			$("#ajax_support_data").html(data);
+			$("#loading_support").hide();
+		} else {
+			$("#support_online").hide();
+		}
 	})
 	
 	/* ho tro hoc vien */
@@ -206,12 +210,14 @@ $(document).ready(function($){
 	$(".google_map").click(function(){
 		var id_map = $(this).attr("name");
 		var height = $("#popupContact").height();
+		var lang = $(this).attr("lang");
+		
 		$("#popupContact").height(height);
 		centerPopup("fix");
 		loadPopup();
 		$(window).bind("resize", function(){ centerPopup("absolute"); });
 		
-		$.post("ajax.php",{google_map:id_map},function(data){
+		$.post("ajax.php",{google_map:id_map,lang:lang},function(data){
 			$("#ajax_google_map").html(data);
 		})
 		
