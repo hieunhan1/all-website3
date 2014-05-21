@@ -11,7 +11,7 @@ else
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
-include_once('config.php');
+//include_once('config.php');
 
 if(@$_GET['danhmuc']){
 	$dm = $_GET['danhmuc'];
@@ -38,7 +38,7 @@ if(@$_GET['danhmuc']){
 	}
 	
 	$lang = $row_menu_one['lang'];
-	
+	include_once('config.php');
 	
 	if($row_menu_one['parent_id']!=0) $menu_root = $tc->menu_root($row_menu_one['parent_id'],$idMenu);
 	else $menu_root = $idMenu;
@@ -92,7 +92,7 @@ if(@$_GET['danhmuc']){
 		$seo = $tc->seo($domain,$title,$description,$keyword,$image,$url);
 	}
 }else{
-	
+	include_once('config.php');
 	
 	$menu_one = $tc->menu_type(1,0,$lang);
 	$row_menu_one = mysql_fetch_array($menu_one);
@@ -126,8 +126,9 @@ if(@$_GET['danhmuc']){
 <div class="wrapper">
     <img src="images/bg-header.png" width="960" style="margin:5px 10px" />
     <?php
-    include_once('blocks/menu.php'); flush();
-    include_once('blocks/slider.php'); flush();
+    include_once('blocks/menu.php');
+    include_once('blocks/slider.php');
+	flush();
 	
 	$i = 0;
 	$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
@@ -141,13 +142,13 @@ if(@$_GET['danhmuc']){
 		$i++;
 	}
 	echo '</div>';
-	flush();
     ?>
 </div>
-
 <?php
-	echo $include;
-	flush();
+flush();
+
+echo $include;
+flush();
 ?>
 
 <div style="clear:both; height:30px"></div>
@@ -163,7 +164,6 @@ if(@$_GET['danhmuc']){
 					while($row = mysql_fetch_array($qr)){
 						echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
 					}
-					flush();
 					?>
                 </ul>
             </div>
@@ -175,6 +175,7 @@ if(@$_GET['danhmuc']){
     <div id="copyright"><?php echo $row_config['copyright'];?></div>
     <div id="run_top"><img src="images/top.png" alt="Top trường dạy nấu ăn NetSpace" style="margin-top:24px; margin-bottom:-24px" /></div>
 </div>
+<?php flush(); ?>
 
 <div id="footer">
     <!--Contact Social-->
@@ -206,7 +207,6 @@ if(@$_GET['danhmuc']){
 				}
 			}
 			echo '<div id="select_chinhanh"><span style="font-size:110%">Chi nhánh:</span> '.$name_chinhanh.'</div>'.$info_chinhanh;
-			flush();
 			?>
         </div>
     	<div id="social">
@@ -220,8 +220,10 @@ if(@$_GET['danhmuc']){
         <div style="clear:both; height:20px"></div>
     </div>
 </div>
-
-<?php include_once('blocks/qc2ben.php'); ?>
+<?php 
+flush();
+include_once('blocks/qc2ben.php');
+?>
 
 <div id="support_online">
 	<img src="images/support-online.gif" alt="support online" id="btn_support" />

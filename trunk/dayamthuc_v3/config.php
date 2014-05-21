@@ -1,8 +1,8 @@
 <?php
 $config = $tc->config($lang) or die ('Lỗi kết nối');
-	$row_config = mysql_fetch_array($config);
-	$domain = $row_config['domain'];
-
+$row_config = mysql_fetch_array($config);
+$domain = $row_config['domain'];
+	
 define(max_limit_1,$row_config['max_limit_1']);
 define(max_limit_2,$row_config['max_limit_2']);
 define(max_limit_3,$row_config['max_limit_3']);
