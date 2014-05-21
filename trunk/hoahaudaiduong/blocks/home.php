@@ -33,6 +33,8 @@
 		?>
     </div>
 </div>
+<?php flush(); ?>
+
 <div id="home_bst">
     <div class="home_bts_title"><?php echo cons_bo_suu_tap;?></div>
     <?php
@@ -45,6 +47,7 @@
 	}
 	?>
 </div>
+<?php flush(); ?>
 
 <?php
 $qr = $tc->home_thisinh($lang);
@@ -58,5 +61,7 @@ if(mysql_num_rows($qr) > 0){
 	}
 	echo '<div style="clear:both; height:30px"></div>
 	</div>';
+	
+	flush();
 }
 ?>
