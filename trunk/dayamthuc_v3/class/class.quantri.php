@@ -146,7 +146,7 @@
 			}
 			$style2 = '-- ';
 			
-			$qr = mysql_query("SELECT id,name FROM web_menu WHERE `delete`=0 AND parent_id='{$level}' AND id<>'{$name_default[1]}' ORDER BY `order` ");
+			$qr = mysql_query("SELECT id,name FROM web_menu WHERE `delete`=0 AND parent_id='{$level}' AND id<>'{$name_default[1]}' AND lang='".$_SESSION['language']."' ORDER BY `order` ");
 			while($row = mysql_fetch_array($qr)){
 				$arr[] = array('id'=>$row['id'], 'name'=>$style1.$row['name']);
 				$arr = $this->danhmuc_menu_select($row['id'],$style1.$style2,$name_default,$arr);
