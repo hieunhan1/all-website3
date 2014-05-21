@@ -128,7 +128,7 @@
 				$arr[] = array(
 					'id'			=> $row['id'],
 					'name'			=> $style_1.$row['name'],
-					'order'			=> $row['order'],
+					'order'			=> $style_1.$row['order'],
 					'status'		=> $row['status'],
 					'date_create'	=> $row['date_create'],
 					'user_create'	=> $row['user_create'],
