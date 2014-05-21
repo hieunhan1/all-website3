@@ -122,8 +122,12 @@ if(@$_GET['danhmuc']){
         <?php include_once('blocks/slider.php'); ?>
     </div>
 	<?php
-    include_once('blocks/menu.php');
+	flush();
+	
+    include_once('blocks/menu.php'); flush();
+	
 	echo $include;
+	flush();
 	?>
 	
     <div id="home_thisinh">
@@ -146,6 +150,17 @@ if(@$_GET['danhmuc']){
         </div>
         <div style="clear:both; height:30px"></div>
     </div>
+    <?php
+    flush();
+	
+	include_once('blocks/qc2ben.php');
+	flush();
+	/*if(!@$_SESSION['popup']){
+		$_SESSION['popup'] = 1;
+		include_once('blocks/popup.php');
+	}*/
+	?>
+    
 	<div id="footer">
     	<div id="menu_foo">
         <?php
@@ -180,14 +195,6 @@ if(@$_GET['danhmuc']){
 	echo '<div id="formdangky"><a href="'.$row_dangky['url'].'">'.$row_dangky['title'].'</a></div>';
 	?>
 </div>
-<?php
-	include_once('blocks/qc2ben.php');
-	
-	/*if(!@$_SESSION['popup']){
-		$_SESSION['popup'] = 1;
-		include_once('blocks/popup.php');
-	}*/
-?>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
