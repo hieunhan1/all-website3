@@ -40,7 +40,9 @@
 			$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
 			$limit = "LIMIT {$from},".max_limit_4;
 			$list = $tc->list_item($select,$table,$where,$limit);
-			$total = mysql_num_rows($list);
+			
+			if($list==true) $total = mysql_num_rows($list);
+			else $total = 0;
 			
 			if($total > 1){
 				while($row = mysql_fetch_array($list)){
