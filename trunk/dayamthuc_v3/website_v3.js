@@ -312,8 +312,8 @@ $(document).ready(function($){
 			$("#trinhdo").html('Chọn trình độ học vấn.');
 			$("select[name=trinhdo]").focus();
 			return false;
-		}else if(content.length < 50){
-			$("#kinhnghiem").html('Kinh nghiệm, giới thiệu bản thân phải hơn 50 ký tự');
+		}else if(content.length < 150){
+			$("#kinhnghiem").html('Kinh nghiệm, giới thiệu bản thân phải hơn 150 ký tự');
 			$("textarea[name=content]").focus();
 			return false;
 		}else{
