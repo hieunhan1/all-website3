@@ -129,9 +129,9 @@ if(@$_GET['danhmuc']){
         </div>
     </div>
     <?php
-	include_once('blocks/menu.php');
-	include_once('blocks/slider.php');
-	echo $include;
+	include_once('blocks/menu.php'); flush();
+	include_once('blocks/slider.php'); flush();
+	echo $include; flush();
 	?>
     <div style="clear:both; height:50px"></div>
     <div id="footer">
@@ -165,7 +165,7 @@ if(@$_GET['danhmuc']){
     </div>
 </div>
 <?php
-include_once('blocks/buy.php');
+include_once('blocks/buy.php'); flush();
 include_once('blocks/qc2ben.php');
 //include_once('images/noel-2014/temp.php');
 mysql_close();
