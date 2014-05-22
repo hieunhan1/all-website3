@@ -68,7 +68,7 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 .item_detail .date{width:60px; height:120px; float:left; color:#FFF; font-size:90%; line-height:22px; text-align:center; margin-right:8px; padding-top:10px; background:url(images/date.jpg) no-repeat top}
 .item_detail .info{line-height:20px; color:#999; height:60px; overflow:hidden}
 .item_detail .img{width:160px; height:110px; overflow:hidden; float:left; margin-right:10px}
-.item_detail .img img{height:110px}
+.item_detail .img img{width:160px}
 
 .item_bosuutap{height:125px; border-bottom:dotted 1px #666; margin-bottom:15px}
 .item_bosuutap h3{font-size:110%; margin-bottom:5px}
@@ -94,7 +94,7 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 
 .box_photos{width:206px; height:210px; overflow:hidden; float:left; padding:13px 11px; background:url(images/bg-images.png) top no-repeat}
 .box_photos a{width:206px; height:141px; display:block; overflow:hidden; border:solid 1px #054271}
-.box_photos img{width:206px}
+.box_photos img{width:220px}
 .box_photos .box_photos_title{text-align:center; margin-top:15px}
 
 .box_photos_bst{width:110px; height:200px; overflow:hidden; float:left; padding:10px}
