@@ -32,7 +32,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function menu_one_id($id){
-		$qr = "SELECT id,name,url,parent_id,title FROM web_menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title FROM web_menu WHERE `delete`=0 AND status=1 AND id='{$id}'";
 		return mysql_query($qr);
 	}
 	function menu($level,$position=NULL,$lang=NULL){
