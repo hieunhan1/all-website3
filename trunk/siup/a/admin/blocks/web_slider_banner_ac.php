@@ -44,7 +44,7 @@ if(!empty($_POST)){
 }
 
 echo '<form name="form_action" method="post" action="">
-<table width="100%" border="0" cellpadding="0" cellspacing="10" style="margin-bottom:50px">';
+<table width="80%" border="0" cellpadding="0" cellspacing="10" style="margin-bottom:50px">';
 	
 	echo $date_create.$user_action;
 	
@@ -108,6 +108,13 @@ echo '<form name="form_action" method="post" action="">
 	$values = $row_detail['link'];
 	$properties = array('200'); //maxlength OTHER (disabled, readonly)
 	$views = array('Link','link','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//code_video
+	$values = $row_detail['code_video'];
+	$properties = array('20'); //maxlength OTHER (disabled, readonly)
+	$views = array('Mã video','code_video','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
