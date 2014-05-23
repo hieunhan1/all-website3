@@ -92,6 +92,11 @@ if(@$_GET['danhmuc']){
 	include_once('blocks/home.php');
 	$include = ob_get_clean();
 }
+
+$qr = $tc->menu_one_id($menu_root);
+$row = mysql_fetch_array($qr);
+if($row['url_hinh'] != '') $header_img = url_catalog_image.$row['url_hinh'];
+else $header_img = 'images/bg-header.gif';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -105,10 +110,10 @@ if(@$_GET['danhmuc']){
 <body>
 
 <div id="wrapper">
-	<div id="header">
+	<div id="header" style="background:url('<?php echo $header_img;?>') no-repeat #6A9EDC">
     	<div id="logo">
-        	<img src="images/logo.png" alt="SIUP" />
-            <div><?php echo $row_config['contact_foo'];?></div>
+        	<a href="/"><img src="images/logo.png" alt="SIUP" /></a>
+            <div style="text-shadow:1px 1px #333"><?php echo $row_config['contact_foo'];?></div>
         </div>
         
         <div id="top">
@@ -118,8 +123,8 @@ if(@$_GET['danhmuc']){
 				echo '<li><a href="'.$row['url'].'" title="'.$row['name'].'">'.$row['name'].'</a>|</li>';
 			}
 			
-			if($lang=='vi') echo '<a href="?lang=en" style="border:none"><img src="images/en.gif" alt="en" style="height:13px; float:left; margin-left:15px; padding-top:4px " /> English</a>';
-			else echo '<a href="" style="border:none"><img src="images/vi.gif" alt="vi" style="height:13px; float:left; margin-left:15px; padding-top:4px " /> Tiếng Việt</a>';
+			if($lang=='vi') echo '<a href="?lang=en" style="border:none"><img src="images/en.gif" alt="en" style="height:11px; float:left; margin-left:15px; padding-top:4px " /> English</a>';
+			else echo '<a href="" style="border:none"><img src="images/vi.gif" alt="vi" style="height:11px; float:left; margin-left:15px; padding-top:4px " /> Tiếng Việt</a>';
 			?>
             
         </div>
@@ -130,12 +135,12 @@ if(@$_GET['danhmuc']){
         </div>
     </div>
 	<?php
-    include_once('blocks/menu.php');
-    include_once('blocks/slider.php');
+    include_once('blocks/menu.php'); flush();
+    include_once('blocks/slider.php'); flush();
 	?>
 	
 	<div id="content">
-        <?php echo $include; ?>
+        <?php echo $include; flush();?>
         <div style="clear:both; height:30px"></div>
     </div>
 	<div id="footer">

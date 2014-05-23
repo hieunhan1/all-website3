@@ -47,7 +47,7 @@
 		}
 		
 		$str_project_img = '<div id="project_deatil">'.$str_project_img.' <div style="clear:both; height:1px"></div> </div>
-		<div style="font-weight:bold; color:#D51C21">Thông tin dự án</div>';
+		<div style="font-weight:bold; color:#D51C21">'.const_thongtin_duan.'</div>';
 	}
 	
 	
@@ -58,7 +58,7 @@
 	
 	$qr = $tc->project_cungloai($idMenu,$row_detail['id']);
 	if(mysql_num_rows($qr) > 0){
-		echo '<div style="clear:both; height:30px; padding:15px 0 10px 0; font-weight:bold; font-size:110%; border-top:solid 1px #D51C21">Dự án cùng loại</div>';
+		echo '<div style="clear:both; height:30px; padding:15px 0 10px 0; font-weight:bold; font-size:110%; border-top:solid 1px #D51C21">'.const_duan_cungloai.'</div>';
 		$i = 0;
 		while($row = mysql_fetch_array($qr)){
 			$i++;

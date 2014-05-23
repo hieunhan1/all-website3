@@ -1,8 +1,12 @@
 <?php
+define('const_xem_chi_tiet','View more');
 define('const_xem_tat_ca','view all');
 define('const_tin_khac', 'Bài viết khác');
 define('const_partner', 'Partner SIUP');
 define('const_txt_search', 'Search content');
+
+define('const_thongtin_duan','Project Information');
+define('const_duan_cungloai','Projects of the same type');
 
 define('const_thong_tin', 'Mọi thắc mắc, đóng góp ý kiên vui lòng gửi cho chúng tôi bằng cách điền đầy đủ thông tin vào form bên dưới. Chúng tôi sẽ trả lời trong thời gian sớm nhất.');
 define('const_contact_name', 'Name');

@@ -21,7 +21,7 @@
             echo '<div class="home_nb_item" '.$style.'>
                 <h2>'.$row['name'].'</h2>
                 <div class="home_nb_img"><img src="'.url_detail_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-                <p>'.$row['metaDescription'].' <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">Xem chi tiết »</a></p>
+                <p>'.$row['metaDescription'].' <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.const_xem_chi_tiet.' »</a></p>
             </div>';
         }
         ?>
@@ -42,7 +42,7 @@
 					<div class="home_new_img"><img src="'.$url_hinh.'" alt="'.$row['name'].'" /></div>
 					<h3>'.$row['name'].'</h3>
 					<div class="home_new_info">'.$row['metaDescription'].'</div>
-					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">Xem chi tiết »</a>
+					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">'.const_xem_chi_tiet.' »</a>
 				</div>';
 			}
 		}
