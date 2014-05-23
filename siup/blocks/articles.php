@@ -19,6 +19,26 @@
     </div>
 </div>
 
+<div id="content_left">
+	<?php
+    echo '<h1 id="h1_dm">'.$row_detail['name'].'</h1>
+	<div id="print_email">
+		<div id="email"></div>
+		<div id="print" onclick="window.open(\'/print.html?info='.$row_detail['name_rewrite'].'\', \'windowname1\', \'width=700, height=550\'); return false;"></div>
+	</div>
+	<div class="viewpost">'.$row_detail['content'].'</div>
+	<div style="clear:both; height:40px"></div>';
+	
+	$qr = $tc->tin_lienquan($idMenu,$row_detail['id']);
+	if(mysql_num_rows($qr)){
+		while($row = mysql_fetch_array($qr)){
+			$str_lq .= '<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a>';
+		}
+		echo '<div id="tin_lienquan"><h5>'.const_tin_khac.'</h5> '.$str_lq.'</div>';
+	}
+	?>
+</div>
+<?php flush(); ?>
 <div id="content_right">
 	<?php
 	$str = "SELECT id,name FROM web_menu
@@ -30,7 +50,13 @@
 			if(mysql_num_rows($qr) > 0){
 				echo '<div class="right_title">'.$row_r['name'].'</div>';
 				while($row = mysql_fetch_array($qr)){
-					if($row['url_hinh']!='' && $row['content']!=''){
+					if($row['code_video'] != ''){
+						if(is_numeric($row['code_video'])){
+							echo '<div class="right_box_3"><a href="javascript:;"><h3>'.$row['name'].'</h3></a><iframe src="//player.vimeo.com/video/'.$row['code_video'].'" width="170" height="150" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
+						}else{
+							echo '<div class="right_box_3"><a href="javascript:;"><h3>'.$row['name'].'</h3></a><iframe src="http://www.youtube.com/embed/'.$row['code_video'].'?origin=http://'.$domain.'&amp;rel=0" frameborder="0" width="170" height="150"></iframe></div>';
+						}
+					}else if($row['url_hinh']!='' && $row['content']!=''){
 						echo '<div class="right_box_3">
 							<a href="'.$row['link'].'"><h3>'.$row['name'].'</h3></a>
 							<div class="right_box_3_info">'.$row['content'].'</div>
@@ -49,26 +75,6 @@
 			}//if qr
 		}//while qr_r
 	}//if qr_r
-	?>
-</div>
-
-<div id="content_left">
-	<?php
-    echo '<h1 id="h1_dm">'.$row_detail['name'].'</h1>
-	<div id="print_email">
-		<div id="email"></div>
-		<div id="print" onclick="window.open(\'/print.html?info='.$row_detail['name_rewrite'].'\', \'windowname1\', \'width=700, height=550\'); return false;"></div>
-	</div>
-	<div class="viewpost">'.$row_detail['content'].'</div>
-	<div style="clear:both; height:40px"></div>';
-	
-	$qr = $tc->tin_lienquan($idMenu,$row_detail['id']);
-	if(mysql_num_rows($qr)){
-		while($row = mysql_fetch_array($qr)){
-			$str_lq .= '<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html">'.$row['name'].'</a>';
-		}
-		echo '<div id="tin_lienquan"><h5>'.const_tin_khac.'</h5> '.$str_lq.'</div>';
-	}
 	?>
 </div>
 
