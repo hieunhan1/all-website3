@@ -55,7 +55,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #home_item_1 .item_1 p{font-size:90%; line-height:18px; height:72px; overflow:hidden}
 #home_item_1 .item_1 p a{font-style:italic; font-family:"UTM-Azuki"}
 
-#home_item_2{height:250px; padding-top:15px; background:url(images/bg-item-2.png) repeat-x top}
+#home_item_2{height:280px; overflow:hidden; padding-top:15px}
 #home_item_2 .item_2{width:320px; height:300px; float:left}
 #home_item_2 .item_2 .img_item_2{clear:both; height:200px; overflow:hidden}
 #home_item_2 .item_2 .img_item_bo{width:156px; height:156px; overflow:hidden; position:relative; z-index:1; margin:20px 0 0 83px}

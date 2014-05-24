@@ -326,4 +326,60 @@ $(document).ready(function($){
 		}
 	});
 	
+	
+	/*other temp*/
+	//dang ky du thi chương trình mon goi
+	$("#dangky_other").click(function(){
+		sroll_top();
+		
+		var height = $("#popupContact").height();
+		$("#popupContact").height(height);
+		centerPopup("absolute");
+		loadPopup();
+		$(window).bind("resize", function(){ centerPopup("absolute"); });
+		$("#backgroundPopup, #popupContactClose, input[name=btn_huy_nop_hs]").click(function(){
+			disablePopup();
+		});
+		$.post("ajax.php",{register_other:"1"},function(data){
+			$("#ajax_register_other").html(data);
+		});
+	});
+	$("input[name=btn_register_other]").live("click",function(){
+		var name = $.trim($("input[name=name]").val());
+		var diachi = $.trim($("input[name=diachi]").val());
+		var phone = $.trim($("input[name=phone]").val());
+		var email = $.trim($("input[name=email]").val());
+		var hocvien_khoa = $.trim($("input[name=hocvien_khoa]").val());
+		
+		$(".error").html('');
+		
+		if(name.length < 6){
+			$("#name").html('Họ tên phải hơn 6 ký tự');
+			$("input[name=name]").focus();
+			return false;
+		}else if(diachi.length < 10){
+			$("#diachi").html('Địa chỉ phải hơn 10 ký tự');
+			$("input[name=diachi]").focus();
+			return false;
+		}else if(phone.length < 10){
+			$("#phone").html('Điện thoại phải hơn 10 ký tự');
+			$("input[name=phone]").focus();
+			return false;
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+			$("#email").html('Email chưa đúng');
+			$("input[name=email]").focus();
+			return false;
+		}else if(hocvien_khoa.length < 4){
+			$("#hocvien_khoa").html('Cho biết bạn đã từng học lớp nào, khóa mấy của trường NETSPACE?');
+			$("input[name=hocvien_khoa]").focus();
+			return false;
+		}else{
+			$("#ajax_register_other").html('<p style="font-weight:bold; padding:30px">Đang xử lý...</p>');
+			$.post("ajax.php",{nop_hs_register:1,name:name,email:email,phone:phone,diachi:diachi,hocvien_khoa:hocvien_khoa},function(data){
+				if(data!='0') setTimeout(function(){ $("#ajax_register_other").html('<p style="color:#E87900; line-height:22px; font-weight:bold; padding:30px 0 60px;">Bạn đã nộp hồ sơ cuộc thi trổ tài làm “CÁC MÓN GỎI ĐẲNG CẤP” thành công. Chúng tôi sẽ liên hệ cho bạn nếu hồ sơ của bạn đáp ứng được nhu cầu cuộc thi.</p>'); },200);
+				else $("#form").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Lỗi. Vui lòng ấn F5 thử lại.</p>');
+			});
+			return true;
+		}
+	});
 });

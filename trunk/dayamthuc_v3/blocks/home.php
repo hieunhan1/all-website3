@@ -1,17 +1,4 @@
 <?php
-/*Home catalog*/
-$qr = $tc->menu($idMenu,1,$lang);
-if(mysql_num_rows($qr) > 0){
-	echo '<div id="home_item_2"><div class="wrapper" style="padding:0 10px">';
-	while($row = mysql_fetch_array($qr)){
-		echo '<div class="item_2"><a href="'.$row['url'].'"><div class="img_item_2">
-			<div class="img_item_bg"></div>
-			<div class="img_item_bo"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-		</div><h2>'.$row['name'].'</h2></a></div>';
-	}
-	echo '</div></div>';
-}
-
 /*thong tin*/
 $qr = $tc->info_home($lang);
 $i = 0;

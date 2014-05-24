@@ -216,5 +216,12 @@ class trangchu extends db {
 		mysql_query($qr);
 		return mysql_insert_id();
 	}
+	
+	/*register temp*/
+	function register_cacmongoi($name,$diachi,$phone,$email,$hocvien_khoa){
+		$date = date('Y-m-d H:i:s');
+		$qr = "INSERT INTO `web_register_temp` VALUES (NULL,'{$name}','{$diachi}','{$phone}','{$email}','{$hocvien_khoa}','vi','0','{$date}','{$date}','khachhang','','0') ";
+		mysql_query($qr);
+	}
 }// end trangchu
 ?>
