@@ -5,6 +5,9 @@ if($row['email'] != ''){
 	$btn_hoso_1 = '<div class="btn_nop_hs" style="float:right">Nộp hồ sơ ngay</div>';
 	$btn_hoso_2 = '<div class="btn_nop_hs">Nộp hồ sơ ngay</div>';
 }
+
+$noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Khác');
+$noilamviec = $noilamviec[$row_detail['noilamviec']];
 ?>
 <div class="wrapper"><div class="home_item_3">
 	<div id="navigator">
@@ -17,7 +20,7 @@ if($row['email'] != ''){
     
     <div id="left" class="viewpost">
         <?php
-        echo "<h1>{$row_detail['name']} - {$row['name']}</h1>";
+        echo "<h1>{$row_detail['name']} - Làm việc {$noilamviec} - {$row['name']}</h1>";
 		echo $btn_hoso_1;
 		?>
         <div style="clear:both; height:1px"></div>
@@ -31,7 +34,7 @@ if($row['email'] != ''){
             </tr>
             <tr>
             	<td style="border-right:dotted 1px #CCC; font-weight:bold">Nơi làm việc:</td>
-            	<td><?php $noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Khác'); echo $noilamviec[$row_detail['noilamviec']]; ?></td>
+            	<td><?php echo $noilamviec; ?></td>
             </tr>
             <tr>
             	<td style="border-right:dotted 1px #CCC; font-weight:bold">Mức lương:</td>
