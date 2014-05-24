@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['lang']))
 	$lang = $_POST['lang'];
 else
@@ -127,6 +128,56 @@ if(@$_POST['sendmail_hv']){
 	}
 }
 
+if(isset($_POST['register_other'])){
+	if($_SESSION['register_mongoi']==1){
+		echo 'Bạn đã đăng ký cuộc thi trổ tài làm “CÁC MÓN GỎI ĐẲNG CẤP” vui lòng đợi Trường kiểm tra thông tin đăng ký dự thi.';
+		return true;
+	}
+	echo '<table width="100%" border="0" cellpadding="0" cellspacing="15" id="form_nop_hs">
+        	<tr>
+            	<td width="140" valign="top">Họ tên:</td>
+            	<td><input type="text" name="name" class="text_dangky" maxlength="50" /><p id="name" class="error"></p></td>
+            </tr>
+        	<tr>
+            	<td valign="top">Địa chỉ:</td>
+            	<td><input type="text" name="diachi" class="text_dangky" maxlength="250" /><p id="diachi" class="error"></p></td>
+            </tr>
+        	<tr>
+            	<td valign="top">Điện thoại:</td>
+            	<td><input type="text" name="phone" class="text_dangky" maxlength="11" /><p id="phone" class="error"></p></td>
+            </tr>
+        	<tr>
+            	<td valign="top">Email:</td>
+            	<td><input type="text" name="email" class="text_dangky" maxlength="50" /><p id="email" class="error"></p></td>
+            </tr>
+        	<tr>
+            	<td valign="top">Học viên của trường khóa mấy?</td>
+            	<td><input type="text" name="hocvien_khoa" class="text_dangky" maxlength="50" /><p id="hocvien_khoa" class="error"></p></td>
+            </tr>
+        	<tr>
+            	<td valign="top">&nbsp;</td>
+            	<td><input type="button" name="btn_register_other" value="Gửi hồ sơ đăng ký" style="padding:6px 25px" /></td>
+            </tr>
+        </table>';
+}
+
+if(isset($_POST['nop_hs_register'])){
+	$name = trim($_POST['name']);
+	$diachi = trim($_POST['diachi']);
+	$email = trim($_POST['email']);
+	$phone = trim($_POST['phone']);
+	$hocvien_khoa = trim($_POST['hocvien_khoa']);
+	
+	if(strlen($name)>5 && strlen($diachi)>5 && strlen($email)>5 && strlen($phone)>9 &&  strlen($hocvien_khoa)>3){
+		echo '1';
+		$_SESSION['register_mongoi'] = 1;
+		$tc->register_cacmongoi($name,$diachi,$phone,$email,$hocvien_khoa);
+		return true;
+	}else{
+		echo '0';
+		return false;
+	}
+}
 
 mysql_close();
 return true;

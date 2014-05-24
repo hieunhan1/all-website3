@@ -134,25 +134,40 @@ if(@$_GET['danhmuc']){
     include_once('blocks/slider.php');
 	flush();
 	
-	$i = 0;
-	$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
-	echo '<div id="home_item_1">';
-	
 	$qr_type_home = $tc->menu_type(1,0,$lang);
 	$row_type_home = mysql_fetch_array($qr_type_home);
 	
-	$qr = $tc->menu($row_type_home['id'],5,$lang);
-	while($row = mysql_fetch_array($qr)){
-		echo '<div class="item_1" style="'.$style[$i].'background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">
-		<a href="'.$row['url'].'"><h2>'.$row['name'].'</h2></a>
-		<p>'.$row['metaDescription'].'</p>
-		<p><a href="'.$row['url'].'">'.const_view_info.'</a></p></div>';
-		$i++;
+	if($danhmuc==''){
+		$str = 'style="background:url(images/bg-item-2.png) repeat-x top"'; //style cho Home catalog
+
+		$i = 0;
+		$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
+		echo '<div id="home_item_1">';
+		$qr = $tc->menu($row_type_home['id'],5,$lang);
+		while($row = mysql_fetch_array($qr)){
+			echo '<div class="item_1" style="'.$style[$i].'background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">
+			<a href="'.$row['url'].'"><h2>'.$row['name'].'</h2></a>
+			<p>'.$row['metaDescription'].'</p>
+			<p><a href="'.$row['url'].'">'.const_view_info.'</a></p></div>';
+			$i++;
+		}
+		echo '</div>';
 	}
-	echo '</div>';
     ?>
 </div>
 <?php
+/*Home catalog*/
+$qr = $tc->menu($row_type_home['id'],1,$lang);
+if(mysql_num_rows($qr) > 0){
+	echo '<div id="home_item_2" '.$str.'><div class="wrapper" style="padding:0 10px">';
+	while($row = mysql_fetch_array($qr)){
+		echo '<div class="item_2"><a href="'.$row['url'].'"><div class="img_item_2">
+			<div class="img_item_bg"></div>
+			<div class="img_item_bo"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+		</div><h2>'.$row['name'].'</h2></a></div>';
+	}
+	echo '</div></div>';
+}
 flush();
 
 echo $include;
