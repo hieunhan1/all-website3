@@ -54,6 +54,11 @@ if($_POST['dangky']=='dangky'){
 }
 
 if($_POST['support_online']=='support_online'){
+	if(isset($_SESSION['support_online'])) {
+		echo $_SESSION['support_online'];
+		return true;
+	}
+	
 	$i = 0;
 	$qr = $tc->chinhanh_ds($lang);
 	if(mysql_num_rows($qr) > 0){
@@ -77,13 +82,15 @@ if($_POST['support_online']=='support_online'){
 			
 			$hotline_chinhanh .= '<div id="support_hotline" class="ds_support ds_support_'.$i.'">Điện thoại: <span style="color:#00F; font-size:120%">'.$row['phone'].'</span><br />Hotline: <span style="color:#F00">'.$row['hotline'].'</span></div>';
 		}
-		echo '<div id="ds_chinhanh">'.$name_chinhanh.'</div>'.$support_chinhanh.$hotline_chinhanh.'
+		$str_support = '<div id="ds_chinhanh">'.$name_chinhanh.'</div>'.$support_chinhanh.$hotline_chinhanh.'
 		<script>
 		$(document).ready(function($){
 			$(".ds_support").hide();
 			$(".ds_support_1").show();
 		});
 		</script>';
+		$_SESSION['support_online'] = $str_support;
+		echo $str_support;
 	}else echo 0;
 }
 
