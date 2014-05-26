@@ -5,7 +5,7 @@ a:link,a:visited,a:active{color:#0048FF; text-decoration:none}
 a:hover{color:#D61D22; text-decoration:underline}
 hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 
-#wrapper{width:940px; margin:0 auto; box-shadow:0 0 5px #999; background-color:#FFF}
+#wrapper{width:940px; margin:0 auto; background-color:#FFF}
 
 #header{height:80px; overflow:hidden; padding:0px 20px;}
 #header #logo{width:450px; float:left; margin-top:5px}
