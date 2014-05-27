@@ -6,6 +6,8 @@ define('const_txt_search', 'enter keywords..');
 
 define('const_view_info', 'View more');
 
+define('const_cho_dakao','Near Dakao market');
+
 define('const_home_info', 'News &amp; Event');
 define('const_home_photos', 'Photos');
 

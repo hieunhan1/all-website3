@@ -223,7 +223,7 @@ flush();
 				}else{
 					$name_chinhanh .= '<span class="select_chinhanh chinhanh1 select_chinhanh_active">'.$row['name'].'</span>';
 					$info_chinhanh .= '<div class="chinhanh" id="chinhanh1">
-					<p>'.const_contact_diachi.': <b>'.$row['diachi'].'</b></p><p style="color:#FF6; margin-left:45px">(Đối diện Chợ Đakao)</p>
+					<p>'.const_contact_diachi.': <b>'.$row['diachi'].'</b></p><p style="color:#FF6; margin-left:45px">('.const_cho_dakao.')</p>
 					<p>'.const_contact_phone.': <b>'.$row['phone'].'</b></p>
 					<p>Hotline: <b>'.$row['hotline'].'</b></p>
 					<p>Email: <b>'.$row['email'].'</b></p></div>';
