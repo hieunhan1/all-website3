@@ -6,6 +6,8 @@ define('const_txt_search', 'Nhập từ khóa..');
 
 define('const_view_info', 'Xem chi tiết');
 
+define('const_cho_dakao','Đối diện Chợ Đakao');
+
 define('const_home_info', 'Thông tin');
 define('const_home_photos', 'Hình ảnh');
 
