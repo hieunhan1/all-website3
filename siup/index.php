@@ -96,7 +96,7 @@ if(@$_GET['danhmuc']){
 $qr = $tc->menu_one_id($menu_root);
 $row = mysql_fetch_array($qr);
 if($row['url_hinh'] != '') $header_img = url_catalog_image.$row['url_hinh'];
-else $header_img = 'images/bg-header.gif';
+else $header_img = 'images/bg-header.jpg';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -113,7 +113,7 @@ else $header_img = 'images/bg-header.gif';
 	<div id="header" style="background:url('<?php echo $header_img;?>') no-repeat #6A9EDC">
     	<div id="logo">
         	<a href="/<?php if($lang!='vi') echo '?lang='.$lang; ?>"><img src="images/logo.png" alt="SIUP" /></a>
-            <div style="text-shadow:1px 1px #333"><?php echo $row_config['contact_foo'];?></div>
+            <div><?php echo $row_config['contact_foo'];?></div>
         </div>
         
         <div id="top">
