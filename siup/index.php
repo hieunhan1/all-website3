@@ -112,7 +112,7 @@ else $header_img = 'images/bg-header.gif';
 <div id="wrapper">
 	<div id="header" style="background:url('<?php echo $header_img;?>') no-repeat #6A9EDC">
     	<div id="logo">
-        	<a href="/"><img src="images/logo.png" alt="SIUP" /></a>
+        	<a href="/<?php if($lang!='vi') echo '?lang='.$lang; ?>"><img src="images/logo.png" alt="SIUP" /></a>
             <div style="text-shadow:1px 1px #333"><?php echo $row_config['contact_foo'];?></div>
         </div>
         

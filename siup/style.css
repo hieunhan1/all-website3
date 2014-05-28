@@ -142,11 +142,11 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #menu{height:23px; font-size:12px; background-color:#D61D22}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:23px; color:#FFF; text-transform:uppercase; padding:0 18px; border-left:solid 1px #EC373B; border-right:solid 1px #BC191D;} /* letter-spacing:1px; word-spacing:2px */
+#nav li a {line-height:23px; color:#FFF; text-transform:uppercase; padding:0 15px; border-left:solid 1px #EC373B; border-right:solid 1px #BC191D;} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; color:#e2e2e2}
 #nav li {float:left; position:relative}
 #nav ul {width:210px; position:absolute; top:23px; display:none; background-color:#9B9B9B; padding:5px 0; box-shadow:2px 2px 2px #888}
-#nav li ul a {width:170px; line-height:25px; float:left; text-transform:none; color:#FFF; padding:0 18px; border:none}
+#nav li ul a {width:170px; line-height:25px; float:left; text-transform:none; color:#FFF; padding:0 15px; border:none}
 #nav li ul a:hover {background-color:#888483; color:#FFF}
 #nav ul ul {top:auto}
 #nav li ul ul {left:220px}
