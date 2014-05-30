@@ -120,12 +120,17 @@ if(@$_GET['danhmuc']){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php echo $seo; ?>
-<link href="style_v3.css" rel="stylesheet" type="text/css" />
+<link href="style_v4.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-<div id="top"></div>
+<div id="top">
+	<div class="wrapper">
+    	<li><a href="/?lang=en"><img src="images/en.gif" alt="NETSPACE EN" /> English</a></li>
+    	<li><a href=""><img src="images/vi.gif" alt="NETSPACE VI" /> Tiếng Việt</a></li>
+    </div>
+</div>
 
 <div class="wrapper">
     <img src="images/bg-header.png" width="960" style="margin:5px 10px" />
