@@ -1,10 +1,11 @@
 <?php
 session_start();
+ob_start();
 error_reporting(E_ALL ^ E_NOTICE);
 include_once('config.php');
 
 $url = $_SERVER['REQUEST_URI'];
-$url = str_replace('all/stevbros.edu.vn/','',$url); /*link test*/
+//$url = str_replace('all/stevbros.edu.vn/','',$url); /*link test*/
 $url = explode('/',$url);
 $danhmuc = $url[1];
 $dt = $url[2];
