@@ -1,5 +1,5 @@
 <?php
-$qr = $tc->slider_banner(1,$row_menu_one['id']);
+$qr = $tc->slider_banner(1, $lang, $menu_root);
 if(mysql_num_rows($qr) > 0){
 	$view_slider = '<div id="slider"><div class="slider-wrapper theme-default"><div id="slider_run" class="nivoSlider">';
 	while($row = mysql_fetch_array($qr)){
