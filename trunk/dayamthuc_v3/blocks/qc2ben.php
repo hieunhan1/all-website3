@@ -1,12 +1,12 @@
 <?php
-$slider = $tc->slider_banner(5);
+$slider = $tc->slider_banner(5,$lang);
 echo '<div id="divAdRight" style="display:none; position:absolute; top:0px">';
 while($row_slider = mysql_fetch_array($slider)){
 	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:8px; border:solid 1px #bdbdbd"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';
 }
 echo '</div>';
 
-$slider = $tc->slider_banner(4);
+$slider = $tc->slider_banner(4,$lang);
 echo '<div id="divAdLeft" style="display:none; position:absolute; top:0px">';
 while($row_slider = mysql_fetch_array($slider)){
 	echo '<a href="'.$row_slider['link'].'" title="'.$row_slider['name'].'" target="_blank" style="display:block; margin-bottom:8px; border:solid 1px #bdbdbd"><img src="'.url_slider_image.$row_slider['url_hinh'].'" alt="'.$row_slider['name'].'" width="135" /></a>';

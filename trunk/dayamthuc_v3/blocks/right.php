@@ -1,3 +1,4 @@
+<?php if($lang=='vi') {?>
 <div id="right">
     <div class="box_right">
         <div class="box_right_title"><img src="images/icon-right.jpg" alt="Video nổi bật" /> Video nổi bật</div>
@@ -47,3 +48,4 @@
     </div>
     -->
 </div>
+<?php } ?>

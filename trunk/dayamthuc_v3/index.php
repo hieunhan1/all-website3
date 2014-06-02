@@ -133,7 +133,7 @@ if(@$_GET['danhmuc']){
 </div>
 
 <div class="wrapper">
-    <img src="images/bg-header.png" width="960" style="margin:5px 10px" />
+    <img src="images/bg-header_<?php echo $lang;?>.png" width="960" style="margin:5px 10px" />
     <?php
     include_once('blocks/menu.php');
     include_once('blocks/slider.php');
@@ -188,7 +188,7 @@ flush();
             <div class="simply-scroll-clip">
                 <ul id="scroller" class="simply-scroll-list" style="width:2255px">
                     <?php
-                    $qr = $tc->slider_banner(3);
+                    $qr = $tc->slider_banner(3,'vi');
 					while($row = mysql_fetch_array($qr)){
 						echo '<li style="list-style:none"><a href="'.$row['link'].'" title="'.$row['name'].'" target="_blank"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'"></a></li>';
 					}
