@@ -144,19 +144,21 @@ if(@$_GET['danhmuc']){
 	
 	if($danhmuc==''){
 		$str = 'style="background:url(images/bg-item-2.png) repeat-x top"'; //style cho Home catalog
-
-		$i = 0;
-		$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
-		echo '<div id="home_item_1">';
+		
 		$qr = $tc->menu($row_type_home['id'],5,$lang);
-		while($row = mysql_fetch_array($qr)){
-			echo '<div class="item_1" style="'.$style[$i].'background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">
-			<a href="'.$row['url'].'"><h2>'.$row['name'].'</h2></a>
-			<p>'.$row['metaDescription'].'</p>
-			<p><a href="'.$row['url'].'">'.const_view_info.'</a></p></div>';
-			$i++;
+		if(mysql_num_rows($qr) > 0){
+			$i = 0;
+			$style = array('margin-left:18px; ','margin-left:40px; ','margin-left:35px; ');
+			echo '<div id="home_item_1">';
+			while($row = mysql_fetch_array($qr)){
+				echo '<div class="item_1" style="'.$style[$i].'background:url(\''.url_catalog_image.$row['url_hinh'].'\') no-repeat">
+				<a href="'.$row['url'].'"><h2>'.$row['name'].'</h2></a>
+				<p>'.$row['metaDescription'].'</p>
+				<p><a href="'.$row['url'].'">'.const_view_info.'</a></p></div>';
+				$i++;
+			}
+			echo '</div>';
 		}
-		echo '</div>';
 	}
     ?>
 </div>
