@@ -143,7 +143,7 @@ if(@$_GET['danhmuc']){
 	$row_type_home = mysql_fetch_array($qr_type_home);
 	
 	if($danhmuc==''){
-		$str = 'style="background:url(images/bg-item-2.png) repeat-x top"'; //style cho Home catalog
+		$style_catalog = 'style="background:url(images/bg-item-2.png) repeat-x top"'; //style cho Home catalog
 		
 		$qr = $tc->menu($row_type_home['id'],5,$lang);
 		if(mysql_num_rows($qr) > 0){
@@ -166,7 +166,7 @@ if(@$_GET['danhmuc']){
 /*Home catalog*/
 $qr = $tc->menu($row_type_home['id'],1,$lang);
 if(mysql_num_rows($qr) > 0){
-	echo '<div id="home_item_2" '.$str.'><div class="wrapper" style="padding:0 10px">';
+	echo '<div id="home_item_2" '.$style_catalog.'><div class="wrapper" style="padding:0 10px">';
 	while($row = mysql_fetch_array($qr)){
 		echo '<div class="item_2"><a href="'.$row['url'].'"><div class="img_item_2">
 			<div class="img_item_bg"></div>
