@@ -256,7 +256,7 @@ include_once('blocks/qc2ben.php');
 ?>
 
 <div id="support_online" lang="<?php echo $lang; ?>">
-	<img src="images/support-online.gif" alt="support online" id="btn_support" />
+	<img src="images/support-online-<?php echo $lang; ?>.gif" alt="support online" id="btn_support" />
     <div id="ajax_support">
     	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />
         <div id="ajax_support_data"></div>

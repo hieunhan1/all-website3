@@ -4,12 +4,13 @@ if(isset($_POST['lang']))
 	$lang = $_POST['lang'];
 else
 	$lang = 'vi';
-	
+
 date_default_timezone_set('Asia/Bangkok');
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
 
 include_once('config.php');
+include_once("languages/{$lang}.php");
 
 if($_POST['contact']=='contact'){
 	$name = trim($_POST['name']);
@@ -54,8 +55,9 @@ if($_POST['dangky']=='dangky'){
 }
 
 if($_POST['support_online']=='support_online'){
-	if(isset($_SESSION['support_online'])) {
-		echo $_SESSION['support_online'];
+	$session_support = 'support_online_'.$lang;
+	if(isset($_SESSION[$session_support])) {
+		echo $_SESSION[$session_support];
 		return true;
 	}
 	
@@ -80,7 +82,7 @@ if($_POST['support_online']=='support_online'){
 			}
 			$support_chinhanh .= '</div>';
 			
-			$hotline_chinhanh .= '<div id="support_hotline" class="ds_support ds_support_'.$i.'">Điện thoại: <span style="color:#00F; font-size:120%">'.$row['phone'].'</span><br />Hotline: <span style="color:#F00">'.$row['hotline'].'</span></div>';
+			$hotline_chinhanh .= '<div id="support_hotline" class="ds_support ds_support_'.$i.'">'.const_contact_phone.': <span style="color:#00F; font-size:120%">'.$row['phone'].'</span><br />Hotline: <span style="color:#F00">'.$row['hotline'].'</span></div>';
 		}
 		$str_support = '<div id="ds_chinhanh">'.$name_chinhanh.'</div>'.$support_chinhanh.$hotline_chinhanh.'
 		<script>
@@ -89,7 +91,7 @@ if($_POST['support_online']=='support_online'){
 			$(".ds_support_1").show();
 		});
 		</script>';
-		$_SESSION['support_online'] = $str_support;
+		$_SESSION[$session_support] = $str_support;
 		echo $str_support;
 	}else echo 0;
 }

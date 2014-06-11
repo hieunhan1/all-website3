@@ -24,7 +24,7 @@
 			}
 			
 			echo '<div style="clear:both; font-size:135%; font-weight:bold; color:#0077BF; font-family:\'UTM-Swiss-Condensed\'; padding:20px 0">Hình ảnh sự kiện nổi bật - Trường NETSPACE</div>';
-			$qr = mysql_query("SELECT name,url_hinh FROM `web_photo_gallery` WHERE `delete`=0 AND status=1 AND `other`=1 ORDER BY date_update DESC LIMIT 15");
+			$qr = mysql_query("SELECT name,url_hinh FROM `web_photo_gallery` WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 15");
 			while($row = mysql_fetch_array($qr)){
 				$str_image .= '<li><p class="img"><a class="fancybox" href="'.url_picture_image.$row['url_hinh'].'" data-fancybox-group="gallery" title="'.$row['name'].'"><img src="'.url_picture_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></p><h3>'.$row['name'].'</h3></li>';
 			}
