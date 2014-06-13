@@ -6,7 +6,7 @@ if($row['email'] != ''){
 	$btn_hoso_2 = '<div class="btn_nop_hs">Nộp hồ sơ ngay</div>';
 }
 
-$noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Khác');
+$noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Bình Dương','Khác');
 $noilamviec = $noilamviec[$row_detail['noilamviec']];
 ?>
 <div class="wrapper"><div class="home_item_3">
