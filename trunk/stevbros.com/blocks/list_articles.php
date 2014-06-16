@@ -5,7 +5,6 @@ $table = 'info';
 $where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%'";
 $limit = "LIMIT {$from},".max_news;
 $list = $tc->list_item($select,$table,$where,$limit);
-$list = $tc->list_item($select,$table,$where,$limit);
 $total = mysql_num_rows($list);
 
 include_once('blocks/right.php');
