@@ -12,7 +12,7 @@
         </tr>
         <?php
         $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0 ".$str_search;
+		$where = "`delete`=0 AND lang='{$lang}' ".$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
 		$str = "SELECT id,name,status,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `date_create` DESC {$limit}";
 		$qr = mysql_query($str);
