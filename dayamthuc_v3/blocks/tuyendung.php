@@ -129,7 +129,7 @@ $noilamviec = $noilamviec[$row_detail['noilamviec']];
             </tr>
         	<tr>
             	<td valign="top">Kinh nghiệm làm việc:</td>
-            	<td><textarea name="content" class="text_dangky" style="height:200px; overflow:auto; resize:none"></textarea><br /><span id="kinhnghiem" class="error"></span></td>
+            	<td><textarea name="content" class="text_dangky" style="height:200px; overflow:auto; resize:none" placeholder="Vui lòng cho biết chi tiết kinh nghiệm làm việc."></textarea><br /><span id="kinhnghiem" class="error"></span></td>
             </tr>
         	<tr>
             	<td valign="top"><input type="hidden" name="tuyendung_id" value="<?php echo $row_detail['id'];?>" /></td>

@@ -75,8 +75,9 @@ if($_POST['support_online']=='support_online'){
 			$yahoo_nick = explode(',', $row['yahoo_nick']);
 			$yahoo_name = explode(',', $row['yahoo_name']);
 			for($j=0; $j<count($yahoo_nick); $j++){
-				$content = file_get_contents('http://opi.yahoo.com/online?u='.$yahoo_nick[$j].'&m=t');
-				if( preg_match('/NOT ONLINE$/', $content) ) $image_support = 'yahoo_off.png'; else $image_support = 'yahoo_on.png';
+				//$content = file_get_contents('http://opi.yahoo.com/online?u='.$yahoo_nick[$j].'&m=t');
+				//if( preg_match('/NOT ONLINE$/', $content) ) $image_support = 'yahoo_off.png'; else $image_support = 'yahoo_on.png';
+				$image_support = 'yahoo_on.png';
 				
 				$support_chinhanh .= '<div class="ds_support_item"><a href="ymsgr:sendIM?'.$yahoo_nick[$j].'">'.$yahoo_name[$j].'<img src="images/'.$image_support.'" alt="yahoo_on" /></a></div>';
 			}
