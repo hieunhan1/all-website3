@@ -99,7 +99,7 @@ echo $date_create;
 echo $user_login;
 
 //Trạng thái status
-$value = array(1 => 'Đã giao', 0 => 'Chưa giao');
+$value = array(1 => 'Đã giao', 0 => 'Chưa giao', 2 => 'Đã xem');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 1; //giá trị mặc định
