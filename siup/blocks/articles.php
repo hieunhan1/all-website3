@@ -23,6 +23,7 @@
 	<?php
     echo '<h1 id="h1_dm">'.$row_detail['name'].'</h1>
 	<div id="print_email">
+		<div style="width:auto; float:right; color:#838383; font-size:95%; margin-left:15px">'.date('d/m/Y H:i', strtotime($row_detail['date_create'])).'</div>
 		<div id="email"></div>
 		<div id="print" onclick="window.open(\'/print.html?info='.$row_detail['name_rewrite'].'\', \'windowname1\', \'width=700, height=550\'); return false;"></div>
 	</div>

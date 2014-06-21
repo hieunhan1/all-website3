@@ -47,11 +47,13 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #home_new #home_new_title h4{font-size:115%}
 #home_new #home_new_title a{color:#666; text-decoration:underline; float:right}
 
-.home_new_item{height:110px; margin-bottom:30px}
-.home_new_item .home_new_img{width:160px; height:110px; overflow:hidden; float:left; margin-right:10px}
-.home_new_item .home_new_img img{width:160px}
-.home_new_item h3{font-size:115%; margin-bottom:5px}
-.home_new_item .home_new_info{display:block; font-size:95%; line-height:17px; height:51px; overflow:hidden; margin-bottom:17px}
+.home_new_item{height:165px}
+.home_new_item .home_new_img{width:160px; height:120px; overflow:hidden; float:left}
+.home_new_item .home_new_item_content{width:490px; float:right}
+.home_new_item .home_new_item_date{line-height:20px; color:#838383; font-style:italic; font-size:95%; margin-bottom:3px; padding-left:20px; background:url(images/date.jpg) no-repeat left}
+.home_new_item .home_new_img img{height:135px}
+.home_new_item h3{font-size:110%; margin-bottom:5px}
+.home_new_item .home_new_info{display:block; font-size:95%; line-height:18px; height:54px; overflow:hidden; margin-bottom:10px}
 
 .project_2_item{width:195px; height:170px; float:left; background-color:#F2F5FC}
 .project_2_item .project_2_img{height:132px; overflow:hidden; margin-bottom:5px}
@@ -63,7 +65,9 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .project_3_item{height:150px; margin-bottom:15px; border:solid 1px #D0D0D0}
 .project_3_item .project_3_img{width:145px; height:115px; overflow:hidden; float:left; margin:16px 15px 0 16px}
 .project_3_item .project_3_img img{height:115px}
-.project_3_item h3{font-size:115%; margin:16px 0 10px}
+.project_3_item .project_3_item_content{width:435px; float:left}
+.project_3_item .project_3_item_date{line-height:20px; color:#838383; font-style:italic; font-size:95%; margin-bottom:3px; padding-left:20px; background:url(images/date.jpg) no-repeat left}
+.project_3_item h3{font-size:115%; margin:16px 0 5px}
 .project_3_item .project_3_info{display:block; font-size:95%; line-height:20px; height:80px; overflow:hidden}
 .project_3_item a{color:#D51D1D}
 .project_3_item .project_3_stt{width:39px; height:51px; float:right; color:#FFF; font-weight:bold; font-size:160%; text-align:center; margin-right:5px; padding-top:8px; background:url(images/project_3.gif) no-repeat top left}
@@ -114,7 +118,9 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .viewpost .sp_price_ban b{font-weight:bold; font-size:160%; color:#F00}
 
 #project_deatil{clear:both; margin-bottom:20px}
-#project_deatil #view_img{height:400px; overflow:hidden; text-align:center; margin-bottom:10px}
+#project_deatil #view_img{height:auto; text-align:center; margin-bottom:5px}
+#project_deatil #view_img img{width:660px}
+#project_deatil #img_name{clear:both; text-align:center; font-style:italic; color:#666; margin-bottom:15px}
 #project_deatil .thumb_img{width:100px; height:60px; float:left; overflow:hidden; margin:0 3px; border:solid 2px #FFF; cursor:pointer}
 #project_deatil .thumb_img img{width:100px}
 
@@ -139,8 +145,8 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .textarea_contact{width:360px; height:170px; resize:none; line-height:20px; overflow:auto; color:#666; margin-bottom:15px; padding:5px 10px; background:none; border:solid 1px #CCC}
 
 /*menu*/
-#menu{width:950px; height:23px; margin-left:-5px; font-size:12px; background-color:#D61D22; box-shadow:2px 2px 5px #333; position:relative; z-index:2000}
-#nav, #nav ul {list-style:none; position:relative; z-index:1000}
+#menu{width:950px; height:23px; margin-left:-5px; font-size:12px; background-color:#D61D22; box-shadow:2px 2px 5px #333; position:relative; z-index:200}
+#nav, #nav ul {list-style:none; position:relative; z-index:100}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
 #nav li a {line-height:23px; color:#FFF; text-transform:uppercase; padding:0 15px; border-left:solid 1px #EC373B; border-right:solid 1px #BC191D;} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; color:#e2e2e2}

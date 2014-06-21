@@ -142,6 +142,7 @@ $(document).ready(function($){
 		var url_hinh = $(this).attr("url");
 		
 		$("#view_img").html('<img src="' + url_hinh + '" alt="' + name + '" />');
+		$("#img_name").html(name);
 	});
 	
 });
