@@ -21,7 +21,7 @@
     <h1 id="h1_dm"><?php echo $row_menu_one['title']; ?></h1>
     <?php
 	$from = (($page - 1) * max_limit_1);
-	$select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id';
+	$select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id,date_create';
 	$table = 'web_info';
 	$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
 	$limit = "LIMIT {$from},".max_limit_1;
@@ -38,8 +38,9 @@
 			echo '<div class="project_3_item">
                 <div class="project_3_img"><a href="'.$link.'"><img src="'.$url_hinh.'" alt="'.$row['name'].'" /></a></div>
 				
-				<div style="width:435px; float:left">
+				<div class="project_3_item_content">
 					<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
+					<div class="project_3_item_date">'.date('d/m/Y H:i', strtotime($row['date_create'])).'</div>
 					<div class="project_3_info">'.$row['metaDescription'].'</div>
 				</div>
 				

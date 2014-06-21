@@ -35,7 +35,7 @@
     <h1 id="h1_dm"><?php echo $row_menu_one['title']; ?></h1>
     <?php
 	$from = (($page - 1) * max_limit_1);
-	$select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id';
+	$select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id,date_create';
 	$table = 'web_info';
 	$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
 	$limit = "LIMIT {$from},".max_limit_1;
@@ -47,9 +47,12 @@
 			if($row['url_hinh'] != '') $url_hinh = url_detail_image_thumb.$row['url_hinh']; else $url_hinh = url_no_image;
 			echo '<div class="home_new_item">
                 <div class="home_new_img"><img src="'.$url_hinh.'" alt="'.$row['name'].'" /></div>
-                <h3>'.$row['name'].'</h3>
-                <div class="home_new_info">'.$row['metaDescription'].'</div>
-                <a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">'.const_xem_chi_tiet.' »</a>
+				<div class="home_new_item_content">
+					<h3>'.$row['name'].'</h3>
+					<div class="home_new_item_date">'.date('d/m/Y H:i', strtotime($row['date_create'])).'</div>
+					<div class="home_new_info">'.$row['metaDescription'].'</div>
+					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">'.const_xem_chi_tiet.' »</a>
+				</div>
             </div>';
 		}
 		$phantrang = $tc->phantrang($danhmuc,$page,max_limit_1,'id',$table,$where);

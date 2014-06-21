@@ -40,9 +40,11 @@
 				else $url_hinh = url_project_image_thumb.$row['url_hinh'];
 				echo '<div class="home_new_item">
 					<div class="home_new_img"><img src="'.$url_hinh.'" alt="'.$row['name'].'" /></div>
-					<h3>'.$row['name'].'</h3>
-					<div class="home_new_info">'.$row['metaDescription'].'</div>
-					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">'.const_xem_chi_tiet.' »</a>
+					<div class="home_new_item_content">
+						<h3>'.$row['name'].'</h3>
+						<div class="home_new_info">'.$row['metaDescription'].'</div>
+						<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">'.const_xem_chi_tiet.' »</a>
+					</div>
 				</div>';
 			}
 		}

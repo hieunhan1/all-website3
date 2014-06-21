@@ -42,6 +42,7 @@
 				$str_project_img .= '<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>';
 			}else{
 				$str_project_img .= '<div id="view_img"><img src="'.url_project_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+				<div id="img_name">'.$row['name'].'</div>
 				<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>';
 			}
 		}
