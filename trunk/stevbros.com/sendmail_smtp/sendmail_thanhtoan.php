@@ -38,8 +38,8 @@ $mail->IsHTML(true);
 $mail->SetFrom($email_gui,'No-reply');
 
 //Thiết lập thông tin người nhận
-$mail->AddAddress($email,$name);
-$mail->AddCC($email_nhan,'Admin');
+$mail->AddAddress($email_kh,$name_kh);
+$mail->AddBCC($email_nhan,'Admin');
 //$mail->AddCC('ceo@netspace.edu.vn','CEO');
 //$mail->AddCC('temp@dayamthuc.vn','Temp');
 
@@ -62,9 +62,8 @@ $body = $content;
 
 $mail->Body = $body;
 
-$aa = ob_start();
 $mail->Send();
-$aa = ob_get_clean();
+
 
 /*if(!$mail->Send()) {
   echo "Mailer Error: " . $mail->ErrorInfo;
