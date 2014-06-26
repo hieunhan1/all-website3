@@ -14,7 +14,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 
 #header{clear:both; height:155px; background:url(images/bg-header.gif) repeat-x top; }
 
-#slider{clear:both; height:320px; overflow:hidden; border:solid 4px #8B8B8B}
+#slider{clear:both; border:solid 4px #8B8B8B}
 
 #hot_login{height:40px; line-height:40px; color:#717171; font-size:130%; font-weight:bold; letter-spacing:2px}
 #hot_login #hotline{width:auto; color:#000; float:left; padding-left:20px; letter-spacing:1px}
