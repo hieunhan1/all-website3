@@ -1,4 +1,4 @@
-<div id="home_about"><?php echo $row_menu_one['title']; ?></div>
+<div class="home_about"><?php echo $row_menu_one['title']; ?></div>
 <div id="contact">
     <div id="info"><?php echo $row_config['contact_form'];?></div>
     <br /><hr />

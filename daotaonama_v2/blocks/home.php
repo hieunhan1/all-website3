@@ -5,7 +5,7 @@
 		$('#scrollbar1').tinyscrollbar();
 	});
 </script>
-<div id="home_about">Giới thiệu</div>
+<div class="home_about">Giới thiệu</div>
 <div id="scrollbar1">
 	<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
 	<div class="viewport">

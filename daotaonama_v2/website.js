@@ -80,13 +80,15 @@ $(document).ready(function($){
 	if(browserVersion()!=7 && browserVersion()!=8){
 		$(".txt_bo").corner("10px");
 		$(".txt_register, .sel_register, .btn_register").corner("5px");
-		
-		$("#nav li a").mouseover(function(){
-			$(this).corner("10px");
-		});
-		
-		$("#active").corner("10px");
 	}
+	
+	setInterval(function(){
+		$("#hotline span").css("visibility","hidden");
+	},900);
+	setInterval(function(){
+		$("#hotline span").css("visibility","visible");
+	},400);
+	
 	
 	/*Login*/
 	$("#btn_login").click(function(){
