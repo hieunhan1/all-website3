@@ -30,4 +30,4 @@ if($total > 1){
 	$str_info = '<div style="padding:0 50px">update..</div>';
 }
 
-echo '<div id="home_about">'.$row_menu_one['title'].'</div><br />'.$str_info;
+echo '<div class="home_about">'.$row_menu_one['title'].'</div><br />'.$str_info;

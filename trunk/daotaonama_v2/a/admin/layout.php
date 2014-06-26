@@ -86,7 +86,7 @@ function ckeditor_custom($name){
 	CKEDITOR.replace( '{$name}', {
 		uiColor: '#b5d8ef',
 		toolbar: [
-			['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-','RemoveFormat','TextColor','BGColor','NumberedList','BulletedList'],
+			['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-','RemoveFormat','TextColor','BGColor','NumberedList','BulletedList','Outdent','Indent'],
 		]
 	});
 	</script>";

@@ -91,18 +91,15 @@ if(@$_GET['danhmuc']){
 
 <body>
 <div id="wrapper">
-	<div id="header">
-    	<p id="logo"><img src="images/trung-tam-dao-tao-nam-a.gif" alt="Trung tâm đào tạo Nam Á" /></p>
-        <?php
-	    include_once('blocks/menu.php');
-		?>
-    </div>
+	<div id="header"><img src="images/trung-tam-dao-tao-nam-a.gif" alt="Trung tâm đào tạo Nam Á" /></div>
+    <?php include_once('blocks/menu.php');?>
+    
     <?php include_once('blocks/slider.php'); ?>
     <div id="hot_login">
-    	<div id="hotline"><font color="#DA0000">HOTLINE:</font> <?php echo $row_config['hotline']; ?></div>
+    	<div id="hotline"><span style="color:#DA0000">HOTLINE:</span> <?php echo $row_config['hotline']; ?></div>
     	<div id="login">
         <?php
-        if(!@$_SESSION['user_id']) echo 'ID <input type="text" name="username" class="txt_bo" /> Pass <input type="password" name="password" class="txt_bo" /> <input type="button" name="login" value="Go" class="txt_bo" id="btn_login" />';
+        if(!@$_SESSION['user_id']) echo 'ID <input type="text" name="username" class="txt_bo" /> Pass <input type="password" name="password" class="txt_bo" /> <input type="button" name="login" value="đăng nhập" class="txt_bo" id="btn_login" />';
 		else{
 			$user = $_SESSION['user_name'];
 			$user_view = $_SESSION['user_name_view'];
@@ -112,11 +109,11 @@ if(@$_GET['danhmuc']){
         </div>
     </div>
     <div id="left">
+    	<h2 class="home_about">CÁC CHƯƠNG TRÌNH TIẾNG ANH</h2>
     	<div id="home_chuongtrinh">
         	<?php
             $qr = $tc->menu_type(3,0,'vi');
 			$row = mysql_fetch_array($qr);
-			echo '<h2>'.$row['title'].'</h2>';
 			
 			$id_chuongtrinh = $row['id'];
 			
