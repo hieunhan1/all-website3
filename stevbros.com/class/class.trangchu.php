@@ -51,6 +51,7 @@ class trangchu extends db {
 	}
 	function getSubmenu($level,$position){
 		$sql = $this->menu($level,$position);
+		$view = '';
 		if(mysql_num_rows($sql) > 0){
 			$view = '<ul>';
 			while($row = mysql_fetch_array($sql)){
@@ -86,10 +87,16 @@ class trangchu extends db {
 		$qr = "INSERT INTO thanhtoan_khachhang VALUES ('{$id}','{$name}','{$country}','{$gender}','{$email}','{$dienthoai}','{$ip}','{$checksum}','{$thanhtoan_error}','{$ma_nganhang}','{$ma_sanpham}','','','0','{$date}',NULL ,'khachhang',NULL ,'0')";
 		return mysql_query($qr);
 	}
+	
 	function view_thanhtoan_trave($id){
 		$qr = "SELECT thanhtoan_khachhang.name,gender,email,thanhtoan_khachhang.status,thanhtoan_sanpham.id as idsp,thanhtoan_sanpham.name as tensp,url_hinh,price FROM thanhtoan_khachhang,thanhtoan_sanpham WHERE thanhtoan_khachhang.`delete`=0 AND thanhtoan_khachhang.id='{$id}' AND ma_sanpham=thanhtoan_sanpham.id";
 		return mysql_query($qr);
 	}
+	function view_thanhtoan_trave_sacombank($id){
+		$qr = "SELECT `id`,`name`,`last_name`,`email`,`khoahoc_id`,`khoahoc_name`,`amount` FROM thanhtoan_khachhang_sacombank WHERE `delete`=0 AND `status`=1 AND `id`='{$id}'";
+		return mysql_query($qr);
+	}
+	
 	function view_thanhtoan_error($id){
 		$qr = "SELECT name FROM thanhtoan_error WHERE status=1 AND `delete`=0 AND ma='{$id}'";
 		return mysql_query($qr);
