@@ -82,6 +82,11 @@ else $value = date('d/m/Y');
 $form->getProperties('Ngày', 'date_update', 1, 'input_large', $value, 20);
 echo $form->DisplayProperties();
 
+//ma_kh
+if(@$_POST['ma_kh']) $value = $_POST['ma_kh']; else $value = $detail['ma_kh'];
+$form->getProperties('Mã khóa', 'ma_kh', 1, 'input_medium', $value, 10);
+echo $form->DisplayProperties();
+
 //Mô tả name
 if(@$_POST['name']) $value = $_POST['name']; else $value = $detail['name'];
 $form->getProperties('Mô tả', 'name', 1, 'input_medium', $value, 250);

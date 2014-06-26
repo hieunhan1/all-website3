@@ -26,6 +26,7 @@ if($danhmuc!=''){
 		switch($type){
 			case 2 : include_once('blocks/list_articles.php'); break;
 			case 4 : include_once('blocks/payment.php'); break;
+			case 5 : include_once('blocks/payment_sacombank.php'); break;
 			case 7 : include_once('blocks/contact.php'); break;
 			default: $view_post = '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -34,6 +35,7 @@ if($danhmuc!=''){
 		switch($type){
 			case 2 : $detail = $tc->detail($dt); $row_detail = mysql_fetch_array($detail); include_once('blocks/articles.php'); break;
 			case 4 : $detail = $tc->detail($dt,$type); $row_detail = mysql_fetch_array($detail); include_once('blocks/payment.php'); break;
+			case 5 : $detail = $tc->detail($dt,$type); $row_detail = mysql_fetch_array($detail); include_once('blocks/payment_sacombank.php'); break;
 			default: $view_post = '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
 		($row_detail['url_hinh']!='') ? $image='http://'.$domain.'/'.url_detail_thumb_image.$row_detail['url_hinh'] : $image='http://'.$domain.'/'.url_default_image;
