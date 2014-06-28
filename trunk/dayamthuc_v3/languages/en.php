@@ -11,6 +11,8 @@ define('const_cho_dakao','Near Dakao market');
 define('const_home_info', 'News &amp; Event');
 define('const_home_photos', 'Photos');
 
+define('const_id_danhmuc_hinhanh', 263);
+
 define('const_thong_tin', 'Contact Information');
 define('const_contact_name', 'Name');
 define('const_contact_phone', 'Telephone');

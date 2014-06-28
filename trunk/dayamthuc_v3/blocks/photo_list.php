@@ -23,7 +23,7 @@
 				</a></div>';
 			}
 			
-			echo '<div style="clear:both; font-size:135%; font-weight:bold; color:#0077BF; font-family:\'UTM-Swiss-Condensed\'; padding:20px 0">Hình ảnh sự kiện nổi bật - Trường NETSPACE</div>';
+			if($lang=='vi') echo '<div style="clear:both; font-size:135%; font-weight:bold; color:#0077BF; font-family:\'UTM-Swiss-Condensed\'; padding:20px 0">Hình ảnh sự kiện nổi bật - Trường NETSPACE</div>';
 			$qr = mysql_query("SELECT name,url_hinh FROM `web_photo_gallery` WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 15");
 			while($row = mysql_fetch_array($qr)){
 				$str_image .= '<li><p class="img"><a class="fancybox" href="'.url_picture_image.$row['url_hinh'].'" data-fancybox-group="gallery" title="'.$row['name'].'"><img src="'.url_picture_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></p><h3>'.$row['name'].'</h3></li>';
@@ -61,11 +61,12 @@
         <div style="clear:both; height:10px"></div>
     </div>
     
+    <?php if($lang=='vi'){?>
     <div id="right">
     	<div class="box_right">
         <div class="box_right_title"><img src="images/icon-right.jpg" alt="Video nổi bật" /> Danh mục thư viện ảnh</div>
 		<?php
-        $qr = $tc->menu(5,6);
+        $qr = $tc->menu(const_id_danhmuc_hinhanh,6);
         while($row = mysql_fetch_array($qr)){
            echo '<p class="photo_danhmuc_c1"><a href="'.$row['url'].'">'.$row['name'].'</a></p>';
            
@@ -80,7 +81,8 @@
            }
         }
         ?>
+    	</div>
     </div>
-    </div>
+    <?php }?>
     <div style="clear:both; height:10px"></div>
 </div></div>

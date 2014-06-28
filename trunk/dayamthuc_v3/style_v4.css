@@ -42,7 +42,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .wrapper{width:980px; margin:auto}
 
 #top{height:24px; line-height:24px; background-color:#DB0000}
-#top li{list-style:none; width:auto; float:right; margin-left:20px}
+#top li{list-style:none; width:auto; float:right; margin-right:20px}
 #top a{color:#FF9; font-size:90%}
 #top img{height:13px; float:left; margin:4px 3px 0 0; border:solid 1px #FF9}
 
