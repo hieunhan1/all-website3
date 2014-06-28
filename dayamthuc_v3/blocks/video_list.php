@@ -22,16 +22,16 @@
 				<div class="album_icon_video"></div>
 				<h3>'.$row['name'].'</h3></a></div>';
 			}
-			
-			$str_video_nb = '<div style="font-size:150%; font-weight:bold; color:#0077BF; font-family:\'UTM-Swiss-Condensed\';">Video nổi bật</div>';
-			$qr_nb = mysql_query("SELECT name,name_rewrite,url_hinh,menu_id FROM `web_video` WHERE `delete`=0 AND status=1 AND lang='{$lang}' AND `other`=1 ORDER BY date_update DESC LIMIT 2");
-			while($row = mysql_fetch_array($qr_nb)){
-				$str_video_nb .= '<div class="video_item_3" style="margin:20px">
-				<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
-				<div class="img_video_item_3"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-				<h3>'.$row['name'].'</h3></a></div>';
+			if($lang=='vi'){
+				$str_video_nb = '<div style="font-size:150%; font-weight:bold; color:#0077BF; font-family:\'UTM-Swiss-Condensed\';">Video nổi bật</div>';
+				$qr_nb = mysql_query("SELECT name,name_rewrite,url_hinh,menu_id FROM `web_video` WHERE `delete`=0 AND status=1 AND lang='{$lang}' AND `other`=1 ORDER BY date_update DESC LIMIT 2");
+				while($row = mysql_fetch_array($qr_nb)){
+					$str_video_nb .= '<div class="video_item_3" style="margin:20px">
+					<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
+					<div class="img_video_item_3"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+					<h3>'.$row['name'].'</h3></a></div>';
+				}
 			}
-			
 			echo $str_video_nb.'<div style="clear:both; height:20px"></div>'.$str_dm_video;
 		}else{
 			$from = (($page - 1) * max_limit_4);

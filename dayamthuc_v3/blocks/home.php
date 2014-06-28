@@ -21,10 +21,18 @@ while($row = mysql_fetch_array($qr)){
 
 /*hinh anh*/
 $qr = $tc->photos_home($lang);
-while($row = mysql_fetch_array($qr)){
-	$str_hinhanh .= '<div class="photo_item_3">
-	<a href="'.$row['url'].'"><div class="img_photo_item_3"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-	<h3>'.$row['name'].'</h3></a></div>';
+if(mysql_num_rows($qr) > 0){
+	while($row = mysql_fetch_array($qr)){
+		$str_hinhanh .= '<div class="photo_item_3">
+		<a href="'.$row['url'].'"><div class="img_photo_item_3"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+		<h3>'.$row['name'].'</h3></a></div>';
+	}
+	
+	$str_hinhanh = '<div class="home_title">'.const_home_photos.'</div>
+    <div class="home_item_3">
+    	'.$str_hinhanh.'
+        <div style="clear:both; height:1px"></div>
+    </div>';
 }
 
 /*video*/
@@ -45,11 +53,7 @@ echo '<div class="wrapper">
 		<div style="clear:both; height:1px"></div>
 	</div>
 	
-	<div class="home_title">'.const_home_photos.'</div>
-    <div class="home_item_3">
-    	'.$str_hinhanh.'
-        <div style="clear:both; height:1px"></div>
-    </div>
+	'.$str_hinhanh.'
 	
 	<div class="home_title">Videos</div>
     <div class="home_item_3">
