@@ -1,8 +1,8 @@
 <div id="left">
+	<div style="clear:both; height:30px"></div>
 	<?php
     $qr = $tc->home_left($lang,3);
 	$row = mysql_fetch_array($qr);
-	echo "<h3>{$row['title']}</h3>";
 	
 	$qr = $tc->menu($row['id'],3,$lang);
 	while($row = mysql_fetch_array($qr)){
@@ -42,6 +42,7 @@
 					<div class="home_new_img"><img src="'.$url_hinh.'" alt="'.$row['name'].'" /></div>
 					<div class="home_new_item_content">
 						<h3>'.$row['name'].'</h3>
+						<div class="home_new_item_date">'.date('d/m/Y H:i', strtotime($row['date_create'])).'</div>
 						<div class="home_new_info">'.$row['metaDescription'].'</div>
 						<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'" class="view_detail">'.const_xem_chi_tiet.' »</a>
 					</div>

@@ -22,7 +22,7 @@ $total = mysql_num_rows($list);
 
 if($total > 0){
 	while($row = mysql_fetch_array($list)){
-		echo '<div class="project_2_item" style="margin:0 0 35px 32px">
+		echo '<div class="project_2_item" style="margin:0 0 15px 32px">
 			<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="project_2_img"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 			<h3>'.$row['name'].'</h3></a>
 		</div>';

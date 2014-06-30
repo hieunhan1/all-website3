@@ -104,10 +104,28 @@ class trangchu extends db {
 		}
 		return $str;
 	}
+	function phantrang_search($link,$txt_search,$page_number,$max_results,$select,$table,$where,$keyword=NULL,$catalog=NULL,$order=NULL){
+		$qr = $this->list_item($select,$table,$where);
+		$total = mysql_num_rows($qr);
+		mysql_free_result($qr);
+		
+		$str = '<div style="clear:both"></div>';
+		$total_pages = ceil($total / $max_results);
+		if($total_pages > 1){
+			for($i = 0; $i <= $total_pages; $i++){
+				if($page_number == $i){
+					$str .= "<a href='{$link}/{$i}/{$txt_search}.html' style='font-weight:bold; background-color:#ED1E28'>{$i}</a>";
+				} elseif($i>0) {
+					$str .= "<a href='{$link}/{$i}/{$txt_search}.html'>{$i}</a>";
+				}
+			}
+		}
+		return $str;
+	}
 	
 	/*home*/
 	function home_info_item($idMenu,$limit){
-		$qr	= "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND other=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT {$limit}";
+		$qr	= "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND other=1 AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT {$limit}";
 		return mysql_query($qr);
 	}
 	function home_dm_new($lang){
@@ -139,7 +157,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function project_img($id){
-		$qr = "SELECT name,url_hinh FROM `web_info_img` WHERE `delete`=0 AND status=1 AND info_id='{$id}' ORDER BY date_update DESC LIMIT 6";
+		$qr = "SELECT name,url_hinh,info FROM `web_info_img` WHERE `delete`=0 AND status=1 AND info_id='{$id}' ORDER BY date_update DESC LIMIT 6";
 		return mysql_query($qr);
 	}
 	

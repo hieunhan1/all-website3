@@ -1,12 +1,16 @@
 <div id="left">
+	<div style="clear:both; height:30px"></div>
 	<?php
-    $qr = $tc->menu_one_id($menu_root);
+	/*
+	$qr = $tc->menu_one_id($menu_root);
 	$row = mysql_fetch_array($qr);
+	echo "<h3>{$row['title']}</h3>";
+	*/
 	
 	$qr = $tc->menu($menu_root,3);
 	
 	if(mysql_num_rows($qr) > 0){
-		$str_left .= "<h3>{$row['title']}</h3>";
+		//$str_left .= "<h3>{$row['title']}</h3>";
 		while($row = mysql_fetch_array($qr)){
 			if($row_menu_one['url']!=$row['url']) $str_left .= '<li><a href="'.$row['url'].'">'.$row['name'].'</a></li>';
 			else $str_left .= '<li><a href="'.$row['url'].'" style="color:#D61D22">'.$row['name'].'</a></li>';
@@ -14,7 +18,7 @@
 	}else{
 		$qr = $tc->home_left($lang,3);
 		$row = mysql_fetch_array($qr);
-		$str_left .= "<h3>{$row['title']}</h3>";
+		//$str_left .= "<h3>{$row['title']}</h3>";
 		
 		$qr = $tc->menu($row['id'],3,$lang);
 		while($row = mysql_fetch_array($qr)){
@@ -39,11 +43,18 @@
 		while($row = mysql_fetch_array($qr)){
 			$i++;
 			if($i != 1){
-				$str_project_img .= '<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>';
+				$str_project_img .= '<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'">
+					<img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" />
+					<div class="info_img">'.$row['info'].'</div>
+				</div>';
 			}else{
-				$str_project_img .= '<div id="view_img"><img src="'.url_project_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+				$str_project_img .= '<div id="info_img" class="viewpost">'.$row['info'].'</div>
+				<div id="view_img"><img src="'.url_project_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 				<div id="img_name">'.$row['name'].'</div>
-				<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>';
+				<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'">
+					<img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" />
+					<div class="info_img">'.$row['info'].'</div>
+				</div>';
 			}
 		}
 		

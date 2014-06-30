@@ -23,6 +23,10 @@ if(@$_GET['danhmuc']){
 	}
 	
 	$menu_one = $tc->menu_one($danhmuc);
+	if(mysql_num_rows($menu_one)==0){
+		header('location: /error/index.php');
+		return false;
+	}
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $row_menu_one['id'];
 	$type = $row_menu_one['type_id'];
@@ -60,6 +64,7 @@ if(@$_GET['danhmuc']){
 			case 5 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
 			case 3 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_project_image_thumb; include_once('blocks/project_detail.php'); break;
 			case 4 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_project_image_thumb; include_once('blocks/project_detail.php'); break;
+			case 7 : include_once('blocks/search.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}
@@ -130,9 +135,25 @@ else $header_img = 'images/bg-header.jpg';
         </div>
         
         <div id="search">
-        	<input type="text" name="txtSearch" id="txtSearch" class="txt" value="<?php echo const_txt_search; ?>" onclick="if(value=='<?php echo const_txt_search; ?>') value=''" onblur="if(value=='') value='<?php echo const_txt_search; ?>'" />
+        	<input type="text" name="txtSearch" id="txtSearch" class="txt" placeholder="<?php echo const_txt_search;?>" />
             <input type="button" name="btnSearch" value="&nbsp;" class="btn" />
         </div>
+        <?php
+        $qr = $tc->menu_type(7,0,$lang);
+		$row = mysql_fetch_array($qr);
+		?>
+        <script type="text/javascript">
+		$(document).ready(function(e) {
+            $("#txtSearch").keydown(function(e){
+				var str = $.trim($("#txtSearch").val());
+				if(str!='' && e.keyCode==13) window.location = "<?php echo $row['url'];?>" + str + ".html";
+			});
+			$("input[name=btnSearch]").click(function(){
+				var str = $.trim($("#txtSearch").val());
+				if(str!='') window.location = "<?php echo $row['url'];?>" + str + ".html";
+			});
+        });
+		</script>
     </div>
 	<?php
     include_once('blocks/menu.php'); flush();

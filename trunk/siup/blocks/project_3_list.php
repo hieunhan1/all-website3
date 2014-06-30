@@ -1,9 +1,11 @@
 <div id="left">
+	<div style="clear:both; height:30px"></div>
 	<?php
-    $qr = $tc->menu_one_id($menu_root);
+	/*
+	$qr = $tc->menu_one_id($menu_root);
 	$row = mysql_fetch_array($qr);
 	echo "<h3>{$row['title']}</h3>";
-	
+	*/
 	$qr = $tc->menu($menu_root,3);
 	while($row = mysql_fetch_array($qr)){
 		if($row_menu_one['url']!=$row['url']) echo '<li><a href="'.$row['url'].'">'.$row['name'].'</a></li>';
