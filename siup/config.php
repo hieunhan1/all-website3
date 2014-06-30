@@ -26,3 +26,5 @@ define('url_project_image_thumb','public/_thumbs/Images/project/');
 
 define('url_video_image','public/images/video/');
 define('url_video_image_thumb','public/_thumbs/Images/video/');
+
+define('url_download','public/files/');
