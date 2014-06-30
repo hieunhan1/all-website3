@@ -1,12 +1,16 @@
 <div id="left">
+	<div style="clear:both; height:30px"></div>
 	<?php
-    $qr = $tc->menu_one_id($menu_root);
+	/*
+	$qr = $tc->menu_one_id($menu_root);
 	$row = mysql_fetch_array($qr);
+	echo "<h3>{$row['title']}</h3>";
+	*/
 	
 	$qr = $tc->menu($menu_root,3);
 	
 	if(mysql_num_rows($qr) > 0){
-		$str_left .= "<h3>{$row['title']}</h3>";
+		//$str_left .= "<h3>{$row['title']}</h3>";
 		while($row = mysql_fetch_array($qr)){
 			if($row_menu_one['url']!=$row['url']) $str_left .= '<li><a href="'.$row['url'].'">'.$row['name'].'</a></li>';
 			else $str_left .= '<li><a href="'.$row['url'].'" style="color:#D61D22">'.$row['name'].'</a></li>';
@@ -14,7 +18,7 @@
 	}else{
 		$qr = $tc->home_left($lang,3);
 		$row = mysql_fetch_array($qr);
-		$str_left .= "<h3>{$row['title']}</h3>";
+		//$str_left .= "<h3>{$row['title']}</h3>";
 		
 		$qr = $tc->menu($row['id'],3,$lang);
 		while($row = mysql_fetch_array($qr)){
@@ -32,7 +36,6 @@
         <?php echo $tc->navigator($idMenu); ?>
     </div>
     
-    <h1 id="h1_dm"><?php echo $row_menu_one['title']; ?></h1>
     <?php
 	$from = (($page - 1) * max_limit_2);
 	$select = 'id,name,name_rewrite,url_hinh,metaDescription,menu_id';
@@ -46,7 +49,7 @@
 		$i = 0;
 		while($row = mysql_fetch_array($list)){
 			$i++;
-			if($i%3 == 1) $style = 'margin-bottom:35px'; else $style = 'margin:0 0 35px 35px';
+			if($i%3 == 1) $style = 'margin-bottom:15px'; else $style = 'margin:0 0 15px 35px';
 			echo '<div class="project_2_item" style="'.$style.'">
 				<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="project_2_img"><img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 				<h3>'.$row['name'].'</h3></a>

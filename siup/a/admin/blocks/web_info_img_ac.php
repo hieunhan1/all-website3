@@ -91,14 +91,13 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
-	//other
-	/*$arr = array();
-	$arr[] = array('id'=>'1', 'name'=>'Hiện');
-	$arr[] = array('id'=>'0', 'name'=>'Ẩn');
-	if($row_detail['other']=='') $properties = 0; else $properties = $row_detail['other']; //default check
-	$views = array('Nổi bật','other','radio',' &nbsp; '); //label name class other
-    $form->getProperties('4',$arr,$properties,$views);
-	echo $form->DisplayProperties();*/
+	//info
+	$values = $row_detail['info'];
+	$properties = ''; //maxlength OTHER (disabled, readonly) 
+	$views = array('Thông tin','info','textarea'); //label id&name class colspan
+	$other = ckeditor_custom('info');
+    $form->getProperties('3',$values,$properties,$views,$other);
+	echo $form->DisplayProperties();
 	
 	//id
 	$values = $row_detail['id'];
