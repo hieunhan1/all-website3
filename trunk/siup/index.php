@@ -52,6 +52,7 @@ if(@$_GET['danhmuc']){
 			case 4 : include_once('blocks/project_2_list.php'); break;
 			case 5 : include_once('blocks/project_3_list.php'); break;
 			case 6 : include_once('blocks/contact.php'); break;
+			case 9 : include_once('blocks/download.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';
 		}

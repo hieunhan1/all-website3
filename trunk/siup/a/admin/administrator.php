@@ -100,7 +100,7 @@ function SetFileField(fileUrl, data){
 					if( preg_match("/,{$row['id']},/i", $quyen_xem) ){
 						if($table != $row['url']) echo '<a href="administrator.php?p='.$row['url'].'">'.$row['name'].$style.'</a>';
 						else echo '<a href="administrator.php?p='.$row['url'].'" style="color:#00F">'.$row['name'].$style.'</a>';
-						if($i == 2) echo '<hr />'; else if($i == 6) echo '<hr />'; else if($i == 9) echo '<hr />'; else if($i == 12) echo '<hr />';
+						if($i == 2) echo '<hr />'; else if($i == 7) echo '<hr />'; //else if($i == 9) echo '<hr />'; else if($i == 12) echo '<hr />';
 					}
 				}
 			}
