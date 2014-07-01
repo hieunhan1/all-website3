@@ -128,9 +128,9 @@ $(document).ready(function($){
 		SearchGoogle("txtSearch");
 	});*/
 	
-	if(browserVersion()!=7 && browserVersion()!=8){
+	/*if(browserVersion()!=7 && browserVersion()!=8){
 		$(".bogoc_5px").corner("5px");
-	}
+	}*/
 	
 	$(".thumb_img:first").css("border","solid 2px #D51C21");
 	$(".thumb_img").click(function(){
