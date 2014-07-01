@@ -5,7 +5,7 @@
 
 <div style="width:460px; float:left; margin-left:30px">
 	<div class="viewpost"><?php echo $row_config['contact_form'];?></div><br />
-    <div style="height:460px" id="map_google"></div>
+    <div style="height:448px" id="map_google"></div>
     <?php include_once('blocks/map_google.php');?>
 </div>
 
