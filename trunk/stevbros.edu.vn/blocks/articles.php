@@ -23,17 +23,24 @@ $view_post .= '<div id="view_post">
   fjs.parentNode.insertBefore(js, fjs);
 }(document, "script", "facebook-jssdk"));</script>
 
-<div style="width:auto; float:left" class="fb-like" data-href="http://www.facebook.com/pages/Stevbros-Training-Consultancy/111112242381308" data-width="140" data-layout="button_count"></div>
+<div style="width:auto; height:30px; overflow:hidden; float:left" class="fb-like" data-href="http://www.facebook.com/pages/Stevbros-Training-Consultancy/111112242381308" data-width="140" data-layout="button_count"></div>
 <div style="width:auto; height:17px; line-height:17px; float:left; margin:1px 10px 0 10px; padding:0 5px; font-size:11px; background-color:#ECEEF5; border:solid 1px #CAD4E7"><a style="color:#3B5998" href="#" onclick=\'window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(location.href), "facebook-share-dialog", "width=626,height=436"); return false;\'>Chia sẻ lên facebook</a></div>
 
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://twitter.com/stevbros" data-text="Đào tạo Quản Lý Dự Án PMP, Tư Vấn Du Học Singapore - Mỹ">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script>
 ';
+
+$other = 'Khóa học khác';
 if(preg_match("/15/i",$row_detail['menu_id'])){
 	include_once('blocks/nhanxet.php');
 	$other = 'Bài viết khác';
-}else $other = 'Khóa học khác';
+}
+if(preg_match("/31/i",$row_detail['menu_id'])){
+	include_once('blocks/nhanxet.php');
+	$other = 'Các Chuyên Gia khác';
+}
+
 $view_post .= '</div>';
 $view_post .= $view_right;
 $baiviet = $tc->baivietkhac($idMenu,$row_detail['id']);
