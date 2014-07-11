@@ -25,8 +25,8 @@ function column_general($p) {
 }
 function list_column($page, $id, $mota, $status, $user_create, $date_create, $user_update, $date_update, $order = NULL){
 	//echo $date_create;
-	$date_c = date('d/m/Y', strtotime($date_create));
-	if(!@$date_update) $date_u = '&nbsp;'; else $date_u = date('d/m/Y', strtotime($date_update));
+	$date_c = date('H:i d/m', strtotime($date_create));
+	if(!@$date_update) $date_u = '&nbsp;'; else $date_u = date('H:i d/m', strtotime($date_update));
 	if(!@$user_update) $user_update = '&nbsp;';
 	if($order != '') $od = "<div class='col_order'>{$order} &nbsp;</div>"; else $od = '';
 	return "

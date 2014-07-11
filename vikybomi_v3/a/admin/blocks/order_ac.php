@@ -99,7 +99,7 @@ echo $date_create;
 echo $user_login;
 
 //Trạng thái status
-$value = array(1 => 'Đã giao', 0 => 'Chưa giao', 2 => 'Đã xem');
+$value = array(0 => 'Chưa giao', 2 => 'Đã xem', 1 => 'Đã giao');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 1; //giá trị mặc định
@@ -131,6 +131,10 @@ echo $form->DisplayProperties();
 //message
 if(@$_POST['message']) $value = $_POST['message']; else $value = $detail['message'];
 $form->getProperties('Yêu cầu khác', 'message', 3, 'textarea', $value, 1);
+echo $form->DisplayProperties();
+//phigiaohang
+if(@$_POST['phigiaohang']) $value = $_POST['phigiaohang']; else $value = $detail['phigiaohang'];
+$form->getProperties('Phí giao hàng', 'phigiaohang', 1, 'input_medium', $value, 8);
 echo $form->DisplayProperties();
 //tong_thanhtien
 if(@$_POST['tong_thanhtien']) $value = $_POST['tong_thanhtien']; else $value = $detail['tong_thanhtien'];
