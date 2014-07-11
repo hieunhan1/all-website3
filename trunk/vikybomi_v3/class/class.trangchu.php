@@ -199,7 +199,7 @@ class trangchu extends db {
 	/*don hang*/
 	function insert_donhang($id,$name,$email,$phone,$diachi,$message,$tongtien){
 		$date = date('Y-m-d H:i:s');
-		$qr = "INSERT INTO `order` VALUES ('{$id}','{$date}','{$date}','{$name}','{$diachi}','{$phone}','{$email}','{$message}','{$tongtien}','vi','0','0','khachhang','')";
+		$qr = "INSERT INTO `order` VALUES ('{$id}','{$date}','{$date}','{$name}','{$diachi}','{$phone}','{$email}','{$message}','','{$tongtien}','vi','0','0','khachhang','')";
 		mysql_query($qr);
 	}
 	function insert_donhang_chitiet($donhang_id,$products_id,$dongia,$soluong,$tien){
@@ -211,6 +211,13 @@ class trangchu extends db {
 	function properties_product_buy($id,$name,$price,$price_km=0){
 		return "{$id} -|- {$name} -|- {$price} -|- {$price_km}";
 	}
+	
+	/*function*/
+	function _date_time_vietnam(){
+		$timezone = +7; //(GMT +7:00)  
+        return gmdate("Y-m-d H:i:s", time() + 3600*($timezone+date("0"))); 
+	}
+	/*end function*/
 	
 }// end trangchu
 ?>
