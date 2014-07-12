@@ -130,8 +130,10 @@ class trangchu extends db {
 		$qr = "SELECT name,name_rewrite,url_hinh,content,menu_id FROM web_info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC {$limit}";
 		return mysql_query($qr);
 	}
-	function info_home($lang){
-		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' ORDER BY date_update DESC LIMIT 10";
+	function info_home($lang,$limit=10,$idMenu=NULL){
+		if($idMenu!=NULL) $idMenu="AND menu_id LIKE '%,{$idMenu},%'";
+		else $idMenu="AND menu_id NOT LIKE '%,66,%'";
+		$qr = "SELECT name,name_rewrite,url_hinh,metaDescription,menu_id,date_create FROM web_info WHERE `delete`=0 AND status=1 AND `other`=1 AND lang='{$lang}' {$idMenu} ORDER BY date_update DESC LIMIT {$limit}";
 		return mysql_query($qr);
 	}
 	function info_detail($alias){

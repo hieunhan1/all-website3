@@ -8,7 +8,7 @@ define('const_view_info', 'View more');
 
 define('const_cho_dakao','Near Dakao market');
 
-define('const_home_info', 'News &amp; Event');
+define('const_home_info', 'Update');
 define('const_home_photos', 'Photos');
 
 define('const_id_danhmuc_hinhanh', 263);
