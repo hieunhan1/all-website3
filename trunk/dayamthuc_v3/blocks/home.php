@@ -1,5 +1,5 @@
 <?php
-/*thong tin*/
+/*thong tin nau an*/
 $qr = $tc->info_home($lang);
 $i = 0;
 $str_info_new = '';
@@ -17,6 +17,28 @@ while($row = mysql_fetch_array($qr)){
             <a href="'.$link.'" style="color:#ED1C24; font-style:italic; font-weight:bold; font-size:90%">'.const_view_info.'</a>
         </div>';
 	}
+}
+
+/*thong bao*/
+$qr = $tc->info_home($lang,5,66); //idMenu thong bao = 66
+if(mysql_num_rows($qr) > 0){
+	while($row = mysql_fetch_array($qr)){
+		$str_thongbao .= '<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><h4>'.$row['name'].'</h4></a>';
+	}
+	$str_thongbao = '<div style="width:460px; float:right">
+		<div class="home_title">Thông báo</div>
+		<div class="home_item_4">'.$str_thongbao.'</div>
+	</div>';
+}
+
+/*su kien*/
+$qr = $tc->slider_banner(2, $lang);
+if(mysql_num_rows($qr) > 0){
+	$row = mysql_fetch_array($qr);
+	$str_sukien = '<div style="width:510px; float:left">
+		<div class="home_title">Sự kiện</div>
+		<div class="home_item_5"><a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
+	</div>';
 }
 
 /*hinh anh*/
@@ -52,6 +74,12 @@ echo '<div class="wrapper">
 		'.$str_info_noibat.'
 		<div style="clear:both; height:1px"></div>
 	</div>
+	'.$str_thongbao.$str_sukien.'
+	
+	
+	
+	<div style="clear:both; height:1px"></div>
+	
 	
 	'.$str_hinhanh.'
 	

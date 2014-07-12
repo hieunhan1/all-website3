@@ -8,7 +8,7 @@ define('const_view_info', 'Xem chi tiết');
 
 define('const_cho_dakao','Đối diện Chợ Đakao');
 
-define('const_home_info', 'Thông tin');
+define('const_home_info', 'Thông tin nấu ăn');
 define('const_home_photos', 'Hình ảnh');
 
 define('const_id_danhmuc_hinhanh', 5);

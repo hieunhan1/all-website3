@@ -120,7 +120,7 @@ if(@$_GET['danhmuc']){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php echo $seo; ?>
-<link href="style_v4.css" rel="stylesheet" type="text/css" />
+<link href="style_v5.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
