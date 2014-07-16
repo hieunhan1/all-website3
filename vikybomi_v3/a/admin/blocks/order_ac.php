@@ -141,7 +141,9 @@ if(@$_POST['tong_thanhtien']) $value = $_POST['tong_thanhtien']; else $value = $
 $form->getProperties('Tổng cộng', 'tong_thanhtien', 1, 'input_medium', $value, 60);
 echo $form->DisplayProperties();
 
-echo "
+echo "<tr>
+	<td colspan='2' style='color:#00F'>Link đơn hàng: http://www.vikybomi.com.vn/order.php?id_order=".$id."</td>
+</tr>
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
     <td><input type='submit' name='{$name}' value='{$display}' id='{$name}' class='button' />
