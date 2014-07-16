@@ -21,7 +21,7 @@
 			
             $qr = $tc->menu($idMenu,6);
             while($row = mysql_fetch_array($qr)){
-                echo '<tr bgcolor="#ffff99"><th colspan="2" style="color:#000; font-size:110%">'.$row['name'].'</th></tr>';
+                echo '<tr bgcolor="#ffff99"><th colspan="2" style="color:#000; font-size:110%; text-transform:uppercase">'.$row['name'].'</th></tr>';
                 $qr2 = $tc->menu($row['id'],6);
                 if(mysql_num_rows($qr2) > 1){
                     while($row2 = mysql_fetch_array($qr2)){
