@@ -5,8 +5,8 @@ $table = 'info';
 $where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
 $limit = "LIMIT {$from},".max_limit_1;
 $list = $tc->list_item($select,$table,$where,$limit);
-$total = mysql_num_rows($list);
 
+if($list) $total = mysql_num_rows($list);
 if($total > 1){
 	$i = 0;
 	while($row = mysql_fetch_array($list)){

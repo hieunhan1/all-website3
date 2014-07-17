@@ -107,6 +107,10 @@ if(@$_GET['danhmuc']){
 </script>
 
 <?php
+if(!$_SESSION['popup']){
+	include_once('blocks/popup.php');
+	$_SESSION['popup'] = 1;
+}
 include_once('blocks/qc2ben.php');
 mysql_close();
 ?>
