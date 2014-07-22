@@ -35,6 +35,20 @@
 					<div class="album_icon_video"></div>
 					<h3>'.$row1['name'].'</h3></a></div>';
 				}
+			}elseif($row['type_id']==2){
+				$qr1 = $tc->menu($row['id'],6);
+				while($row1 = mysql_fetch_array($qr1)){
+					echo '<div class="thuvien_baiviet_item">
+						<a href="'.$row1['url'].'">
+							<div class="thuvien_baiviet_item_img">
+								<img src="'.url_catalog_image.$row1['url_hinh'].'" alt="'.$row1['name'].'" />
+							</div>
+							<div class="thuvien_baiviet_item_img_bg"></div>
+							<h3>'.$row1['name'].'</h3>
+						</a>
+					</div>';
+				}
+				echo '<div style="clear:both; height:20px"></div>';
 			}
 		}
         ?>

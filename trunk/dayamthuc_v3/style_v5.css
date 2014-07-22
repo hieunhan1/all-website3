@@ -156,6 +156,13 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .thuvien_video_item .thuvien_video_item_img img{height:200px; margin:8px 0 0 8px}
 .thuvien_video_item .album_icon_video{width:290px; height:207px; background:url(images/video_icon.png) no-repeat center; position:relative; z-index:3}
 .thuvien_video_item h3{font-size:100%; line-height:20px; text-align:center; padding:0 10px}
+
+.thuvien_baiviet_item{width:205px; height:232px; float:left; margin:0 5px;}
+.thuvien_baiviet_item .thuvien_baiviet_item_img{width:177px; height:208px; overflow:hidden; margin:12px 14px; position:absolute; z-index:1}
+.thuvien_baiviet_item .thuvien_baiviet_item_img img{height:208px;}
+.thuvien_baiviet_item .thuvien_baiviet_item_img_bg{width:205px; height:232px; background:url(images/thuvien-baiviet.png) no-repeat; position:relative; z-index:2}
+.thuvien_baiviet_item h3{height:50px; line-height:25px; font-size:100%; position:relative; text-align:center; z-index:3; bottom:60px;}
+.thuvien_baiviet_item a{color:#F00; text-shadow:1px 1px #000}
 /*end thu vien*/
 
 #left{width:650px; float:left}
@@ -198,7 +205,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #other li{list-style:none; line-height:20px; margin-bottom:10px; padding-left:12px; background:url(images/li.gif) no-repeat left top}
 
 #chuongtrinh{padding:0}
-#chuongtrinh .chuongtrinh_title{height:36px; line-height:36px; text-align:center; font-family:"UTM-Swiss-Condensed"; font-weight:bold; font-size:118%; margin-bottom:20px; background:url(images/bg_chuongtrinh.jpg) no-repeat center}
+#chuongtrinh .chuongtrinh_title{clear:both; height:36px; line-height:36px; text-align:center; font-family:"UTM-Swiss-Condensed"; font-weight:bold; font-size:118%; margin-bottom:20px; background:url(images/bg_chuongtrinh.jpg) no-repeat center}
 #chuongtrinh .chuongtrinh_title a{color:#FF0; text-shadow:2px 2px 3px #000}
 
 #chuongtrinh .chuongtrinh_item{width:445px; height:120px}
