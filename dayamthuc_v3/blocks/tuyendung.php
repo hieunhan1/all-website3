@@ -1,10 +1,10 @@
 <?php
 $qr = $tc->tuyendung_cty($row_detail['tuyendung_cty_id']);
 $row = mysql_fetch_array($qr);
-if($row['email'] != ''){
+/*if($row['email'] != ''){
 	$btn_hoso_1 = '<div class="btn_nop_hs" style="float:right">Nộp hồ sơ ngay</div>';
 	$btn_hoso_2 = '<div class="btn_nop_hs">Nộp hồ sơ ngay</div>';
-}
+}*/
 
 $noilamviec = array('','Tp.HCM','Hà Nội','Huế','Đà Nẵng','Cần Thơ','Đồng Nai','Bình Dương','Khác');
 $noilamviec = $noilamviec[$row_detail['noilamviec']];
