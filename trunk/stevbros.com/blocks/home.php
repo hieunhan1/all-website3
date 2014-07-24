@@ -2,7 +2,7 @@
 include_once('blocks/right.php');
 $view_post = '<div id="left">
 	<div class="item1">
-		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros – Registered Education Provider ID 3807 of Project Management Institute (PMI)</h3></div>
+		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros - Global Registered Education Provider of Project Management Institute (PMI)</h3></div>
 		<iframe src="http://www.youtube.com/embed/iSkm2Prr2WE?origin=http://'.$domain.'&rel=0" frameborder="0" allowfullscreen></iframe>
 		<p>'.$row_config['tel'].'</p>
 	</div>';
