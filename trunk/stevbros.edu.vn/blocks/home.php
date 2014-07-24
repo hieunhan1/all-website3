@@ -2,7 +2,7 @@
 include_once('blocks/right.php');
 $view_post = '<div id="left">
 	<div class="item1">
-		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros – đơn vị chuyên đào tạo Quản Lý Dự Án mã số 3807 của Viện Quản Lý Dự Án Hoa Kỳ (PMI)</h3></div>
+		<div class="title_home" style="background:url(images/icon_1.gif) no-repeat top left"><h3>Stevbros - ủy quyền đào tạo Quản Lý Dự Án toàn cầu của Viện Quản Lý Dự Án Hoa Kỳ (PMI)</h3></div>
 		<iframe src="http://www.youtube.com/embed/iSkm2Prr2WE?origin=http://'.$domain.'&rel=0" frameborder="0" allowfullscreen></iframe>
 		<p>'.$row_config['tel'].'</p>
 	</div>';
