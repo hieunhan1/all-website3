@@ -176,7 +176,7 @@ $orther = "
 CKEDITOR.replace( 'contact_form', {
 	uiColor: '#b5d8ef',
 	toolbar: [
-		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic','Table', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
+		['Source','Maximize','RemoveFormat','Paste','PasteText','PasteFromWord','Bold', 'Italic','Table', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
 	]
 });
 </script>
