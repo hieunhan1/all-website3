@@ -42,18 +42,37 @@
 		$i = 0;
 		while($row = mysql_fetch_array($qr)){
 			$i++;
+			$info_img = '<table border-color="#D4D4D4" border-style="solid" border-width="1px" width="100%">
+				<tr><th colspan="2" align="left">Tóm lược</th></tr>
+				<tr>
+					<td width="50%">
+						<ul>
+							<li>Thể loại: '.$row['theloai'].'</li>
+							<li>Địa điểm: '.$row['diadiem'].'</li>
+							<li>Chủ đầu tư: '.$row['chudautu'].'</li>
+						</ul>
+					</td>
+					<td width="50%">
+						<ul>
+							<li>Chỉ tiêu kinh tế kỉ thuật: '.$row['chitieu'].'</li>
+							<li>Công việc: '.$row['congviec'].'</li>
+							<li>Năm phê duyệt: '.$row['nampheduyet'].'</li>
+						</ul>
+					</td>
+				</tr>
+			</table>';
 			if($i != 1){
 				$str_project_img .= '<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'">
 					<img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" />
-					<div class="info_img">'.$row['info'].'</div>
+					<div class="info_img">'.$info_img.'</div>
 				</div>';
 			}else{
-				$str_project_img .= '<div id="info_img" class="viewpost">'.$row['info'].'</div>
+				$str_project_img .= '<div id="info_img" class="viewpost">'.$info_img.'</div>
 				<div id="view_img"><img src="'.url_project_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
 				<div id="img_name">'.$row['name'].'</div>
 				<div class="thumb_img" name="'.$row['name'].'" url="'.url_project_image.$row['url_hinh'].'">
 					<img src="'.url_project_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" />
-					<div class="info_img">'.$row['info'].'</div>
+					<div class="info_img">'.$info_img.'</div>
 				</div>';
 			}
 		}

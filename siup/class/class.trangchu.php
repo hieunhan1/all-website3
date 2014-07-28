@@ -157,7 +157,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function project_img($id){
-		$qr = "SELECT name,url_hinh,info FROM `web_info_img` WHERE `delete`=0 AND status=1 AND info_id='{$id}' ORDER BY date_update DESC LIMIT 6";
+		$qr = "SELECT * FROM `web_info_img` WHERE `delete`=0 AND status=1 AND info_id='{$id}' ORDER BY date_update DESC LIMIT 6";
 		return mysql_query($qr);
 	}
 	

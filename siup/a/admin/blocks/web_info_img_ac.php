@@ -91,13 +91,55 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
+	//theloai
+	$values = $row_detail['theloai'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Thể loại','theloai','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//diadiem
+	$values = $row_detail['diadiem'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Địa điểm','diadiem','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//chudautu
+	$values = $row_detail['chudautu'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Chủ đầu tư','chudautu','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//chitieu
+	$values = $row_detail['chitieu'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Chỉ tiêu','chitieu','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//congviec
+	$values = $row_detail['congviec'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Công việc','congviec','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
+	//nampheduyet
+	$values = $row_detail['nampheduyet'];
+	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Năm phê duyệt','nampheduyet','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//info
-	$values = $row_detail['info'];
+	/*$values = $row_detail['info'];
 	$properties = ''; //maxlength OTHER (disabled, readonly) 
 	$views = array('Thông tin','info','textarea'); //label id&name class colspan
 	$other = ckeditor_custom('info');
     $form->getProperties('3',$values,$properties,$views,$other);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
 	//id
 	$values = $row_detail['id'];
