@@ -58,7 +58,7 @@ if(@$_GET['danhmuc']){
 		$dt = $_GET['detail'];
 		$include = ob_start();
 		switch($type){
-			case 2 : $qr = $tc->info_detail($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
+			case 2 : $qr = $tc->detail_info($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_detail_image_thumb; include_once('blocks/articles.php'); break;
 			case 3 : $qr = $tc->detail_product($dt); $row_detail = mysql_fetch_array($qr); $image_link = url_products_image_thumb; include_once('blocks/project_detail.php'); break;
 			
 			default: echo '<p style="height:500px"><font color="#FF0000"><b>Could not be found</b></font></p>';

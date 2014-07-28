@@ -27,7 +27,7 @@
             	<div id="view_sosanh">Xem so sánh</div>
             </div>
         </div>
-        <div id="thongtin_sp">
+        <!--<div id="thongtin_sp">
 			<?php echo '<table width="100%" border="0" cellpadding="0" cellspacing="0">
             	<tr><td width="95">CPU:</td><td>'.$row_detail['cpu'].'</td></tr>
             	<tr><td>RAM:</td><td>'.$row_detail['ram'].'</td></tr>
@@ -40,7 +40,7 @@
             	<tr><td>Bộ nhớ trong:</td><td>'.$row_detail['bonhotrong'].'</td></tr>
             	<tr><td>Thẻ nhớ:</td><td>'.$row_detail['thenho'].'</td></tr>
             </table>';?>
-        </div>
+        </div>-->
     </div>
     <div style="clear:both; height:30px"></div>
     <div id="product_content" class="view_post">
