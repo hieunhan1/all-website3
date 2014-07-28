@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 //date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -45,7 +45,7 @@ h2, h3, h4, h5, h6 {font-size:100%}
 <body>
 
 	<div style="margin-bottom:20px">
-    	<img src="images/logo.png" alt="SIUP" style="float:left" />
+    	<img src="images/logo.png" alt="SISP" style="float:left" />
     	<div style="width:auto; float:right; margin-top:40px"><a href="javascript:window.print();">In trang</a> (Ctrl + P)</div>
         <div style="clear:both; height:1px"></div>
     </div>

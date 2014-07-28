@@ -58,7 +58,7 @@ hr{border: solid 2px #F3A972}
 .message{color:#00F; padding:10px 0px; font-weight:bold}
 .error{color:#F00; padding:10px 0px; font-weight:bold}
 
-.avarta{clear:both; height:80px; overflow:hidden}
+.avarta{clear:both; width:350px; height:80px; overflow:hidden}
 .avarta img{height:78px; border:solid 1px #CCC}
 
 #search{background-color:#5ECBFF; padding:4px 10px; margin-bottom:5px}
