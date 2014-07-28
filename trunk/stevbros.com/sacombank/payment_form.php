@@ -9,7 +9,7 @@
 
 <form id="payment_form" action="payment_confirmation.php" method="post">
 
-    <input type="hidden" name="access_key" value="11b6059c386e35c69c4af69dd3dd79a8">
+    <input type="hidden" name="access_key" value="ef5c683f14613136aa2498f79d39a5c4">
     <input type="hidden" name="profile_id" value="stevbro">
     <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
     <input type="hidden" name="signed_field_names"
