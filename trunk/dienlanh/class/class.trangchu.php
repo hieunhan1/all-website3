@@ -77,7 +77,7 @@ class trangchu extends db {
 		return $view;
 	}
 	function detail_info($alias){
-		$qr = "SELECT id,name,name_rewrite,url_hinh,description,content,date_update,metaKeyword FROM web_info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
+		$qr = "SELECT id,name,name_rewrite,url_hinh,metaDescription,content,date_update,metaKeyword FROM web_info WHERE `delete`=0 AND status=1 AND name_rewrite='{$alias}'";
 		return mysql_query($qr);
 	}
 	function detail_product($alias){

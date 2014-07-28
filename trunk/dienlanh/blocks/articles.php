@@ -1,12 +1,12 @@
 <?php
-$qr = $tc->other_news($idMenu,$row_detail['id']);
+/*$qr = $tc->other_news($idMenu,$row_detail['id']);
 if(mysql_num_rows($qr) > 0){
 	while($row = mysql_fetch_array($qr)){
 		$other_news .= '<div class="news_other"><a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html">'.$row['name'].'</a></div>';
 	}
 	$other_news = '<div style="clear:both; height:30px; margin-top:30px; border-top:solid 1px #CCC"></div>
 	<div id="title_other">Tin tức khác</div>'.$other_news.'<div style="clear:both; height:30px"></div>';
-}
+}*/
 
 echo '<div id="navigator"><a href=""><img src="images/home.png" alt="Thiên Long mobile" /></a>'.$tc->navigator($row_menu_one['id']).'</div>
 <div id="home_product">';
