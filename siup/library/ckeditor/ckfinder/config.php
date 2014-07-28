@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/all/siup/public/';
+$baseUrl = '/public/';
 
 $baseDir = resolveUrl($baseUrl);
 
