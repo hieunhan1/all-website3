@@ -116,6 +116,12 @@ if(@$_POST['price']) $value = $_POST['price']; else $value = $detail['price'];
 $form->getProperties('Giá', 'price', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
 
+//courseid
+$other = '<p style="color:#666; font-style:italic">ID khóa học trên module học online</p>';
+if(@$_POST['courseid']) $value = $_POST['courseid']; else $value = $detail['courseid'];
+$form->getProperties('Course ID', 'courseid', 1, 'input_medium', $value, 3, $other);
+echo $form->DisplayProperties();
+
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 
