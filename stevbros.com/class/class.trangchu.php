@@ -165,6 +165,49 @@ class trangchu extends db {
 		$qr = "SELECT name,content,date_create FROM info_comment WHERE `delete`=0 AND status=1 AND info_alias='{$alias}' ORDER BY date_update DESC";
 		return mysql_query($qr);
 	}
+	
+	/*account auto module*/
+	function connect_module($username,$password,$dbname){
+		$servername = 'localhost';
+		$ketnoi	= mysql_connect($servername,$username,$password);
+		$ketnoi	= mysql_select_db($dbname);
+		$ketnoi	= mysql_query("set names 'utf8'");
+		return $ketnoi;
+	}
+	function checks_user_module($username){
+		$sql = "SELECT id FROM mdl_user WHERE username='{$username}'";
+		return mysql_query($sql);
+	}
+	function insert_user_module($username, $firstname, $lastname, $email, $city, $country){
+		$password = '6f8bc7721736e55d39dfbfb33150b065'; //Pmp&2014&
+		$confirmed = '1';
+		$mnethostid = '1';
+		$descriptionformat = '1';
+		$time = time();
+		$sql = "INSERT INTO mdl_user (`confirmed`, `mnethostid`, `username`, `password`, `firstname`, `lastname`, `email`, `city`, `country`, `descriptionformat`, `timecreated`, `timemodified`) VALUES ('{$confirmed}', '{$mnethostid}', '{$username}', '{$password}', '{$firstname}', '{$lastname}', '{$email}', '{$city}', '{$country}', '{$descriptionformat}', '{$time}', '{$time}' )";
+		mysql_query($sql);
+		return mysql_insert_id();
+	}
+	function id_enrol_module($courseid){
+		$sql = "SELECT id FROM mdl_enrol WHERE enrol='manual' AND courseid='{$courseid}'";
+		$qr = mysql_query($sql);
+		if(mysql_num_rows($qr)==1){
+			$row = mysql_fetch_array($qr);
+			return $row['id'];
+		}else return false;
+	}
+	function check_user_enrolments($enrolid, $userid){
+		$sql = "SELECT id FROM mdl_user_enrolments WHERE enrolid='{$enrolid}' AND userid='{$userid}' ";
+		$qr = mysql_query($sql);
+		return mysql_num_rows($qr);
+	}
+	function insert_user_enrolments($enrolid, $userid){
+		$time = time();
+		$sql = "INSERT INTO mdl_user_enrolments (`enrolid`,`userid`,`timestart`,`timeend`,`modifierid`,`timecreated`,`timemodified`) VALUES ('{$enrolid}', '{$userid}', '{$time}', '0', '2', '{$time}', '{$time}') ";
+		mysql_query($sql);
+	}
+	/*end account auto module*/
+	
 	function datetime($datetime){
 		$date = date("d F Y",strtotime($datetime));
 		$date = explode(' ',$date);
