@@ -122,7 +122,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #project_deatil .info_img{display:none}
 #project_deatil #info_img{border:solid 1px #CCC; margin-bottom:20px; padding:0 10px 10px 10px}
 #project_deatil #info_img li{list-style:none; margin-left:30px; padding-left:15px; background:url(images/li.png) no-repeat left; background-position:0 7px}
-#project_deatil #view_img{height:auto; text-align:center; margin-bottom:5px}
+#project_deatil #view_img{height:auto; overflow:hidden; text-align:center; margin-bottom:5px; border:solid 1px #ccc}
 #project_deatil #view_img img{width:660px}
 #project_deatil #img_name{clear:both; text-align:center; font-style:italic; color:#666; margin-bottom:15px}
 #project_deatil .thumb_img{width:100px; height:60px; float:left; overflow:hidden; margin:0 3px; border:solid 2px #FFF; cursor:pointer}
