@@ -78,8 +78,8 @@ if( $total==0 ){
 		echo 'Không có khóa học này';
 	}
 }elseif( $total==1 ){
-	$row = mysql_fetch_array($check_user);
-	$userid = $row['id'];
+	$row_check_user = mysql_fetch_array($check_user);
+	$userid = $row_check_user['id'];
 	$enrolid = id_enrol_module($courseid);
 	if($enrolid!=false){
 		if( check_user_enrolments($enrolid, $userid)==0 ) insert_user_enrolments($enrolid, $userid);
