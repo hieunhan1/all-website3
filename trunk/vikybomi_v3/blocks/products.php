@@ -50,8 +50,8 @@ while($row = mysql_fetch_array($qr)){
 	</div>';
 }
 
-echo '<div id="left">'.$str_left.'</div>
-<div id="right">'.$str_right.'
+echo '<div id="right">'.$str_right.'
 	<hr /><div style="clear:both; height:10px"></div>
 	<div class="other_product">Sản phẩm cùng loại</div>'.$item_product.'
-</div>';
+</div>
+<div id="left">'.$str_left.'</div>';

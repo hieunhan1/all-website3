@@ -54,5 +54,5 @@ if($total > 0){
 	$str_right .= "<div id=\"phantrang\">{$phantrang}</div>";
 }else $str_right .= '<div style="padding:0 50px">update..</div>';
 
-echo '<div id="left">'.$str_left.'</div>
-<div id="right">'.$str_right.'</div>';
+echo '<div id="right">'.$str_right.'</div>
+<div id="left">'.$str_left.'</div>';

@@ -124,7 +124,15 @@ if(@$_GET['danhmuc']){
 </head>
 
 <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-30563987-1', 'dayamthuc.vn');
+  ga('send', 'pageview');
+</script>
 <div id="top">
 	<div class="wrapper">
     	<li><a href="/?lang=en"><img src="images/en.gif" alt="NETSPACE EN" /> English</a></li>
@@ -284,16 +292,5 @@ _atrk_opts = { atrk_acct:"Z3RSi1a8Dy00W2", domain:"dayamthuc.vn",dynamic: true};
 </script>
 <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=Z3RSi1a8Dy00W2" style="display:none" height="1" width="1" alt="" /></noscript>
 <!-- End Alexa Certify Javascript -->  
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-30563987-1', 'dayamthuc.vn');
-  ga('send', 'pageview');
-
-</script>
 </body>
 </html>
