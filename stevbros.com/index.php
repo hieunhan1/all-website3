@@ -63,15 +63,6 @@ if($danhmuc!=''){
 </head>
 
 <body>
-
-<div id="wrapper">
-	<?php
-    include_once('blocks/header.php');
-	include_once('blocks/menu.php');
-	echo $view_slider.'<div id="content">'.$view_post.'<div style="clear:both; height:10px"></div></div>';
-	?>
-</div>
-<?php include_once('blocks/footer.php');?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -80,7 +71,14 @@ if($danhmuc!=''){
 
   ga('create', 'UA-42222366-1', 'stevbros.com');
   ga('send', 'pageview');
-
 </script>
+<div id="wrapper">
+	<?php
+    include_once('blocks/header.php');
+	include_once('blocks/menu.php');
+	echo $view_slider.'<div id="content">'.$view_post.'<div style="clear:both; height:10px"></div></div>';
+	?>
+</div>
+<?php include_once('blocks/footer.php');?>
 </body>
 </html>
