@@ -40,17 +40,21 @@ if(preg_match("/31/i",$row_detail['menu_id'])){
 	include_once('blocks/nhanxet.php');
 	$other = 'Các Chuyên Gia khác';
 }
+if(preg_match("/32/i",$row_detail['menu_id'])){
+	$other = 'Ý kiến các khách hàng khác';
+}
 
-$view_post .= '</div>';
-$view_post .= $view_right;
 $baiviet = $tc->baivietkhac($idMenu,$row_detail['id']);
 if(mysql_num_rows($baiviet)>1){
-	$view_post .= '<hr /><div id="baivietkhac"><div style="font-weight:bold; font-size:18px; margin-bottom:10px">'.$other.'</div>';
+	$view_post .= '<div id="baivietkhac"><div style="font-weight:bold; font-size:18px; margin-bottom:10px">'.$other.'</div>';
 	while($row = mysql_fetch_array($baiviet)){
 		$view_post .= '<li><a href="'.$row_menu_one['url'].$row['name_rewrite'].'.html" title="'.$row['name'].'">'.$row['name'].'</a></li>';
 	}
 	$view_post .= '</div>';
 }
+
+$view_post .= '</div>';
+$view_post .= $view_right;
 
 if($row_detail['id']==2){
 	$view_post .= '<div id="study"><div class="title_home" style="background:url(images/icon_4.gif) no-repeat top left"><h3>Đối tác</h3></div></div>';

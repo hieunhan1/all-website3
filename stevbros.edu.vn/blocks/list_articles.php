@@ -14,9 +14,11 @@ if($total > 1){
 	$view_post .= '<div id="left">';
 	while($row = mysql_fetch_array($list)){
 		if(preg_match("/15/i",$row['menu_id'])) $date = '<div class="date">'.$tc->datetime($row['date_update']).'</div>'; else $date = '';
+		if($row['url_hinh']!='') $url_img = '<img src="'.url_detail_thumb_image.$row['url_hinh'].'" alt="'.$row['name'].'" />'; else $url_img = '';
 		$view_post .= '<div class="item_info">'.$date.'
 		<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html" title="'.$row['name'].'">
-		<img src="'.url_detail_thumb_image.$row['url_hinh'].'" alt="'.$row['name'].'" /><h3>'.$row['name'].'</h3></a><h6>'.$row['description'].'</h6></div>';
+		'.$url_img.'<h3>'.$row['name'].'</h3></a>
+		<h6>'.$row['description'].'</h6></div>';
 	}
 	mysql_free_result($list);
 	
