@@ -1,17 +1,22 @@
 <?php
 include_once('blocks/right.php');
+
 $view_post .= $tc->navigator($row_menu_one['url'],$row_menu_one['name'],$row_menu_one['title'],'h3');
+
 $view_post .= '<div id="left">';
-if(preg_match("/15/i",$row_detail['menu_id'])) $date = '<div id="datetime">'.date('d/m/Y H:i',strtotime($row_detail['date_create'])).'</div>'; else $date = '';
-$view_post .= '<div id="view_post">
-	<h1>'.$row_detail['name'].'</h1>'.$date.$row_detail['content'].'
-</div><div style="clear:both; height:30px"></div>';
+if(preg_match("/15/i",$row_detail['menu_id']))
+	$date = '<div id="datetime">'.date('d/m/Y H:i',strtotime($row_detail['date_create'])).'</div>';
+else $date = '';
+
+$view_post .= '<div id="view_post"><h1>'.$row_detail['name'].'</h1>'.$date.$row_detail['content'].'</div><div style="clear:both; height:30px"></div>';
+	
 if(preg_match("/15/i",$row_detail['menu_id'])){
 	include_once('blocks/nhanxet.php');
 	$other = 'Other posts';
+}elseif(preg_match("/31/i",$row_detail['menu_id'])){
+	$other = 'Other testimonials';
 }else $other = 'Other courses';
-$view_post .= '</div>';
-$view_post .= $view_right;
+
 $baiviet = $tc->baivietkhac($idMenu,$row_detail['id']);
 if(mysql_num_rows($baiviet)>1){
 	$view_post .= '<hr /><div id="baivietkhac"><div style="font-weight:bold; font-size:18px; margin-bottom:10px">'.$other.'</div>';
@@ -20,6 +25,9 @@ if(mysql_num_rows($baiviet)>1){
 	}
 	$view_post .= '</div>';
 }
+
+$view_post .= '</div>';
+$view_post .= $view_right;
 
 if($row_detail['id']==2){
 	$view_post .= '<div id="study"><div class="title_home" style="background:url(images/icon_4.gif) no-repeat top left"><h3>Partners</h3></div></div>';

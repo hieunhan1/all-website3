@@ -1,4 +1,5 @@
 <?php session_start(); ob_start();
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 $idUser = $_SESSION["idUser"];
 $idGroup = $_SESSION["idGroup"];
 $user = $_SESSION["Username"];
@@ -78,8 +79,8 @@ function SetFileField(fileUrl, data){
 		$m = explode('_ac', $p); $page = $m[0];
 		$navigator = $qt->Navigator($p);
 		$row_navigator = mysql_fetch_array($navigator);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, $for_view);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, $for_action);
 		
 		if((count($m)==1 && sizeof($for_view[0])==1) ||(count($m)==2 && sizeof($for_action[0])==1) || (!@$p) || $p=='thongtin'){
 			echo "<div class='title'>{$row_navigator[name]} ".column_general($p)."&nbsp;</div>";

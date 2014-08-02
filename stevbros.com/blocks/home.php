@@ -23,7 +23,9 @@ $home_info = $tc->slider_banner(4);
 while($row_home = mysql_fetch_array($home_info)){
 	$view_post .= '<div><a href="'.$row_home['link'].'" title="'.$row_home['name'].'"><h4>'.$row_home['name'].'</h4><img src="'.url_slider_image.$row_home['url_hinh'].'" alt="'.$row_home['name'].'" /></a></div>';
 }
-$view_post .= '</div></div></div>';// end left
+$view_post .= '</div></div>';
+$view_post .= '</div>';// end left
+
 $view_post .= $view_right;
 
 $view_post .= '<div id="study"><div class="title_home" style="background:url(images/icon_4.gif) no-repeat top left"><h3>Study in Singapore/USA</h3></div>

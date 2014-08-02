@@ -1,9 +1,9 @@
 <?php 
 	class db{
 		private $servername 	= 	"localhost";
-		private $username 		= 	"bryansg3_stev";
-		private $password 		= 	"bryansg3_stev123";
-		private $dbname			=	"bryansg3_stev";
+		private $username 		= 	"root";
+		private $password 		= 	"root";
+		private $dbname			=	"stevbros_com";
 		
 		function __construct(){
 			$ketnoi	= mysql_connect($this->servername,$this->username,$this->password);

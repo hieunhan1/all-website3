@@ -51,6 +51,7 @@ class trangchu extends db {
 	}
 	function getSubmenu($level,$position){
 		$sql = $this->menu($level,$position);
+		$view = '';
 		if(mysql_num_rows($sql) > 0){
 			$view = '<ul>';
 			while($row = mysql_fetch_array($sql)){
