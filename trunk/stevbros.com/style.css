@@ -8,7 +8,7 @@ a:hover{color:#0d6086; text-decoration:underline}
 
 #header{height:140px}
 #header #item1 img{width:120px; float:left; padding-top:10px}
-#header #item2{width:400px; height:25px; float:left; margin-left:120px; background-color:#619bb6; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
+#header #item2{width:auto; height:25px; float:left; margin-left:100px; background-color:#619bb6; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
 #header #item2 #top{width:auto; float:left; line-height:25px; padding-left:10px}
 #header #item2 #top a{color:#EFEFEF; padding:0 10px; border-left:solid 1px #E6E6E6}
 #header #item2 #top a:hover{color:#FFF}
@@ -55,6 +55,7 @@ a:hover{color:#0d6086; text-decoration:underline}
 
 #content #right .item{clear:both; margin-bottom:20px}
 #content #right .item h3{color:#494949; font-size:115%; font-weight:100; line-height:35px; padding-left:20px; background-color:#f5f5f5; border-top:solid 1px #64a5c4}
+
 
 #study{clear:both; padding:30px 0; border-bottom:solid 1px #E6E6E6}
 #study p{line-height:22px; padding-left:45px}

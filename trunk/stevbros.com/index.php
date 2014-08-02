@@ -2,11 +2,11 @@
 session_start();
 ob_start();
 //date_default_timezone_set('Asia/Ho_Chi_Minh');
-//error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 include_once('config.php');
 
 $url = $_SERVER['REQUEST_URI'];
-//$url = str_replace('all/stevbros.com/','',$url); /*link test*/
+$url = str_replace('all_v3/stevbros.com/','',$url); /*link test*/
 $url = explode('/',$url);
 $danhmuc = $url[1];
 $dt = $url[2];
