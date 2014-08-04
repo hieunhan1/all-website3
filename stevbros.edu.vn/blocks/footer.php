@@ -25,7 +25,7 @@
 			?>
         </div>
     	<div class="col_foo">
-        	<h5>Danh mục</h5>
+        	<h5>Blog</h5>
             <div class="item_f1">
             <?php
             $menu_foo = $tc->menu(15,5);
