@@ -46,10 +46,11 @@ function changeTitle($str){
 	$str =str_replace("+",'',$str);
 	$str =str_replace("  ",' ',$str);
 	$str = stripUnicode($str);
-	$str = mb_convert_case($str,MB_CASE_TITLE,'utf-8');
+	$str = strtolower($str);
+	//$str = mb_convert_case($str,MB_CASE_TITLE,'utf-8');
 	
 	// MB_CASE_UPPER / MB_CASE_TITLE / MB_CASE_LOWER
-	//$str = str_replace(' ','-',$str);
+	$str = str_replace(' ','-',$str);
 	return $str;
 }
 
