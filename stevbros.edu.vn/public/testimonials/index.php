@@ -33,19 +33,18 @@ session_start();
 			include_once('../../class/class.trangchu.php');
 			$tc = new trangchu();
 		
-			$name = mysql_real_escape_string($_POST['name']);
-			$name = str_replace("\'","&#39;",$name);
-			$title = mysql_real_escape_string($_POST['title']);
-			$title = str_replace("\'","&#39;",$title);
-			$content = mysql_real_escape_string($_POST['content']);
-			$content = str_replace("\'","&#39;",$content);
+			$name = str_replace("'","&#39;",$_POST['name']);
+			$title = str_replace("'","&#39;",$_POST['title']);
+			$company = str_replace("'","&#39;",$_POST['company']);
+			$content = str_replace("'","&#39;",$_POST['content']);
 			$name_alias = changeTitle("{$_POST['name']} {$_POST['title']}");
 			$date = date('Y-m-d H:i:s');
-			
-			$sql = "INSERT INTO `info` (`name`,`name_rewrite`,`content`,`date_create`,`status`,`metaKeyword`,`lang`,`menu_id`,`user_create`,`delete`) VALUES ('{$name} - {$title}','{$name_alias}','{$content}','{$date}','0','{$name},{$title}','vi',',32,','khachhang','0') ";
-			if(mysql_query($sql)){
-				$_SESSION['check_testimonials'] = 1;
-				echo $message;
+			if($name!='' && $title!='' && $content!=''){
+				$sql = "INSERT INTO `info` (`name`, `name_rewrite`, `description`, `content`, `date_create`, `status`, `metaKeyword`, `lang`, `menu_id`, `user_create`, `delete`) VALUES ('{$name} - {$title}', '{$name_alias}', '{$company}', '{$content}', '{$date}', '0', '{$name},{$title}', 'vi', ',32,', 'khachhang', '0') ";
+				if(mysql_query($sql)){
+					$_SESSION['check_testimonials'] = 1;
+					echo $message;
+				}
 			}
 		}else{
 		?>
@@ -55,15 +54,19 @@ session_start();
 				  <td colspan="2">Stevbros là ủy quyền đào tạo toàn cầu của Viện Quản Lý Dự Án Hoa Kỳ PMI (Global PMI R.E.P)</td></tr>
 				<tr>
 					<td width="70" align="right">Tên</td>
-					<td><input type="text" name="name" value="" class="txt" /></td>
+					<td><input type="text" name="name" value="<?php echo $_POST['name'];?>" class="txt" /></td>
 				</tr>
 				<tr>
 					<td width="70" align="right">Chức vụ</td>
-					<td><input type="text" name="title" value="" class="txt" /></td>
+					<td><input type="text" name="title" value="<?php echo $_POST['title'];?>" class="txt" /></td>
+				</tr>
+				<tr>
+					<td width="70" align="right">Công ty</td>
+					<td><input type="text" name="company" value="<?php echo $_POST['company'];?>" class="txt" /></td>
 				</tr>
 				<tr>
 					<td align="right" valign="top">Nội dung</td>
-					<td><textarea name="content" class="txtarea"></textarea></td>
+					<td><textarea name="content" class="txtarea"><?php echo $_POST['content'];?></textarea></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
