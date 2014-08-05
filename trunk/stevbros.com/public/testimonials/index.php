@@ -39,13 +39,19 @@ session_start();
 			$title = str_replace("\'","&#39;",$title);
 			$content = mysql_real_escape_string($_POST['content']);
 			$content = str_replace("\'","&#39;",$content);
+			$company = mysql_real_escape_string($_POST['company']);
+			$company = str_replace("\'","&#39;",$company);
+			$country = mysql_real_escape_string($_POST['country']);
+			$country = str_replace("\'","&#39;",$country);
 			$name_alias = changeTitle("{$_POST['name']} {$_POST['title']}");
 			$date = date('Y-m-d H:i:s');
 			
-			$sql = "INSERT INTO `info` (`name`,`name_rewrite`,`content`,`date_create`,`status`,`metaKeyword`,`lang`,`menu_id`,`user_create`,`delete`) VALUES ('{$name} - {$title}','{$name_alias}','{$content}','{$date}','0','{$name},{$title}','vi',',31,','khachhang','0') ";
-			if(mysql_query($sql)){
-				$_SESSION['check_testimonials'] = 1;
-				echo $message;
+			if($name!='' && $title!='' && $content!=''){
+				$sql = "INSERT INTO `info` (`name`, `name_rewrite`, `description`, `content`, `date_create`, `status`, `metaKeyword`, `lang`, `menu_id`, `user_create`, `delete`) VALUES ('{$name} - {$title}', '{$name_alias}', '{$company} - {$country}', '{$content}', '{$date}', '0', '{$name}, {$title}', 'vi', ',31,', 'khachhang', '0') ";
+				if(mysql_query($sql)){
+					$_SESSION['check_testimonials'] = 1;
+					echo $message;
+				}
 			}
 		}else{
 		?>
@@ -60,6 +66,14 @@ session_start();
 				<tr>
 					<td width="70" align="right">Title</td>
 					<td><input type="text" name="title" value="" class="txt" /></td>
+				</tr>
+				<tr>
+					<td width="70" align="right">Company</td>
+					<td><input type="text" name="company" value="" class="txt" /></td>
+				</tr>
+				<tr>
+					<td width="70" align="right">Country</td>
+					<td><input type="text" name="country" value="" class="txt" /></td>
 				</tr>
 				<tr>
 					<td align="right" valign="top">Content</td>
