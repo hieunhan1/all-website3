@@ -1,17 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-<style type="text/css">
-
-#header{height:150px}
-#header img{float:left}
-
-</style>
-</head>
-<body>
-
 <?php
 function connect_module($username,$password,$dbname){
 	$servername = 'localhost';
@@ -53,15 +39,15 @@ function insert_user_enrolments($enrolid, $userid){
 	mysql_query($sql);
 }
 
-$courseid = 2;
-$username = 'nhan1@gmail.com';
-$firstname = 'Nhan';
-$lastname = 'Tran';
-$email = 'nhan1@gmail.com';
-$city = 'SG';
-$country = 'VN';
+$courseid = $row['courseid'];
+$username = $row['email'];
+$firstname = $row['name'];
+$lastname = $row['last_name'];
+$email = $row['email'];
+$city = $row['address_city'];
+$country = $row['country'];
 
-$connect = connect_module('bryansg3_mdln1','F6LNwD66s5wsU2','bryansg3_mdln1');
+connect_module('bryansg3_mdln1','F6LNwD66s5wsU2','bryansg3_mdln1');/*connect module*/
 $check_user = checks_user_module($username);
 $total = mysql_num_rows($check_user);
 if( $total==0 ){
@@ -69,31 +55,22 @@ if( $total==0 ){
 	$enrolid = id_enrol_module($courseid);
 	if($enrolid!=false){
 		insert_user_enrolments($enrolid, $userid);
+		$account_auto = 1;
 	}else{
-		echo 'Không có khóa học này';
+		$account_auto = 'Không có khóa học này';
 	}
 }elseif( $total==1 ){
 	$row_check_user = mysql_fetch_array($check_user);
 	$userid = $row_check_user['id'];
 	$enrolid = id_enrol_module($courseid);
 	if($enrolid!=false){
-		if( check_user_enrolments($enrolid, $userid)==0 ) insert_user_enrolments($enrolid, $userid);
-		else echo 'Bạn đã học khóa này';
-	}else{
-		echo 'Không có khóa học này';
-	}
-}else return false;
+		if( check_user_enrolments($enrolid, $userid)==0 ){
+			insert_user_enrolments($enrolid, $userid);
+			$account_auto = 1;
+		}else $account_auto = 1;//'Bạn đã học khóa này';
+	}else $account_auto = 'Không có khóa học này';
+}else $account_auto = 0;
 
 $connect = mysql_close();
-
+connect_module('bryansg3_stev','bryansg3_stev123','bryansg3_stev');/*connect module*/
 ?>
-
-<div style="width:800px; margin:auto">
-    <div id="header">
-        <img src="http://www.stevbros.com/images/logo_stevbros.png" alt="stevbros" />
-        <img src="http://www.stevbros.com/images/logo_pmi.png" alt="pmi" style="margin:12px 0 0 50px" />
-    </div>
-</div>
-
-</body>
-</html>
