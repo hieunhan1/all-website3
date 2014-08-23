@@ -70,7 +70,7 @@ echo $date_create;
 echo $user_login;
 
 //Trạng thái status
-$value = array(1 => 'Hiện', 0 => 'Ẩn');
+$value = array(1 => 'Đã gửi mail', 0 => 'Chưa gửi mail');
 if($_POST['status'] != '') $check = $_POST['status'];
 else if($detail['status'] != '') $check = $detail['status'];
 else $check = 1; //giá trị mặc định
