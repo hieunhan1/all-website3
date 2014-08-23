@@ -52,27 +52,28 @@ if($dt==''){
 		</div></div>';
 	}
 }else{
-	$qr = mysql_query("SELECT thanhtoan_khachhang_sacombank.*,ma_kh,courseid
+	$qr = mysql_query("SELECT thanhtoan_khachhang_sacombank.*,ma_kh,courseid,timeend,auto_course
 	FROM thanhtoan_khachhang_sacombank,thanhtoan_sanpham
 	WHERE thanhtoan_khachhang_sacombank.id='{$dt}' AND khoahoc_id=thanhtoan_sanpham.id" );
 	if(mysql_num_rows($qr)==1){
 		$row = mysql_fetch_array($qr);
 		$navigator = $tc->navigator($row_menu_one['url'],$row_menu_one['name'],$row_menu_one['title'],'h3');
 		
-		//include_once('account_auto.php');
+		if($row['auto_course']==1){
+			include_once('account_auto.php');
+		}
 		if($account_auto==1){
 			$message_account = '<p style="line-height:22px; margin:10px 0">You can access Stevbros&#39; online training system and start your study as soon as you can.</p>
 		<p style="margin-left:30px">
-			Stevbros&#39; online training system: <b><a href="http://online.stevbros.com">http://online.stevbros.com</a></b><br />
-			Username: <b>'.$row['email'].'</b><br />
-			Password: <b>Pmp&2014&</b></p>
+			Stevbros&#39; online training system: <b style="font-size:115%"><a href="http://online.stevbros.com">http://online.stevbros.com</a></b><br />
+			Username: <b style="font-size:115%">'.$row['email'].'</b><br />
+			Password: <b style="font-size:115%">Pdu&2014&</b></p>
 		<p style="line-height:22px; margin:10px 0">You will earn PDUs right after you finish all questions for review with no less than 50% correct answers. All questions for review and all lessons can be accessed many times.
 After you finish all questions for review with no less than 50% correct answers, <b style="color:#EA5145">the certificate of completion will be automatically available for download</b> at the last part of this training course. You will also see detailed instruction to report PDUs into PMI&#39;s CCRS at the last part of this training course.</p>';
 		}else{
 			$message_account = '<p style="line-height:22px; margin:10px 0">For customer enrolling online course, Stevbros will email you username, password, and guideline to access Stevbros’s online training system within 24 hours. For customers enrolling public course, Stevbros will also contact you for training venue and training materials within 24 hours.</p>';
 		}
-		$data = '<h1>Payment transaction was successful</h1>
-		<p style="line-height:22px; margin:10px 0">Dear '.$row['name'].' '.$row['last_name'].'</p>
+		$data = '<p style="line-height:22px; margin:10px 0">Dear '.$row['name'].' '.$row['last_name'].'</p>
 		<p style="line-height:22px; margin:10px 0">Greetings from Stevbros Training and Consultancy - PMI® Registered Education Provider ID 3807.</p>
 		<p style="line-height:22px; margin:10px 0">Thank you very much for your interest in Stevbros’ training courses.</p>
 		<p style="line-height:22px; margin:10px 0">Please be informed that your enrollment is successful and your payment is well received. The detailed information is as follow:</p>
@@ -94,9 +95,9 @@ After you finish all questions for review with no less than 50% correct answers,
 		<p>If you need information of cancelation and refunds, please access this link: <a href="http://www.stevbros.com/help/help-customer-service.html">click here</a></p>
 		<p>This email is sent automatically. Please do not reply. Contact us at <a href="mailto:support@stevbros.com">support@stevbros.com</a> for further information</p>';
 		
-		$view_post .= '<div id="left"><div id="view_post">'.$data.'</div></div>';
+		$view_post .= '<div id="left"><div id="view_post"><h1>Payment transaction was successful</h1>'.$data.'</div></div>';
 		
-		if($row['status']==0){
+		if($row['status']=='0'){
 			$name_kh = $row['name'];
 			$email_kh = $row['email'];
 			$content = '<div style="line-height:22px; color:#666">'.$data.'</div>';
