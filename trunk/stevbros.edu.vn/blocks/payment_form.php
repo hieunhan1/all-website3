@@ -111,7 +111,7 @@ if(@$_POST['createOrder'])
 		setcookie('error_thanhtoan',$result[1],$expire_date,"/","");
 		
 		$error = $result[0];
-		$link_thanhtoan = $result[2];
+		echo $link_thanhtoan = $result[2].'1111111111111';
 		$tc->insert_khachhang($mTransactionID,$name,$custGender,$email,$dienthoai,$clientIP,'',$error,$ma_nganhang,$row_detail['id']);
 		if($error==1) header("location:".$link_thanhtoan);
 		else header("location:http://{$domain}/payment-error/{$error}.html");
