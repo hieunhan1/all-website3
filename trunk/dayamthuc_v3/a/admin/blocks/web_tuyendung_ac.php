@@ -118,7 +118,8 @@ echo '<form name="form_action" method="post" action="">
 	$arr[] = array('id'=>5, 'name'=>'Cần Thơ');
 	$arr[] = array('id'=>6, 'name'=>'Đồng Nai');
 	$arr[] = array('id'=>7, 'name'=>'Bình Dương');
-	$arr[] = array('id'=>10, 'name'=>'Khác');
+	$arr[] = array('id'=>8, 'name'=>'Nước ngoài');
+	$arr[] = array('id'=>9, 'name'=>'Khác');
 	$properties = $row_detail['noilamviec']; //default check
 	$views = array('Nơi làm việc','noilamviec','input_medium'); //label id&name class
     $form->getProperties('5',$arr,$properties,$views);

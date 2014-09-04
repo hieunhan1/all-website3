@@ -149,7 +149,7 @@ $(document).ready(function(){
 			$.post("ajax.php",{gui_thongtin:id_nv,id_dk:id_dk},function(data){
 				if(data != '0'){
 					$("#status_2").attr("checked", true);
-					$("#ajax_gui_thongtin").html('Gửi thành công.');
+					$("#ajax_gui_thongtin").html('Gửi thành công.<br />' + data);
 				}else alert('Lỗi. Vui lòng thử lại');
 			});
 		}else{
@@ -168,7 +168,7 @@ $(document).ready(function(){
 			$.post("ajax.php",{gui_lienhe:id_nv,id_dk:id_dk},function(data){
 				if(data != '0'){
 					$("#status_2").attr("checked", true);
-					$("#ajax_gui_thongtin").html('Gửi thành công.');
+					$("#ajax_gui_thongtin").html('Gửi thành công.<br />' + data);
 				}else alert('Lỗi. Vui lòng thử lại');
 			});
 		}else{
