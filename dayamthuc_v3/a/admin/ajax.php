@@ -78,7 +78,7 @@ if(@$_SESSION["username_admin"]) {
 		include_once('../../sendmail_smtp/send_dangky.php');
 		
 		if( mysql_query("UPDATE web_dangky_nhanvien SET date_update='".date('Y-m-d H:i:s')."' WHERE `delete`=0 AND id='{$id_nv}' ") && mysql_query("UPDATE web_dangky_tructuyen SET `status`=2,nhanvien_lienhe='{$id_nv}' WHERE `delete`=0 AND id='{$id_dk}' ") ){
-			echo '1';
+			return true;
 		}else echo '0';
 	}
 	
@@ -147,5 +147,9 @@ if(@$_SESSION["username_admin"]) {
 		</p>';
 		
 		include_once('../../sendmail_smtp/send_nhatuyendung.php');
+	}
+	
+	if(isset($_GET['thongke'])){
+		include_once('thongke.php');
 	}
 }
