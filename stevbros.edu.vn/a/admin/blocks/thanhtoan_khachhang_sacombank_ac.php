@@ -150,7 +150,7 @@ echo "<tr style='background:#b0b0b0'>
 	</td>
 </tr>
 
-<tr><td colspan='2'><a href='http://www.stevbros.com/payment-info/{$detail['id']}' target='_bank'>Xem thông báo đăng ký khóa học thành công</a></td></tr>
+<tr><td colspan='2'><a href='http://www.stevbros.edu.vn/payment-info/{$detail['id']}' target='_bank'>Xem thông báo đăng ký khóa học thành công</a></td></tr>
 
 </table>
 </form>

@@ -116,6 +116,26 @@ if(@$_POST['price']) $value = $_POST['price']; else $value = $detail['price'];
 $form->getProperties('Giá', 'price', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
 
+//courseid
+$other = '<p style="color:#666; font-style:italic">ID khóa học trên module học online</p>';
+if(@$_POST['courseid']) $value = $_POST['courseid']; else $value = $detail['courseid'];
+$form->getProperties('Course ID', 'courseid', 1, 'input_medium', $value, 3, $other);
+echo $form->DisplayProperties();
+
+//timeend
+$other = '<p style="color:#666; font-style:italic">Gõ số ngày học khóa này.</p>';
+if(@$_POST['timeend']) $value = $_POST['timeend']; else $value = $detail['timeend'];
+$form->getProperties('Time end', 'timeend', 1, 'input_medium', $value, 3, $other);
+echo $form->DisplayProperties();
+
+//auto_course
+$value = array(1 => 'Tự động', 0 => 'Không');
+if($_POST['auto_course'] != '') $check = $_POST['auto_course'];
+else if($detail['auto_course'] != '') $check = $detail['auto_course'];
+else $check = 0; //giá trị mặc định
+$form->getProperties('Cấp tài khoản auto', 'auto_course', 5, $check, $value, ' &nbsp; ');
+echo $form->DisplayProperties();
+
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 

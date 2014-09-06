@@ -51,12 +51,30 @@ if($dt==''){
 		</div></div>';
 	}
 }else{
-	$qr = mysql_query("SELECT id,name,last_name,(SELECT ma_kh FROM thanhtoan_khachhang_sacombank,thanhtoan_sanpham WHERE khoahoc_id=thanhtoan_sanpham.id AND thanhtoan_khachhang_sacombank.id='{$dt}' LIMIT 1) as ma_kh,khoahoc_name,email,signed_date,amount,status FROM thanhtoan_khachhang_sacombank WHERE `delete`=0 AND id='{$dt}' " );
+	$sql = "SELECT thanhtoan_khachhang_sacombank.*,ma_kh,courseid,timeend,auto_course
+	FROM thanhtoan_khachhang_sacombank,thanhtoan_sanpham
+	WHERE thanhtoan_khachhang_sacombank.id='{$dt}' AND khoahoc_id=thanhtoan_sanpham.id";
+	$qr = mysql_query($sql);
 	if(mysql_num_rows($qr)==1){
 		$row = mysql_fetch_array($qr);
 		$navigator = $tc->navigator($row_menu_one['url'],$row_menu_one['name'],$row_menu_one['title'],'h3');
-		$data = '<h1>Thanh toán thành công</h1>
-		<p style="line-height:22px; margin:10px 0">Kính gởi bạn '.$row['name'].' '.$row['last_name'].'</p>
+		
+		/*if($row['auto_course']==1){
+			include_once('account_auto.php');
+		}*/
+		if($account_auto==1){
+			$message_account = '<p style="line-height:22px; margin:10px 0">You can access Stevbros&#39; online training system and start your study as soon as you can.</p>
+		<p style="margin-left:30px">
+			Stevbros&#39; online training system: <b style="font-size:115%"><a href="http://online.stevbros.com">http://online.stevbros.com</a></b><br />
+			Username: <b style="font-size:115%">'.$row['email'].'</b><br />
+			Password: <b style="font-size:115%">Pdu&2014&</b></p>
+		<p style="line-height:22px; margin:10px 0">You will earn PDUs right after you finish all questions for review with no less than 50% correct answers. All questions for review and all lessons can be accessed many times.
+After you finish all questions for review with no less than 50% correct answers, <b style="color:#EA5145">the certificate of completion will be automatically available for download</b> at the last part of this training course. You will also see detailed instruction to report PDUs into PMI&#39;s CCRS at the last part of this training course.</p>';
+		}else{
+			$message_account = '<p style="line-height:22px; margin:10px 0">Nếu bạn đã đăng ký khoá học qua mạng, Stevbros sẽ cung cấp thông tin tài khoản, mật mã và hướng dẫn truy cập hệ thống học qua mạng của Stevbros qua email của bạn trong vòng 24 giờ. Nếu bạn đã đăng ký khoá học khai giảng định kỳ, Stevbros cũng sẽ liên hệ bạn qua email và điện thoại để thông báo địa điểm cụ thể và tài liệu khoá học trong vòng 24 giờ.</p>';
+		}
+		
+		$data = '<p style="line-height:22px; margin:10px 0">Kính gởi bạn '.$row['name'].' '.$row['last_name'].'</p>
 		<p style="line-height:22px; margin:10px 0"><strong>Công ty đào tạo và tư vấn Stevbros</strong> – uỷ quyền đào tạo của <strong>Viện Quản Lý Dự Án Hoa Kỳ (PMI)</strong> mã số 3807 – kính chào bạn. Cảm ơn bạn đã quan tâm đến các khoá học của Stevbros.</p>
 		<p style="line-height:22px; margin:10px 0">Stevbros xin thông báo bạn đã đăng ký khoá học thành công và Stevbros đã nhận được học phí của khoá học bạn đăng ký. Thông tin chi tiết như sau:</p>
 		<p style="margin-left:30px">
@@ -66,8 +84,7 @@ if($dt==''){
 			Học phí: <strong>'.number_format($row['amount'],0,',','.').'</strong> VNĐ<br />
 			Email: <strong>'.$row['email'].'</strong><br />
 			Ngày giao dịch: '.date('d F Y', strtotime($row['signed_date'])).'</p>
-		<p style="line-height:22px; margin:10px 0">Nếu bạn đã đăng ký khoá học qua mạng, Stevbros sẽ cung cấp thông tin tài khoản, mật mã và hướng dẫn truy cập hệ thống học qua mạng của Stevbros qua email của bạn trong vòng 24 giờ. Nếu bạn đã đăng ký khoá học khai giảng định kỳ, Stevbros cũng sẽ liên hệ bạn qua email và điện thoại để thông báo địa điểm cụ thể và tài liệu khoá học trong vòng 24 giờ.</p>
-	
+		'.$message_account.'
 		<p style="line-height:22px; margin:10px 0">Một lần nữa, cảm ơn bạn đã quan tâm đến các khoá học của Stevbros.</p>
 		<p style="line-height:22px; margin:10px 0">Trân trọng,</p>
 		<p><b>Stevbros Training & Consultancy</b></p>
@@ -78,9 +95,9 @@ if($dt==''){
 		<p>Nếu bạn cần thông tin về hủy bỏ và hoàn lại tiền, xin vui lòng truy cập liên kết này: <a href="http://www.stevbros.edu.vn/tro-giup/tro-giup-va-dich-vu-khach-hang.html">bấm vào đây</a></p>
 		<p>Email này được gửi tự động. Xin đừng trả lời. Liên hệ với chúng tôi <a href="mailto:support@stevbros.com">support@stevbros.com</a> để biết thêm thông tin.</p>';
 		
-		$view_post .= '<div id="left"><div id="view_post">'.$data.'</div></div>';
+		$view_post .= '<div id="left"><div id="view_post"><h1>Thanh toán thành công</h1>'.$data.'</div></div>';
 		
-		if($row['status']==0){
+		if($row['status']=='0'){
 			$name_kh = $row['name'];
 			$email_kh = $row['email'];
 			$content = '<div style="line-height:22px; color:#666">'.$data.'</div>';
