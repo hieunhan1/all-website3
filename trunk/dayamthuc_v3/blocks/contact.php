@@ -13,7 +13,7 @@
               <tr>
                 <td width="100"><?php echo const_contact_name;?>:</td>
                 <td><input type="text" name="name" class="txt" maxlength="50" /></td>
-                <td width="100" align="right">Email:</td>
+                <td width="100" align="right"><?php echo const_contact_email;?>:</td>
                 <td><input type="text" name="email" class="txt" maxlength="60" /></td>
               </tr>
               <tr>

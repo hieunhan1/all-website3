@@ -120,7 +120,7 @@ if(@$_GET['danhmuc']){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php echo $seo; ?>
-<link href="style_v5.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -135,8 +135,9 @@ if(@$_GET['danhmuc']){
 </script>
 <div id="top">
 	<div class="wrapper">
+    	<li><a href="/?lang=cn"><img src="images/cn.gif" alt="NETSPACE CN" /> China</a></li>
     	<li><a href="/?lang=en"><img src="images/en.gif" alt="NETSPACE EN" /> English</a></li>
-    	<li><a href=""><img src="images/vi.gif" alt="NETSPACE VI" /> Tiếng Việt</a></li>
+    	<li><a href="/"><img src="images/vi.gif" alt="NETSPACE VI" /> Việt Nam</a></li>
     </div>
 </div>
 
@@ -231,17 +232,17 @@ flush();
 				if($i!=1){
 					$name_chinhanh .= '<span class="select_chinhanh chinhanh'.$i.'">'.$row['name'].'</span>';
 					$info_chinhanh .= '<div class="chinhanh" id="chinhanh'.$i.'">
-					<p>Địa chỉ: <b>'.$row['diachi'].'</b></p>
-					<p>Điện thoại: <b>'.$row['phone'].'</b></p>
+					<p>'.const_contact_diachi.': <b>'.$row['diachi'].'</b></p>
+					<p>'.const_contact_phone.': <b>'.$row['phone'].'</b></p>
 					<p>Hotline: <b>'.$row['hotline'].'</b></p>
-					<p>Email: <b>'.$row['email'].'</b></p></div>';
+					<p>'.const_contact_email.': <b>'.$row['email'].'</b></p></div>';
 				}else{
 					$name_chinhanh .= '<span class="select_chinhanh chinhanh1 select_chinhanh_active">'.$row['name'].'</span>';
 					$info_chinhanh .= '<div class="chinhanh" id="chinhanh1">
 					<p>'.const_contact_diachi.': <b>'.$row['diachi'].'</b></p><p style="color:#FF6; margin-left:45px">('.const_cho_dakao.')</p>
 					<p>'.const_contact_phone.': <b>'.$row['phone'].'</b></p>
 					<p>Hotline: <b>'.$row['hotline'].'</b></p>
-					<p>Email: <b>'.$row['email'].'</b></p></div>';
+					<p>'.const_contact_email.': <b>'.$row['email'].'</b></p></div>';
 				}
 			}
 			echo '<div id="select_chinhanh">'.$name_chinhanh.'</div>'.$info_chinhanh;

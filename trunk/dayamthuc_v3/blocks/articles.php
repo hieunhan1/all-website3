@@ -13,7 +13,7 @@
     
     <div id="left" class="viewpost">
         <?php
-		if($row_detail['other2']==1) $dangky = '<p style="text-align:center"><a href="http://'.$domain.'/Dang-Ky-Truc-Tuyen/'.$row_detail['id'].'/"><img alt="đăng ký trực tuyến" border="0px" src="http://www.dayamthuc.vn/upload/tin-tuc/dang-ky-truc-tuyen.gif" /></a></p>';
+		if($row_detail['other2']==1) $dangky = '<div class="register_online"><a href="http://'.$domain.'/Dang-Ky-Truc-Tuyen/'.$row_detail['id'].'/">'.const_register_online.'</a></div>';
 		
         echo '<h1>'.$row_detail['name'].'</h1>'.$dangky.$row_detail['content'].$dangky;
 		?>
@@ -21,7 +21,7 @@
         <?php
         $qr = $tc->info_other($idMenu,$row_detail['id']);
 		if(mysql_num_rows($qr) > 0){
-			echo '<hr /> <div id="other"> <div>Bài viết khác</div>';
+			echo '<hr /> <div id="other"> <div>'.const_tin_khac.'</div>';
 			while($row = mysql_fetch_array($qr)){
 				echo '<li><a href="'.$danhmuc.'/'.$row['name_rewrite'].'.html">'.$row['name'].'</a></li>';
 			}

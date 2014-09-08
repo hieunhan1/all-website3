@@ -244,6 +244,9 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 .select_dangky{width:350px; background-color:#F1F1F1; border:solid 1px #CCC; line-height:25px; height:25px}
 .btn_dangky{width:auto; padding:8px 50px; font-size:120%; font-weight:bold; color:#FFF; background-color:#017B80; border:none; cursor:pointer}
 
+.register_online{width:183px; height:31px; margin:auto !important; background:url(../images/dang-ky-truc-tuyen.gif) no-repeat}
+.register_online a{display:block; line-height:31px; text-align:center; color:#FFF; font-weight:bold; font-size:110%; text-shadow:1px 1px #666}
+
 #navigator{clear:both; padding:0 0 10px 10px}
 #navigator a{padding-right:15px; font-size:12px; color:#666}
 #navigator a:hover{color:#000}

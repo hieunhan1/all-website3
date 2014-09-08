@@ -26,7 +26,7 @@ if(mysql_num_rows($qr) > 0){
 		$str_thongbao .= '<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><h4>'.$row['name'].'</h4></a>';
 	}
 	$str_thongbao = '<div style="width:460px; float:right">
-		<div class="home_title">Thông báo</div>
+		<div class="home_title">'.const_home_notify.'</div>
 		<div class="home_item_4">'.$str_thongbao.'</div>
 	</div>';
 }
@@ -36,7 +36,7 @@ $qr = $tc->slider_banner(2, $lang);
 if(mysql_num_rows($qr) > 0){
 	$row = mysql_fetch_array($qr);
 	$str_sukien = '<div style="width:510px; float:left">
-		<div class="home_title">Sự kiện</div>
+		<div class="home_title">'.const_home_event.'</div>
 		<div class="home_item_5"><a href="'.$row['link'].'"><img src="'.url_slider_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
 	</div>';
 }
@@ -83,7 +83,7 @@ echo '<div class="wrapper">
 	
 	'.$str_hinhanh.'
 	
-	<div class="home_title">Videos</div>
+	<div class="home_title">'.const_home_video.'</div>
     <div class="home_item_3">
 		'.$str_video.'<div style="clear:both; height:1px"></div>
     </div>
