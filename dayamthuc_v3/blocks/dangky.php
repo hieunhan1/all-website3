@@ -31,7 +31,7 @@
                 </td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> Họ và tên:</td>
+                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_name;?>:</td>
                 <td><input type="text" name="HoTen" class="text_dangky" value="" maxlength="50" /></td>
               </tr>
               <tr>
@@ -43,15 +43,15 @@
                 </td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> Email:</td>
+                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_email;?>:</td>
                 <td><input type="text" name="Email" class="text_dangky" value="" maxlength="50" /></td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> Địa chỉ:</td>
+                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_diachi;?>:</td>
                 <td><input type="text" name="DiaChi" class="text_dangky" value="" maxlength="250" /></td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> Điện thoại:</td>
+                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_phone;?>:</td>
                 <td><input type="text" name="DienThoai" class="text_dangky" value="" maxlength="11" /></td>
               </tr>
               <tr>
