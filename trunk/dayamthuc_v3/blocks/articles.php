@@ -13,7 +13,11 @@
     
     <div id="left" class="viewpost">
         <?php
-		if($row_detail['other2']==1) $dangky = '<div class="register_online"><a href="http://'.$domain.'/Dang-Ky-Truc-Tuyen/'.$row_detail['id'].'/">'.const_register_online.'</a></div>';
+		if($row_detail['other2']==1){
+			if($lang=='vi') $dangky = '<div class="register_online"><a href="http://'.$domain.'/Dang-Ky-Truc-Tuyen/'.$row_detail['id'].'/">'.const_register_online.'</a></div>';
+			elseif($lang=='en') $dangky = '<div class="register_online"><a href="http://www.dayamthuc.vn/upload/files/Application-Form.pdf" target="_blank">'.const_register_online.'</a></div>';
+			elseif($lang=='cn') $dangky = '<div class="register_online"><a href="http://'.$domain.'/直线登记/'.$row_detail['id'].'/">'.const_register_online.'</a></div>';
+		}
 		
         echo '<h1>'.$row_detail['name'].'</h1>'.$dangky.$row_detail['content'].$dangky;
 		?>

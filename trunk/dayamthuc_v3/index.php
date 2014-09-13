@@ -135,7 +135,7 @@ if(@$_GET['danhmuc']){
 </script>
 <div id="top">
 	<div class="wrapper">
-    	<li><a href="/?lang=cn"><img src="images/cn.gif" alt="NETSPACE CN" /> China</a></li>
+    	<li><a href="/?lang=cn"><img src="images/cn.gif" alt="NETSPACE CN" /> 中文</a></li>
     	<li><a href="/?lang=en"><img src="images/en.gif" alt="NETSPACE EN" /> English</a></li>
     	<li><a href="/"><img src="images/vi.gif" alt="NETSPACE VI" /> Việt Nam</a></li>
     </div>
@@ -250,7 +250,7 @@ flush();
         </div>
     	<div id="social">
         	<?php
-            $qr = $tc->menu(1,3);
+            $qr = $tc->menu($idMenu,3,$lang);
 			while($row = mysql_fetch_array($qr)){
 				echo '<a href="'.$row['url'].'" target="_blank"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
 			}

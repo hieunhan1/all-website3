@@ -1,4 +1,25 @@
 <?php
+/*chuong trinh dao tao CN*/
+if($lang=='cn'){
+	$i = 0;
+	$qr = $tc->chuongtrinhdaotao_info(318);
+	while($row = mysql_fetch_assoc($qr)) {
+		$j++;
+		if($j%2 == 0) $style = 'style="float:right"'; else $style = 'style="float:left"';
+		$str_chuongtrinh .= '<div class="chuongtrinh_item" '.$style.'>
+			<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="chuongtrinh_item_img"><img src="'.url_detail_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+			<h3>'.$row['name'].'</h3></a>
+			<div class="chuongtrinh_info">'.$row['metaDescription'].'</div>
+		</div>';
+	}
+	$str_chuongtrinh = '<div class="home_title">培训课程</div>
+	<div id="chuongtrinh"><div class="home_item_3">
+		<div style="clear:both; height:15px"></div>
+		'.$str_chuongtrinh.'
+		<div style="clear:both; height:1px"></div>
+	</div></div>';
+}
+
 /*thong tin nau an*/
 $qr = $tc->info_home($lang);
 $i = 0;
@@ -59,15 +80,21 @@ if(mysql_num_rows($qr) > 0){
 
 /*video*/
 $qr = $tc->video_home(3,$lang);
-while($row = mysql_fetch_array($qr)){
-	$str_video .= '<div class="video_item_3">
-	<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
-	<div class="img_video_item_3"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
-	<h3>'.$row['name'].'</h3></a></div>';
+if(mysql_num_rows($qr) > 0){
+	while($row = mysql_fetch_array($qr)){
+		$str_video .= '<div class="video_item_3">
+		<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img_video_item_3_bg"></div>
+		<div class="img_video_item_3"><img src="'.url_video_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div>
+		<h3>'.$row['name'].'</h3></a></div>';
+	}
+	$str_video = '<div class="home_title">'.const_home_video.'</div>
+    <div class="home_item_3">
+		'.$str_video.'<div style="clear:both; height:1px"></div>
+    </div>';
 }
 
-
 echo '<div class="wrapper">
+	'.$str_chuongtrinh.'
 	<div class="home_title">'.const_home_info.'</div>
 	<div class="home_item_3">
 		<div class="more_item_3">'.$str_info_new.'</div>
@@ -75,16 +102,6 @@ echo '<div class="wrapper">
 		<div style="clear:both; height:1px"></div>
 	</div>
 	'.$str_thongbao.$str_sukien.'
-	
-	
-	
 	<div style="clear:both; height:1px"></div>
-	
-	
-	'.$str_hinhanh.'
-	
-	<div class="home_title">'.const_home_video.'</div>
-    <div class="home_item_3">
-		'.$str_video.'<div style="clear:both; height:1px"></div>
-    </div>
+	'.$str_hinhanh.$str_video.'
 </div>';
