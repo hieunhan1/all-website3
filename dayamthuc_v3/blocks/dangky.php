@@ -71,34 +71,41 @@
                     <select name="KhoaHoc" class="select_dangky">
                     <option value='Chưa chọn khóa học'>--- Chọn khóa học ---</option>
                     <?php
-                    $i = 0;
-                    $chuongtrinh = $tc->chuongtrinhdaotao(3);
-                    while($row = mysql_fetch_array($chuongtrinh)){
-                        $i++;
-                        if($i!=1){
-                            $view_ct .= '<optgroup label="'.$row['name'].'">';
-                            $chuongtrinh2 = $tc->chuongtrinhdaotao($row['id']);
-                            $ct_info = $tc->chuongtrinhdaotao_info($row['id']);
-                            while($row_ct_info = mysql_fetch_assoc($ct_info)) {
-                                if($page!=$row_ct_info['id']) $selected = ''; else $selected = 'selected="selected"';
-                                $view_ct .= '<option value="'.$row_ct_info['name'].'" '.$selected.'>'.$row_ct_info['name'].'</option>';
-                            }
-                            $view_ct .= "</optgroup>";
-                        }else{
-                            $view_ct .= '<optgroup label="'.$row['name'].'">';
-                            $chuongtrinh2 = $tc->chuongtrinhdaotao($row['id']);
-                            while($row2 = mysql_fetch_array($chuongtrinh2)){
-                                $view_ct .= '<optgroup label=" &nbsp; - '.$row2['name'].'">';
-                                $ct_info = $tc->chuongtrinhdaotao_info($row2['id']);
-                                while($row_ct_info = mysql_fetch_assoc($ct_info)) {
-                                    if($page!=$row_ct_info['id']) $selected = ''; else $selected = 'selected="selected"';
-                                    $view_ct .= '<option value="'.$row_ct_info['name'].'" '.$selected.'> &nbsp; + '.$row_ct_info['name'].'</option>';
-                                }
-                                $view_ct .= "</optgroup>";
-                            }
-                            $view_ct .= "</optgroup>";
-                        }
-                    }
+					if($lang=='vi'){
+						$i = 0;
+                    	$chuongtrinh = $tc->chuongtrinhdaotao(3);
+						while($row = mysql_fetch_array($chuongtrinh)){
+							$i++;
+							if($i!=1){
+								$view_ct .= '<optgroup label="'.$row['name'].'">';
+								$chuongtrinh2 = $tc->chuongtrinhdaotao($row['id']);
+								$ct_info = $tc->chuongtrinhdaotao_info($row['id']);
+								while($row_ct_info = mysql_fetch_assoc($ct_info)) {
+									if($page!=$row_ct_info['id']) $selected = ''; else $selected = 'selected="selected"';
+									$view_ct .= '<option value="'.$row_ct_info['name'].'" '.$selected.'>'.$row_ct_info['name'].'</option>';
+								}
+								$view_ct .= "</optgroup>";
+							}else{
+								$view_ct .= '<optgroup label="'.$row['name'].'">';
+								$chuongtrinh2 = $tc->chuongtrinhdaotao($row['id']);
+								while($row2 = mysql_fetch_array($chuongtrinh2)){
+									$view_ct .= '<optgroup label=" &nbsp; - '.$row2['name'].'">';
+									$ct_info = $tc->chuongtrinhdaotao_info($row2['id']);
+									while($row_ct_info = mysql_fetch_assoc($ct_info)) {
+										if($page!=$row_ct_info['id']) $selected = ''; else $selected = 'selected="selected"';
+										$view_ct .= '<option value="'.$row_ct_info['name'].'" '.$selected.'> &nbsp; + '.$row_ct_info['name'].'</option>';
+									}
+									$view_ct .= "</optgroup>";
+								}
+								$view_ct .= "</optgroup>";
+							}
+						}
+					}elseif($lang=='cn'){
+						$chuongtrinh = $tc->chuongtrinhdaotao(318);
+						while($row = mysql_fetch_array($chuongtrinh)){
+							$view_ct .= '<option value="'.$row['name'].'" '.$selected.'>'.$row['name'].'</option>';
+						}
+					}
                     echo $view_ct;
                     ?>
                     </select>

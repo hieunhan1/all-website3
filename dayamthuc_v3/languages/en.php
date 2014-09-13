@@ -24,4 +24,4 @@ define('const_contact_diachi', 'Address');
 define('const_contact_message', 'Message');
 define('const_contact_sent', 'SEND CONTACT');
 
-define('const_register_online', 'Ghi danh trực tuyến');
+define('const_register_online', 'Apply now');
