@@ -38,7 +38,7 @@ if ($sosp > 0){
 		<td align="center">&nbsp;</td>
 	</tr>';
 	$btn_thanhtoan = '<tr><td colspan="5"><br /></td></tr>
-    <tr><td colspan="2">&nbsp;</td><td colspan="2"><div class="muahang" id="thanhtoan">Đặt hàng ngay</div></td>
+    <tr><td colspan="2">&nbsp;</td><td colspan="2"><div class="muahang" id="thanhtoan" style="background-color:#0097CE">Tiến hành đặt hàng</div></td>
     <td align="center"><a href="javascript:void();" id="huydh" style="color:#F00">Hủy đơn hàng</a></td></tr>';
 }else $view_order = '<tr><td colspan="5" style="padding:10px; color:#F00">Bạn chưa đặt mua sản phẩm.</td></tr>';
 ?>
@@ -51,11 +51,11 @@ if ($sosp > 0){
                 <p style="text-align:justify; color:#060; font-weight:bold">Điều kiện giao hàng:</p>
                 <p style="text-align:justify; padding:0 30px">- Trong Thành phố Hồ Chí Minh</p>
                 <p style="text-align:justify; padding:0 30px">- Hóa đơn phải hơn 100.000đ</p>
-                <p style="text-align:justify; padding:0 30px; color:#00F; font-weight:bold; margin-bottom:10px">- Trước khi giao hàng nhân viên sẽ liên hệ cho Quí khách</p>
+                <p style="text-align:justify; padding:0 30px; color:#00F; font-weight:bold; margin-bottom:10px">- Trước khi giao hàng nhân viên sẽ liên hệ với Quí khách</p>
                 
                 <p style="text-align:justify; color:#060; font-weight:bold">Phí giao hàng:</p>
-                <p style="text-align:justify; padding:0 30px">- Phí giao hàng <b style="color:#F00">10.000đ</b> với các quận như: Q.1, Q.3, Q.4, Q.5, Q.6, Q.8, Q.10, Q.11, Q.Tân Bình và Q.Bình Tân</p>
-                <p style="text-align:justify; padding:0 30px; margin-bottom:10px">- Phí giao hàng <b style="color:#F00">20.000đ</b> với các quận như: Q.2, Q.9, Q.7, Q.12, Q.Gò Vấp, Q.Phú Nhuận, Q.Bình Thạnh, Q.Bình Chánh, Q.Tân Phú, Q.Hóc Môn, Q.Thủ Đức và Q.Nhà Bè</p>
+                <p style="text-align:justify; padding:0 30px">- Phí giao hàng <b style="color:#F00">10.000đ</b> đến các quận như: Q.1, Q.3, Q.4, Q.5, Q.6, Q.8, Q.10, Q.11, Q.Tân Bình và Q.Bình Tân</p>
+                <p style="text-align:justify; padding:0 30px; margin-bottom:10px">- Phí giao hàng <b style="color:#F00">20.000đ</b> đến các quận như: Q.2, Q.9, Q.7, Q.12, Q.Gò Vấp, Q.Phú Nhuận, Q.Bình Thạnh, Q.Tân Phú, Q.Thủ Đức, H.Bình Chánh, H.Hóc Môn và H.Nhà Bè</p>
                 
                 <p style="margin-bottom:10px"><b><em style="text-decoration:underline">Lưu ý:</em></b> Hiện tại công ty chỉ giao hàng trong Tp.HCM. Quí khách có nhu cầu mua bột trộn sẵn Mikko có thể đến siêu thị Co.opmart, Big C, Metro, Citimart hoặc các cửa hàng đại lý bột Mikko.</p>
             </div><br /><br /></td>
@@ -72,7 +72,7 @@ if ($sosp > 0){
     <br /><br />
     <table width="65%" border="0" cellpadding="0" cellspacing="10" id="form_thanhtoan" style="margin:auto; display:none">
     	<tr>
-        	<td colspan="2"><p style="color:#00F">Quý khách vui lòng điền đầy đủ thông tin</p></td>
+        	<td colspan="2"><p style="color:#00F; font-weight:bold">Vui lòng điền đầy đủ thông tin để chúng tôi giao hàng cho Quý khách.</p></td>
         </tr>
         <tr>
         	<td width="120" align="right">Họ tên:</td>
@@ -157,8 +157,8 @@ $(document).ready(function() {
 		}else{
 			$("#form_thanhtoan").html('<p style="font-weight:bold; padding:30px">Processing...</p>');
 			$.post("ajax.php",{form_thanhtoan:"form_thanhtoan",name:name,email:email,phone:phone,diachi:diachi,message:message},function(data){
-				if(data!='0') setTimeout(function(){ $("#form_thanhtoan").html('<p style="color:#ff8400; font-weight:bold; padding:30px 0 60px;">Đặt hàng thành công.</p>'); },200);
-				else $("#form_thanhtoan").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Thanh toán thất bại. Vui lòng ấn F5 thử lại</p>');
+				if(data!='0') setTimeout(function(){ $("#form_thanhtoan").html('<p style="color:#006991; line-height:150%; font-size:110%; padding:30px 0 60px;"><b style="font-size:120%">Đặt hàng thành công.</b><br />Chúng tôi sẽ liên hệ với Quý khách sớm nhất để giao hàng. Cảm ơn Quý khách đã tin dùng sản phẩm của chúng tôi.<br />Thân chào,</p>'); },200);
+				else $("#form_thanhtoan").html('<p style="color:#F00; font-weight:bold; padding:30px 0 60px;">Đặt hàng thất bại. Vui lòng ấn F5 thử lại</p>');
 			});
 			return true;
 		}
