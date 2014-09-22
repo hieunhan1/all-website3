@@ -33,7 +33,7 @@ class sql {
 	function create(){
 		$table  = $this->_var2;
 		$field = $this->_var3;
-		$value = $this->_var4;
+		$value = str_replace("'", '&#39;', $this->_var4);
 		
 		for($i=0; $i<count($field)-1; $i++){
 			$str_field .= "`{$field[$i]}`,";
@@ -52,7 +52,7 @@ class sql {
 	function update(){
 		$table = $this->_var2;
 		$field = $this->_var3;
-		$value = $this->_var4;
+		$value = str_replace("'", '&#39;', $this->_var4);
 		$id = $this->_var5;
 		
 		for($i=0; $i<count($field)-1; $i++){
