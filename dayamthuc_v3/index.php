@@ -98,7 +98,7 @@ if(@$_GET['danhmuc']){
 	$dir_lang = "languages/{$lang}.php";
 	if(file_exists($dir_lang)) include_once($dir_lang);
 	
-	$menu_one = $tc->menu_type(1,0,$lang);
+	$menu_one = $tc->menu_type(1,$lang,0);
 	$row_menu_one = mysql_fetch_array($menu_one);
 	$idMenu = $menu_root = $row_menu_one['id'];
 	
@@ -148,7 +148,7 @@ if(@$_GET['danhmuc']){
     include_once('blocks/slider.php');
 	flush();
 	
-	$qr_type_home = $tc->menu_type(1,0,$lang);
+	$qr_type_home = $tc->menu_type(1,$lang,0);
 	$row_type_home = mysql_fetch_array($qr_type_home);
 	
 	if($danhmuc==''){
@@ -250,7 +250,7 @@ flush();
         </div>
     	<div id="social">
         	<?php
-            $qr = $tc->menu($idMenu,3,$lang);
+            $qr = $tc->menu(0,3,$lang);
 			while($row = mysql_fetch_array($qr)){
 				echo '<a href="'.$row['url'].'" target="_blank"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>';
 			}
