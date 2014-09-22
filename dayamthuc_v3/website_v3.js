@@ -329,7 +329,7 @@ $(document).ready(function($){
 	
 	/*other temp*/
 	//dang ky du thi chương trình mon goi
-	$("#dangky_other").click(function(){
+	/*$("#dangky_other").click(function(){
 		sroll_top();
 		
 		var height = $("#popupContact").height();
@@ -381,5 +381,5 @@ $(document).ready(function($){
 			});
 			return true;
 		}
-	});
+	});*/
 });

@@ -281,6 +281,11 @@ include_once('blocks/qc2ben.php');
 <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
 
 <?php
+if(!isset($_SESSION['popup_banner'])){
+	include_once('blocks/popup.php');
+	echo $script_popup_banner;
+	$_SESSION['popup_banner']=1;
+}
 if(@$script_slider) echo $script_slider;
 if(@$script_photo) echo $script_photo;
 mysql_close();
