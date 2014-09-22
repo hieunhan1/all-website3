@@ -58,8 +58,10 @@ class trangchu extends db {
 		}
 		return $view;
 	}
-	function menu_type($type,$parent_id,$lang){
-		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,lang FROM web_menu WHERE `delete`=0 AND status=1 AND type_id='{$type}' AND parent_id='{$parent_id}' AND lang='{$lang}'";
+	function menu_type($type,$lang,$parent_id=NULL){
+		if($parent_id!=NULL) $parent_id="AND parent_id='{$parent_id}'";
+		else $parent_id='';
+		$qr = "SELECT id,name,url,url_hinh,parent_id,title,metaDescription,metaKeyword,lang FROM web_menu WHERE `delete`=0 AND status=1 AND type_id='{$type}' AND lang='{$lang}' {$parent_id} ";
 		return mysql_query($qr);
 	}
 	function menu_root($parent,$id){
