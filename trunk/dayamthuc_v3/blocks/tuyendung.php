@@ -94,6 +94,7 @@ $noilamviec = $noilamviec[$row_detail['noilamviec']];
     <div style="clear:both; height:20px"></div>
 </div>
 
+<!--
 <div id="popupContact">
     <div id="content_popup">
     	<div style="text-align:right; padding:5px 5px 0 0; background-color:#FFF"><a href="javascript:;" id="popupContactClose"><img src="images/close.png" alt="sản phẩm" /></a></div>
@@ -140,3 +141,4 @@ $noilamviec = $noilamviec[$row_detail['noilamviec']];
     </div>
 </div></div>
 <div id="backgroundPopup"></div>
+-->

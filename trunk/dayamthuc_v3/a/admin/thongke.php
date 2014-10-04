@@ -26,7 +26,7 @@ $total = $total_dangky + $total_contact;
 //mysql_num_rows(mysql_query($sql));
 ?>
 <div style="width:500px; margin:auto">
-<p>?thongke=1&amp;date_start=2014-08-01&amp;date_end=2014-09-01</p>
+<p>ajax.php?thongke=1&amp;date_start=2014-08-01&amp;date_end=2014-09-01</p>
 <table width="100%" border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse">
 	<tr>
     	<th colspan="2" align="left">Thống kê lượt đăng ký trực tuyến:</th>

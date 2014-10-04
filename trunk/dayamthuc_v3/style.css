@@ -290,7 +290,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 /* popup */
 #backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
 #popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
-#content_popup{width:600px; height:auto; padding:10px 10px 25px 25px; background-color:#FFF}
+#content_popup{width:650px; height:auto; padding:5px 15px 15px 15px; background-color:#FFF}
 .error{font-style:italic; color:#F00}
 
 /*partner*/

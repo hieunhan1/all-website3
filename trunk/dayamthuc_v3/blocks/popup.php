@@ -14,12 +14,12 @@ if(mysql_num_rows($qr) > 0){
 <?php
 	$script_popup_banner = '<script type="text/javascript">
 	$(document).ready(function(e) {
-		sroll_top();
-		var height = $("#popupContact").height();
+		//sroll_top();
+		var height = 440; //$("#popupContact").height();
 		$("#popupContact").height(height);
-		centerPopup("absolute");
+		centerPopup("fix");
 		loadPopup();
-		$(window).bind("resize", function(){ centerPopup("absolute"); });
+		$(window).bind("resize", function(){ centerPopup("fix"); });
 		$("#backgroundPopup, #popupContactClose, input[name=btn_huy_nop_hs]").click(function(){
 			disablePopup();
 		});
