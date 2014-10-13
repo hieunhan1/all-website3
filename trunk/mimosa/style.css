@@ -30,7 +30,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin:0 25px 35px 25px}
 
 .home_title{clear:both; font-size:200%; margin:0 0 10px 20px}
 
-.home_cauchuyen{height:200px; width:900px; margin:0 20px 30px 20px; padding:10px 0; border:solid 2px #858477}
+.home_cauchuyen{width:900px; margin:0 20px 30px 20px; padding:10px 0; border:solid 2px #858477}
 .home_cauchuyen .item_cauchuyen{width:265px; height:180px; float:left; margin-left:10px; padding:10px; line-height:18px}
 .home_cauchuyen .item_cauchuyen img{width:80px; float:left; margin-right:6px}
 .home_cauchuyen .item_cauchuyen h2{font-size:110%; margin-bottom:5px}
@@ -38,11 +38,11 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin:0 25px 35px 25px}
 .home_cauchuyen .item_cauchuyen p{height:144px; overflow:hidden; font-size:100%; text-align:justify}
 
 .home_cauchuyen .item_tintuc{width:425px; height:180px; float:left; margin-left:10px; padding:5px; line-height:18px}
-.home_cauchuyen .item_tintuc .img_home{width:190px; height:190px; float:left; overflow:hidden; margin-right:10px}
+.home_cauchuyen .item_tintuc .img_home{width:190px; height:144px; float:left; overflow:hidden; margin-right:10px}
 .home_cauchuyen .item_tintuc .img_home img{width:190px}
 .home_cauchuyen .item_tintuc h3{font-size:110%; color:#ff8400; margin-bottom:5px}
 .home_cauchuyen .item_tintuc a{color:#ff8400}
-.home_cauchuyen .item_tintuc p{height:144px; overflow:hidden; font-size:100%; text-align:justify}
+.home_cauchuyen .item_tintuc p{height:126px; overflow:hidden; font-size:100%; text-align:justify}
 
 #home_map{width:430px; height:240px; overflow:hidden; float:right; line-height:20px; text-align:justify; padding:10px; border:solid 2px #a3a2a2}
 
@@ -55,12 +55,12 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin:0 25px 35px 25px}
 #footer #foo_social{width:auto; float:right; margin-top:8px}
 #footer #foo_social img{width:39px; height:39px; float:left; margin-left:20px}
 
-#left{width:190px; float:left; margin-left:20px; background:url(images/support.png) no-repeat bottom #282B28}
+#left{width:190px; float:left; margin-left:20px; background:url(images/support.png) no-repeat top #282B28}
 #left .left_title{padding:15px 0 15px 20px; font-weight:bold; background-color:#1F1F1E}
 #left .left_item{border-bottom:solid 1px #1F211F}
 #left .left_item a{display:block; padding:15px 0 15px 35px; color:#FFF}
 #left .left_item a:hover{background-color:#8D8D8D; text-decoration:none}
-#left #support{height:115px; margin-top:40px; padding-top:10px; text-align:center}
+#left #support{height:115px; margin:10px 0 20px 0; padding-top:10px; text-align:center}
 #left #support p{font-size:120%; font-weight:bold; color:#ff8400; line-height:28px}
 #left #support a{color:#FFF}
 #left #support span{display:block; padding-right:22px; text-align:right; font-size:120%; font-weight:bold; color:#ff8400}

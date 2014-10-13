@@ -92,10 +92,6 @@ echo $form->DisplayProperties();
 if(@$_POST['slogan']) $value = $_POST['slogan']; else $value = $detail['slogan'];
 $form->getProperties('Slogan', 'slogan', 1, 'input_medium', $value, 200);
 echo $form->DisplayProperties();
-//domain
-if(@$_POST['domain']) $value = $_POST['domain']; else $value = $detail['domain'];
-$form->getProperties('Domain', 'domain', 1, 'input_medium', $value, 30);
-echo $form->DisplayProperties();
 //max_product
 if(@$_POST['max_product']) $value = $_POST['max_product']; else $value = $detail['max_product'];
 $form->getProperties('Max product', 'max_product', 1, 'input_medium', $value, 2);
@@ -107,10 +103,6 @@ echo $form->DisplayProperties();
 //max_picture
 if(@$_POST['max_picture']) $value = $_POST['max_picture']; else $value = $detail['max_picture'];
 $form->getProperties('Max news home', 'max_picture', 1, 'input_medium', $value, 2);
-echo $form->DisplayProperties();
-//footer
-if(@$_POST['footer']) $value = $_POST['footer']; else $value = $detail['footer'];
-$form->getProperties('Footer', 'footer', 1, 'input_medium', $value, 200);
 echo $form->DisplayProperties();
 //email
 if(@$_POST['email']) $value = $_POST['email']; else $value = $detail['email'];
@@ -127,6 +119,21 @@ echo $form->DisplayProperties();
 //facebook
 if(@$_POST['facebook']) $value = $_POST['facebook']; else $value = $detail['facebook'];
 $form->getProperties('Hotline', 'facebook', 1, 'input_medium', $value, 30);
+echo $form->DisplayProperties();
+
+//footer
+$orther = "
+<script>
+CKEDITOR.replace( 'footer', {
+	uiColor: '#b5d8ef',
+	toolbar: [
+		['Source','Paste','PasteText','PasteFromWord','Bold', 'Italic', '-', 'Link', 'Unlink','Format','TextColor','BGColor'],
+	]
+});
+</script>
+";
+if(@$_POST['footer']) $value = $_POST['footer']; else $value = $detail['footer'];
+$form->getProperties('Footer', 'footer', 3, 'textarea', $value, 1, $orther);
 echo $form->DisplayProperties();
 
 //contact

@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 require_once('class.db.php');
 require_once('functions.php');
 class trangchu extends db {
@@ -19,7 +19,7 @@ class trangchu extends db {
 <meta property="og:description" content="'.$description.'" />
 <meta property="og:image" content="'.$image.'" />
 <meta property="og:url" content="'.$url.'" />
-<meta name="abstract" content="Trường dạy nghề ẩm thực NETSPACE" />
+<meta name="abstract" content="Tranh sơn dầu Mimosa" />
 <link type="icon/x-icon" href="images/logo_icon.ico" rel="shortcut icon" />';
 	}
 	function slider_banner($id,$menu_id=NULL){

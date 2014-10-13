@@ -39,6 +39,14 @@ if(@$dt){
 }else $title = "<h1>{$row_menu_one['title']}</h1> <h2>{$row_menu_one['metaDescription']}</h2>";
 ?>
 <div id="left">
+    <div id="support">
+    	<p>Hỗ trợ trực tuyến</p>
+        <?php
+		$hotline = explode(' - ',$row_config['facebook']);
+        echo '<a href="ymsgr:sendIM?'.$row_config['yahoo'].'"><img src="http://opi.yahoo.com/online?u='.$row_config['yahoo'].'&m=g&t=1" style="padding:5px 0" /></a><br />
+        <p>Hotline: '.$hotline[0].'</p><span>'.$hotline[1].'</span>';
+		?>
+    </div>
 	<?php
     $qr = $tc->menu($menu_root,3,$lang);
 	while($row = mysql_fetch_array($qr)){
@@ -50,14 +58,6 @@ if(@$dt){
 		}
 	}
 	?>
-    <div id="support">
-    	<p>Hỗ trợ trực tuyến</p>
-        <?php
-		$hotline = explode(' - ',$row_config['facebook']);
-        echo '<a href="ymsgr:sendIM?'.$row_config['yahoo'].'"><img src="http://opi.yahoo.com/online?u='.$row_config['yahoo'].'&m=g&t=1" style="padding:5px 0" /></a><br />
-        <p>Hotline: '.$hotline[0].'</p><span>'.$hotline[1].'</span>';
-		?>
-    </div>
 </div>
 
 <div id="right">
@@ -95,7 +95,7 @@ if(@$dt){
 $(document).ready(function() {
     $(".dathang").click(function(){
 		var info = ($(this).attr("info")).split(" -|- ");
-		if(confirm('Bạn có muốn mua: ' + info[0] + '?')){
+		//if(confirm('Bạn có muốn mua: ' + info[0] + '?')){
 			$.post("ajax.php",{dathang:"dathang",name:info[0],kichthuoc:info[1],price:info[2],id:info[3],lang:"<?php echo $lang;?>"},function(data){
 				if(data!='0'){
 					window.location = "<?php echo "http://{$domain}";?>" + data;
@@ -104,7 +104,7 @@ $(document).ready(function() {
 					return false;
 				}
 			});
-		}
+		//}
 	});
 });
 </script>
