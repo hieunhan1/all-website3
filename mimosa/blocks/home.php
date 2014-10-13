@@ -11,6 +11,7 @@
 		<p><a href="'.$link.'"><img src="'.url_detail_thumb_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a>'.$row['description'].'</p></div>';
 	}
 	?>
+    <div style="clear:both; height:1px"></div>
 </div>
 
 <div class="home_title"><?php echo const_home_news;?></div>
@@ -24,6 +25,7 @@
         <a href="'.$link.'"><h3>'.$row['name'].'</h3></a><p>'.$row['description'].'</p></div>';
 	}
 	?>
+    <div style="clear:both; height:1px"></div>
 </div>
 
 <div class="home_title"><?php echo const_home_map;?></div>
