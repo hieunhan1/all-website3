@@ -20,7 +20,8 @@ $noilamviec = $noilamviec[$row_detail['noilamviec']];
     
     <div id="left" class="viewpost">
         <?php
-        echo "<h1>{$row_detail['name']} - Làm việc {$noilamviec} - {$row['name']}</h1>";
+		if($noilamviec!='Khác') $noilamviec_h1 = ' - Làm việc '.$noilamviec;
+        echo "<h1>{$row_detail['name']}{$noilamviec_h1} - {$row['name']}</h1>";
 		echo $btn_hoso_1;
 		?>
         <div style="clear:both; height:1px"></div>
