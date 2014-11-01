@@ -35,6 +35,8 @@ $mail->SetFrom($email_gui,$title);
 $mail->AddAddress($email_nhan,$name_nhan);
 if($noihoc == 'Tp.HCM') $mail->AddCC('ceo@netspace.edu.vn','CEO');
 $mail->AddBCC('temp@dayamthuc.vn','Temp');
+/*$mail->AddBCC('admin@netspace.edu.vn','Temp');
+$mail->AddBCC('hieunhan112@gmail.com','Temp');*/
 
 //Thiết lập email nhận email hồi đáp
 //nếu người nhận nhấn nút Reply
