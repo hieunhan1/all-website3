@@ -121,6 +121,42 @@ if(@$_GET['danhmuc']){
 <head>
 <?php echo $seo; ?>
 <link href="style.css" rel="stylesheet" type="text/css" />
+
+<?php if($row_menu_one['type_id']!=8){?>
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '298986610297302']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=298986610297302&amp;ev=PixelInitialized" /></noscript>
+<?php }else{ ?>
+<!-- Facebook Conversion Code for Dang ky hoc -->
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6020065158224', {'value':'0.00','currency':'VND'}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6020065158224&amp;cd[value]=0.00&amp;cd[currency]=VND&amp;noscript=1" /></noscript>
+<?php } ?>
 </head>
 
 <body>
