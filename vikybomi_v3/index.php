@@ -175,7 +175,7 @@ if(@$_GET['danhmuc']){
 <?php
 include_once('blocks/buy.php'); flush();
 include_once('blocks/qc2ben.php');
-//include_once('images/noel-2014/temp.php');
+include_once('images/noel-2014/temp.php');
 mysql_close();
 ?>
 </body>
