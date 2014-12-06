@@ -128,6 +128,11 @@ if(@$_POST['name_rewrite']) $value = $_POST['name_rewrite']; else $value = $deta
 $form->getProperties("Mô tả không dấu {$required}", 'name_rewrite', 1, 'input_medium', $value, 100);
 echo $form->DisplayProperties();
 
+//url Link
+if(@$_POST['url']) $value = $_POST['url']; else $value = $detail['url'];
+$form->getProperties("Link  {$required}", 'url', 1, 'input_medium', $value, 150);
+echo $form->DisplayProperties();
+
 //Chọn file ảnh
 $orther = "onclick=\"BrowseServer('Images:/','url_hinh')\"";
 $form->getProperties('Chọn ảnh', 'btnBrowse', 7, 'button', 0, NULL, $orther);
@@ -161,11 +166,6 @@ if($_POST['type_id'] != '') $check = $_POST['type_id'];
 else if($detail['type_id'] != '') $check = $detail['type_id'];
 else $check = 1; //giá trị mặc định
 $form->getProperties('Loại menu', 'type_id', 5, $check, $value, '<br />');
-echo $form->DisplayProperties();
-
-//url Link
-if(@$_POST['url']) $value = $_POST['url']; else $value = $detail['url'];
-$form->getProperties("Link  {$required}", 'url', 1, 'input_medium', $value, 150);
 echo $form->DisplayProperties();
 
 //thu tu - order
