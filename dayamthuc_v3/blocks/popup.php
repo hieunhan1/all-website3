@@ -15,7 +15,7 @@ if(mysql_num_rows($qr) > 0){
 	$script_popup_banner = '<script type="text/javascript">
 	$(document).ready(function(e) {
 		//sroll_top();
-		var height = 440; //$("#popupContact").height();
+		var height = 490; //$("#popupContact").height();
 		$("#popupContact").height(height);
 		centerPopup("fix");
 		loadPopup();
