@@ -107,7 +107,7 @@ function change_alias(alias)
     return str;
 }
 ////////rewrite///////////
-$('#name_rewrite').click(function(){
+$('#name_rewrite').dblclick(function(){
 	var name = $('#name').val();
 	$(this).val(change_alias(name));
 });
@@ -153,7 +153,7 @@ check_data(['name','name_rewrite','url'],'btnSubmit');
 /*
 * url
 */
-$("#url").click(function(){
+$("#url").dblclick(function(){
 	var url = $("#name_rewrite").val()+'/';
 	$("#url").val(url);
 });

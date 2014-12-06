@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(E_ALL ^ E_NOTICE);
+date_default_timezone_set('Asia/Bangkok');
 //session_destroy();
 if(!@$_GET['lang']) $lang = 'vi';
 else $lang = $_GET['lang'];
@@ -74,6 +76,15 @@ if(@$_GET['danhmuc']){
 <script type="text/javascript" src="library/jquery.min.js"></script>
 <script type="text/javascript" src="library/jquery.corner.js"></script>
 <script type="text/javascript" src="website.js"></script>
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//v2.zopim.com/?1hRJUdN1oPAQkHLGf82KLAggOXVURFax';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zopim Live Chat Script-->
 </head>
 
 <body <?php echo $deny_click;?> >
@@ -146,7 +157,7 @@ if(@$_GET['danhmuc']){
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-43817164-4', 'mimosaart.com.vn');
+  ga('create', 'UA-45529190-1', 'mimosaart.com');
   ga('send', 'pageview');
 </script>
 </body>
