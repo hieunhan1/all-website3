@@ -2,7 +2,7 @@
 define('const_xem_chi_tiet','Xem chi tiết');
 define('const_xem_tat_ca','xem tất cả');
 define('const_tin_khac', 'Bài viết khác');
-define('const_partner', 'Đối tác của SIUP');
+define('const_partner', 'Đối tác của SISP');
 define('const_txt_search', 'Tìm kiếm nội dung');
 
 define('const_thongtin_duan','Thông tin chung dự án');

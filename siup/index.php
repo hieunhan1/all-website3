@@ -116,7 +116,7 @@ else $header_img = 'images/bg-header.jpg';
 <body>
 
 <div id="wrapper">
-	<div id="header" style="background:url('<?php echo $header_img;?>') no-repeat #6A9EDC">
+	<div id="header" style="background:url('<?php echo $header_img;?>') no-repeat">
     	<div id="logo">
         	<a href="/<?php if($lang!='vi') echo '?lang='.$lang; ?>"><img src="images/logo.png" alt="SIUP" /></a>
             <div><?php echo $row_config['contact_foo'];?></div>
@@ -132,7 +132,6 @@ else $header_img = 'images/bg-header.jpg';
 			if($lang=='vi') echo '<a href="?lang=en" style="border:none"><img src="images/en.gif" alt="en" style="height:11px; float:left; margin-left:15px; padding-top:4px " /> English</a>';
 			else echo '<a href="" style="border:none"><img src="images/vi.gif" alt="vi" style="height:11px; float:left; margin-left:15px; padding-top:4px " /> Tiếng Việt</a>';
 			?>
-            
         </div>
         
         <div id="search">
@@ -155,6 +154,7 @@ else $header_img = 'images/bg-header.jpg';
 			});
         });
 		</script>
+        <div style="clear:both; height:1px"></div>
     </div>
 	<?php
     include_once('blocks/menu.php'); flush();

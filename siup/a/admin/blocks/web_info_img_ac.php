@@ -91,7 +91,7 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('1',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
-	//theloai
+	/*//theloai
 	$values = $row_detail['theloai'];
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Thể loại','theloai','input_medium'); //label id&name class style
@@ -131,15 +131,15 @@ echo '<form name="form_action" method="post" action="">
 	$properties = array('100'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Năm phê duyệt','nampheduyet','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
-	echo $form->DisplayProperties();
+	echo $form->DisplayProperties();*/
 	
 	//info
-	/*$values = $row_detail['info'];
+	$values = $row_detail['info'];
 	$properties = ''; //maxlength OTHER (disabled, readonly) 
-	$views = array('Thông tin','info','textarea'); //label id&name class colspan
+	$views = array('Tóm lược','info','textarea'); //label id&name class colspan
 	$other = ckeditor_custom('info');
     $form->getProperties('3',$values,$properties,$views,$other);
-	echo $form->DisplayProperties();*/
+	echo $form->DisplayProperties();
 	
 	//id
 	$values = $row_detail['id'];
