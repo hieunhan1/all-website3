@@ -1,0 +1,33 @@
+/* CSS Document */
+*{margin:0; padding:0}
+body{color:#333; font-size:13px; font-family:Arial, Helvetica, sans-serif; background-color:#CCC}
+img{border:0}
+a:link,a:visited,a:active{color:#3A00FF; text-decoration:none}
+a:hover{color:#ED1E28; text-decoration:underline}
+
+.error{color:#F00; font-style:italic; font-weight:bold}
+
+#wrapper{width:700px; height:525px; margin:20px auto; box-shadow:0px 0px 15px #333; background-color:#FFF}
+#content{width:700px; height:475px; position:relative; z-index:2}
+#action{width:700px; height:50px; position:absolute; z-index:3; top:495px}
+
+.button{width:153px; height:46px; line-height:46px; font-weight:bold; font-size:145%; color:#FFF; text-transform:uppercase; text-align:center; background:url(next-pre.png) no-repeat top left; cursor:pointer}
+.button:hover{color:#FF0}
+.button_left{float:left; padding:0 45px 0 10px}
+.button_right{float:right; padding:0 10px 0 45px; background-position:0px -100px}
+
+#form_info{padding:205px 0 0 285px}
+#form_info .field{margin-bottom:39px}
+#form_info .txt{width:250px; height:20px; line-height:20px; font-size:110%; border:none; background:none}
+
+#form_timhieu{padding:145px 38px 0 245px}
+#question{width:300px; float:left; font-size:200%; line-height:33px; color:#593B1D}
+#number{width:auto; float:right; line-height:60px; font-size:190%; font-weight:bold; color:#FFF}
+#answer{clear:both; width:300px; height:75px; margin:55px 30px 0 105px }
+#answer .txt{background:none; border:none; line-height:25px; font-weight:bold; font-size:140%; color:#593B1D}
+#link{clear:both; font-size:120%; line-height:22px; margin-top:40px}
+#link p{font-weight:bold; color:#000}
+#link a{display:block}
+
+#datetime{font-weight:bold; font-size:200%; color:#FFF; text-align:center; padding:300px 0 0 50px}
+#succeed{line-height:50px; font-weight:bold; font-size:240%; text-align:center; padding:50px 30px 0 60px}
