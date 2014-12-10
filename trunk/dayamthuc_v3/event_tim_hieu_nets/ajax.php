@@ -2,9 +2,6 @@
 include_once('../class/class.trangchu.php');
 $tc = new trangchu();
 
-$ip_address = $_SERVER['REMOTE_ADDR'];
-$group_event = 2; //tim hieu nghe pha che
-
 function _change_dau_nhay($str){
 	$str = str_replace("'",'&#39;',$str);
 	return $str;
@@ -38,15 +35,14 @@ if(isset($_POST['thongtincanhan'])){
 	$phone	= _change_dau_nhay(trim($_POST['phone']));
 	$email	= _change_dau_nhay(trim($_POST['email']));
 	$address= _change_dau_nhay(trim($_POST['address']));
+	$ip_address = $_SERVER['REMOTE_ADDR'];
 	$date_start = time();
+	$group_event = 1; //tim hieu ve netspace
 	
 	if($name!='' && $gender!='' && $phone!='' && $email!='' && $address!=''){
 		$date_current = date('Y-m-d H:i:s');
 		$sql = "INSERT INTO `web_event` (`name`,`gender`,`phone`,`email`,`address`,`ip_address`,`date_start`,`date_create`,`group_event`) VALUES ('{$name}','{$gender}','{$phone}','{$email}','{$address}','{$ip_address}','{$date_start}','{$date_current}','{$group_event}')";
-		$qr_kt = mysql_query("SELECT `id` FROM `web_event` WHERE `ip_address`='{$ip_address}' AND `group_event`='{$group_event}'");
-		$total = mysql_num_rows($qr_kt);
-		if($total==0){
-			mysql_query($sql);
+		if(mysql_query($sql)){
 			echo 1;
 			return true;
 		}else{
@@ -60,8 +56,9 @@ if(isset($_POST['thongtincanhan'])){
 if(isset($_POST['question'])){
 	$question	= _change_dau_nhay(trim($_POST['question']));
 	$answer		= _change_dau_nhay(trim($_POST['answer']));
+	$ip_address = $_SERVER['REMOTE_ADDR'];
 	
-	$qr = mysql_query("SELECT * FROM `web_event` WHERE `ip_address`='{$ip_address}' AND `group_event`='{$group_event}'");
+	$qr = mysql_query("SELECT * FROM `web_event` WHERE ip_address='{$ip_address}' ");
 	$row = mysql_fetch_array($qr);
 	if($row['date_end']==NULL){
 		if($question==1 || $question==2){
@@ -81,7 +78,8 @@ if(isset($_POST['question'])){
 }
 
 if(isset($_POST['succeed'])){
-	$qr = mysql_query("SELECT * FROM `web_event` WHERE `ip_address`='{$ip_address}' AND `group_event`='{$group_event}' ");
+	$ip_address = $_SERVER['REMOTE_ADDR'];
+	$qr = mysql_query("SELECT * FROM `web_event` WHERE ip_address='{$ip_address}' ");
 	$row = mysql_fetch_array($qr);
 	$datetime = $row['date_end'] - $row['date_start'];
 	echo date('i:s', $datetime);

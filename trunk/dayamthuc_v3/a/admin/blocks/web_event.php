@@ -27,8 +27,10 @@
             <th width="90">Thao tác</th>
         </tr>
         <?php
+		$group_event = 2; //tim hieu nghe pha che
+		$qr_event = "AND `group_event`='{$group_event}' ";
         $from = (($page_number - 1) * $max_results);
-		$where = "`delete`=0".$str_search;
+		$where = "`delete`=0 ".$qr_event.$str_search;
 		$limit = "LIMIT {$from},{$max_results}";
 		$str = "SELECT id,name,status,date_start,date_end,date_create,date_update,user_create,user_update FROM {$table} WHERE {$where} ORDER BY `id` DESC {$limit}";
 		$qr = mysql_query($str);

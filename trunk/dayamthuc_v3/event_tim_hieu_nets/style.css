@@ -2,8 +2,8 @@
 *{margin:0; padding:0}
 body{color:#333; font-size:13px; font-family:Arial, Helvetica, sans-serif; background-color:#CCC}
 img{border:0}
-a:link,a:visited,a:active{color:#0000FF; text-decoration:none}
-a:hover{color:#FF0000; text-decoration:underline}
+a:link,a:visited,a:active{color:#3A00FF; text-decoration:none}
+a:hover{color:#ED1E28; text-decoration:underline}
 
 .error{color:#F00; font-style:italic; font-weight:bold}
 
@@ -20,14 +20,14 @@ a:hover{color:#FF0000; text-decoration:underline}
 #form_info .field{margin-bottom:39px}
 #form_info .txt{width:250px; height:20px; line-height:20px; font-size:110%; border:none; background:none}
 
-#form_timhieu{padding:150px 38px 0 100px}
-#question{width:450px; height:99px; float:left; font-size:190%; line-height:33px; color:#593B1D}
-#number{width:auto; float:right; line-height:50px; font-size:190%; font-weight:bold; color:#FFF}
-#answer{clear:both; width:350px; height:75px; margin:50px 0 0 110px }
+#form_timhieu{padding:145px 38px 0 245px}
+#question{width:300px; float:left; font-size:200%; line-height:33px; color:#593B1D}
+#number{width:auto; float:right; line-height:60px; font-size:190%; font-weight:bold; color:#FFF}
+#answer{clear:both; width:300px; height:75px; margin:55px 30px 0 105px }
 #answer .txt{background:none; border:none; line-height:25px; font-weight:bold; font-size:140%; color:#593B1D}
-#link{clear:both; font-size:110%; line-height:22px; margin-top:20px}
+#link{clear:both; font-size:120%; line-height:22px; margin-top:40px}
 #link p{font-weight:bold; color:#000}
 #link a{display:block}
 
-#datetime{font-weight:bold; font-size:300%; color:#FFF; text-align:center; padding:290px 0 0 55px}
-#succeed{line-height:50px; color:#00F; font-weight:bold; font-size:230%; text-align:center; padding:50px 30px 0 60px}
+#datetime{font-weight:bold; font-size:200%; color:#FFF; text-align:center; padding:300px 0 0 50px}
+#succeed{line-height:50px; font-weight:bold; font-size:240%; text-align:center; padding:50px 30px 0 60px}
