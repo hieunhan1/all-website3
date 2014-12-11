@@ -114,7 +114,7 @@ $('#name_rewrite').dblclick(function(){
 
 /////////////PICKER DATE//////////////
 $("#date_update").datepicker({
-	numberOfMonths: 1,  dateFormat: 'dd/mm/yy',
+	numberOfMonths: 1,  dateFormat: 'yy/mm/dd',
 	monthNames: ['Một','Hai','Ba','Tư','Năm','Sáu','Bảy','Tám','Chín','Mười','Mười một','Mười hai'] ,
 	monthNamesShort: ['Tháng1','Tháng2','Tháng3','Tháng4','Tháng5','Tháng6','Tháng7','Tháng8','Tháng9','Tháng10','Tháng11','Tháng12'] ,
 	dayNames: ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'],

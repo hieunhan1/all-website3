@@ -107,8 +107,8 @@ echo $form->DisplayProperties();
 
 //Ngày date_update
 if(@$_POST['date_update']) $value = $_POST['date_update'];
-else if($detail['date_update'] != '') $value = date('d/m/Y', strtotime($detail['date_update']));
-else $value = date('d/m/Y');
+else if($detail['date_update'] != '') $value = date('Y/m/d', strtotime($detail['date_update']));
+else $value = date('Y/m/d');
 $form->getProperties('Ngày', 'date_update', 1, 'input_large', $value, 20);
 echo $form->DisplayProperties();
 

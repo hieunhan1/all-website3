@@ -44,55 +44,37 @@ class sql {
 		if(count($this->_error) == 0) return $this->_error = $this->_list_error[89];
 		else return $this->_error;
 	}
+	
+	function _change_dau_nhay($str){
+		$str = str_replace("'",'&#39;',$str);
+		return $str;
+	}
 	function create() { //1
-		$table = $this->_var2;
-		$field = $this->_var3;
-		$value = $this->_var4;
-		$qr = "INSERT INTO `{$table}` (";
-		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)) $dau = '`,';
-			else $dau = '`';
-			if($field[$i] != 'user_update'){
-				$qr .= "`{$field[$i]}{$dau}";
-			}
+		$table  = $this->_var2;
+		$fields = $this->_var3;
+		$values = $this->_var4;
+		$total_field = count($fields);
+		for($i=0; $i < $total_field-1; $i++){
+			$str_field .= "`{$fields[$i]}`,";
+			$str_value .= "'".$this->_change_dau_nhay($values[$i])."',";
 		}
-		$qr .= ') VALUES (';
-		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)){
-				$dau = "'";
-				$cuoi = "',";
-			}
-			else $cuoi = "')";
-			if($field[$i] != 'date_create' and $field[$i] != 'date_update'){
-				if($field[$i] != 'user_update') $qr .= "{$dau}{$value[$i]}{$cuoi}";
-			} else if($field[$i] == 'date_create'){
-				$qr .= $dau.date('Y-m-d H:i:s').$cuoi;
-			} else {
-				$m = explode('/', $value[$i]); $date = date('H:i:s');
-				$qr .= "{$dau}{$m[2]}-{$m[1]}-{$m[0]} {$date}{$cuoi}";
-			}
-		}
-		mysql_query($qr) or ($this->_error = $this->_list_error[1]);
+		$str_field = trim($str_field,',');
+		$str_value = trim($str_value,',');
+		$str = "INSERT INTO `{$table}` ( {$str_field} ) VALUES ( {$str_value} )";
+		mysql_query($str) or ($this->_error = $this->_list_error[2]);
 	}
 	function update() { //2
 		$table = $this->_var2;
-		$field = $this->_var3;
-		$value = $this->_var4;
+		$fields = $this->_var3;
+		$values = $this->_var4;
 		$id = $this->_var5;
-		$qr = "UPDATE `{$table}` SET ";
-		for($i = 0; $i < count($field)-1; $i++){
-			if($i != (count($field)-2)) $dau = "',";
-			else $dau = "' WHERE `id`='{$id}'";
-			if($field[$i] != 'date_create' and $field[$i] != 'user_create'){
-				if($field[$i] != 'date_update'){
-					$qr .= "`{$field[$i]}`='{$value[$i]}{$dau}";
-				} else {
-					$m = explode('/', $value[$i]); $date = date('H:i:s');
-					$qr .= "`{$field[$i]}`='{$m[2]}-{$m[1]}-{$m[0]} {$date}{$dau}";
-				}
-			}
+		$total_field = count($fields);
+		for($i=0; $i < $total_field-1; $i++){
+			$str .= "`{$fields[$i]}`='".$this->_change_dau_nhay($values[$i])."',";
 		}
-		mysql_query($qr) or ($this->_error = $this->_list_error[2]);
+		$str = trim($str,',');
+		$str = "UPDATE `{$table}` SET {$str} WHERE `id`='{$id}' ";
+		mysql_query($str) or ($this->_error = $this->_list_error[2]);
 	}
 	function delete_backup() { //3
 		$table = $this->_var2;
