@@ -1,4 +1,5 @@
 <?php session_start(); ob_start();
+error_reporting(E_ALL ^ E_NOTICE);
 if(isset($_GET['language'])) {
 	$_SESSION['language'] = $_GET['language'];
 } else {
@@ -88,11 +89,11 @@ function SetFileField(fileUrl, data){
 		$m = explode('_ac', $p); $page = $m[0];
 		$navigator = $qt->Navigator($p);
 		$row_navigator = mysql_fetch_array($navigator);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, $for_view);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, $for_action);
 		
 		if($page==$p){
-			$url = 'http://'.$_SERVER['HTTP_HOST'].'/all/mimosa/a/admin/administrator.php?p='.$page;
+			$url = 'http://'.$_SERVER['HTTP_HOST'].'/a/admin/administrator.php?p='.$page;
 			$name_lang = array('Tiếng Việt','English');
 			$ma_lang = array('vi','en');
 			for($i=0; $i<count($name_lang); $i++){
