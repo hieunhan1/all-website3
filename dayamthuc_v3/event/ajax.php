@@ -13,21 +13,18 @@ function _change_dau_nhay($str){
 function body_mail($name){
 	$str = '<div style="line-height:22px">
 	<p>Chào bạn: <b>'.$name.'</b></p>
-	<p>Trường dạy nghề ẩm thực Netspace gửi bạn đáp án cuộc thi “Tìm hiểu về Netspace”. Mời bạn xem danh sách đoạt giải &nbsp; <a href="https://www.facebook.com/truong.day.am.thuc.netspace"><b>tại đây</b></a>.</p>
-    <p>Cảm ơn bạn đã tham gia cuộc thi, chúc bạn thành công và may mắn trong cuộc sống!</p>
+	<p>Trường dạy nghề ẩm thực Netspace gửi bạn đáp án cuộc thi “TÌM HIỂU VỀ NGHỀ PHA CHẾ CHUYÊN NGHIỆP”. Mời bạn xem danh sách đoạt giải &nbsp; <a href="https://www.facebook.com/truong.day.am.thuc.netspace"><b>tại đây</b></a>.</p>
     <p style="font-weight:bold; font-style:italic">Đáp án.</p>
-    <p style="margin-left:35px"><b>Câu 1:</b> Trường NetSpace có bao nhiêu chi nhánh trên cả nước?<br />
-    <em>Trả lời:</em> Có 4 chi nhánh - Trường dạy nghề ẩm thực Netspace hiện có trụ sở chính tại số 30 Nguyễn Huy Tự, P.ĐaKao, Quận 1, TP.HCM và 4 chi nhánh:<br />
-    - 19 Đặng Tất, P.Tân Định, Quận 1,Tp HCM<br />
-    - 3 Phan Thành Tài, Q.Hải Châu, Tp.Đà Nẵng<br />
-    - 140 Xô Viết Nghệ Tĩnh, P.An Hội, Q.Ninh Kiều, Tp.Cần Thơ<br />
-    - 51D Hùng Vương, Phường 9, Tp.Đà Lạt.
-    </p>
-    <p style="margin-left:35px"><b>Câu 2:</b> Trường NetSpace có bao nhiêu chương trình đào tạo?<br />
-    <em>Trả lời:</em> Trường hiện có 37 chương trình đào tạo khác nhau. (bao gồm tất cả chương trình đào tạo các khoá bếp, pha chế và các khoá đặc biệt, khoá chuyên đề)</p>
-    <p style="margin-left:35px"><b>Câu 3:</b> Theo bạn vì sao học nấu ăn và pha chế không dễ chút nào?<br />
-    <em>Trả lời:</em> Khó bởi vì đặc thù của nghề bếp và pha chế là rất vất vả, để gắn bó với nghề lâu dài, bạn cần phải có đam mê, một chút năng khiếu, và sự nỗ lực, rèn luyện trong học tập.</p>
-	<p>Trân trọng!</p>
+    <p style="margin-left:35px"><b>Câu 1:</b> Trường Netspace có bao nhiêu chương trình đào tạo pha chế chuyên nghiệp?<br />
+    <em>Trả lời:</em> 5 chương trình đào tạo pha chế</p>
+    <p style="margin-left:35px"><b>Câu 2:</b> Thời gian đào tạo chuyên viên pha chế tổng hợp tại trường Netspace là bao lâu?<br />
+    <em>Trả lời:</em> 5 tuần (15 buổi)</p>
+    <p style="margin-left:35px"><b>Câu 3:</b> Bài thi pha chế chuyên nghiệp được đánh giá theo 4 yếu tố nào?<br />
+    <em>Trả lời:</em> Bài chấm điểm được đánh giá từ cách thức pha chế, thao tác pha chế, nắm rõ công thức và sản phẩm pha chế có đạt chất lượng hay không?</p>
+	<p>Cuối cùng, Thay mặt toàn thể Netspace cám ơn sự ủng hộ nhiệt tình của các bạn thí sinh tham dự cuộc thi.</p>
+	<p>Những bạn chưa nhận giải thưởng cũng đừng nản lòng nhé, còn rất nhiều sân chơi khác đang chờ đón các bạn.</p>
+	<p>Chúc các bạn gặp nhiều may mắn và thành công trong cuộc sống!</p>
+	<p>Trân trọng!<br />Trường dạy nghề Ẩm thực Netspace.</p>
 </div>';
 	return $str;
 }
