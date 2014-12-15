@@ -22,10 +22,13 @@ function step_0(&$content){
 	$content = '';
 	$script = '<script type="text/javascript">
 		$(document).ready(function(e) {
-			$(".button_left").html("Xem thể lệ");
-			$(".button_right").html("Tham gia ngay");
+			$(".button_left").html("Kết thúc");
+			$(".button_right").hide();
+			//$(".button_left").html("Xem thể lệ");
+			//$(".button_right").html("Tham gia ngay");
             $(".button_left").live("click",function(){
-				window.open("http://www.dayamthuc.vn/xem-tin/thong-bao-the-le-cuoc-thi-tim-hieu-ve-nghe-pha-che-chuyen-nghiep.html", "_blank");
+				//window.open("http://www.dayamthuc.vn/xem-tin/thong-bao-the-le-cuoc-thi-tim-hieu-ve-nghe-pha-che-chuyen-nghiep.html", "_blank");
+				window.location = "http://www.dayamthuc.vn";
 			});
 			$(".button_right").live("click",function(){
 				window.location = "index.php?step=1";

@@ -12,7 +12,8 @@ include_once('../class/class.trangchu.php');
 $tc = new trangchu();
 
 $i = 0;
-$qr = mysql_query("SELECT * FROM `web_event`");
+$group_event = 2; //tim hieu nghe pha che
+$qr = mysql_query("SELECT * FROM `web_event` WHERE `group_event`='{$group_event}'");
 while($row = mysql_fetch_array($qr)){
 	$i++;
 	if($row['send_mail']==0) $action='Gửi mail'; else $action='Đã gửi';
@@ -28,7 +29,7 @@ while($row = mysql_fetch_array($qr)){
     	<th align="left">STT</th>
     	<th align="left">Tên</th>
     	<th align="left">Email</th>
-    	<th align="left">Trạng Thái</th>
+    	<th width="70" align="left">Trạng Thái</th>
     </tr>
     <?php echo $str;?>
 </table>
