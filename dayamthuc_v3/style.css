@@ -122,7 +122,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 #support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:10px; background:#FFF; border:solid 1px #999; z-index:5}
 #support_online #btn_support{height:40px; cursor:pointer}
-#support_online #ajax_support{display:none; padding-top:10px; border-top:solid 1px #999}
+#support_online #ajax_support{padding-top:10px; border-top:solid 1px #999}
 
 #support_online #ds_chinhanh{margin:0 5px}
 #support_online #ds_chinhanh .ds_chinhanh_item{width:100px; float:left; line-height:25px; height:25px; text-align:center; margin:0 10px 5px 10px; background-color:#FF9; border:solid 1px #999; cursor:pointer}
