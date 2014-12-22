@@ -137,7 +137,7 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 #menu{height:34px; margin-bottom:5px; background:url(images/images_top.gif) no-repeat; background-position:0px 0px}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
-#nav li a {line-height:34px; color:#FFF; font-weight:bold; padding:0 20px} /* letter-spacing:1px; word-spacing:2px */
+#nav li a {line-height:34px; color:#FFF; font-weight:bold; padding:0 20px; white-space:nowrap} /* letter-spacing:1px; word-spacing:2px */
 #nav a:hover {text-decoration:none; color:#FF0; background-color:#D52621}
 #nav li {float:left; position:relative}
 #nav ul {width:160px; position:absolute; top:34px; display:none}
