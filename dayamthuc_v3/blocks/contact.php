@@ -11,9 +11,9 @@
                 <td colspan="4"><p style="font-size:180%; color:#F00"><?php echo const_thong_tin;?></p></td>
               </tr>
               <tr>
-                <td width="100"><?php echo const_contact_name;?>:</td>
+                <td width="100"><span style="color:#F00">**</span> <?php echo const_contact_name;?>:</td>
                 <td><input type="text" name="name" class="txt" maxlength="50" /></td>
-                <td width="100" align="right"><?php echo const_contact_email;?>:</td>
+                <td width="100" align="right"><span style="color:#F00">**</span> <?php echo const_contact_email;?>:</td>
                 <td><input type="text" name="email" class="txt" maxlength="60" /></td>
               </tr>
               <tr>
@@ -23,7 +23,7 @@
                 <td><input type="text" name="diachi" class="txt" maxlength="250" /></td>
               </tr>
               <tr>
-                <td valign="top"><?php echo const_contact_message;?>:</td>
+                <td valign="top"><span style="color:#F00">**</span> <?php echo const_contact_message;?>:</td>
                 <td colspan="3"><textarea name="message" class="textarea"></textarea></td>
               </tr>
               <tr>

@@ -242,18 +242,6 @@ $(document).ready(function($){
 			alert("Nhập họ tên");
 			$("input[name=HoTen]").focus();
 			return false;
-		}else if(NgaySinh.length<6){
-			alert("Nhập ngày sinh");
-			$("input[name=ngay]").focus();
-			return false;
-		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Email))){
-			alert("Email chưa đúng");
-			$("input[name=Email]").focus();
-			return false;
-		}else if(DiaChi.length<6){
-			alert("Nhập địa chỉ");
-			$("input[name=DiaChi]").focus();
-			return false;
 		}else if(DienThoai.length<6){
 			alert("Nhập điện thoại");
 			$("input[name=DienThoai]").focus();

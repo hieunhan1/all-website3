@@ -54,7 +54,11 @@ var google_remarketing_only = false;
                 <td><input type="text" name="HoTen" class="text_dangky" value="" maxlength="50" /></td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> Ngày sinh:</td>
+                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_phone;?>:</td>
+                <td><input type="text" name="DienThoai" class="text_dangky" value="" maxlength="11" /></td>
+              </tr>
+              <tr>
+                <td align="right" valign="top">Ngày sinh:</td>
                 <td style="color:#999">
                 	<input type="text" name="ngay"  class="text_dangky" maxlength="2" style="width:50px" /> ngày 
                     <input type="text" name="thang" class="text_dangky" maxlength="2" style="width:50px" /> tháng 
@@ -62,16 +66,12 @@ var google_remarketing_only = false;
                 </td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_email;?>:</td>
+                <td align="right" valign="top"><?php echo const_contact_email;?>:</td>
                 <td><input type="text" name="Email" class="text_dangky" value="" maxlength="50" /></td>
               </tr>
               <tr>
-                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_diachi;?>:</td>
+                <td align="right" valign="top"><?php echo const_contact_diachi;?>:</td>
                 <td><input type="text" name="DiaChi" class="text_dangky" value="" maxlength="250" /></td>
-              </tr>
-              <tr>
-                <td align="right" valign="top"><span class="style1">*</span> <?php echo const_contact_phone;?>:</td>
-                <td><input type="text" name="DienThoai" class="text_dangky" value="" maxlength="11" /></td>
               </tr>
               <tr>
                 <td align="right" valign="top">Đã tốt nghiệp:</td>

@@ -27,7 +27,7 @@
             <th width="90">Thao tác</th>
         </tr>
         <?php
-		$group_event = 2; //tim hieu nghe pha che
+		$group_event = 3; //noel 2014
 		$qr_event = "AND `group_event`='{$group_event}' ";
         $from = (($page_number - 1) * $max_results);
 		$where = "`delete`=0 ".$qr_event.$str_search;

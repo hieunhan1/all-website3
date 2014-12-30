@@ -8,7 +8,7 @@ $title = 'NETSPACE';
 //$email_nhan = $row_config['email'];
 //$name_nhan = 'Admin';
 
-$subject = 'NO-REPLY | Kết quả cuộc thi tìm hiểu về nghề pha chế chuyên nghiệp';
+$subject = 'NO-REPLY | Kết quả cuộc thi VUI GIÁNG SINH – RINH QUÀ CÙNG NETSPACE';
 
 //Khởi tạo đối tượng
 $mail = new PHPMailer();
