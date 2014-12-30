@@ -102,15 +102,6 @@ else $value = date('d/m/Y');
 $form->getProperties('Ngày', 'date_update', 1, 'input_large select_date', $value, 20);
 echo $form->DisplayProperties();
 
-//Chọn file ảnh
-$orther = "onclick=\"BrowseServer('Images:/','url_hinh')\"";
-$form->getProperties('Chọn ảnh', 'btnBrowse', 7, 'button', 0, NULL, $orther);
-$orther = $form->DisplayProperties();
-//Ảnh đại diện url_hinh
-if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_hinh'];
-$form->getProperties('Icon menu', 'url_hinh', 1, 'input_large', $value, 150, $orther);
-echo $form->DisplayProperties();
-
 //Vị trí menu
 $value = array();
 $qr = mysql_query("SELECT * FROM menu_position WHERE `delete`=0 ");
@@ -177,6 +168,15 @@ echo $form->DisplayProperties();
 //Tags (keyword)    tags
 if(@$_POST['metaKeyword']) $value = $_POST['metaKeyword']; else $value = $detail['metaKeyword'];
 $form->getProperties("Tags (keyword) {$required}", 'metaKeyword', 1, 'input_medium', $value, 250);
+echo $form->DisplayProperties();
+
+//Chọn file ảnh
+$orther = "onclick=\"BrowseServer('Images:/','url_hinh')\"";
+$form->getProperties('Chọn ảnh', 'btnBrowse', 7, 'button', 0, NULL, $orther);
+$orther = $form->DisplayProperties();
+//Ảnh đại diện url_hinh
+if(@$_POST['url_hinh']) $value = $_POST['url_hinh']; else $value = $detail['url_hinh'];
+$form->getProperties('Ảnh đại diện', 'url_hinh', 1, 'input_large', $value, 150, $orther);
 echo $form->DisplayProperties();
 
 //thu tu - order

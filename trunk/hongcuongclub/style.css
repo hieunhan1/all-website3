@@ -9,6 +9,7 @@ img{border:0}
 a:link,a:visited,a:active{color:#FEE356; text-decoration:none}
 a:hover{color:#ED1E28; text-decoration:underline}
 hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
+table{border-collapse:collapse; border-color:#FFF}
 
 #wrapper{width:1000px; margin:auto}
 
