@@ -13,7 +13,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #wrapper{width:1000px; margin:auto}
 
 #menu_top{clear:both; width:auto; height:15px; line-height:15px; float:right; color:#b1b1b1; padding-top:12px}
-#menu_top a{color:#b1b1b1; margin-left:30px}
+#menu_top a{color:#b1b1b1; margin-left:20px; white-space:nowrap}
+#menu_top .a{color:#FFF; background-color:#A06C11; padding:5px 15px}
 #menu_top p{width:auto; float:left; padding-left:30px}
 #menu_top p a{margin:0}
 #menu_top span{font-size:130%; color:#fff000; font-weight:bold; padding-right:10px}
@@ -74,7 +75,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:30px}
 #run_top{clear:both; height:20px; text-align:right; font-weight:bold; padding-top:50px; color:#BB8B4A; cursor:pointer}
 
 /*menu*/
-#menu{height:26px; margin:10px 0 55px 0}
+#menu{height:26px; margin:10px 0 55px 0; white-space:nowrap}
 #menu_active{background-color:#7a1315}
 #nav, #nav ul {list-style:none; position:relative; z-index:1000}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}

@@ -3,7 +3,7 @@
         <?php
         $menu = $tc->menu(0,2,$lang);
         while($row = mysql_fetch_array($menu)){
-            echo '<a href="'.$row['url'].'">'.$row['name'].'</a>';
+            echo '<a href="'.$row['url'].'" class="a">'.$row['name'].'</a>';
         }
         ?>
     </div>
@@ -44,7 +44,7 @@
                     ?></p>
                 </td>
                 <td><?php echo $row_config['contact_foo'];?></td>
-                <td width="170" valign="top" style="text-align:right; font-weight:bold"><?php echo $row_config['copyright'];?></td>
+                <td width="170" style="text-align:right; font-weight:bold; white-space:nowrap"><?php echo $row_config['copyright'];?></td>
             </tr>
         </table>
     </div>
