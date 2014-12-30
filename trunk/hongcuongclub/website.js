@@ -1,7 +1,7 @@
 var popupStatus = 0;
 function loadPopup() {
     if(popupStatus==0) {
-        $("#backgroundPopup").css({"opacity": "0.3"});
+        $("#backgroundPopup").css({"opacity": "0.8"});
         $("#backgroundPopup").fadeIn("slow");
         $("#popupContact").fadeIn("slow");
         popupStatus = 1;
@@ -123,7 +123,6 @@ $(document).ready(function($){
 		//Use top, bottom, left, right, tl, tr, bl, br 
 		$(".box_home:even").corner("br tl 50px");
 		$(".box_home:odd").corner("bl tr 50px");
-		$(".view_more").corner("5px");
-		$("#menu_active").corner("5px");
+		$(".view_more, #menu_active, .a").corner("5px");
 	}
 });
