@@ -6,6 +6,7 @@
 <title>Cuộc thi tìm hiểu về Netspace</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <script type="text/javascript" src="../library/jquery.min.js"></script>
+<script type="text/javascript" src="../library/jquery.corner.js"></script>
 <script type="text/javascript" src="js_checks_field.js"></script>
 </head>
 
@@ -22,13 +23,10 @@ function step_0(&$content){
 	$content = '';
 	$script = '<script type="text/javascript">
 		$(document).ready(function(e) {
-			$(".button_left").html("Kết thúc");
-			$(".button_right").hide();
-			//$(".button_left").html("Xem thể lệ");
-			//$(".button_right").html("Tham gia ngay");
+			$(".button_left").html("Xem thể lệ");
+			$(".button_right").html("Tham gia ngay");
             $(".button_left").live("click",function(){
-				//window.open("http://www.dayamthuc.vn/xem-tin/thong-bao-the-le-cuoc-thi-tim-hieu-ve-nghe-pha-che-chuyen-nghiep.html", "_blank");
-				window.location = "http://www.dayamthuc.vn";
+				window.open("http://www.dayamthuc.vn/xem-tin/thong-bao-the-le-cuoc-thi-vui-giang-sinh-rinh-qua-cung-netspace.html", "_blank");
 			});
 			$(".button_right").live("click",function(){
 				window.location = "index.php?step=1";
@@ -43,10 +41,10 @@ function step_1(&$content){
             <div class="field">
                 <input type="radio" name="gender" value="1" checked="checked" /> Nam &nbsp; &nbsp; &nbsp;  &nbsp; 
                 <input type="radio" name="gender" value="0" /> Nữ
+				<input type="text" name="phone" value="" class="txt" style="width:100px; margin-left:170px" /> <span class="error" id="phone"></span>
             </div>
-            <div class="field"><input type="text" name="phone" value="" class="txt" /> <span class="error" id="phone"></span></div>
             <div class="field"><input type="text" name="email" value="" class="txt" /> <span class="error" id="email"></span></div>
-            <div class="field"><input type="text" name="address" value="" class="txt" /> <span class="error" id="address"></span></div>
+            <div class="field" style="margin-left:50px"><input type="text" name="address" value="" class="txt" /> <span class="error" id="address"></span></div>
         </div>';
 	$script = '<script type="text/javascript">
 		$(document).ready(function(e) {
@@ -55,7 +53,7 @@ function step_1(&$content){
 			$(".button_right").click(function(){
 				var address = check_text_length("input[name=address]","#address","Nhập địa chỉ",5);
 				var email = check_email("input[name=email]","#email","Email chưa đúng");
-				var phone = check_phone("input[name=phone]","#phone","Điện thoại chưa đúng");
+				var phone = check_phone("input[name=phone]","#phone","ĐT chưa đúng");
 				var name = check_text_length("input[name=name]","#name","Nhập họ tên",2);
 				var gender = $.trim($("input[name=gender]:checked").val());
 				
@@ -67,9 +65,9 @@ function step_1(&$content){
 						cache:false,
 						success: function(data){
 							if(data=="1"){
-								window.location = "index.php?step=2&question=1";
+								window.location = "index.php?step=2";
 							}else{
-								alert("Cuộc thi tìm hiểu nghề pha chế chuyên nghiệp bạn chỉ có thể tham gia 1 lần.");
+								alert("Vui Giáng Sinh rinh quà cùng NETSPACE bạn chỉ có thể tham gia 1 lần.");
 								return false;
 							}
 						}
@@ -82,57 +80,79 @@ function step_1(&$content){
 	</script>';
 	return $script;
 }
-function step_2(&$content, $question){
-	$arr_question = array('',
-		'Trường NetSpace có bao nhiêu chương trình đào tạo pha chế chuyên nghiệp?',
-		'Thời gian đào tạo chuyên viên pha chế tổng hợp tại trường Netspace là bao lâu?',
-		'Bài thi pha chế chuyên nghiệp được đánh giá theo 4 yếu tố nào?'
-	);
-	$arr_link = array();
-	$arr_link[1] = array('http://www.dayamthuc.vn/truong-day-hoc-pha-che/','Trường dạy học pha chế NetSpace','http://www.dayamthuc.vn/danh-muc/Chuong-Trinh-Dao-Tao-3-1.html','Chương trình đào tạo dạy pha chế');
-	$arr_link[2] = array('http://www.dayamthuc.vn/xem-tin/hoc-pha-che-sinh-to-de-mo-quan-kinh-doanh-372.html','Học pha chế sinh tố để mở quán kinh doanh','http://www.dayamthuc.vn/xem-tin/chuyen-vien-pha-che-barista-146.html','Chương trình chuyên viên pha chế tổng hợp');
-	$arr_link[3] = array('http://www.dayamthuc.vn/xem-tin/Hoc-Pha-Che-Do-Uong-Su-Dam-Me-Cua-Cac-Ban-Tre-200.html','Học pha chế đồ uống - Sự đam mê của các bạn trẻ','http://www.dayamthuc.vn/xem-tin/truong-day-pha-che-gioi-thieu-nghe-doc-dao-351.html','Trường dạy pha chế giới thiệu Nghề độc đáo');
-	$content = '<div id="form_timhieu">
-        	<div id="question">'.$arr_question[$question].'</div>
-            <div id="number">Câu '.$question.'</div>
-            <div style="clear:both; height:1px"></div>
-        	<div id="answer"><input type="text" name="answer" class="txt" /> <span class="error"></span></div>
-            <div id="link">
-            	<p> Bạn có thể tham khảo câu trả lời trong bài viết sau nhé!</p>
-				<a href="'.$arr_link[$question][0].'" target="_blank">1. '.$arr_link[$question][1].'</a>
-				<a href="'.$arr_link[$question][2].'" target="_blank">2. '.$arr_link[$question][3].'</a>
-            </div>
-        </div>';
-	$next_question = $question + 1;
-	$pre_question = $question - 1;
-	if($question==1){
-		$link_next = 'index.php?step=2&question='.$next_question;
-		$link_pre = '$(".button_left").hide();';
-	}elseif($question==2){
-		$link_next = 'index.php?step=2&question='.$next_question;
-		$link_pre = '$(".button_left").click(function(){ window.location = "index.php?step=2&question='.$pre_question.'"; });';
-	}elseif($question==3){
-		$link_next = 'index.php?step=3';
-		$link_pre = '$(".button_left").click(function(){ window.location = "index.php?step=2&question='.$pre_question.'"; });';
-	}
+function step_2(&$content){
+	$content = '<div id="hello">Chào bạn:<br /><b></b><br />Đây là món quà<br />dành tặng bạn!</div>
+	<div id="btn_khampha">Khám phá</div>';
 	$script = '<script type="text/javascript">
 		$(document).ready(function(e) {
-			$("input[name=answer]").focus();
-			$(".button_left").html("Trở lại");
-			'.$link_pre.'
-			$(".button_right").html("Tiếp theo");
-			$(".button_right").click(function(){
-				var answer = check_text_length("input[name=answer]",".error","Nhập trả lời",1);
-				
-				if(answer!=false){
+			$.ajax({
+				url:"ajax.php",
+				type:"post",
+				data:{getname:1},
+				cache:false,
+				success: function(data){
+					$("#hello b").html(data);
+				}
+			});
+			$("#btn_khampha").click(function(){
+				window.location = "index.php?step=3";
+			});
+        });
+	</script>';
+	return $script;
+}
+function step_3(&$content){
+	$content = '<div id="img_monan"></div>
+	<div id="link">
+		<p>Bạn có thể tham khảo cách chế biến trong bài viết sau nhé!</p>
+		<a href="http://www.dayamthuc.vn/hoc-nau-an/" title="Học nấu ăn ở NetSpace" target="_blank">Học nấu ăn ở NetSpace</a>
+	</div>';
+	
+	$script = '<script type="text/javascript">
+		$(document).ready(function(e) {
+			$.ajax({
+				url:"ajax.php",
+				type:"post",
+				data:{img_monan:1},
+				cache:false,
+				success: function(data){
+					$("#img_monan").html(data);
+				}
+			});
+			$("#img_monan").corner("56px");
+			$(".button_left").hide();
+			$(".button_right").html("Chế biến");
+            $(".button_right").live("click",function(){
+				window.location = "index.php?step=4";
+			});
+        });
+	</script>';
+	return $script;
+}
+function step_4(&$content){
+	$content = '<div id="form_timhieu" oncopy="return false" ondrag="return false" ondrop="return false" onpaste="return false" ondragstart="return false" onselectstart="return false" unselectable="on" style="-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;">
+		<div id="answer1"><input type="text" name="answer1" class="txt" style="width:350px" /> <span></span></div>
+		<div id="answer2"><textarea name="answer2" class="txt" style="width:450px; height:66px; overflow:auto"></textarea> <span></span></div>
+		<div id="answer3"><textarea name="answer3" class="txt" style="width:450px; height:110px; overflow:auto"></textarea> <span></span></div>
+		<div style="clear:both; height:1px"></div>
+	</div>';
+	$script = '<script type="text/javascript">
+		$(document).ready(function(e) {
+			$(".button_left").html("Quay lại");
+			$(".button_right").html("Hoàn thành");
+            $(".button_right").live("click",function(){
+				var answer3 = check_text_length("textarea[name=answer3]","#answer3 span","Nhập Cách chế biến",10);
+				var answer2 = check_text_length("textarea[name=answer2]","#answer2 span","Nhập nguyên liệu",10);
+				var answer1 = check_text_length("input[name=answer1]","#answer1 span","Nhập tên món ăn",2);
+				if(answer1!=false && answer2!=false && answer3!=false){
 					$.ajax({
 						url:"ajax.php",
 						type:"post",
-						data:{question:'.$question.',answer:answer},
+						data:{answer:1,answer1:answer1,answer2:answer2,answer3:answer3},
 						cache:false,
 						success: function(data){
 							if(data=="1"){
-								window.location = "'.$link_next.'";
+								window.location = "index.php?step=5";
 							}else{
 								alert(data);
 								return false;
@@ -143,13 +163,15 @@ function step_2(&$content, $question){
 					return false;
 				}
 			});
+            $(".button_left").live("click",function(){
+				window.location = "index.php?step=3";
+			});
         });
 	</script>';
 	return $script;
 }
-function step_3(&$content){
-	$content = '<div id="datetime">00:00</div>
-	<div id="succeed">Chúng tôi sẽ gửi kết quả đến địa chỉ Email của bạn trước ngày 12/12/2014</div>';
+function step_5(&$content){
+	$content = '<div id="datetime">00:00</div>';
 	$script = '<script type="text/javascript">
 		$(document).ready(function(e) {
 			$(".button_left").hide();
@@ -168,7 +190,7 @@ function step_3(&$content){
 	return $script;
 }
 
-$bg_image = array('image-0','image-1','image-2','image-3');
+$bg_image = array('image-0','image-1','image-2','image-3','image-4','image-5');
 
 $step = $_GET['step'];
 if(!isset($step)){
@@ -184,6 +206,12 @@ if(!isset($step)){
 }elseif($step==3){
 	$view_bg_image = $bg_image[$step];
 	$script = step_3($content);
+}elseif($step==4){
+	$view_bg_image = $bg_image[$step];
+	$script = step_4($content);
+}elseif($step==5){
+	$view_bg_image = $bg_image[$step];
+	$script = step_5($content);
 }
 ?>
 
@@ -198,6 +226,9 @@ if(!isset($step)){
     </div>
     <?php echo $script; ?>
 </div>
+
+
+<script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",14913]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
 
 </body>
 </html>

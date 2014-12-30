@@ -12,7 +12,7 @@ include_once('../class/class.trangchu.php');
 $tc = new trangchu();
 
 $i = 0;
-$group_event = 2; //tim hieu nghe pha che
+$group_event = 3; //noel 2014
 $qr = mysql_query("SELECT * FROM `web_event` WHERE `group_event`='{$group_event}'");
 while($row = mysql_fetch_array($qr)){
 	$i++;

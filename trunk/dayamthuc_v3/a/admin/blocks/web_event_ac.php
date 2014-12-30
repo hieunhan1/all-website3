@@ -94,26 +94,43 @@ echo '<form name="form_action" method="post" action="">
 	$views = array('Địa chỉ','address','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
-
+	
+	echo '<tr>
+		<td class="label">Hình món ăn</td>
+		<td><img height="150" src="http://www.dayamthuc.vn/event/monan/'.$row_detail['img_monan'].'.jpg" /></td>
+	</tr>';
+	
 	//answer_1
 	$values = $row_detail['answer_1'];
 	$properties = array('3'); //maxlength OTHER (disabled, readonly) 
-	$views = array('Câu 1','answer_1','input_medium'); //label id&name class style
+	$views = array('Tên món ăn','answer_1','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 
 	//answer_2
-	$values = $row_detail['answer_2'];
+	/*$values = $row_detail['answer_2'];
 	$properties = array('3'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Câu 2','answer_2','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();*/
+	$values = $row_detail['answer_2'];
+	$properties = ''; //disabled, readonly
+	$views = array('Nguyên liệu','answer_2','textarea'); //label id&name class colspan
+	$other = ckeditor_custom('answer_2');
+    $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 
 	//answer_3
-	$values = $row_detail['answer_3'];
+	/*$values = $row_detail['answer_3'];
 	$properties = array('250'); //maxlength OTHER (disabled, readonly) 
 	$views = array('Câu 3','answer_3','input_medium'); //label id&name class style
     $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();*/
+	$values = $row_detail['answer_3'];
+	$properties = ''; //disabled, readonly
+	$views = array('Cách chế biến','answer_3','textarea'); //label id&name class colspan
+	$other = ckeditor_custom('answer_3');
+    $form->getProperties('3',$values,$properties,$views,$other);
 	echo $form->DisplayProperties();
 	
 	$datetime = $row_detail['date_end'] - $row_detail['date_start'];

@@ -43,7 +43,7 @@ if($_POST['dangky']=='dangky'){
 	$khoahoc = trim($_POST['KhoaHoc']);
 	$noihoc = trim($_POST['NoiHoc']);
 	
-	if($name!='' && $email!='' && $phone!='' && $diachi!=''){
+	if($name!='' && $phone!=''){
 		$id = $tc->dangky_tructuyen($name,$ngaysinh,$email,$phone,$diachi,$_POST['TotNghiep'],$khoahoc,$noihoc,$_POST['thongtin_khac'],$_POST['ThanhVienHoi']);
 		echo '1';
 		//include_once('sendmail_smtp/send_dangky.php');
