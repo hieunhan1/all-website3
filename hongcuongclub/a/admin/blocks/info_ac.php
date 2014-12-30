@@ -177,13 +177,15 @@ echo $form->DisplayProperties();
 if(@$_POST['metaKeyword']) $value = $_POST['metaKeyword']; else $value = $detail['metaKeyword'];
 $form->getProperties('Tags (keyword)', 'metaKeyword', 1, 'input_medium', $value, 250);
 echo $form->DisplayProperties();
+
 //other
-$value = array(1 => 'Có', 0 => 'Không');
+/*$value = array(1 => 'Có', 0 => 'Không');
 if($_POST['other'] != '') $check = $_POST['other'];
 else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
-echo $form->DisplayProperties();
+echo $form->DisplayProperties();*/
+
 echo "
 <tr style='background:#b0b0b0'>
     <th align='right'>&nbsp;</th> 

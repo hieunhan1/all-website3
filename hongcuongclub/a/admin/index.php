@@ -3,7 +3,7 @@ session_start();
 error_reporting(E_ALL & E_NOTICE);
 if(@$_SESSION["Username"]) header('location: administrator.php');
 require 'config.php';
-
+$error = '';
 if(isset($_POST["btnLogin"])) {
 	$kiemtra = $qt->KiemTraLogin(1); //group_id = 1
 	if($kiemtra==true) header("location:administrator.php"); else $error = "Tên đăng nhập hoặc mật khẩu sai.<br />";
