@@ -185,12 +185,12 @@ $form->getProperties('Thứ tự', 'order', 1, 'input_large', $value, 150);
 echo $form->DisplayProperties();
 
 //other
-/*$value = array(1 => 'Hiện', 0 => 'Ẩn');
+$value = array(1 => 'Hiện', 0 => 'Ẩn');
 if($_POST['other'] != '') $check = $_POST['other'];
 else if($detail['other'] != '') $check = $detail['other'];
 else $check = 0; //giá trị mặc định
 $form->getProperties('Trang chủ', 'other', 5, $check, $value, ' &nbsp; ');
-echo $form->DisplayProperties();*/
+echo $form->DisplayProperties();
 
 echo "
 <tr style='background:#b0b0b0'>

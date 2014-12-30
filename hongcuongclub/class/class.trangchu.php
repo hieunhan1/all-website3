@@ -106,6 +106,10 @@ class trangchu extends db {
 	}
 	
 	/*home*/
+	function menu_home_type($level){
+		$qr = "SELECT id,name,url,url_hinh,title,metaDescription FROM menu WHERE `delete`=0 AND status=1 AND other=1 AND parent_id ='{$level}' ORDER BY `order`";
+		return mysql_query($qr);
+	}
 	
 	/*detail*/
 	function info_detail($alias){

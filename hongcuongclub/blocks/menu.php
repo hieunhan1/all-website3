@@ -1,5 +1,8 @@
 <?php
-$view_menu = '<div id="menu"><ul id="nav"><li><a href="http://'.$domain.'">Trang chủ</a></li>';
+$qr = $tc->menu_one_id($menu_root);
+$row_home = mysql_fetch_array($qr);
+$view_menu = '<div id="menu"><ul id="nav"><li><a href="'.$row_home['url'].'" title="'.$row_home['name'].'">Trang chủ</a></li>';
+
 $menu = $tc->menu($menu_root);
 if(mysql_num_rows($menu) == 0) $menu = $tc->menu(0,1);
 while($row = mysql_fetch_array($menu)){

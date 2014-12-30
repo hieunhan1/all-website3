@@ -1,5 +1,6 @@
 <?php
 session_start();
+//error_reporting(E_ALL & E_NOTICE & E_DEPRECATED);
 $lang = 'vi';
 
 $error_sql = "Lỗi kết nối";
