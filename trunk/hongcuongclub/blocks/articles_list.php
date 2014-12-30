@@ -25,7 +25,19 @@ if($total > 1){
 	$row = mysql_fetch_array($list);
 	header('location: http://'.$domain.'/'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html');
 }else{
-	$str_info = '<div style="padding:0 50px">update..</div>';
+	$i = 0;
+	$qr_dm = $tc->menu_home_type($idMenu);
+	if(mysql_num_rows($qr_dm) > 0){
+		while($row = mysql_fetch_array($qr_dm)){
+			$i++;
+			if($i%2 == 1) $style = 'style="float:left"'; else $style = 'style="float:right"';
+			$str_info .= '<div class="box_baiviet" '.$style.'>
+				<a href="'.$row['url'].'"><h3>'.$row['name'].'</h3></a>
+				<div class="box_baiviet_img"><a href="'.$row['url'].'"><img src="'.url_catalog_image.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
+				<div class="box_baiviet_info">'.$row['metaDescription'].'</div>
+			</div>';
+		}
+	}else $str_info = '<div style="padding:0 50px">update..</div>';
 }
 
 
