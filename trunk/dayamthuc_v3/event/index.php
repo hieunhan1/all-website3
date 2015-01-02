@@ -24,12 +24,12 @@ function step_0(&$content){
 	$script = '<script type="text/javascript">
 		$(document).ready(function(e) {
 			$(".button_left").html("Xem thể lệ");
-			$(".button_right").html("Tham gia ngay");
+			$(".button_right").html("Kết thúc");
             $(".button_left").live("click",function(){
 				window.open("http://www.dayamthuc.vn/xem-tin/thong-bao-the-le-cuoc-thi-vui-giang-sinh-rinh-qua-cung-netspace.html", "_blank");
 			});
 			$(".button_right").live("click",function(){
-				window.location = "index.php?step=1";
+				//window.location = "index.php?step=1";
 			});
         });
 	</script>';
@@ -227,8 +227,6 @@ if(!isset($step)){
     <?php echo $script; ?>
 </div>
 
-
-<script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",14913]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
 
 </body>
 </html>
