@@ -1,7 +1,5 @@
 <?php
 session_start();
-error_reporting(E_ALL ^ E_NOTICE);
-
 date_default_timezone_set('Asia/Bangkok');
 define(does_not_exist,'Mục này không tồn tại.');
 
@@ -123,42 +121,6 @@ if(@$_GET['danhmuc']){
 <head>
 <?php echo $seo; ?>
 <link href="style.css" rel="stylesheet" type="text/css" />
-
-<?php if($row_menu_one['type_id']!=8){?>
-<script>(function() {
-  var _fbq = window._fbq || (window._fbq = []);
-  if (!_fbq.loaded) {
-    var fbds = document.createElement('script');
-    fbds.async = true;
-    fbds.src = '//connect.facebook.net/en_US/fbds.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(fbds, s);
-    _fbq.loaded = true;
-  }
-  _fbq.push(['addPixelId', '298986610297302']);
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(['track', 'PixelInitialized', {}]);
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=298986610297302&amp;ev=PixelInitialized" /></noscript>
-<?php }else{ ?>
-<!-- Facebook Conversion Code for Dang ky hoc -->
-<script>(function() {
-  var _fbq = window._fbq || (window._fbq = []);
-  if (!_fbq.loaded) {
-    var fbds = document.createElement('script');
-    fbds.async = true;
-    fbds.src = '//connect.facebook.net/en_US/fbds.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(fbds, s);
-    _fbq.loaded = true;
-  }
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(['track', '6020065158224', {'value':'0.00','currency':'VND'}]);
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6020065158224&amp;cd[value]=0.00&amp;cd[currency]=VND&amp;noscript=1" /></noscript>
-<?php } ?>
 </head>
 
 <body>
@@ -327,14 +289,6 @@ if(!isset($_SESSION['popup_banner'])){
 if(@$script_slider) echo $script_slider;
 if(@$script_photo) echo $script_photo;
 mysql_close();
-?>
-
-<!-- Start Alexa Certify Javascript -->
-<script type="text/javascript">
-_atrk_opts = { atrk_acct:"Z3RSi1a8Dy00W2", domain:"dayamthuc.vn",dynamic: true};
-(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
-</script>
-<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=Z3RSi1a8Dy00W2" style="display:none" height="1" width="1" alt="" /></noscript>
-<!-- End Alexa Certify Javascript -->  
+?> 
 </body>
 </html>
