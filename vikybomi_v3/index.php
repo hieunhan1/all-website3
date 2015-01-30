@@ -1,10 +1,11 @@
 <?php
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 if(!@$_GET['lang']) $lang = 'vi';
 else $lang = $_GET['lang'];
 
 $error_sql = "Lỗi kết nối";
-define(does_not_exist,'Mục này không tồn tại.');
+define('does_not_exist','Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
@@ -175,7 +176,7 @@ if(@$_GET['danhmuc']){
 <?php
 include_once('blocks/buy.php'); flush();
 include_once('blocks/qc2ben.php');
-include_once('images/noel-2014/temp.php');
+include_once('images/tet-2015/index.php');
 mysql_close();
 ?>
 </body>

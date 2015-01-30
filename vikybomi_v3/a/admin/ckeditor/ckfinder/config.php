@@ -6,7 +6,7 @@ function CheckAuthentication()
 
 $config['LicenseName'] = '';
 $config['LicenseKey'] = '';
-$baseUrl = '/all/vikybomi_v3/upload/';
+$baseUrl = '/all_v3/vikybomi_v3/upload/';
 
 $baseDir = resolveUrl($baseUrl);
 
