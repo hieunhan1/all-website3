@@ -136,8 +136,8 @@ var google_remarketing_only = false;
                     <select name="NoiHoc" class="select_dangky">
                     <option value='Tp.HCM'>Tp.HCM</option>
                     <option value='DaNang'>Đà Nẵng</option>
-                    <option value='DaLat'>Đà Lạt</option>
-                    <option value='CanTho'>Cần Thơ</option>
+                    <!--<option value='DaLat'>Đà Lạt</option>
+                    <option value='CanTho'>Cần Thơ</option>-->
                     </select>
                 </td>
               </tr>
