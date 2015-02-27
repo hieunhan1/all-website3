@@ -122,12 +122,12 @@ class trangchu extends db {
 		$qr	= "SELECT id,name,name_rewrite,url_hinh,price,price_km,menu_id FROM products WHERE `delete`=0 AND status=1 AND `other`=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 5";
 		return mysql_query($qr);
 	}
-	function home_list_info($id){
-		$qr	= "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 9";
+	function home_list_info(){
+		$qr	= "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND `status`=1 AND `other`=1 ORDER BY date_update DESC LIMIT 9";
 		return mysql_query($qr);
 	}
-	function home_list_video($id){
-		$qr	= "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND status=1 AND menu_id LIKE '%,{$id},%' ORDER BY date_update DESC LIMIT 9";
+	function home_list_video(){
+		$qr	= "SELECT name,name_rewrite,menu_id FROM video WHERE `delete`=0 AND `status`=1 AND `other`=1 ORDER BY date_update DESC LIMIT 9";
 		return mysql_query($qr);
 	}
 	
@@ -165,7 +165,7 @@ class trangchu extends db {
 		return mysql_query($qr);
 	}
 	function info_news($idMenu,$id){
-		$qr = "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND id<>'{$id}' AND menu_id LIKE '%,{$idMenu},%' ORDER BY date_update DESC LIMIT 8";
+		$qr = "SELECT name,name_rewrite,menu_id FROM info WHERE `delete`=0 AND status=1 AND id<>'{$id}' ORDER BY date_update DESC LIMIT 8";
 		return mysql_query($qr);
 	}
 	
