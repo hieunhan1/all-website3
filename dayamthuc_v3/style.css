@@ -107,7 +107,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 #run_top{font-weight:bold; float:right; margin-right:20px; cursor:pointer}
 
-#footer{clear:both; height:230px; color:#FFF; font-family:"UTM-Swiss-Condensed"; background-color:#ED1C24}
+#footer{clear:both; color:#FFF; font-family:"UTM-Swiss-Condensed"; background-color:#ED1C24}
 #footer h1, #footer h3{font-size:130%; width:auto; float:left; color:#FF3}
 
 #contact_social{clear:both}
