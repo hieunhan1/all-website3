@@ -256,7 +256,7 @@ flush();
 			}
 			?>
         </div>
-        <div style="clear:both; height:20px"></div>
+        <div style="clear:both; height:220px"></div>
     </div>
 </div>
 <?php 
