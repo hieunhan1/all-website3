@@ -5,14 +5,16 @@
 		function KiemTraLogin() {
 			$un = $_POST["un"];
 			$pa = md5($_POST["pa"]);
-			$qr = "SELECT id,username,quyen_xem,quyen_action FROM web_users WHERE username='{$un}' AND password='{$pa}' AND status=1 AND `delete`=0";
+			$qr = "SELECT id,name,username,quyen_xem,quyen_action,group_id FROM web_users WHERE username='{$un}' AND password='{$pa}' AND status=1 AND `delete`=0";
 			$u = mysql_query($qr);
 			if(mysql_num_rows($u)==1) {
 				$row_u = mysql_fetch_array($u);
-				$_SESSION["id_user_admin"]		= $row_u['id'];
-				$_SESSION["username_admin"]	= $row_u['username'];
-				$_SESSION["quyen_xem_admin"]	= $row_u['quyen_xem'];
-				$_SESSION["quyen_action_admin"]	= $row_u['quyen_action'];
+				$_SESSION["id_user_admin"] = $row_u['id'];
+				$_SESSION["username_admin"] = $row_u['username'];
+				$_SESSION["name_admin"] = $row_u['name'];
+				$_SESSION["group_id_admin"] = $row_u['group_id'];
+				$_SESSION["quyen_xem_admin"] = $row_u['quyen_xem'];
+				$_SESSION["quyen_action_admin"] = $row_u['quyen_action'];
 				return true;
 			} else {
 				return false;
