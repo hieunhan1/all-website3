@@ -92,6 +92,13 @@ echo '<p style="color:#360; font-size:110%">Lưu ý: Khi tại tài khoản pass
     $form->getProperties('1',$values,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	//group_id
+	$values = $row_detail['group_id'];
+	$properties = array('1'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Chi nhánh','group_id','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//password
 	echo $password;
 	

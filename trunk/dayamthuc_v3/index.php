@@ -256,7 +256,7 @@ flush();
 			}
 			?>
         </div>
-        <div style="clear:both; height:220px"></div>
+        <div style="clear:both; height:170px"></div>
     </div>
 </div>
 <?php 
@@ -269,6 +269,14 @@ include_once('blocks/qc2ben.php');
     <div id="ajax_support">
     	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />
         <div id="ajax_support_data"></div>
+        
+		<script type="text/javascript">
+        function formChat(){
+            myWindow=window.open('http://www.dayamthuc.vn/chat/index.php', '','width=400,height=450');
+            myWindow.focus();
+            return true;
+        }
+        </script>
     </div>
 </div>
 
