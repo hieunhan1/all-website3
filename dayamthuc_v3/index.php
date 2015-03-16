@@ -272,7 +272,7 @@ include_once('blocks/qc2ben.php');
         
 		<script type="text/javascript">
         function formChat(){
-            myWindow=window.open('http://www.dayamthuc.vn/chat/index.php', '','width=400,height=450');
+            myWindow=window.open('http://www.dayamthuc.vn/chat_v2/index.php', '','width=400,height=450');
             myWindow.focus();
             return true;
         }
