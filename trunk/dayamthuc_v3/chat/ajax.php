@@ -45,7 +45,7 @@ if($action == "getCustomer"){
 	}
 }
 
-if($action == "chatMessage") {
+if($action == "viewChatMessage") {
 	$data = $db->selectMessage($keychat);
 	foreach($data as $row){
 		if($row['user']=='') echo '<div class="item2">'.$row['message'].'</div>';
@@ -54,23 +54,7 @@ if($action == "chatMessage") {
 	return true;
 }
 
-if($action == "getIdMessage") {
-	$data = $db->getIdMessage($keychat);
-	echo $data;
-	return true;
-}
-
-if($action == "getMessageNew"){
-	$id = $db->_change_dau_nhay($_POST['id']);
-	$data = $db->getMessageNew($keychat, $id);
-	foreach($data as $row){
-		if($row['user']=='') echo '<div class="item2">'.$row['message'].'</div>';
-		else echo '<div class="item1"><b>'.$row['user'].':</b> '.$row['message'].'</div>';
-	}
-	return true;
-}
-
-if($action == "getMessage") {
+if($action == "getMessageCustomer") {
 	$message = trim($_POST['message']);
 	$message = $db->_change_dau_nhay($message);
 	$datetime = time();
@@ -86,6 +70,22 @@ if($action == "getMessage") {
 		echo 0;
 	
 	return true; 
+}
+
+if($action == "getIdMessageCustomer") {
+	$data = $db->getIdMessage($keychat);
+	echo $data;
+	return true;
+}
+
+if($action == "getMessageNewCustomer"){
+	$id = $db->_change_dau_nhay($_POST['id']);
+	$data = $db->getMessageNew($keychat, $id);
+	foreach($data as $row){
+		if($row['user']=='') echo '<div class="item2">'.$row['message'].'</div>';
+		else echo '<div class="item1"><b>'.$row['user'].':</b> '.$row['message'].'</div>';
+	}
+	return true;
 }
 
 mysql_close();

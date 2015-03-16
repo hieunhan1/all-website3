@@ -108,16 +108,16 @@ $(document).ready(function(e) {
 		$("#chat").animate({scrollTop: height});
 		return true;
 	}
-	function chatMessage(){
+	function viewChatMessage(){
 		$("textarea[name=message]").focus();
 		$.ajax({
 			url:"ajax.php",
 			type:"post",
-			data:{action:"chatMessage"},
+			data:{action:"viewChatMessage"},
 			cache:false,
 			success: function(data){
-				getIdMessage();
 				$("#chat").html(data);
+				getIdMessageCustomer();
 				sroll_bottom();
 				return true;
 			}
@@ -129,41 +129,45 @@ $(document).ready(function(e) {
 		return true;
 	}
 	function unlockChat(){
-		$("input[name=btnChat], textarea[name=message]").attr("disabled", false);
-		$("textarea[name=message]").focus();
+		setTimeout(function(){
+			$("input[name=btnChat], textarea[name=message]").attr("disabled", false);
+			$("textarea[name=message]").focus();
+		}, 300);
 		return true;
 	}
-	function getMessage(){
+	function getMessageCustomer(){
 		var message = check_text_length("textarea[name=message]", "#message .error", "Vui lòng nhập nội dung", 1);
 		if(message==false) return false;
 		lockChat();
-		$.ajax({
-			url:"ajax.php",
-			type:"post",
-			data:{action:"getMessage",message:message},
-			cache:false,
-			success: function(data){
-				//$("#error").html(data);
-				$("textarea[name=message]").val("");
-				if(data!='0'){
-					$("#message_new").html(data);
-					$("#chat").append('<div class="item2">' + message + '</div>');
-					sroll_bottom();
-				}else{
-					$("#chat").append('<div class="item2"><span class="error">Chưa gửi được</span> "'+message+'"</div>');
-					sroll_bottom();
+		getMessageNewCustomer();
+		setTimeout(function(){
+			$.ajax({
+				url:"ajax.php",
+				type:"post",
+				data:{action:"getMessageCustomer",message:message},
+				cache:false,
+				success: function(data){
+					$("textarea[name=message]").val("");
+					if(data!='0'){
+						$("#message_new").html(data);
+						$("#chat").append('<div class="item2">' + message + '</div>');
+						sroll_bottom();
+					}else{
+						$("#chat").append('<div class="item2"><span class="error">Chưa gửi được</span> "'+message+'"</div>');
+						sroll_bottom();
+					}
+					unlockChat();
+					return true;
 				}
-				unlockChat();
-				return true;
-			}
-		});
-		return true;
+			});
+		}, 500);
+		
 	}
-	function getIdMessage(){
+	function getIdMessageCustomer(){
 		$.ajax({
 			url:"ajax.php",
 			type:"post",
-			data:{action:"getIdMessage"},
+			data:{action:"getIdMessageCustomer"},
 			cache:false,
 			success: function(data){
 				$("#message_new").html(data);
@@ -171,16 +175,16 @@ $(document).ready(function(e) {
 			}
 		});
 	}
-	function getMessageNew(){
+	function getMessageNewCustomer(){
 		var id = $("#message_new").html();
 		$.ajax({
 			url:"ajax.php",
 			type:"post",
-			data:{action:"getMessageNew", id:id},
+			data:{action:"getMessageNewCustomer", id:id},
 			cache:false,
 			success: function(data){
 				$("#chat").append(data)
-				getIdMessage();
+				getIdMessageCustomer();
 				sroll_bottom();
 				if(data!=''){
 					$("#sound").html('<embed width="1" height="1" src="chat.wav" loop="false" volume="100" />');
@@ -191,8 +195,8 @@ $(document).ready(function(e) {
 		return true;
 	}
 	checkCustomer();
-	chatMessage();
-	setInterval(function(){getMessageNew()}, 4000);
+	viewChatMessage();
+	setInterval(function(){getMessageNewCustomer()}, 4000);
 	
     $("input[name=btnCustomer]").click(function(){
 		var phone = check_phone("input[name=phone]", "#phone .error", "Vui lòng nhập điện thoại");
@@ -208,7 +212,7 @@ $(document).ready(function(e) {
 				if(data=='1' || data=='2'){
 					$("#info_customer").hide();
 					$("#frm_chat").show();
-					chatMessage();
+					viewChatMessage();
 				}else{
 					$("#error").html(data);
 				}
@@ -218,11 +222,13 @@ $(document).ready(function(e) {
 	});
 	
 	$("input[name=btnChat]").live("click", function(){
-		getMessage();
+		getMessageCustomer();
+		return true;
 	});
 	$("textarea[name=message]").live("keypress", function(event){
 		if(event.which==13){
-			getMessage();
+			getMessageCustomer();
+			return true;
 		}
 	});
 });

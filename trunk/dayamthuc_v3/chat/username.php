@@ -1,8 +1,8 @@
 <?php
 session_start();
-$_SESSION['username_admin'] = 'nguyentu';
-$_SESSION['group_id_admin'] = 1;
-$_SESSION['name_admin'] = 'Nguyễn Tú';
+//$_SESSION['username_admin'] = 'nguyentu';
+//$_SESSION['group_id_admin'] = 1;
+//$_SESSION['name_admin'] = 'Nguyễn Tú';
 
 if(!isset($_SESSION['username_admin'])){
 	echo 'Vui long dang nhap.';
@@ -42,6 +42,9 @@ body{font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#333}
 #chat .item1 b{color:#00F}
 #chat .item2{width:auto; float:right; clear:both; color:#666; padding:5px 10px 5px 80px}
 
+#loading{display:none; width:400px; height:300px; text-align:center; padding-top:100px; position:absolute; z-index:2; background-color:#FFF; opacity:0.5}
+#loading img{width:100px}
+
 .textarea{width:308px; height:60px; float:left; line-height:20px; resize:none; overflow:auto; padding:4px 10px; margin:5px 0; background-color:#F3F3F3}
 .btn_send{width:65px; height:70px; float:right; line-height:60px;  margin:5px 0; cursor:pointer}
 </style>
@@ -58,6 +61,7 @@ body{font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#333}
 	<div id="left"></div>
     
     <div id="right">
+    	<div id="loading"><img src="loader.gif" alt="loading" /></div>
     	<div id="chat"></div>
         <div id="message">
         	<div class="error"></div>
@@ -99,61 +103,67 @@ $(document).ready(function(e) {
 		return true;
 	}
 	function unlockChat(){
-		$("input[name=btnChat], textarea[name=message]").attr("disabled", false);
-		$("textarea[name=message]").focus();
+		setTimeout(function(){
+			$("input[name=btnChat], textarea[name=message]").attr("disabled", false);
+			$("textarea[name=message]").focus();
+		}, 300);
 		return true;
 	}
-	function getMessage(){
+	function getMessageStaff(){
 		var message = check_text_length("textarea[name=message]", "#message .error", "Vui lòng nhập nội dung", 1);
 		var keychat = $("#keychat").html();
 		if(message==false) return false;
 		lockChat();
-		$.ajax({
-			url:"ajaxNV.php",
-			type:"post",
-			data:{action:"getMessage", keychat:keychat, message:message},
-			cache:false,
-			success: function(data){
-				//$("#error").html(data);
-				$("textarea[name=message]").val("");
-				if(data!='0'){
-					$("#message_new").html(data);
-					$("#chat").append('<div class="item2">' + message + '</div>');
-					sroll_bottom();
-				}else{
-					$("#chat").append('<div class="item2"><span class="error">Chưa gửi được</span> "'+message+'"</div>');
-					sroll_bottom();
+		getMessageNewStaff();
+		setTimeout(function(){
+			$.ajax({
+				url:"ajaxNV.php",
+				type:"post",
+				data:{action:"getMessageStaff", keychat:keychat, message:message},
+				cache:false,
+				success: function(data){
+					//$("#error").html(data);
+					$("textarea[name=message]").val("");
+					if(data!='0'){
+						$("#message_new").html(data);
+						$("#chat").append('<div class="item2">' + message + '</div>');
+						sroll_bottom();
+					}else{
+						$("#chat").append('<div class="item2"><span class="error">Chưa gửi được</span> "'+message+'"</div>');
+						sroll_bottom();
+					}
+					unlockChat();
+					return true;
 				}
-				unlockChat();
-				return true;
-			}
-		});
+			});
+		}, 500);
 	}
-	function getIdMessage(){
+	function getIdMessageStaff(){
 		var keychat = $("#keychat").html();
 		$.ajax({
 			url:"ajaxNV.php",
 			type:"post",
-			data:{action:"getIdMessage", keychat:keychat},
+			data:{action:"getIdMessageStaff", keychat:keychat},
 			cache:false,
 			success: function(data){
 				$("#message_new").html(data);
 				return true;
 			}
 		});
+		return true;
 	}
-	function getMessageNew(){
+	function getMessageNewStaff(){
 		var keychat = $("#keychat").html();
 		var id = $("#message_new").html();
 		var name = $("#nameCustomer").html();
 		$.ajax({
 			url:"ajaxNV.php",
 			type:"post",
-			data:{action:"getMessageNew", id:id, keychat:keychat, name:name},
+			data:{action:"getMessageNewStaff", id:id, keychat:keychat, name:name},
 			cache:false,
 			success: function(data){
 				$("#chat").append(data)
-				getIdMessage();
+				getIdMessageStaff();
 				sroll_bottom();
 				if(data!=''){
 					$("#sound").html('<embed width="1" height="1" src="chat.wav" loop="false" volume="100" />');
@@ -164,8 +174,8 @@ $(document).ready(function(e) {
 		return true;
 	}
 	listCustomer();
-	setInterval(function(){getMessageNew()}, 4000);
-	setInterval(function(){listCustomer()}, 60000);
+	setInterval(function(){getMessageNewStaff()}, 4000);
+	setInterval(function(){listCustomer()}, 15000);
 	
 	$(".item_left").live("click", function(){
 		$(".item_left").removeClass("active");
@@ -177,6 +187,7 @@ $(document).ready(function(e) {
 		$("#nameCustomer").html(name);
 		$("#keychat").html(keychat);
 		$("textarea[name=message]").focus();
+		$("#loading").show();
 		
 		$.ajax({
 			url:"ajaxNV.php",
@@ -185,19 +196,21 @@ $(document).ready(function(e) {
 			cache:false,
 			success: function(data){
 				$("#chat").html(data);
-				getIdMessage();
+				getIdMessageStaff();
 				sroll_bottom();
+				$("#loading").hide();
+				return true;
 			}
 		});
 		return true;
 	});
 	
 	$("input[name=btnChat]").click(function(){
-		getMessage();
+		getMessageStaff();
 	});
 	$("textarea[name=message]").live("keypress", function(event){
 		if(event.which==13){
-			getMessage();
+			getMessageStaff();
 		}
 	});
 });

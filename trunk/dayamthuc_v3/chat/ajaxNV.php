@@ -37,14 +37,14 @@ if($action == "chatMessage") {
 	return true;
 }
 
-if($action == "getIdMessage") {
+if($action == "getIdMessageStaff") {
 	$keychat = $db->_change_dau_nhay($_POST['keychat']);
 	$data = $db->getIdMessage($keychat);
 	echo $data;
 	return true;
 }
 
-if($action == "getMessageNew"){
+if($action == "getMessageNewStaff"){
 	$id = $db->_change_dau_nhay($_POST['id']);
 	$keychat = $db->_change_dau_nhay($_POST['keychat']);
 	$name = $db->_change_dau_nhay($_POST['name']);
@@ -56,7 +56,7 @@ if($action == "getMessageNew"){
 	return true;
 }
 
-if($action == "getMessage") {
+if($action == "getMessageStaff") {
 	$message = trim($_POST['message']);
 	$message = $db->_change_dau_nhay($message);
 	$keychat = $db->_change_dau_nhay($_POST['keychat']);
@@ -76,4 +76,4 @@ if($action == "getMessage") {
 	return true; 
 }
 
-mysql_close();
+//mysql_close();
