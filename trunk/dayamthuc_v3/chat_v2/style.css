@@ -1,0 +1,44 @@
+body{font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#333}
+a{color:#09F; text-decoration:none}
+a:hover{color:#F30; text-decoration:underline}
+#wrapper{width:350px; margin:auto}
+
+.error{color:#F00; font-style:italic}
+.message{color:#00F}
+.font{font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666; line-height:20px}
+
+.sound{width:1px; height:1px; overflow:hidden; visibility:hidden}
+
+#chat-wrap{border:1px solid #CCC; margin-bottom:3px; }
+#chat-area{height:260px; line-height:20px; overflow:auto; background-color:white; }
+#chat-area .item1{width:auto; float:left; clear:both; padding:5px 50px 5px 5px}
+#chat-area .item1 b{color:#00F}
+#chat-area .item2{width:auto; float:right; clear:both; color:#666; padding:5px 10px 5px 50px}
+#chat-area .item2 b{color:#999}
+
+.select{width:324px; padding:4px 10px; margin:5px 0}
+.txt{width:300px; padding:4px 10px; margin:5px 0}
+.btn{padding:5px 20px; margin:5px 0; cursor:pointer}
+.textarea{width:328px; height:60px; float:left; line-height:20px; resize:none; overflow:auto; padding:4px 10px; margin:5px 0; border:solid 1px #CCC; background-color:#F3F3F3}
+
+#title{clear:both; text-align:center; font-size:20px; margin-bottom:20px}
+#user{clear:both; width:auto; float:right; margin-bottom:10px}
+#user b{color:#00F}
+#user span{font-size:11px}
+
+#left{width:350px; height:400px; float:left; overflow:auto; padding:10px; border:solid 1px #CCC}
+.item_left{clear:both; line-height:20px; padding:10px 5px 10px 5px; border-bottom:solid 1px #CCC}
+.item_left em{font-size:11px; color:#666}
+.item_left .info{width:280px; float:left}
+.item_left .chat{display:none; width:40px; height:20px; float:right; font-size:90%; text-align:center; color:#FFF; font-weight:bold; padding:2px 0; background-color:#09F}
+.item_left .chat a{display:block; color:#FFF}
+#active{background-color:#FF9}
+
+#right{width:400px; height:400px; float:right; line-height:20px; padding:10px; border:solid 1px #CCC; background-color:#CCC}
+#chat{height:300px; overflow:auto; margin-bottom:5px; background-color:#FFF}
+#chat .item1{width:auto; float:left; clear:both; color:#111; padding:5px 80px 5px 10px}
+#chat .item1 b{color:#00F}
+#chat .item2{width:auto; float:right; clear:both; color:#666; padding:5px 10px 5px 80px}
+
+#loading{display:block; width:400px; height:300px; text-align:center; padding-top:100px; position:absolute; z-index:2; background-color:#FFF; opacity:0.5}
+#loading img{width:100px}
