@@ -1,5 +1,5 @@
 <div id="chucnang">
-<div style="clear:both; font-weight:bold; margin-bottom:20px"><a href="http://www.dayamthuc.vn/chat_v2/staff.php" style="color:#F00">Ấn vào đây để tư vấn trực tuyến</a></div>
+<div style="clear:both; font-weight:bold; margin-bottom:20px"><a href="http://localhost/all_v3/dayamthuc_v3/chat/staff.php" style="color:#F00">Ấn vào đây để tư vấn trực tuyến</a></div>
 <?php
 $qr = $qt->menu_admin();
 while($row = mysql_fetch_array($qr)){
