@@ -1,7 +1,8 @@
 <?php
 session_start();
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 date_default_timezone_set('Asia/Bangkok');
-define(does_not_exist,'Mục này không tồn tại.');
+define('does_not_exist','Mục này không tồn tại.');
 
 if(!isset($_GET['lang']))
 	$lang = 'vi';
@@ -269,14 +270,7 @@ include_once('blocks/qc2ben.php');
     <div id="ajax_support">
     	<img src="images/loading1.gif" alt="loading" width="270" id="loading_support" />
         <div id="ajax_support_data"></div>
-        
-		<script type="text/javascript">
-        function formChat(){
-            myWindow=window.open('http://www.dayamthuc.vn/chat_v2/index.php', '','width=400,height=450');
-            myWindow.focus();
-            return true;
-        }
-        </script>
+        <div id="ajax_chat"></div>
     </div>
 </div>
 
@@ -287,6 +281,34 @@ include_once('blocks/qc2ben.php');
 <script type="text/javascript" src="library/partner/common.js"></script>
 <script type="text/javascript" src="library/partner/jquery.simplyscroll.min.js"></script>
 <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
+
+<script type="text/javascript">
+function formChat(){
+	myWindow=window.open('http://localhost/all_v3/dayamthuc_v3/chat/index.php', '','width=400,height=450');
+	myWindow.focus();
+	return true;
+}
+var frmChat = setInterval(function(){ autoChat(); }, 3000);
+function autoChat(){
+	$.ajax({
+		url: 'ajax.php',
+		type:'POST',
+		data:{autoChat:1},
+		cache:false,
+		success: function(data) {
+			if(data!="0"){
+				clearInterval(frmChat);
+				$("#ajax_chat").html(data);
+			}
+			return true;
+		}
+	});
+}
+$("#backgroundPopup, #popupContactClose").live("click", function(){
+	$("#ajax_chat").html('');
+	frmChat = setInterval(function(){ autoChat(); }, 3000);
+});
+</script>
 
 <?php
 if(!isset($_SESSION['popup_banner'])){

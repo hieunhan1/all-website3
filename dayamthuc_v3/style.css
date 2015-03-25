@@ -268,12 +268,12 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 
 /*menu*/
 #menu{height:37px; margin:0 10px 14px; background:url(images/bg-menu.gif) repeat-x}
-#nav, #nav ul {list-style:none; position:relative; z-index:1000}
+#nav, #nav ul {list-style:none; position:relative}
 #nav a:link, #nav a:active, #nav a:visited {display:block; background-color:none}
 #nav li a {line-height:37px; color:#FFF; font-size:120%; font-family:"UTM-Azuki"; text-transform:uppercase; padding:0 20px}
 #nav a:hover {text-decoration:none; color:#FF0}
 #nav li {float:left; position:relative}
-#nav ul {width:160px; position:absolute; top:37px; display:none}
+#nav ul {width:160px; position:absolute; top:37px; display:none; z-index:10}
 #nav li ul a {width:150px; line-height:20px; float:left; color:#CCC; font-family:Arial, Helvetica, sans-serif; text-transform:none; border-top:solid 1px #8E0607; font-size:12px; background-color:#B4050C; padding:5px 10px}
 #nav li ul a:hover {background-color:#ED1C24; color:#FFF}
 #nav ul ul {top:auto}
@@ -288,8 +288,8 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #nav li li li li:hover ul {display:block}
 
 /* popup */
-#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:1100}
-#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:1200}
+#backgroundPopup{display: none; position: fixed; _position: absolute; /*IE 6*/ height: 100%; width: 100%; top: 0; left: 0; background: #000000; order: 1px solid #CECECE; z-index:20}
+#popupContact{display: none; position: fixed; _position: absolute; /*IE 6*/ z-index:30}
 #content_popup{width:650px; height:auto; padding:5px 15px 15px 15px; background-color:#FFF}
 .error{font-style:italic; color:#F00}
 
