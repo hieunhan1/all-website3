@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ALL ^ E_NOTICE);
 if(@$_SESSION["user_admin"]) header('location: administrator.php');
 include_once('config.php');
 

@@ -1,6 +1,6 @@
 <?php
 $max_results = 30;
-define(DIR, '../../class/');
+define('DIR', '../../class/');
 
 include_once(DIR.'class.quantri.php');
 $qt = new quantri();
