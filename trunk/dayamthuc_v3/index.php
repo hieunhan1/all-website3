@@ -284,11 +284,11 @@ include_once('blocks/qc2ben.php');
 
 <script type="text/javascript">
 function formChat(){
-	myWindow=window.open('http://localhost/all_v3/dayamthuc_v3/chat/index.php', '','width=400,height=450');
+	myWindow=window.open('http://www.dayamthuc.vn/chat_v2/index.php', '','width=400,height=450');
 	myWindow.focus();
 	return true;
 }
-var frmChat = setInterval(function(){ autoChat(); }, 3000);
+var frmChat = setInterval(function(){ autoChat(); }, 10000);
 function autoChat(){
 	$.ajax({
 		url: 'ajax.php',
@@ -304,9 +304,9 @@ function autoChat(){
 		}
 	});
 }
-$("#backgroundPopup, #popupContactClose").live("click", function(){
+$("#popupChatClose").live("click", function(){
 	$("#ajax_chat").html('');
-	frmChat = setInterval(function(){ autoChat(); }, 3000);
+	frmChat = setInterval(function(){ autoChat(); }, 10000);
 });
 </script>
 
