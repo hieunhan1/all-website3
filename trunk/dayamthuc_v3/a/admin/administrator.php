@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-
+error_reporting(E_ALL ^ E_NOTICE);
 if(isset($_GET['language'])) {
 	$_SESSION['language'] = $_GET['language'];
 } else {
