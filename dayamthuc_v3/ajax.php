@@ -89,7 +89,7 @@ if(isset($_POST['autoChat'])){
 	$data = mysql_query($sql);
 	$total = mysql_num_rows($data);
 	if($_SESSION['state_current'] < $total){
-		include_once('chat/popup.php');
+		include_once('chat_v2/popup.php');
 		return true;
 	}else{
 		echo 0;
