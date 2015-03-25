@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 if(isset($_POST['lang']))
 	$lang = $_POST['lang'];
 else
@@ -55,12 +56,6 @@ if($_POST['dangky']=='dangky'){
 }
 
 if($_POST['support_online']=='support_online'){
-	/*$session_support = 'support_online_'.$lang;
-	if(isset($_SESSION[$session_support])) {
-		echo $_SESSION[$session_support];
-		return true;
-	}*/
-	
 	$i = 0;
 	$qr = $tc->chinhanh_ds($lang);
 	if(mysql_num_rows($qr) > 0){
@@ -70,19 +65,6 @@ if($_POST['support_online']=='support_online'){
 			$i++;
 			if($i != 1) $style = ''; else $style = ' ds_chinhanh_item_active';
 			$name_chinhanh .= '<div class="ds_chinhanh_item ds_support_'.$i.$style.'">'.$row['name'].'</div>';
-			
-			//$support_chinhanh .= '<div id="ds_support" class="ds_support ds_support_'.$i.'">';
-			//$yahoo_nick = explode(',', $row['yahoo_nick']);
-			//$yahoo_name = explode(',', $row['yahoo_name']);
-			//for($j=0; $j<count($yahoo_nick); $j++){
-				//$content = file_get_contents('http://opi.yahoo.com/online?u='.$yahoo_nick[$j].'&m=t');
-				//if( preg_match('/NOT ONLINE$/', $content) ) $image_support = 'yahoo_off.png'; else $image_support = 'yahoo_on.png';
-				//$image_support = 'yahoo_on.png';
-				
-				//$support_chinhanh .= '<div class="ds_support_item"><a href="ymsgr:sendIM?'.$yahoo_nick[$j].'">'.$yahoo_name[$j].'<img src="images/'.$image_support.'" alt="yahoo_on" /></a></div>';
-			//}
-			//$support_chinhanh .= '</div>';
-			
 			$hotline_chinhanh .= '<div id="support_hotline" class="ds_support ds_support_'.$i.'">'.const_contact_phone.': <span style="color:#00F; font-size:120%">'.$row['phone'].'</span><br />Hotline: <span style="color:#F00">'.$row['hotline'].'</span></div>';
 		}
 		$str_chat = '<div style="clear:both; padding-top:10px; font-size:110%; font-weight:bold; text-align:center">
@@ -96,18 +78,32 @@ if($_POST['support_online']=='support_online'){
 			$(".ds_support_1").show();
 		});
 		</script>';
-		//$_SESSION[$session_support] = $str_support;
 		echo $str_support;
 	}else echo 0;
+	return true;
 }
 
-if(@$_POST['google_map']){
+if(isset($_POST['autoChat'])){
+	$keychat = $_SESSION['keychat'];
+	$sql = "SELECT `message`,`user`,`type` FROM `web_chat_message` WHERE `keychat`='{$keychat}' ORDER BY `id`";
+	$data = mysql_query($sql);
+	$total = mysql_num_rows($data);
+	if($_SESSION['state_current'] < $total){
+		include_once('chat/popup.php');
+		return true;
+	}else{
+		echo 0;
+		return false;
+	}
+}
+
+if(isset($_POST['google_map'])){
 	$id_map = $_POST['google_map'];
 	include_once('blocks/map_google.php');
 	return true;
 }
 
-if(@$_POST['nop_hs']){
+if(isset($_POST['nop_hs'])){
 	$tuyendung_id = trim($_POST['nop_hs']);
 	$name = trim($_POST['name']);
 	$diachi = trim($_POST['diachi']);
@@ -126,7 +122,7 @@ if(@$_POST['nop_hs']){
 	}
 }
 
-if(@$_POST['sendmail_hv']){
+if(isset($_POST['sendmail_hv'])){
 	$nguoigui = trim($_POST['nguoigui']);
 	
 	$title = trim($_POST['title']);
@@ -194,4 +190,3 @@ if(isset($_POST['nop_hs_register'])){
 }
 
 mysql_close();
-return true;
