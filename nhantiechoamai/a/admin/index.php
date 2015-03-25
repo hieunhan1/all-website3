@@ -19,7 +19,7 @@ if(isset($_POST["btnLogin"])) {
 <form id="form1" name="form1" method="post" action="">
 <div style="width:240px; height:260px; background:url(img/bg-dangnhap.gif) repeat-x; padding:10px; border:solid 1px #a9c1d4; margin-left:auto; margin-right:auto">
 <h2 style="display:block; padding-bottom:10px; border-bottom:solid 1px #b4b8be;">Đăng nhập</h2>
-<font color="#FF0000"><?=$error?></font>
+<font color="#FF0000"><?php echo $error;?></font>
 <p style="font-size:16px">Tên đăng nhập:<br />
 <input style="background-color:#C6DDFF; width:198px" type="text" name="un" id="un" /></p>
 <p style="font-size:16px; margin-top:10px">Mật khẩu:<br />

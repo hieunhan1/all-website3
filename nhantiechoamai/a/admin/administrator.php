@@ -1,4 +1,5 @@
 <?php session_start(); ob_start();
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 if(isset($_GET['language'])) {
 	$_SESSION['language'] = $_GET['language'];
 } else {
@@ -88,8 +89,8 @@ function SetFileField(fileUrl, data){
 		$m = explode('_ac', $p); $page = $m[0];
 		$navigator = $qt->Navigator($p);
 		$row_navigator = mysql_fetch_array($navigator);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, &$for_view);
-		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, &$for_action);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_xem, $for_view);
+		preg_match_all("/,{$row_navigator['id']},/i", $quyen_action, $for_action);
 		
 		if($page==$p){
 			$url = 'administrator.php?p='.$page;
