@@ -283,7 +283,7 @@ include_once('blocks/qc2ben.php');
 <script type="text/javascript"> (function($){ $(function(){ $("#scroller").simplyScroll(); }); })(jQuery); </script>
 
 <script type="text/javascript">
-function formChat(){
+/*function formChat(){
 	myWindow=window.open('http://www.dayamthuc.vn/chat_v2/index.php', '','width=400,height=450');
 	myWindow.focus();
 	return true;
@@ -307,9 +307,9 @@ function autoChat(){
 $("#popupChatClose").live("click", function(){
 	$("#ajax_chat").html('');
 	frmChat = setInterval(function(){ autoChat(); }, 10000);
-});
+});*/
 </script>
-
+<script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",17241]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script> 
 <?php
 if(!isset($_SESSION['popup_banner'])){
 	include_once('blocks/popup.php');

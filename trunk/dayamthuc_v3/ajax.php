@@ -67,10 +67,10 @@ if($_POST['support_online']=='support_online'){
 			$name_chinhanh .= '<div class="ds_chinhanh_item ds_support_'.$i.$style.'">'.$row['name'].'</div>';
 			$hotline_chinhanh .= '<div id="support_hotline" class="ds_support ds_support_'.$i.'">'.const_contact_phone.': <span style="color:#00F; font-size:120%">'.$row['phone'].'</span><br />Hotline: <span style="color:#F00">'.$row['hotline'].'</span></div>';
 		}
-		$str_chat = '<div style="clear:both; padding-top:10px; font-size:110%; font-weight:bold; text-align:center">
+		/*$str_chat = '<div style="clear:both; padding-top:10px; font-size:110%; font-weight:bold; text-align:center">
 			<img src="images/icon-chat.gif" alt="chat" />
 			<a href="javascript:;" onclick="formChat();" >CHAT VỚI CHÚNG TÔI</a>
-		</div>';
+		</div>';*/
 		$str_support = '<div id="ds_chinhanh">'.$name_chinhanh.'</div>'.$support_chinhanh.$str_chat.$hotline_chinhanh.'
 		<script>
 		$(document).ready(function($){
