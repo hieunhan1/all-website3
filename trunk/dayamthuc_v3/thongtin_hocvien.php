@@ -1,7 +1,7 @@
 <?php
 $lang = 'vi';
 
-define(does_not_exist,'Mục này không tồn tại.');
+define('does_not_exist','Mục này không tồn tại.');
 
 include_once('class/class.trangchu.php');
 $tc = new trangchu();
