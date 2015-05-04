@@ -120,7 +120,7 @@ hr{height:1px; background-color:#E8E8E8; border:none; margin-bottom:10px}
 #contact_social #social{width:auto; height:120px; float:right; padding:25px 80px 0 0}
 #contact_social #social img{width:64px}
 
-#support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:10px; background:#FFF; border:solid 1px #999; z-index:5}
+#support_online{width:270px; overflow:hidden; position:fixed; bottom:0; right:300px; background:#FFF; border:solid 1px #999; z-index:5}
 #support_online #btn_support{height:40px; cursor:pointer}
 #support_online #ajax_support{padding-top:10px; border-top:solid 1px #999}
 
