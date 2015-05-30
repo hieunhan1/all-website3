@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0}
+body {font-family:Arial, Helvetica, sans-serif; font-size:13px; padding:0; margin:0; color:#333333; background:url(images/bg-header.gif) repeat-x;}
+a {color:#006A98; text-decoration:none;}
+a:hover {color:#FF0000;}
+img {border:0}
+#wrapper {width:950px; padding:0; margin:0 auto;}
+#header {width:100%; height:145px; margin-bottom:30px;}
+#header .avatar {width:150px; height:145px; float:left;}
+#header .avatar img {width:130px; height:130px; padding:2px; border:solid 1px #C8D1E2; background-color:#FFFFFF;}
+#header .headNav {width:750px; height:45px; float:right;}
+#header .headNav .search {width:420px; float:left; margin-top:9px;}
+#header .headNav .search .txtSearch {background:url(images/bg-txtsearch.gif); width:315px; height:20px; float:left; margin-right:5px; padding:3px 10px;}
+#header .headNav .item {width:75px; float:left; margin-top:14px;}
+#header .headNav .item img {margin-left:5px;}
+#header .headNav .item2 {width:200px; height:26px; line-height:26px; float:right; margin-top:9px;}
+#header .headNav .item2 img {float:left;}
+#header .headNav .item2 a {color:#333333; font-weight:bold; padding-left:10px;}
+#header .info {width:400px; float:left; padding-top:5px;}
+#header .info h1 {font-size:24px; color:#028AC6; margin-bottom:5px;}
+#header .info div {background:url(images/icon-4.gif) no-repeat left; font-size:12px; color:#666666; padding-left:20px;}
+#header .btn {width:365px; float:right; margin-top:33px;}
+#header .btn a {display:block; width:111px; height:27px; float:left; line-height:27px; text-align:center; font-size:12px; font-weight:bold; color:#333333; background:url(images/btn-1.jpg); margin-left:10px;}
+
+#news {width:100%; height:140px; margin-bottom:40px;}
+#news .input {width:450px; float:left; border:solid 1px #C4CCDF; padding:0px 5px;}
+#news .input .title {height:39px; line-height:39px; padding-left:15px;}
+#news .input .title a {font-size:12px; font-weight:bold; padding-left:20px; margin-right:30px;}
+#news .input .inputcomment {width:448px; text-align:right; border:solid 1px #B4BBCD; margin-bottom:5px;}
+#news .input .inputcomment .txtComment {width:440px; height:60px; border:none}
+#news .input .inputcomment .btnComment {width:444px; padding:4px 4px 4px 0px; background-color:#F2F2F2;}
+#news .input .inputcomment .urlHinh {margin:20px 0px 0px 10px;}
+
+#news .banbe {width:465px; float:right; border:solid 1px #C4CCDF; padding:0px 3px 3px 3px;}
+#news .banbe .title {height:39px; line-height:39px; padding-left:33px; background:url(images/icon-banbe.gif) no-repeat left; color:#006B99; margin-bottom:3px; border-bottom:solid 1px #C4CCDF;}
+#news .banbe .title span {float:right; margin:4px 3px 0px 0px;}
+#news .banbe .viewall {padding-top:5px;}
+#news .banbe .viewall img {width:90px; height:90px; float:left; margin-right:3px;}
+
+#comment {width:100%; height:435px; margin-bottom:40px;}
+#comment .top {width:100%; clear:both; margin-bottom:25px;}
+#comment .top .boxtop {width:245px; height:195px; float:left; background:url(images/comment1.gif) no-repeat top; margin-right:70px;}
+#comment .top .boxtop h2 {height:16px; overflow:hidden; font-size:13px; color:#036999; padding:3px 5px 0px 5px; margin-bottom:3px;}
+#comment .top .boxtop img {width:90px; height:90px; float:left; margin:0px 5px;}
+#comment .top .boxtop div {width:138px; height:88px; overflow:hidden; float:left; font-size:12px;}
+#comment .top .boxtop p {width:100%; clear:both; padding-top:70px; color:#666666}
+
+#comment .bottom {width:100%; clear:both;}
+#comment .bottom .boxbottom {width:245px; height:195px; float:left; background:url(images/comment2.gif) no-repeat top; margin-left:70px;}
+#comment .bottom .boxbottom h2 {height:16px; overflow:hidden; font-size:13px; color:#036999; padding:3px 5px 0px 5px; margin-bottom:3px;}
+#comment .bottom .boxbottom img {width:90px; height:90px; float:left; margin:0px 5px;}
+#comment .bottom .boxbottom div {width:138px; height:88px; overflow:hidden; float:left; font-size:12px;}
+#comment .bottom .boxbottom p {width:100%; clear:both; color:#666666; margin-bottom:50px;}
+
+#ads {width:100%; height:125px; margin-bottom:15px;}
+#ads .title {width:100%; font-weight:bold; margin-bottom:10px; padding:3px 0px; border-bottom:solid 1px #C5C5C5;}
+#ads .boxads {width:232px; height:90px; overflow:hidden; float:left; margin-right:5px;}
+#ads .boxads h3 {font-size:12px;}
+#ads .boxads img {width:100px; height:75px; float:left; margin-right:3px;}
+#ads .boxads div {width:122px; float:left; font-size:12px;}
+
+#footer {width:100%; padding:8px 0px 40px 0px; background-color:#D8D8D8}
+#footer .footer {width:950px; margin:0 auto}
+#footer .footer .copyright {width:auto; float:left;}
+#footer .footer .Navbot {width:auto; float:right;}
+
+/*timeline*/
+#scrollbar2 { width: 950px; margin: 20px 0 10px;}
+#scrollbar2 .viewport { width: 950px; height: 435px; overflow: hidden; position: relative; z-index:10; }
+#scrollbar2 .overview { list-style: none; padding: 0; margin: 0; position: absolute; left: 0; top: 0;  }
+#scrollbar2 .overview img{ float: left; }
+#scrollbar2 .scrollbar{ background: transparent url(images/bg-scrollbar-track-x.png) no-repeat 0 0; position:absolute; margin:200px 0 5px; clear: both; height:15px; z-index:100; }
+#scrollbar2 .track { background: transparent url(images/bg-scrollbar-trackend-x.png) no-repeat 100% 0; width: 100%; height:15px; position: relative; }
+#scrollbar2 .thumb { background: transparent url(images/bg-scrollbar-thumb-x.png) no-repeat 100% 50%; height: 25px; cursor: pointer; overflow: hidden; position: absolute; left: 0; top: -5px; }
+#scrollbar2 .thumb .end{ background: transparent url(images/bg-scrollbar-thumb-x.png) no-repeat 0 50%; overflow: hidden; height: 25px; width: 5px;}
+#scrollbar2 .disable { display: none; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+.abc {width:200px; float:left}
+.zzz {width:auto; float:left}
