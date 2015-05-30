@@ -1,0 +1,31 @@
+/* CSS Document */
+*{margin:0; padding:0}
+body{color:#333; font-size:12px; font-family:Arial, Helvetica, sans-serif}
+img{border:0}
+a:link,a:visited,a:active{color:#0000FF; text-decoration:none}
+a:hover{color:#FF0000; text-decoration:underline}
+
+.error{color:#F00; font-style:italic; font-weight:bold}
+.notify{color:#00F}
+.clear_1{clear:both; height:1px}
+
+#wrapper{width:900px; height:500px; margin:20px auto; padding:10px; border:solid 1px #999; background-color:#FFF}
+
+.danhsach_active{background-color:#00B5F9; color:#FFF}
+.row_active{background-color:#FFFF99}
+
+#danhsach{width:280px; height:500px; overflow:auto; float:left; line-height:35px}
+#danhsach .danhsach_item{padding:0 5px; border-bottom:dotted 1px #CCC}
+#danhsach .danhsach_item span{font-size:90%}
+
+#messages{width:600px; height:390px; overflow:auto; float:right; line-height:22px; margin-bottom:10px}
+#messages .row{clear:both; padding:0 5px}
+#messages .row:hover{background-color:#FFFF99}
+#messages .username{width:90px; float:left; text-align:right; margin-right:20px}
+#messages .message{width:375px; float:left}
+#messages .datetime{width:75px; float:right; color:#999; text-align:right}
+
+#boxChat{width:600px; height:80px; float:right}
+#boxChat #error_chat{height:20px; line-height:20px}
+#boxChat textarea{width:490px; height:58px; float:left; resize:none; line-height:20px; overflow:auto; font-family:Arial, Helvetica, sans-serif; color:#666; padding:10px; border:solid 1px #CCC}
+#boxChat input{width:80px; height:80px; float:right; line-height:80px; font-weight:bold; color:#999; cursor:pointer}
