@@ -14,7 +14,7 @@ $qr = mysql_query($sql);
 $row_order = mysql_fetch_array($qr);
 
 if($row_order['status']!=1){
-	$sql = "UPDATE `order` SET `status`=2 WHERE id='{$id_order}' ";
+	$sql = "UPDATE `order` SET `status`=1 WHERE id='{$id_order}' ";
 	mysql_query($sql);
 }
 
