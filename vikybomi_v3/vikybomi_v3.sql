@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 11, 2014 at 10:37 AM
--- Server version: 5.1.63
--- PHP Version: 5.2.17
+-- Host: 127.0.0.1
+-- Generation Time: Jun 02, 2015 at 08:45 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `config` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(30) NOT NULL,
   `lang` char(2) NOT NULL DEFAULT '',
   `slogan` varchar(100) DEFAULT NULL,
@@ -49,17 +49,16 @@ CREATE TABLE IF NOT EXISTS `config` (
   `date_update` datetime DEFAULT NULL,
   `user_create` varchar(20) DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `config`
 --
 
 INSERT INTO `config` (`id`, `name`, `lang`, `slogan`, `domain`, `max_limit_1`, `max_limit_2`, `max_limit_3`, `max_limit_4`, `copyright`, `contact_foo`, `contact_form`, `email`, `yahoo`, `tel`, `hotline`, `facebook`, `status`, `date_create`, `date_update`, `user_create`, `user_update`, `delete`) VALUES
-(1, 'Việt nam', 'vi', 'Nhà máy sản xuất bột trộn sẵn đầu tiên', 'www.vikybomi.com.vn', 10, 20, 10, 10, 'Copyright © 2013 Vikybomi Co.', '<p><span style="color:#FF0000;"><strong>CÔNG TY CỔ PHẦN VIỆT NAM KỸ NGHỆ BỘT MÌ - VIKYBOMI</strong></span></p>\r\n\r\n<p>Địa chỉ: Lô 32C/I, Đường 2G, KCN Vĩnh Lộc, Huyện Bình Chánh, TP. Hồ Chí Minh</p>\r\n\r\n<p>Điện thoại: (84 8) 38550213 /&nbsp;37652056 &nbsp;- &nbsp;Fax: (84 8) 38570352 / 37652055</p>\r\n\r\n<p>Email: daiphongco@vikybomi.com.vn</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><span style="color:#FF0000;"><strong>CÔNG TY CỔ PHẦN VIỆT NAM KỸ NGHỆ BỘT MÌ - VIKYBOMI</strong></span><br />\r\n			Địa chỉ: Lô 32C/I, Đường 2G, KCN Vĩnh Lộc, H.Bình Chánh, Tp.HCM<br />\r\n			Điện thoại: (84 8) 38550213 / 37652056 - Fax: (84 8) 38570352 /&nbsp;37652055<br />\r\n			Email: daiphongco@vikybomi.com.vn</p>\r\n\r\n			<p><strong>Văn phòng đại diện</strong><br />\r\n			Số 10 An Điềm, quận 5, Thành phố Hồ chí Minh<br />\r\n			Điện thoại: 08 3856 2922</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Hà Nội</strong><br />\r\n			94 Hàng Buồm, Q.Hoàn Kiếm, Hà&nbsp;Nội<br />\r\n			Điện thoại: 0906 221 957</p>\r\n\r\n			<p><strong>Công ty TNHH Hương Việt 24H</strong><br />\r\n			Số 9, ngõ 292, đường Kim Giang, Tổ 24, P.Đại Kim, Q.Hoàng Mai, Hà Nội<br />\r\n			Điện thoại: 04 6687 1416<br />\r\n			Di động: 093 226 4969 - Anh Quy</p>\r\n			</td>\r\n			<td style="vertical-align: top;">\r\n			<p><strong>Cửa hàng bột MIKKO Tp.HCM</strong><br />\r\n			- 631 Nguyễn Trãi, phường 11, Quận 5, Tp.Hồ Chí Minh (Ngay CHOLIMEX)<br />\r\n			&nbsp; Điện thoại: 08 3856 2922<br />\r\n			- 523 Hồng Bàng, phường 14, Quận 5, Tp.Hồ Chí Minh<br />\r\n			&nbsp; Điện thoại: 08 3856 4800</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Đà Nẵng</strong><br />\r\n			865 Nguyễn Hữu Thọ, Phường Khuê Trung, Quận&nbsp;Cẩm Lệ, Tp.Đà Nẵng<br />\r\n			Điện thoại: 0511 3645&nbsp;777</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Cần Thơ</strong><br />\r\n			162&nbsp;Nguyễn An Ninh, Phường Tân An, Quận Ninh Kiều, Cần Thơ<br />\r\n			Điện thoại: 0710&nbsp;381 2400</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="2"><span style="color:#0000FF;"><em><strong>Ngoài ra, Quý khách có thể đến siêu thị Co.opmart, Big C, Metro, Citimart để mua sản phẩm bột Mikko</strong></em></span></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 'trannhan@vikybomi.com.vn', 'hieu_nhan1', '08 6686 4441', '', NULL, 1, '2013-02-20 13:35:24', '2013-03-01 03:55:51', 'admin', 'admin', 0),
-(2, 'English', 'en', 'Nhà máy sản xuất bột trộn sẵn đầu tiên', 'www.vikybomi.com.vn', 10, 20, 10, 10, 'Copyright © 2013 Vikybomi Co.', '<p><span style="color:#FF0000;"><strong>VIETNAM FLOUR CORPORATION</strong></span></p>\r\n\r\n<p>Address: Lot 32C/I, 2G Street, Vinh Loc Industrial Zone, Binh Chanh District, HCM City, Vietnam</p>\r\n\r\n<p>Tel: (84 8) 38550213 / 37652056 &nbsp;- &nbsp;Fax: (84 8) 38570352 / 37652055</p>\r\n\r\n<p>Email: daiphongco@vikybomi.com.vn</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td style="vertical-align: top;">\r\n			<p><span style="color:#FF0000;"><strong>VIETNAM FLOUR CORPORATION</strong></span><br />\r\n			<span style="line-height: 1.6em;">Address: Lot 32C/I, 2G Street, Vinh Loc Industrial Zone, Binh Chanh District, HCM City, Vietnam</span><br />\r\n			<span style="line-height: 1.6em;">Tel: (84 8) 38550213 / 37652056 - Fax: (84 8) 38570352 / 37652055</span><br />\r\n			<span style="line-height: 1.6em;">Email: daiphongco@vikybomi.com.vn</span></p>\r\n\r\n			<p><strong>Văn phòng đại diện</strong><br />\r\n			Số 10 An Điềm, quận 5, Thành phố Hồ chí Minh<br />\r\n			Điện thoại: 08 3856 2922</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Hà Nội</strong><br />\r\n			94 Hàng Buồm, Q.Hoàn Kiếm, HN<br />\r\n			Điện thoại: 0906 221 957</p>\r\n			</td>\r\n			<td>\r\n			<p><strong>Cửa hàng bột MIKKO Tp.HCM</strong><br />\r\n			- 631 Nguyễn Trãi, phường 11, Quận 5, Tp.Hồ Chí Minh (Ngay CHOLIMEX)<br />\r\n			&nbsp; Điện thoại: 08 3856 2922<br />\r\n			- 523 Hồng Bàng, phường 14, Quận 5, Tp.Hồ Chí Minh<br />\r\n			&nbsp; Điện thoại: 08 3856 4800</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Đà Nẵng</strong><br />\r\n			865 Nguyễn Hữu Thọ, Phường Khuê Trung, Quận&nbsp;Cẩm Lệ, Tp.Đà Nẵng<br />\r\n			Điện thoại: 0511 3645&nbsp;777</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Cần Thơ</strong><br />\r\n			162&nbsp;Nguyễn An Ninh, Phường Tân An, Quận Ninh Kiều, Cần Thơ<br />\r\n			Điện thoại: 0710&nbsp;381 2400</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="2"><span style="color:#0000FF;"><em><strong>Ngoài ra, Quý khách có thể đến siêu thị Co.opmart, Big C, Metro, Citimart để mua sản phẩm bột Mikko</strong></em></span></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 'trannhan@vikybomi.com.vn', 'hieu_nhan1', '08 6686 4441', '', NULL, 1, '2013-11-12 15:50:44', '2013-11-12 10:15:54', 'admin', 'admin', 0);
+(1, 'Việt nam', 'vi', 'Nhà máy sản xuất bột trộn sẵn đầu tiên', 'localhost/all_v3/vikybomi_v3', 10, 20, 10, 10, 'Copyright © 2013 Vikybomi Co.', '<p><span style="color:#FF0000;"><strong>CÔNG TY CỔ PHẦN VIỆT NAM KỸ NGHỆ BỘT MÌ - VIKYBOMI</strong></span></p>\r\n\r\n<p>Địa chỉ: Lô 32C/I, Đường 2G, KCN Vĩnh Lộc, Huyện Bình Chánh, TP. Hồ Chí Minh</p>\r\n\r\n<p>Điện thoại: (84 8) 38550213 /&nbsp;37652056 &nbsp;- &nbsp;Fax: (84 8) 38570352 / 37652055</p>\r\n\r\n<p>Email: daiphongco@vikybomi.com.vn</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><span style="color:#FF0000;"><strong>CÔNG TY CỔ PHẦN VIỆT NAM KỸ NGHỆ BỘT MÌ - VIKYBOMI</strong></span><br />\r\n			Địa chỉ: Lô 32C/I, Đường 2G, KCN Vĩnh Lộc, H.Bình Chánh, Tp.HCM<br />\r\n			Điện thoại: (84 8) 38550213 / 37652056 - Fax: (84 8) 38570352 /&nbsp;37652055<br />\r\n			Email: daiphongco@vikybomi.com.vn</p>\r\n\r\n			<p><strong>Văn phòng đại diện</strong><br />\r\n			Số 10 An Điềm, quận 5, Thành phố Hồ chí Minh<br />\r\n			Điện thoại: 08 3856 2922</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Hà Nội</strong><br />\r\n			94 Hàng Buồm, Q.Hoàn Kiếm, Hà&nbsp;Nội<br />\r\n			Điện thoại: 0906 221 957</p>\r\n\r\n			<p><strong>Công ty TNHH Hương Việt 24H</strong><br />\r\n			Số 9, ngõ 292, đường Kim Giang, Tổ 24, P.Đại Kim, Q.Hoàng Mai, Hà Nội<br />\r\n			Điện thoại: 04 6687 1416<br />\r\n			Di động: 093 226 4969 - Anh Quy</p>\r\n			</td>\r\n			<td style="vertical-align: top;">\r\n			<p><strong>Cửa hàng bột MIKKO Tp.HCM</strong><br />\r\n			- 631 Nguyễn Trãi, phường 11, Quận 5, Tp.Hồ Chí Minh (Ngay CHOLIMEX)<br />\r\n			&nbsp; Điện thoại: 08 3856 2922<br />\r\n			- 523 Hồng Bàng, phường 14, Quận 5, Tp.Hồ Chí Minh<br />\r\n			&nbsp; Điện thoại: 08 3856 4800</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Đà Nẵng</strong><br />\r\n			865 Nguyễn Hữu Thọ, Phường Khuê Trung, Quận&nbsp;Cẩm Lệ, Tp.Đà Nẵng<br />\r\n			Điện thoại: 0511 3645&nbsp;777</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Cần Thơ</strong><br />\r\n			162&nbsp;Nguyễn An Ninh, Phường Tân An, Quận Ninh Kiều, Cần Thơ<br />\r\n			Điện thoại: 0710&nbsp;381 2400</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="2"><span style="color:#0000FF;"><em><strong>Ngoài ra, Quý khách có thể đến siêu thị Co.opmart, Big C, Metro, Citimart để mua sản phẩm bột Mikko</strong></em></span></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 'trannhan@vikybomi.com.vn', 'hieu_nhan1', '08 6686 4441', '', NULL, 1, '2013-02-20 13:35:24', '2013-03-01 03:55:51', 'admin', 'admin', 0),
+(2, 'English', 'en', 'Nhà máy sản xuất bột trộn sẵn đầu tiên', 'localhost/all_v3/vikybomi_v3', 10, 20, 10, 10, 'Copyright © 2013 Vikybomi Co.', '<p><span style="color:#FF0000;"><strong>VIETNAM FLOUR CORPORATION</strong></span></p>\r\n\r\n<p>Address: Lot 32C/I, 2G Street, Vinh Loc Industrial Zone, Binh Chanh District, HCM City, Vietnam</p>\r\n\r\n<p>Tel: (84 8) 38550213 / 37652056 &nbsp;- &nbsp;Fax: (84 8) 38570352 / 37652055</p>\r\n\r\n<p>Email: daiphongco@vikybomi.com.vn</p>\r\n', '<table border="0" cellpadding="0" cellspacing="5" style="width: 100%;">\r\n	<tbody>\r\n		<tr>\r\n			<td style="vertical-align: top;">\r\n			<p><span style="color:#FF0000;"><strong>VIETNAM FLOUR CORPORATION</strong></span><br />\r\n			<span style="line-height: 1.6em;">Address: Lot 32C/I, 2G Street, Vinh Loc Industrial Zone, Binh Chanh District, HCM City, Vietnam</span><br />\r\n			<span style="line-height: 1.6em;">Tel: (84 8) 38550213 / 37652056 - Fax: (84 8) 38570352 / 37652055</span><br />\r\n			<span style="line-height: 1.6em;">Email: daiphongco@vikybomi.com.vn</span></p>\r\n\r\n			<p><strong>Văn phòng đại diện</strong><br />\r\n			Số 10 An Điềm, quận 5, Thành phố Hồ chí Minh<br />\r\n			Điện thoại: 08 3856 2922</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Hà Nội</strong><br />\r\n			94 Hàng Buồm, Q.Hoàn Kiếm, HN<br />\r\n			Điện thoại: 0906 221 957</p>\r\n			</td>\r\n			<td>\r\n			<p><strong>Cửa hàng bột MIKKO Tp.HCM</strong><br />\r\n			- 631 Nguyễn Trãi, phường 11, Quận 5, Tp.Hồ Chí Minh (Ngay CHOLIMEX)<br />\r\n			&nbsp; Điện thoại: 08 3856 2922<br />\r\n			- 523 Hồng Bàng, phường 14, Quận 5, Tp.Hồ Chí Minh<br />\r\n			&nbsp; Điện thoại: 08 3856 4800</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Đà Nẵng</strong><br />\r\n			865 Nguyễn Hữu Thọ, Phường Khuê Trung, Quận&nbsp;Cẩm Lệ, Tp.Đà Nẵng<br />\r\n			Điện thoại: 0511 3645&nbsp;777</p>\r\n\r\n			<p><strong>Cửa hàng bột MIKKO Cần Thơ</strong><br />\r\n			162&nbsp;Nguyễn An Ninh, Phường Tân An, Quận Ninh Kiều, Cần Thơ<br />\r\n			Điện thoại: 0710&nbsp;381 2400</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="2"><span style="color:#0000FF;"><em><strong>Ngoài ra, Quý khách có thể đến siêu thị Co.opmart, Big C, Metro, Citimart để mua sản phẩm bột Mikko</strong></em></span></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 'trannhan@vikybomi.com.vn', 'hieu_nhan1', '08 6686 4441', '', NULL, 1, '2013-11-12 15:50:44', '2013-11-12 10:15:54', 'admin', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -68,7 +67,7 @@ INSERT INTO `config` (`id`, `name`, `lang`, `slogan`, `domain`, `max_limit_1`, `
 --
 
 CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
@@ -80,9 +79,8 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `date_update` datetime NOT NULL,
   `user_create` varchar(20) DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `contact`
@@ -121,7 +119,7 @@ INSERT INTO `contact` (`id`, `name`, `email`, `phone`, `diachi`, `message`, `lan
 --
 
 CREATE TABLE IF NOT EXISTS `info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `name_rewrite` varchar(250) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
@@ -136,9 +134,8 @@ CREATE TABLE IF NOT EXISTS `info` (
   `menu_id` varchar(20) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=209 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=209 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info`
@@ -384,7 +381,7 @@ INSERT INTO `info` (`id`, `name`, `name_rewrite`, `url_hinh`, `metaDescription`,
 --
 
 CREATE TABLE IF NOT EXISTS `info_comment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `date_create` datetime NOT NULL,
   `date_update` datetime DEFAULT NULL,
   `content` text NOT NULL,
@@ -394,9 +391,8 @@ CREATE TABLE IF NOT EXISTS `info_comment` (
   `parent_id` int(11) DEFAULT NULL,
   `user_create` varchar(20) DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info_comment`
@@ -417,13 +413,12 @@ INSERT INTO `info_comment` (`id`, `date_create`, `date_update`, `content`, `emai
 --
 
 CREATE TABLE IF NOT EXISTS `language` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(20) NOT NULL,
   `ma` varchar(10) NOT NULL,
   `order` int(3) DEFAULT '0',
-  `status` tinyint(1) DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `status` tinyint(1) DEFAULT '1'
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `language`
@@ -440,7 +435,7 @@ INSERT INTO `language` (`id`, `name`, `ma`, `order`, `status`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `menu` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(100) NOT NULL,
   `name_rewrite` varchar(100) NOT NULL,
   `url` varchar(150) NOT NULL,
@@ -459,9 +454,8 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `position_id` varchar(10) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=118 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu`
@@ -594,7 +588,7 @@ INSERT INTO `menu` (`id`, `name`, `name_rewrite`, `url`, `url_hinh`, `date_creat
 --
 
 CREATE TABLE IF NOT EXISTS `menu1` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(100) NOT NULL,
   `name_rewrite` varchar(100) NOT NULL,
   `url` varchar(150) NOT NULL,
@@ -613,9 +607,8 @@ CREATE TABLE IF NOT EXISTS `menu1` (
   `position_id` varchar(10) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu1`
@@ -745,15 +738,14 @@ INSERT INTO `menu1` (`id`, `name`, `name_rewrite`, `url`, `url_hinh`, `date_crea
 --
 
 CREATE TABLE IF NOT EXISTS `menu_admin` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(100) NOT NULL,
   `url` varchar(150) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
   `order` int(3) DEFAULT '0',
   `status` tinyint(1) DEFAULT '1',
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu_admin`
@@ -783,11 +775,10 @@ INSERT INTO `menu_admin` (`id`, `name`, `url`, `url_hinh`, `order`, `status`, `d
 --
 
 CREATE TABLE IF NOT EXISTS `menu_position` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu_position`
@@ -809,11 +800,10 @@ INSERT INTO `menu_position` (`id`, `name`, `delete`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `menu_type` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu_type`
@@ -836,7 +826,7 @@ INSERT INTO `menu_type` (`id`, `name`, `delete`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `order` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `date_create` datetime DEFAULT NULL,
   `date_update` datetime DEFAULT NULL,
   `name` varchar(100) NOT NULL,
@@ -850,9 +840,8 @@ CREATE TABLE IF NOT EXISTS `order` (
   `status` tinyint(1) DEFAULT '0',
   `delete` tinyint(1) DEFAULT '0',
   `user_create` varchar(30) NOT NULL DEFAULT 'khachhang',
-  `user_update` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1407115320 ;
+  `user_update` varchar(30) DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=1407115320 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order`
@@ -1236,15 +1225,14 @@ INSERT INTO `order` (`id`, `date_create`, `date_update`, `name`, `adress`, `phon
 --
 
 CREATE TABLE IF NOT EXISTS `order1_detail` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `soluong` int(2) NOT NULL,
   `price` int(8) NOT NULL,
   `thanhtien` int(8) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=548 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=548 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order1_detail`
@@ -1758,15 +1746,14 @@ INSERT INTO `order1_detail` (`id`, `order_id`, `product_id`, `soluong`, `price`,
 --
 
 CREATE TABLE IF NOT EXISTS `order_detail` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `soluong` int(2) NOT NULL,
   `price` int(8) NOT NULL,
   `thanhtien` int(8) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=973 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=973 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order_detail`
@@ -2750,7 +2737,7 @@ INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `soluong`, `price`, 
 --
 
 CREATE TABLE IF NOT EXISTS `photo_gallery` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
   `date_create` datetime NOT NULL,
@@ -2760,9 +2747,8 @@ CREATE TABLE IF NOT EXISTS `photo_gallery` (
   `menu_id` varchar(10) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=647 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=647 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `photo_gallery`
@@ -3425,7 +3411,7 @@ INSERT INTO `photo_gallery` (`id`, `name`, `url_hinh`, `date_create`, `date_upda
 --
 
 CREATE TABLE IF NOT EXISTS `photo_gallery_comment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `date_create` datetime NOT NULL,
   `date_update` datetime DEFAULT NULL,
   `content` text NOT NULL,
@@ -3435,9 +3421,8 @@ CREATE TABLE IF NOT EXISTS `photo_gallery_comment` (
   `parent_id` int(11) DEFAULT NULL,
   `user_create` varchar(20) DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3446,7 +3431,7 @@ CREATE TABLE IF NOT EXISTS `photo_gallery_comment` (
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `name_rewrite` varchar(250) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
@@ -3464,9 +3449,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `menu_id` varchar(20) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=107 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
@@ -3590,7 +3574,7 @@ INSERT INTO `products` (`id`, `name`, `name_rewrite`, `url_hinh`, `metaDescripti
 --
 
 CREATE TABLE IF NOT EXISTS `products_comment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `date_create` datetime NOT NULL,
   `date_update` datetime DEFAULT NULL,
   `content` text NOT NULL,
@@ -3600,9 +3584,8 @@ CREATE TABLE IF NOT EXISTS `products_comment` (
   `parent_id` int(11) DEFAULT NULL,
   `user_create` varchar(20) DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products_comment`
@@ -3625,7 +3608,7 @@ INSERT INTO `products_comment` (`id`, `date_create`, `date_update`, `content`, `
 --
 
 CREATE TABLE IF NOT EXISTS `products_image` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
   `url` varchar(250) DEFAULT NULL,
@@ -3635,9 +3618,8 @@ CREATE TABLE IF NOT EXISTS `products_image` (
   `product_id` int(11) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3646,7 +3628,7 @@ CREATE TABLE IF NOT EXISTS `products_image` (
 --
 
 CREATE TABLE IF NOT EXISTS `slider_banner` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
   `link` varchar(250) DEFAULT NULL,
@@ -3659,9 +3641,8 @@ CREATE TABLE IF NOT EXISTS `slider_banner` (
   `content` text,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `slider_banner`
@@ -3677,8 +3658,8 @@ INSERT INTO `slider_banner` (`id`, `name`, `url_hinh`, `link`, `date_create`, `d
 (7, 'Quốc tế Phụ Nữ 8/3/2013', 'quoc-te-phu-nu-8-3-2013.jpg', 'http://www.vikybomi.com.vn/hoat-dong-c15/su-kien-va-chuong-trinh-khuyen-mai-c79/su-kien-quoc-te-phu-nu-8-3-nam-2013-d124.html', '2013-02-21 14:09:46', '2013-02-21 09:41:17', 0, 'vi', 1, NULL, NULL, 'admin', 'admin', 0),
 (8, 'Quốc tế Phụ Nữ 8/3/2013 1', 'su_kien_8-3_2.jpg', 'http://www.vikybomi.com.vn/hoat-dong-c15/su-kien-va-chuong-trinh-khuyen-mai-c79/su-kien-quoc-te-phu-nu-8-3-nam-2013-d124.html', '2013-03-02 10:47:21', '2013-03-02 07:21:13', 0, 'vi', 1, NULL, NULL, 'admin', 'admin', 0),
 (9, 'Giới thiệu nhà máy sản xuất bột mì - VIKYBOMI CORP.', 'nha-may-san-xuat-bot-mi-vikybomi-corp-3.jpg', 'javascript:;', '2013-03-02 10:47:30', '2013-03-02 08:39:05', 1, 'vi', 1, ',2,11,12,13,14,', NULL, 'admin', 'admin', 0),
-(10, 'Nhà máy sản xuất bột mì - VIKYBOMI', 'nha-may-san-xuat-bot-mi-vikybomi-corp-2.jpg', 'javascript:;', '2013-03-02 10:47:35', '2013-03-02 08:38:22', 1, 'vi', 1, ',1,', NULL, 'admin', 'admin', 0),
-(11, 'Nhà máy sản xuất bột mì - VIKYBOMI CORP.', 'nha-may-san-xuat-bot-mi-vikybomi-corp.jpg', 'javascript:;', '2013-03-02 10:49:14', '2013-03-02 08:38:33', 1, 'vi', 1, ',1,', NULL, 'admin', 'admin', 0),
+(10, 'Nhà máy sản xuất bột mì - VIKYBOMI', 'nha-may-san-xuat-bot-mi-vikybomi-corp-2.jpg', 'javascript:;', '2013-03-02 10:47:35', '2013-03-02 08:38:22', 0, 'vi', 1, ',1,', NULL, 'admin', 'admin', 0),
+(11, 'Nhà máy sản xuất bột mì - VIKYBOMI CORP.', 'nha-may-san-xuat-bot-mi-vikybomi-corp.jpg', 'javascript:;', '2013-03-02 10:49:14', '2013-03-02 08:38:33', 0, 'vi', 1, ',1,', NULL, 'admin', 'admin', 0),
 (12, 'Contact Vikybomi Corp.', 'contact.jpg', 'javascript:;', '2013-11-18 08:44:03', '2013-11-18 08:44:03', 1, 'vi', 1, ',9,', NULL, 'admin', NULL, 0),
 (13, 'Home Vikybomi', 'nha-may-san-xuat-bot-mi-vikybomi-corp-2.jpg', 'javascript:;', '2013-11-18 11:33:25', '2013-11-18 11:33:25', 1, 'en', 1, ',78,89,', NULL, 'admin', NULL, 0),
 (14, 'Home Vikybomi Corp.', 'nha-may-san-xuat-bot-mi-vikybomi-corp.jpg', 'javascript:;', '2013-11-18 11:33:51', '2013-11-18 11:33:51', 1, 'en', 1, ',78,89,', NULL, 'admin', NULL, 0),
@@ -3687,7 +3668,8 @@ INSERT INTO `slider_banner` (`id`, `name`, `url_hinh`, `link`, `date_create`, `d
 (17, 'Hội nghị khách hàng giới thiệu Bột Mì và Bột Trộn Sẵn Mikko Tp.Tuy Hòa - Phú Yên', 'banner-hoi-nghi-Phu-Yen.jpg', 'http://www.vikybomi.com.vn/thu-vien-anh-c7/hoi-nghi-khach-hang-tp-tuy-hoa-phu-yen.html', '2013-12-03 08:57:54', '2013-12-03 09:37:50', 0, 'vi', 4, '', NULL, 'admin', 'admin', 0),
 (18, 'Chúc mừng năm mới 2014 và Noel 2014', 'nam-2014.jpg', 'javascript:;', '2013-12-04 08:22:07', '2013-12-04 08:22:07', 0, 'vi', 1, ',1,', NULL, 'admin', 'admin', 0),
 (19, 'Chúc mừng năm mới 2014', 'nam-moi-2014.jpg', 'javascript:;', '2014-01-02 08:23:35', '2014-01-02 08:23:35', 0, 'vi', 1, ',111,1,110,2,10,25,26,15,16,17,18,79,5,19,20,6,22,88,105,106,107,108,21,23,24,7,8,9,', NULL, 'admin', 'admin', 0),
-(20, 'Hội nghị khách hàng giới thiệu Bột Mì và Bột Trộn Sẵn Mikko Tp.Đà Nẵng', 'banner-hoi-nghi-Da-Nang.jpg', 'http://www.vikybomi.com.vn/thu-vien-anh-c7/hoi-nghi-khach-hang-tp-da-nang-mien-trung-mien-bac.html', '2014-01-10 06:29:16', '2014-01-10 08:36:18', 0, 'vi', 4, '', NULL, 'admin', 'admin', 0);
+(20, 'Hội nghị khách hàng giới thiệu Bột Mì và Bột Trộn Sẵn Mikko Tp.Đà Nẵng', 'banner-hoi-nghi-Da-Nang.jpg', 'http://www.vikybomi.com.vn/thu-vien-anh-c7/hoi-nghi-khach-hang-tp-da-nang-mien-trung-mien-bac.html', '2014-01-10 06:29:16', '2014-01-10 08:36:18', 0, 'vi', 4, '', NULL, 'admin', 'admin', 0),
+(21, 'Tết 2015', 'slider-tet-2015-xuan-at-mui.jpg', 'javascript:;', '2015-01-30 10:53:01', '2015-01-30 10:53:01', 1, 'vi', 1, ',1,', NULL, 'admin', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -3696,11 +3678,10 @@ INSERT INTO `slider_banner` (`id`, `name`, `url_hinh`, `link`, `date_create`, `d
 --
 
 CREATE TABLE IF NOT EXISTS `slider_banner_position` (
-  `id` int(3) NOT NULL AUTO_INCREMENT,
+`id` int(3) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `slider_banner_position`
@@ -3722,7 +3703,7 @@ INSERT INTO `slider_banner_position` (`id`, `name`, `delete`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
@@ -3739,10 +3720,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `date_update` datetime DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `Username` (`Username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -3758,10 +3737,9 @@ INSERT INTO `users` (`id`, `name`, `Username`, `Password`, `quyen_xem`, `quyen_a
 --
 
 CREATE TABLE IF NOT EXISTS `users_group` (
-  `id` int(2) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+`id` int(2) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users_group`
@@ -3779,7 +3757,7 @@ INSERT INTO `users_group` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `video` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `name_rewrite` varchar(250) NOT NULL,
   `url_hinh` varchar(150) DEFAULT NULL,
@@ -3795,9 +3773,8 @@ CREATE TABLE IF NOT EXISTS `video` (
   `menu_id` varchar(20) DEFAULT NULL,
   `user_create` varchar(30) NOT NULL,
   `user_update` varchar(30) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `video`
@@ -3861,7 +3838,7 @@ INSERT INTO `video` (`id`, `name`, `name_rewrite`, `url_hinh`, `link`, `metaDesc
 --
 
 CREATE TABLE IF NOT EXISTS `video_comment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `date_create` datetime NOT NULL,
   `date_update` datetime DEFAULT NULL,
   `content` text NOT NULL,
@@ -3871,9 +3848,8 @@ CREATE TABLE IF NOT EXISTS `video_comment` (
   `parent_id` int(11) DEFAULT NULL,
   `user_create` varchar(20) DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
-  `delete` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `delete` tinyint(1) DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `video_comment`
@@ -3883,6 +3859,278 @@ INSERT INTO `video_comment` (`id`, `date_create`, `date_update`, `content`, `ema
 (2, '2013-05-07 07:01:26', NULL, 'Hi,toi hien dang song o San Jose, Cali., USA. Toi rat thich bot vo banh Su Kem nhung khong tim thay o cho VN . Xin vui long cho toi biet cho VN nao co ban bot vo banh Su Kem. Xin cam on .', 'thanhdnguyen2004@yahoo.com', 'Thanh Nguyen', 0, 18, NULL, NULL, 0),
 (3, '2013-05-27 10:55:25', NULL, 'Xin hoi co bot nao lam banh bong khong co hot ga\n\nCam on ', 'thumaithinguyen@yahoo.com', 'Nguyen thi Thu Mai', 0, 22, NULL, NULL, 0);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `config`
+--
+ALTER TABLE `config`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `info`
+--
+ALTER TABLE `info`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `info_comment`
+--
+ALTER TABLE `info_comment`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `language`
+--
+ALTER TABLE `language`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu1`
+--
+ALTER TABLE `menu1`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_admin`
+--
+ALTER TABLE `menu_admin`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_position`
+--
+ALTER TABLE `menu_position`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_type`
+--
+ALTER TABLE `menu_type`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order1_detail`
+--
+ALTER TABLE `order1_detail`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order_detail`
+--
+ALTER TABLE `order_detail`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `photo_gallery`
+--
+ALTER TABLE `photo_gallery`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `photo_gallery_comment`
+--
+ALTER TABLE `photo_gallery_comment`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products_comment`
+--
+ALTER TABLE `products_comment`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products_image`
+--
+ALTER TABLE `products_image`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `slider_banner`
+--
+ALTER TABLE `slider_banner`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `slider_banner_position`
+--
+ALTER TABLE `slider_banner_position`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `Username` (`Username`);
+
+--
+-- Indexes for table `users_group`
+--
+ALTER TABLE `users_group`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `video`
+--
+ALTER TABLE `video`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `video_comment`
+--
+ALTER TABLE `video_comment`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `config`
+--
+ALTER TABLE `config`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+--
+-- AUTO_INCREMENT for table `info`
+--
+ALTER TABLE `info`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=209;
+--
+-- AUTO_INCREMENT for table `info_comment`
+--
+ALTER TABLE `info_comment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `language`
+--
+ALTER TABLE `language`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=118;
+--
+-- AUTO_INCREMENT for table `menu1`
+--
+ALTER TABLE `menu1`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=116;
+--
+-- AUTO_INCREMENT for table `menu_admin`
+--
+ALTER TABLE `menu_admin`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `menu_position`
+--
+ALTER TABLE `menu_position`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `menu_type`
+--
+ALTER TABLE `menu_type`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1407115320;
+--
+-- AUTO_INCREMENT for table `order1_detail`
+--
+ALTER TABLE `order1_detail`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=548;
+--
+-- AUTO_INCREMENT for table `order_detail`
+--
+ALTER TABLE `order_detail`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=973;
+--
+-- AUTO_INCREMENT for table `photo_gallery`
+--
+ALTER TABLE `photo_gallery`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=647;
+--
+-- AUTO_INCREMENT for table `photo_gallery_comment`
+--
+ALTER TABLE `photo_gallery_comment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=107;
+--
+-- AUTO_INCREMENT for table `products_comment`
+--
+ALTER TABLE `products_comment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `products_image`
+--
+ALTER TABLE `products_image`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `slider_banner`
+--
+ALTER TABLE `slider_banner`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `slider_banner_position`
+--
+ALTER TABLE `slider_banner_position`
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `users_group`
+--
+ALTER TABLE `users_group`
+MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `video`
+--
+ALTER TABLE `video`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=50;
+--
+-- AUTO_INCREMENT for table `video_comment`
+--
+ALTER TABLE `video_comment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
