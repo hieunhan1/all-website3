@@ -75,8 +75,8 @@ class trangchu extends db {
 		$view = $this->navigator($row['parent_id']).$view;
 		return $view;
 	}
-	function list_item($select,$table,$where,$limit=NULL){
-		$qr = "SELECT {$select} FROM {$table} WHERE {$where} ORDER BY date_update DESC {$limit}";
+	function list_item($select,$table,$where,$limit=NULL, $order=NULL){
+		$qr = "SELECT {$select} FROM {$table} WHERE {$where} ORDER BY {$order} date_update DESC {$limit}";
 		return mysql_query($qr);
 	}
 	function link_detail($menu_id){

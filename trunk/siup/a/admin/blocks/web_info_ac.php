@@ -137,6 +137,13 @@ echo '<form name="form_action" method="post" action="">
     $form->getProperties('4',$arr,$properties,$views);
 	echo $form->DisplayProperties();
 	
+	//order
+	$values = $row_detail['order'];
+	$properties = array('3'); //maxlength OTHER (disabled, readonly) 
+	$views = array('Thứ tự','order','input_medium'); //label id&name class style
+    $form->getProperties('1',$values,$properties,$views);
+	echo $form->DisplayProperties();
+	
 	//id
 	$values = $row_detail['id'];
 	$views = 'id'; //name

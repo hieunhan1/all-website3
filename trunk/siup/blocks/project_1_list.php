@@ -42,7 +42,8 @@
 	$table = 'web_info';
 	$where = "`delete`=0 AND status=1 AND menu_id LIKE '%,{$idMenu},%' ";
 	$limit = "LIMIT {$from},".max_limit_2;
-	$list = $tc->list_item($select,$table,$where,$limit);
+	$order = '`order` DESC, ';
+	$list = $tc->list_item($select,$table,$where,$limit,$order);
 	$total = mysql_num_rows($list);
 	
 	if($total > 0){

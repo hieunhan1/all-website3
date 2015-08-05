@@ -41,7 +41,8 @@ class sql {
 		$str_field = rtrim($str_field,',');
 		
 		for($i = 0; $i < count($field)-1; $i++){
-			$str_value .= "'{$value[$i]}',";
+			$strV = str_replace("'", '&#39;', $value[$i]);
+			$str_value .= "'{$strV}',";
 		}
 		$str_value = rtrim($str_value,',');
 		
@@ -56,7 +57,8 @@ class sql {
 		$id = $this->_var5;
 		
 		for($i=0; $i<count($field)-1; $i++){
-			$str .= "`{$field[$i]}`='{$value[$i]}',";
+			$strV = str_replace("'", '&#39;', $value[$i]);
+			$str .= "`{$field[$i]}`='{$strV}',";
 		}
 		$str = rtrim($str,',');
 		
