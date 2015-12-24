@@ -43,9 +43,9 @@ hr{height:1px; background-color:#CCC; border:none; margin:30px 0 20px 0}
 .home_sp_item .home_sp_img img{height:140px}
 .home_sp_item h3{font-size:100%; line-height:20px; margin-bottom:8px}
 .home_sp_item .home_sp_buy{width:72px; line-height:22px; float:left; color:#FFF; font-weight:bold; text-align:center; background:url(images/btn_buy.jpg) no-repeat; cursor:pointer}
-.home_sp_item .home_sp_price{width:100px; float:right; line-height:20px; text-align:right; font-size:12px}
+.home_sp_item .home_sp_price{width:auto; float:right; line-height:20px; text-align:right; font-size:12px}
 .home_sp_item .home_sp_price .home_sp_price_goc{text-decoration:line-through}
-.home_sp_item .home_sp_price .home_sp_price_ban b{font-weight:bold; color:#F00}
+.home_sp_item .home_sp_price b{color:#F00}
 
 .home_list_info{width:500px; float:left}
 .home_list_info .home_info_item{display:block; line-height:28px; margin-left:10px; padding-left:15px; background:url(images/li.gif) left no-repeat}

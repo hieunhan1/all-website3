@@ -122,9 +122,9 @@ if(@$_GET['danhmuc']){
             </div>
             <?php
             //gio hang
-			$qr = $tc->menu_type(7,0,$lang);
+			/*$qr = $tc->menu_type(7,0,$lang);
 			$row_giohang = mysql_fetch_array($qr);
-			echo '<div id="icon_giohang"><a href="'.$row_giohang['url'].'">'.$row_giohang['name'].'</a></div>';
+			echo '<div id="icon_giohang"><a href="'.$row_giohang['url'].'">'.$row_giohang['name'].'</a></div>';*/
 			?>
         </div>
         <div id="lang">
@@ -174,7 +174,7 @@ if(@$_GET['danhmuc']){
     </div>
 </div>
 <?php
-include_once('blocks/buy.php'); flush();
+//<h2><h2><h2></h2></h2></h2>include_once('blocks/buy.php'); flush();
 include_once('blocks/qc2ben.php');
 //include_once('images/tet-2015/index.php');
 mysql_close();
