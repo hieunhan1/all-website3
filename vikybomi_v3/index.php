@@ -167,14 +167,17 @@ if(@$_GET['danhmuc']){
                 </div>
             </td>
             <td valign="top" style="padding-top:5px"><?php echo $row_config['contact_foo'];?></td>
-            <td align="right"><?php echo $row_config['copyright'];?></td>
+            <td align="right">
+				<?php echo $row_config['copyright'];?>
+                <p><a href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=17196" target="_blank"><img src="images/bo-cong-thuong.png" alt="bộ công thương" width="180" /></a></p>
+            </td>
           </tr>
           <tr><td colspan="3">&nbsp;</td></tr>
         </table>
     </div>
 </div>
 <?php
-//<h2><h2><h2></h2></h2></h2>include_once('blocks/buy.php'); flush();
+//include_once('blocks/buy.php'); flush();
 include_once('blocks/qc2ben.php');
 //include_once('images/tet-2015/index.php');
 mysql_close();
