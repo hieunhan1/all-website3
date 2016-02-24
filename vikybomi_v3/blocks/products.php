@@ -18,8 +18,8 @@ while($row = mysql_fetch_array($qr)){
 
 $buy = '<div class="buy_product" name="'.$tc->properties_product_buy($row_detail['id'],$row_detail['name'],$row_detail['price'],$row_detail['price_km']).'"><img src="images/buy.jpg" alt="đặt hàng bột Mikko" /></div>';
 
-/*if($row_detail['price']!=0 && $row_detail['price_km']!=0) $price = '<div class="sp_price_goc">'.number_format($row_detail['price'],'0',',','.').' VNĐ</div><div class="sp_price_ban"><b>'.number_format($row_detail['price_km'],'0',',','.').' VNĐ</b> (Giá khuyến mãi)</div>'.$buy;
-else*/
+if($row_detail['price']!=0 && $row_detail['price_km']!=0) $price = '<div class="sp_price_goc">'.number_format($row_detail['price'],'0',',','.').' VNĐ</div><div class="sp_price_ban"><b>'.number_format($row_detail['price_km'],'0',',','.').' VNĐ</b> (Giá khuyến mãi)</div>'.$buy;
+else
 if($row_detail['price']!=0) $price = '<div class="sp_price_ban">Giá tham khảo: <b>'.number_format($row_detail['price'],'0',',','.').' VNĐ</b></div>';
 else $price = '<p style="font-weight:bold; color:#0048FF; font-size:120%; padding-top:5px">'.const_contact_product.'</p>';
 
@@ -41,14 +41,14 @@ while($row = mysql_fetch_array($qr)){
 	$link = $row_menu_one['url'].$row['name_rewrite'].'.html';
 	if($i%4 != 0) $margin = 'style="margin-left:5px"'; else $margin = '';
 	
-	/*if($row['price']!=0 && $row['price_km']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price'],$row['price_km']).'">Mua</div><div class="home_sp_price"><div class="home_sp_price_goc">'.number_format($row['price'],'0',',','.').' VNĐ</div> <div class="home_sp_price_ban"><b>'.number_format($row['price_km'],'0',',','.').' VNĐ</b></div></div>';
+	if($row['price']!=0 && $row['price_km']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price'],$row['price_km']).'">Mua</div><div class="home_sp_price"><div class="home_sp_price_goc">'.number_format($row['price'],'0',',','.').' VNĐ</div> <div class="home_sp_price_ban"><b>'.number_format($row['price_km'],'0',',','.').' VNĐ</b></div></div>';
 	elseif($row['price']!=0) $price = '<div class="home_sp_buy" name="'.$tc->properties_product_buy($row['id'],$row['name'],$row['price']).'">Mua</div><div class="home_sp_price"><div class="home_sp_price_ban"><b>'.number_format($row['price'],'0',',','.').' VNĐ</b></div></div>';
-	else $price = '<p style="font-weight:bold; text-align:right; padding-top:5px">'.const_contact_product.'</p>';*/
-	if($row['price']!=0){
+	else $price = '<p style="font-weight:bold; text-align:right; padding-top:5px">'.const_contact_product.'</p>';
+	/*if($row['price']!=0){
 		$price = '<div class="home_sp_price">Giá tham khảo: <b>'.number_format($row['price'],'0',',','.').' VNĐ</b></div>';
 	}else{
 		$price = '<p style="font-weight:bold; text-align:right; padding-top:5px">'.const_contact_product.'</p>';
-	}
+	}*/
 	$item_product .= '<div class="home_sp_item" '.$margin.'>
 		<div class="home_sp_img"><a href="'.$link.'"><img src="'.url_product_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></div>
 		<a href="'.$link.'"><h3>'.$row['name'].'</h3></a>
