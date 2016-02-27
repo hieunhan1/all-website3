@@ -140,7 +140,7 @@ pre{font-size:13px; font-family:Arial, Helvetica, sans-serif; color:#333; margin
         </tr>
     </table>
 	<p style="font-weight:bold">Phương thức thanh toán "Bằng tiền mặt".</p>
-	<p style="font-style:italic; color:#666">Mọi thắc mắc vui lòng liên hệ số điện thoại: 08 6686 4441</p>
+	<p style="font-style:italic; color:#666">Mọi thắc mắc vui lòng liên hệ số điện thoại: 0938 27 27 35</p>
 </div>
 <?php mysql_close();?>
 
