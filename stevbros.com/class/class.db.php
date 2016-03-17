@@ -2,7 +2,7 @@
 	class db{
 		private $servername 	= 	"localhost";
 		private $username 		= 	"root";
-		private $password 		= 	"root";
+		private $password 		= 	"";
 		private $dbname			=	"stevbros_com";
 		
 		function __construct(){
