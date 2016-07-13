@@ -146,7 +146,7 @@ $(document).ready(function() {
 			alert("Input name");
 			$("input[name=name]").focus();
 			return false;
-		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) && email!=''){
+		}else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) /*&& email!=''*/ ){
 			alert("Wrong email address");
 			$("input[name=email]").focus();
 			return false;
