@@ -6,7 +6,7 @@ require_once('class.phpmailer.php');
 
 $email_gui = 'inform@hoahaudaiduongvietnam.com';
 $email_gui_pass = 'inform1234';
-$title = 'BTC Cuộc thi “Hoa Hậu Đại Dương Việt Nam 2014” ';
+$title = 'BTC Cuộc thi “Hoa Hậu Đại Dương Việt Nam” ';
 
 $email_nhan = $email;
 
@@ -58,7 +58,7 @@ $mail->CharSet = "utf-8";
 
 //Thiết lập nội dung chính của email
 $body = '<h3>Chào bạn!</h3>
-<p>Bạn đã đăng ký dự thi cuộc thi “Hoa Hậu Đại Dương Việt Nam 2014” . BTC cần bạn bổ sung những giấy tờ cần thiết bao gồm:</p>
+<p>Bạn đã đăng ký dự thi cuộc thi “Hoa Hậu Đại Dương Việt Nam” . BTC cần bạn bổ sung những giấy tờ cần thiết bao gồm:</p>
 <p style="margin-left:35px">+ Bản sao chứng minh thư (có công chứng)</p>
 <p style="margin-left:35px">+ Bản sao giấy khai sinh (nếu bản photo thì phải có công chứng)</p>
 <p style="margin-left:35px">+ Sơ yếu lý lịch (được chính quyền địa phương hoặc cơ quan tổ chức nơi thí sinh đang hoạt động xác nhận) </p>
@@ -67,11 +67,10 @@ $body = '<h3>Chào bạn!</h3>
 <p style="margin-left:35px">+ 02 ảnh chân dung và 02 ảnh toàn thân (mặc trang phục tự chọn và Bikini). </p>
 <p style="margin-left:35px">+ Bằng chứng nhận giải thường các cuộc thi từng tham gia.(nếu có)</p><br />
 <p style="font-weight:bold">Thời gian và địa chỉ như sau:</p>
-<p style="margin-left:35px">- Trước  ngày <b>15/04/2014</b> từ <b>9h - 21h</b> </p>
-<p style="margin-left:35px">- Địa chỉ: 115 đường Lý Tự Trọng, phường Bến Thành, Quận 1, Tp.Hồ Chí Minh</p>
+<p style="margin-left:35px">- Địa chỉ: 205 đường Lý Tự Trọng, phường Bến Thành, Quận 1, Tp.Hồ Chí Minh</p>
 <p style="margin-left:35px">- Điện thoại: 08 3914 2008</p>
 Cám ơn bạn đã đăng ký dự thi
-<p style="font-weight:bold; font-style:italic">BTC Cuộc thi “ Hoa Hậu Đại Dương Việt Nam 2014”</p>
+<p style="font-weight:bold; font-style:italic">BTC Cuộc thi “ Hoa Hậu Đại Dương Việt Nam”</p>
 <p style="font-weight:bold; font-style:italic">Trân Trọng</p>';
 
 $mail->Body = $body;

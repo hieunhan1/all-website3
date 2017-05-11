@@ -56,19 +56,22 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 	
 	//$url_hinh = $_SESSION['upload_image'];
 	
-	if($name!='' && $total_url_hinh=='4' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
+	if($name!='' && $total_url_hinh<'4' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
 		$ngaysinh = explode('/',$ngaysinh); $ngaysinh = "{$ngaysinh[2]}-{$ngaysinh[1]}-{$ngaysinh[0]}";
 		$ngaycap = explode('/',$ngaycap); $ngaycap = "{$ngaycap[2]}-{$ngaycap[1]}-{$ngaycap[0]}";
 		$date = date('Y-m-d H:i:s');
 		
 		$sdb = mysql_num_rows(mysql_query("SELECT id FROM thisinh"));
+		$sdb = $sdb*10 + 1;
 		
 		include_once('class/functions.php');
 		$name_rewrite = change_alias($name)."-{$sdb}";
 		
 		$path_temp = "public/temp/";
 		
-		$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$name_rewrite}-1.jpg', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'khachhang', NULL , '0') ";
+		/*$qr = "INSERT INTO `thisinh` VALUES (NULL, '{$name}', '{$name_rewrite}', '{$name_rewrite}-1.jpg', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}',  '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}',  '0', 'vi', ',6,19,', '0', '{$date}', '{$date}', 'khachhang', NULL , '0') ";*/
+		
+		$qr = "INSERT INTO `thisinh` (`id`, `name`, `name_rewrite`, `url_hinh`, `metaDescription`, `metaKeyword`, `sbd`, `ngaysinh`, `noisinh`, `chieucao`, `cannang`, `sodo`, `cmnd`, `ngaycap`, `noicap`, `hokhau`, `choohientai`, `dienthoai`, `email`, `trangmang_xh`, `nghenghiep`, `noicongtac`, `trinhdo`, `ngoaingu`, `kenh_timkiem`, `sothich`, `link_video`, `other2`, `other3`, `other4`, `other`, `lang`, `menu_id`, `status`, `date_create`, `date_update`, `user_create`, `user_update`, `delete`) VALUES (NULL, '{$name}', '{$name_rewrite}', '{$name_rewrite}-1.jpg', '{$metaDescription}', '{$name}', '{$sdb}', '{$ngaysinh}', '{$noisinh}', '{$chieucao}', '{$cannang}', '{$sodo}', '{$cmnd}', '{$ngaycap}', '{$noicap}', '{$hokhau}', '{$choohientai}', '{$dienthoai}', '{$email}', '{$trangmang_xh}', '{$nghenghiep}', '{$noicongtac}', '{$trinhdo}', '{$ngoaingu}', '{$kenh_timkiem}', '{$sothich}', '', '{$other2}', '{$other3}', '{$other4}', '0', 'vi', ',6,19,', '0', '{$date}', NULL, 'khachhang', NULL, '0')";
 		
 		if(mysql_query($qr)){
 			$id = mysql_insert_id();
