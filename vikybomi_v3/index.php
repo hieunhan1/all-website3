@@ -180,6 +180,17 @@ if(@$_GET['danhmuc']){
 include_once('blocks/buy.php'); flush();
 include_once('blocks/qc2ben.php');
 //include_once('images/tet-2015/index.php');
+
+/*if ( !isset($_SESSION['popup_event']) ) {
+	$_SESSION['popup_event'] = 1;
+	include_once('blocks/popup.php');
+} else {
+	$_SESSION['popup_event']++;
+	if ( $_SESSION['popup_event']<3 ) {
+		include_once('blocks/popup.php');
+	}
+}*/
+
 mysql_close();
 ?>
 </body>
