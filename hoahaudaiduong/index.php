@@ -196,6 +196,25 @@ if(@$_GET['danhmuc']){
 	?>
 </div>
 
+<?php
+if ( !isset($_SESSION['session_banner']) ) {
+	$_SESSION['session_banner'] = 1;
+	echo '<div id="gw-banner" style="width:100%; height:100%; position:fixed; z-index:1000; top:0; left:0; background-color:rgba(0,0,0,0.5)">
+		<div style="width:90%; position:relative; z-index:101; top:5%; left:5%;">
+			<span id="gw-banner-close" style="display:inline-block; color:#666; padding:3px 8px 4px 8px; border-radius:20px; background-color:#FFF; box-shadow:0px 2px 2px #666; cursor:pointer; position:absolute; top:-10px; right:-10px;">x</span>
+			<img src="/images/banner.jpg" alt="Banner_Hanh-Trinh-Nhan-Ai" style="max-width:100%" />
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#gw-banner-close").click(function(){
+			$("#gw-banner").hide(100);
+		});
+	});
+	</script>';
+}
+?>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
