@@ -3,7 +3,7 @@ session_start();
 $lang = 'vi';
 include_once('config.php');
 
-if($_POST['contact']=='contact'){
+if( isset($_POST['contact']) && $_POST['contact']=='contact' ){
 	$name = trim($_POST['name']);
 	$email = trim($_POST['email']);
 	$phone = trim($_POST['phone']);
@@ -25,7 +25,7 @@ if($_POST['contact']=='contact'){
 	}
 }
 
-if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
+if( isset($_POST['dangky_tructuyen']) && $_POST['dangky_tructuyen']=='dangky_tructuyen' ){
 	$name = trim($_POST['name']);
 	$ngaysinh = trim($_POST['ngaysinh']);
 	$noisinh = trim($_POST['noisinh']);
@@ -55,14 +55,16 @@ if($_POST['dangky_tructuyen']=='dangky_tructuyen'){
 	$total_url_hinh = count($arr_url_hinh);
 	
 	//$url_hinh = $_SESSION['upload_image'];
-	
-	if($name!='' && $total_url_hinh<'4' && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
+	if($name!='' && $total_url_hinh<=4 && $ngaysinh!='' && $chieucao!='' && $cannang!='' && $sodo!='' && $cmnd!='' && $hokhau!='' && $dienthoai!='' && $email!='' && $nghenghiep!='' && $trinhdo!='' && $sothich!='' && $metaDescription!=''){
 		$ngaysinh = explode('/',$ngaysinh); $ngaysinh = "{$ngaysinh[2]}-{$ngaysinh[1]}-{$ngaysinh[0]}";
 		$ngaycap = explode('/',$ngaycap); $ngaycap = "{$ngaycap[2]}-{$ngaycap[1]}-{$ngaycap[0]}";
 		$date = date('Y-m-d H:i:s');
 		
-		$sdb = mysql_num_rows(mysql_query("SELECT id FROM thisinh"));
-		$sdb = $sdb*10 + 1;
+		$qr = mysql_query("SELECT id,sbd FROM thisinh ORDER BY id DESC");
+		$row_sbd = mysql_fetch_array($qr);
+		
+		
+		$sdb = (int)$row_sbd['sbd'] + 1;
 		
 		include_once('class/functions.php');
 		$name_rewrite = change_alias($name)."-{$sdb}";
