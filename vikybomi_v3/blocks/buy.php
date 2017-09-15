@@ -11,8 +11,9 @@
                 <p style="text-align:justify; padding:0 30px; color:#00F; font-weight:bold; margin-bottom:10px">- Trước khi giao hàng nhân viên sẽ liên hệ với Quí khách</p>
                 
                 <p style="text-align:justify; color:#060; font-weight:bold">Phí giao hàng:</p>
-                <p style="text-align:justify; padding:0 30px">- Phí giao hàng <b style="color:#F00">10.000đ</b> đến các quận như: Q.1, Q.3, Q.4, Q.5, Q.6, Q.8, Q.10, Q.11, Q.Tân Bình và Q.Bình Tân</p>
-                <p style="text-align:justify; padding:0 30px; margin-bottom:10px">- Phí giao hàng <b style="color:#F00">20.000đ</b> đến các quận như: Q.2, Q.9, Q.7, Q.12, Q.Gò Vấp, Q.Phú Nhuận, Q.Bình Thạnh, Q.Tân Phú, Q.Thủ Đức, H.Bình Chánh, H.Hóc Môn và H.Nhà Bè</p>
+                <p style="text-align:justify; padding:0 30px">- Phí giao hàng <b style="color:#F00">20.000đ</b> đến các quận như: Q.1, Q.3, Q.4, Q.5, Q.6, Q.8, Q.10, Q.11, Q.Tân Bình và Q.Bình Tân</p>
+                <p style="text-align:justify; padding:0 30px; margin-bottom:10px">- Phí giao hàng <b style="color:#F00">30.000đ</b> đến các quận như: Q.2, Q.9, Q.7, Q.12, Q.Gò Vấp, Q.Phú Nhuận, Q.Bình Thạnh, Q.Tân Phú, Q.Thủ Đức, H.Bình Chánh, H.Hóc Môn và H.Nhà Bè</p>
+                <p style="text-align:justify; padding:0 30px; margin-bottom:10px">- Các tỉnh ngoài Tp.HCM Quí khách vui lòng liên hệ trực tiếp để biết chi phí giao hàng.</p>
                 
                 <p style="margin-bottom:10px"><b><em style="text-decoration:underline">Lưu ý:</em></b> Hiện tại công ty chỉ giao hàng trong Tp.HCM. Quí khách có nhu cầu mua bột trộn sẵn Mikko có thể đến siêu thị Co.opmart, Big C, Metro, Citimart hoặc các cửa hàng đại lý bột Mikko.</p>
             </div>
