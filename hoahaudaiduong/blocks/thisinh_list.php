@@ -11,10 +11,11 @@ $navigator = '<div id="navigator"><a href="http://'.$domain.'/?lang='.$lang.'"><
 $view_post = '<div class="viewpost"><h1>'.$row_menu_one['title'].'</h1><h2>'.$row_menu_one['metaDescription'].'</h2></div><div style="clear:both; height:20px"></div>';
 
 while($row = mysql_fetch_array($list)){
-	$binhchon = 'Chưa bình chọn';
+	$url = $tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html';
 	$view_post .= '<div class="home_thisinh_item">
-		<a href="'.$tc->link_detail($row['menu_id']).$row['name_rewrite'].'.html"><div class="img"><img src="'.url_thisinh_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></div><h5>'.$row['name'].'</h5></a>
-		<!--SBD: '.$row['sbd'].'<br />'.$binhchon.'-->
+		<h5><a href="'.$url.'" title="'.$row['name'].'">'.$row['name'].'</a></h5>
+		<p class="img"><a href="'.$url.'"><img src="'.url_thisinh_image_thumb.$row['url_hinh'].'" alt="'.$row['name'].'" /></a></p>
+		
 	</div>';
 }
 

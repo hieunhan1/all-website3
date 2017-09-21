@@ -57,8 +57,8 @@ hr{height:1px; background-color:#999; border:none; margin-bottom:30px}
 
 .home_thisinh_title{color:#FF0; font-weight:bold; font-size:130%; margin-bottom:10px}
 .home_thisinh_item{width:240px; float:left; line-height:22px; margin:0 5px 20px 0}
-.home_thisinh_item .img{width:98px; height:140px; float:left; overflow:hidden; margin-right:10px; border:solid 2px #999}
-.home_thisinh_item .img img{height:145px}
+.home_thisinh_item .img{height:180px; float:left; overflow:hidden; margin-right:10px; border:solid 1px #CCC}
+.home_thisinh_item .img img{max-width:100%;}
 .home_thisinh_item h5{font-size:100%}
 .home_thisinh_item a{color:#FFF}
 
